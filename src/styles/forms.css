@@ -1,0 +1,192 @@
+.title {
+  margin-left: 6%;
+  color: grey;
+  font-family: sans-serif;
+  font-size: 22px;
+}
+
+.container {
+  background-color: white;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  width: 60%;
+  margin-left: 6%;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 5px; 
+  margin-bottom: 20px;
+  margin-left: 6%;
+}
+
+.gray-button {
+  background-color: rgb(255, 255, 255);
+  color: rgba(168, 170, 174, 1);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin-right: 5px; 
+  cursor: pointer;
+}
+
+.gray-button:last-child {
+  margin-right: 0;
+}
+
+.form-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-basis: 48%;
+  position: relative;
+}
+
+.form-row label {
+  margin-bottom: -2px;
+}
+
+.form-row input,
+.form-row select {
+  padding: 8px; 
+}
+
+.form-row input[type="text"],
+.form-row input[type="email"],
+.form-row input[type="tel"],
+.form-row select {
+  width: calc(100% - 16px); 
+  margin-bottom: 5px; 
+  padding: 8px;
+  border: 1px solid rgba(168, 170, 174, 1);
+  border-radius: 4px;
+}
+
+.code-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  margin-top: 20px;
+  margin-left: 6%;
+  margin-bottom: 40px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.code-button-container h5 {
+  margin-left: 20px;
+  margin-top: 15px;
+  font-size: 17px;
+}
+
+.code-buttons {
+  margin-bottom: 20px; 
+}
+
+.blue-button {
+  background-color: rgba(115, 103, 240, 1);
+  color: white;
+  border: none;
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin: 10px auto 0; 
+  display: block;
+  width: 100px;
+}
+
+.red-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  margin-left: 25px;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 5px;
+  margin-left: 6%;
+  margin-bottom: 30px;
+}
+  
+.blueButton {
+  background-color: rgba(115, 103, 240, 1);
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  left: 0%;
+  cursor: pointer; 
+  align-items: center;
+}
+
+.grayButton {
+  background-color: rgba(168, 170, 174, 0.397);
+  color: rgba(168, 170, 174, 1);
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer; 
+  align-items: center;
+}
+
+.new-form-container {
+  display: flex;
+  flex-direction: column;
+  width: 30%; 
+  margin-left: 20px; 
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-select {
+  width: 100%;
+  padding: 8px 30px 8px 8px;
+  border: 1px solid rgba(168, 170, 174, 1);
+  border-radius: 4px;
+  appearance: none;
+  background-image: url('data:image/svg+xml;...');
+  background-repeat: no-repeat;
+  background-position: right 8px top 50%, 8px center;
+}
+
+.dropdown-options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: white;
+  border: 1px solid rgba(168, 170, 174, 1);
+  border-top: none;
+}
+
+.dropdown-options button {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-bottom: 1px solid rgba(168, 170, 174, 1);
+  background-color: white;
+  text-align: left;
+}
+
+.dropdown:hover .dropdown-options {
+  display: block;
+}
