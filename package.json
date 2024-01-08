@@ -12,9 +12,11 @@
     "@types/react-dom": "^18.2.18",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-inlinesvg": "^4.1.0",
     "react-router-dom": "^6.21.1",
     "react-scripts": "^5.0.1",
-    "typescript": "^5.3.3",
+    "semantic-ui-css": "^2.5.0",
+    "semantic-ui-react": "^2.1.5",
     "web-vitals": "^2.1.4",
     "webpack": "^5.89.0"
   },
@@ -43,6 +45,9 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "babel-plugin-inline-react-svg": "^2.0.2",
+    "typescript": "^5.3.3",
+    "vite-plugin-react-svg": "^0.2.0"
   }
 }
