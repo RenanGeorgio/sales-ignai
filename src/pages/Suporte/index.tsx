@@ -8,7 +8,7 @@ const Suporte = () => {
         <div>
             <Navbar />
             <h1 className="text">Suporte ao cliente Ignai</h1>
-            <div className="container">
+            <div>
             <div className="buttonContainer">
                 <button className="blueButton">
                 <img src={usersImage} alt="Users" />

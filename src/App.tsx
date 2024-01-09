@@ -12,16 +12,16 @@ import Forms from './pages/Forms';
 function App() {
   return (
     <>
-    <Sidebar />
-    <Routes>
-      <Route path="/" element={<Dashboard />} />
-      <Route path="/formulario" element={<Forms />} />
-      <Route path="/email" element={<Email />} />
-      <Route path="/chatbot" element={<ChatBot />} />
-      <Route path="/whatsapp" element={<Whatsapp />} />
-      <Route path="/configuracoes" element={<Configuracoes />} />
-      <Route path="/suporte" element={<Suporte />} />
-    </Routes>
+      <Sidebar />
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/formulario" element={<Forms />} />
+        <Route path="/email" element={<Email />} />
+        <Route path="/chatbot" element={<ChatBot />} />
+        <Route path="/whatsapp" element={<Whatsapp />} />
+        <Route path="/configuracoes" element={<Configuracoes />} />
+        <Route path="/suporte" element={<Suporte />} />
+      </Routes>
     </>
   );
 }

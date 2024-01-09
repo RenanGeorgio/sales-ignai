@@ -9,7 +9,7 @@ const Email = () => {
         <div>
             <Navbar />
             <h1 className="text">Automação E-mail</h1>
-            <div className="container">
+            <div>
             <div className="buttonContainer">
                 <button className="blueButton">
                 <img src={usersImage} alt="Users" />

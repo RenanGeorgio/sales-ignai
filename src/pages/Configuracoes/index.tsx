@@ -12,7 +12,7 @@ const Configuracoes = () => {
       <h3 className='text'>Uma função fornecia acesso a menus e recursos predefidinos para que, dependendo<br />
         da função atribuida, um administrador pode ter acesso às necessidades do usuário.
       </h3>
-      <div className='container'>
+      <div className='containerBody'>
         <div className='body'>
           <h4>Total de 4 usuários</h4>
           <img src={link} alt="link" className="link" />

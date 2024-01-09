@@ -1,7 +1,7 @@
 const Dashboard = () => {
     return (
         <>
-            Página Inicial
+            <h3 style={{marginLeft: '100px'}}>Página Inicial</h3>
         </>
     )
 }

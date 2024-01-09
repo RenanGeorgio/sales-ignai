@@ -10,7 +10,7 @@ const ChatBot = () => {
     <div>
       <Navbar />
       <h1 className='text'>Automação ChatBot</h1>
-      <div className="container">
+      <div>
         <div className="buttonContainer">
           <button className="blueButton">
             <img src={usersImage} alt="Users" />
