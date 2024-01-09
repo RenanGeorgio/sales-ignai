@@ -12,11 +12,11 @@ const Suporte = () => {
             <div className="buttonContainer">
                 <button className="blueButton">
                 <img src={usersImage} alt="Users" />
-                Estruturação
+                Pedido
                 </button>
                 <button className="grayButton">
                 <img src={fileTextImage} alt="File Text" />
-                Painel
+                Tickets
                 </button>
             </div>
             </div>

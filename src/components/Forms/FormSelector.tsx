@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../styles/forms.css';
 import label from '../../components/Image/label.svg';
+import labelgreen from '../../components/Image/labelgreen.svg';
 
 const FormSelector: React.FC = () => {
   return (
@@ -13,7 +14,7 @@ const FormSelector: React.FC = () => {
           Formulário 1
         </button>
         <button className="new-form-selector-button">
-          <img src={label} alt="Label" className="label-image" />
+          <img src={labelgreen} alt="Label" className="label-image" />
           Formulário 2
         </button>
         <button className="new-form-selector-button">
@@ -21,7 +22,7 @@ const FormSelector: React.FC = () => {
           Formulário 3
         </button>
         <button className="new-form-selector-button">
-          <img src={label} alt="Label" className="label-image" />
+          <img src={labelgreen} alt="Label" className="label-image" />
           Formulário 4
         </button>
         <button className="new-form-selector-button">
@@ -29,7 +30,7 @@ const FormSelector: React.FC = () => {
           Formulário 5
         </button>
         <button className="new-form-selector-button">
-          <img src={label} alt="Label" className="label-image" />
+          <img src={labelgreen} alt="Label" className="label-image" />
           Formulário 6
         </button>
         <button className="new-form-selector-button">

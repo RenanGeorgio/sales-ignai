@@ -205,8 +205,8 @@
 .new-form-selector-container {
   position: absolute;
   top: 35%; 
-  right: 120px; 
-  width: 400px; 
+  right: 150px; 
+  width: 368px; 
 }
 
 .new-form-selector {
@@ -244,4 +244,8 @@
   width: 24px;
   height: 24px;
   margin-right: 8px; 
+}
+
+.container-footer {
+  margin-top: 36%;
 }

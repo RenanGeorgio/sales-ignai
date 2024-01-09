@@ -1,51 +1,84 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '../../components/Navbar';
 import usersImage from '../../components/Image/users.svg';
-import linkImage from '../../components/Image/link.svg';
+import sino from '../../components/Image/bell.svg';
 import fileTextImage from '../../components/Image/file-text.svg';
-import html from '../../components/Image/html.svg';
-import css from '../../components/Image/css.svg';
 import '../../styles/forms.css'; 
 import MainForm from '../../components/Forms/MainForm';
 import FormSelector from '../../components/Forms/FormSelector';
+import Footer from '../../components/Forms/Footer';
 
 const Forms: React.FC = () => {
+  const [activePage, setActivePage] = useState('Formulário'); // Estado para controlar a página ativa
+
+  const handleButtonClick = (pageName: string) => {
+    setActivePage(pageName);
+  };
+
   return (
     <div>
       <Navbar />
       <h1 className="title">Formulários</h1>
       <div className="buttonContainer">
-        <button className="blueButton">
+        <button
+          className={activePage === 'Formulário' ? 'blueButton' : 'grayButton'}
+          onClick={() => handleButtonClick('Formulário')}
+        >
           <img src={usersImage} alt="Users" />
-          Estruturação
+          Formulário
         </button>
-        <button className="grayButton">
-          <img src={linkImage} alt="Link" />
-          Flow Chart
+        <button
+          className={activePage === 'Contador' ? 'blueButton' : 'grayButton'}
+          onClick={() => handleButtonClick('Contador')}
+        >
+          <img src={sino} alt="Link" />
+          Contador
         </button>
-        <button className="grayButton">
+        <button
+          className={activePage === 'Painel' ? 'blueButton' : 'grayButton'}
+          onClick={() => handleButtonClick('Painel')}
+        >
           <img src={fileTextImage} alt="File Text" />
           Painel
         </button>
       </div>
-      <div className="button-container">
-        <button className="gray-button">Salvar</button>
-        <button className="gray-button">Adicionar</button>
-        <button className="gray-button">Editar</button>
-        <button className="gray-button">Colorir</button>
-        <button className="gray-button">Modelos</button>
-        <button className="gray-button">Importar (Figma / Adobe XD)</button>
-      </div>
-      <MainForm />
-      <FormSelector />
-      <div className="code-button-container">
-        <h5>Exportar</h5>
-        <div className="code-buttons">
-          <button className="red-button">Gerar Código</button>
-          <img src={html} alt="HTML" className="export-image" />
-          <img src={css} alt="CSS" className="export-image" />
-        </div>
-      </div>
+      {activePage === 'Formulário' && (
+        <>
+          {/* Conteúdo da subpágina Formulário */}
+          <div className="button-container">
+            <button className="gray-button">Salvar</button>
+            <button className="gray-button">Adicionar</button>
+            <button className="gray-button">Editar</button>
+            <button className="gray-button">Colorir</button>
+            <button className="gray-button">Modelos</button>
+            <button className="gray-button">Importar (Figma / Adobe XD)</button>
+          </div>
+          <MainForm />
+          <FormSelector />
+          <Footer />
+        </>
+      )}
+      {activePage === 'Contador' && (
+        <>
+          {/* Conteúdo da subpágina Flow Chart */}
+          <div className="button-container">
+            <button className="gray-button">Salvar</button>
+            <button className="gray-button">Adicionar</button>
+            <button className="gray-button">Editar</button>
+            <button className="gray-button">Colorir</button>
+            <button className="gray-button">Modelos</button>
+          </div>
+          <FormSelector />
+          <div className='container-footer'>
+            <Footer />
+          </div>
+        </>
+      )}
+      {activePage === 'Painel' && (
+        <>
+          {/* Conteúdo da subpágina Painel */}
+        </>
+      )}
     </div>
   );
 };
