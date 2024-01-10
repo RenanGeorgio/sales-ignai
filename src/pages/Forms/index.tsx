@@ -7,7 +7,8 @@ import '../../styles/forms.css';
 import MainForm from '../../components/Forms/MainForm';
 import FormSelector from '../../components/Forms/FormSelector';
 import Footer from '../../components/Forms/Footer';
-import ButtonPath from '../../components/Forms/ButtonPath';
+// import ButtonPath from '../../components/Forms/ButtonPath';
+import Dashboard from '../../components/Forms/Dashboard';
 
 const Forms: React.FC = () => {
   const [activePage, setActivePage] = useState('Formulário'); 
@@ -87,7 +88,7 @@ const Forms: React.FC = () => {
       )}
       {activePage === 'Painel' && (
         <>
-          Painel
+          <Dashboard />
         </>
       )}
     </div>
