@@ -247,5 +247,48 @@
 }
 
 .container-footer {
-  margin-top: 36%;
+  margin-top: 13%;
+}
+
+.button-path-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 150px; 
+  margin-left: 7%;
+  margin-bottom: 0px;
+}
+
+.yellowButton {
+  margin-bottom: 10px;
+  background-color: rgb(205, 184, 46);
+  color: rgb(10, 10, 10);
+  border: none;
+  display: flex;
+  justify-content: center;
+  padding: 10px 25px;
+  border-radius: 4px;
+  margin: 10px auto 0; 
+  display: block;
+  width: 150px;
+  cursor: pointer;
+}
+
+.blueButtonsContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0px;
+}
+
+.blueButtonPath {
+  background-color: rgba(115, 103, 240, 1);
+  color: white;
+  border: none;
+  display: flex;
+  justify-content: center;
+  padding: 10px 25px;
+  border-radius: 4px;
+  margin: 10px auto 20px; 
+  display: block;
+  width: 150px;
+  cursor: pointer;
 }

@@ -7,9 +7,10 @@ import '../../styles/forms.css';
 import MainForm from '../../components/Forms/MainForm';
 import FormSelector from '../../components/Forms/FormSelector';
 import Footer from '../../components/Forms/Footer';
+import ButtonPath from '../../components/Forms/ButtonPath';
 
 const Forms: React.FC = () => {
-  const [activePage, setActivePage] = useState('Formulário'); // Estado para controlar a página ativa
+  const [activePage, setActivePage] = useState('Formulário'); 
 
   const handleButtonClick = (pageName: string) => {
     setActivePage(pageName);
@@ -44,7 +45,6 @@ const Forms: React.FC = () => {
       </div>
       {activePage === 'Formulário' && (
         <>
-          {/* Conteúdo da subpágina Formulário */}
           <div className="button-container">
             <button className="gray-button">Salvar</button>
             <button className="gray-button">Adicionar</button>
@@ -60,13 +60,24 @@ const Forms: React.FC = () => {
       )}
       {activePage === 'Contador' && (
         <>
-          {/* Conteúdo da subpágina Flow Chart */}
           <div className="button-container">
             <button className="gray-button">Salvar</button>
             <button className="gray-button">Adicionar</button>
             <button className="gray-button">Editar</button>
             <button className="gray-button">Colorir</button>
             <button className="gray-button">Modelos</button>
+          </div>
+          <div className="button-path-container">
+            <div>
+              <button className="yellowButton">Home</button>
+            </div>
+            <div className="blueButtonsContainer">
+              <button className="blueButtonPath">Formulário 1</button>
+              <button className="blueButtonPath">Formulário 2</button>
+              <button className="blueButtonPath">Formulário 4</button>
+              <button className="blueButtonPath">Formulário 5</button>
+              <button className="blueButtonPath">Formulário 7</button>
+            </div>
           </div>
           <FormSelector />
           <div className='container-footer'>
@@ -76,7 +87,7 @@ const Forms: React.FC = () => {
       )}
       {activePage === 'Painel' && (
         <>
-          {/* Conteúdo da subpágina Painel */}
+          Painel
         </>
       )}
     </div>
