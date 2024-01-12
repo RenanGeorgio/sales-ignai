@@ -29,9 +29,9 @@ const Graph5: React.FC<GraphProps> = ({ month }) => {
   };
 
   const legendItems = [
-    ['Form 1 Visita', 'Form 1 Envio'],
-    ['Form 2 Visita', 'Form 2 Envio'],
-    ['Form 3 Visita', 'Form 3 Envio'],
+    ['F1V', 'F1E'],
+    ['F2V', 'F2E'],
+    ['F3V', 'Blog'],
   ];
 
   return (
@@ -40,13 +40,13 @@ const Graph5: React.FC<GraphProps> = ({ month }) => {
       <div className="graph">
         <Bar data={data} options={{ maintainAspectRatio: false, indexAxis: 'y', plugins: { legend: { display: false } } }} />
       </div>
-      <div className="legend-5">
+      <div className="legend">
         {legendItems.map((group, groupIndex) => (
           <div key={groupIndex} className="legend-item-group">
             {group.map((label, index) => (
               <div key={index} className="legend-item">
                 <div className="color-dot" style={{ backgroundColor: data.datasets[0].backgroundColor[index + groupIndex * 2] }}></div>
-                <span className="legend-label-5">{label}</span>
+                <span className="legend-label">{label}</span>
                 <div className="number-container">
                   <span className="number">{groupIndex === 0 ? '40%' : '30%'}</span>
                 </div>

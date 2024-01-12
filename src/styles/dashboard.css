@@ -127,12 +127,6 @@
   flex-direction: column;
 }
 
-.data-item {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 8px;
-}
-  
 .divGraph {
   width: '100%';
   height: '30px'; 
@@ -165,6 +159,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 8px;
+  margin-top: 5px;
 }
 
 .data-row img {
@@ -188,6 +183,8 @@ hr {
 }
 
 .graph-container-4 {
+  display: flex;
+  flex-direction: column;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 6px;
@@ -199,14 +196,44 @@ hr {
 }
 
 .graph-container-4 h3 {
-  margin-top: 1%;
-  margin-left: 2%;
+  margin-top: 2%;
+  margin-left: 3%;
   color: rgba(75, 70, 92, 1);
+}
+
+.graph-container-4 .container-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  margin-top: -3%;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+}
+
+.graph-container-4 .container-info h4 {
+  margin-left: 10px; 
+  margin-right: 10px; 
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.data-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.data-number {
+  margin-left: auto;
+  text-align: right;
+  display: flex;
 }
 
 .menu-icon {
   font-size: 20px;
-  margin-top: -7%;
+  margin-top: -8%;
   margin-bottom: 5%;
   margin-left: 60%;
   cursor: pointer;
@@ -225,20 +252,4 @@ hr {
 .data-row span:nth-child(3) {
   margin-right: 20px;
   margin-left: auto;
-}
-
-.number-container-5 {
-  text-align: center;
-  width: 100%;
-  margin-left: -150%;
-  margin-top: 110%;
-  margin-bottom: -10%;
-}
-
-.legend-5 {
-  display: flex;
-  flex-direction: column; 
-  margin-top: -38%;
-  margin-left: 72%;
-  width: calc(30% - 5px);
 }

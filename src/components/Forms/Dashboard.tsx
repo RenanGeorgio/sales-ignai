@@ -5,6 +5,7 @@ import '../../styles/dashboard.css';
 import Graph3 from '../Graph/Graph3.tsx';
 import Graph4 from '../Graph/Graph4.tsx';
 import Graph5 from '../Graph/Graph5.tsx';
+import Graph6 from '../Graph/Graph6.tsx';
 
 const Dashboard: React.FC = () => {
   const [selectedMonth, setSelectedMonth] = useState('January');
@@ -42,7 +43,7 @@ const Dashboard: React.FC = () => {
 
       <div className="graph-row">
         <Graph5 month={selectedMonth} />
-        <Graph4 month={selectedMonth}/>
+        <Graph6 month={selectedMonth}/>
       </div>
     </div>
   );
