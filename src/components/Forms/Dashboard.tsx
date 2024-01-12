@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Graph1 from '../Graph/Graph2.tsx';
-import Graph2 from '../Graph/Graph1.tsx';
+import Graph2 from '../Graph/Graph2.tsx';
+import Graph1 from '../Graph/Graph1.tsx';
 import '../../styles/dashboard.css';
 import Graph3 from '../Graph/Graph3.tsx';
 import Graph4 from '../Graph/Graph4.tsx';
@@ -32,8 +32,8 @@ const Dashboard: React.FC = () => {
       </select>
 
       <div className="graph-row">
-        <Graph2 month={selectedMonth} />
         <Graph1 month={selectedMonth} />
+        <Graph2 month={selectedMonth} />
       </div>
 
       <div className="graph-row">
