@@ -8,7 +8,7 @@
 }
 
 .select-month {
-  background-color: rgb(154, 146, 238);
+  background-color: rgb(184, 179, 241);
   color: rgba(0, 0, 0, 0.8);
   width: 186px;
   height: 38px;
@@ -25,6 +25,7 @@
   gap: 20px; 
   margin-top: 10px;
   margin-left: 6%; 
+  margin-bottom: 20px;
   justify-content: space-between; 
   width: 92%;
 }
@@ -41,14 +42,86 @@
 
 .graph-container h3{
   margin-top: 1%;
+  margin-left: 2%;
   color: rgba(75, 70, 92, 1);
 }
 
 .graph-container h5{
   margin-top: -2%;
+  margin-left: 2%;
   color: rgba(75, 70, 92, 1);
 }
    
+.graph {
+  width: 70%;
+  height: 90%;
+  margin-top: 0%;
+}
+
+.graph-container-3 h3{
+  margin-top: 1%;
+  margin-left: 2%;
+  margin-bottom: 0%;
+  color: rgba(75, 70, 92, 1);
+}
+
+.graph-container-3 {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #fff;
+  width: calc(65% - 10px); 
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1); 
+  height: 280px; 
+}
+
+.legend {
+  display: flex;
+  flex-direction: column; 
+  margin-top: -38%;
+  margin-left: 74%;
+  width: calc(30% - 5px);
+}
+
+.legend-item-group {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  width: calc(50% - 5px);
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.color-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-left: -15%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.number {
+  margin-left: 10px;
+  font-size: 20px;
+  position: absolute;
+  bottom: 0;
+}
+
+.number-container {
+  text-align: center;
+  width: 100%;
+  margin-left: -95%;
+  margin-top: 80%;
+}
+
 .chart {
   display: flex;
   flex-direction: column;
@@ -112,4 +185,60 @@ hr {
   margin: 8px 0;
   border: none;
   border-top: 1px solid #ccc;
+}
+
+.graph-container-4 {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-top: 1%;
+  background-color: #fff;
+  width: calc(50% - 10px); 
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1); 
+  height: 250px; 
+}
+
+.graph-container-4 h3 {
+  margin-top: 1%;
+  margin-left: 2%;
+  color: rgba(75, 70, 92, 1);
+}
+
+.menu-icon {
+  font-size: 20px;
+  margin-top: -7%;
+  margin-bottom: 5%;
+  margin-left: 60%;
+  cursor: pointer;
+}
+
+.data-item img {
+  width: 20px;
+  margin-right: 12px;
+  margin-left: 15px;
+}
+
+.data-row span:nth-child(2) {
+  margin-right: 20px;
+}
+
+.data-row span:nth-child(3) {
+  margin-right: 20px;
+  margin-left: auto;
+}
+
+.number-container-5 {
+  text-align: center;
+  width: 100%;
+  margin-left: -150%;
+  margin-top: 110%;
+  margin-bottom: -10%;
+}
+
+.legend-5 {
+  display: flex;
+  flex-direction: column; 
+  margin-top: -38%;
+  margin-left: 72%;
+  width: calc(30% - 5px);
 }
