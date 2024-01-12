@@ -46,7 +46,7 @@ const Sidebar: React.FC<SidebarProps> = () => {
         </div>
       </Link>
 
-      <Link to="/">
+      <Link to="/chat">
         <div className="menu-item">
           <img src={messageCircle} alt="Chat" />
           <span className={expanded ? 'show-text' : 'hide-text'}>Chat</span>
