@@ -4,6 +4,7 @@ const routes = {
   chatbot: '/chatbot',
   formulario: '/formulario',
   email: '/email',
+  estatisticas: '/estatisticas',
   whatsapp: '/whatsapp',
   configuracoes: '/configuracoes',
   suporte: '/suporte'

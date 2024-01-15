@@ -9,6 +9,7 @@ import Whatsapp from './pages/Whatsapp';
 import Configuracoes from './pages/Configuracoes';
 import Forms from './pages/Forms';
 import Chat from './pages/Chat';
+import Statistics from './pages/Statistics';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/chat" element={<Chat />} />
         <Route path="/formulario" element={<Forms />} />
         <Route path="/email" element={<Email />} />
+        <Route path="/estatisticas" element={<Statistics />} />
         <Route path="/chatbot" element={<ChatBot />} />
         <Route path="/whatsapp" element={<Whatsapp />} />
         <Route path="/configuracoes" element={<Configuracoes />} />

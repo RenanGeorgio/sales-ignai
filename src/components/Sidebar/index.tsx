@@ -32,9 +32,8 @@ const Sidebar: React.FC<SidebarProps> = () => {
       <div onClick={toggleSidebar}>
         <img src={logo} alt="Logo" className='logo'/>
       </div>
-      <Link to="/">
+      <Link to="/estatisticas">
         <div className="menu-item">
-          <img src={chart} alt="Estatísticas" />
           <span className={expanded ? 'show-text' : 'hide-text'}>Estatísticas</span>
         </div>
       </Link>
