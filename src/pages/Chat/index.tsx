@@ -4,6 +4,10 @@ import usersImage from '../../components/Image/users.svg';
 import sino from '../../components/Image/bell.svg';
 import fileTextImage from '../../components/Image/file-text.svg';
 import '../../styles/forms.css'; 
+import GraphChat from '../../components/Graph/GraphChat';
+import GraphTicket from '../../components/Graph/GraphTicket';
+import GraphTicketYou from '../../components/Graph/GraphTicketYou';
+import GraphThemes from '../../components/Graph/GraphThemes';
 
 const Chat: React.FC = () => {
   const [activePage, setActivePage] = useState('Formulário'); 
@@ -51,7 +55,14 @@ const Chat: React.FC = () => {
       )}
       {activePage === 'Painel' && (
         <>
-            <h1 style={{marginLeft: '10%'}}>Painel</h1>
+          <div className='graph-row'>
+            <GraphChat />
+            <GraphTicket data={[50, 30, 20, 10]}/>
+          </div>
+          <div className='graph-row'>
+            <GraphThemes />
+            <GraphTicketYou data={[50, 30, 20, 10]}/>
+          </div>
         </>
       )}
     </div>
