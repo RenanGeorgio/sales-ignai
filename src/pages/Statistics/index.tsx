@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from '../../components/Navbar';
-import '../../styles/forms.css'; 
+import '../../styles/statistics.css'; 
+import StatisticsComponent from '../../components/Statistics/Statistics';
 
 const Statistics: React.FC = () => {
   const [activePage, setActivePage] = useState('Estatísticas'); 
@@ -12,7 +13,6 @@ const Statistics: React.FC = () => {
   return (
     <div>
       <Navbar />
-      <h1 className="title">Chat</h1>
       <div className="buttonContainer">
         <button
           className={activePage === 'Ano' ? 'blueButton' : 'grayButton'}
@@ -42,6 +42,7 @@ const Statistics: React.FC = () => {
       {activePage === 'Ano' && (
         <>
           <h1 style={{marginLeft: '10%'}}>Atendimento</h1>
+          <StatisticsComponent />
         </>
       )}
       {activePage === 'Mês' && (

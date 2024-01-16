@@ -1,0 +1,85 @@
+.buttonContainer {
+  display: flex;
+  gap: 5px;
+  margin-left: 6%;
+  margin-bottom: 30px;
+}
+
+.blueButton {
+  background-color: rgba(115, 103, 240, 1);
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  left: 0%;
+  cursor: pointer; 
+  align-items: center;
+}
+
+.grayButton {
+  background-color: rgba(168, 170, 174, 0.397);
+  color: rgba(168, 170, 174, 1);
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer; 
+  align-items: center;
+}
+
+.statistics-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin: 10px;
+}
+
+.statistics-item {
+  text-align: center;
+}
+
+.title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img {
+  max-width: 100px;
+  max-height: 100px;
+  margin-bottom: 10px;
+}
+
+.number-statistics {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-left: 8%;
+  margin-bottom: 30%;
+}
+
+.label {
+  color: #777;
+}
+
+/* Adiciona estas regras para ajustar a disposição dos números e labels */
+.content-with-labels {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.number-label-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5px; /* Adiciona espaço entre número e rótulo */
+}

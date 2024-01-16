@@ -34,6 +34,7 @@ const Sidebar: React.FC<SidebarProps> = () => {
       </div>
       <Link to="/estatisticas">
         <div className="menu-item">
+          <img src={chart} alt="Estatísticas" />
           <span className={expanded ? 'show-text' : 'hide-text'}>Estatísticas</span>
         </div>
       </Link>
