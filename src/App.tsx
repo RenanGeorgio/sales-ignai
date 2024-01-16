@@ -9,11 +9,13 @@ import Whatsapp from './pages/Whatsapp';
 import Configuracoes from './pages/Configuracoes';
 import Forms from './pages/Forms';
 import Chat from './pages/Chat';
+import Layout from './components/Layout/Layout';
 
 function App() {
   return (
     <>
       <Sidebar />
+      {/* <Layout/> */}
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/chat" element={<Chat />} />

@@ -51,6 +51,7 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@types/socket.io-client": "^3.0.0",
     "babel-plugin-inline-react-svg": "^2.0.2",
     "typescript": "^5.3.3",
     "vite-plugin-react-svg": "^0.2.0"

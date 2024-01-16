@@ -1,0 +1,28 @@
+.wrapp{
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr; 
+    gap: 1px 0px; 
+    grid-template-areas: 
+      "side content content content"
+      "side content content content"
+      "side content content content"; 
+      /* border: 2px solid blue; */
+      overflow: hidden;
+      /* padding-bottom: 1rem; */
+}
+
+.side{
+    height: 100%;
+    width: 100%;
+    grid-area: side; 
+}
+.content{
+    background:#f4f6ff;
+    /* height: 500px; */
+    /* height: 100%; */
+    width:100%;
+    grid-area: content;
+
+
+}
