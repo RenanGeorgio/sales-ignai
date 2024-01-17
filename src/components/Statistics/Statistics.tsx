@@ -6,6 +6,8 @@ import chart from '../../components/Image/chart-pie-2.svg';
 import money from '../../components/Image/currency-dollar.svg';
 import brief from '../../components/Image/briefcase.svg';
 import message from '../../components/Image/message-dots.svg';
+import chart1 from '../../components/Image/Chart.svg';
+import chart2 from '../../components/Image/Chart2.svg';
 
 interface StatisticsComponentProps {
   
@@ -82,24 +84,26 @@ const StatisticsComponent: React.FC<StatisticsComponentProps> = () => {
       </div>
 
       <div className="additional-items-container">
-        <div className="additional-item">
-          <div className="number-label-container">
-            <h3 className="number-statistics">Sales</h3>
-            <h4 className="label">Last Year</h4>
-            <h4 className="number-statistics">175k</h4>
-            <div className="number-porcentage">
-              <h4>-16.2%</h4>
+        <div className="custom-additional-item">
+          <div className="custom-number-label-container">
+            <h3 className="custom-number-statistics">Sales</h3>
+            <h4 className="custom-label">Last Year</h4>
+            <img src={chart2} alt="Gráfico" className="custom-chart-image" />
+            <h4 className="custom-number-statistics-left">175k</h4>
+            <div className="custom-number-porcentage">
+              <h4 className="custom-porcentage-text">-16.2%</h4>
             </div>
           </div>
         </div>
 
-        <div className="additional-item">
-          <div className="number-label-container">
-            <h3 className="number-statistics">Sessions</h3>
-            <h4 className="label">This Month</h4>
-            <h4 className="number-statistics">45.1k</h4>
-            <div className="number-porcentage">
-              <h4>+12.6%</h4>
+        <div className="custom-additional-item">
+          <div className="custom-number-label-container">
+            <h3 className="custom-number-statistics">Sessions</h3>
+            <h4 className="custom-label">This Month</h4>
+            <img src={chart1} alt="Gráfico" className="custom-chart-image-2" />
+            <h4 className="custom-number-statistics-left-2">45.1k</h4>
+            <div className="custom-number-porcentage">
+              <h4 className="custom-porcentage-text-2">+12.6%</h4>
             </div>
           </div>
         </div>
@@ -129,16 +133,15 @@ const StatisticsComponent: React.FC<StatisticsComponentProps> = () => {
         </div>
         
         <div className="additional-item">
-          <div className="number-label-container">
-            <h3 className="number-statistics">Revenue Growth</h3>
+          <div className="number-label">
+            <h3 className="number-label-statistics">Revenue Growth</h3>
             <h4 className="label">Weekly Report</h4>
-            <h2 className="number-statistics">$4,673</h2>
+            <h2 className="number-label-statistics">$4,673</h2>
             <div className="number-porcentage">
               <h4>+15.2%</h4>
             </div>
           </div>
         </div>
-        
       </div>
     </div>
   );
