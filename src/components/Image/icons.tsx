@@ -63,7 +63,7 @@ export const Photo = ({
 };
 
 export const Phone = ({
-  className
+ 
 }) => {
   return (
     <div >
@@ -124,7 +124,7 @@ export const DotsVertical = ({
   return (
     <div >
 
-      <svg class="dots-vertical" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg className={className} width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="10.9999" cy="10.9997" r="0.916667" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
         <circle cx="10.9999" cy="10.9997" r="0.916667" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
         <circle cx="10.9999" cy="17.4167" r="0.916667" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -132,6 +132,102 @@ export const DotsVertical = ({
         <ellipse cx="10.9999" cy="4.58366" rx="0.916667" ry="0.916667" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
         <ellipse cx="10.9999" cy="4.58366" rx="0.916667" ry="0.916667" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
       </svg>
+
+    </div>
+  );
+};
+
+
+export const Upload = ({ className, ...props }) => {
+  return (
+    <svg
+      className={"upload " + className}
+      width="28"
+      height="28"
+      viewBox="0 0 28 28"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M4.6665 19.833V22.1663C4.6665 23.455 5.71117 24.4997 6.99984 24.4997H20.9998C22.2885 24.4997 23.3332 23.455 23.3332 22.1663V19.833"
+        stroke="#4B465C"
+        strokeWidth="1.75"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M4.6665 19.833V22.1663C4.6665 23.455 5.71117 24.4997 6.99984 24.4997H20.9998C22.2885 24.4997 23.3332 23.455 23.3332 22.1663V19.833"
+        stroke="white"
+        strokeOpacity="0.2"
+        strokeWidth="1.75"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M8.1665 10.5003L13.9998 4.66699L19.8332 10.5003"
+        stroke="#4B465C"
+        strokeWidth="1.75"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M8.1665 10.5003L13.9998 4.66699L19.8332 10.5003"
+        stroke="white"
+        strokeOpacity="0.2"
+        strokeWidth="1.75"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M13.9998 4.66699V18.667"
+        stroke="#4B465C"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M13.9998 4.66699V18.667"
+        stroke="white"
+        strokeOpacity="0.2"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+
+export const Trash = ({
+  className
+}) => {
+  return (
+    <div >
+<svg className={className}  width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="trash">
+<path id="Path" d="M3.6665 6.41634H18.3332" stroke="#A8AAAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Path_2" d="M9.16683 10.083V15.583" stroke="#A8AAAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Path_3" d="M12.8333 10.083V15.583" stroke="#A8AAAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Path_4" d="M4.5835 6.41699L5.50016 17.417C5.50016 18.4295 6.32097 19.2503 7.3335 19.2503H14.6668C15.6794 19.2503 16.5002 18.4295 16.5002 17.417L17.4168 6.41699" stroke="#A8AAAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Path_5" d="M8.25 6.41667V3.66667C8.25 3.16041 8.66041 2.75 9.16667 2.75H12.8333C13.3396 2.75 13.75 3.16041 13.75 3.66667V6.41667" stroke="#A8AAAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>
+
+    </div>
+  );
+};
+
+export const Pencil = ({
+  className
+}) => {
+  return (
+    <div >
+      <svg className={className}  width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="pencil">
+<path id="Path" d="M3.6665 18.3333H7.33317L16.9582 8.70829C17.9707 7.69576 17.9707 6.05414 16.9582 5.04162C15.9456 4.0291 14.304 4.0291 13.2915 5.04162L3.6665 14.6666V18.3333" stroke="#A8AAAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Path_2" d="M12.375 5.95801L16.0417 9.62467" stroke="#A8AAAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>
 
     </div>
   );

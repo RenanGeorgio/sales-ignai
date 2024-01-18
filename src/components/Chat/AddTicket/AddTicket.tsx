@@ -1,56 +1,76 @@
 import React from 'react';
 import './addticket.css'; 
+import { DotsVertical, Pencil, Trash, Upload } from '../../Image/icons';
 
 
-export default function AddTicket() {
+export default function AddTicket({onUploadFile, onSetShow}) {
+
+  const handleFileUpload = (file) => {
+    // Aqui você pode fazer algo com o arquivo, como enviar para o servidor
+    console.log('Arquivo enviado:', file);
+
+    // Se você quiser notificar o componente Treatment sobre o upload, chame a função
+    if (onUploadFile) {
+      onUploadFile(file);
+    }
+  };
   return (
     <div className='main-container'>
+
       <div className='box'>
-        <div className='group'>
-          <div className='box-2'>
-            <span className='text'>Atendimento via:</span>
+
+        <div className='section'>
+          <div className='section-3'>
+            <span className='text-2'>Atendimento via:</span>
           </div>
         </div>
+
         <div className='section'>
-          <div className='wrapper'>
+          <div className='section-3'>
             <span className='text-2'>Cliente:</span>
           </div>
         </div>
-        <div className='section-2'>
+
+        <div className='section'>
           <div className='section-3'>
-            <span className='text-3'>Responsável:</span>
+            <span className='text-2'>Responsável:</span>
           </div>
         </div>
+
       </div>
+
       <div className='group-2'>
-        <div className='section-4'>
+        {/* primeiro select  */}
+        <div className='group-3'>
           <div className='wrapper-2'>
-            <div className='section-5'>
-              <span className='text-4'>Telefone</span>
-              <div className='img' />
-            </div>
+            <select className='section-5'>
+              <option selected className='text-4'>Telefone</option>
+            </select>
           </div>
         </div>
+
+        {/* segundo select  */}
         <div className='group-3'>
           <div className='wrapper-3'>
-            <div className='group-4'>
-              <span className='text-5'>Queiroz Galvão</span>
-              <div className='img-2' />
-            </div>
+            <select className='group-4'>
+              <option selected className='text-5'>Queiroz Galvão</option>
+            </select>
           </div>
         </div>
-        <div className='group-5'>
+
+        {/* terceiro select  */}
+        <div className='group-3'>
           <div className='wrapper-4'>
-            <div className='box-3'>
-              <span className='text-6'>Roberto Almeidal</span>
-              <div className='pic' />
-            </div>
+            <select className='box-3'>
+              <option selected className='text-6'>Roberto Almeida</option>
+            </select>
           </div>
         </div>
       </div>
+
       <div className='wrapper-5'>
         <div className='wrapper-6'>
-          <div className='img-3' />
+          {/* <div className='img-3' /> */}
           <div className='group-6'>
             <div className='box-4'>
               <div className='wrapper-7'>
@@ -60,54 +80,66 @@ export default function AddTicket() {
               </div>
             </div>
             <div className='section-6'>
-              <span className='text-a'>Cliente: Queiroz Galvão </span>
+              <span className='text-focused'>Cliente: Queiroz Galvão </span>
             </div>
-            <span className='text-b'>
+            <span className='text-address'>
               23 Shatinon Mekalan, CEP 29065-616, Brasil
             </span>
           </div>
           <div className='wrapper-8'>
             <div className='wrapper-9'>
               <div className='section-7'>
-                <div className='pic-2' />
+                <div className='pic-2'>
+                  <Pencil className={undefined} />
+                  </div>
               </div>
             </div>
             <div className='group-7'>
               <div className='section-8'>
-                <div className='img-4' />
+                <div className='img-4'>
+                  <Trash className={undefined}/>
+                  </div>
               </div>
             </div>
             <div className='wrapper-a'>
               <div className='group-8'>
-                <div className='img-5' />
+                <div className='img-5'>
+                  <DotsVertical className={undefined}/>
+                  </div>
               </div>
             </div>
           </div>
         </div>
-        <div className='img-6' />
+        {/* <div className='img-6' /> */}
         <div className='box-5'>
           <div className='box-6'>
-            <div className='pic-3' />
+            {/* <div className='pic-3' /> */}
             <div className='wrapper-b'>
               <span className='text-c'>Assunto: Atraso no pedido</span>
               <span className='text-d'>Data 17/10/2023 - Hora: 17:55</span>
             </div>
             <div className='section-9'>
-              <div className='wrapper-c'>
-                <div className='group-9'>
-                  <div className='pic-4' />
-                </div>
+            <div className='wrapper-9'>
+              <div className='section-7'>
+                <div className='pic-2'>
+                  <Pencil className='pic2' />
+                  </div>
               </div>
-              <div className='group-a'>
-                <div className='group-b'>
-                  <div className='img-7' />
-                </div>
+            </div>
+              <div className='group-7'>
+              <div className='section-8'>
+                <div className='img-4'>
+                  <Trash className={undefined}/>
+                  </div>
               </div>
-              <div className='box-7'>
-                <div className='group-c'>
-                  <div className='pic-5' />
-                </div>
+            </div>
+              <div className='wrapper-a'>
+              <div className='group-8'>
+                <div className='img-5'>
+                  <DotsVertical className={undefined}/>
+                  </div>
               </div>
+            </div>
             </div>
           </div>
           <div className='group-d'>
@@ -118,37 +150,27 @@ export default function AddTicket() {
               Time de logística foi contatado e informou que será enviado em 2
               dias úteis.
             </span>
-            <div className='group-e'>
-              <div className='section-a'>
-                <div className='group-f'>
-                  <div className='pic-6' />
+            <div className='card-heading'>
+              <div className='form'>
+                <div className='container-image-upload'>
+                  <div className='image-upload'><Upload className={undefined}/></div>
                 </div>
+
                 <span className='text-10'>Jogue aqui seu arquivo</span>
                 <span className='text-11'>ou</span>
-                <div className='section-b'>
-                  <div className='section-c'>
-                    <span className='text-12'>Buscar arquivo</span>
-                  </div>
+
+                <div className='buttonContainerInput'>            
+                <input type="file"
+                className='inputs'
+                 onClick={() => handleFileUpload()} 
+                 />
+                <span className='attachFileSpan'>Buscar Arquivo</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className='img-8' />
-        <div className='box-8'>
-          <div className='group-10'>
-            <span className='text-13'>Escreva sua mensagem aqui…</span>
-            <div className='section-d'>
-              <div className='img-9' />
-              <div className='img-a' />
-              <div className='wrapper-d'>
-                <div className='wrapper-e'>
-                  <span className='text-14'>Enviar</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+       
       </div>
     </div>
   );

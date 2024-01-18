@@ -1,38 +1,41 @@
-import React from "react";
-import { Avatar } from "./Avatar";
-// import { Badge } from "../../components/Badge";
-// import { Form } from "../../components/Form";
-// import { LabelInitials } from "../../components/LabelInitials";
-// import { StatusIndicator } from "../../components/StatusIndicator";
-// import { ChevronDown1 } from "../../icons/ChevronDown1";
-// import { ChevronDown2 } from "../../icons/ChevronDown2";
-// import { PhoneCall1 } from "../../icons/PhoneCall1";
-// import { PhoneCall3 } from "../../icons/PhoneCall3";
-// import { Search1 } from "../../icons/Search1";
-// import "./leftmenu.css";
+import React,{useState} from "react";
 import './leftmenu.css'
-import { Form } from "semantic-ui-react";
 import { Phone } from "../Image/icons";
+import AddTicket from "./AddTicket/AddTicket"; 
 
-export const LeftMenu = () => {
+export const LeftMenu = ({onAddTicketClick}) => {
+  const [openPage, setOpenPage] = useState(false); 
+  const [openTicket, setOpenTicket] = useState(false); 
+  const [showAddTicket, setShowAddTicket] = useState(false);
+
+
+  const toggleAddTicket = () => {
+    setShowAddTicket(!showAddTicket);
+    onAddTicketClick()
+    
+  };
+
   return (
     <div className="left-menu">
       <header className="header-left">
-        {/* <StatusIndicator
-          avatarAvatar="https://c.animaapp.com/5uY2Jqwr/img/avatar-14@2x.png"
-          avatarBackgroundClassName="design-component-instance-node"
-          className="status-indicator-instance"
-          size="thirty-eight"
-          status="online"
-        /> */}
         <img className="icon-instance-node" src="https://c.animaapp.com/5uY2Jqwr/img/avatar-14@2x.png"/>
         <input className="instance"placeholder="Search for contact..."/>
       </header>
       <div className="div-3">
         <div className="heading">
-          <div className="adicionar-ticket">Adicionar&nbsp;&nbsp;ticket</div>
-          <Phone className="phone-call" />
-          {/* <ChevronDown2 className="chevron-down" /> */}
+
+        <button
+            style={{ width: '100%' }}
+            className={showAddTicket ? 'blueButtonTicket' : 'grayButtonTicket'}
+            onClick={toggleAddTicket}
+          >
+        Adicionar&nbsp;&nbsp;ticket
+          <span className="phoneCall">
+
+          <Phone />
+          </span>
+        </button>
+        
         </div>
         <div className="heading-2">
           <div className="text-wrapper-3">Clientes</div>

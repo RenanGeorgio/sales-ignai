@@ -3,9 +3,9 @@ import Navbar from '../../components/Navbar';
 import usersImage from '../../components/Image/users.svg';
 import sino from '../../components/Image/bell.svg';
 import fileTextImage from '../../components/Image/file-text.svg';
-import { Treatment } from '../../components/Chat/Treatment';
+// import { Treatment } from '../../components/Chat/Treatment';
 import '../../styles/forms.css'; 
-import { LeftMenu } from '../../components/Chat/LeftMenu';
+// import { LeftMenu } from '../../components/Chat/LeftMenu';
 import Layout from '../../components/Layout/Layout';
 
 const Chat: React.FC = () => {

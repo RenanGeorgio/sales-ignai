@@ -154,7 +154,7 @@ display: grid;
   display: flex;
   gap: 5px;
   margin-left: 6%;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
   
 .blueButton {
@@ -168,6 +168,8 @@ display: grid;
   cursor: pointer; 
   align-items: center;
 }
+
+
 
 .grayButton {
   background-color: rgba(168, 170, 174, 0.397);

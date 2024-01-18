@@ -1,29 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Sidebar from '../Sidebar'
 import Chat from '../../pages/Chat'
 import { Treatment } from '../Chat/Treatment'
 import { LeftMenu } from '../Chat/LeftMenu'
 import './layout.css'
+import AddTicket from '../Chat/AddTicket/AddTicket'
 
-export default function Layout() {
+export default function Layout({props}) {
+  const [showAddTicket, setShowAddTicket] = useState(false);
+  const toggleAddTicket = () => {
+    setShowAddTicket(!showAddTicket);
+  };
   return (
-    <div 
-    // style={{display:'flex', justifyContent:'space-around'}}
-    className='wrapp'
-    >
-        <div  className='side'
-        // style={{width:'30%'}}
-        >
-        <LeftMenu/>
+    <div className='wrapp' >
+        <div  className='side'>
+        <LeftMenu onAddTicketClick={toggleAddTicket} />
         </div>
-        <div 
-        // style={{width:'70%'}}
-        className='content'
-        >        
-        <Treatment/>
+        <div  className='content'>        
+        <Treatment toggleAddTicket={showAddTicket}/>
             </div>
-        {/* <Sidebar />
-        <Chat/> */}
     </div>
   )
 }
