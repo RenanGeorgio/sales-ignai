@@ -15,28 +15,28 @@ const Graph4: React.FC<GraphProps> = ({ month }) => {
         <h4>Páginas</h4>
         <h4>Clicks</h4>
       </div>
-      <div className="data-row">
+      <div className="data-row-4">
         <div className="data-item">
           <img src={avatar} alt="Google" className="avatar-img" />
           <span className="data-text">Google</span>
           <span className="data-number">33</span>
         </div>
       </div>
-      <div className="data-row">
+      <div className="data-row-4">
         <div className="data-item">
           <img src={avatar} alt="Facebook" className="avatar-img" />
           <span className="data-text">Facebook</span>
           <span className="data-number">30</span>
         </div>
       </div>
-      <div className="data-row">
+      <div className="data-row-4">
         <div className="data-item">
           <img src={avatar} alt="Instagram" className="avatar-img" />
           <span className="data-text">Instagram</span>
           <span className="data-number">12</span>
         </div>
       </div>
-      <div className="data-row">
+      <div className="data-row-4">
         <div className="data-item">
           <img src={avatar} alt="LinkedIn" className="avatar-img" />
           <span className="data-text">LinkedIn</span>

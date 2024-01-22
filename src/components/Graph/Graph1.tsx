@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../styles/dashboard.css'; 
 import arrow from '../../components/Image/arrow-up-circle.svg';
+
 interface Graph1Props {
   month: string;
 }
@@ -8,10 +9,10 @@ interface Graph1Props {
 const Graph1: React.FC<Graph1Props> = ({ month }) => {
   const totalPercentage = 100;
   const userData = [
-    { percentage: 20, color: 'rgba(255, 99, 132, 0.5)' },
-    { percentage: 10, color: 'rgba(54, 162, 235, 0.5)' },
-    { percentage: 20, color: 'rgba(255, 205, 86, 0.5)' },
-    { percentage: 50, color: 'rgba(75, 192, 192, 0.5)' },
+    { percentage: 20, color: 'rgba(248, 247, 250, 1)' },
+    { percentage: 10, color: 'rgba(115, 103, 240, 1)' },
+    { percentage: 20, color: 'rgba(0, 207, 232, 1)' },
+    { percentage: 50, color: 'rgba(134, 146, 208, 1)' },
   ];
 
   let currentLeft = 0;
