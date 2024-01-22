@@ -159,6 +159,7 @@
     padding: 10px 16px;
     /* position: fixed; */
     width: 100%;
+    border-bottom: #333 1px solid;
   }
   .div-content{
     overflow-y: scroll;
@@ -414,6 +415,10 @@
     gap: 213px;
     padding: 10px 16px;
     position: relative;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-bottom: #333 1px solid;
+    border-top: #333 1px solid;
     width: 100%;
   }
   
