@@ -1,0 +1,94 @@
+/* styles.css */
+.last-transaction-container {
+  display: flex;
+  justify-content: space-between; 
+  margin-left: 7%;
+  max-width: 100%; 
+}
+
+.last-transaction {
+  flex: 1;
+  overflow-x: auto;
+  box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.2);
+  max-width: 650px; 
+  max-height: 394px; 
+}
+
+.last-transaction h3 {
+  margin-left: 25px;
+  margin-top: 25px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+  border: 1px solid #ddd; 
+}
+
+td {
+  border: none; 
+}
+
+.activity-timeline {
+  flex: 1; 
+  box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.2);
+  max-width: 650px;
+  max-height: 394px;  
+  margin-right: 25px; 
+}
+
+.activity-container {
+  display: flex;
+  align-items: center;
+  margin-top: 0px;
+  margin-left: 25px;
+}
+
+.activity-container img {
+  margin-right: 10px;
+}
+
+.activity-timeline div {
+  margin-bottom: 5px;
+}
+
+.activity-timeline img {
+  margin-right: 10px;
+}
+
+.activity-timeline div img {
+  margin-right: 10px;
+}
+
+.activity-timeline div h4 {
+  display: inline-block;
+  margin-right: 10px;
+}
+  
+.header-container{
+    display: flex;
+    text-align: right;
+    margin-left: 25px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.activity-container div {
+   display: flex;
+   align-items: center;
+}
+
+.activity-container div h4 {
+   display: inline-block;
+   margin-right: 10px;
+}
