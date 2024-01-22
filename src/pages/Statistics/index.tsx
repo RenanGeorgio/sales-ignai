@@ -4,6 +4,7 @@ import '../../styles/statistics.css';
 import StatisticsComponent from '../../components/Statistics/Statistics';
 import GraphSource from '../../components/Graph/GraphSource';
 import GraphRadar from '../../components/Graph/GraphRadar';
+import StatisticsStatus from '../../components/Statistics/StatisticsStatus';
 
 const Statistics: React.FC = () => {
   const [activePage, setActivePage] = useState('Estatísticas'); 
@@ -54,6 +55,7 @@ const Statistics: React.FC = () => {
               <GraphRadar />
             </div>
           </div>
+          <StatisticsStatus />
         </>
       )}
       {activePage === 'Mês' && (

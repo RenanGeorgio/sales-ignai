@@ -378,6 +378,30 @@
   color: rgba(23, 189, 8, 0.8);
 }
 
+.larger-number {
+  font-size: 24px; 
+  margin-bottom: 15px;
+  margin-top: 50px;
+}
+
+.green-percent {
+  color: rgba(13, 151, 0, 0.8); 
+  text-align: center;
+}
+
+.revenue-growth-container {
+  margin-top: 0px; 
+}
+
+.green-percent{
+  background-color: #777;
+  width: 55px;
+  background-color: rgb(148, 226, 161);
+  width: 80px;
+  height: 23px;
+  border-radius: 10px;
+}
+
 @media screen and (max-width: 600px) {
   .statistics-item {
     flex-direction: column;

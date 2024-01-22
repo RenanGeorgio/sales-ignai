@@ -132,12 +132,12 @@ const StatisticsComponent: React.FC<StatisticsComponentProps> = () => {
           </div>
         </div>
         
-        <div className="additional-item">
+        <div className="additional-item revenue-growth-container">
           <div className="number-label">
             <h3 className="number-label-statistics">Revenue Growth</h3>
             <h4 className="label">Weekly Report</h4>
-            <h2 className="number-label-statistics">$4,673</h2>
-            <div className="number-porcentage">
+            <h2 className="number-label-statistics larger-number">$4,673</h2>
+            <div className="green-percent">
               <h4>+15.2%</h4>
             </div>
           </div>
