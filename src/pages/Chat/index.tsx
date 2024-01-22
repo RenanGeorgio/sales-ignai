@@ -6,7 +6,8 @@ import fileTextImage from '../../components/Image/file-text.svg';
 // import { Treatment } from '../../components/Chat/Treatment';
 import '../../styles/forms.css'; 
 // import { LeftMenu } from '../../components/Chat/LeftMenu';
-import Layout from '../../components/Layout/Layout';
+import Layout from '../../components/Layout/ChatLayout';
+import History from '../../components/Layout/HistoryLayout';
 
 const Chat: React.FC = () => {
   const [activePage, setActivePage] = useState('Formulário'); 
@@ -52,12 +53,13 @@ const Chat: React.FC = () => {
         <div >
           {/* <h1 style={{marginLeft: '10%'}}>Atendimento</h1> */}
           {/* <Treatment/> */}
-          <Layout/>
+          <Layout props={undefined}/>
         </div>
       )}
       {activePage === 'Histórico' && (
         <>
-          <h1 style={{marginLeft: '10%'}}>Histórico</h1>
+          {/* <h1 style={{marginLeft: '10%'}}>Histórico</h1> */}
+          <History />
         </>
       )}
       {activePage === 'Painel' && (

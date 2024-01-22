@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import Sidebar from '../Sidebar'
-import Chat from '../../pages/Chat'
-import { Treatment } from '../Chat/Treatment'
-import { LeftMenu } from '../Chat/LeftMenu'
+import Sidebar from '../../Sidebar'
+import Chat from '../../../pages/Chat'
+import { Treatment } from '../../Chat/Treatment'
+import { LeftMenu } from '../../Chat/LeftMenu'
 import './layout.css'
-import AddTicket from '../Chat/AddTicket/AddTicket'
+import AddTicket from '../../Chat/AddTicket/AddTicket'
 
-export default function Layout({props}) {
+export default function LayoutChat({props}) {
   const [showAddTicket, setShowAddTicket] = useState(false);
   const toggleAddTicket = () => {
     setShowAddTicket(!showAddTicket);

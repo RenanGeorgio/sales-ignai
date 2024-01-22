@@ -3,6 +3,7 @@ import { Phone, Search, Video, DotsVertical } from "../Image/icons";
 import ListarMensagens from "./MessegerPayload";
 import TextEnter from "./TextEnter";
 import AddTicket from "./AddTicket/AddTicket";
+import { IconButton } from "@mui/material";
 
 export const Treatment = ({toggleAddTicket}): React.JSX.Element => {
 
@@ -27,15 +28,14 @@ export const Treatment = ({toggleAddTicket}): React.JSX.Element => {
         </div>
         <div className="rightContainer">
           <div className="rightContent">
-            <div><Phone /></div>
-            <div><Video className={undefined} /></div>
-            <div><Search className={undefined} /></div>
-            <div><DotsVertical className={undefined} /></div>
+            <IconButton className='img-4'><Phone /></IconButton>
+            <IconButton className='img-4'><Video className={undefined} /></IconButton>
+            <IconButton className='img-4'><Search className={undefined} /></IconButton>
+            <IconButton className='img-4'><DotsVertical className={undefined} /></IconButton>
           </div>
         </div>
       </div>
       <div className="chat">
-        {/* <AddTicket /> */}
         {toggleAddTicket ? <AddTicket onUploadFile={handleFileUpload} onSetShow={setShowAddTicket}/> :''}
         <TextEnter onEnviarMensagem={adicionarMensagem} />
       </div>

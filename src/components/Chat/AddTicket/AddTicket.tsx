@@ -1,6 +1,7 @@
 import React from 'react';
 import './addticket.css'; 
 import { DotsVertical, Pencil, Trash, Upload } from '../../Image/icons';
+import { IconButton } from '@mui/material';
 
 
 export default function AddTicket({onUploadFile, onSetShow}) {
@@ -88,24 +89,24 @@ export default function AddTicket({onUploadFile, onSetShow}) {
           </div>
           <div className='wrapper-8'>
             <div className='wrapper-9'>
-              <div className='section-7'>
-                <div className='pic-2'>
+              <div className='section-7'>           
+                  <IconButton className='pic-2'>
                   <Pencil className={undefined} />
-                  </div>
+                  </IconButton>           
               </div>
             </div>
             <div className='group-7'>
               <div className='section-8'>
-                <div className='img-4'>
+                <IconButton className='img-4'>
                   <Trash className={undefined}/>
-                  </div>
+                  </IconButton>
               </div>
             </div>
             <div className='wrapper-a'>
               <div className='group-8'>
-                <div className='img-5'>
+                <IconButton className='img-5'>
                   <DotsVertical className={undefined}/>
-                  </div>
+                  </IconButton>
               </div>
             </div>
           </div>
@@ -121,23 +122,23 @@ export default function AddTicket({onUploadFile, onSetShow}) {
             <div className='section-9'>
             <div className='wrapper-9'>
               <div className='section-7'>
-                <div className='pic-2'>
+                <IconButton className='pic-2'>
                   <Pencil className='pic2' />
-                  </div>
+                  </IconButton>
               </div>
             </div>
               <div className='group-7'>
               <div className='section-8'>
-                <div className='img-4'>
+                <IconButton className='img-4'>
                   <Trash className={undefined}/>
-                  </div>
+                  </IconButton>
               </div>
             </div>
               <div className='wrapper-a'>
               <div className='group-8'>
-                <div className='img-5'>
+                <IconButton className='img-5'>
                   <DotsVertical className={undefined}/>
-                  </div>
+                  </IconButton>
               </div>
             </div>
             </div>
