@@ -114,7 +114,11 @@
   cursor: pointer;
 }
 
-.data-row {
+.data-row-themes {
+  margin-bottom: -20px;
+}
+
+.data-row-4 {
   margin-bottom: -20px;
 }
 

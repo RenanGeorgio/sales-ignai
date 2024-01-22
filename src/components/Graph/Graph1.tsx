@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../styles/dashboard.css'; 
 import arrow from '../../components/Image/arrow-up-circle.svg';
+
 interface Graph1Props {
   month: string;
 }

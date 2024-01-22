@@ -19,7 +19,7 @@ const GraphThemes: React.FC<GraphThemesProps> = ({ month }) => {
       <h3 className="graph-title">Temas de atendimento</h3>
       <h4 className='graph-subtitle'>12% increase in this month</h4>
       <div className="menu-icon-themes">&#8942;</div>
-      <div className="data-row">
+      <div className="data-row-themes">
         <div className="data-item">
           <img src={packageImg} alt="Google" className="avatar-img" />
           <span className="data-text">Problemas com pedido</span>
@@ -30,7 +30,7 @@ const GraphThemes: React.FC<GraphThemesProps> = ({ month }) => {
           <span className="data-number">200</span>
         </div>
       </div>
-      <div className="data-row">
+      <div className="data-row-themes">
         <div className="data-item">
           <img src={truck} alt="Facebook" className="avatar-img" />
           <span className="data-text">Problemas com transporte</span>
@@ -41,7 +41,7 @@ const GraphThemes: React.FC<GraphThemesProps> = ({ month }) => {
           <span className="data-number">150</span>
         </div>
       </div>
-      <div className="data-row">
+      <div className="data-row-themes">
         <div className="data-item">
           <img src={circle} alt="Instagram" className="avatar-img" />
           <span className="data-text">Pedido entregue no prazo</span>
@@ -52,7 +52,7 @@ const GraphThemes: React.FC<GraphThemesProps> = ({ month }) => {
           <span className="data-number">100</span>
         </div>
       </div>
-      <div className="data-row">
+      <div className="data-row-themes">
         <div className="data-item">
           <img src={percentage} alt="LinkedIn" className="avatar-img" />
           <span className="data-text">Preço do produto</span>
@@ -63,7 +63,7 @@ const GraphThemes: React.FC<GraphThemesProps> = ({ month }) => {
           <span className="data-number">95</span>
         </div>
       </div>
-      <div className="data-row">
+      <div className="data-row-themes">
         <div className="data-item">
           <img src={clock} alt="LinkedIn" className="avatar-img" />
           <span className="data-text">Tempo de entrega</span>
@@ -74,7 +74,7 @@ const GraphThemes: React.FC<GraphThemesProps> = ({ month }) => {
           <span className="data-number">20</span>
         </div>
       </div>
-      <div className="data-row">
+      <div className="data-row-themes">
         <div className="data-item">
           <img src={users} alt="LinkedIn" className="avatar-img" />
           <span className="data-text">Satisfação do cliente</span>
