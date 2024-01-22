@@ -3,6 +3,7 @@
   justify-content: space-between;
   box-sizing: border-box;
   flex-wrap: wrap; 
+  margin-top: 25px;
 }
 
 .dashboard-section {
@@ -18,11 +19,23 @@
   box-sizing: border-box;
   margin-bottom: 20px;
   margin-left: 4%; 
+  height: 100%;
+  min-height: 450px;
+} 
+
+.subtitle-status{
+  margin-top: -10px;
+}
+
+.vector {
+  height: 200px;
+  width: 97%;
+  margin-bottom: -60px;
 }
 
 .dashboard-section:nth-child(2) {
   margin: auto;
-  margin-top: -31%;
+  margin-top: -33%;
   margin-right: 31.5%;
 }
 
@@ -52,24 +65,131 @@
 
 .dashboard-section:nth-child(2) .container-footer {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column; 
 }
 
-.container-footer p,
-.container-footer span {
-  display: inline-block;
-  margin: 0;
+.dashboard-section:nth-child(2) .container-footer-item {
+  margin-bottom: 10px;
 }
 
-.container-footer span {
-  margin-left: 10px; 
+.container-footer-item .footer-amounts {
+  display: flex;
+  align-items: center; 
+  justify-content: flex-end;
+  margin-top: 0; 
+}
+
+.dashboard-section:nth-child(2) .container-footer-item p.footer-label {
+  margin: 0; 
+  margin-left: 20px; 
+}
+
+.dashboard-section:nth-child(2) .container-footer-item div p,
+.dashboard-section:nth-child(2) .container-footer-item div span {
+  margin-left: auto;
+  flex-direction: row;
+}
+
+.dashboard-section:nth-child(2) .container-footer-item span {
+  margin-left: auto;
+}
+
+.container-footer-item .footer-amounts p {
+  margin: 0; 
+  display: flex;
+  text-align: right;
+  align-items: flex-end;
+  left: 100%;
+  flex-direction: row;
+  margin-top: -3%;
+  margin-right: 10px;
+}
+
+.container-footer-item .footer-amounts span {
+  display: flex;
+  margin-left: auto; 
+  text-align: right;
+  order: 2; 
+  margin-right: 20px;
+  margin-top: -3%;
+}
+
+.container-inicial-dollar span {
+  text-align: right;
+}
+
+.earnings-percentage {
+  margin-left: auto;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  margin-top: -10%;
+  color: rgba(40, 199, 111, 1);
+}
+
+.earnings-info {
+  display: flex;
+  align-items: flex-start;
+  margin-right: auto; 
+  margin-left: 25px;
+}
+
+.earnings-info img {
+  margin-right: 10px; 
+  width: 34px;
+  height: 34px;
+  margin-top: 5px;
+  color: rgba(255, 159, 67, 1);
+}
+
+.earnings-info div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  text-align: left;
+}
+
+.earnings-info div span {
+  margin-top: 0px;
+  font-size: 20px;
+  font: Public Sans;
+  color: rgba(75, 70, 92, 1);
+}
+
+.earnings-info div p {
+  margin-top: 0px;
+  font-size: 15px;
+  font: Public Sans;
+  color: rgb(95, 93, 102);
+  width: 150px;
 }
 
 .dashboard-section:nth-child(3) {
   margin-left: auto;
-  margin-top: -12%;
+  margin-top: -31.5%;
   margin-right: -2%;
+}
+
+.dashboard-section:nth-child(2) .container-footer-item .footer-amounts {
+  display: flex;
+  align-items: center; 
+  justify-content: flex-end; 
+}
+
+.dashboard-section:nth-child(2) .container-footer-item .footer-amounts p.footer-label {
+  margin: 0;  
+}
+
+.dashboard-section:nth-child(2) .container-footer-item .footer-amounts p,
+.dashboard-section:nth-child(2) .container-footer-item .footer-amounts span {
+  margin-left: auto;
+  flex-direction: row;
+}
+
+.dashboard-section:nth-child(2) .container-footer-item .footer-amounts span {
+  display: flex;
+  margin-left: 10px;
+  text-align: right;
+  order: 2; 
 }
 
 .dashboard-section h3 {

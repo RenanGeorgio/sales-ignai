@@ -18,7 +18,7 @@ import ReactIcon from '../../components/Image/ReactIcon.png';
 import laravelLogo from '../../components/Image/laravel-logo.png';
 import figmaLogo from '../../components/Image/Figma-logo.svg';
 import BootStrapLogo from '../../components/Image/BootstrapLogo.png';
-import dollar from '../../components/Image/file-dollar.svg';
+import dollar from '../../components/Image/currency-dollar.svg';
 import vector from '../../components/Image/vector.svg';
 
 interface StatisticsStatusProps {}
@@ -26,10 +26,9 @@ interface StatisticsStatusProps {}
 const StatisticsStatus: React.FC<StatisticsStatusProps> = () => {
   return (
     <div className="dashboard-container">
-      {/* Primeira div */}
       <div className="dashboard-section">
-        <h3>Browser States</h3>
-        <p>Counter 2022</p>
+        <h3 className="title-status">Browser States</h3>
+        <p className="subtitle-status">Counter 2022</p>
 
         <div className="content-row">
           <div className="content-item">
@@ -85,29 +84,32 @@ const StatisticsStatus: React.FC<StatisticsStatusProps> = () => {
           </div>
         </div>
 
-        
       </div>
 
-      {/* Segunda div */}
       <div className="dashboard-section">
         <h3>Project Status</h3>
-        <p>Your Earnings</p>
-        <div className="content-row">
-          <div className="content-item">
-            <div className="container-inicial-dollar">
-              <img src={dollar} alt='Dollar'/>
+        <div className="container-inicial-dollar">
+          <div className="earnings-info">
+            <img src={dollar} alt="Dollar" />
+            <div>
               <span>$4,3742</span>
-              <span>+10.2%</span>
               <p>Your Earnings</p>
             </div>
-            <img src={vector} alt='Vector' />
-            <div className="container-footer">
-              <p>Donates</p>
+          </div>
+          <span className="earnings-percentage">+10.2%</span>
+        </div>
+        <img src={vector} alt="Vector" className="vector"/>
+        <div className="container-footer">
+          <div className="container-footer-item">
+            <p className="footer-label">Donates</p>
+            <div className="footer-amounts">
               <p>$756.26</p>
               <span className="red-percentage">-139.34</span>
             </div>
-            <div className="container-footer">
-              <p>Podcasts</p>
+          </div>
+          <div className="container-footer-item">
+            <p className="footer-label">Podcasts</p>
+            <div className="footer-amounts">
               <p>$2,207.03</p>
               <span className="green-percentage">+576.24</span>
             </div>
@@ -115,10 +117,9 @@ const StatisticsStatus: React.FC<StatisticsStatusProps> = () => {
         </div>
       </div>
 
-      {/* Terceira div */}
       <div className="dashboard-section">
         <h3>Active Projects</h3>
-        <p>72 completed</p>
+        <p className="subtitle-status">72 completed</p>
 
         <div className="content-row-3">
           <div className="content-item-3">
