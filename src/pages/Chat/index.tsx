@@ -3,11 +3,18 @@ import Navbar from '../../components/Navbar';
 import usersImage from '../../components/Image/users.svg';
 import sino from '../../components/Image/bell.svg';
 import fileTextImage from '../../components/Image/file-text.svg';
+// import { Treatment } from '../../components/Chat/Treatment';
 import '../../styles/forms.css'; 
+
+// import { LeftMenu } from '../../components/Chat/LeftMenu';
+import Layout from '../../components/Layout/ChatLayout';
+import History from '../../components/Layout/HistoryLayout';
+
 import GraphChat from '../../components/Graph/GraphChat';
 import GraphTicket from '../../components/Graph/GraphTicket';
 import GraphTicketYou from '../../components/Graph/GraphTicketYou';
 import GraphThemes from '../../components/Graph/GraphThemes';
+
 
 const Chat: React.FC = () => {
   const [activePage, setActivePage] = useState('Formulário'); 
@@ -17,8 +24,9 @@ const Chat: React.FC = () => {
   };
 
   return (
-    <div>
+    <div style={{overflow:'hidden'}} >
       <Navbar />
+
       <h1 className="title">Chat</h1>
       <div className="buttonContainer">
         <button
@@ -43,14 +51,22 @@ const Chat: React.FC = () => {
           Painel
         </button>
       </div>
+      <div
+      //  className='containerlayout'
+      
+       >
+      {/* <LeftMenu/> */}
       {activePage === 'Atendimento' && (
-        <>
-          <h1 style={{marginLeft: '10%'}}>Atendimento</h1>
-        </>
+        <div >
+          {/* <h1 style={{marginLeft: '10%'}}>Atendimento</h1> */}
+          {/* <Treatment/> */}
+          <Layout props={undefined}/>
+        </div>
       )}
       {activePage === 'Histórico' && (
         <>
-          <h1 style={{marginLeft: '10%'}}>Histórico</h1>
+          {/* <h1 style={{marginLeft: '10%'}}>Histórico</h1> */}
+          <History />
         </>
       )}
       {activePage === 'Painel' && (
@@ -65,6 +81,7 @@ const Chat: React.FC = () => {
           </div>
         </>
       )}
+      </div>
     </div>
   );
 };
