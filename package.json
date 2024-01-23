@@ -17,6 +17,7 @@
     "chart.js": "^4.4.1",
     "flowchart-react": "^3.16.1",
     "react": "^18.2.0",
+    "react-awesome-calendar": "^1.0.14",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.3",
@@ -58,7 +59,7 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@types/socket.io-client": "^3.0.0",
     "babel-plugin-inline-react-svg": "^2.0.2",
-    "typescript": "^5.3.3",
+    "typescript": "^4.9.5",
     "vite-plugin-react-svg": "^0.2.0"
   }
 }
