@@ -28,6 +28,7 @@ const StatisticsStatus: React.FC<StatisticsStatusProps> = () => {
     <div className="dashboard-container">
       <div className="dashboard-section">
         <h3 className="title-status">Browser States</h3>
+        <div className="menu-icon">&#8942;</div>
         <p className="subtitle-status">Counter 2022</p>
 
         <div className="content-row">
@@ -88,6 +89,7 @@ const StatisticsStatus: React.FC<StatisticsStatusProps> = () => {
 
       <div className="dashboard-section">
         <h3>Project Status</h3>
+        <div className="menu-icon">&#8942;</div>
         <div className="container-inicial-dollar">
           <div className="earnings-info">
             <img src={dollar} alt="Dollar" />
@@ -119,6 +121,7 @@ const StatisticsStatus: React.FC<StatisticsStatusProps> = () => {
 
       <div className="dashboard-section">
         <h3>Active Projects</h3>
+        <div className="menu-icon">&#8942;</div>
         <p className="subtitle-status">72 completed</p>
 
         <div className="content-row-3">
