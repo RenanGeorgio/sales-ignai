@@ -7,7 +7,8 @@ const routes = {
   estatisticas: '/estatisticas',
   whatsapp: '/whatsapp',
   configuracoes: '/configuracoes',
-  suporte: '/suporte'
+  suporte: '/suporte',
+  leads: '/leads'
 };
   
 export default routes;

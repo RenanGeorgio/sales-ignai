@@ -9,7 +9,7 @@ import Whatsapp from './pages/Whatsapp';
 import Configuracoes from './pages/Configuracoes';
 import Forms from './pages/Forms';
 import Chat from './pages/Chat';
-
+import Leads from  './pages/Leads';
 import Layout from './components/Layout/Layout';
 
 import Statistics from './pages/Statistics';
@@ -30,6 +30,7 @@ function App() {
         <Route path="/whatsapp" element={<Whatsapp />} />
         <Route path="/configuracoes" element={<Configuracoes />} />
         <Route path="/suporte" element={<Suporte />} />
+        <Route path="/leads" element={<Leads />} />
       </Routes>
     </>
   );
