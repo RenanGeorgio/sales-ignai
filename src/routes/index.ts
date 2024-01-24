@@ -1,6 +1,7 @@
 const routes = {
   home: '/',
   chat: '/chat',
+  calendar: '/calendar',
   chatbot: '/chatbot',
   formulario: '/formulario',
   email: '/email',

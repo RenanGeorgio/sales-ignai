@@ -76,7 +76,7 @@ const Chat: React.FC = () => {
             <GraphTicket data={[50, 30, 20, 10]}/>
           </div>
           <div className='graph-row'>
-            <GraphThemes />
+            <GraphThemes month={''} />
             <GraphTicketYou data={[50, 30, 20, 10]}/>
           </div>
         </>

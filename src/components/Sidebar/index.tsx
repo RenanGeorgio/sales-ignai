@@ -53,7 +53,7 @@ const Sidebar: React.FC<SidebarProps> = () => {
           </div>
       </Link>
 
-      <Link to="/">
+      <Link to="/calendar">
         <div className="menu-item">
           <img src={calendar} alt="Calendar" />
           <span className={expanded ? 'show-text' : 'hide-text'}>Calendário</span>

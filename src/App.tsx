@@ -9,19 +9,17 @@ import Whatsapp from './pages/Whatsapp';
 import Configuracoes from './pages/Configuracoes';
 import Forms from './pages/Forms';
 import Chat from './pages/Chat';
-
-import Layout from './components/Layout/Layout';
-
 import Statistics from './pages/Statistics';
+import Calendar from './pages/Calendar';
 
 
 function App() {
   return (
     <>
       <Sidebar />
-      {/* <Layout/> */}
       <Routes>
         <Route path="/" element={<Dashboard />} />
+        <Route path="/calendar" element={<Calendar />} />
         <Route path="/chat" element={<Chat />} />
         <Route path="/formulario" element={<Forms />} />
         <Route path="/email" element={<Email />} />
