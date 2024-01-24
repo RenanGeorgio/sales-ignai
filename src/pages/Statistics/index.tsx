@@ -6,6 +6,7 @@ import GraphSource from '../../components/Graph/GraphSource';
 import GraphRadar from '../../components/Graph/GraphRadar';
 import StatisticsStatus from '../../components/Statistics/StatisticsStatus';
 import LastTransactionTable from '../../components/Statistics/LastTransactionTable';
+import GraphStatistics from '../../components/Graph/GraphStatistics';
 
 const Statistics: React.FC = () => {
   const [activePage, setActivePage] = useState('Estatísticas'); 
@@ -17,7 +18,7 @@ const Statistics: React.FC = () => {
   return (
     <div>
       <Navbar />
-      <div className="buttonContainer">
+      <div className="buttonContainer-statistics">
         <button
           className={activePage === 'Ano' ? 'blueButton' : 'grayButton'}
           onClick={() => handleButtonClick('Ano')}
@@ -58,21 +59,61 @@ const Statistics: React.FC = () => {
           </div>
           <StatisticsStatus />
           <LastTransactionTable />
+          <GraphStatistics data={[50, 30, 20, 10]}/>
         </>
       )}
       {activePage === 'Mês' && (
         <>
-          <h1 style={{marginLeft: '10%'}}>Histórico</h1>
+          <StatisticsComponent />
+          <div className='container-graph-source'>
+            <GraphSource />
+          </div>
+          <div className='container-graph-radar'>
+            <h3>Comparação</h3>
+            <span>Entre fontes de Leads</span>
+            <div className='graph-radar'>
+              <GraphRadar />
+            </div>
+          </div>
+          <StatisticsStatus />
+          <LastTransactionTable />
+          <GraphStatistics data={[50, 30, 20, 10]}/>
         </>
       )}
       {activePage === 'Semana' && (
         <>
-          <h1 style={{marginLeft: '10%'}}>Pedidos</h1>
+          <StatisticsComponent />
+          <div className='container-graph-source'>
+            <GraphSource />
+          </div>
+          <div className='container-graph-radar'>
+            <h3>Comparação</h3>
+            <span>Entre fontes de Leads</span>
+            <div className='graph-radar'>
+              <GraphRadar />
+            </div>
+          </div>
+          <StatisticsStatus />
+          <LastTransactionTable />
+          <GraphStatistics data={[50, 30, 20, 10]}/>
         </>
       )}
         {activePage === 'Dia' && (
         <>
-          <h1 style={{marginLeft: '10%'}}>Estoque</h1>
+          <StatisticsComponent />
+          <div className='container-graph-source'>
+            <GraphSource />
+          </div>
+          <div className='container-graph-radar'>
+            <h3>Comparação</h3>
+            <span>Entre fontes de Leads</span>
+            <div className='graph-radar'>
+              <GraphRadar />
+            </div>
+          </div>
+          <StatisticsStatus />
+          <LastTransactionTable />
+          <GraphStatistics data={[50, 30, 20, 10]}/>
         </>
       )}
     </div>

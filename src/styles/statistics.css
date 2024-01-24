@@ -1,31 +1,38 @@
-.buttonContainer {
+.buttonContainer-statistics {
   display: flex;
-  gap: 5px;
   margin-left: 6%;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
+  margin-top: 2%;
+}
+
+.blueButton,
+.grayButton {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  align-items: center;
 }
 
 .blueButton {
   background-color: rgba(115, 103, 240, 1);
   color: white;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
-  margin-right: 10px;
-  left: 0%;
-  cursor: pointer;
-  align-items: center;
 }
 
 .grayButton {
-  background-color: rgba(168, 170, 174, 0.397);
-  color: rgba(168, 170, 174, 1);
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
-  margin-right: 10px;
-  cursor: pointer;
-  align-items: center;
+  background-color: rgba(115, 103, 240, 0.24);
+  color: rgba(115, 103, 240, 1);
+}
+
+.blueButton,
+.grayButton {
+  margin-right: 0px;
+  border-right: 1px solid rgba(115, 103, 240, 1);
+}
+
+.blueButton:last-child,
+.grayButton:last-child {
+  border-right: none;
 }
 
 .statistics-container {
@@ -59,7 +66,6 @@
   font-size: 1.2em;
   font-weight: bold;
   color: #777;
-  margin-bottom: 5px;
 }
 
 .subtitle-statistics {
