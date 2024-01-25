@@ -1,5 +1,6 @@
-import React from 'react'
-import Calendar from 'react-calendar';
+import React, { useState } from 'react'
+import Calendar from '@osam2/react-calendar';
+import {Button} from '@mui/material'
 
 import './calendar.css'
 import CalendarLeft from './CalendarLeft';
@@ -32,46 +33,53 @@ const events = [{
 // const CalendarContainerLeft = styles
 
 export default function CalendarComponent() {
+    const [view, setView] = useState('month');
     return (
         <div style={{ width: '94.5%', height: '100%', display: 'flex', paddingLeft: '5.3rem' }}>
-            <div style={{ alignSelf: 'stretch', background: 'white', boxShadow: '0px 4px 18px rgba(75, 70, 92, 0.10)', borderRadius: 6, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'inline-flex' }}>
+
+            {/* <div style={{ alignSelf: 'stretch',
+             background: 'white', 
+             boxShadow: '0px 4px 18px rgba(75, 70, 92, 0.10)', 
+             borderRadius: 6, 
+             justifyContent: 'flex-start',
+              alignItems: 'flex-start',
+               display: 'inline-flex' }}>
 
 
-            </div>
+            </div> */}
             <div style={{ width: '100%', height: '100%', display: 'flex', gap: 4, justifyContent: 'space-between' }}>
-                <div style={{ width: '20%', height: '100%', border: '1px solid black' }} >
-                    {/* <div className='react-calendar1'>
-                     
-                        <Calendar
-                        className='react-calendar1'
-                        defaultView='decade'   
-                        />
-                      
-                    </div> */}
-                    <CalendarLeft/>
-                    {/* <div style={{background:'red', height:'300px'}}>
+                <div className='containerLeft' >
+                    <div className='containerButton'>
+                        <Button variant='contained' sx={{ width:'95%', height:'50px'}}>
+                        Novo evento
+                        </Button>
+                    </div>
+                    <CalendarLeft />
+                    <div style={{ width: '94%',  flexDirection: 'column', gap: 26, display: 'flex', padding: 20,justifyContent:'center',marginTop:'3rem'}}>
+                        <div className='label'>Labels</div>
+                        <div style={{ display: 'flex' }}>
+                            <span><Tag /></span>
+                            <button>Adicionar / Remover</button>
+                        </div>
 
-                    </div> */}
-                    <div style={{width: '94%', height: '200px', flexDirection:'column', gap: 16, display: 'flex', padding:20}}>
-   <div className='label'>Labels</div>
-   <div style={{display:'flex'}}>
-    <span><Tag/></span>
-    <button>Adicionar / Remover</button>
-   </div>
+                        <div className='list'>
+                            <ul>
+                                <li> <div className="span1"><span className='span1' /></div> Leads</li>
+                                <li><div className="span2"><span className='span1' /></div>  Implementação</li>
+                                <li><div className="span3"><span className='span1' /></div>  Clientes</li>
+                                <li><div className="span4"><span className='span1' /></div>  Atendimento</li>
+                            </ul>
+                        </div>
 
-   <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
-    <ul>
-         <li> <div className="span1"><span className='span1'/></div> Leads</li>
-        <li><div className="span2"><span className='span1'/></div>  Implementação</li>
-        <li><div className="span3"><span className='span1'/></div>  Clientes</li>
-        <li><div className="span4"><span className='span1'/></div>  Atendimento</li>
-    </ul>
-   </div>
-   
-</div>
+                    </div>
                 </div>
-                <div style={{ width: '83%', height: '40.6rem', border: '1px solid red', overflowY: 'scroll' }}>
+                <div style={{ width: '100%', height: '100%', overflowY: 'scroll' }}>
+                {/* <button onClick={() => setView('month')}>Mês</button>
+      <button onClick={() => setView('week')}>Semana</button>
+      <button onClick={() => setView('day')}>Dia</button>
+      <button onClick={() => setView('list')}>Lista</button> */}
                     <Calendar
+                    locale='pt-BR'
                     />
                 </div>
             </div>
