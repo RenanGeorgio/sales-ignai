@@ -80,6 +80,8 @@ export default function CalendarComponent() {
       <button onClick={() => setView('list')}>Lista</button> */}
                     <Calendar
                     locale='pt-BR'
+                    views={['month', 'week', 'day']}
+                    defaultView="week"
                     />
                 </div>
             </div>
