@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import Calendar from '@osam2/react-calendar';
 import {Button} from '@mui/material'
+import Modal from '@mui/material/Modal';
 
 import './calendar.css'
 import CalendarLeft from './CalendarLeft';
-import Tag from '../Image/icons';
+import {Plus, Tag} from '../Image/icons';
+import EventModal from './Event/EventComponent';
 // import {DateCalendar}
 
 const events = [{
@@ -32,8 +34,23 @@ const events = [{
 
 // const CalendarContainerLeft = styles
 
-export default function CalendarComponent() {
+export default function CalendarComponent({onOpenModal, onCloseModal}) {
     const [view, setView] = useState('month');
+    const [showAddTicket, setShowAddTicket] = useState(false);
+
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
+
+  const toggleModal = () => {
+    setShowAddTicket(!showAddTicket);
+    
+    
+  };
+
+
+
     return (
         <div style={{ width: '94.5%', height: '100%', display: 'flex', paddingLeft: '5.3rem' }}>
 
@@ -50,7 +67,10 @@ export default function CalendarComponent() {
             <div style={{ width: '100%', height: '100%', display: 'flex', gap: 4, justifyContent: 'space-between' }}>
                 <div className='containerLeft' >
                     <div className='containerButton'>
-                        <Button variant='contained' sx={{ width:'95%', height:'50px'}}>
+                        <Button
+                        onClick={handleOpen}
+                        variant='contained' sx={{ width:'95%', height:'50px'}}>
+                             <span className='iconPlus'><Plus/></span>
                         Novo evento
                         </Button>
                     </div>
@@ -83,6 +103,18 @@ export default function CalendarComponent() {
                     views={['month', 'week', 'day']}
                     defaultView="week"
                     />
+
+                    <div>
+                    <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        
+                        <EventModal close={undefined} />
+                        </Modal>
+                    </div>
                 </div>
             </div>
         </div>
