@@ -2,20 +2,16 @@
   background-color: #ffffff;
   width: 97% !important;
   height: 770px !important;
-  /* padding: 15px 50px 0px 50px !important; */
   border: 1px solid #e9e9e9;
   display: flex !important;
   flex-direction: column;
-  /* position: unset; */
   overflow-x: none;
   font-family: sans-serif;
 }
 .containerLeft {
   width: 100%;
   height: 80vh;
-  /* border: 1px solid #e9e9e9; */
   max-width: 250px;
-
 }
 .containerButton{
   width:100%;
@@ -25,16 +21,12 @@
   border: 1px solid #e9e9e9;
   height: 7.5rem;
 }
-
-
 .calendarHeader {
   border-bottom: 1px solid #e9e9e9;
   height: 70px;
-  /* font-size: 10px; */
   display: flex;
   justify-content: space-between;
   padding: 0rem 1rem;
-  /* margin-bottom: 2rem; */
 }
 
 .calendarDayOfWeek {
@@ -44,7 +36,7 @@
   display: flex;
   align-items: center;
   border: 1px solid #e9e9e9;
- 
+  
 }
 
 .dayCell {
@@ -55,13 +47,12 @@
   overflow: hidden;
   cursor: pointer;
   width: 14.2857142857%;
-  height: 6.3rem;
+  height: 6rem;
   border: #bababa 1px solid;
 }
 
 .weekRow {
-  /* border-bottom: 1px solid #303030 !important; */
-  padding-right: 10px !important;
+  padding-right: 0px !important;
 
 }
 
@@ -116,7 +107,35 @@
   font-family: sans-serif;
 }
 
+/* LAYOUT  */
+
+.wrapperCalendar{
+  width: 94.5%;
+  height: 100%;
+  display: flex;
+  padding-left: 5.3rem;
+  overflow: hidden;
+}
+.containerCalendar{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 4px;
+  justify-content: space-between 
+}
+
+
 /* LABELS  */
+.containerLabel{
+  width: 94%;
+  flex-direction: column;
+  gap: 26px;
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+  margin-top: 3rem
+}
+
 .label {
   color: rgba(50, 50, 50, 0.5);
   font-size: 18px;

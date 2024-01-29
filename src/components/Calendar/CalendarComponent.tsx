@@ -1,81 +1,66 @@
 import React, { useState } from 'react'
 import Calendar from '@osam2/react-calendar';
-import {Button} from '@mui/material'
+import { Button } from '@mui/material'
 import Modal from '@mui/material/Modal';
 
 import './calendar.css'
 import CalendarLeft from './CalendarLeft';
-import {Plus, Tag} from '../Image/icons';
+import { Plus, Tag } from '../Image/icons';
 import EventModal from './Event/EventComponent';
-// import {DateCalendar}
+
 
 const events = [{
     id: 1,
     color: '#fd3153',
-    from: '2019-05-02T18:00:00+00:00',
-    to: '2019-05-05T19:00:00+00:00',
-    title: 'This is an event'
-}, {
+    from: '2024-01-02T07:00:00+00:00',
+    to: '2024-01-05T08:00:00+00:00',
+    title: 'Reunião'
+},
+{
     id: 2,
     color: '#1ccb9e',
-    from: '2019-05-01T13:00:00+00:00',
-    to: '2019-05-05T14:00:00+00:00',
-    title: 'This is another event'
-}, {
+    from: '2024-01-01T13:00:00+00:00',
+    to: '2024-01-05T14:03:00+00:00',
+    title: 'Evento 2'
+},
+{
     id: 3,
     color: '#3694DF',
-    from: '2019-05-05T13:00:00+00:00',
-    to: '2019-05-05T20:00:00+00:00',
-    title: 'This is also another event'
-}];
+    from: '2024-01-07T13:00:00+00:00',
+    to: '2024-01-09T20:00:00+00:00',
+    title: 'Evento 3'
+},
+{
+    id: 4,
+    color: '#000',
+    from: '2024-01-18T13:00:00+00:00',
+    to: '2024-01-18T20:00:00+00:00',
+    title: 'Evento 4'
+}
+];
 
-// const styles = '../Calendar/calendar.css'
-// const CalendarContainerRight = styles
 
-// const CalendarContainerLeft = styles
-
-export default function CalendarComponent({onOpenModal, onCloseModal}) {
+export default function CalendarComponent() {
     const [view, setView] = useState('month');
-    const [showAddTicket, setShowAddTicket] = useState(false);
-
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
 
-  const toggleModal = () => {
-    setShowAddTicket(!showAddTicket);
-    
-    
-  };
-
-
-
     return (
-        <div style={{ width: '94.5%', height: '100%', display: 'flex', paddingLeft: '5.3rem' }}>
-
-            {/* <div style={{ alignSelf: 'stretch',
-             background: 'white', 
-             boxShadow: '0px 4px 18px rgba(75, 70, 92, 0.10)', 
-             borderRadius: 6, 
-             justifyContent: 'flex-start',
-              alignItems: 'flex-start',
-               display: 'inline-flex' }}>
-
-
-            </div> */}
-            <div style={{ width: '100%', height: '100%', display: 'flex', gap: 4, justifyContent: 'space-between' }}>
+        <div className='wrapperCalendar' >
+            <div className='containerCalendar'>
                 <div className='containerLeft' >
                     <div className='containerButton'>
                         <Button
-                        onClick={handleOpen}
-                        variant='contained' sx={{ width:'95%', height:'50px'}}>
-                             <span className='iconPlus'><Plus/></span>
-                        Novo evento
+                            onClick={handleOpen}
+                            variant='contained' sx={{ width: '95%', height: '50px' }}>
+                            <span className='iconPlus'><Plus /></span>
+                            Novo evento
                         </Button>
                     </div>
                     <CalendarLeft />
-                    <div style={{ width: '94%',  flexDirection: 'column', gap: 26, display: 'flex', padding: 20,justifyContent:'center',marginTop:'3rem'}}>
+                    <div className='containerLabel'>
                         <div className='label'>Labels</div>
                         <div style={{ display: 'flex' }}>
                             <span><Tag /></span>
@@ -94,25 +79,23 @@ export default function CalendarComponent({onOpenModal, onCloseModal}) {
                     </div>
                 </div>
                 <div style={{ width: '100%', height: '100%', overflowY: 'scroll' }}>
-                {/* <button onClick={() => setView('month')}>Mês</button>
-      <button onClick={() => setView('week')}>Semana</button>
-      <button onClick={() => setView('day')}>Dia</button>
-      <button onClick={() => setView('list')}>Lista</button> */}
+                    {/* <button onClick={() => setView('month')}>Mês</button>
+                <button onClick={() => setView('week')}>Semana</button>
+                <button onClick={() => setView('day')}>Dia</button>
+                <button onClick={() => setView('list')}>Lista</button> */}
                     <Calendar
-                    locale='pt-BR'
-                    views={['month', 'week', 'day']}
-                    defaultView="week"
+                        locale='pt-BR'
+                        views={['month', 'week', 'day']}
+                        defaultView="week"
+                        events={events}
+                        defaultDate={new Date(2024, 1, 7)}
                     />
-
                     <div>
-                    <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        
-                        <EventModal close={undefined} />
+                        <Modal
+                            open={open}
+                            aria-labelledby="modal-modal-title"
+                            aria-describedby="modal-modal-description" >
+                            <EventModal close={handleClose} />
                         </Modal>
                     </div>
                 </div>
