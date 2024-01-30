@@ -8,7 +8,8 @@ const routes = {
   whatsapp: '/whatsapp',
   configuracoes: '/configuracoes',
   suporte: '/suporte',
-  leads: '/leads'
+  leads: '/leads',
+  negocios: '/negocios'
 };
   
 export default routes;
