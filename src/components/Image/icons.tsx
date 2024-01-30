@@ -283,18 +283,54 @@ export const Tag = ({}) => {
 export const Plus = () => {
   return (
     <div>
-      {/* <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" fill="none" color="#fff">
-<path d="M4 12H20M12 4V20" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-</svg> */}
-
 <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" fill="none" stroke="#ffffff">
-
 <g id="SVGRepo_bgCarrier" stroke-width="0"/>
-
 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-
 <g id="SVGRepo_iconCarrier"> <path d="M4 12H20M12 4V20" stroke="#ffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </g>
+</svg>
+     </div>
+  )
+}
 
+
+export const PaperClip = () => {
+  return (
+    <div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+<g id="paperclip">
+<g id="Path">
+<path d="M12.5 6.53651L7.08333 11.9532C6.39297 12.6435 6.39297 13.7628 7.08333 14.4532C7.77369 15.1435 8.89297 15.1435 9.58333 14.4532L15 9.03651C16.3807 7.6558 16.3807 5.41722 15 4.03651C13.6193 2.6558 11.3807 2.6558 10 4.03651L4.58333 9.45318C2.51226 11.5242 2.51226 14.8821 4.58333 16.9532C6.6544 19.0242 10.0123 19.0242 12.0833 16.9532L17.5 11.5365" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12.5 6.53651L7.08333 11.9532C6.39297 12.6435 6.39297 13.7628 7.08333 14.4532C7.77369 15.1435 8.89297 15.1435 9.58333 14.4532L15 9.03651C16.3807 7.6558 16.3807 5.41722 15 4.03651C13.6193 2.6558 11.3807 2.6558 10 4.03651L4.58333 9.45318C2.51226 11.5242 2.51226 14.8821 4.58333 16.9532C6.6544 19.0242 10.0123 19.0242 12.0833 16.9532L17.5 11.5365" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</svg>
+     </div>
+  )
+}
+
+
+export const MessageDots = () => {
+  return (
+    <div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+<g id="message-dots">
+<g id="Path">
+<path d="M3.33325 18.2035V7.37012C3.33325 5.98941 4.45254 4.87012 5.83325 4.87012H14.1666C15.5473 4.87012 16.6666 5.98941 16.6666 7.37012V12.3701C16.6666 13.7508 15.5473 14.8701 14.1666 14.8701H6.66659L3.33325 18.2035" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M3.33325 18.2035V7.37012C3.33325 5.98941 4.45254 4.87012 5.83325 4.87012H14.1666C15.5473 4.87012 16.6666 5.98941 16.6666 7.37012V12.3701C16.6666 13.7508 15.5473 14.8701 14.1666 14.8701H6.66659L3.33325 18.2035" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="Path_2">
+<path d="M9.99992 9.86953V9.87786" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9.99992 9.86953V9.87786" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="Path_3">
+<path d="M6.66667 9.86953V9.87786" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6.66667 9.86953V9.87786" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="Path_4">
+<path d="M13.3334 9.86953V9.87786" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M13.3334 9.86953V9.87786" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
 </svg>
      </div>
   )
