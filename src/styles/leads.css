@@ -110,13 +110,16 @@
 }
 
 .icons-section {
-  margin-top: 11%;
-  margin-left: -20%;
+  display: flex;
+  align-items: flex-start; 
+  align-self: flex-start;
+  margin-top: 35px; 
+  margin-left: -100px;
 }
 
 .icons-section img {
   width: 20px;
-  margin-right: 5px;
+  margin-bottom: 5px; 
 }
 
 .right-icon {
@@ -124,8 +127,16 @@
   margin-top: 10%;
 }
 
-.last-number{
-    margin-right: 10px;
+.last-number {
+  margin-right: 10px;
+}
+
+.info-section p {
+  margin-right: 5px;
+  font-size: 20px;
+  margin-top: 3px;
+  margin-left: 5px;
+  margin-bottom: 5px;
 }
 
 .menu-icon-leads {
@@ -135,122 +146,3 @@
   margin-top: -8%;
   cursor: pointer;
 }
-  
-/* css tabela */
-
-.filtro-busca {
-  font-family: Arial, sans-serif;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  z-index: 999; 
-  width: 96.5%;
-  height: 80%;
-  margin-left: 1%;
-}
-
-.header-table-filter{
-  box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.2);
-  width: 190vh;
-  height: 120px;
-}
-
-.titulo {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  margin-left: 25px;
-  margin-bottom: 25px;
-}
-
-.selects-row {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
-.select {
-  flex: 1;
-  margin-right: 10px;
-  padding: 8px;
-}
-
-.select option:first-child {
-  color: #999;
-}
-
-.bottom-row {
-  display: flex;
-  justify-content: space-between;
-  border: 1px solid rgb(202, 201, 201);
-}
-
-.left-select {
-  display: flex;
-  align-items: center;
-  margin-left: 25px;
-}
-
-.buscar-input {
-  padding: 8px;
-  height: 38px;
-  width: 200px;
-  margin-right: 10px;
-}
-
-.select-assignados{
-  flex: 1;
-  margin-right: 10px;
-  padding: 8px;
-  padding: 8px;
-  height: 38px;
-}
-
-.adicionar-btn {
-  padding: 8px 15px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.adicionar-btn:hover {
-  background-color: #45a049;
-}
-
-.right-select {
-  margin-left: auto;
-  margin-top: 10px;
-  margin-right: 25px;
-}
-
-.tabela {
-  width: 100%;
-  margin-top: 20px;
-  border-collapse: collapse;
-  border: 1px solid #ddd;
-}
-
-.tabela th, .tabela td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-  border-left: none;
-  border-right: none;
-}
-
-.tabela th {
-  background-color: #ffffff;
-  color: rgb(119, 119, 119);
-}
-
-.tabela tr:hover {
-  background-color: #f5f5f5;
-}
-
-.tabela th:last-child,
-.tabela td:last-child {
-  border-right: 1px solid #ddd;
-}
-
