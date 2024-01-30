@@ -23,7 +23,7 @@
     "react-flow-renderer": "^10.3.17",
     "react-inlinesvg": "^4.1.0",
     "react-router-config": "^5.1.1",
-    "react-router-dom": "^6.21.1",
+    "react-router-dom": "^6.21.3",
     "react-scripts": "^5.0.1",
     "semantic-ui-css": "^2.5.0",
     "semantic-ui-react": "^2.1.5",
@@ -58,7 +58,7 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@types/socket.io-client": "^3.0.0",
     "babel-plugin-inline-react-svg": "^2.0.2",
-    "typescript": "^5.3.3",
+    "typescript": "^4.9.5",
     "vite-plugin-react-svg": "^0.2.0"
   }
 }
