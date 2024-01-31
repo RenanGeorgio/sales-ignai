@@ -60,7 +60,7 @@ const Sidebar: React.FC<SidebarProps> = () => {
           </div>
       </Link>
       
-      <Link to="/">
+      <Link to="/leads">
         <div className="menu-item">
           <img src={layoutSidebar} alt="Layout Sidebar" />
           <span className={expanded ? 'show-text' : 'hide-text'}>Leads</span>

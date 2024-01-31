@@ -1,0 +1,215 @@
+.lead-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lead-modal {
+  background: #fff; 
+  padding: 20px;
+  border-radius: 8px;
+  width: 403px; 
+  height: 620px; 
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0px;
+  border: 1px solid gray;
+  width: 370px;
+  height: 35px;
+  margin-bottom: 25px;
+  border-radius: 6px;
+  margin-left: 15px;
+}
+
+.modal-tabs {
+  width: 90%;
+  display: flex;
+  justify-content: flex-start;
+  background: #fff; 
+  padding: 5px;
+}
+
+.modal-tabs button {
+  width: 30%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid transparent;
+}
+
+.modal-tabs button.active {
+  border-bottom: 1px solid blue; 
+  color: blue;
+}
+
+.modal-tabs button img {
+  width: 20px;
+  margin-right: 5px;
+}
+
+.modal-tabs button img.active {
+    background-color: blue;
+}
+
+.modal-content {
+  width: 90%;
+  margin: auto;
+}
+
+label {
+  width: 100%;
+}
+
+input {
+  width: 100%;
+  height: 35px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid gray;
+}
+
+.anexo-section {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.anexo-section span {
+  margin-bottom: 5px;
+}
+
+.anexo-content {
+  display: flex;
+  background-color: rgb(225, 225, 225);
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.anexo-section button {
+  width: 100px;
+  height: 35px;
+  border: none;
+  border-radius: 6px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.anexo-section label {
+  height: 35px;
+  border: none;
+  color: rgb(72, 71, 71);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.comentario-input {
+  width: 365px;
+  height: 96px;
+  margin-bottom: 10px;
+  z-index: 1;
+}
+
+.comentario-input::placeholder {
+    position: relative;
+    top: -30px;
+    left: 5px;
+}
+
+.assignado-section,
+.abrir-conversa-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.assignado-section img {
+    margin-right: auto;
+    margin-left: -10px;
+}
+
+.abrir-conversa-section img {
+    margin-left: auto;
+}
+
+.image-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.image-section div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.image-section img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.comentario-container {
+  position: relative;
+}
+
+.blue-button {
+  background: blue;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 15px;
+  margin-left: 9px;
+}  
+
+.activity-section {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.activity-item img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.activity-details {
+  display: flex;
+  flex-direction: column;
+}
+  
+.activity-details span{
+    margin-top: -12px;
+    font-size: 13px;
+    color: rgb(156, 156, 156);
+}
+
+.activity-details p{
+    margin-top: 0px;
+}

@@ -1,0 +1,120 @@
+[
+    {
+        "id": 1,
+        "lead": {
+            "name": "Café Dois Irmãos",
+            "description": "Marge.Jacobson@gmail.com    27 99882-7820"
+        },
+        "leadOrigem": "WhatsApp",
+        "empresa": "Plantação GG",
+        "historicoClip": 3,
+        "historicoMessage": 6,
+        "status": "Contato inicial",
+        "acao": 1
+    },
+    {
+        "id": 2,
+        "lead": {
+            "name": "Não informado",
+            "description": "Marge.Jacobson@gmail.com    27 99882-7820"
+        },
+        "leadOrigem": "WhatsApp",
+        "empresa": "Plantação OK",
+        "historicoClip": 3,
+        "historicoMessage": 6,
+        "status": "Contato inicial",
+        "acao": 2
+    },
+    {
+        "id": 3,
+        "lead": {
+            "name": "Café Dois Irmãos",
+            "description": "Marge.Jacobson@gmail.com    27 99882-7820"
+        },
+        "leadOrigem": "WhatsApp",
+        "empresa": "Plantação ER",
+        "historicoClip": 3,
+        "historicoMessage": 6,
+        "status": "Contato inicial",
+        "acao": 3
+    },
+    {
+        "id": 4,
+        "lead": {
+            "name": "Não informado",
+            "description": "Marge.Jacobson@gmail.com    27 99882-7820"
+        },
+        "leadOrigem": "WhatsApp",
+        "empresa": "Plantação FF",
+        "historicoClip": 3,
+        "historicoMessage": 6,
+        "status": "Contato inicial",
+        "acao": 4
+    },
+    {
+        "id": 5,
+        "lead": {
+            "name": "Planta e Raiz",
+            "description": "Marge.Jacobson@gmail.com    27 99882-7820"
+        },
+        "leadOrigem": "WhatsApp",
+        "empresa": "Plantação AA",
+        "historicoClip": 3,
+        "historicoMessage": 6,
+        "status": "Contato inicial",
+        "acao": 5
+    },
+    {
+        "id": 6,
+        "lead": {
+            "name": "Fazenda Soja SA",
+            "description": "Marge.Jacobson@gmail.com    27 99882-7820"
+        },
+        "leadOrigem": "WhatsApp",
+        "empresa": "Plantação BB",
+        "historicoClip": 3,
+        "historicoMessage": 6,
+        "status": "Contato inicial",
+        "acao": 6
+    },
+    {
+        "id": 7,
+        "lead": {
+            "name": "Garlic e Ginseng SA",
+            "description": "Marge.Jacobson@gmail.com    27 99882-7820"
+        },
+        "leadOrigem": "WhatsApp",
+        "empresa": "Plantação CC",
+        "historicoClip": 3,
+        "historicoMessage": 6,
+        "status": "Contato inicial",
+        "acao": 7
+    },
+    {
+        "id": 8,
+        "lead": {
+            "name": "Mandrake Root LTDA",
+            "description": "Marge.Jacobson@gmail.com    27 99882-7820"
+        },
+        "leadOrigem": "WhatsApp",
+        "empresa": "Plantação CC",
+        "historicoClip": 3,
+        "historicoMessage": 6,
+        "status": "Contato inicial",
+        "acao": 8
+    },
+    {
+        "id": 9,
+        "lead": {
+            "name": "Spider Silk LTDA",
+            "description": "Marge.Jacobson@gmail.com    27 99882-7820"
+        },
+        "leadOrigem": "WhatsApp",
+        "empresa": "Plantação VV",
+        "historicoClip": 3,
+        "historicoMessage": 6,
+        "status": "Contato inicial",
+        "acao": 9
+    }
+]
+  
