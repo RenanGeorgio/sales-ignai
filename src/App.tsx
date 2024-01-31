@@ -12,7 +12,7 @@ import Chat from './pages/Chat';
 import Statistics from './pages/Statistics';
 import Calendar from './pages/Calendar';
 import Contact from './pages/Contacts'
-import DetailsContact from './pages/Contacts/Details'
+import DetailsContact from './pages/Details'
 
 
 function App() {

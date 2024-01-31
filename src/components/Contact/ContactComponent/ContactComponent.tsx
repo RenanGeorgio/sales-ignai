@@ -53,6 +53,7 @@ const ContatoCell = ({ client }) => {
   
   
   export default function ContactComponent() {
+    const [checkboxSelection, setCheckboxSelection] = React.useState(true);
     
     const navigate = useNavigate();
     
@@ -257,14 +258,12 @@ const ContatoCell = ({ client }) => {
                     pageSizeOptions={[7]}
                     isCellEditable={(params) => params.row.Contato % 2 === 0}
                     onCellClick={(params, event) => {
-                        if (params.field === 'client') {
+                        // if (params.field === 'client') {
                             navigate(`/details`);
-                        }
+                        // }
                     }}
                 />
             </div>
-
-
         </div>
     )
 }

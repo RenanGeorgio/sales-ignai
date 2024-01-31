@@ -335,3 +335,35 @@ export const MessageDots = () => {
      </div>
   )
 }
+
+
+
+
+export const ShoppingCart = () => {
+  return (
+    <div>
+      <a href="/cart"><svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+<g id="shopping-cart">
+<ellipse id="Oval" cx="7.50008" cy="22.1663" rx="2.33333" ry="2.33333" stroke="#7367F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle id="Oval_2" cx="20.3333" cy="22.1663" r="2.33333" stroke="#7367F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Path" d="M20.3334 19.8333H7.50008V3.5H5.16675" stroke="#7367F0" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Path_2" d="M7.5 5.83301L23.8333 6.99967L22.6667 15.1663H7.5" stroke="#7367F0" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg></a>
+     </div>
+  )
+}
+
+
+export const CurrencyDollar = () => {
+  return (
+    <div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+<g id="currency-dollar">
+<path id="Path" d="M19.9834 9.33333C19.5083 7.98535 18.2613 7.06165 16.8334 7H12.1667C10.2338 7 8.66675 8.567 8.66675 10.5C8.66675 12.433 10.2338 14 12.1667 14H16.8334C18.7664 14 20.3334 15.567 20.3334 17.5C20.3334 19.433 18.7664 21 16.8334 21H12.1667C10.7388 20.9383 9.49184 20.0147 9.01675 18.6667" stroke="#7367F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Shape" d="M15.2501 3.5C15.2501 3.08579 14.9143 2.75 14.5001 2.75C14.0859 2.75 13.7501 3.08579 13.7501 3.5H15.2501ZM13.7501 7C13.7501 7.41421 14.0859 7.75 14.5001 7.75C14.9143 7.75 15.2501 7.41421 15.2501 7H13.7501ZM15.2501 21C15.2501 20.5858 14.9143 20.25 14.5001 20.25C14.0859 20.25 13.7501 20.5858 13.7501 21H15.2501ZM13.7501 24.5C13.7501 24.9142 14.0859 25.25 14.5001 25.25C14.9143 25.25 15.2501 24.9142 15.2501 24.5H13.7501ZM13.7501 3.5V7H15.2501V3.5H13.7501ZM13.7501 21V24.5H15.2501V21H13.7501Z" fill="#7367F0"/>
+</g>
+</svg>
+     </div>
+  )
+}
