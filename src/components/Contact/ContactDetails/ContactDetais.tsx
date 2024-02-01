@@ -5,6 +5,11 @@ import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 import { useNavigate } from 'react-router-dom';
 import rows from '../../../dados/data2.json'
 import ImageLogo from '../../Image/Queiroz_Galvão_Logo 1.png'
+import PaymentAddress from './PaymentAdress/PaymentAddress';
+import Notification from './Notifications/Notification';
+import './PaymentAdress/payment.css'
+
+// const ImageLogo = '../../Image/Queiroz_Galvão_Logo 1.png'
 
 const getPriorityStyles = (priority) => {
   let color, backgroundColor;
@@ -130,7 +135,7 @@ const DetailsPage = ({ match }) => {
 
 
   return (
-    <div style={{ width: '94%', height: '80%', flexDirection: 'column', paddingLeft: '5%', justifyContent: 'flex-start', alignItems: 'flex-start', gap: 1, display: 'inline-flex' }}>
+    <div style={{ width: '94%', height: '80%', flexDirection: 'column', paddingLeft: '6%', justifyContent: 'flex-start', alignItems: 'flex-start', gap: 1, display: 'inline-flex' }}>
       <div>
         <Button size='small' onClick={() => navigate(-1)}>
           Voltar
@@ -305,31 +310,62 @@ const DetailsPage = ({ match }) => {
         <div style={{ flex: '1 1 0', height: '100%', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: 6, display: 'inline-flex' }}>
           {/* 
                 secção Geral endereço pagamento  */}
-          <div style={{ justifyContent: 'flex-start', alignItems: 'center', display: 'inline-flex', height: 50, gap:15}}>
+          <div
+          //  style={{ justifyContent: 'flex-start', alignItems: 'center', display: 'inline-flex', height: 50, gap:15}}
+          className="buttonContainer"
+           >
 
-            <div style={{ background: '#7367F0',  borderRadius: 6, justifyContent: 'flex-start', alignItems: 'center', display: 'flex',height:35  }}>
-              <div style={{ paddingLeft: 2, paddingRight: 2, paddingTop: 10, paddingBottom: 10, justifyContent: 'flex-start', alignItems: 'center', gap: 12, display: 'flex' }}>
-                <Button size='small' 
-                 className={activePage === 'Atendimento' ? 'blueButton' : 'grayButton'}
-                 onClick={() => handleButtonClick('Atendimento')}
-                >Geral</Button>
+          
+              <div >
+                <button
+                 className={activePage === 'Geral' ? 'blueButton' : 'grayButton'}
+                 onClick={() => handleButtonClick('Geral')}
+                >Geral</button>
               </div>
-            </div>
-            <div style={{ background: '#BABABD',borderRadius: 6, justifyContent: 'flex-start', alignItems: 'center', display: 'flex',height:35 }}>
-              <div style={{ paddingLeft: 2, paddingRight: 2, paddingTop: 10, paddingBottom: 10, justifyContent: 'flex-start', alignItems: 'center', gap: 12, display: 'flex' }}>
-                <Button  size='small' style={{ color: 'white', height:'100%' }}>Endereço e Pagamento </Button>
+        
+        
+              <div >
+                <button
+                className={activePage === 'Payment' ? 'blueButton' : 'grayButton'}
+                onClick={() => handleButtonClick('Payment')}
+                  >Endereço e Pagamento </button>
               </div>
-            </div>
+      
 
-            <div style={{background: '#BABABD',  borderRadius: 6, justifyContent: 'flex-start', alignItems: 'center', display: 'flex',height:35  }}>
-              <div style={{ paddingLeft: 2, paddingRight: 2, paddingTop: 10, paddingBottom: 10, justifyContent: 'flex-start', alignItems: 'center', gap: 1, display: 'flex' }}>
-                <Button size='small' style={{ color: 'white', height:'100%',width:'100%' }}>Notificação</Button>
+       
+              <div >
+                <button 
+                 className={activePage === 'Painel' ? 'blueButton' : 'grayButton'}
+                 onClick={() => handleButtonClick('Painel')}
+                >Notificação</button>
               </div>
-            </div>
+          
           </div>
 
-          <div style={{ alignSelf: 'stretch', height: 560, background: 'white', boxShadow: '1px 2px 1px rgba(75, 70, 92, 0.10)', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex' }}>
-            <div style={{ alignSelf: 'stretch', height: 560, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex' }}>
+          <div>
+            {activePage === 'Geral' && (
+              <div>
+                {/* Componente para a página "Atendimento" */}
+              </div>
+            )}
+            {activePage === 'Payment' && (
+              <div>
+                <PaymentAddress />
+              </div>
+            )}
+            {activePage === 'Painel' && (
+              <div>
+                <Notification/>
+              </div>
+            )}
+          </div>
+
+          <div style={{ alignSelf: 'stretch', height: 560, 
+          background: 'white', boxShadow: '1px 2px 1px rgba(75, 70, 92, 0.10)', 
+          flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', display: activePage === 'Geral' ? 'flex' : 'none' }}>
+            <div style={{ alignSelf: 'stretch', 
+            height: 560, flexDirection: 'column', 
+            justifyContent: 'flex-start', alignItems: 'flex-start', display: activePage === 'Geral' ? 'flex' : 'none'}}>
 
               {/* Header receita e search  */}
               <div style={{height: 50, alignSelf: 'stretch', boxShadow: '0px 4px 18px rgba(75, 70, 92, 0.10)',

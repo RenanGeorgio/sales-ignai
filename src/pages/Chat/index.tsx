@@ -24,7 +24,6 @@ const Chat: React.FC = () => {
   return (
     <div style={{overflow:'hidden'}} >
       <Navbar />
-
       <h1 className="title">Chat</h1>
       <div className="buttonContainer">
         <button
