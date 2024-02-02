@@ -3,7 +3,7 @@ import Navbar from '../../components/Navbar';
 import copy from '../../components/Image/copy.svg';
 import link from '../../components/Image/link.svg';
 import '../../styles/configuracoes.css';
-import { EmailIcon, FaceBookIcon, InstagramIcon, WhatsAppIcon } from '../../components/Image/icons';
+import { EmailIcon, FaceBookIcon, InstagramIcon, WWWIcon, WhatsAppIcon } from '../../components/Image/icons';
 
 const Configuracoes = () => {
   return (
@@ -36,8 +36,11 @@ const Configuracoes = () => {
           <img src={copy} alt="Copy" className="copy" />
         </div>
         <div className='body'>
+        <div style={{display:'flex'}}>
           <h4>1 domínio conectado</h4>
-          <img src={link} alt="link" className="link" />
+            <WWWIcon/>
+            </div>
+          {/* <img src={link} alt="link" className="link" /> */}
           <h2>Conectar Chatbot ao website</h2>
           <img src={copy} alt="Copy" className="copy" />
         </div>
