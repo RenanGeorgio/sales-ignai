@@ -17,16 +17,20 @@ import textWrap from '../Image/text-wrap-disabled.svg';
 import components from '../Image/components.svg';
 import '../../styles/sidebar.css';
 import { Link } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 interface SidebarProps {}
 
 const Sidebar: React.FC<SidebarProps> = () => {
+  const { isAuthenticated } = useAuth();
   const [expanded, setExpanded] = useState(false);
 
   const toggleSidebar = () => {
     setExpanded(!expanded);
   };
 
+  if(!isAuthenticated) return;
+  
   return (
     <div className={`sidebar ${expanded ? 'expanded' : ''}`}>
       <div onClick={toggleSidebar}>
