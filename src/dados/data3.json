@@ -1,0 +1,120 @@
+[
+    {
+      "id": 1,
+      "attendant": "João",
+      "summary": "Problema na conexão de internet",
+      "details": "O cliente relatou dificuldades para se conectar à internet.",
+      "date": "2024-02-02",
+      "status": "Pendente",
+      "actions": "Verificar roteador, entrar em contato com o provedor de internet"
+    },
+    {
+      "id": 2,
+      "attendant": "Maria",
+      "summary": "Problema com a conta do cliente",
+      "details": "O cliente informou que não consegue acessar sua conta online.",
+      "date": "2024-02-02",
+      "status": "Em andamento",
+      "actions": "Redefinir senha, verificar status da conta"
+    },
+    {
+      "id": 3,
+      "attendant": "Pedro",
+      "summary": "Problema de hardware no computador",
+      "details": "O cliente está enfrentando falhas no hardware do seu computador.",
+      "date": "2024-02-02",
+      "status": "Concluído",
+      "actions": "Realizar diagnóstico, sugerir reparos"
+    },
+    {
+      "id": 4,
+      "attendant": "Ana",
+      "summary": "Dúvida sobre fatura",
+      "details": "O cliente precisa de esclarecimentos sobre itens na fatura.",
+      "date": "2024-02-02",
+      "status": "Pendente",
+      "actions": "Revisar fatura, fornecer explicações detalhadas"
+    },
+    {
+      "id": 5,
+      "attendant": "Carlos",
+      "summary": "Problema com o aplicativo móvel",
+      "details": "O cliente relata dificuldades no funcionamento do aplicativo móvel.",
+      "date": "2024-02-02",
+      "status": "Em andamento",
+      "actions": "Atualizar o aplicativo, verificar configurações"
+    },
+    {
+      "id": 6,
+      "attendant": "Juliana",
+      "summary": "Solicitação de suporte técnico",
+      "details": "O cliente precisa de assistência técnica para um problema não especificado.",
+      "date": "2024-02-02",
+      "status": "Pendente",
+      "actions": "Entrar em contato para obter mais informações"
+    },
+    {
+      "id": 7,
+      "attendant": "Ricardo",
+      "summary": "Problema de segurança da conta",
+      "details": "O cliente suspeita de atividades não autorizadas em sua conta.",
+      "date": "2024-02-02",
+      "status": "Em andamento",
+      "actions": "Reforçar a segurança, revisar atividades recentes"
+    },
+    {
+      "id": 8,
+      "attendant": "Camila",
+      "summary": "Configuração do sistema operacional",
+      "details": "O cliente precisa de ajuda para configurar o sistema operacional em seu computador.",
+      "date": "2024-02-02",
+      "status": "Concluído",
+      "actions": "Assistir remotamente, fornecer instruções passo a passo"
+    },
+    {
+      "id": 9,
+      "attendant": "Felipe",
+      "summary": "Problema com a entrega do produto",
+      "details": "O cliente ainda não recebeu o produto comprado online.",
+      "date": "2024-02-02",
+      "status": "Pendente",
+      "actions": "Verificar o status do pedido, entrar em contato com a transportadora"
+    },
+    {
+      "id": 10,
+      "attendant": "Larissa",
+      "summary": "Dúvida sobre política de reembolso",
+      "details": "O cliente precisa de esclarecimentos sobre a política de reembolso da empresa.",
+      "date": "2024-02-02",
+      "status": "Em andamento",
+      "actions": "Fornecer detalhes sobre a política, orientar sobre processos de reembolso"
+    },
+    {
+      "id": 11,
+      "attendant": "Gustavo",
+      "summary": "Problema na funcionalidade do software",
+      "details": "O cliente encontrou um bug em uma funcionalidade específica do software.",
+      "date": "2024-02-02",
+      "status": "Pendente",
+      "actions": "Reportar ao departamento de desenvolvimento, fornecer soluções temporárias"
+    },
+    {
+      "id": 12,
+      "attendant": "Fernanda",
+      "summary": "Assistência na configuração do dispositivo",
+      "details": "O cliente precisa de ajuda para configurar um novo dispositivo adquirido.",
+      "date": "2024-02-02",
+      "status": "Concluído",
+      "actions": "Fornecer assistência remota, orientar sobre configurações"
+    },
+    {
+      "id": 13,
+      "attendant": "Rodrigo",
+      "summary": "Problema de qualidade do produto",
+      "details": "O cliente reclama da qualidade de um produto adquirido.",
+      "date": "2024-02-02",
+      "status": "Pendente",
+      "actions": "Verificar qualidade do produto, oferecer soluções"
+    }
+  ]
+  

@@ -145,10 +145,10 @@ export default function TextEnter({ onEnviarMensagem }: TextEnterProps) {
           </div>
           <div className='btncontainer'>
             <button className='icon'>
-              <Mic />
+              <Mic className={undefined} />
             </button>
             <button className='icon'>
-              <Photo />
+              <Photo className={undefined} />
             </button>
             <div className='btntxt'>
               <button onClick={handleClick} className='btntxt'>
