@@ -9,6 +9,7 @@ import avatar from '../../components/Image/Avatar3.png';
 import message from '../../components/Image/message-dots.svg';
 import paperclip from '../../components/Image/paperclip.svg';
 import AddInfo from '../Business/addInfo';
+import PrecoModal from '../Modal/price';
 
 interface SearchBusinessProps {}
 
@@ -101,9 +102,8 @@ const columns: GridColDef[] = [
     ),
   },
   { field: 'valor', headerName: 'Valor', width: 150 },
-// ... (código anterior)
 
-{
+  {
     field: 'acao',
     headerName: 'Ação',
     width: 150,
@@ -154,12 +154,12 @@ const SearchBusiness: React.FC<SearchBusinessProps> = () => {
             { showKanban ? (
                 <AddInfo setShowList={handleShowList} />
             ) : (
-                <div style={{ width: '92%', height: '100%', paddingTop: 25, paddingBottom: 24, paddingLeft: 100, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', gap: 1, display: 'inline-flex',  zIndex: '999', backgroundColor:'#fff'}}>
+                <div style={{ width: '91.5%', height: '100%', paddingTop: 25, paddingBottom: 24, paddingLeft: 100, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', gap: 1, display: 'inline-flex',  zIndex: '999', backgroundColor:'#fff'}}>
                     <div style={{boxShadow: '0 0 5px 2px rgba(138, 138, 138, 0.2)', width:'100%'}}>
-                        <div style={{ alignSelf: 'stretch', paddingLeft: 4, paddingRight: 1, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'inline-flex', width: '100%', marginLeft:'15px', marginTop:'15px' }}>
+                        <div style={{ alignSelf: 'stretch', paddingLeft: 4, paddingRight: 1, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'inline-flex', width: '100%', marginLeft:'25px', marginTop:'15px' }}>
                             <div style={{ color: 'black', fontSize: 18, fontFamily: 'sans-serif', fontWeight: '500', lineHeight: 2, wordWrap: 'break-word' }}>Filtro de busca: Negócios</div>
                         </div>
-                        <div style={{ justifyContent: 'space-between', alignItems: 'center', gap: 24, display: 'flex', width: '100%', padding: '5px 0px 1px 10px', marginBottom:'25px', marginLeft:'15px'}}>
+                        <div style={{ justifyContent: 'space-between', alignItems: 'center', gap: 24, display: 'flex', width: '98%', padding: '5px 0px 1px 10px', marginBottom:'25px', marginLeft:'15px'}}>
                             <div style={{ flex: '1 ', height: 38, borderRadius: 6, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex', width: '100px' }}>
                                 <div style={{ flex: '1 1 0', height: 38, background: 'white', borderRadius: 6, overflow: 'hidden', justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex' }}>
                                     <form style={{ width: '100%', height: '95%' }}>

@@ -1,0 +1,246 @@
+/* Estilos para o modal de informações do pedido */
+.business-modal-container {
+  width: 45%;
+  max-width: 800px;
+  margin-right: auto;
+  position: relative;
+  left: 10px;
+  box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.4);
+}
+
+.business-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.sku-barcode-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.sku-container,
+.barcode-container {
+  flex: 1;
+}
+
+.sku-container,
+.barcode-container label {
+  margin-bottom: 5px;
+}
+
+.business-modal-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.avatar-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+
+.business-modal-content label {
+  margin-bottom: 5px;
+  margin-left: 10px;
+}
+
+.business-modal-content input,
+.business-modal-content textarea {
+  width: 94%;
+  padding: 8px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  height: 20px;
+}
+
+.business-modal-content textarea {
+  height: 150px;
+}
+
+.sku-barcode-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.sku-container,
+.barcode-container {
+  flex: 1;
+}
+
+.sku-container,
+.barcode-container label {
+  margin-bottom: 5px;
+}
+
+/* Estilos para o modal de preço */
+.business-modal-price-container {
+  width: 50%;
+  height: calc(100% - 200px);
+  max-width: 400px; 
+  margin-right: auto;
+  position: relative;
+  left: 10px;
+  box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.4);
+}
+
+.business-modal-content-price {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.checkbox-container input {
+  margin-left: auto; 
+  width: 20px;
+  margin: auto;
+  margin-right: 10px;
+}
+
+.checkbox-container-footer {
+  margin-bottom: 0px;
+  margin-top: -20px;
+  width: auto;
+  height: 60px;
+}
+
+.checkbox-container-footer h2 {
+  width: 150px;
+  font-size: 23px;
+}
+
+.checkbox-container-footer input {
+  display: flex;
+  margin-left: auto;
+  margin: auto;
+  position: relative;
+  top: -40px; 
+  width: 20px;
+  height: 20px;
+  margin-bottom: 0px;
+  margin-right: 10px;
+}
+
+/* Estilos para a página de adição de pedido/proposta */
+.business-add-info-container {
+  width: 95%;
+  margin-left: 72px;
+}
+
+.title-section span {
+  display: flex;
+  margin-top: -10px;
+}
+
+.business-add-info-container .button-section {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-bottom: 0px;
+}
+
+.business-add-info-container .button-section button {
+  background: gray;
+  margin-left: 10px;
+  color: darkgray;
+}
+
+.business-add-info-container .button-section button.blue {
+  background: lightblue;
+  margin-left: 10px;
+  color: darkblue;
+}
+
+.business-add-info-container .button-section button.dark-blue {
+  background: darkblue;
+  color: white;
+}
+
+/* Estilos para o modal de arquivos */
+.business-modal-arquivos-container {
+  width: 45%;
+  max-width: 800px;
+  height: calc(100% - 200px);
+  margin-right: auto;
+  position: relative;
+  left: 10px;
+  margin-top: 30px; 
+  box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.4);
+}
+
+.business-modal-content-arquivos {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.business-modal-content-arquivo {
+  margin-left: 5px;
+}
+
+.business-modal-content-add {
+  margin-top: 20px;
+  margin-right: 15px;
+  color: blue;
+}
+
+.business-modal-content-arquivos-label {
+  border: 1px solid rgb(196, 196, 196);
+  height: calc(100% - 20px);
+  height: 220px;
+}
+
+.business-modal-content-arquivos-label span{
+  margin: 5px;
+  text-align: center; 
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.business-modal-content-arquivos-label .business-span {
+  margin-top: 55px;
+}
+
+.business-modal-content-arquivos-label button {
+  margin: auto;
+  display: flex;
+  align-self: center;
+  text-align: center; 
+}
+
+/* Estilos para o modal de organize */
+.business-modal-organize-container {
+  width: 50%;
+  max-width: 400px;
+  height: calc(100% + 400px);
+  margin-right: auto;
+  position: relative;
+  left: 10px;
+  margin-top: 30px;
+  box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.4);
+}
+
+.business-modal-content-organize {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.business-modal-content-organize label,
+.business-modal-content-organize select,
+.business-modal-content-organize input {
+  width: 100%;
+  margin-bottom: 15px; 
+}
