@@ -67,7 +67,7 @@ const Sidebar: React.FC<SidebarProps> = () => {
           </div>
       </Link>
 
-      <Link to="/">
+      <Link to="/contact">
         <div className="menu-item">
           <img src={book} alt="Book" />
           <span className={expanded ? 'show-text' : 'hide-text'}>Contatos</span>

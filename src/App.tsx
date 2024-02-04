@@ -13,6 +13,8 @@ import Leads from  './pages/Leads';
 import Layout from './components/Layout/Layout';
 import Statistics from './pages/Statistics';
 import Calendar from './pages/Calendar';
+import Contact from './pages/Contacts'
+import DetailsContact from './pages/Details'
 
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
         <Route path="/" element={<Dashboard />} />
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/chat" element={<Chat />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/details" element={<DetailsContact />} />
         <Route path="/formulario" element={<Forms />} />
         <Route path="/email" element={<Email />} />
         <Route path="/estatisticas" element={<Statistics />} />
