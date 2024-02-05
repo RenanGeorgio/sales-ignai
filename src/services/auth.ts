@@ -1,9 +1,22 @@
 import axios from "axios";
-console.log(process.env.REACT_APP_AUTH_API);
+import Cookies from 'js-cookie'
+
 const authApi = axios.create({
   baseURL: process.env.REACT_APP_AUTH_API,
-  timeout: 1000,
-  headers: { "X-Custom-Header": "foobar" },
+  withCredentials: true
 });
+
+authApi.interceptors.request.use(
+  config => {
+    const token = Cookies.get('token') 
+    if (token) {
+      config.headers['Authorization'] = 'Bearer ' + token
+    }
+    return config
+  },
+  error => {
+    Promise.reject(error)
+  }
+)
 
 export default authApi;

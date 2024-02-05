@@ -3,14 +3,19 @@ import { createSlice } from "@reduxjs/toolkit";
 const { reducer, actions } = createSlice({
   name: "user",
   initialState: {
-    user: null
+    name: null,
+    email: null,
+    company: null,
   },
   reducers: {
     updateUser(state, action) {
-        state.user = action.payload;
-    }
+      return {
+        ...state,
+        ...action.payload,
+      };
+    },
   },
 });
 
-export { actions as userActions }
-export { reducer as userReducer }
+export { actions as userActions };
+export { reducer as userReducer };

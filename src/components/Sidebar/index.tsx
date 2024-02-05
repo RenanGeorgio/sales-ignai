@@ -29,7 +29,7 @@ const Sidebar: React.FC<SidebarProps> = () => {
     setExpanded(!expanded);
   };
 
-  if(!isAuthenticated) return;
+  // if(!isAuthenticated) return;
   
   return (
     <div className={`sidebar ${expanded ? 'expanded' : ''}`}>
