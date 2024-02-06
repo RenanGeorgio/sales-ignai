@@ -1,7 +1,10 @@
 const routes = {
   home: '/',
   chat: '/chat',
+  calendar: '/calendar',
   chatbot: '/chatbot',
+  contact: '/contact',
+  details: '/details',
   formulario: '/formulario',
   email: '/email',
   estatisticas: '/estatisticas',
