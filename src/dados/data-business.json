@@ -1,0 +1,100 @@
+[
+    {
+      "id": 1,
+      "negociosAtivos": {
+        "name": "Café Dois Irmãos",
+        "description": "Marge.Jacobson@gmail.com    27 99882-7820"
+      },
+      "etapa": "Descoberta",
+      "setor": "Advocacia",
+      "documentos": 3,
+      "valor": "R$ 70.000,00",
+      "acao": 1
+    },
+    {
+      "id": 2,
+      "negociosAtivos": {
+        "name": "Não informado",
+        "description": "Marge.Jacobson@gmail.com    27 99882-7820"
+      },
+      "etapa": "Rejeitado",
+      "setor": "Publicidade",
+      "documentos": 3,
+      "valor": "R$ 70.000,00",
+      "acao": 2
+    },
+    {
+      "id": 3,
+      "negociosAtivos": {
+        "name": "Café Dois Irmãos",
+        "description": "Marge.Jacobson@gmail.com    27 99882-7820"
+      },
+      "etapa": "Proposta",
+      "setor": "Alimentos",
+      "documentos": 3,
+      "valor": "R$ 70.000,00",
+      "acao": 3
+    },
+    {
+      "id": 4,
+      "negociosAtivos": {
+        "name": "Não informado",
+        "description": "Marge.Jacobson@gmail.com    27 99882-7820"
+      },
+      "etapa": "Negociação",
+      "setor": "Advocacia",
+      "documentos": 3,
+      "valor": "R$ 70.000,00",
+      "acao": 4
+    },
+    {
+      "id": 5,
+      "negociosAtivos": {
+        "name": "Negócio",
+        "description": "Marge.Jacobson@gmail.com    27 99882-7820"
+      }
+    },
+    {
+      "id": 6,
+      "negociosAtivos": {
+        "name": "Fazenda Soja SA",
+        "description": "Marge.Jacobson@gmail.com    27 99882-7820"
+      },
+      "etapa": "Rejeitado",
+      "setor": "Alimentos",
+      "documentos": 3,
+      "valor": "R$ 70.000,00",
+      "acao": 6
+    },
+    {
+      "id": 7,
+      "negociosAtivos": {
+        "name": "Garlic e Ginseng SA",
+        "description": "Marge.Jacobson@gmail.com    27 99882-7820"
+      },
+      "etapa": "Descoberta",
+      "setor": "Publicidade",
+      "documentos": 3,
+      "valor": "R$ 70.000,00",
+      "acao": 7
+    },
+    {
+      "id": 8,
+      "negociosAtivos": {
+        "name": "Mandrake Root LTDA",
+        "description": "Marge.Jacobson@gmail.com    27 99882-7820"
+      }
+    },
+    {
+      "id": 9,
+      "negociosAtivos": {
+        "name": "Spider Silk LTDA",
+        "description": "Marge.Jacobson@gmail.com    27 99882-7820"
+      },
+      "etapa": "Proposta",
+      "setor": "Publicidade",
+      "documentos": 3,
+      "valor": "R$ 70.000,00",
+      "acao": 10
+    }
+]
