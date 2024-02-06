@@ -16,6 +16,7 @@ export function AuthProvider({ children }) {
   const api = useApi();
 
   const isAuthenticated = useSelector((state: any) => state.session.status)
+  const [isOffline, setIsOffline] = useState(false); // todo: implementar lógica de offline, caso necessário
 
   async function signIn({ email, password }: SignInData) {
     const { token, error }: SignInResponse | any = await api.signIn({

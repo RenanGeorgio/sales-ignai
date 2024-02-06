@@ -4,23 +4,33 @@ import { connect, useDispatch } from "react-redux";
 import authApi from "./services/auth";
 import { userActions, leadsActions } from "./store/store";
 import { useQuery } from "react-query";
+import { AxiosError, isAxiosError } from "axios";
 
 const CachingController = () => {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, signOut } = useAuth();
   const dispatch = useDispatch();
 
   // tratar possíveis erros, adicionando status offline etc
-  const { data, error } = useQuery(
+  const { data } = useQuery(
     "appData",
     async () => {
       const userRequest = authApi.get("/user");
       const leadsRequest = authApi.get("/leads");
-
-      const [user, leads] = await Promise.all([userRequest, leadsRequest]).then(function (
+      const [user, leads]: any | AxiosError = await Promise.all([userRequest, leadsRequest]).then(function (
         values
       ) {
         return values;
+      }).catch(function (e) {
+        if(isAxiosError(e)) {
+          if (e.response?.status === 403) {
+            signOut();
+          }
+          if(e.code === "ERR_NETWORK") {
+            alert("Você está offline");
+          }
+        }
       });
+      
       return { user: user.data, leads: leads.data };
     },
     {
