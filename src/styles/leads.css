@@ -97,8 +97,11 @@
 .info-section {
   display: flex;
   align-items: flex-start; 
-  padding: 10px;
+  flex-direction: column;
+  padding: 5px;
   border-radius: 6px;
+  min-width: 120px;
+  cursor: pointer;
 }
 
 .info-section p {
@@ -113,18 +116,28 @@
   display: flex;
   align-items: flex-start; 
   align-self: flex-start;
-  margin-top: 35px; 
-  margin-left: -100px;
+  justify-content: space-around;
+  margin-top: 3px; 
+  margin-left: -00px;
+  gap: 85px;
+  width: 100%;
 }
 
 .icons-section img {
   width: 20px;
-  margin-bottom: 5px; 
+  margin-bottom: 1px; 
+  justify-content: start;
 }
 
 .right-icon {
   margin-left: auto;
-  margin-top: 10%;
+  margin-top: 0%;
+  display: flex;
+  justify-content: end;
+  background-color: #9a9a9a63;
+  border: #ff2a2a0d .5px solid ;
+  border-radius: 50%;
+  padding: 3px;
 }
 
 .last-number {

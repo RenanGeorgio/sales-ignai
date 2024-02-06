@@ -59,6 +59,7 @@ const Leads: React.FC = () => {
           </div>
 
           <div className="kanban-columns">
+
             <div className="kanban-column">
               <h2>Contato Inicial</h2>
               <div className="menu-icon-leads">&#8942;</div>
@@ -71,16 +72,20 @@ const Leads: React.FC = () => {
                   onClick={openModal}
                   key={leadInfo?._id}
                 >
-                  <p>{leadInfo.company}</p>
+                  <p>{leadInfo.company}</p> 
                   <div className="icons-section">
+                    <div> 
                     <img src={clip} alt="Ícone 1" />
                     <span className="last-number">
                       {leadInfo?.files.length}
                     </span>
                     <img src={message} alt="Ícone 2" />
                     <span>{leadInfo?.activity.length}</span>
+                    </div>
+                    <div className="right-icon"> 
+                  <img src={avatar} alt="Ícone 3"  />
+                    </div>
                   </div>
-                  <img src={avatar} alt="Ícone 3" className="right-icon" />
                 </div>
               ))}
             </div>
@@ -97,14 +102,18 @@ const Leads: React.FC = () => {
                 >
                   <p>{leadInfo.company}</p>
                   <div className="icons-section">
+                    <div> 
                     <img src={clip} alt="Ícone 1" />
                     <span className="last-number">
                       {leadInfo?.files.length}
                     </span>
                     <img src={message} alt="Ícone 2" />
                     <span>{leadInfo?.activity.length}</span>
+                    </div>
+                    <div className="right-icon"> 
+                  <img src={avatar} alt="Ícone 3"  />
+                    </div>
                   </div>
-                  <img src={avatar} alt="Ícone 3" className="right-icon" />
                 </div>
               ))}
             </div>
@@ -121,15 +130,19 @@ const Leads: React.FC = () => {
                   key={leadInfo?._id}
                 >
                   <p>{leadInfo.company}</p>
-                  <div className="icons-section">
+              <div className="icons-section">
+                    <div> 
                     <img src={clip} alt="Ícone 1" />
                     <span className="last-number">
                       {leadInfo?.files.length}
                     </span>
                     <img src={message} alt="Ícone 2" />
                     <span>{leadInfo?.activity.length}</span>
+                    </div>
+                    <div className="right-icon"> 
+                  <img src={avatar} alt="Ícone 3"  />
+                    </div>
                   </div>
-                  <img src={avatar} alt="Ícone 3" className="right-icon" />
                 </div>
               ))}
             </div>
@@ -146,14 +159,18 @@ const Leads: React.FC = () => {
                 >
                   <p>{leadInfo.company}</p>
                   <div className="icons-section">
+                    <div> 
                     <img src={clip} alt="Ícone 1" />
                     <span className="last-number">
                       {leadInfo?.files.length}
                     </span>
                     <img src={message} alt="Ícone 2" />
                     <span>{leadInfo?.activity.length}</span>
+                    </div>
+                    <div className="right-icon"> 
+                  <img src={avatar} alt="Ícone 3"  />
+                    </div>
                   </div>
-                  <img src={avatar} alt="Ícone 3" className="right-icon" />
                 </div>
               ))}
             </div>
