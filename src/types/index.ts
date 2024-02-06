@@ -18,3 +18,12 @@ export type ErrorResponse = {
   status: number;
   message: string;
 };
+
+export type Leads = {
+  companyId: string,
+  topic: string,
+  lead: {
+    name: string,
+    description: string
+  }
+}

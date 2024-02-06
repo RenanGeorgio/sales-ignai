@@ -12,10 +12,9 @@ const { reducer, actions } = createSlice({
         status: true,
       };
     },
-    signOut(state) {
+    signOut() {
       localStorage.removeItem('persist:root')
       return {
-        ...state,
         status: false,
       };
     },

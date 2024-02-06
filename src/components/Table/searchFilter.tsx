@@ -8,9 +8,19 @@ import LeadIcon from '../../components/Image/LabelInitials.svg';
 import avatar from '../../components/Image/Avatar3.png';
 import message from '../../components/Image/message-dots.svg';
 import paperclip from '../../components/Image/paperclip.svg';
+import { useSelector } from 'react-redux';
 
 interface SearchFilterProps {
     setShowList: () => void; // New prop
+    leadsData: [];
+}
+
+const leadStatus = {
+    INITIAL_CONTACT: "Contato Inicial"
+}
+
+const leadOrigin = {
+    WHATSAPP: "Whatsapp"
 }
 
 const ContatoCell = ({ contato }) => {
@@ -44,10 +54,14 @@ const ContatoCell = ({ contato }) => {
             </div>
         ),
     },
-    { field: 'leadOrigem', headerName: 'Lead Origem', width: 150 },
-    { field: 'empresa', headerName: 'Empresa', width: 150 },
+    { field: 'leadOrigin', headerName: 'Lead Origem', width: 150,
+    renderCell: (params) => {
+        const origin = leadOrigin[params?.value]
+        return origin
+    } },
+    { field: 'company', headerName: 'Empresa', width: 150 },
     {
-        field: 'historico',
+        field: 'activity',
         headerName: 'Histórico',
         width: 180,
         renderCell: (params) => (
@@ -61,18 +75,21 @@ const ContatoCell = ({ contato }) => {
             </div>
         ),
     },
-    { field: 'status', headerName: 'Status', width: 150,
-        renderCell: (params) => (
-            <div style={{ 
-                color: getStatusStyles(params.value).color, 
-                backgroundColor: getStatusStyles(params.value).backgroundColor, 
-                border: 'none',
-                padding:'2px',
-                borderRadius:'5px'
-            }}>
-                {params.value}
-            </div>
-        ),
+    { field: 'topic', headerName: 'Status', width: 150,
+        renderCell: (params) => {
+            const status = leadStatus[params?.value]
+            return(
+                <div style={{ 
+                    color: getStatusStyles(status).color, 
+                    backgroundColor: getStatusStyles(status).backgroundColor, 
+                    border: 'none',
+                    padding:'2px',
+                    borderRadius:'5px'
+                }}>
+                    {status}
+                </div>
+            )
+        },
     },
     {
         field: 'acao',
@@ -102,7 +119,7 @@ const ContatoCell = ({ contato }) => {
     },
 ];
 
-const SearchFilter: React.FC<SearchFilterProps> = ({ setShowList }) => {
+const SearchFilter: React.FC<SearchFilterProps> = ({ setShowList, leadsData }) => {
     return (
 
         <div style={{ width: '92%', height: '100%', paddingTop: 25, paddingBottom: 24, paddingLeft: 100, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', gap: 1, display: 'inline-flex',  zIndex: '999', backgroundColor:'#fff'}}>
@@ -210,17 +227,19 @@ const SearchFilter: React.FC<SearchFilterProps> = ({ setShowList }) => {
                 </div>
             </div>
 
-            <div style={{ height: 370, width: '100%' }}>
+            <div style={{ height: '80vh', width: '100%' }}>
                 <DataGrid
-                    rows={rows}
+                    rows={leadsData}
                     columns={columns}
                     initialState={{
                         pagination: {
                             paginationModel: { page: 0, pageSize: 5 },
                         },
                     }}
-                    pageSizeOptions={[5, 10]}
+                    autoPageSize
+                    // pageSizeOptions={[5, 10, 20]}
                     isCellEditable={(params) => params.row.Contato % 2 === 0}
+                    getRowId={(row) => row._id}
                 />
             </div>
 

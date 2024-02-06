@@ -93,6 +93,7 @@ export default function SignIn(): JSX.Element {
               id="email"
               label="Endereço de e-mail"
               autoComplete="email"
+              type="email"
               autoFocus
               {...register("email")}
             />

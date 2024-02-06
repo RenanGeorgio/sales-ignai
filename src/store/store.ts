@@ -11,8 +11,9 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage"; // defaults to localStorage for web
 
-import { userReducer as user } from "./user/userSlice";
 import { sessionReducer as session } from "./session/sessionSlice";
+import { userReducer as user } from "./user/userSlice";
+import { leadsReducer as leads } from "./leads/leadsSlice";
 
 const persistConfig = {
   key: "root",
@@ -20,8 +21,9 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
-  user,
   session,
+  user,
+  leads,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -38,7 +40,8 @@ const store = configureStore({
 
 let persistor = persistStore(store);
 
-export { userActions } from "./user/userSlice";
 export { sessionActions } from "./session/sessionSlice";
+export { userActions } from "./user/userSlice";
+export { leadsActions } from "./leads/leadsSlice";
 
 export { persistor, store, rootReducer };

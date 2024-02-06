@@ -32,8 +32,8 @@ function App() {
           <Routes>
             <Route element={<Anonymous />}>
               <Route path="/sign-in" element={<SignInPage />} />
+              {/* <Route path='/sign-up' element={<SignUpPage/>} /> */}
             </Route>
-            {/* <Route path='/sign-up' element={<SignUpPage/>} /> */}
             <Route element={<RequireAuth />}>
               <Route path="/" element={<Dashboard />} />
               <Route path="/calendar" element={<Calendar />} />

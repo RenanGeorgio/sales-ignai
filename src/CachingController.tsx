@@ -2,24 +2,38 @@ import { useEffect } from "react";
 import useAuth from "./hooks/useAuth";
 import { connect, useDispatch } from "react-redux";
 import authApi from "./services/auth";
-import { userActions } from "./store/store";
+import { userActions, leadsActions } from "./store/store";
 import { useQuery } from "react-query";
 
 const CachingController = () => {
   const { isAuthenticated } = useAuth();
   const dispatch = useDispatch();
 
-  const { data, error } = useQuery("user", async () => {
-    const response = await authApi.get("/user");
-    return response.data;
-  }, {
-    staleTime: 1000 * 60
-  });
+  // tratar possíveis erros, adicionando status offline etc
+  const { data, error } = useQuery(
+    "appData",
+    async () => {
+      const userRequest = authApi.get("/user");
+      const leadsRequest = authApi.get("/leads");
+
+      const [user, leads] = await Promise.all([userRequest, leadsRequest]).then(function (
+        values
+      ) {
+        return values;
+      });
+      return { user: user.data, leads: leads.data };
+    },
+    {
+      staleTime: 1000 * 60,
+      enabled: isAuthenticated,
+    }
+  );
 
   useEffect(() => {
     if (data) {
-      console.log(data)
-      dispatch(userActions.updateUser(data));
+      const { user, leads } = data;
+      dispatch(userActions.updateUser(user));
+      dispatch(leadsActions.updateLeads(leads));
     }
   }, [data, dispatch]);
 
