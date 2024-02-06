@@ -32,7 +32,7 @@ const OrganizeModal: React.FC = () => {
         <label>Setor</label>
         <select>
           <option value="" disabled selected>
-            Selecione o Setor
+            Setor
           </option>
           <option value="setor1">Setor 1</option>
           <option value="setor2">Setor 2</option>
@@ -41,14 +41,14 @@ const OrganizeModal: React.FC = () => {
         <label>Status</label>
         <select>
           <option value="" disabled selected>
-            Selecione o Status
+            Status
           </option>
           <option value="status1">Status 1</option>
           <option value="status2">Status 2</option>
         </select>
 
         <label>Tags</label>
-        <input type="text" placeholder="Adicionar Tags" />
+        <input type="text" placeholder="Tags" />
       </div>
     </div>
   );

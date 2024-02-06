@@ -22,7 +22,7 @@ const AddInfo: React.FC<AddInfoProps> = ({ setShowList }) => {
                     <div style={{ flex: '1 ', height: 38, borderRadius: 6, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex', width: '100px' }}>
                         <div style={{ flex: '1 1 0', height: 38, background: 'white', borderRadius: 6, overflow: 'hidden', justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex' }}>
                             <form style={{ width: '100%', height: '95%' }}>
-                                <select style={{ width: '80%', height: '100%', borderRadius: 6}}>
+                                <select style={{ width: '95%', height: '100%', borderRadius: 6}}>
                                     <option value="" selected>
                                         <em>Selecionar o cliente</em>
                                     </option>
@@ -36,7 +36,7 @@ const AddInfo: React.FC<AddInfoProps> = ({ setShowList }) => {
                     <div style={{ flex: '1 1 0', height: 38, borderRadius: 6, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex' }}>
                         <div style={{ flex: '1 1 0', height: 38, background: 'white', borderRadius: 6, overflow: 'hidden', justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex' }}>
                             <form style={{ width: '100%', height: '95%' }}>
-                                <select style={{ margin: 1, width: '80%', height: '100%', borderRadius: 6}}>
+                                <select style={{ margin: 1, width: '95%', height: '100%', borderRadius: 6}}>
                                     <option value="" selected>
                                         <em>Selecionar a etapa da proposta</em>
                                     </option>
@@ -49,7 +49,7 @@ const AddInfo: React.FC<AddInfoProps> = ({ setShowList }) => {
                     </div>
                     <div style={{ flex: '1 1 0', height: 38, borderRadius: 6, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex' }}>
                         <div style={{ flex: '1 1 0', height: 38, background: 'white', borderRadius: 6, overflow: 'hidden', justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex' }}>
-                            <form style={{ width: '80%', height: '95%' }}>
+                            <form style={{ width: '95%', height: '95%' }}>
                                 <select style={{ width: '100%', height: '100%', borderRadius: 6 }}>
                                     <option value="" selected>
                                         <em>Selecionar o setor da empresa</em>

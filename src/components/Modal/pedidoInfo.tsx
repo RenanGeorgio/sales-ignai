@@ -20,11 +20,11 @@ const PedidoInfoModal: React.FC = () => {
                 <div className="sku-barcode-container">
                     <div className="sku-container">
                         <label>SKU</label>
-                        <input type="text" style={{ width: '80%' }} placeholder="SKU"/>
+                        <input type="text" style={{ width: '88%' }} placeholder="SKU"/>
                     </div>
                     <div className="barcode-container">
                         <label>Barcode</label>
-                        <input type="text" placeholder="0123-4567" style={{ width: '80%' }} />
+                        <input type="text" placeholder="0123-4567" style={{ width: '88%' }} />
                     </div>
                 </div>
                 <label>Descrição</label>

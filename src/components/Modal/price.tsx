@@ -18,7 +18,7 @@ const PrecoModal: React.FC = () => {
           <label htmlFor="impostosInclusos">Impostos inclusos no preço total</label>
         </div>
 
-        <hr style={{ border: '1px solid #ccc', margin: '20px 0' }} />
+        <hr style={{ border: '1px solid #ccc', margin: '20px 0', width:'95%' }} />
 
         <div className="checkbox-container-footer">
           <h2>Em estoque</h2>
