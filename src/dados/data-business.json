@@ -50,14 +50,9 @@
     {
       "id": 5,
       "negociosAtivos": {
-        "name": "Planta e Raiz",
+        "name": "Negócio",
         "description": "Marge.Jacobson@gmail.com    27 99882-7820"
-      },
-      "etapa": "Completa",
-      "setor": "Alimentos",
-      "documentos": 3,
-      "valor": "R$ 70.000,00",
-      "acao": 5
+      }
     },
     {
       "id": 6,
@@ -88,12 +83,7 @@
       "negociosAtivos": {
         "name": "Mandrake Root LTDA",
         "description": "Marge.Jacobson@gmail.com    27 99882-7820"
-      },
-      "etapa": "Negociação",
-      "setor": "Advocacia",
-      "documentos": 3,
-      "valor": "R$ 70.000,00",
-      "acao": 8
+      }
     },
     {
       "id": 9,
@@ -105,6 +95,6 @@
       "setor": "Publicidade",
       "documentos": 3,
       "valor": "R$ 70.000,00",
-      "acao": 9
+      "acao": 10
     }
 ]

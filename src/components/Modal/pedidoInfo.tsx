@@ -1,4 +1,3 @@
-// pedidoInfo.tsx
 import React from 'react';
 import '../../styles/business.css';
 import avatar from '../../components/Image/Avatar2.png';
@@ -10,7 +9,9 @@ const PedidoInfoModal: React.FC = () => {
                 <h2>Informações do Produto</h2>
                 <div className="business-modal-subheader">
                     <span>Assignados</span>
-                    <img src={avatar} alt='Avatar' className="avatar-image" />
+                    <div>
+                        <img src={avatar} alt='Avatar' className="avatar-image" />
+                    </div>
                 </div>
             </div>
             <div className="business-modal-content">
@@ -19,7 +20,7 @@ const PedidoInfoModal: React.FC = () => {
                 <div className="sku-barcode-container">
                     <div className="sku-container">
                         <label>SKU</label>
-                        <input type="text" style={{ width: '80%' }} />
+                        <input type="text" style={{ width: '80%' }} placeholder="SKU"/>
                     </div>
                     <div className="barcode-container">
                         <label>Barcode</label>

@@ -1,10 +1,11 @@
-// addInfo.tsx
 import React from 'react';
 import PedidoInfoModal from '../Modal/pedidoInfo';
 import '../../styles/business.css';
 import PrecoModal from '../Modal/price';
 import ArquivosModal from '../Modal/arquivos';
 import OrganizeModal from '../Modal/organize';
+import VariantesModal from '../Modal/variantes';
+import InventarioModal from '../Modal/inventario';
 
 interface AddInfoProps {
     setShowList: () => void;
@@ -80,6 +81,10 @@ const AddInfo: React.FC<AddInfoProps> = ({ setShowList }) => {
             <div style={{ display: 'flex', flexDirection: 'row' }}>
                 <ArquivosModal />
                 <OrganizeModal />
+            </div>
+            <div>
+                <VariantesModal />
+                <InventarioModal />
             </div>
         </div>
     );

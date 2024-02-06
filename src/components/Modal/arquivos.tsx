@@ -1,6 +1,5 @@
-// ArquivosModal.tsx
 import React from 'react';
-
+import FileUploadIcon from '@mui/icons-material/FileUpload';
 import '../../styles/business.css';
 
 const ArquivosModal: React.FC = () => {
@@ -16,9 +15,12 @@ const ArquivosModal: React.FC = () => {
           </div>
         </div>
         <div className="business-modal-content-arquivos-label">
-            <span className='business-span'>Jogue seu arquivo aqui</span> 
-            <span>ou</span>
-            <button>Buscar arquivo</button>
+          <div style={{display:'flex', justifyContent:'center', marginTop:'40px'}}>
+            <FileUploadIcon />
+          </div>
+          <span className='business-span'>Jogue seu arquivo aqui</span> 
+          <span>ou</span>
+          <button>Buscar arquivo</button>
         </div>
       </div>
     </div>

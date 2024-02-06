@@ -1,4 +1,3 @@
-// price.tsx
 import React from 'react';
 import '../../styles/business.css';
 

@@ -59,8 +59,16 @@ const columns: GridColDef[] = [
     width: 550,
     renderCell: (params) => (
       <div style={{ display: 'flex', alignItems: 'center' }}>
-        <img src={LeadIcon} alt="Lead Icon" style={{ marginRight: '8px' }} />
-        <ContatoCell contato={params.value} />
+        {params.row.id !== 5 && params.row.id !== 8 ? (
+          <>
+            <img src={LeadIcon} alt="Lead Icon" style={{ marginRight: '8px' }} />
+            <ContatoCell contato={params.value} />
+          </>
+        ) : (
+          <div style={{ fontWeight: 'bold', backgroundColor: '#fff', padding: '8px', borderRadius: '5px', width: '100%' }}>
+            {params.row.id === 5 ? 'Negócios Completos' : 'Negócios Rejeitados'}
+          </div>
+        )}
       </div>
     ),
   },
@@ -69,19 +77,25 @@ const columns: GridColDef[] = [
     headerName: 'Etapa',
     width: 150,
     renderCell: (params) => (
-      <div
-        style={{
-          color: getStatusStyles(params.value).color,
-          backgroundColor: getStatusStyles(params.value).backgroundColor,
-          border: 'none',
-          padding: '2px',
-          borderRadius: '5px',
-          width: '80px',
-          textAlign: 'center',
-        }}
-      >
-        {params.value}
-      </div>
+      <>
+        {params.row.id !== 5 && params.row.id !== 8 ? (
+          <div
+            style={{
+              color: getStatusStyles(params.value).color,
+              backgroundColor: getStatusStyles(params.value).backgroundColor,
+              border: 'none',
+              padding: '2px',
+              borderRadius: '5px',
+              width: '80px',
+              textAlign: 'center',
+            }}
+          >
+            {params.value}
+          </div>
+        ) : (
+          <div style={{ backgroundColor: '#fff', padding: '8px', borderRadius: '5px', width: '100%' }}></div>
+        )}
+      </>
     ),
   },
   { field: 'setor', headerName: 'Setor', width: 150 },
@@ -91,13 +105,17 @@ const columns: GridColDef[] = [
     width: 180,
     renderCell: (params) => (
       <div style={{ display: 'flex', alignItems: 'center' }}>
-        <img src={paperclip} alt="History Icon 1" style={{ marginRight: '4px' }} />
-        <span style={{ marginLeft: '4px' }}>{params.row.acao}</span>
-        <div style={{ marginRight: '4px' }}>{params.row.historicoClip}</div>
-        <img src={message} alt="History Icon 2" style={{ marginRight: '4px' }} />
-        <span style={{ marginLeft: '4px' }}>{params.row.acao}</span>
-        <div style={{ marginRight: '4px' }}>{params.row.historicoMessage}</div>
-        <img src={avatar} alt="History Icon 3" />
+        {params.row.id !== 5 && params.row.id !== 8 ? (
+          <>
+            <img src={paperclip} alt="History Icon 1" style={{ marginRight: '4px' }} />
+            <span style={{ marginLeft: '4px' }}>{params.row.acao}</span>
+            <div style={{ marginRight: '4px' }}>{params.row.historicoClip}</div>
+            <img src={message} alt="History Icon 2" style={{ marginRight: '4px' }} />
+            <span style={{ marginLeft: '4px' }}>{params.row.acao}</span>
+            <div style={{ marginRight: '4px' }}>{params.row.historicoMessage}</div>
+            <img src={avatar} alt="History Icon 3" />
+          </>
+        ) : null}
       </div>
     ),
   },
@@ -115,7 +133,7 @@ const columns: GridColDef[] = [
           color="primary"
           style={{ marginLeft: '8px', padding: '5px', minWidth: '40px'}}
           onClick={() => {
-        
+            
           }}
         >
           +
@@ -124,15 +142,21 @@ const columns: GridColDef[] = [
     ),
     renderCell: (params) => (
       <div style={{ display: 'flex', alignItems: 'center' }}>
-        <IconButton>
-          <Edit />
-        </IconButton>
-        <IconButton color="primary" size="small" onClick={() => {}}>
-          <Trash className={undefined} />
-        </IconButton>
-        <IconButton>
-          <DotsVertical className={undefined} />
-        </IconButton>
+        {params.row.id !== 5 && params.row.id !== 8 ? (
+          <>
+            <IconButton>
+              <Edit />
+            </IconButton>
+            <IconButton color="primary" size="small" onClick={() => {}}>
+              <Trash className={undefined} />
+            </IconButton>
+            <IconButton>
+              <DotsVertical className={undefined} />
+            </IconButton>
+          </>
+        ) : (
+          <div style={{ backgroundColor: '#fff', width: '100%' }}></div>
+        )}
       </div>
     ),
   },
@@ -142,12 +166,21 @@ const SearchBusiness: React.FC<SearchBusinessProps> = () => {
     const [showKanban, setShowKanban] = useState(false);
 
     const handleShowKanban = () => {
-        setShowKanban(true);
+      setShowKanban(true);
     };
 
     const handleShowList = () => {
-        setShowKanban(false);
+      setShowKanban(false);
     };
+
+    const rowsWithStylization = rows.map((row) => {
+      if (row.id === 5) {
+        return { ...row, negociosAtivos: { name: 'Negócios' } };
+      } else if (row.id === 8) {
+        return { ...row, negociosAtivos: { name: 'Negócios Rejeitados' } };
+      }
+      return row;
+    });
 
     return (
         <>
@@ -262,9 +295,9 @@ const SearchBusiness: React.FC<SearchBusinessProps> = () => {
                         </div>
                     </div>
 
-                    <div style={{ height: 620, width: '100%' }}>
+                      <div style={{ height: 620, width: '100%' }}>
                         <DataGrid
-                            rows={rows}
+                            rows={rowsWithStylization}
                             columns={columns}
                             initialState={{
                                 pagination: {

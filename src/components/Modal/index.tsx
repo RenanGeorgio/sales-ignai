@@ -1,4 +1,3 @@
-// LeadModal.tsx
 import React, { useState } from 'react';
 import './leadmodal.css';
 import edit from '../../components/Image/edit.svg';

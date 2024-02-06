@@ -1,18 +1,36 @@
 /* Estilos para o modal de informações do pedido */
 .business-modal-container {
-  width: 45%;
+  width: 55%;
   max-width: 800px;
   margin-right: auto;
   position: relative;
-  left: 10px;
+  margin-top: 20px;
+  left: 15px;
   box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.4);
+  color: #4B465C;
+  font-family: "Public Sans";
 }
 
 .business-modal-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 10px;
+  justify-content: space-between;
+  margin-bottom: 0px;
+}
+
+.business-modal-subheader {
+  margin-right: auto;
+  margin-left: 25px;
+  position: relative;
+  top: 5px;
+}
+
+.avatar-image {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-top: 0px;
 }
 
 .sku-barcode-container {
@@ -21,7 +39,11 @@
   margin-bottom: 10px;
 }
 
-.sku-container,
+.sku-container {  
+  flex: 1;
+  margin-top: 15px;
+}
+
 .barcode-container {
   flex: 1;
 }
@@ -34,13 +56,6 @@
 .business-modal-content {
   display: flex;
   flex-direction: column;
-}
-
-.avatar-image {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  margin-top: 10px;
 }
 
 .business-modal-content label {
@@ -82,16 +97,20 @@
   width: 50%;
   height: calc(100% - 200px);
   max-width: 400px; 
+  margin-top: 20px;
   margin-right: auto;
   position: relative;
-  left: 10px;
+  left: -60px;
   box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.4);
+  color: #4B465C;
+  font-family: "Public Sans";
 }
 
 .business-modal-content-price {
   display: flex;
   flex-direction: column;
   padding: 10px;
+  margin-top: 0px;
 }
 
 .checkbox-container {
@@ -148,33 +167,44 @@
   margin-top: 30px;
   margin-left: auto;
   margin-bottom: 0px;
+  cursor: pointer;
 }
 
 .business-add-info-container .button-section button {
-  background: gray;
+  background-color: white;
+  color: gray;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  width: 120px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
   margin-left: 10px;
-  color: darkgray;
 }
 
 .business-add-info-container .button-section button.blue {
-  background: lightblue;
-  margin-left: 10px;
-  color: darkblue;
+  color: rgb(87, 73, 240);
+  background-color: rgb(190, 185, 243);
+  border: none;
+  border-radius: 4px;
 }
 
 .business-add-info-container .button-section button.dark-blue {
-  background: darkblue;
+  background-color: rgba(115, 103, 240, 1);
   color: white;
+  border: none;
+  border-radius: 4px;
 }
 
 /* Estilos para o modal de arquivos */
 .business-modal-arquivos-container {
-  width: 45%;
+  width: 55%;
   max-width: 800px;
   height: calc(100% - 200px);
   margin-right: auto;
   position: relative;
-  left: 10px;
+  left: 15px;
   margin-top: 30px; 
   box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.4);
 }
@@ -193,6 +223,7 @@
   margin-top: 20px;
   margin-right: 15px;
   color: blue;
+  cursor: pointer;
 }
 
 .business-modal-content-arquivos-label {
@@ -210,7 +241,7 @@
 }
 
 .business-modal-content-arquivos-label .business-span {
-  margin-top: 55px;
+  margin-top: 10px;
 }
 
 .business-modal-content-arquivos-label button {
@@ -218,6 +249,14 @@
   display: flex;
   align-self: center;
   text-align: center; 
+  color: rgb(87, 73, 240);
+  background-color: rgb(190, 185, 243);
+  border: none;
+  border-radius: 4px;
+  padding: 8px;
+  width: 120px;
+  justify-content: center;
+  cursor: pointer;
 }
 
 /* Estilos para o modal de organize */
@@ -227,8 +266,8 @@
   height: calc(100% + 400px);
   margin-right: auto;
   position: relative;
-  left: 10px;
-  margin-top: 30px;
+  left: -60px;
+  margin-top: -50px;
   box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.4);
 }
 
@@ -238,9 +277,178 @@
   padding: 10px;
 }
 
-.business-modal-content-organize label,
-.business-modal-content-organize select,
+.business-modal-content-organize label {
+  margin: auto;
+  margin-bottom: 5px;
+}
 .business-modal-content-organize input {
   width: 100%;
   margin-bottom: 15px; 
+}
+
+.business-modal-content-organize select {
+  width: 100%;
+  margin-bottom: 15px; 
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.container-select-organize{
+  display: flex;
+}
+
+.container-select-organize span{
+  margin-left: auto;
+  color: blue;
+  cursor: pointer;
+}
+
+/* Estilos para o modal de variantes */
+.business-modal-variantes-container {
+  width: 55%;
+  max-width: 800px;
+  margin-right: auto;
+  position: relative;
+  left: 15px;
+  margin-top: -70px;
+  box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.4);
+}
+
+.business-modal-content-variantes {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.business-modal-header-v {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.variantes-inputs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.variantes-inputs-f {
+  width: 200px;
+}
+
+.variantes-inputs-f select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.variantes-inputs-s {
+  width: 500px;
+  margin-right: 10px;
+}
+
+.business-modal-content-variantes button {
+  width: 200px;
+  background-color: rgba(115, 103, 240, 1);
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Estilos para o modal de inventário */
+.business-modal-inventario-container {
+  width: 55%;
+  max-width: 800px;
+  margin-right: auto;
+  position: relative;
+  left: 15px;
+  margin-top: 30px;
+  box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.4);
+}
+
+.inventario-input-container {
+  display: flex;
+  margin-bottom: 10px;
+  margin-left: -10px;
+}
+
+.business-modal-content-inventario {
+  display: flex;
+  flex-direction: row; 
+  padding: 10px;
+}
+
+.inventario-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inventario-buttons button {
+  background-color: white;
+  color: gray;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  width: 170px;
+  cursor: pointer;
+  display: flex;
+  text-align: start;
+  margin-left: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.inventario-buttons button.selected {
+  background-color: rgba(115, 103, 240, 1);
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+.inventario-opcao {
+  margin-left: 20px; 
+  display: flex;
+  flex-direction: column;
+}
+
+.inventario-opcao label {
+  margin-bottom: 5px;
+}
+
+.inventario-opcao input {
+  width: calc(100% - 140px);
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.inventario-opcao button {
+  width: 120px;
+  padding: 8px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  background-color: rgba(115, 103, 240, 1);
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.inventario-spans {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+
+.inventario-spans span {
+  width: 50%; 
+  margin-bottom: 5px;
+}
+
+.inventario-button-img{
+  margin-top: -3px;
+  margin-right: 5px;
 }
