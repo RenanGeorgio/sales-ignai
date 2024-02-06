@@ -43,6 +43,7 @@
   align-items: center;
   width: 97%;
   left: 4.5%;
+  margin-top: 10px;
 }
 
 .search-icon {
@@ -62,6 +63,7 @@
   font-size: 14px;
   gap: 10px;
   outline: 0;
+  margin: auto;
 }
 
 .icons {
