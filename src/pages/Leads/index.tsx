@@ -74,7 +74,7 @@ const Leads: React.FC = () => {
                 >
                   <p>{leadInfo.company}</p> 
                   <div className="icons-section">
-                    <div> 
+                    <div className="iconsLeft"> 
                     <img src={clip} alt="Ícone 1" />
                     <span className="last-number">
                       {leadInfo?.files.length}
@@ -102,7 +102,7 @@ const Leads: React.FC = () => {
                 >
                   <p>{leadInfo.company}</p>
                   <div className="icons-section">
-                    <div> 
+                    <div className="iconsLeft"> 
                     <img src={clip} alt="Ícone 1" />
                     <span className="last-number">
                       {leadInfo?.files.length}
@@ -131,7 +131,7 @@ const Leads: React.FC = () => {
                 >
                   <p>{leadInfo.company}</p>
               <div className="icons-section">
-                    <div> 
+                    <div className="iconsLeft"> 
                     <img src={clip} alt="Ícone 1" />
                     <span className="last-number">
                       {leadInfo?.files.length}
@@ -159,7 +159,7 @@ const Leads: React.FC = () => {
                 >
                   <p>{leadInfo.company}</p>
                   <div className="icons-section">
-                    <div> 
+                    <div className="iconsLeft"> 
                     <img src={clip} alt="Ícone 1" />
                     <span className="last-number">
                       {leadInfo?.files.length}

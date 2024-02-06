@@ -98,7 +98,7 @@
   display: flex;
   align-items: flex-start; 
   flex-direction: column;
-  padding: 5px;
+  padding: 15px;
   border-radius: 6px;
   min-width: 120px;
   cursor: pointer;
@@ -127,6 +127,12 @@
   width: 20px;
   margin-bottom: 1px; 
   justify-content: start;
+}
+
+.iconsLeft{
+display:flex;
+min-width: 30px;
+flex-direction: row;
 }
 
 .right-icon {
