@@ -1,7 +1,8 @@
 
 import React from 'react'
 import { DataGrid, GridColDef, GridValueGetterParams,GRID_DATETIME_COL_DEF, GRID_DATE_COL_DEF } from '@mui/x-data-grid';
-import { Button, FormControl, InputLabel, MenuItem, Select, IconButton } from '@mui/material';
+import { Button, FormControl, InputLabel, MenuItem, Select, IconButton, Dialog } from '@mui/material';
+import Modal from '@mui/material/Modal';
 import { DotsVertical, Edit, Trash, } from '../../components/Image/icons';
 import rows from '../../dados/data-leads.json';
 import LeadIcon from '../../components/Image/LabelInitials.svg';
@@ -9,6 +10,7 @@ import avatar from '../../components/Image/Avatar3.png';
 import message from '../../components/Image/message-dots.svg';
 import paperclip from '../../components/Image/paperclip.svg';
 import { useSelector } from 'react-redux';
+import Adicionar from './modalAdd';
 
 interface SearchFilterProps {
     setShowList: () => void; // New prop
@@ -120,6 +122,10 @@ const ContatoCell = ({ contato }) => {
 ];
 
 const SearchFilter: React.FC<SearchFilterProps> = ({ setShowList, leadsData }) => {
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
     return (
 
         <div style={{ width: '92%', height: '100%', paddingTop: 25, paddingBottom: 24, paddingLeft: 100, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', gap: 1, display: 'inline-flex',  zIndex: '999', backgroundColor:'#fff'}}>
@@ -128,7 +134,7 @@ const SearchFilter: React.FC<SearchFilterProps> = ({ setShowList, leadsData }) =
                     <div style={{ color: 'black', fontSize: 18, fontFamily: 'sans-serif', fontWeight: '500', lineHeight: 2, wordWrap: 'break-word' }}>Filtro de busca</div>
                 </div>
                 <div style={{ position: 'absolute', top: '110px', right: '50px' }}>
-                    <button onClick={() => setShowList(true)} style={{color:'rgba(75, 70, 92, 1)', width:'108px', fontSize: '18px', border: 'none', backgroundColor:'#fff'}}>Ver kanban</button>
+                    <button  style={{color:'rgba(75, 70, 92, 1)', width:'108px', fontSize: '18px', border: 'none', backgroundColor:'#fff'}}>Ver kanban</button>
                 </div>
                 <div style={{ justifyContent: 'space-between', alignItems: 'center', gap: 24, display: 'flex', width: '100%', padding: '5px 0px 1px 10px', marginBottom:'25px', marginLeft:'15px'}}>
                     <div style={{ flex: '1 ', height: 38, borderRadius: 6, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex', width: '100px' }}>
@@ -220,12 +226,26 @@ const SearchFilter: React.FC<SearchFilterProps> = ({ setShowList, leadsData }) =
                             width: '137px',
                             //   fontSize: 14,
                             display: 'flex'
-                        }}>
+
+                        }}
+                        onClick={handleOpen}
+                        >
                            + Adicionar
                         </Button>
                     </div>
                 </div>
             </div>
+                        <div>
+
+                        <Dialog 
+                        open={open}
+                       
+                        aria-labelledby="modal-modal-title"
+                        aria-describedby="modal-modal-description"  
+                        >
+                            <Adicionar closeModal={handleClose} open={handleOpen}/>
+                        </Dialog>
+                        </div>
 
             <div style={{ height: '80vh', width: '100%' }}>
                 <DataGrid
