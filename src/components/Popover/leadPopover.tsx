@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import './leadPopover.css';
 
-const LeadPopover = ({ children }) => {
+const LeadPopover = ({ children, title, handleClick }) => {
   const [showPopover, setShowPopover] = useState(false);
   const popoverRef = useRef(null);
 
@@ -23,12 +23,18 @@ const LeadPopover = ({ children }) => {
     };
   }, []);
 
+  const handleClickBtn = () => {
+    handleClick();
+    setShowPopover(false);
+  };
+
   return (
     <div ref={popoverRef}>
-      <button onClick={togglePopover}>+ Coluna</button>
+      <button onClick={togglePopover}>{title}</button>
       {showPopover && (
         <div className="popover">
           {children}
+          <button onClick={(e) => handleClickBtn()}>Adicionar</button>
         </div>
       )}
     </div>

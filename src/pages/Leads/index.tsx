@@ -1,172 +1,3 @@
-// import React, { useEffect, useState } from "react";
-// import clip from "../../components/Image/paperclip.svg";
-// import message from "../../components/Image/message-dots-gray.svg";
-// import avatar from "../../components/Image/Avatar3.png";
-
-// import "../../styles/leads.css";
-// import Navbar from "../../components/Navbar";
-// import LeadModal from "../../components/Modal";
-// import SearchFilter from "../../components/Table/searchFilter";
-// import { useSelector } from "react-redux";
-// import groupedLeads from "../../helpers/groupedLeads";
-
-// const Leads: React.FC = () => {
-//   const [isModalOpen, setIsModalOpen] = useState(false);
-//   const [showKanban, setShowKanban] = useState(false);
-//   const [leadsByTopic, setLeadsByTopic]: any = useState({});
-
-//   const leadsData = useSelector((state: any) => state.leads);
-
-//   useEffect(() => {
-//     setLeadsByTopic(groupedLeads(leadsData));
-//   }, [leadsData]);
-
-//   const openModal = () => {
-//     setIsModalOpen(true);
-//   };
-
-//   const closeModal = () => {
-//     setIsModalOpen(false);
-//   };
-
-//   const handleShowKanban = () => {
-//     setShowKanban(true);
-//   };
-
-//   const handleShowList = () => {
-//     setShowKanban(false);
-//   };
-
-//   return (
-//     <>
-//       <Navbar />
-//       {showKanban ? (
-//         <SearchFilter setShowList={handleShowList} leadsData={leadsData} />
-//       ) : (
-//         <div className="leads-kanban">
-//           <div className="button-group">
-//             <button>+ Coluna</button>
-//             <div className="divider"></div>
-//             <button onClick={handleShowKanban}>Ver Lista</button>
-//             <div className="divider"></div>
-//             <button>Editar</button>
-//           </div>
-//           <div className="select-box">
-//             <select className="select-box">
-//               <option>Assignados a mim</option>
-//               <option>Todos</option>
-//             </select>
-//           </div>
-
-//           <div className="kanban-columns">
-//             <div className="kanban-column">
-//               <h2>Contato Inicial</h2>
-//               <div className="menu-icon-leads">&#8942;</div>
-//               <button className="add-button">+ Adicionar</button>
-
-//               {leadsByTopic["contact"]?.map((leadInfo: any) => (
-//                 <div
-//                   className="info-section contact-column"
-//                   style={{ marginBottom: "10px" }}
-//                   onClick={openModal}
-//                   key={leadInfo?._id}
-//                 >
-//                   <p>{leadInfo.company}</p>
-//                   <div className="icons-section">
-//                     <img src={clip} alt="Ícone 1" />
-//                     <span className="last-number">
-//                       {leadInfo?.files.length}
-//                     </span>
-//                     <img src={message} alt="Ícone 2" />
-//                     <span>{leadInfo?.activity.length}</span>
-//                   </div>
-//                   <img src={avatar} alt="Ícone 3" className="right-icon" />
-//                 </div>
-//               ))}
-//             </div>
-//             <div className="kanban-column">
-//               <h2>Discussões</h2>
-//               <div className="menu-icon-leads">&#8942;</div>
-//               <button className="add-button">+ Adicionar</button>
-//               {leadsByTopic["discussion"]?.map((leadInfo: any) => (
-//                 <div
-//                   className="info-section discussion-column"
-//                   style={{ marginBottom: "10px" }}
-//                   onClick={openModal}
-//                   key={leadInfo?._id}
-//                 >
-//                   <p>{leadInfo.company}</p>
-//                   <div className="icons-section">
-//                     <img src={clip} alt="Ícone 1" />
-//                     <span className="last-number">
-//                       {leadInfo?.files.length}
-//                     </span>
-//                     <img src={message} alt="Ícone 2" />
-//                     <span>{leadInfo?.activity.length}</span>
-//                   </div>
-//                   <img src={avatar} alt="Ícone 3" className="right-icon" />
-//                 </div>
-//               ))}
-//             </div>
-
-//             <div className="kanban-column">
-//               <h2>Tomada de Decisão</h2>
-//               <div className="menu-icon-leads">&#8942;</div>
-//               <button className="add-button">+ Adicionar</button>
-//               {leadsByTopic["decision"]?.map((leadInfo: any) => (
-//                 <div
-//                   className="info-section decision-column"
-//                   style={{ marginBottom: "10px" }}
-//                   onClick={openModal}
-//                   key={leadInfo?._id}
-//                 >
-//                   <p>{leadInfo.company}</p>
-//                   <div className="icons-section">
-//                     <img src={clip} alt="Ícone 1" />
-//                     <span className="last-number">
-//                       {leadInfo?.files.length}
-//                     </span>
-//                     <img src={message} alt="Ícone 2" />
-//                     <span>{leadInfo?.activity.length}</span>
-//                   </div>
-//                   <img src={avatar} alt="Ícone 3" className="right-icon" />
-//                 </div>
-//               ))}
-//             </div>
-//             <div className="kanban-column">
-//               <h2>Contrato</h2>
-//               <div className="menu-icon-leads">&#8942;</div>
-//               <button className="add-button">+ Adicionar</button>
-//               {leadsByTopic["contract"]?.map((leadInfo: any) => (
-//                 <div
-//                   className="info-section contract-column"
-//                   style={{ marginBottom: "10px" }}
-//                   onClick={openModal}
-//                   key={leadInfo?._id}
-//                 >
-//                   <p>{leadInfo.company}</p>
-//                   <div className="icons-section">
-//                     <img src={clip} alt="Ícone 1" />
-//                     <span className="last-number">
-//                       {leadInfo?.files.length}
-//                     </span>
-//                     <img src={message} alt="Ícone 2" />
-//                     <span>{leadInfo?.activity.length}</span>
-//                   </div>
-//                   <img src={avatar} alt="Ícone 3" className="right-icon" />
-//                 </div>
-//               ))}
-//             </div>
-//           </div>
-//         </div>
-//       )}
-//       {isModalOpen && <LeadModal closeModal={closeModal} />}
-//     </>
-//   );
-// };
-
-// export default Leads;
-
 import React, { useEffect, useState } from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import Navbar from "../../components/Navbar";
@@ -186,10 +17,10 @@ const Leads = () => {
   const [isMounted, setIsMounted] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showKanban, setShowKanban] = useState(false);
-  const [columnTitle, setColumnTitle] = useState("");
-  const [cardId, setCardId] = useState("");
-
+  const [columnName, setColumnName] = useState("");
+  const [cardName, setCardName] = useState("");
   const [columns, setColumns] = useState(leadsData);
+  const [cardInfo, setCardInfo] = useState({});
 
   useEffect(() => {
     setIsMounted(true);
@@ -216,9 +47,9 @@ const Leads = () => {
   };
 
   const addNewColumn = async () => {
-    if (columnTitle === "") return;
+    if (columnName === "") return;
     const newColumn = {
-      title: columnTitle,
+      title: columnName,
       items: [],
     };
 
@@ -230,13 +61,13 @@ const Leads = () => {
     }
   };
 
-  const handleCreateItem = async (data) => {
-    const response = await authApi.post(`/leads/${cardId}/items`, {
-      content: data.name,
+  const addNewCard = async (id: string) => {
+    if (cardName === "") return;
+    const response = await authApi.post(`/leads/${id}/items`, {
+      title: cardName,
     });
     const newColumns = columns.map((column) => {
-      if (column._id === cardId) {
-        // column.items.push(response.data);
+      if (column._id === id) {
         column = response.data;
       }
       return column;
@@ -246,8 +77,28 @@ const Leads = () => {
     setColumns(newColumns);
   };
 
-  const handleModalOpen = (e) => {
-    setCardId(e.target.id);
+  const updateCardInfo = async (values: {
+    title: string;
+    _id: string;
+    comments: string;
+  }) => {
+    const { _id, title, comments } = values;
+    const response = await authApi.put(`/leads/card/${_id}`, { title, comments });
+
+    if(response.status === 200){
+      const data = response.data;
+      const cardIndex = columns.findIndex((column) => column._id === data._id);
+      const newColumns = [...columns];
+      newColumns.splice(cardIndex, 1, data);
+      dispatch(leadsActions.updateLeads(newColumns));
+      setColumns(newColumns);
+      setIsModalOpen(false);
+    }
+
+  };
+
+  const handleModalOpen = (info) => {
+    setCardInfo(info);
     setIsModalOpen(true);
   };
 
@@ -259,15 +110,14 @@ const Leads = () => {
       ) : (
         <div className="leads-kanban">
           <div className="button-group">
-            <LeadPopover>
+            <LeadPopover title="+ Coluna" handleClick={addNewColumn}>
               <input
                 type="text"
                 placeholder="Nova Coluna"
                 onChange={(e) => {
-                  setColumnTitle(e.target.value);
+                  setColumnName(e.target.value);
                 }}
               />
-              <button onClick={(e) => addNewColumn()}>Adicionar</button>
             </LeadPopover>
             <div className="divider"></div>
             <button onClick={handleShowKanban}>Ver Lista</button>
@@ -301,14 +151,26 @@ const Leads = () => {
                         key={key}
                       >
                         <h1>{column.title}</h1>
-                        <button
+                        {/* <button
                           id={column._id}
                           onClick={(e) => {
                             handleModalOpen(e);
                           }}
                         >
                           Add Item
-                        </button>
+                        </button> */}
+                        <LeadPopover
+                          title="+ Card"
+                          handleClick={() => addNewCard(column._id)}
+                        >
+                          <input
+                            type="text"
+                            placeholder="Novo Card"
+                            onChange={(e) => {
+                              setCardName(e.target.value);
+                            }}
+                          />
+                        </LeadPopover>
                         <div
                           style={{
                             width: "264px",
@@ -337,9 +199,9 @@ const Leads = () => {
                                     borderRadius: "5px",
                                     ...provided.draggableProps.style,
                                   }}
-                                  onDoubleClick={() => setIsModalOpen(true)}
+                                  onDoubleClick={() => handleModalOpen(item)}
                                 >
-                                  {item.content}
+                                  {item.title}
                                 </div>
                               )}
                             </Draggable>
@@ -354,7 +216,8 @@ const Leads = () => {
             {isModalOpen && (
               <LeadModal
                 closeModal={() => setIsModalOpen(false)}
-                handleCreate={handleCreateItem}
+                handleClick={updateCardInfo}
+                data={cardInfo}
               />
             )}
           </div>

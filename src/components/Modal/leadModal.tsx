@@ -1,5 +1,5 @@
 // LeadModal.tsx
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./leadmodal.css";
 import edit from "../../components/Image/edit.svg";
 import treding from "../../components/Image/trending-up.svg";
@@ -9,10 +9,15 @@ import message from "../../components/Image/message-circle-2.svg";
 
 interface LeadModalProps {
   closeModal: () => void;
-  handleCreate: (data: any) => void;
+  handleClick: (values: {
+    _id: string;
+    title: string;
+    comments: string;
+  }) => Promise<void>;
+  data: any;
 }
 
-const LeadModal: React.FC<LeadModalProps> = ({ closeModal, handleCreate }) => {
+const LeadModal: React.FC<LeadModalProps> = ({ closeModal, handleClick, data }) => {
   const [activeTab, setActiveTab] = useState<"Editar" | "Atividade">("Editar");
   const [activities, setActivities] = useState<
     Array<{ name: string; time: string; image: string }>
@@ -25,23 +30,19 @@ const LeadModal: React.FC<LeadModalProps> = ({ closeModal, handleCreate }) => {
     { name: "Barry", time: "3:00 PM", image: avatar3 },
   ]);
 
+  const [values, setValues] = useState(data);
+
+  const handleUpdateField = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setValues({ ...values, [e.target.name]: e.target.value });
+  };
+
   const handleModalClick = (e: React.MouseEvent) => {
     e.stopPropagation();
   };
-
-  const [client, setClient] = useState("");
-
-  const itemRef = useRef({});
-
-  const createItem = () => {
-    
-    const refData = itemRef.current = {
-      ...itemRef.current,
-      name: client,
-    }
-
-    handleCreate(refData);
-
+  
+  // melhorar depois
+  const handleClickBtn = () => {
+    handleClick(values);
   }
 
   return (
@@ -68,10 +69,10 @@ const LeadModal: React.FC<LeadModalProps> = ({ closeModal, handleCreate }) => {
         <div className="modal-content">
           {activeTab === "Editar" && (
             <>
-              <label>Cliente</label>
-              <input type="text" placeholder="Café dois irmãos" onChange={(e) => {setClient(e.target.value)}}/>
+              <label>Título do card</label>
+              <input type="text" name="title" defaultValue={values?.title} placeholder="" onChange={handleUpdateField} />
 
-              <label>Contato</label>
+              {/* <label>Contato</label>
               <input type="text" placeholder="Marcos Batista" />
 
               <label>CPNJ/CPF</label>
@@ -100,7 +101,7 @@ const LeadModal: React.FC<LeadModalProps> = ({ closeModal, handleCreate }) => {
                   <button>Arquivo</button>
                   <label>Nenhum arquivo selecionado</label>
                 </div>
-              </div>
+              </div> */}
 
               <label>Comentários</label>
               <div className="comentario-container">
@@ -108,15 +109,18 @@ const LeadModal: React.FC<LeadModalProps> = ({ closeModal, handleCreate }) => {
                   type="text"
                   className="comentario-input"
                   placeholder="Escreva um comentário"
+                  defaultValue={values?.comments}
+                  name="comments"
+                  onChange={handleUpdateField}
                 />
-                <button className="blue-button" onClick={createItem}>Atualizar</button>
+                <button className="blue-button" onClick={handleClickBtn}>Atualizar</button>
               </div>
             </>
           )}
           {activeTab === "Atividade" && (
             <>
               <div className="activity-section">
-                {activities.map((activity, index) => (
+                {activities?.map((activity, index) => (
                   <div key={index} className="activity-item">
                     <img
                       src={activity.image}
