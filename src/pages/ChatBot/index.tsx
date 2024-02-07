@@ -11,7 +11,7 @@ const ChatBot = () => {
       <Navbar />
       <h1 className='text'>Automação ChatBot</h1>
       <div>
-        <div className="buttonContainer">
+        <div style={{marginLeft:'100px'}}>
           <button className="blueButton">
             <img src={usersImage} alt="Users" />
             Estruturação

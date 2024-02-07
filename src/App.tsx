@@ -11,6 +11,7 @@ import Forms from './pages/Forms';
 import Chat from './pages/Chat';
 import Leads from  './pages/Leads';
 import Layout from './components/Layout/Layout';
+import Negocios from './pages/Business';
 import Statistics from './pages/Statistics';
 import Calendar from './pages/Calendar';
 import Contact from './pages/Contacts'
@@ -35,6 +36,7 @@ function App() {
         <Route path="/configuracoes" element={<Configuracoes />} />
         <Route path="/suporte" element={<Suporte />} />
         <Route path="/leads" element={<Leads />} />
+        <Route path="/negocios" element={<Negocios />} />
       </Routes>
     </>
   );

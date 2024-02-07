@@ -10,7 +10,7 @@ const Whatsapp = () => {
             <Navbar />
             <h1 className="text">Automação WhatsApp</h1>
             <div>
-            <div className="buttonContainer">
+            <div style={{marginLeft:'100px'}}>
                 <button className="blueButton">
                 <img src={usersImage} alt="Users" />
                 Estruturação
