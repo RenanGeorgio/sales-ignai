@@ -229,7 +229,7 @@ const SearchFilter: React.FC<SearchFilterProps> = ({ setShowList, leadsData }) =
 
             <div style={{ height: '80vh', width: '100%' }}>
                 <DataGrid
-                    rows={leadsData}
+                    rows={[]}
                     columns={columns}
                     initialState={{
                         pagination: {

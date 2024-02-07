@@ -22,7 +22,7 @@ const CachingController = () => {
         return values;
       }).catch(function (e) {
         if(isAxiosError(e)) {
-          if (e.response?.status === 403) {
+          if (e.response?.status === 403 || e.response?.status === 401) {
             signOut();
           }
           if(e.code === "ERR_NETWORK") {

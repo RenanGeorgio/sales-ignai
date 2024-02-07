@@ -5,6 +5,7 @@
   width: 93%;
   margin: auto;
   margin-left: 5.5%;
+  user-select: none;
 }
 
 .button-group {
