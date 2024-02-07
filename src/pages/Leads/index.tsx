@@ -168,8 +168,6 @@
 // export default Leads;
 
 import React, { useEffect, useState } from "react";
-import ReactDOM from "react-dom";
-import styled from "@emotion/styled";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import Navbar from "../../components/Navbar";
 import dragEnd from "../../helpers/dragEnd";
@@ -197,9 +195,16 @@ const Leads = () => {
     setIsMounted(true);
   }, []);
 
-  const onDragEnd = (result) => {
+  const onDragEnd = async (result) => {
     const newColumns = dragEnd(columns, result);
-    setColumns(newColumns);
+    if (newColumns) {
+      const checkDif = newColumns.filter((x) => !columns.includes(x));
+      const response = await authApi.put(`/leads`, { leads: checkDif });
+      if (response.status === 204) {
+        dispatch(leadsActions.updateLeads(newColumns));
+        setColumns(newColumns);
+      }
+    }
   };
 
   const handleShowKanban = () => {
@@ -211,14 +216,14 @@ const Leads = () => {
   };
 
   const addNewColumn = async () => {
-    if(columnTitle === "") return;
+    if (columnTitle === "") return;
     const newColumn = {
       title: columnTitle,
       items: [],
     };
 
     const response = await authApi.post("/leads", newColumn);
-    if(response.status === 201) {
+    if (response.status === 201) {
       const newColumns = [...columns, response.data];
       dispatch(leadsActions.updateLeads(newColumns));
       setColumns(newColumns);
@@ -226,9 +231,11 @@ const Leads = () => {
   };
 
   const handleCreateItem = async (data) => {
-    const response = await authApi.post(`/leads/${cardId}/items`, { content: data.name });
-    const newColumns = columns.map(column => {
-      if(column._id === cardId) {
+    const response = await authApi.post(`/leads/${cardId}/items`, {
+      content: data.name,
+    });
+    const newColumns = columns.map((column) => {
+      if (column._id === cardId) {
         // column.items.push(response.data);
         column = response.data;
       }
@@ -237,7 +244,6 @@ const Leads = () => {
 
     dispatch(leadsActions.updateLeads(newColumns));
     setColumns(newColumns);
-
   };
 
   const handleModalOpen = (e) => {
@@ -253,8 +259,14 @@ const Leads = () => {
       ) : (
         <div className="leads-kanban">
           <div className="button-group">
-            <LeadPopover >
-              <input type="text" placeholder="Nova Coluna" onChange={(e) => {setColumnTitle(e.target.value)}}/>
+            <LeadPopover>
+              <input
+                type="text"
+                placeholder="Nova Coluna"
+                onChange={(e) => {
+                  setColumnTitle(e.target.value);
+                }}
+              />
               <button onClick={(e) => addNewColumn()}>Adicionar</button>
             </LeadPopover>
             <div className="divider"></div>
@@ -268,10 +280,7 @@ const Leads = () => {
               <option>Todos</option>
             </select>
           </div>
-          <div
-            className="kanban"
-            style={{ display: "flex", justifyContent: "center" }}
-          >
+          <div className="board-container">
             <DragDropContext onDragEnd={onDragEnd}>
               {columns?.map((column, key) =>
                 isMounted ? (
@@ -282,24 +291,32 @@ const Leads = () => {
                         style={{
                           display: "flex",
                           flexDirection: "column",
-                          alignContent: "center",
                           alignItems: "center",
                           borderRadius: "10px",
                           margin: "10px",
                           backgroundColor: "rgb(254 254 254)",
-                          boxShadow: "rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px",
+                          boxShadow:
+                            "rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px",
                         }}
                         key={key}
                       >
                         <h1>{column.title}</h1>
-                        <button id={column._id} onClick={(e) => {handleModalOpen(e)}}>Add Item</button>
+                        <button
+                          id={column._id}
+                          onClick={(e) => {
+                            handleModalOpen(e);
+                          }}
+                        >
+                          Add Item
+                        </button>
                         <div
                           style={{
                             width: "264px",
-                            height: "300px",
+                            height: "fit-content",
                             padding: "10px",
                           }}
                         >
+                          {provided.placeholder}
                           {column.items?.map((item, index) => (
                             <Draggable
                               draggableId={item._id}
@@ -315,7 +332,8 @@ const Leads = () => {
                                     backgroundColor: "#fff",
                                     marginBottom: "10px",
                                     padding: "10px",
-                                    boxShadow: "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
+                                    boxShadow:
+                                      "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
                                     borderRadius: "5px",
                                     ...provided.draggableProps.style,
                                   }}
@@ -334,7 +352,10 @@ const Leads = () => {
               )}
             </DragDropContext>
             {isModalOpen && (
-              <LeadModal closeModal={() => setIsModalOpen(false)} handleCreate={handleCreateItem} />
+              <LeadModal
+                closeModal={() => setIsModalOpen(false)}
+                handleCreate={handleCreateItem}
+              />
             )}
           </div>
         </div>

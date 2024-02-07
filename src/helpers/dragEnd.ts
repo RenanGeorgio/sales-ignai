@@ -32,6 +32,6 @@ export default function dragEnd(columns, dragResult){
       return column;
     }
   });
-
+  
   return newColumns;
 }
