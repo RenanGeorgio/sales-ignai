@@ -64,7 +64,7 @@ const Leads: React.FC = () => {
               <h2>Contato Inicial</h2>
               <div className="menu-icon-leads">&#8942;</div>
               <button className="add-button">+ Adicionar</button>
-
+              <div className="cards-container">
               {leadsByTopic["contact"]?.map((leadInfo: any) => (
                 <div
                   className="info-section contact-column"
@@ -88,6 +88,7 @@ const Leads: React.FC = () => {
                   </div>
                 </div>
               ))}
+              </div>
             </div>
             <div className="kanban-column">
               <h2>Discussões</h2>

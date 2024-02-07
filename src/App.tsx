@@ -17,7 +17,7 @@ import { AuthProvider } from "./contexts/auth/provider/authProvider";
 import SignInPage from "./pages/Auth/SignInPage";
 import RequireAuth from "./RequireAuth";
 import { PersistGate } from "redux-persist/integration/react";
-
+import './global.css'
 import { Provider } from "react-redux";
 import { persistor, store } from "./store/store";
 import Anonymous from "./Anonymous";

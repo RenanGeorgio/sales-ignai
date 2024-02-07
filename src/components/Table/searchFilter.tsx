@@ -134,9 +134,16 @@ const SearchFilter: React.FC<SearchFilterProps> = ({ setShowList, leadsData }) =
                     <div style={{ color: 'black', fontSize: 18, fontFamily: 'sans-serif', fontWeight: '500', lineHeight: 2, wordWrap: 'break-word' }}>Filtro de busca</div>
                 </div>
                 <div style={{ position: 'absolute', top: '110px', right: '50px' }}>
-                    <button  style={{color:'rgba(75, 70, 92, 1)', width:'108px', fontSize: '18px', border: 'none', backgroundColor:'#fff'}}>Ver kanban</button>
+                    <button
+                     onClick={() => setShowList(true)} 
+                     style={{color:'rgba(75, 70, 92, 1)',
+                      width:'108px', 
+                      fontSize: '16px', 
+                      border: 'none', 
+                      textTransform:'capitalize',
+                      backgroundColor:'#fff'}}>Ver kanban</button>
                 </div>
-                <div style={{ justifyContent: 'space-between', alignItems: 'center', gap: 24, display: 'flex', width: '100%', padding: '5px 0px 1px 10px', marginBottom:'25px', marginLeft:'15px'}}>
+                <div style={{ justifyContent: 'space-between', alignItems: 'center', gap: 24, display: 'flex', width: '98%', padding: '5px 0px 1px 10px', marginBottom:'25px', marginLeft:'15px'}}>
                     <div style={{ flex: '1 ', height: 38, borderRadius: 6, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex', width: '100px' }}>
                         <div style={{ flex: '1 1 0', height: 38, background: 'white', borderRadius: 6, overflow: 'hidden', justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex' }}>
                             <form style={{ width: '100%', height: '95%' }}>
@@ -182,7 +189,9 @@ const SearchFilter: React.FC<SearchFilterProps> = ({ setShowList, leadsData }) =
                 </div>
             </div>
 
-            <div style={{ maxWidth:'98.5%', height: 38, justifyContent: 'space-between', alignItems: 'center', gap: 16, display: 'flex', width: '100%', borderRight: '1px #DBDADE solid', borderLeft: '1px #DBDADE solid', padding: 10, zIndex: '999', backgroundColor:'#fff' }}>
+            <div style={{ maxWidth:'98.5%', height: 38, 
+            justifyContent: 'space-between', alignItems: 'center',
+             gap: 16, display: 'flex', width: '100%', borderRight: '1px #DBDADE solid', borderLeft: '1px #DBDADE solid', padding: 10, zIndex: '99', backgroundColor:'#fff' }}>
                 <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 15, height: '100%' }}>
                     <select style={{ display: 'flex', justifyContent: 'center', height: '2rem', width:'5rem', padding: '5px 10px 5px 5px', borderRadius:'5px' }}>
                         <option selected>10</option>

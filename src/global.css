@@ -1,0 +1,9 @@
+/* global.css */
+:root{
+ --primary-color:#4B465C;
+}
+body {
+  font-family:sans-serif;
+  color: var(--primary-color);
+
+}
