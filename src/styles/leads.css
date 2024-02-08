@@ -58,6 +58,12 @@
   align-items: flex-start;
 }
 
+.card-title {
+  margin-top: 5px;
+  font-size: 20px;
+  color: #333;
+}
+
 .kanban-columns {
   display: flex;
   justify-content: space-between;

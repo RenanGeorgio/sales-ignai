@@ -83,9 +83,12 @@ const Leads = () => {
     comments: string;
   }) => {
     const { _id, title, comments } = values;
-    const response = await authApi.put(`/leads/card/${_id}`, { title, comments });
+    const response = await authApi.put(`/leads/card/${_id}`, {
+      title,
+      comments,
+    });
 
-    if(response.status === 200){
+    if (response.status === 200) {
       const data = response.data;
       const cardIndex = columns.findIndex((column) => column._id === data._id);
       const newColumns = [...columns];
@@ -94,7 +97,6 @@ const Leads = () => {
       setColumns(newColumns);
       setIsModalOpen(false);
     }
-
   };
 
   const handleModalOpen = (info) => {
@@ -130,53 +132,34 @@ const Leads = () => {
               <option>Todos</option>
             </select>
           </div>
-          <div className="board-container">
-            <DragDropContext onDragEnd={onDragEnd}>
-              {columns?.map((column, key) =>
-                isMounted ? (
-                  <Droppable droppableId={column._id} key={key}>
-                    {(provided) => (
-                      <div
-                        ref={provided.innerRef}
-                        style={{
-                          display: "flex",
-                          flexDirection: "column",
-                          alignItems: "center",
-                          borderRadius: "10px",
-                          margin: "10px",
-                          backgroundColor: "rgb(254 254 254)",
-                          boxShadow:
-                            "rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px",
-                        }}
-                        key={key}
-                      >
-                        <h1>{column.title}</h1>
-                        {/* <button
-                          id={column._id}
-                          onClick={(e) => {
-                            handleModalOpen(e);
-                          }}
-                        >
-                          Add Item
-                        </button> */}
-                        <LeadPopover
-                          title="+ Card"
-                          handleClick={() => addNewCard(column._id)}
-                        >
-                          <input
-                            type="text"
-                            placeholder="Novo Card"
-                            onChange={(e) => {
-                              setCardName(e.target.value);
-                            }}
-                          />
-                        </LeadPopover>
+          <DragDropContext onDragEnd={onDragEnd}>
+            <div className="board-container">
+              {columns?.map((column, key) => (
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    borderRadius: "10px",
+                    margin: "10px",
+                    width: "264px",
+                    padding: "10px",
+                    backgroundColor: "rgb(254 254 254)",
+                    boxShadow:
+                      "rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px",
+                  }}
+                  key={key}
+                >
+                  <h1 className="card-title">{column.title}</h1>
+                  {isMounted ? (
+                    <Droppable droppableId={column._id} key={key}>
+                      {(provided) => (
                         <div
                           style={{
-                            width: "264px",
-                            height: "fit-content",
-                            padding: "10px",
+                            marginBottom: "10px",
+                            width: "100%",
                           }}
+                          ref={provided.innerRef}
                         >
                           {provided.placeholder}
                           {column.items?.map((item, index) => (
@@ -192,8 +175,8 @@ const Leads = () => {
                                   ref={provided.innerRef}
                                   style={{
                                     backgroundColor: "#fff",
-                                    marginBottom: "10px",
-                                    padding: "10px",
+                                    margin: "0 0 10px",
+                                    padding: "10PX",
                                     boxShadow:
                                       "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
                                     borderRadius: "5px",
@@ -207,20 +190,32 @@ const Leads = () => {
                             </Draggable>
                           ))}
                         </div>
-                      </div>
-                    )}
-                  </Droppable>
-                ) : null
-              )}
-            </DragDropContext>
-            {isModalOpen && (
-              <LeadModal
-                closeModal={() => setIsModalOpen(false)}
-                handleClick={updateCardInfo}
-                data={cardInfo}
-              />
-            )}
-          </div>
+                      )}
+                    </Droppable>
+                  ) : null}
+                  <LeadPopover
+                    title="+ Card"
+                    handleClick={() => addNewCard(column._id)}
+                  >
+                    <input
+                      type="text"
+                      placeholder="Novo Card"
+                      onChange={(e) => {
+                        setCardName(e.target.value);
+                      }}
+                    />
+                  </LeadPopover>
+                </div>
+              ))}
+            </div>
+          </DragDropContext>
+          {isModalOpen && (
+            <LeadModal
+              closeModal={() => setIsModalOpen(false)}
+              handleClick={updateCardInfo}
+              data={cardInfo}
+            />
+          )}
         </div>
       )}
     </div>
