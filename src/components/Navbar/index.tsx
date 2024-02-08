@@ -4,11 +4,13 @@ import '../../styles/navbar.css';
 import bellIcon from '../Image/bell.svg';
 import userIcon from '../Image/Avatar.jpg';
 import searchIcon from '../Image/search.svg';
+import useAuth from '../../hooks/useAuth';
 
 interface NavbarProps {}
 
 const Navbar: React.FC<NavbarProps> = () => {
   const [searchText, setSearchText] = useState('');
+  const { signOut } = useAuth();
 
   return (
     <header className="navbar">
@@ -24,7 +26,7 @@ const Navbar: React.FC<NavbarProps> = () => {
           />
           <div className="icons">
             <img className="icon" src={bellIcon} alt="Sininho" />
-            <img className="icon" src={userIcon} alt="Usuário" />
+            <img className="icon" src={userIcon} alt="Usuário" onClick={() => signOut()}/>
           </div>
         </div>
       </div>
