@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import './leadPopover.css';
+import React from "react";
 
 const LeadPopover = ({ children, title, handleClick }) => {
   const [showPopover, setShowPopover] = useState(false);

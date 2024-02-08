@@ -10,6 +10,8 @@ import { useSelector } from "react-redux";
 import authApi from "../../services/auth";
 import { useDispatch } from "react-redux";
 import { leadsActions } from "../../store/store";
+import { IconButton } from "@mui/material";
+import { DotsHorizonIcon } from "../../components/Image/icons";
 
 const Leads = () => {
   const leadsData = useSelector((state: any) => state.leads);
@@ -109,7 +111,7 @@ const Leads = () => {
         <SearchFilter setShowList={handleShowList} leadsData={leadsData} />
       ) : (
         <div className="leads-kanban">
-          <div className="button-group">
+          <div className="button-group">     
             <LeadPopover title="+ Coluna" handleClick={addNewColumn}>
               <input
                 type="text"
@@ -118,7 +120,7 @@ const Leads = () => {
                   setColumnName(e.target.value);
                 }}
               />
-            </LeadPopover>
+            </LeadPopover>          
             <div className="divider"></div>
             <button onClick={handleShowKanban}>Ver Lista</button>
             <div className="divider"></div>
@@ -132,6 +134,7 @@ const Leads = () => {
           </div>
           <div className="board-container">
             <DragDropContext onDragEnd={onDragEnd}>
+              
               {columns?.map((column, key) =>
                 isMounted ? (
                   <Droppable droppableId={column._id} key={key}>
@@ -150,6 +153,9 @@ const Leads = () => {
                         }}
                         key={key}
                       >
+                        <div style={{display:'flex', justifyContent:'end', gap:'1px', width:'100%'}}>
+                        <IconButton><DotsHorizonIcon/></IconButton>
+                        </div>
                         <h1>{column.title}</h1>
                         {/* <button
                           id={column._id}
@@ -171,13 +177,7 @@ const Leads = () => {
                             }}
                           />
                         </LeadPopover>
-                        <div
-                          style={{
-                            width: "264px",
-                            height: "fit-content",
-                            padding: "10px",
-                          }}
-                        >
+                        <div className="column-content">
                           {provided.placeholder}
                           {column.items?.map((item, index) => (
                             <Draggable
