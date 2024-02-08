@@ -72,7 +72,7 @@ const Leads = () => {
       }
       return column;
     });
-
+    setCardName("");
     dispatch(leadsActions.updateLeads(newColumns));
     setColumns(newColumns);
   };
