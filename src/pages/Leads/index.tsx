@@ -26,6 +26,12 @@ const Leads = () => {
     setIsMounted(true);
   }, []);
 
+  useEffect(() => {
+    if(leadsData){
+      setColumns(leadsData);
+    }
+  }, [leadsData]);
+
   const onDragEnd = async (result) => {
     const newColumns = dragEnd(columns, result);
     if (newColumns) {

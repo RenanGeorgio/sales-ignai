@@ -21,7 +21,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
 import { persistor, store } from "./store/store";
 import Anonymous from "./Anonymous";
-import { SidebarProvider } from "./components/Sidebar/SidebarContext";
+import { SidebarProvider } from "./contexts/sidebar/SidebarContext";
 
 function App() {
   return (

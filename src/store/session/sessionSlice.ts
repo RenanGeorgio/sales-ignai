@@ -13,10 +13,9 @@ const { reducer, actions } = createSlice({
       };
     },
     signOut() {
-      localStorage.removeItem('persist:root')
       return {
         status: false,
-      };
+      }; 
     },
   }
 });

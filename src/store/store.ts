@@ -30,12 +30,12 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store = configureStore({
   reducer: persistedReducer,
-  // middleware: (getDefaultMiddleware) =>
-  //     getDefaultMiddleware({
-  //     serializableCheck: {
-  //         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-  //     },
-  //     }),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
 });
 
 let persistor = persistStore(store);
@@ -44,4 +44,4 @@ export { sessionActions } from "./session/sessionSlice";
 export { userActions } from "./user/userSlice";
 export { leadsActions } from "./leads/leadsSlice";
 
-export { persistor, store, rootReducer };
+export { persistor, store, rootReducer, storage };
