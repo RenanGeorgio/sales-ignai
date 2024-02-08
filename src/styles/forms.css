@@ -254,10 +254,19 @@
 }
 
 .new-form-selector-container {
-  position: absolute;
-  top: 27%; 
-  right: 150px; 
+  display: flex;
+  margin-left: auto;
+  position: relative;
+  left: 1%;
+  margin-top: -39%;
+  margin-right: 100px;
+  margin-bottom: 70px;
   width: 368px; 
+}
+
+.form-selector-contador{
+  margin-top: 15%;
+  margin-bottom: -20%;
 }
 
 .new-form-selector {

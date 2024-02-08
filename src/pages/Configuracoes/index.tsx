@@ -7,7 +7,7 @@ import { EmailIcon, FaceBookIcon, InstagramIcon, WWWIcon, WhatsAppIcon } from '.
 
 const Configuracoes = () => {
   return (
-    <div>
+    <div className="page-content">
       <Navbar />
       <h1 className='title'>Configurações</h1>
       <h3 className='text'>Uma função fornecia acesso a menus e recursos predefidinos para que, dependendo<br />

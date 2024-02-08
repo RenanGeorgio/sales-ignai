@@ -7,7 +7,7 @@ import '../../styles/chatbot.css';
 
 const ChatBot = () => {
   return (
-    <div>
+    <div className="page-content">
       <Navbar />
       <h1 className='text'>Automação ChatBot</h1>
       <div>

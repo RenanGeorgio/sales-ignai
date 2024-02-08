@@ -16,7 +16,7 @@ const Statistics: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="page-content">
       <Navbar />
       <div className="buttonContainer-statistics">
         <button

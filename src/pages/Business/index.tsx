@@ -6,7 +6,7 @@ const Business: React.FC = () => {
 
   return (
     <>
-      <div style={{marginLeft: '10px'}}>
+      <div className="page-content">
         <Navbar />
         <SearchBusiness />
       </div>

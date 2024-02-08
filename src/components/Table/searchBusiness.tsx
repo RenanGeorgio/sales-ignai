@@ -187,7 +187,7 @@ const SearchBusiness: React.FC<SearchBusinessProps> = () => {
             { showKanban ? (
                 <AddInfo setShowList={handleShowList} />
             ) : (
-                <div style={{ width: '91.5%', height: '100%', paddingTop: 25, paddingBottom: 24, paddingLeft: 100, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', gap: 1, display: 'inline-flex',  zIndex: '999', backgroundColor:'#fff'}}>
+                <div style={{ width: '91.5%', height: '100%', paddingTop: 25, paddingBottom: 24, paddingLeft: 100, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', gap: 1, display: 'inline-flex',  zIndex: '-1', backgroundColor:'#fff'}}>
                     <div style={{boxShadow: '0 0 5px 2px rgba(138, 138, 138, 0.2)', width:'100%'}}>
                         <div style={{ alignSelf: 'stretch', paddingLeft: 4, paddingRight: 1, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'inline-flex', width: '100%', marginLeft:'25px', marginTop:'15px' }}>
                             <div style={{ color: 'black', fontSize: 18, fontFamily: 'sans-serif', fontWeight: '500', lineHeight: 2, wordWrap: 'break-word' }}>Filtro de busca: Negócios</div>

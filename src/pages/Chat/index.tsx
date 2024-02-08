@@ -22,7 +22,7 @@ const Chat: React.FC = () => {
   };
 
   return (
-    <div style={{overflow:'hidden'}} >
+    <div style={{overflow:'hidden'}} className="page-content" >
       <Navbar />
       <h1 className="title">Chat</h1>
       <div style={{marginLeft:'100px'}}>

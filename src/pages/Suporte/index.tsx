@@ -1,3 +1,4 @@
+import React from 'react';
 import Navbar from "../../components/Navbar";
 import usersImage from '../../components/Image/users.svg';
 import fileTextImage from '../../components/Image/file-text.svg';
@@ -5,7 +6,7 @@ import '../../styles/chatbot.css';
 
 const Suporte = () => {
     return (
-        <div>
+        <div className="page-content">
             <Navbar />
             <h1 className="text">Suporte ao cliente Ignai</h1>
             <div>

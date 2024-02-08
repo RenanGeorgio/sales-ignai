@@ -1,3 +1,4 @@
+import React from 'react';
 import Navbar from "../../components/Navbar";
 import usersImage from '../../components/Image/users.svg';
 import linkImage from '../../components/Image/link.svg';
@@ -6,7 +7,7 @@ import '../../styles/chatbot.css';
 
 const Email = () => {
     return (
-        <div>
+        <div className="page-content">
             <Navbar />
             <h1 className="text">Automação E-mail</h1>
             <div>
