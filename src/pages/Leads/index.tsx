@@ -111,7 +111,7 @@ const Leads = () => {
   };
 
   return (
-    <div>
+    <div className="page-content">
       <Navbar />
       {showKanban ? (
         <SearchFilter setShowList={handleShowList} leadsData={leadsData} />

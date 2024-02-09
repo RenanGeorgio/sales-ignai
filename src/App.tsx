@@ -23,6 +23,7 @@ import { Provider } from "react-redux";
 import { persistor, store } from "./store/store";
 import Anonymous from "./Anonymous";
 import { SidebarProvider } from "./contexts/sidebar/SidebarContext";
+import './styles/app.css';
 
 function App() {
   return (

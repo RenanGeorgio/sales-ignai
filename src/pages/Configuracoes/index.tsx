@@ -10,7 +10,7 @@ const Configuracoes = () => {
     <div className="page-content">
       <Navbar />
       <h1 className='title'>Configurações</h1>
-      <h3 className='text'>Uma função fornecia acesso a menus e recursos predefidinos para que, dependendo<br />
+      <h3 className='text-config'>Uma função fornecia acesso a menus e recursos predefidinos para que, dependendo<br />
         da função atribuida, um administrador pode ter acesso às necessidades do usuário.
       </h3>
       <div className='containerBody'>
