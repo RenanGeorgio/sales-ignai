@@ -11,6 +11,7 @@ import authApi from "../../services/auth";
 import { useDispatch } from "react-redux";
 import { leadsActions } from "../../store/store";
 import { IconButton } from "@mui/material";
+import { DotsHorizonIcon } from "../../components/Image/icons";
 
 const Leads = () => {
   const leadsData = useSelector((state: any) => state.leads);
@@ -163,7 +164,7 @@ const Leads = () => {
                           }}>{column.title}</h2>
                           <div style={{ display: 'flex', justifyContent: 'end', gap: '1px', alignItems: 'baseline', margin: 0, paddingRight: 10 }}>
                             <IconButton size="small" style={{ width: 25, height: 30 }}>
-                              {/* <DotsHorizonIcon /> */}
+                              <DotsHorizonIcon />
                               </IconButton>                         </div>
 
                         </div>
