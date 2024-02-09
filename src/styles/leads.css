@@ -51,7 +51,7 @@
 
 .board-container {
   display: flex;
-  width: 100%;
+  width: 500px;
   margin-top: 20px;
   margin-left: 20px;
   margin-bottom: 20px;
@@ -155,7 +155,6 @@
   margin-right: 5px;
   margin-top: -8%;
   cursor: pointer;
-<<<<<<< HEAD
 }
 
 .column-content{
@@ -201,6 +200,5 @@
   color: #333;
   background-color: rgb(98, 98, 98);
   border-radius: 5px;
-=======
->>>>>>> parent of 64b19b5 (update)
+
 }
