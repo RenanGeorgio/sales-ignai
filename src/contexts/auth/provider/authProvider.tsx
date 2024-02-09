@@ -5,7 +5,7 @@ import { SignInData, SignInResponse, User } from "../../../types";
 import { recoverUserInformation, signInRequest } from "../../provider/auth";
 import authApi from "../../../services/auth";
 import { useDispatch, useSelector } from "react-redux";
-import { sessionActions, userActions } from "../../../store/store";
+import { persistor, sessionActions, userActions } from "../../../store/store";
 import { useApi } from "../../../hooks/useApi";
 import cookies from "js-cookie";
 
@@ -36,6 +36,10 @@ export function AuthProvider({ children }) {
   const signOut = () => {
     cookies.remove("token", { path: "/" });
     dispatch(sessionActions.signOut());
+    persistor.pause();
+    persistor.flush().then(() => {
+      return persistor.purge();
+    });
     navigate("/sign-in");
   };
 

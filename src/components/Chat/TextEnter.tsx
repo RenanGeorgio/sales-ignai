@@ -21,7 +21,7 @@
 
 // export default function TextEnter({
 //   onEnviarMensagem = ()=>{},
- 
+
 
 // }) {
 
@@ -31,7 +31,7 @@
 //       console.log(`Novo texto: ${e.currentTarget.value}`);
 //       setMensagem(e.currentTarget.value);
 //     };
-  
+
 //     // const handleClick = () => {
 //     //   console.log("Botão clicado");
 //     //   appSocket.emit("nova-mensagem", {
@@ -50,8 +50,8 @@
 //            });
 //           setMensagem('');
 //         };
-      
-  
+
+
 //     useEffect(() => {
 //       // Lógica para executar quando o componente monta (equivalente a componentDidMount)
 //       // Por exemplo, pode ser usado para adicionar event listeners, etc.
@@ -60,8 +60,8 @@
 //         // Por exemplo, pode ser usado para remover event listeners, etc.
 //       };
 //     }, []); // O array vazio como segundo argumento faz com que o useEffect seja executado apenas uma vez, semelhante ao componentDidMount.
-  
-  
+
+
 //     return (
 //       <>
 //         <div className='wrapper'>
@@ -145,10 +145,10 @@ export default function TextEnter({ onEnviarMensagem }: TextEnterProps) {
           </div>
           <div className='btncontainer'>
             <button className='icon'>
-              <Mic />
+              <Mic className={undefined} />
             </button>
             <button className='icon'>
-              <Photo />
+              <Photo className={undefined} />
             </button>
             <div className='btntxt'>
               <button onClick={handleClick} className='btntxt'>

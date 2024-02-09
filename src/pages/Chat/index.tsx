@@ -3,10 +3,8 @@ import Navbar from '../../components/Navbar';
 import usersImage from '../../components/Image/users.svg';
 import sino from '../../components/Image/bell.svg';
 import fileTextImage from '../../components/Image/file-text.svg';
-// import { Treatment } from '../../components/Chat/Treatment';
 import '../../styles/forms.css'; 
 
-// import { LeftMenu } from '../../components/Chat/LeftMenu';
 import Layout from '../../components/Layout/ChatLayout';
 import History from '../../components/Layout/HistoryLayout';
 
@@ -24,11 +22,10 @@ const Chat: React.FC = () => {
   };
 
   return (
-    <div style={{overflow:'hidden'}} >
+    <div style={{overflow:'hidden'}} className="page-content" >
       <Navbar />
-
       <h1 className="title">Chat</h1>
-      <div className="buttonContainer">
+      <div style={{marginLeft:'100px'}}>
         <button
           className={activePage === 'Atendimento' ? 'blueButton' : 'grayButton'}
           onClick={() => handleButtonClick('Atendimento')}
@@ -51,21 +48,14 @@ const Chat: React.FC = () => {
           Painel
         </button>
       </div>
-      <div
-      //  className='containerlayout'
-      
-       >
-      {/* <LeftMenu/> */}
+      <div>
       {activePage === 'Atendimento' && (
         <div >
-          {/* <h1 style={{marginLeft: '10%'}}>Atendimento</h1> */}
-          {/* <Treatment/> */}
           <Layout props={undefined}/>
         </div>
       )}
       {activePage === 'Histórico' && (
         <>
-          {/* <h1 style={{marginLeft: '10%'}}>Histórico</h1> */}
           <History />
         </>
       )}

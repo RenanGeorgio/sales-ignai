@@ -1,0 +1,21 @@
+.app-container {
+  display: grid;
+  grid-template-columns: 15px 1fr; 
+  height: 100vh; 
+}
+
+.sidebar.expanded {
+  width: 235px;
+}
+
+.page-content {
+  grid-column: 2 / -1; 
+  transition: margin-left 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column; 
+}
+
+.sidebar.expanded + .page-content {
+  margin-left: 160px;
+}

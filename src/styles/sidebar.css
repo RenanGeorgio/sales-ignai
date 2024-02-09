@@ -9,20 +9,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  grid-template-rows: auto 1fr auto;
   box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.5);
   transition: width 0.3s ease;
   overflow: hidden;
   z-index: 999;
+  font-family: sans-serif;
 }
 
 .sidebar img {
   width: 22px;
-  height: 22px;
-  margin-bottom: 15px;
+  height: 18px;
+  /* margin-bottom: 15px; */
+  margin-right: 1px;
 }
 
 .sidebar span {
-  margin-left: 10px;
+  /* margin-left: 10px; */
 }
 
 .sidebar img:hover {
@@ -30,12 +33,29 @@
 }
 
 .sidebar.expanded {
-  width: 200px;
-  align-items: flex-start; 
+  width: 235px;
+  /* align-items: flex-start;  */
+  display: flex;
+  /* justify-content: center; */
+  /* flex-direction: column; */
+  /* overflow-y: scroll; */
 }
 
 .sidebar.expanded .menu-item {
-  margin-left: 15px; 
+  /* margin-left: -15px;  */
+  /* align-items: baseline; */
+  /* justify-content: space-between; */
+  display: flex;
+  align-items: center;
+  margin-right: 25px;
+  width: 100%;
+  padding-inline: 5px;
+  color: #4B465C;
+}
+.expanded img{
+  /* display: flex; */
+  /* align-items: baseline; */
+  /* position: relative; */
 }
 
 .sidebar.expanded .logo {
@@ -43,14 +63,27 @@
 }
 
 .menu-item {
-  display: flex;
+  /* display: flex;
   align-items: center;
+  margin-right: 25px;
+  width: 100%;
+  padding-inline: 15px; */
+  height: 20px;
+}
+
+.link{
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* gap: 25px; */
+  height: 25px;
 }
 
 .menu-item img {
-  width: 22px;
-  height: 22px;
-  margin-right: 10px;
+  /* width: 22px; */
+  /* height: 22px; */
+  /* margin-right: 10px; */
 }
 
 .hide-text {
@@ -58,7 +91,27 @@
 }
 
 .show-text {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  padding-left: 7px;
+  padding-right: 10px;
+  text-align: center;
+  justify-content: start;
+}
+
+.section1 {
+  display: flex;
+  /* justify-content:start; */
+  flex-direction:column;
+  padding-bottom: 1px;
+  border-bottom:1px solid rgba(183, 183, 183, 0.585);
+  color: #4B465C;
+  width: 98%;
+}
+
+.textOpen{
+  text-align: center;
+  margin-left: 0;
 }
 
 @media screen and (max-width: 768px) {

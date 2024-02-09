@@ -30,7 +30,7 @@ const CachingController = () => {
           }
         }
       });
-      
+
       return { user: user.data, leads: leads.data };
     },
     {

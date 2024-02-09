@@ -36,110 +36,123 @@ const Sidebar: React.FC<SidebarProps> = () => {
       <div onClick={toggleSidebar}>
         <img src={logo} alt="Logo" className='logo'/>
       </div>
-      <Link to="/estatisticas">
-        <div className="menu-item">
-          <img src={chart} alt="Estatísticas" />
-          <span className={expanded ? 'show-text' : 'hide-text'}>Estatísticas</span>
-        </div>
-      </Link>
-
-      <Link to="/">
-        <div className="menu-item">
-          <img src={mail} alt="Mail" />
-          <span className={expanded ? 'show-text' : 'hide-text'}>Email</span>
-        </div>
-      </Link>
-
-      <Link to="/chat">
-        <div className="menu-item">
-          <img src={messageCircle} alt="Chat" />
-          <span className={expanded ? 'show-text' : 'hide-text'}>Chat</span>
+      <div className='section1'>
+        <p className={expanded ? 'show-text' : 'hide-text'}>Dados</p>
+        <Link className="link" to="/estatisticas">
+          <div className="menu-item">
+            <img src={chart} alt="Estatísticas" />
+            <span className={expanded ? 'show-text' : 'hide-text'}>Estatísticas</span>
           </div>
-      </Link>
-
-      <Link to="/calendar">
-        <div className="menu-item">
-          <img src={calendar} alt="Calendar" />
-          <span className={expanded ? 'show-text' : 'hide-text'}>Calendário</span>
+        </Link>
+      </div>
+      <div className='section1'>
+        <p className={expanded ? 'show-text' : 'hide-text'}>Atendimento</p>
+        <Link className="link" to="/">
+          <div className="menu-item">
+            <img src={mail} alt="Mail" />
+            <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'>Email</p></span>
           </div>
-      </Link>
-      
-      <Link to="/leads">
-        <div className="menu-item">
-          <img src={layoutSidebar} alt="Layout Sidebar" />
-          <span className={expanded ? 'show-text' : 'hide-text'}>Leads</span>
+          <div className={expanded ? 'show-text' : 'hide-text'} 
+          style={{width:15, height:15, background:'red',
+          fontSize:9, color:'white', textAlign:'center', 
+          justifyContent:'center', padding:5, borderRadius:6}}>32</div>
+        </Link>
+        <Link className="link" to="/chat">
+          <div className="menu-item">
+            <img src={messageCircle} alt="Chat" />
+            <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen' >Chat</p></span>
+            </div>
+        </Link>
+        <Link className="link" to="/calendar">
+          <div className="menu-item">
+            <img src={calendar} alt="Calendar" />
+            <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'>Calendário</p></span>
+            </div>
+        </Link>
+      </div>
+
+      <div className='section1'>
+        <p className={expanded ? 'show-text' : 'hide-text'}>Vendas</p>
+        <Link className="link" to="/leads">
+          <div className="menu-item">
+            <img src={layoutSidebar} alt="Layout Sidebar" />
+            <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'> Leads</p></span>
+            </div>
+        </Link>
+        <Link className="link" to="/contact">
+          <div className="menu-item">
+            <img src={book} alt="Book" />
+            <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'>Contatos</p></span>
+            </div>
+        </Link>
+        <Link className="link"to="/negocios">
+          <div className="menu-item">
+            <img src={components} alt="Components" />
+            <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'>Negócios</p></span>
+            </div>
+        </Link>
+        <Link className="link" to="/">
+          <div className="menu-item">
+            <img src={fileDollar} alt="File Dollar" />
+            <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'> Faturas</p></span>
+            </div>
+        </Link>
+      </div>
+
+      <div className='section1'>
+        <p className={expanded ? 'show-text' : 'hide-text'}>Funil de Vendas</p>
+        <Link className="link" to="/formulario">
+          <div className="menu-item">
+            <img src={textWrap} alt="Text Wrap" />
+            <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'>Formulário</p></span>
+            </div>
+        </Link>
+
+        <Link className="link"  to="/email">
+          <div className="menu-item">
+            <img src={smartHome} alt="Email" />
+            <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'>Automação Email</p></span>
           </div>
-      </Link>
+        </Link>
 
-      <Link to="/">
-        <div className="menu-item">
-          <img src={book} alt="Book" />
-          <span className={expanded ? 'show-text' : 'hide-text'}>Contatos</span>
+        <Link className="link" to="/whatsapp">
+          <div className="menu-item">
+            <img src={copy} alt="Copy" />
+            <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'>Disparo WhatsApp</p></span>
           </div>
-      </Link>
+        </Link>
 
-      <Link to="/">
-        <div className="menu-item">
-          <img src={components} alt="Components" />
-          <span className={expanded ? 'show-text' : 'hide-text'}>Negócios</span>
+        <Link className="link" to="/chatbot">
+          <div className="menu-item">
+            <img src={layoutNavbar} alt="ChatBot" />
+            <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'>ChatBot</p></span>
           </div>
-      </Link>
+        </Link>
+      </div>
 
-      <Link to="/">
-        <div className="menu-item">
-          <img src={fileDollar} alt="File Dollar" />
-          <span className={expanded ? 'show-text' : 'hide-text'}>Faturas</span>
+      <div className='section1'>
+        <p className={expanded ? 'show-text' : 'hide-text'}>Ajuda</p>
+        <Link className="link" to="/configuracoes">
+          <div className="menu-item">
+            <img src={settings} alt="Settings" />
+            <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'>Configurações</p></span>
           </div>
-      </Link>
+        </Link>
 
-      <Link to="/formulario">
-        <div className="menu-item">
-          <img src={textWrap} alt="Text Wrap" />
-          <span className={expanded ? 'show-text' : 'hide-text'}>Formulário</span>
+        <Link className="link" to="/suporte">
+          <div className="menu-item">
+            <img src={headphones} alt="Suporte" />
+            <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'>Suporte</p></span>
           </div>
-      </Link>
+        </Link>
 
-      <Link to="/email">
-        <div className="menu-item">
-          <img src={smartHome} alt="Email" />
-          <span className={expanded ? 'show-text' : 'hide-text'}>Automação Email</span>
-        </div>
-      </Link>
-
-      <Link to="/whatsapp">
-        <div className="menu-item">
-          <img src={copy} alt="Copy" />
-          <span className={expanded ? 'show-text' : 'hide-text'}>Disparo WhatsApp</span>
-        </div>
-      </Link>
-
-      <Link to="/chatbot">
-        <div className="menu-item">
-          <img src={layoutNavbar} alt="ChatBot" />
-          <span className={expanded ? 'show-text' : 'hide-text'}>ChatBot</span>
-        </div>
-      </Link>
-
-      <Link to="/configuracoes">
-        <div className="menu-item">
-          <img src={settings} alt="Settings" />
-          <span className={expanded ? 'show-text' : 'hide-text'}>Configurações</span>
-        </div>
-      </Link>
-
-      <Link to="/suporte">
-        <div className="menu-item">
-          <img src={headphones} alt="Suporte" />
-          <span className={expanded ? 'show-text' : 'hide-text'}>Suporte</span>
-        </div>
-      </Link>
-
-      <Link to="/">
-        <div className="menu-item">
-          <img src={fileText} alt="File Text" />
-          <span className={expanded ? 'show-text' : 'hide-text'}>Documentation</span>
-        </div>
-      </Link>
+        <Link className="link" to="/">
+          <div className="menu-item">
+            <img src={fileText} alt="File Text" />
+            <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'>Documentation</p></span>
+          </div>
+        </Link>
+      </div>
     </div>
   );
 };

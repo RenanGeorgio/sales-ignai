@@ -18,10 +18,10 @@ const Forms: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="page-content">
       <Navbar />
       <h1 className="title">Formulários</h1>
-      <div className="buttonContainer">
+      <div style={{marginLeft:'100px'}}>
         <button
           className={activePage === 'Formulário' ? 'blueButton' : 'grayButton'}
           onClick={() => handleButtonClick('Formulário')}
@@ -80,10 +80,11 @@ const Forms: React.FC = () => {
               <button className="blueButtonPath">Formulário 7</button>
             </div>
           </div>
-          <FormSelector />
-          <div className='container-footer'>
-            <Footer />
+          <div className="form-selector-contador">
+            <FormSelector />
           </div>
+          <div className="separador-contador"/>
+          <Footer />
         </>
       )}
       {activePage === 'Painel' && (

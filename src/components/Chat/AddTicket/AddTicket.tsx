@@ -22,7 +22,7 @@ export default function AddTicket({onUploadFile, onSetShow}) {
 
         <div className='section'>
           <div className='section-3'>
-            <span className='text-2'>Atendimento via:</span>
+            <span className='text-2add'>Atendimento via:</span>
           </div>
         </div>
 

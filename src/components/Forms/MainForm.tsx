@@ -47,7 +47,7 @@ const MainForm: React.FC = () => {
               <option value="moeda">Moeda</option>
             </select>
           </div>
-          <button className="blue-button">Enviar</button>
+          <button className="send-button">Enviar</button>
         </form>
     </div>
   );

@@ -1,0 +1,99 @@
+[
+    {
+        "id": 1,
+        "client":{ 
+            "name": "Empresa 1",
+            "email": "email1@empresa1.com",
+            "telefone": "27 99882-7821"
+            },
+        "priority": "Alta",
+        "sector": "Advocacia",
+        "document": 3,
+        "profileImage":"/src/components/Image/Avatar2.png",
+        "status": "Ativo"
+    },
+    {
+        "id": 2,
+        "client":{ 
+            "name": "Empresa 2",
+            "email": "email1@empresa1.com",
+            "telefone": "27 99882-7821"
+            },
+        "priority": "Média",
+        "sector": "Publicações",
+        "document": 2,
+        "status": "Ativo"
+    },
+    {
+        "id": 3,
+        "client":{ 
+            "name": "Empresa 3",
+            "email": "email1@empresa1.com",
+            "telefone": "27 99882-7821"
+            },
+        "priority": "Baixa",
+        "sector": "Aliment",
+        "document": 3,
+        "status": "Não ativo"
+    },
+    {
+        "id": 4,
+        "client":{ 
+        "name": "Empresa 4",
+        "email": "email1@empresa1.com",
+        "telefone": "27 99882-7821"
+        },
+        "priority": "Alta",
+        "sector": "Tecnologia",
+        "document": 2,
+        "status": "Ativo"
+    },
+    {
+        "id": 5,
+        "client":{ 
+            "name": "Empresa 5",
+            "email": "email1@empresa1.com",
+            "telefone": "27 99882-7821"
+            },
+        "priority": "Média",
+        "sector": "Saúde",
+        "document": 3,
+        "status": "Não ativo"
+    },
+    {
+        "id": 6,
+        "client":{ 
+            "name": "Empresa 6",
+            "email": "email1@empresa1.com",
+            "telefone": "27 99882-7821"
+            },
+        "priority": "Média",
+        "sector": "Educação",
+        "document": 1,
+        "status": "Ativo"
+    },
+    {
+        "id": 7,
+        "client":{ 
+            "name": "Empresa 7",
+            "email": "email1@empresa1.com",
+            "telefone": "27 99882-7821"
+            },
+        "priority": "Baixa",
+        "sector": "Finanças",
+        "document": 4,
+        "status": "Não ativo"
+    },
+    {
+        "id": 8,
+        "client":{ 
+            "name": "Empresa 8",
+            "email": "email1@empresa1.com",
+            "telefone": "27 99882-7821"
+            },
+        "priority": "Baixa",
+        "sector": "Imobiliário",
+        "document": 2,
+        "status": "Ativo"
+    }
+]

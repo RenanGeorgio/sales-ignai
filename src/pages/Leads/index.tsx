@@ -10,8 +10,6 @@ import { useSelector } from "react-redux";
 import authApi from "../../services/auth";
 import { useDispatch } from "react-redux";
 import { leadsActions } from "../../store/store";
-import { IconButton } from "@mui/material";
-import { DotsHorizonIcon } from "../../components/Image/icons";
 
 const Leads = () => {
   const leadsData = useSelector((state: any) => state.leads);
@@ -27,6 +25,12 @@ const Leads = () => {
   useEffect(() => {
     setIsMounted(true);
   }, []);
+
+  useEffect(() => {
+    if(leadsData){
+      setColumns(leadsData);
+    }
+  }, [leadsData]);
 
   const onDragEnd = async (result) => {
     const newColumns = dragEnd(columns, result);
@@ -74,7 +78,7 @@ const Leads = () => {
       }
       return column;
     });
-
+    setCardName("");
     dispatch(leadsActions.updateLeads(newColumns));
     setColumns(newColumns);
   };
@@ -85,7 +89,10 @@ const Leads = () => {
     comments: string;
   }) => {
     const { _id, title, comments } = values;
-    const response = await authApi.put(`/leads/card/${_id}`, { title, comments });
+    const response = await authApi.put(`/leads/card/${_id}`, {
+      title,
+      comments,
+    });
 
     if (response.status === 200) {
       const data = response.data;
@@ -96,7 +103,6 @@ const Leads = () => {
       setColumns(newColumns);
       setIsModalOpen(false);
     }
-
   };
 
   const handleModalOpen = (info) => {
@@ -132,51 +138,35 @@ const Leads = () => {
               <option>Todos</option>
             </select>
           </div>
-          <div className="board-container">
-            <DragDropContext onDragEnd={onDragEnd}>
-
-
-              {columns?.map((column, key) =>
-                isMounted ? (
-                  <Droppable droppableId={column._id} key={key}>
-                    {(provided) => (
-                      <div
-                        ref={provided.innerRef}
-                        style={{
-                          display: "flex",
-                          flexDirection: "column",
-                          alignItems: "center",
-                          borderRadius: "10px",
-                          margin: "10px",
-                          padding: "0px",
-                          backgroundColor: "rgb(254 254 254)",
-                          boxShadow:
-                            "rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px",
-                        }}
-                        key={key}
-                      >
-                        <div style={{ display: 'flex', gap: '1px', width: '100%', justifyContent: 'space-between', paddingLeft: 10, height:53 }}>
-                          <h2 style={{
-                            height: 'min-content',
-                            margin: 0, marginTop: 5,
-                            marginBottom: 20, textAlign: 'left',
-                            display: 'flex'
-                          }}>{column.title}</h2>
-                          <div style={{ display: 'flex', justifyContent: 'end', gap: '1px', alignItems: 'baseline', margin: 0, paddingRight: 10 }}>
-                            <IconButton size="small" style={{ width: 25, height: 30 }}>
-                              <DotsHorizonIcon />
-                              </IconButton>                         </div>
-
-                        </div>
-                        {/* <button
-                          id={column._id}
-                          onClick={(e) => {
-                            handleModalOpen(e);
+          <DragDropContext onDragEnd={onDragEnd}>
+            <div className="board-container">
+              {columns?.map((column, key) => (
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    borderRadius: "10px",
+                    margin: "10px",
+                    width: "264px",
+                    padding: "10px",
+                    backgroundColor: "rgb(254 254 254)",
+                    boxShadow:
+                      "rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px",
+                  }}
+                  key={key}
+                >
+                  <h1 className="card-title">{column.title}</h1>
+                  {isMounted ? (
+                    <Droppable droppableId={column._id} key={key}>
+                      {(provided) => (
+                        <div
+                          style={{
+                            marginBottom: "10px",
+                            width: "100%",
                           }}
+                          ref={provided.innerRef}
                         >
-                          Add Item
-                        </button> */}                       
-                        <div className="column-content">
                           {provided.placeholder}
                           {column.items?.map((item, index) => (
                             <Draggable
@@ -190,13 +180,9 @@ const Leads = () => {
                                   {...provided.dragHandleProps}
                                   ref={provided.innerRef}
                                   style={{
-                                    height:'30px',
                                     backgroundColor: "#fff",
-                                    marginBottom: "14px",
-                                    marginTop:'10px',
-                                    alignItems:'flex-start',
-                                    textWrap:'wrap',
-                                    padding: "10px",
+                                    margin: "0 0 10px",
+                                    padding: "10PX",
                                     boxShadow:
                                       "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
                                     borderRadius: "5px",
@@ -210,36 +196,32 @@ const Leads = () => {
                             </Draggable>
                           ))}
                         </div>
-
-                        <div style={{ display: 'flex', height:50, justifyContent:'flex-start', width:'100%', alignItems:"center"}}>
-                          <LeadPopover
-                            title="+ Card"
-                            handleClick={() => addNewCard(column._id)}
-
-                          >
-                            <input
-                              type="text"
-                              placeholder="Novo Card"
-                              onChange={(e) => {
-                                setCardName(e.target.value);
-                              }}
-                            />
-                          </LeadPopover>
-                        </div>
-                      </div>
-                    )}
-                  </Droppable>
-                ) : null
-              )}
-            </DragDropContext>
-            {isModalOpen && (
-              <LeadModal
-                closeModal={() => setIsModalOpen(false)}
-                handleClick={updateCardInfo}
-                data={cardInfo}
-              />
-            )}
-          </div>
+                      )}
+                    </Droppable>
+                  ) : null}
+                  <LeadPopover
+                    title="+ Card"
+                    handleClick={() => addNewCard(column._id)}
+                  >
+                    <input
+                      type="text"
+                      placeholder="Novo Card"
+                      onChange={(e) => {
+                        setCardName(e.target.value);
+                      }}
+                    />
+                  </LeadPopover>
+                </div>
+              ))}
+            </div>
+          </DragDropContext>
+          {isModalOpen && (
+            <LeadModal
+              closeModal={() => setIsModalOpen(false)}
+              handleClick={updateCardInfo}
+              data={cardInfo}
+            />
+          )}
         </div>
       )}
     </div>
