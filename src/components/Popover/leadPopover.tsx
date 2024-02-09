@@ -4,6 +4,7 @@ import './leadPopover.css';
 const LeadPopover = ({ children, title, handleClick }) => {
   const [showPopover, setShowPopover] = useState(false);
   const popoverRef = useRef(null);
+  const buttonRef = useRef(null);
 
   const togglePopover = () => {
     setShowPopover(!showPopover);
@@ -29,8 +30,8 @@ const LeadPopover = ({ children, title, handleClick }) => {
   };
 
   return (
-    <div ref={popoverRef}>
-      <button onClick={togglePopover}>{title}</button>
+    <div className="lead-popover-container" ref={popoverRef}>
+      <button ref={buttonRef} onClick={togglePopover}>{title}</button>
       {showPopover && (
         <div className="popover">
           {children}
