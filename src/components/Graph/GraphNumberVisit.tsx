@@ -2,11 +2,11 @@ import React from 'react';
 import '../../styles/dashboard.css'; 
 import avatarGreen from '../../components/Image/avatar-green.svg';
 
-interface GraphProps {
+interface GraphNumberVisitProps {
   month: string;
 }
   
-const Graph4: React.FC<GraphProps> = ({ month }) => {
+const GraphNumberVisit: React.FC<GraphNumberVisitProps> = ({ month }) => {
   return (
     <div className="graph-container-4">
       <h3 className="graph-title">Números de visitas</h3>
@@ -40,4 +40,4 @@ const Graph4: React.FC<GraphProps> = ({ month }) => {
   );
 };
 
-export default Graph4;
+export default GraphNumberVisit;

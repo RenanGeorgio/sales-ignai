@@ -1,11 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 
-interface Graph2Props {
+interface GraphVisitProps {
   month: string;
 }
 
-const Graph2: React.FC<Graph2Props> = ({ month }) => {
+const GraphVisit: React.FC<GraphVisitProps> = ({ month }) => {
   const chartRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -62,4 +62,4 @@ const Graph2: React.FC<Graph2Props> = ({ month }) => {
   );
 };
 
-export default Graph2;
+export default GraphVisit;

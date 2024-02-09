@@ -2,11 +2,11 @@ import React from 'react';
 import '../../styles/dashboard.css'; 
 import arrow from '../../components/Image/arrow-up-circle.svg';
 
-interface Graph1Props {
+interface GraphTimeUserProps {
   month: string;
 }
 
-const Graph1: React.FC<Graph1Props> = ({ month }) => {
+const GraphTimeUser: React.FC<GraphTimeUserProps> = ({ month }) => {
   const totalPercentage = 100;
   const userData = [
     { percentage: 20, color: 'rgba(248, 247, 250, 1)' },
@@ -70,4 +70,4 @@ const Graph1: React.FC<Graph1Props> = ({ month }) => {
   );
 };
 
-export default Graph1;
+export default GraphTimeUser;
