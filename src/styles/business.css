@@ -483,3 +483,13 @@
   margin-top: -3px;
   margin-right: 5px;
 }
+
+/* Estilo para página de negócios*/
+
+.modal-expanded .page-content {
+  transition: max-width 0.3s ease;
+}
+
+.modal-expanded .page-content {
+  max-width: 70%;
+}

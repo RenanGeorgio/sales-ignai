@@ -1,11 +1,11 @@
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
 
-interface GraphProps {
+interface GraphFormConversationProps {
   month: string;
 }
 
-const Graph5: React.FC<GraphProps> = ({ month }) => {
+const GraphFormConversation: React.FC<GraphFormConversationProps> = ({ month }) => {
   const labels = ['6', '5', '4', '3', '2', '1'];
   const data = {
     labels: labels,
@@ -59,4 +59,4 @@ const Graph5: React.FC<GraphProps> = ({ month }) => {
   );
 };
 
-export default Graph5;
+export default GraphFormConversation;

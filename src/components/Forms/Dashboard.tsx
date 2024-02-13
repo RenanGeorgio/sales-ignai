@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import Graph2 from '../Graph/Graph2.tsx';
-import Graph1 from '../Graph/Graph1.tsx';
+import GraphVisit from '../Graph/GraphVisit.tsx';
+import GraphTimeUser from '../Graph/GraphTimeUser.tsx';
 import '../../styles/dashboard.css';
-import Graph3 from '../Graph/Graph3.tsx';
-import Graph4 from '../Graph/Graph4.tsx';
-import Graph5 from '../Graph/Graph5.tsx';
-import Graph6 from '../Graph/Graph6.tsx';
+import GraphClientVolume from '../Graph/GraphClientVolume.tsx';
+import GraphFontClick from '../Graph/GraphFontClick.tsx';
+import GraphFormConversation from '../Graph/GraphFormConversation.tsx';
+import GraphNumberVisit from '../Graph/GraphNumberVisit.tsx';
 
 const Dashboard: React.FC = () => {
   const [selectedMonth, setSelectedMonth] = useState('January');
@@ -32,18 +32,18 @@ const Dashboard: React.FC = () => {
       </select>
 
       <div className="graph-row">
-        <Graph1 month={selectedMonth} />
-        <Graph2 month={selectedMonth} />
+        <GraphTimeUser month={selectedMonth} />
+        <GraphVisit month={selectedMonth} />
       </div>
 
       <div className="graph-row">
-        <Graph3 month={selectedMonth} />
-        <Graph4 month={selectedMonth}/>
+        <GraphClientVolume month={selectedMonth} />
+        <GraphFontClick month={selectedMonth}/>
       </div>
 
       <div className="graph-row">
-        <Graph5 month={selectedMonth} />
-        <Graph6 month={selectedMonth}/>
+        <GraphFormConversation month={selectedMonth} />
+        <GraphNumberVisit month={selectedMonth}/>
       </div>
     </div>
   );

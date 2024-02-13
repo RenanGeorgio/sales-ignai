@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Chart from 'chart.js/auto';
 import '../../styles/graph.css';
 
@@ -8,12 +8,17 @@ interface GraphTicketProps {
 
 const GraphTicket: React.FC<GraphTicketProps> = ({ data }) => {
   const chartRef = useRef<HTMLCanvasElement>(null);
+  const [chartInstance, setChartInstance] = useState<Chart<"doughnut", number[], string> | null>(null);
 
   useEffect(() => {
     if (chartRef.current) {
       const ctx = chartRef.current.getContext('2d');
       if (ctx) {
-        const chart = new Chart(ctx, {
+        if (chartInstance) {
+          chartInstance.destroy();
+        }
+
+        const newChartInstance = new Chart<"doughnut", number[], string>(ctx, {
           type: 'doughnut',
           data: {
             labels: ['Tempo de Entrega', 'Preço do Produto', 'Transporte', 'Endereço Incorreto'],
@@ -38,9 +43,14 @@ const GraphTicket: React.FC<GraphTicketProps> = ({ data }) => {
           },
         });
       
+        setChartInstance(newChartInstance);
       }
     }
-  }, [data]);
+
+    return () => {
+      
+    };
+  }, [data, chartInstance]);
 
   return (
     <div className="graph-container-ticket">

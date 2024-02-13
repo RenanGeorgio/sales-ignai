@@ -1,11 +1,11 @@
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
 
-interface GraphProps {
+interface GraphClientVolumeProps {
   month: string;
 }
 
-const Graph3: React.FC<GraphProps> = ({ month }) => {
+const GraphClientVolume: React.FC<GraphClientVolumeProps> = ({ month }) => {
   const labels = ['6', '5', '4', '3', '2', '1'];
   const data = {
     labels: labels,
@@ -59,4 +59,4 @@ const Graph3: React.FC<GraphProps> = ({ month }) => {
   );
 };
 
-export default Graph3;
+export default GraphClientVolume;

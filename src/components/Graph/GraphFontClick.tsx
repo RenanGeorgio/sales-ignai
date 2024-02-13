@@ -2,11 +2,11 @@ import React from 'react';
 import '../../styles/dashboard.css'; 
 import avatar from '../../components/Image/avatar.svg';
 
-interface GraphProps {
+interface GraphFontClickProps {
   month: string;
 }
   
-const Graph4: React.FC<GraphProps> = ({ month }) => {
+const GraphFontClick: React.FC<GraphFontClickProps> = ({ month }) => {
   return (
     <div className="graph-container-4">
       <h3 className="graph-title">Fonte de clicks</h3>
@@ -47,4 +47,4 @@ const Graph4: React.FC<GraphProps> = ({ month }) => {
   );
 };
 
-export default Graph4;
+export default GraphFontClick;

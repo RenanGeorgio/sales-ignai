@@ -12,6 +12,7 @@ import Chat from "./pages/Chat";
 import Leads from "./pages/Leads";
 import Statistics from "./pages/Statistics";
 import Calendar from "./pages/Calendar";
+import Negocios from "./pages/Business";
 import CachingController from "./CachingController";
 import { AuthProvider } from "./contexts/auth/provider/authProvider";
 import SignInPage from "./pages/Auth/SignInPage";
@@ -22,6 +23,7 @@ import { Provider } from "react-redux";
 import { persistor, store } from "./store/store";
 import Anonymous from "./Anonymous";
 import { SidebarProvider } from "./contexts/sidebar/SidebarContext";
+import './styles/app.css';
 
 function App() {
   return (
@@ -49,6 +51,7 @@ function App() {
                   <Route path="/configuracoes" element={<Configuracoes />} />
                   <Route path="/suporte" element={<Suporte />} />
                   <Route path="/leads" element={<Leads />} />
+                  <Route path="/negocios" element={<Negocios />} />
                 </Route>
               </Routes>
             </div>
