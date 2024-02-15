@@ -1,5 +1,6 @@
 .app-container {
-  height: 100vh; 
+  /* height: 100vh;  */
+  font-family: sans-serif;
 }
 
 .sidebar.expanded {

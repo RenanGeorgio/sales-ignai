@@ -57,6 +57,9 @@
   /* align-items: baseline; */
   /* position: relative; */
 }
+.sidebar div img{
+  margin-bottom: 10px;
+}
 
 .sidebar.expanded .logo {
   margin-left: 90px;
@@ -68,7 +71,7 @@
   margin-right: 25px;
   width: 100%;
   padding-inline: 15px; */
-  height: 20px;
+  /* height: 20px; */
 }
 
 .link{
@@ -82,7 +85,7 @@
 
 .menu-item img {
   /* width: 22px; */
-  /* height: 22px; */
+  height: 25px;
   /* margin-right: 10px; */
 }
 
@@ -101,12 +104,34 @@
 
 .section1 {
   display: flex;
-  /* justify-content:start; */
   flex-direction:column;
-  padding-bottom: 1px;
   border-bottom:1px solid rgba(183, 183, 183, 0.585);
   color: #4B465C;
   width: 98%;
+  /* margin-bottom: 10px; */
+  gap:15px;
+  margin-top: -1px;
+  padding-bottom: 15px;
+  padding-top: 1px;
+}
+.sectionContainer{
+  margin-top:15px;
+}
+.sectionContainer .link{
+  margin: 1px 0px 5px 0px;
+}
+.expanded .sectionContainer .link{
+  margin: auto;
+}
+.expanded .sectionContainer{
+  margin-top: -10px;
+  gap: inherit;
+}
+.expanded .section1{
+  gap: inherit;
+  margin-bottom: inherit;
+  margin-top: inherit;
+  padding-bottom: inherit;
 }
 
 .textOpen{
