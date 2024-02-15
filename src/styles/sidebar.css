@@ -78,11 +78,12 @@
   align-items: center;
   /* gap: 25px; */
   height: 25px;
+  margin-bottom: 5px;
 }
 
 .menu-item img {
   /* width: 22px; */
-  /* height: 22px; */
+  height: 22px;
   /* margin-right: 10px; */
 }
 

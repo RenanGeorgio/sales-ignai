@@ -15,7 +15,7 @@ import GraphThemes from '../../components/Graph/GraphThemes';
 
 
 const Chat: React.FC = () => {
-  const [activePage, setActivePage] = useState('Formulário'); 
+  const [activePage, setActivePage] = useState('Atendimento'); 
 
   const handleButtonClick = (pageName: string) => {
     setActivePage(pageName);
@@ -25,7 +25,7 @@ const Chat: React.FC = () => {
     <div style={{overflow:'hidden'}} className="page-content" >
       <Navbar />
       <h1 className="title">Chat</h1>
-      <div style={{marginLeft:'100px'}}>
+      <div style={{margin: '0 0 10px 95px'}}>
         <button
           className={activePage === 'Atendimento' ? 'blueButton' : 'grayButton'}
           onClick={() => handleButtonClick('Atendimento')}
