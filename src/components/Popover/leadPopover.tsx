@@ -37,7 +37,8 @@ const LeadPopover = ({ children, title, handleClick, cardClassName }) => {
         <div className={`popover ${cardClassName}`}>
           <div style={{color:'black', display:'flex', alignItems:'center',justifyContent:'space-between', gap:10}}>
           {children}
-          <IconButton size="small" style={{border:'1px solid black', display:'flex', marginLeft:'inherit'}}  onClick={(e) => handleClickBtn()}>+</IconButton>
+          <IconButton size="small" style={{border:'1px solid black', display:'flex', marginLeft:'inherit'}} 
+          onClick={(e) => handleClickBtn()}>+</IconButton>
           </div>
         </div>
       )}
