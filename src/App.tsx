@@ -24,6 +24,7 @@ import { persistor, store } from "./store/store";
 import Anonymous from "./Anonymous";
 import { SidebarProvider } from "./contexts/sidebar/SidebarContext";
 import './styles/app.css';
+import NotFound from "./components/NotFound/NotFound";
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
                   <Route path="/leads" element={<Leads />} />
                   <Route path="/negocios" element={<Negocios />} />
                 </Route>
+                <Route path="*" element={<NotFound />} />
               </Routes>
             </div>
           </SidebarProvider>

@@ -72,13 +72,13 @@
 
 .title {
     font-size: 2rem;
-    font-family: Roboto;
+    /* font-family: Roboto; */
     lighting-color: #ffffff;
 }
 
 .titleReset {
     font-size: 2rem;
-    font-family: Roboto;
+    /* font-family: Roboto; */
     lighting-color: #ffffff;
     margin: -50px auto 10px auto;
 }
