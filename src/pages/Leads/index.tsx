@@ -10,6 +10,8 @@ import { useSelector } from "react-redux";
 import authApi from "../../services/auth";
 import { useDispatch } from "react-redux";
 import { leadsActions } from "../../store/store";
+import { IconButton } from "@mui/material";
+import { DotsVertical } from "../../components/Image/icons";
 
 const Leads = () => {
   const leadsData = useSelector((state: any) => state.leads);
@@ -117,15 +119,18 @@ const Leads = () => {
         <SearchFilter setShowList={handleShowList} leadsData={leadsData} />
       ) : (
         <div className="leads-kanban">
+          <div className="kanbanHead">
           <div className="button-group">
-            <LeadPopover title="+ Coluna" handleClick={addNewColumn}>
+            <LeadPopover cardClassName='' title="+ Coluna" handleClick={addNewColumn}>
               <input
+              style={{width:'100%'}}
                 type="text"
                 placeholder="Nova Coluna"
                 onChange={(e) => {
                   setColumnName(e.target.value);
                 }}
               />
+              {/* <IconButton size="small" style={{border:'1px solid black', display:'flex'}} onClick={()=>handleClick}>+</IconButton> */}
             </LeadPopover>
             <div className="divider"></div>
             <button onClick={handleShowKanban}>Ver Lista</button>
@@ -138,33 +143,29 @@ const Leads = () => {
               <option>Todos</option>
             </select>
           </div>
+          </div>
           <DragDropContext onDragEnd={onDragEnd}>
             <div className="board-container">
               {columns?.map((column, key) => (
                 <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    borderRadius: "10px",
-                    margin: "10px",
-                    width: "264px",
-                    padding: "10px",
-                    backgroundColor: "rgb(254 254 254)",
-                    boxShadow:
-                      "rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px",
-                  }}
+                className="kanban-column"
+
                   key={key}
                 >
+                  <div className="headerColumn">
+
                   <h1 className="card-title">{column.title}</h1>
+                  <IconButton size="small"> <DotsVertical className={undefined}/></IconButton>
+                  </div>
                   {isMounted ? (
                     <Droppable droppableId={column._id} key={key}>
                       {(provided) => (
                         <div
-                          style={{
-                            marginBottom: "10px",
-                            width: "100%",
-                          }}
+                        className="column-content"
+                          // style={{
+                          //   marginBottom: "10px",
+                          //   width: "200px",
+                          // }}
                           ref={provided.innerRef}
                         >
                           {provided.placeholder}
@@ -200,10 +201,12 @@ const Leads = () => {
                     </Droppable>
                   ) : null}
                   <LeadPopover
+                  cardClassName='popLead'
                     title="+ Card"
                     handleClick={() => addNewCard(column._id)}
                   >
                     <input
+                    style={{width:'95%'}}
                       type="text"
                       placeholder="Novo Card"
                       onChange={(e) => {

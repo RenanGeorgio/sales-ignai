@@ -3,12 +3,14 @@
   background-color: #ffffff;
   border: 1px solid #cccccc;
   border-radius: 5px;
-  padding: 10px 15px 10px 10px;
+  padding: 10px 10px 0px 10px;
   width: 200px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  top: -75px;
+  top: 30px;
   left: 100%; /* Alterado para abrir sempre à direita */
+  color: black;
+  gap: 5px;
 }
 .popover button {
   margin-top: -15px;
@@ -16,5 +18,23 @@
 
 .lead-popover-container {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+
+}
+
+
+.popLead {
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 10px 10px 0px 10px;
+  width: 200px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  top: -45px;
+  left: 100%; /* Alterado para abrir sempre à direita */
+  color: black;
+  /* gap: 10px; */
+
 }

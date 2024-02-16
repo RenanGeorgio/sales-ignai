@@ -46,6 +46,7 @@ const Sidebar: React.FC<SidebarProps> = () => {
         </Link>
       </div>
       <div className='section1'>
+        <div className="sectionContainer">
         <p className={expanded ? 'show-text' : 'hide-text'}>Atendimento</p>
         <Link className="link" to="/">
           <div className="menu-item">
@@ -69,9 +70,11 @@ const Sidebar: React.FC<SidebarProps> = () => {
             <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'>Calendário</p></span>
             </div>
         </Link>
+        </div>
       </div>
 
       <div className='section1'>
+      <div className='sectionContainer'>
         <p className={expanded ? 'show-text' : 'hide-text'}>Vendas</p>
         <Link className="link" to="/leads">
           <div className="menu-item">
@@ -99,7 +102,10 @@ const Sidebar: React.FC<SidebarProps> = () => {
         </Link>
       </div>
 
+      </div>
+
       <div className='section1'>
+      <div className="sectionContainer">
         <p className={expanded ? 'show-text' : 'hide-text'}>Funil de Vendas</p>
         <Link className="link" to="/formulario">
           <div className="menu-item">
@@ -128,9 +134,11 @@ const Sidebar: React.FC<SidebarProps> = () => {
             <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'>ChatBot</p></span>
           </div>
         </Link>
+        </div>
       </div>
 
       <div className='section1'>
+      <div className="sectionContainer">
         <p className={expanded ? 'show-text' : 'hide-text'}>Ajuda</p>
         <Link className="link" to="/configuracoes">
           <div className="menu-item">
@@ -152,6 +160,7 @@ const Sidebar: React.FC<SidebarProps> = () => {
             <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'>Documentation</p></span>
           </div>
         </Link>
+        </div>
       </div>
     </div>
   );
