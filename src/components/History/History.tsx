@@ -1,9 +1,10 @@
 
 import React from 'react'
 import { DataGrid, GridColDef, GridValueGetterParams,GRID_DATETIME_COL_DEF, GRID_DATE_COL_DEF } from '@mui/x-data-grid';
-import { Button, FormControl, InputLabel, MenuItem, Select, IconButton } from '@mui/material';
+import { Button, FormControl, InputLabel, MenuItem, Select, IconButton, Modal } from '@mui/material';
 import { DotsVertical, Edit, Trash, } from '../Image/icons'
 import rows from '../../dados/data.json';
+import ModalHistory from './ModalHistory/index';
 
 
 const ContatoCell = ({ contato }) => {
@@ -85,6 +86,9 @@ const columns: GridColDef[] = [
 ];
 
 export default function HistoryComponent() {
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
     return (
 
         <div style={{ width: '94%', height: '100%', paddingTop: 2, paddingBottom: 24, paddingLeft: 80, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', gap: 1, display: 'inline-flex' }}>
@@ -177,7 +181,9 @@ export default function HistoryComponent() {
                             color: '#fff',
                             //   fontSize: 14,
                             display: 'flex'
-                        }}>
+                        }}
+                        onClick={handleOpen}
+                        >
                             Adicionar
                         </Button>
                     </div>
@@ -197,7 +203,13 @@ export default function HistoryComponent() {
                     isCellEditable={(params) => params.row.Contato % 2 === 0}
                 />
             </div>
-
+                
+            <Modal
+                            open={open}
+                            aria-labelledby="modal-modal-title"
+                            aria-describedby="modal-modal-description" >
+                            <ModalHistory close={handleClose} />
+                        </Modal>
 
         </div>
     )

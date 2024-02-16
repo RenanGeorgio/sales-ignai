@@ -167,12 +167,12 @@
     z-index: 5;
     border: #2c1270 1px solid;
   } */
-  /* .text-2add {
+  .text-2add {
     flex-shrink: 0;
     flex-basis: auto;
     position: relative;
     height: 18px;
-    color: rgba(255, 255, 255, 0.1);
+    color: rgb(0, 0, 0);
     font-family: Public Sans, var(--default-font-family);
     font-size: 15px;
     font-weight: 500;
@@ -181,7 +181,7 @@
     white-space: nowrap;
     letter-spacing: 0.43px;
     z-index: 6;
-  } */
+  }
   .section-2 {
     display: flex;
     align-items: center;

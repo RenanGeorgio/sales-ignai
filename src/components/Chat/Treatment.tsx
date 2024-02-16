@@ -20,6 +20,11 @@ export const Treatment = ({toggleAddTicket}): React.JSX.Element => {
     console.log('Arquivo recebido em Treatment:', file);
   };
 
+  const handleFileUploadPhoto = (file: any) => {
+    // Faça algo com o arquivo recebido, se necessário
+    console.log('Arquivo recebido em Treatment:', file);
+  };
+
   return (
     <div className="containerchat">
       <div className="header">
@@ -37,7 +42,7 @@ export const Treatment = ({toggleAddTicket}): React.JSX.Element => {
       </div>
       <div className="chat">
         {toggleAddTicket ? <AddTicket onUploadFile={handleFileUpload} onSetShow={setShowAddTicket}/> :''}
-        <TextEnter onEnviarMensagem={adicionarMensagem} />
+        <TextEnter onUploadFilePhoto={handleFileUploadPhoto} onEnviarMensagem={adicionarMensagem} />
       </div>
     </div>
   );
