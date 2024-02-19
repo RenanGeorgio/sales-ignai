@@ -94,7 +94,7 @@ const Sidebar: React.FC<SidebarProps> = () => {
             <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'>Negócios</p></span>
             </div>
         </Link>
-        <Link className="link" to="/">
+        <Link className="link" to="/invoice">
           <div className="menu-item">
             <img src={fileDollar} alt="File Dollar" />
             <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'> Faturas</p></span>
