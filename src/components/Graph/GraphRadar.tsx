@@ -12,7 +12,7 @@ const GraphRadar: React.FC<GraphRadarProps> = () => {
       const ctx = chartRef.current.getContext('2d');
       if (ctx) {
         if (chartInstanceRef.current) {
-          chartInstanceRef.current.destroy(); // Destrua a instância anterior antes de criar uma nova.
+          chartInstanceRef.current.destroy();
         }
 
         chartInstanceRef.current = new Chart(ctx, {
@@ -60,7 +60,7 @@ const GraphRadar: React.FC<GraphRadarProps> = () => {
         chartInstanceRef.current.destroy();
       }
     };
-  }, []); // Sem dependências para evitar a recriação desnecessária do gráfico.
+  }, []); 
 
   return <canvas ref={chartRef} />;
 };
