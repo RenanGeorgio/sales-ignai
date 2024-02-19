@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { DataGrid, GridColDef, GridValueGetterParams,GRID_DATETIME_COL_DEF, GRID_DATE_COL_DEF } from '@mui/x-data-grid';
+import { DataGrid, GridColDef, GridValueGetterParams, GRID_DATETIME_COL_DEF, GRID_DATE_COL_DEF } from '@mui/x-data-grid';
 import { Button, FormControl, InputLabel, MenuItem, Select, IconButton, Modal } from '@mui/material';
 import { DotsVertical, Edit, Trash, } from '../Image/icons'
 import rows from '../../dados/data.json';
@@ -10,78 +10,82 @@ import ModalHistory from './ModalHistory/index';
 const ContatoCell = ({ contato }) => {
     return (
         <>
-      <div style={{display:'flex', flexDirection:'column'}}>
-        <div style={{ fontWeight: 'bold' }}>{contato.name}</div>
-        <div style={{ fontSize: 12, color: 'gray' }}>{contato.description}</div>
-      </div>
-      </>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <div style={{ fontWeight: 'bold' }}>{contato.name}</div>
+                <div style={{ fontSize: 12, color: 'gray' }}>{contato.description}</div>
+            </div>
+        </>
     );
 };
 
-  const getStatusStyles = (status) => {
+const getStatusStyles = (status) => {
     const color = status === 'pendente' ? 'red' : 'green';
-  const backgroundColor = status === 'pendente' ? '#ffadad' : 'lightgreen';
+    const backgroundColor = status === 'pendente' ? '#ffadad' : 'lightgreen';
 
 
-  return { color, backgroundColor };
-  };
+    return { color, backgroundColor };
+};
 
 const columns: GridColDef[] = [
     //   { field: 'id', headerName: 'ID', width: 70 },
-    { field: 'contato', headerName: 'Contato', width: 300,
-     renderCell: (params) => {
-      // Use a custom component to render the cell content
-      return <ContatoCell contato={params.value} />;
-     }
-      
+    {
+        field: 'contato', headerName: 'Contato', width: 300,
+        renderCell: (params) => {
+            // Use a custom component to render the cell content
+            return <ContatoCell contato={params.value} />;
+        }
 
- },
+
+    },
 
     { field: 'assunto', headerName: 'Assunto', width: 280 },
-    { field: 'date', headerName: 'Data', type: 'date', width: 190, 
-    valueGetter: (params: GridValueGetterParams) => {
-        // Convert the string date to a Date object
-        return params.row.date ? new Date(params.row.date) : null;
-      },},
+    {
+        field: 'date', headerName: 'Data', type: 'date', width: 190,
+        valueGetter: (params: GridValueGetterParams) => {
+            // Convert the string date to a Date object
+            return params.row.date ? new Date(params.row.date) : null;
+        },
+    },
     { field: 'ticket', headerName: 'Ticket', width: 230 },
-    { field: 'status', headerName: 'Status', width: 230,
-    renderCell: (params) => (
-        <div style={{ 
-            color: getStatusStyles(params.value).color, 
-            backgroundColor: getStatusStyles(params.value).backgroundColor, 
-            border: '1px solid',
-            padding:'2px',
-            borderRadius:'5px'
+    {
+        field: 'status', headerName: 'Status', width: 230,
+        renderCell: (params) => (
+            <div style={{
+                color: getStatusStyles(params.value).color,
+                backgroundColor: getStatusStyles(params.value).backgroundColor,
+                border: '1px solid',
+                padding: '2px',
+                borderRadius: '5px'
             }}>
-            {params.value}
-        </div>
-      ),
- },
+                {params.value}
+            </div>
+        ),
+    },
     {
         field: 'acao',
         headerName: 'Ação',
         width: 160,
         renderCell: (params) => {
             return (
-              <div>
+                <div>
                     <IconButton>
-                        <Edit/>
+                        <Edit />
                     </IconButton>
-                  <IconButton
-                    color="primary"
-                    size="small"
-                    onClick={() => {
-                      // ...
-                    }}
-                  >
-                    <Trash className={undefined} />
-                  </IconButton>
+                    <IconButton
+                        color="primary"
+                        size="small"
+                        onClick={() => {
+                            // ...
+                        }}
+                    >
+                        <Trash className={undefined} />
+                    </IconButton>
                     <IconButton>
-                        <DotsVertical className={undefined}/>
+                        <DotsVertical className={undefined} />
                     </IconButton>
-              </div>
+                </div>
             );
-          },
+        },
     },
 ];
 
@@ -97,7 +101,7 @@ export default function HistoryComponent() {
                     <Button>meus</Button>
                 </div>
                 <div style={{ paddingLeft: 10, paddingRight: 10, background: '#E8E6FC', justifyContent: 'end', alignItems: 'center', display: 'flex' }}>
-              
+
                     <Button>Todos</Button>
                 </div>
             </div>
@@ -153,7 +157,7 @@ export default function HistoryComponent() {
 
             <div style={{ flex: '1 1 0', height: 38, justifyContent: 'space-between', alignItems: 'center', gap: 16, display: 'flex', width: '100%', borderTop: '1px #DBDADE solid', padding: 10 }}>
                 <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 15, height: '100%' }}>
-                    <select style={{ display: 'flex', justifyContent: 'center', height: '2rem', width:'5rem', padding: '5px 10px 5px 5px', borderRadius:'5px' }}>
+                    <select style={{ display: 'flex', justifyContent: 'center', height: '2rem', width: '5rem', padding: '5px 10px 5px 5px', borderRadius: '5px' }}>
                         <option selected>10</option>
                         <option >20</option>
                         <option >30</option>
@@ -182,7 +186,7 @@ export default function HistoryComponent() {
                             //   fontSize: 14,
                             display: 'flex'
                         }}
-                        onClick={handleOpen}
+                            onClick={handleOpen}
                         >
                             Adicionar
                         </Button>
@@ -203,13 +207,13 @@ export default function HistoryComponent() {
                     isCellEditable={(params) => params.row.Contato % 2 === 0}
                 />
             </div>
-                
+
             <Modal
-                            open={open}
-                            aria-labelledby="modal-modal-title"
-                            aria-describedby="modal-modal-description" >
-                            <ModalHistory close={handleClose} />
-                        </Modal>
+                open={open}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description" >
+                <ModalHistory close={handleClose} />
+            </Modal>
 
         </div>
     )
