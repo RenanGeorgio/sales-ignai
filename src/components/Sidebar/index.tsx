@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import mail from '../Image/mail.svg';
+import { BookIcon, CalendarIcon, ChartBarIcon, ComponentsIcon, CopIcon, EmailIcon, FileDollarIcon, FileTextIcon, HeadPhoneIcon, LayoutNavIcon, LayoutSideBarIcon, MailIcon, MessageCircleIcon, SettingIcon, SmartHomeIcon, TextWrapIcon, } from '../Image/icons';
 import book from '../Image/book-2.svg';
 import calendar from '../Image/calendar.svg';
 import chart from '../Image/chart-bar.svg';
@@ -40,7 +40,7 @@ const Sidebar: React.FC<SidebarProps> = () => {
         <p className={expanded ? 'show-text' : 'hide-text'}>Dados</p>
         <Link className="link" to="/estatisticas">
           <div className="menu-item">
-            <img src={chart} alt="Estatísticas" />
+            <ChartBarIcon/>
             <span className={expanded ? 'show-text' : 'hide-text'}>Estatísticas</span>
           </div>
         </Link>
@@ -50,7 +50,7 @@ const Sidebar: React.FC<SidebarProps> = () => {
         <p className={expanded ? 'show-text' : 'hide-text'}>Atendimento</p>
         <Link className="link" to="/">
           <div className="menu-item">
-            <img src={mail} alt="Mail" />
+            <MailIcon />
             <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'>Email</p></span>
           </div>
           <div className={expanded ? 'show-text' : 'hide-text'} 
@@ -60,13 +60,13 @@ const Sidebar: React.FC<SidebarProps> = () => {
         </Link>
         <Link className="link" to="/chat">
           <div className="menu-item">
-            <img src={messageCircle} alt="Chat" />
+            <MessageCircleIcon/>
             <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen' >Chat</p></span>
             </div>
         </Link>
         <Link className="link" to="/calendar">
           <div className="menu-item">
-            <img src={calendar} alt="Calendar" />
+            <CalendarIcon/>
             <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'>Calendário</p></span>
             </div>
         </Link>
@@ -78,25 +78,25 @@ const Sidebar: React.FC<SidebarProps> = () => {
         <p className={expanded ? 'show-text' : 'hide-text'}>Vendas</p>
         <Link className="link" to="/leads">
           <div className="menu-item">
-            <img src={layoutSidebar} alt="Layout Sidebar" />
+            <LayoutSideBarIcon/>
             <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'> Leads</p></span>
             </div>
         </Link>
         <Link className="link" to="/contact">
           <div className="menu-item">
-            <img src={book} alt="Book" />
+            <BookIcon />
             <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'>Contatos</p></span>
             </div>
         </Link>
         <Link className="link"to="/negocios">
           <div className="menu-item">
-            <img src={components} alt="Components" />
+            <ComponentsIcon/>
             <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'>Negócios</p></span>
             </div>
         </Link>
         <Link className="link" to="/">
           <div className="menu-item">
-            <img src={fileDollar} alt="File Dollar" />
+            <FileDollarIcon/>
             <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'> Faturas</p></span>
             </div>
         </Link>
@@ -109,28 +109,28 @@ const Sidebar: React.FC<SidebarProps> = () => {
         <p className={expanded ? 'show-text' : 'hide-text'}>Funil de Vendas</p>
         <Link className="link" to="/formulario">
           <div className="menu-item">
-            <img src={textWrap} alt="Text Wrap" />
+            <TextWrapIcon/>
             <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'>Formulário</p></span>
             </div>
         </Link>
 
         <Link className="link"  to="/email">
           <div className="menu-item">
-            <img src={smartHome} alt="Email" />
+            <SmartHomeIcon/>
             <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'>Automação Email</p></span>
           </div>
         </Link>
 
         <Link className="link" to="/whatsapp">
           <div className="menu-item">
-            <img src={copy} alt="Copy" />
+            <CopIcon/>
             <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'>Disparo WhatsApp</p></span>
           </div>
         </Link>
 
         <Link className="link" to="/chatbot">
           <div className="menu-item">
-            <img src={layoutNavbar} alt="ChatBot" />
+            <LayoutNavIcon />
             <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'>ChatBot</p></span>
           </div>
         </Link>
@@ -142,21 +142,21 @@ const Sidebar: React.FC<SidebarProps> = () => {
         <p className={expanded ? 'show-text' : 'hide-text'}>Ajuda</p>
         <Link className="link" to="/configuracoes">
           <div className="menu-item">
-            <img src={settings} alt="Settings" />
+            <SettingIcon />
             <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'>Configurações</p></span>
           </div>
         </Link>
 
         <Link className="link" to="/suporte">
           <div className="menu-item">
-            <img src={headphones} alt="Suporte" />
+            <HeadPhoneIcon/>
             <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'>Suporte</p></span>
           </div>
         </Link>
 
         <Link className="link" to="/">
           <div className="menu-item">
-            <img src={fileText} alt="File Text" />
+            <FileTextIcon/>
             <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'>Documentation</p></span>
           </div>
         </Link>

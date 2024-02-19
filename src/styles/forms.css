@@ -134,7 +134,7 @@
   margin-left: 5px; 
 }
 
-.blue-button {
+/* .blue-button {
   background-color: rgba(115, 103, 240, 1);
   color: white;
   border: none;
@@ -143,10 +143,10 @@
   padding: 10px 20px;
   border-radius: 4px;
   margin: 10px auto 0; 
-  display: block;
-  width: 100px;
+  display: flex;
+  width: auto;
   cursor: pointer;
-}
+} */
 
 .red-button {
   background-color: red;
@@ -177,6 +177,7 @@
   left: 0%;
   cursor: pointer; 
   align-items: center;
+  display: flex;
 }
 
 .grayButton {
@@ -188,6 +189,7 @@
   margin-right: 10px;
   cursor: pointer; 
   align-items: center;
+  display: flex;
 }
 
 .send-button {

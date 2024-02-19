@@ -4,10 +4,10 @@ import { DataGrid, GridColDef, GridValueGetterParams, GRID_DATETIME_COL_DEF, GRI
 import { Button, FormControl, InputLabel, MenuItem, Select, IconButton, Modal } from '@mui/material';
 import { DotsVertical, Edit, Trash, } from '../../components/Image/icons';
 import rows from '../../dados/data-business.json';
-import LeadIcon from '../../components/Image/LabelInitials.svg';
+import { LeadIcon } from '../../components/Image/icons';
 import avatar from '../../components/Image/Avatar3.png';
-import message from '../../components/Image/message-dots.svg';
-import paperclip from '../../components/Image/paperclip.svg';
+import { MessageDots } from '../../components/Image/icons';
+import { PaperClip } from '../../components/Image/icons';
 import AddInfo from '../Business/addInfo';
 import PrecoModal from '../Modal/price';
 import { useSidebar } from '../../contexts/sidebar/SidebarContext';
@@ -64,7 +64,9 @@ const columns: GridColDef[] = [
       <div style={{ display: 'flex', alignItems: 'center' }}>
         {params.row.id !== 5 && params.row.id !== 8 ? (
           <>
-            <img src={LeadIcon} alt="Lead Icon" style={{ marginRight: '8px' }} />
+            <div style={{ marginRight: '8px' }}>
+            <LeadIcon/>         
+            </div>
             <ContatoCell contato={params.value} />
           </>
         ) : (
@@ -111,12 +113,12 @@ const columns: GridColDef[] = [
         {params.row.id !== 5 && params.row.id !== 8 ? (
           <>
           <IconButton>
-            <img src={paperclip} alt="History Icon 1" style={{ marginRight: '4px' }} />
+            <PaperClip/>
           </IconButton>
             <span style={{ marginLeft: '4px' }}>{params.row.acao}</span>
             <div style={{ marginRight: '4px' }}>{params.row.historicoClip}</div>
-            <IconButton>
-            <img src={message} alt="History Icon 2" style={{ marginRight: '4px' }} />
+            <IconButton size='medium'>
+              <MessageDots/>
             </IconButton>
             <span style={{ marginLeft: '4px' }}>{params.row.acao}</span>
             <div style={{ marginRight: '4px' }}>{params.row.historicoMessage}</div>

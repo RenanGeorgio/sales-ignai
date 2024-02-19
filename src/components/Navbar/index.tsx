@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import '../../styles/navbar.css';
-import bellIcon from '../Image/bell.svg';
+import { BellIcon } from '../Image/icons';
 import userIcon from '../Image/Avatar.jpg';
 import searchIcon from '../Image/search.svg';
 import useAuth from '../../hooks/useAuth';
@@ -25,7 +25,7 @@ const Navbar: React.FC<NavbarProps> = () => {
             className="search-input"
           />
           <div className="icons">
-            <img className="icon" src={bellIcon} alt="Sininho" />
+            <BellIcon/>
             <img className="icon" src={userIcon} alt="Usuário" onClick={() => signOut()}/>
           </div>
         </div>
