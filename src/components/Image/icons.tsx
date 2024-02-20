@@ -880,9 +880,446 @@ export const HeadPhoneIcon = () => {
   )
 }
 
-export const Icon = () => {
+export const TrendingUpIcon = () => {
   return (
     <div>
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="trending-up">
+<g id="Path">
+<path d="M2.5 14.1663L7.5 9.16634L10.8333 12.4997L17.5 5.83301" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M2.5 14.1663L7.5 9.16634L10.8333 12.4997L17.5 5.83301" stroke="white" stroke-opacity="0.1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="Path_2">
+<path d="M11.6667 5.83301H17.5001V11.6663" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11.6667 5.83301H17.5001V11.6663" stroke="white" stroke-opacity="0.1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</svg>
+
     </div>
   )
 }
+
+export const AvatarIcon = () => {
+  return (
+    <div>
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Background">
+<g id="Background_2">
+<rect width="34" height="34" fill="#00CFE8"/>
+<rect width="34" height="34" fill="white" fill-opacity="0.2"/>
+</g>
+<rect id="Overlay" x="3.30566" y="3.30469" width="27.3889" height="27.3889" rx="13.6944" fill="white" fill-opacity="0.3"/>
+</g>
+</svg>
+    </div>
+  )
+}
+
+export const LabelIcon = () => {
+  return (
+    <div>
+      <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Label Initials">
+<g clip-path="url(#clip0_250_34852)">
+<rect id="Background" x="-0.1604" y="0.0273438" width="38" height="38" fill="#7367F0" fill-opacity="0.16"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_250_34852">
+<rect width="38" height="38" rx="19" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+
+    </div>
+  )
+}
+
+export const LabelGreenIcon = () => {
+  return (
+    <div>
+      <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Label Initials">
+<g clip-path="url(#clip0_252_36348)">
+<rect id="Background" x="-0.1604" y="0.0273438" width="38" height="38" fill="#67F07D" fill-opacity="0.16"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_252_36348">
+<rect width="38" height="38" rx="19" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+
+    </div>
+  )
+}
+
+export const LabelInitialsIcon = () => {
+  return (
+    <div>
+      <svg width="38" height="39" viewBox="0 0 38 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Label Initials">
+<g clip-path="url(#clip0_134_21762)">
+<rect id="Background" x="-0.160156" y="0.730469" width="38" height="38" fill="#7367F0" fill-opacity="0.16"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_134_21762">
+<rect y="0.703125" width="38" height="38" rx="19" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+    </div>
+  )
+}
+
+export const PackageIcon = () => {
+  return (
+    <div>
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="package">
+<path id="Path" d="M12.9997 3.25L21.6663 8.125V17.875L12.9997 22.75L4.33301 17.875V8.125L12.9997 3.25" stroke="#7367F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Path_2" d="M13 13L21.6667 8.125" stroke="#7367F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Path_3" d="M12.9997 13V22.75" stroke="#7367F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Path_4" d="M12.9997 13L4.33301 8.125" stroke="#7367F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Path_5" d="M17.3337 5.6875L8.66699 10.5625" stroke="#7367F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>
+
+    </div>
+  )
+}
+
+export const BriefCaseIcon = () => {
+  return (
+    <div>
+      <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="briefcase">
+<rect id="Rectangle" x="3.25" y="7" width="18" height="13" rx="2" stroke="#EA5455" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Path" d="M8.25 7V5C8.25 3.89543 9.14543 3 10.25 3H14.25C15.3546 3 16.25 3.89543 16.25 5V7" stroke="#EA5455" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Path_2" d="M12.25 11.9999V12.0099" stroke="#EA5455" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Path_3" d="M3.25 13C8.91095 15.8526 15.589 15.8526 21.25 13" stroke="#EA5455" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>
+
+    </div>
+  )
+}
+
+export const ClockIcon = () => {
+  return (
+    <div>
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="clock">
+<g id="Oval">
+<circle cx="13" cy="13" r="9.75" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="13" cy="13" r="9.75" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="Path">
+<path d="M13 7.58301V12.9997L16.25 16.2497" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M13 7.58301V12.9997L16.25 16.2497" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</svg>
+
+    </div>
+  )
+}
+
+export const ChartPieIcon = () => {
+  return (
+    <div>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="chart-pie-2">
+<path id="Path" d="M12 3V12H21" stroke="#7367F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle id="Oval" cx="12" cy="12" r="9" stroke="#7367F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>
+
+    </div>
+  )
+}
+
+export const ChartIcon = () => {
+  return (
+    <div>
+      <svg width="119" height="73" viewBox="0 0 119 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Chart">
+<g id="Error">
+<rect id="Rectangle 1" y="50.8757" width="7.93333" height="17.3148" rx="3.96667" fill="#28C76F"/>
+<rect id="Rectangle 2" x="27.7666" y="50.8757" width="7.93333" height="22.1244" rx="3.96667" fill="#28C76F"/>
+<rect id="Rectangle 3" x="55.5334" y="50.8757" width="7.93333" height="17.3148" rx="3.96667" fill="#28C76F"/>
+<rect id="Rectangle 4" x="83.3" y="50.8757" width="7.93333" height="10.5812" rx="3.96667" fill="#28C76F"/>
+<rect id="Rectangle 5" x="111.067" y="50.8757" width="7.93333" height="22.1244" rx="3.96667" fill="#28C76F"/>
+</g>
+<g id="Gray">
+<rect id="Bar" y="15.3901" width="7.93333" height="28.8579" rx="3.96667" fill="#7367F0"/>
+<rect id="Bar_2" x="27.7666" y="25.968" width="7.93333" height="18.2767" rx="3.96667" fill="#7367F0"/>
+<rect id="Bar_3" x="55.5334" y="0.000244141" width="7.93333" height="44.25" rx="3.96667" fill="#7367F0"/>
+<rect id="Bar_4" x="83.3" y="16.3525" width="7.93333" height="27.896" rx="3.96667" fill="#7367F0"/>
+<rect id="Bar_5" x="111.067" y="27.8928" width="7.93333" height="16.3528" rx="3.96667" fill="#7367F0"/>
+</g>
+</g>
+</svg>
+
+    </div>
+  )
+}
+
+export const Chart2Icon = () => {
+  return (
+    <div>
+      <svg width="169" height="73" viewBox="0 0 169 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Chart">
+<path id="Vector" d="M55.6202 34.2372C34.7766 62.3912 10.5219 47.6682 1 36.7874V73H168V18.9361C140.376 30.4119 127.506 15.8759 107.102 5.93019C86.6974 -4.01553 81.6748 -0.955307 55.6202 34.2372Z" fill="url(#paint0_linear_2_2263)" fill-opacity="0.3"/>
+<path id="Vector_2" d="M1 36.7874C10.5219 47.6682 34.7766 62.3912 55.6202 34.2372C81.6748 -0.955309 86.6974 -4.01553 107.102 5.93019C127.506 15.8759 140.376 30.4119 168 18.9361" stroke="#28C76F" stroke-width="2" stroke-linecap="round"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_2_2263" x1="84.5" y1="1" x2="84.5" y2="73" gradientUnits="userSpaceOnUse">
+<stop stop-color="#28C76F"/>
+<stop offset="1" stop-color="#D9D9D9" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>
+
+    </div>
+  )
+}
+
+export const PercentageIcon = () => {
+  return (
+    <div>
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="percentage">
+<circle id="Oval" cx="18.4163" cy="18.4163" r="1.08333" stroke="#FF9F43" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle id="Oval_2" cx="7.58333" cy="7.58333" r="1.08333" stroke="#FF9F43" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Path" d="M6.5 19.5L19.5 6.5" stroke="#FF9F43" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>
+
+    </div>
+  )
+}
+
+export const TruckIcon = () => {
+  return (
+    <div>
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="truck">
+<ellipse id="Oval" cx="7.58366" cy="18.4167" rx="2.16667" ry="2.16667" stroke="#00CFE8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle id="Oval_2" cx="18.4167" cy="18.4167" r="2.16667" stroke="#00CFE8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Shape" d="M5.41667 19.167C5.83088 19.167 6.16667 18.8312 6.16667 18.417C6.16667 18.0028 5.83088 17.667 5.41667 17.667V19.167ZM3.25 18.417H2.5C2.5 18.8312 2.83579 19.167 3.25 19.167V18.417ZM14.0833 5.41699H14.8333C14.8333 5.00278 14.4975 4.66699 14.0833 4.66699V5.41699ZM13.3333 18.417C13.3333 18.8312 13.6691 19.167 14.0833 19.167C14.4975 19.167 14.8333 18.8312 14.8333 18.417H13.3333ZM9.75 17.667C9.33579 17.667 9 18.0028 9 18.417C9 18.8312 9.33579 19.167 9.75 19.167V17.667ZM16.25 19.167C16.6642 19.167 17 18.8312 17 18.417C17 18.0028 16.6642 17.667 16.25 17.667V19.167ZM20.5833 17.667C20.1691 17.667 19.8333 18.0028 19.8333 18.417C19.8333 18.8312 20.1691 19.167 20.5833 19.167V17.667ZM22.75 18.417V19.167C23.1642 19.167 23.5 18.8312 23.5 18.417H22.75ZM22.75 11.917H23.5C23.5 11.5028 23.1642 11.167 22.75 11.167V11.917ZM14.0833 11.167C13.6691 11.167 13.3333 11.5028 13.3333 11.917C13.3333 12.3312 13.6691 12.667 14.0833 12.667V11.167ZM14.0833 5.75033C13.6691 5.75033 13.3333 6.08611 13.3333 6.50033C13.3333 6.91454 13.6691 7.25033 14.0833 7.25033V5.75033ZM19.5 6.50033L20.1431 6.11445C20.0076 5.88855 19.7634 5.75033 19.5 5.75033V6.50033ZM22.1069 12.3029C22.32 12.658 22.7807 12.7732 23.1359 12.5601C23.4911 12.347 23.6062 11.8863 23.3931 11.5311L22.1069 12.3029ZM5.41667 17.667H3.25V19.167H5.41667V17.667ZM4 18.417V6.50033H2.5V18.417H4ZM4 6.50033C4 6.31623 4.14924 6.16699 4.33333 6.16699V4.66699C3.32081 4.66699 2.5 5.4878 2.5 6.50033H4ZM4.33333 6.16699H14.0833V4.66699H4.33333V6.16699ZM13.3333 5.41699V18.417H14.8333V5.41699H13.3333ZM9.75 19.167H16.25V17.667H9.75V19.167ZM20.5833 19.167H22.75V17.667H20.5833V19.167ZM23.5 18.417V11.917H22V18.417H23.5ZM22.75 11.167H14.0833V12.667H22.75V11.167ZM14.0833 7.25033H19.5V5.75033H14.0833V7.25033ZM18.8569 6.8862L22.1069 12.3029L23.3931 11.5311L20.1431 6.11445L18.8569 6.8862Z" fill="#00CFE8"/>
+</g>
+</svg>
+
+    </div>
+  )
+}
+
+export const ChevronUpIcon = () => {
+  return (
+    <div>
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="chevron-up">
+<path id="Path" d="M5 12.5L10 7.5L15 12.5" stroke="#28C76F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>
+
+    </div>
+  )
+}
+
+export const ChevronDownIcon = () => {
+  return (
+    <div>
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="chevron-down">
+<path id="Path" d="M5 7.5L10 12.5L15 7.5" stroke="#EA5455" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>
+
+    </div>
+  )
+}
+
+export const CircleCheckIcon = () => {
+  return (
+    <div>
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="circle-check">
+<circle id="Oval" cx="13" cy="13" r="9.75" stroke="#28C76F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Path" d="M9.75 12.9997L11.9167 15.1663L16.25 10.833" stroke="#28C76F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>
+
+    </div>
+  )
+}
+
+export const ArrowUpCircleIcon = () => {
+  return (
+    <div>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="arrow-up-circle">
+<g id="Oval">
+<circle cx="12" cy="12" r="9" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="12" cy="12" r="9" stroke="white" stroke-opacity="0.1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="Path">
+<path d="M12 8L8 12" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 8L8 12" stroke="white" stroke-opacity="0.1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="Path_2">
+<path d="M12 8V16" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 8V16" stroke="white" stroke-opacity="0.1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="Path_3">
+<path d="M16 12L12 8" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16 12L12 8" stroke="white" stroke-opacity="0.1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</svg>
+    </div>
+  )
+}
+
+export const CssIcon = () => {
+  return (
+    <div>
+      <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="48px" height="48px">
+        <path fill="#0277BD" d="M41,5H7l3,34l14,4l14-4L41,5L41,5z"/>
+      <path fill="#039BE5" d="M24 8L24 39.9 35.2 36.7 37.7 8z"/>
+      <path fill="#FFF" d="M33.1 13L24 13 24 17 28.9 17 28.6 
+      21 24 21 24 25 28.4 25 28.1 29.5 24 30.9 24 35.1 31.9 32.5 32.6 21 32.6 21z"/>
+      <path fill="#EEE" d="M24,13v4h-8.9l-0.3-4H24z 
+      M19.4,21l0.2,4H24v-4H19.4z M19.8,27h-4l0.3,5.5l7.9,2.6v-4.2l-4.1-1.4L19.8,27z"/></svg>
+    </div>
+  )
+}
+
+export const CurrencyDollarIcon = () => {
+  return (
+    <div>
+      <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="currency-dollar">
+<path id="Path" d="M16.95 8C16.5428 6.84458 15.4739 6.05285 14.25 6H10.25C8.59315 6 7.25 7.34315 7.25 9C7.25 10.6569 8.59315 12 10.25 12H14.25C15.9069 12 17.25 13.3431 17.25 15C17.25 16.6569 15.9069 18 14.25 18H10.25C9.02606 17.9472 7.95722 17.1554 7.55 16" stroke="#28C76F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Shape" d="M13 3C13 2.58579 12.6642 2.25 12.25 2.25C11.8358 2.25 11.5 2.58579 11.5 3H13ZM11.5 6C11.5 6.41421 11.8358 6.75 12.25 6.75C12.6642 6.75 13 6.41421 13 6H11.5ZM13 18C13 17.5858 12.6642 17.25 12.25 17.25C11.8358 17.25 11.5 17.5858 11.5 18H13ZM11.5 21C11.5 21.4142 11.8358 21.75 12.25 21.75C12.6642 21.75 13 21.4142 13 21H11.5ZM11.5 3V6H13V3H11.5ZM11.5 18V21H13V18H11.5Z" fill="#28C76F"/>
+</g>
+</svg>
+
+    </div>
+  )
+}
+
+export const DotIcon = () => {
+  return (
+    <div>
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Dot">
+<circle cx="9" cy="9" r="6" fill="#FF9F43"/>
+<circle cx="9" cy="9" r="7.5" stroke="#FF9F43" stroke-opacity="0.16" stroke-width="3"/>
+</g>
+</svg>
+
+    </div>
+  )
+}
+
+export const AvatarGreenIcon = () => {
+  return (
+    <div>
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Background">
+<rect id="Background_2" width="34" height="34" fill="#28C76F"/>
+<rect id="Overlay" x="3.30566" y="3.30469" width="27.3889" height="27.3889" rx="13.6944" fill="white" fill-opacity="0.3"/>
+</g>
+</svg>
+
+    </div>
+  )
+}
+
+export const VectorIcon = () => {
+  return (
+    <div>
+      <svg width="310" height="200" viewBox="0 0 310 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+        d="M19.2529 158.539H0V200H310V0H285.088L269.492 106.745H242.908L224.832 48.1651H203.21L182.298 108.889H158.55L142.955 156.396H117.434L100.421 108.889H70.445L58.242 83.0238H29.9538L19.2529 158.539Z"
+        fill="url(#paint0_linear_2_2515)" fill-opacity="0.18" />
+    <defs>
+        <linearGradient id="paint0_linear_2_2515" x1="155" y1="0" x2="155" y2="200"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FF9F43" />
+            <stop offset="1" stop-color="#FF9F43" stop-opacity="0" />
+        </linearGradient>
+    </defs>
+</svg>
+    
+    </div>
+  )
+}
+
+// export const Icon = () => {
+//   return (
+//     <div>
+//     </div>
+//   )
+// }
+
+// export const Icon = () => {
+//   return (
+//     <div>
+//     </div>
+//   )
+// }
+
+// export const Icon = () => {
+//   return (
+//     <div>
+//     </div>
+//   )
+// }
+
+// export const Icon = () => {
+//   return (
+//     <div>
+//     </div>
+//   )
+// }
+
+// export const Icon = () => {
+//   return (
+//     <div>
+//     </div>
+//   )
+// }
+
+// export const Icon = () => {
+//   return (
+//     <div>
+//     </div>
+//   )
+// }
+
+// export const Icon = () => {
+//   return (
+//     <div>
+//     </div>
+//   )
+// }
+
+// export const Icon = () => {
+//   return (
+//     <div>
+//     </div>
+//   )
+// }
+
+// export const Icon = () => {
+//   return (
+//     <div>
+//     </div>
+//   )
+// }

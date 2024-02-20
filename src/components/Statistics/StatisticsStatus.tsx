@@ -16,10 +16,10 @@ import VueLogo from '../../components/Image/VueLogo.png';
 import sketchLogo from '../../components/Image/sketchLogo.png';
 import ReactIcon from '../../components/Image/ReactIcon.png';
 import laravelLogo from '../../components/Image/laravel-logo.png';
-import figmaLogo from '../../components/Image/Figma-logo.svg';
+// import figmaLogo from '../../components/Image/Figma-logo.svg';
 import BootStrapLogo from '../../components/Image/BootstrapLogo.png';
-import dollar from '../../components/Image/currency-dollar.svg';
-import vector from '../../components/Image/vector.svg';
+import { CurrencyDollar } from '../Image/icons';
+import { VectorIcon } from '../Image/icons';;
 
 interface StatisticsStatusProps {}
 
@@ -92,7 +92,7 @@ const StatisticsStatus: React.FC<StatisticsStatusProps> = () => {
         <div className="menu-icon">&#8942;</div>
         <div className="container-inicial-dollar">
           <div className="earnings-info">
-            <img src={dollar} alt="Dollar" />
+            <CurrencyDollar/>
             <div>
               <span>$4,3742</span>
               <p>Your Earnings</p>
@@ -100,7 +100,7 @@ const StatisticsStatus: React.FC<StatisticsStatusProps> = () => {
           </div>
           <span className="earnings-percentage">+10.2%</span>
         </div>
-        <img src={vector} alt="Vector" className="vector"/>
+        <VectorIcon/>
         <div className="container-footer">
           <div className="container-footer-item">
             <p className="footer-label">Donates</p>
@@ -138,7 +138,7 @@ const StatisticsStatus: React.FC<StatisticsStatusProps> = () => {
 
         <div className="content-row-3">
           <div className="content-item-3">
-            <img src={figmaLogo} alt="Figma" />
+            {/* <img src={figmaLogo} alt="Figma" /> */}
             <div className="container-info-row-3">
               <span>Figma</span>
               <p>App</p>

@@ -1,20 +1,9 @@
 import React, { useState } from 'react';
-import { BookIcon, CalendarIcon, ChartBarIcon, ComponentsIcon, CopIcon, EmailIcon, FileDollarIcon, FileTextIcon, HeadPhoneIcon, LayoutNavIcon, LayoutSideBarIcon, MailIcon, MessageCircleIcon, SettingIcon, SmartHomeIcon, TextWrapIcon, } from '../Image/icons';
-import book from '../Image/book-2.svg';
-import calendar from '../Image/calendar.svg';
-import chart from '../Image/chart-bar.svg';
-import copy from '../Image/copy.svg';
-import fileDollar from '../Image/file-dollar.svg';
-import fileText from '../Image/file-text.svg';
-import headphones from '../Image/headphones.svg';
+import { BookIcon, CalendarIcon, ChartBarIcon, ComponentsIcon, CopIcon, 
+  EmailIcon, FileDollarIcon, FileTextIcon, HeadPhoneIcon, LayoutNavIcon, LayoutSideBarIcon, MailIcon,
+   MessageCircleIcon, SettingIcon, SmartHomeIcon, TextWrapIcon, } from '../Image/icons';
 import logo from '../Image/image 1.png';
-import layoutNavbar from '../Image/layout-navbar.svg';
-import layoutSidebar from '../Image/layout-sidebar.svg';
-import messageCircle from '../Image/message-circle-2.svg';
-import settings from '../Image/settings.svg';
-import smartHome from '../Image/smart-home.svg';
-import textWrap from '../Image/text-wrap-disabled.svg';
-import components from '../Image/components.svg';
+
 import '../../styles/sidebar.css';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';

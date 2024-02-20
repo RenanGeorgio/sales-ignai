@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 import '../../styles/statistics-transaction.css';
-import seta from '../../components/Image/chevron-up.svg';
+import { ChevronUpIcon } from '../Image/icons';;
 
 interface GraphStatisticsProps {
   data: number[];
@@ -49,7 +49,7 @@ const GraphStatistics: React.FC<GraphStatisticsProps> = ({ data }) => {
       <span>Monthly Report</span>
       <h4>4,350</h4>
       <div className="percentage-container">
-        <img src={seta} alt="Up" />
+        <ChevronUpIcon/>
         <p>15.8%</p>
       </div>
       <canvas ref={chartRef} className="canvas-statistics"></canvas>

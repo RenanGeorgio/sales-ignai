@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../styles/dashboard.css'; 
-import avatar from '../../components/Image/avatar.svg';
+import { AvatarIcon } from '../Image/icons';
 
 interface GraphFontClickProps {
   month: string;
@@ -17,28 +17,28 @@ const GraphFontClick: React.FC<GraphFontClickProps> = ({ month }) => {
       </div>
       <div className="data-row-4">
         <div className="data-item">
-          <img src={avatar} alt="Google" className="avatar-img" />
+          <AvatarIcon />
           <span className="data-text">Google</span>
           <span className="data-number">33</span>
         </div>
       </div>
       <div className="data-row-4">
         <div className="data-item">
-          <img src={avatar} alt="Facebook" className="avatar-img" />
+          <AvatarIcon />
           <span className="data-text">Facebook</span>
           <span className="data-number">30</span>
         </div>
       </div>
       <div className="data-row-4">
         <div className="data-item">
-          <img src={avatar} alt="Instagram" className="avatar-img" />
+          <AvatarIcon />
           <span className="data-text">Instagram</span>
           <span className="data-number">12</span>
         </div>
       </div>
       <div className="data-row-4">
         <div className="data-item">
-          <img src={avatar} alt="LinkedIn" className="avatar-img" />
+          <AvatarIcon/>
           <span className="data-text">LinkedIn</span>
           <span className="data-number">8</span>
         </div>

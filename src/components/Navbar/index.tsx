@@ -3,7 +3,7 @@ import { useState } from 'react';
 import '../../styles/navbar.css';
 import { BellIcon } from '../Image/icons';
 import userIcon from '../Image/Avatar.jpg';
-import searchIcon from '../Image/search.svg';
+import { Search } from '../Image/icons';
 import useAuth from '../../hooks/useAuth';
 
 interface NavbarProps {}
@@ -16,7 +16,7 @@ const Navbar: React.FC<NavbarProps> = () => {
     <header className="navbar">
       <div className="search-container">
         <div className="search-wrapper">
-          <img className="search-icon" src={searchIcon} alt="Ícone de Pesquisa" />
+          <Search className={ 'search-icon'} />
           <input
             type="text"
             value={searchText}
