@@ -6,13 +6,18 @@ interface GraphVisitProps {
 }
 
 const GraphVisit: React.FC<GraphVisitProps> = ({ month }) => {
-  const chartRef = useRef<HTMLCanvasElement>(null);
+  const chartRef = useRef<HTMLCanvasElement | null>(null);
+  const chartInstanceRef = useRef<Chart | null>(null);
 
   useEffect(() => {
     if (chartRef.current) {
       const ctx = chartRef.current.getContext('2d');
       if (ctx) {
-        new Chart(ctx, {
+        if (chartInstanceRef.current) {
+          chartInstanceRef.current.destroy();
+        }
+
+        chartInstanceRef.current = new Chart(ctx, {
           type: 'bar', 
           data: {
             labels: ['1 Jan', '2 Jan', '3 Jan', '4 Jan', '5 Jan', '6 Jan', '7 Jan', '8 Jan', '9 Jan', '10 Jan'],
@@ -51,7 +56,13 @@ const GraphVisit: React.FC<GraphVisitProps> = ({ month }) => {
         });
       }
     }
-  }, []);
+
+    return () => {
+      if (chartInstanceRef.current) {
+        chartInstanceRef.current.destroy();
+      }
+    };
+  }, []); 
 
   return (
     <div className="graph-container">
