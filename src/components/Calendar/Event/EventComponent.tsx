@@ -16,7 +16,7 @@ const style = {
     bgcolor: 'background.paper',
     border: '2px solid #000',
     boxShadow: 24,
-    pr: 10,
+    pr: 15,
     pl: 5,
     paddingTop: 7
 };

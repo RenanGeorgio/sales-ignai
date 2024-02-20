@@ -23,11 +23,16 @@
 }
 
 .title {
-  /* margin-left: 6%;
-  margin-top: 35px; */
   color: grey;
   font-family: sans-serif;
   font-size: 20px;
+}
+.titleChat {
+  margin-left: 8%;
+  color: grey;
+  font-family: sans-serif;
+  font-size: 20px;
+  height: 15px;
 }
 
 .container {
