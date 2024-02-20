@@ -2,11 +2,9 @@ import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import '../../styles/statistics.css';
 
-interface GraphProps {
+interface GraphProps {}
 
-}
-
-const Graph3: React.FC<GraphProps> = () => {
+const GraphSource: React.FC<GraphProps> = () => {
   const labels = ['6', '5', '4', '3', '2', '1'];
   const data = {
     labels: labels,
@@ -60,4 +58,4 @@ const Graph3: React.FC<GraphProps> = () => {
   );
 };
 
-export default Graph3;
+export default GraphSource;
