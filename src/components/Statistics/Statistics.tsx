@@ -7,7 +7,9 @@ import money from '../../components/Image/currency-dollar.svg';
 import brief from '../../components/Image/briefcase.svg';
 import message from '../../components/Image/message-dots.svg';
 import chart1 from '../../components/Image/Chart.svg';
-import chart2 from '../../components/Image/Chart2.svg';
+import ChartSales from '../Graph/GraphSales';
+import ChartSessions from '../Graph/GraphSessions';
+import ChartRevenue from '../Graph/GraphRevenue';
 
 interface StatisticsComponentProps {
   
@@ -88,7 +90,10 @@ const StatisticsComponent: React.FC<StatisticsComponentProps> = () => {
           <div className="custom-number-label-container">
             <h3 className="custom-number-statistics">Sales</h3>
             <h4 className="custom-label">Last Year</h4>
-            <img src={chart2} alt="Gráfico" className="custom-chart-image" />
+            {/* <img src={chart2} alt="Gráfico" className="custom-chart-image" />  */}
+            <div className="custom-chart-image">
+            <ChartSales/>
+            </div>
             <h4 className="custom-number-statistics-left">175k</h4>
             <div className="custom-number-porcentage">
               <h4 className="custom-porcentage-text">-16.2%</h4>
@@ -100,7 +105,8 @@ const StatisticsComponent: React.FC<StatisticsComponentProps> = () => {
           <div className="custom-number-label-container">
             <h3 className="custom-number-statistics">Sessions</h3>
             <h4 className="custom-label">This Month</h4>
-            <img src={chart1} alt="Gráfico" className="custom-chart-image-2" />
+            {/* <img src={chart1} alt="Gráfico" className="custom-chart-image-2" /> */}
+            <ChartSessions/>
             <h4 className="custom-number-statistics-left-2">45.1k</h4>
             <div className="custom-number-porcentage">
               <h4 className="custom-porcentage-text-2">+12.6%</h4>
@@ -141,6 +147,7 @@ const StatisticsComponent: React.FC<StatisticsComponentProps> = () => {
               <h4>+15.2%</h4>
             </div>
           </div>
+            <ChartRevenue/>
         </div>
     
       </div>

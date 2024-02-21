@@ -20,13 +20,11 @@ const Navbar: React.FC<NavbarProps> = () => {
 
   const handleClick =
   (newPlacement: PopperPlacementType) =>
-  (event: React.MouseEvent<HTMLButtonElement>) => {
+  (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
     setOpen((prev) => placement !== newPlacement || !prev);
     setPlacement(newPlacement);
   };
-
-  // const open = Boolean(anchorEl);
   const id = open ? 'simple-popper' : undefined;
 
   return (
