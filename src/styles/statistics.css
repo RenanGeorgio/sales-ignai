@@ -84,6 +84,14 @@
 .number-label {
   text-align: left;
   margin-left: 25px;
+ 
+}
+
+.number-label-revenue {
+  text-align: left;
+  margin-left: 25px;
+  /* line-height: 15px; */
+  flex-direction: column;
 }
 
 .number-label-statistics {
@@ -341,10 +349,11 @@
 
 .custom-number-statistics {
   display: flex;
-  font: 1em Public Sans;
+  /* font: 1em Public Sans; */
   margin-left: 25px;
   margin-top: 0;
   font-size: 18px;
+  padding-top: 8px;
 }
 
 .custom-label {
@@ -414,6 +423,12 @@
 .green-percent {
   color: rgba(13, 151, 0, 0.8); 
   text-align: center;
+  margin-top: 15px;
+  /* align-items: center; */
+  /* padding: 2px; */
+  /* display: flex; */
+  height: max-content;
+  
 }
 
 .revenue-growth-container {

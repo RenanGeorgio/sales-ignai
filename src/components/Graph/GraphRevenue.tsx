@@ -87,7 +87,7 @@ const ChartRevenue = () => {
     <div style={{width: '210px', maxWidth: '310px', height: '500px'}}>
       <Bar
         data={data}
-        style={{height: "200px", width: "100%", marginTop:20}}
+        style={{height: "200px", width: "100%", marginTop:30}}
         options={options}
         height='250px'
         width='280px'
