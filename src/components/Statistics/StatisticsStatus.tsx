@@ -20,6 +20,8 @@ import figmaLogo from '../../components/Image/Figma-logo.svg';
 import BootStrapLogo from '../../components/Image/BootstrapLogo.png';
 import dollar from '../../components/Image/currency-dollar.svg';
 import vector from '../../components/Image/vector.svg';
+import { Chart } from 'chart.js/dist';
+import ChartProjectStatus from '../Graph/GraphProjectStatus';
 
 interface StatisticsStatusProps {}
 
@@ -101,7 +103,8 @@ const StatisticsStatus: React.FC<StatisticsStatusProps> = () => {
             </div>
             <span className="earnings-percentage">+10.2%</span>
           </div>
-          <img src={vector} alt="Vector" className="vector"/>
+          {/* <img src={vector} alt="Vector" className="vector"/> */}
+          <ChartProjectStatus/>
           <div className="container-footer">
             <div className="container-footer-item">
               <p className="footer-label">Donates</p>

@@ -60,13 +60,16 @@ const ChartSales = () => {
         display: false
       },
       y: {
-        display: false
+        display: true,
+        grid:{
+          display:true
+        }
       }
     }
   };
 
   return (
-    <div style={{width: '200px', maxWidth: '200px', height: '500px'}}>
+    <div style={{width: '200px', maxWidth: '210px', height: '500px'}}>
       <Line
         data={chartData}
         style={{height: "200px", width: "100%", marginTop:-30}}

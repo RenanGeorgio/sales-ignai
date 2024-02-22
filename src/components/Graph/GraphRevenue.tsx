@@ -56,7 +56,7 @@ const ChartRevenue = () => {
     indexAxis: 'x',
     elements: {
       bar: {
-        borderWidth: 1,
+        // borderWidth: 1,
         width:5
       },
     },
