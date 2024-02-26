@@ -214,6 +214,7 @@
     padding: 8px 28px;
     position: relative;
     width: 80%;
+    cursor: pointer;
   }
   
   .left-menu .status-indicator-2 {
