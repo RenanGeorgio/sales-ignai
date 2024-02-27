@@ -9,6 +9,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  grid-template-rows: auto 1fr auto;
   box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.5);
   transition: width 0.3s ease;
   overflow: hidden;
@@ -56,6 +57,9 @@
   /* align-items: baseline; */
   /* position: relative; */
 }
+.sidebar div img{
+  margin-bottom: 10px;
+}
 
 .sidebar.expanded .logo {
   margin-left: 90px;
@@ -67,8 +71,9 @@
   margin-right: 25px;
   width: 100%;
   padding-inline: 15px; */
-  height: 20px;
+  /* height: 20px; */
 }
+
 .link{
   text-decoration: none;
   display: flex;
@@ -76,12 +81,12 @@
   align-items: center;
   /* gap: 25px; */
   height: 25px;
-
+  margin-bottom: 5px;
 }
 
 .menu-item img {
   /* width: 22px; */
-  /* height: 22px; */
+  height: 22px;
   /* margin-right: 10px; */
 }
 
@@ -100,26 +105,40 @@
 
 .section1 {
   display: flex;
-   /* justify-content:start; */
-   flex-direction:column;
-   padding-bottom: 1px;
+  flex-direction:column;
   border-bottom:1px solid rgba(183, 183, 183, 0.585);
   color: #4B465C;
-
-width: 98%;
+  width: 98%;
+  /* margin-bottom: 10px; */
+  gap:15px;
+  margin-top: -1px;
+  padding-bottom: 15px;
+  padding-top: 1px;
+}
+.sectionContainer{
+  margin-top:15px;
+}
+.sectionContainer .link{
+  margin: 1px 0px 5px 0px;
+}
+.expanded .sectionContainer .link{
+  margin: auto;
+}
+.expanded .sectionContainer{
+  margin-top: -10px;
+  gap: inherit;
+}
+.expanded .section1{
+  gap: inherit;
+  margin-bottom: inherit;
+  margin-top: inherit;
+  padding-bottom: inherit;
 }
 
 .textOpen{
   text-align: center;
   margin-left: 0;
 }
-
-
-
-
-
-
-
 
 @media screen and (max-width: 768px) {
   .sidebar {

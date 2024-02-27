@@ -1,20 +1,22 @@
 import React, { useEffect, useRef } from 'react';
-import Chart from 'chart.js/auto';
+import Chart, { ChartConfiguration } from 'chart.js/auto';
 import '../../styles/statistics-transaction.css';
-import seta from '../../components/Image/chevron-up.svg';
+import { ChevronUpIcon } from '../Image/icons';;
 
 interface GraphStatisticsProps {
   data: number[];
 }
 
 const GraphStatistics: React.FC<GraphStatisticsProps> = ({ data }) => {
-  const chartRef = useRef<HTMLCanvasElement>(null);
+  const chartRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
+    let chartInstance: Chart<'doughnut'> | null = null;
+
     if (chartRef.current) {
       const ctx = chartRef.current.getContext('2d');
       if (ctx) {
-        const chart = new Chart(ctx, {
+        const chartConfig: ChartConfiguration<'doughnut'> = {
           type: 'doughnut',
           data: {
             labels: ['Tempo de Entrega', 'Preço do Produto', 'Transporte', 'Endereço Incorreto'],
@@ -30,17 +32,24 @@ const GraphStatistics: React.FC<GraphStatisticsProps> = ({ data }) => {
             }],
           },
           options: {
-            cutout: '70%', 
+            cutout: '70%',
             plugins: {
               legend: {
                 display: false,
               },
             },
           },
-        });
-      
+        };
+
+        chartInstance = new Chart(ctx, chartConfig);
       }
     }
+
+    return () => {
+      if (chartInstance) {
+        chartInstance.destroy();
+      }
+    };
   }, [data]);
 
   return (
@@ -49,7 +58,7 @@ const GraphStatistics: React.FC<GraphStatisticsProps> = ({ data }) => {
       <span>Monthly Report</span>
       <h4>4,350</h4>
       <div className="percentage-container">
-        <img src={seta} alt="Up" />
+        <ChevronUpIcon/>
         <p>15.8%</p>
       </div>
       <canvas ref={chartRef} className="canvas-statistics"></canvas>

@@ -1,15 +1,31 @@
 import React, { useEffect, useRef } from 'react';
-import Chart from 'chart.js/auto';
+import Chart, { ChartConfiguration } from 'chart.js/auto';
 import '../../styles/graph.css';
 
-const GraphChat = () => {
-  const chartRef = useRef<HTMLCanvasElement>(null);
+interface GraphChatProps {
+  data: {
+    labels: string[];
+    datasets: {
+      label: string;
+      data: number[];
+      backgroundColor: string;
+      borderColor: string;
+      borderWidth: number;
+      barPercentage?: number;
+      fill?: boolean;
+    }[];
+  };
+}
+
+const GraphChat: React.FC<GraphChatProps> = ({ data }) => {
+  const chartRef = useRef<HTMLCanvasElement | null>(null);
+  let chartInstance: Chart<'bar', number[], string> | null = null;
 
   useEffect(() => {
     if (chartRef.current) {
       const ctx = chartRef.current.getContext('2d');
       if (ctx) {
-        new Chart(ctx, {
+        const chartConfig: ChartConfiguration<'bar', number[], string> = {
           type: 'bar', 
           data: {
             labels: ['1 Jan', '2 Jan', '3 Jan', '4 Jan', '5 Jan', '6 Jan', '7 Jan', '8 Jan', '9 Jan', '10 Jan'],
@@ -45,10 +61,22 @@ const GraphChat = () => {
               },
             },
           },
-        });
+        }
+        
+        if (chartInstance) {
+          chartInstance.destroy();
+        }
+
+        chartInstance = new Chart(ctx, chartConfig);
       }
     }
-  }, []);
+
+    return () => {
+      if (chartInstance) {
+        chartInstance.destroy();
+      }
+    };
+  }, [data]);
 
   return (
     <div className="graph-container">

@@ -1,6 +1,6 @@
 .left-menu {
     align-items: flex-start;
-    /* border:3px solid black; */
+    border: 1px rgba(0, 0, 0, 0.194) solid;
     border-radius: 6px 0px 0px 6px;
     /* border-right-style: solid; */
     border-right-width: 1px;
@@ -170,7 +170,7 @@
   }
 
   .div-content::-webkit-scrollbar {
-    width: 8px;               /* width of the entire scrollbar */
+    width: 6px;               /* width of the entire scrollbar */
     border-radius: 20px; 
   }
   
@@ -183,7 +183,7 @@
   .div-content::-webkit-scrollbar-thumb {
     background-color: rgb(109, 109, 109);    /* color of the scroll thumb */
     border-radius: 20px;       /* roundness of the scroll thumb */
-    border: 1px solid rgb(255, 253, 142);  /* creates padding around scroll thumb */
+   
   }
   
   .left-menu .text-wrapper-3 {

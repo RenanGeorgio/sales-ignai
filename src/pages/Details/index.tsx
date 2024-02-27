@@ -4,7 +4,7 @@ import DetailsLayout from '../../components/Layout/DetailsLayout'
 
 const ContactPage = () => {
   return (
-    <div>
+    <div className="page-content">
       <Navbar />
      <DetailsLayout/>
     </div>

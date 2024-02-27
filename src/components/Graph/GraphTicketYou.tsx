@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import Chart from 'chart.js/auto';
+import Chart, { ChartConfiguration } from 'chart.js/auto';
 import '../../styles/graph.css';
 
 interface GraphTicketYouProps {
@@ -7,13 +7,14 @@ interface GraphTicketYouProps {
 }
 
 const GraphTicketYou: React.FC<GraphTicketYouProps> = ({ data }) => {
-  const chartRef = useRef<HTMLCanvasElement>(null);
+  const chartRef = useRef<HTMLCanvasElement | null>(null);
+  let chartInstance: Chart<'doughnut'> | null = null;
 
   useEffect(() => {
     if (chartRef.current) {
       const ctx = chartRef.current.getContext('2d');
       if (ctx) {
-        const chart = new Chart(ctx, {
+        const chartConfig: ChartConfiguration<'doughnut'> = {
           type: 'doughnut',
           data: {
             labels: ['Tempo de Entrega', 'Preço do Produto', 'Transporte', 'Endereço Incorreto'],
@@ -29,24 +30,35 @@ const GraphTicketYou: React.FC<GraphTicketYouProps> = ({ data }) => {
             }],
           },
           options: {
-            cutout: '70%', 
+            cutout: '70%',
             plugins: {
               legend: {
                 display: false,
               },
             },
           },
-        });
-      
+        };
+
+        if (chartInstance) {
+          chartInstance.destroy();
+        }
+
+        chartInstance = new Chart(ctx, chartConfig);
       }
     }
+
+    return () => {
+      if (chartInstance) {
+        chartInstance.destroy();
+      }
+    };
   }, [data]);
 
   return (
     <div className="graph-container-ticket">
       <h3 className="graph-title">Taxa de Solução de tickets por você</h3>
       <div className="menu-icon-you">&#8942;</div>
-      <canvas ref={chartRef} className="canvas-ticket"></canvas>
+      <canvas ref={chartRef} className="canvas-ticket-you"></canvas>
       <div className="legenda">
         <div>
           <span className="legenda-cor" style={{ backgroundColor: '#abcab9' }}></span>

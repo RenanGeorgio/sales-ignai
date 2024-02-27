@@ -4,7 +4,7 @@ import LayoutCalendar from '../../components/Layout/CalendarLayout'
 
 const CalendarPage = () => {
   return (
-    <div>
+    <div className="page-content">
       <Navbar />
      <LayoutCalendar/>
     </div>

@@ -1,7 +1,6 @@
 import React,{useState} from "react";
 import './leftmenu.css'
 import { Phone } from "../Image/icons";
-import AddTicket from "./AddTicket/AddTicket"; 
 
 export const LeftMenu = ({onAddTicketClick}) => {
   const [openPage, setOpenPage] = useState(false); 

@@ -4,7 +4,7 @@ import Mastercard from '../../components/Image/MasterCard.png';
 import AmericanExpress from '../../components/Image/american-express.png';
 import Avatar from '../../components/Image/Avatar2.png';
 import List from '../../components/Image/list-details.svg';
-import Dot from '../../components/Image/Dot.svg';
+import { DotIcon } from '../Image/icons';
 // import file from '../../components/Image/file-text.svg';
 // import table from '../../components/Image/table.svg';
 import '../../styles/statistics-transaction.css';
@@ -53,7 +53,7 @@ const rows = [
           <div className="menu-icon">&#8942;</div>
           <div className="activity-container">
             <div className="dot-container">
-              <img src={Dot} alt='Dot icon' />
+              <DotIcon/>
               <h4>Client Meeting</h4>
               <span>Today</span>
             </div>
@@ -66,7 +66,7 @@ const rows = [
           </div>
           <div className="activity-container">
             <div className="dot-container">
-              <img src={Dot} alt='Dot icon' />
+              <DotIcon/>
               <h4>Create a new project for client</h4>
               <span>2 Day ago</span>
             </div>
@@ -74,7 +74,7 @@ const rows = [
           </div>
           <div className="activity-container">
             <div className="dot-container">
-              <img src={Dot} alt='Dot icon' />
+              <DotIcon/>
               <h4>Shared 2 New Project Files</h4>
               <span>6 Day ago</span>
             </div>
@@ -90,7 +90,7 @@ const rows = [
           </div>
           <div className="activity-container">
             <div className="dot-container">
-              <img src={Dot} alt='Dot icon' />
+              <DotIcon/>
               <h4>Project status updated</h4>
               <span>10 Day ago</span>
             </div>

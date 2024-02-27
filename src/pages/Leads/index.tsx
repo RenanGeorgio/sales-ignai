@@ -1,164 +1,234 @@
-import React, { useState } from 'react';
-import clip from '../../components/Image/paperclip.svg';
-import message from '../../components/Image/message-dots-gray.svg';
-import avatar from '../../components/Image/Avatar3.png';
+import React, { useEffect, useState } from "react";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import Navbar from "../../components/Navbar";
+import dragEnd from "../../helpers/dragEnd";
+import LeadModal from "../../components/Modal/leadModal";
+import SearchFilter from "../../components/Table/searchFilter";
+import "../../styles/leads.css";
+import LeadPopover from "../../components/Popover/leadPopover";
+import { useSelector } from "react-redux";
+import authApi from "../../services/auth";
+import { useDispatch } from "react-redux";
+import { leadsActions } from "../../store/store";
+import { IconButton } from "@mui/material";
+import { DotsVertical } from "../../components/Image/icons";
 
-import '../../styles/leads.css';  
-import Navbar from '../../components/Navbar';
-import LeadModal from '../../components/Modal';
-import SearchFilter from '../../components/Table/searchFilter';
+const Leads = () => {
+  const leadsData = useSelector((state: any) => state.leads);
+  const dispatch = useDispatch();
+  const [isMounted, setIsMounted] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showKanban, setShowKanban] = useState(false);
+  const [columnName, setColumnName] = useState("");
+  const [cardName, setCardName] = useState("");
+  const [columns, setColumns] = useState(leadsData);
+  const [cardInfo, setCardInfo] = useState({});
 
-const Leads: React.FC = () => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [showKanban, setShowKanban] = useState(false);
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
-    const openModal = () => {
-        setIsModalOpen(true);
+  useEffect(() => {
+    if(leadsData){
+      setColumns(leadsData);
+    }
+  }, [leadsData]);
+
+  const onDragEnd = async (result) => {
+    const newColumns = dragEnd(columns, result);
+    if (newColumns) {
+      const checkDif = newColumns.filter((x) => !columns.includes(x));
+      const response = await authApi.put(`/leads`, { leads: checkDif });
+      if (response.status === 204) {
+        dispatch(leadsActions.updateLeads(newColumns));
+        setColumns(newColumns);
+      }
+    }
+  };
+
+  const handleShowKanban = () => {
+    setShowKanban(true);
+  };
+
+  const handleShowList = () => {
+    setShowKanban(false);
+  };
+
+  const addNewColumn = async () => {
+    if (columnName === "") return;
+    const newColumn = {
+      title: columnName,
+      items: [],
     };
 
-    const closeModal = () => {
-        setIsModalOpen(false);
-    };
+    const response = await authApi.post("/leads", newColumn);
+    if (response.status === 201) {
+      const newColumns = [...columns, response.data];
+      dispatch(leadsActions.updateLeads(newColumns));
+      setColumns(newColumns);
+    }
+  };
 
-    const handleShowKanban = () => {
-        setShowKanban(true);
-    };
+  const addNewCard = async (id: string) => {
+    if (cardName === "") return;
+    const response = await authApi.post(`/leads/${id}/items`, {
+      title: cardName,
+    });
+    const newColumns = columns.map((column) => {
+      if (column._id === id) {
+        column = response.data;
+      }
+      return column;
+    });
+    setCardName("");
+    dispatch(leadsActions.updateLeads(newColumns));
+    setColumns(newColumns);
+  };
 
-    const handleShowList = () => {
-        setShowKanban(false);
-    };
+  const updateCardInfo = async (values: {
+    title: string;
+    _id: string;
+    comments: string;
+  }) => {
+    const { _id, title, comments } = values;
+    const response = await authApi.put(`/leads/card/${_id}`, {
+      title,
+      comments,
+    });
 
-    return (
-        <>
-            <Navbar />
-            { showKanban ? (
-                <SearchFilter setShowList={handleShowList} />
-            ) : (
-                <div className="leads-kanban">
-                    <div className="button-group">
-                        <button>+ Coluna</button>
-                        <div className="divider"></div>
-                        <button onClick={handleShowKanban}>Ver Lista</button>
-                        <div className="divider"></div>
-                        <button>Editar</button>
-                    </div>
-                    <div className="select-box">
-                    <select className="select-box">
-                        <option>Assignados a mim</option>
-                        <option>Todos</option>
-                    </select>
-                    </div>
+    if (response.status === 200) {
+      const data = response.data;
+      const cardIndex = columns.findIndex((column) => column._id === data._id);
+      const newColumns = [...columns];
+      newColumns.splice(cardIndex, 1, data);
+      dispatch(leadsActions.updateLeads(newColumns));
+      setColumns(newColumns);
+      setIsModalOpen(false);
+    }
+  };
 
-                    <div className="kanban-columns">
-                        <div className="kanban-column">
-                        <h2>Contato Inicial</h2>
-                        <div className="menu-icon-leads">&#8942;</div>
-                        <button className="add-button">+ Adicionar</button>
-                        <div className="info-section contact-column" onClick={openModal}>
-                            <p>MaxAgro LTDA</p>
-                            <div className="icons-section">
-                                <img src={clip} alt="Ícone 1" />
-                                <span className="last-number">3</span>
-                                <img src={message} alt="Ícone 2" />
-                                <span>5</span>
-                            </div>
-                            <img src={avatar} alt="Ícone 3" className="right-icon" />
-                        </div>
-                        <div className="info-section contact-column" onClick={openModal} style={{marginTop: '10px'}}>
-                            <p>Químicos Co</p>
-                            <div className="icons-section">
-                                <img src={clip} alt="Ícone 1" />
-                                <span className="last-number">3</span>
-                                <img src={message} alt="Ícone 2" />
-                                <span>5</span>
-                            </div>
-                            <img src={avatar} alt="Ícone 3" className="right-icon" />
-                        </div>
-                        <div className="info-section contact-column" onClick={openModal} style={{marginTop: '10px'}}>
-                            <p>Farm Cosméticos</p>
-                            <div className="icons-section">
-                                <img src={clip} alt="Ícone 1" />
-                                <span className="last-number">3</span>
-                                <img src={message} alt="Ícone 2" />
-                                <span>5</span>
-                            </div>
-                            <img src={avatar} alt="Ícone 3" className="right-icon" />
-                        </div>
-                    </div>
+  const handleModalOpen = (info) => {
+    setCardInfo(info);
+    setIsModalOpen(true);
+  };
 
-                        <div className="kanban-column">
-                            <h2>Discussões</h2>
-                            <div className="menu-icon-leads">&#8942;</div>
-                            <button className="add-button">+ Adicionar</button>
-                            <div className="info-section discussion-column" onClick={openModal} >
-                                <p>Nice Foods</p>
-                                <div className="icons-section">
-                                    <img src={clip} alt="Ícone 1" />
-                                    <span className="last-number">3</span>
-                                    <img src={message} alt="Ícone 2" />
-                                    <span>5</span>
+  return (
+    <div className="page-content">
+      <Navbar />
+      {showKanban ? (
+        <SearchFilter setShowList={handleShowList} leadsData={leadsData} />
+      ) : (
+        <div className="leads-kanban">
+          <div className="kanbanHead">
+          <div className="button-group">
+            <LeadPopover cardClassName='' title="+ Coluna" handleClick={addNewColumn}>
+              <input
+              style={{width:'100%'}}
+                type="text"
+                placeholder="Nova Coluna"
+                onChange={(e) => {
+                  setColumnName(e.target.value);
+                }}
+              />
+              {/* <IconButton size="small" style={{border:'1px solid black', display:'flex'}} onClick={()=>handleClick}>+</IconButton> */}
+            </LeadPopover>
+            <div className="divider"></div>
+            <button onClick={handleShowKanban}>Ver Lista</button>
+            <div className="divider"></div>
+            <button>Editar</button>
+          </div>
+          <div className="select-box">
+            <select className="select-box">
+              <option>Assignados a mim</option>
+              <option>Todos</option>
+            </select>
+          </div>
+          </div>
+          <DragDropContext onDragEnd={onDragEnd}>
+            <div className="board-container">
+              {columns?.map((column, key) => (
+                <div
+                className="kanban-column"
+
+                  key={key}
+                >
+                  <div className="headerColumn">
+
+                  <h1 className="card-title">{column.title}</h1>
+                  <IconButton size="small"> <DotsVertical className={undefined}/></IconButton>
+                  </div>
+                  {isMounted ? (
+                    <Droppable droppableId={column._id} key={key}>
+                      {(provided) => (
+                        <div
+                        className="column-content"
+                          // style={{
+                          //   marginBottom: "10px",
+                          //   width: "200px",
+                          // }}
+                          ref={provided.innerRef}
+                        >
+                          {provided.placeholder}
+                          {column.items?.map((item, index) => (
+                            <Draggable
+                              draggableId={item._id}
+                              key={item._id}
+                              index={index}
+                            >
+                              {(provided) => (
+                                <div
+                                  {...provided.draggableProps}
+                                  {...provided.dragHandleProps}
+                                  ref={provided.innerRef}
+                                  style={{
+                                    backgroundColor: "#fff",
+                                    margin: "0 0 10px",
+                                    padding: "10PX",
+                                    boxShadow:
+                                      "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
+                                    borderRadius: "5px",
+                                    ...provided.draggableProps.style,
+                                  }}
+                                  onDoubleClick={() => handleModalOpen(item)}
+                                >
+                                  {item.title}
                                 </div>
-                                <img src={avatar} alt="Ícone 3" className="right-icon" />
-                            </div>
-                            <div className="info-section discussion-column" onClick={openModal} style={{marginTop: '10px'}}>
-                                <p>Fazenda Amiga</p>
-                                <div className="icons-section">
-                                    <img src={clip} alt="Ícone 1" />
-                                    <span className="last-number">3</span>
-                                    <img src={message} alt="Ícone 2" />
-                                    <span>5</span>
-                                </div>
-                                <img src={avatar} alt="Ícone 3" className="right-icon" />
-                            </div>
+                              )}
+                            </Draggable>
+                          ))}
                         </div>
-
-                        <div className="kanban-column">
-                            <h2>Tomada de Decisão</h2>
-                            <div className="menu-icon-leads">&#8942;</div>
-                            <button className="add-button">+ Adicionar</button>
-                            <div className="info-section decision-column" onClick={openModal} >
-                                <p>Planta e Raiz</p>
-                                <div className="icons-section">
-                                    <img src={clip} alt="Ícone 1" />
-                                    <span className="last-number">3</span>
-                                    <img src={message} alt="Ícone 2" />
-                                    <span>5</span>
-                                </div>
-                                <img src={avatar} alt="Ícone 3" className="right-icon" />
-                            </div>
-                            <div className="info-section decision-column" onClick={openModal} style={{marginTop: '10px'}}>
-                                <p>Fazenda Master</p>
-                                <div className="icons-section">
-                                    <img src={clip} alt="Ícone 1" />
-                                    <span className="last-number">3</span>
-                                    <img src={message} alt="Ícone 2" />
-                                    <span>5</span>
-                                </div>
-                                <img src={avatar} alt="Ícone 3" className="right-icon" />
-                            </div>
-                        </div>
-
-                        <div className="kanban-column">
-                            <h2>Contrato</h2>
-                            <div className="menu-icon-leads">&#8942;</div>
-                            <button className="add-button">+ Adicionar</button>
-                            <div className="info-section contract-column" onClick={openModal}>
-                                <p>Café dos Irmãos</p>
-                                <div className="icons-section">
-                                    <img src={clip} alt="Ícone 1" />
-                                    <span className="last-number">3</span>
-                                    <img src={message} alt="Ícone 2" />
-                                    <span>5</span>
-                                </div>
-                                <img src={avatar} alt="Ícone 3" className="right-icon" />
-                            </div>
-                        </div>
-                    </div>
+                      )}
+                    </Droppable>
+                  ) : null}
+                  <LeadPopover
+                  cardClassName='popLead'
+                    title="+ Card"
+                    handleClick={() => addNewCard(column._id)}
+                  >
+                    <input
+                    style={{width:'95%'}}
+                      type="text"
+                      placeholder="Novo Card"
+                      onChange={(e) => {
+                        setCardName(e.target.value);
+                      }}
+                    />
+                  </LeadPopover>
                 </div>
-            )}
-            {isModalOpen && <LeadModal closeModal={closeModal} />}
-        </>
-    );
+              ))}
+            </div>
+          </DragDropContext>
+          {isModalOpen && (
+            <LeadModal
+              closeModal={() => setIsModalOpen(false)}
+              handleClick={updateCardInfo}
+              data={cardInfo}
+            />
+          )}
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default Leads;

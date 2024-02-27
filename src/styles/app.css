@@ -1,0 +1,18 @@
+.app-container {
+  font-family: sans-serif;
+  height: 100%; 
+}
+
+.sidebar.expanded {
+  width: 235px;
+}
+
+.page-content {
+  grid-column: 2 / -1; 
+  transition: margin-left 0.3s ease;
+  height: 100%;
+}
+
+.sidebar.expanded + .page-content {
+  margin-left: 160px;
+}

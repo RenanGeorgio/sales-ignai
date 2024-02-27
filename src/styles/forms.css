@@ -3,15 +3,9 @@
 }
 
 .containerlayout{
-  /* display:flex;
-  justify-content: center;
-  overflow: hidden;
-  width: 100%;
-  height: 500px; */
   display: grid;
   gap: 20px;
   height: 100%;
-
   grid-template-areas: 'header';
 }
 
@@ -23,11 +17,16 @@
 }
 
 .title {
-  margin-left: 6%;
-  margin-top: 35px;
   color: grey;
   font-family: sans-serif;
   font-size: 20px;
+}
+.titleChat {
+  margin-left: 8%;
+  color: grey;
+  font-family: sans-serif;
+  font-size: 20px;
+  height: 15px;
 }
 
 .container {
@@ -60,10 +59,6 @@
 
 .gray-button:last-child {
   margin-right: 0;
-}
-
-.separador-contador {
-  margin-bottom: 270px;
 }
 
 .form-container {
@@ -135,7 +130,7 @@
   margin-left: 5px; 
 }
 
-.blue-button {
+/* .blue-button {
   background-color: rgba(115, 103, 240, 1);
   color: white;
   border: none;
@@ -144,10 +139,10 @@
   padding: 10px 20px;
   border-radius: 4px;
   margin: 10px auto 0; 
-  display: block;
-  width: 100px;
+  display: flex;
+  width: auto;
   cursor: pointer;
-}
+} */
 
 .red-button {
   background-color: red;
@@ -178,6 +173,7 @@
   left: 0%;
   cursor: pointer; 
   align-items: center;
+  display: flex;
 }
 
 .grayButton {
@@ -189,6 +185,7 @@
   margin-right: 10px;
   cursor: pointer; 
   align-items: center;
+  display: flex;
 }
 
 .send-button {
@@ -254,10 +251,19 @@
 }
 
 .new-form-selector-container {
-  position: absolute;
-  top: 27%; 
-  right: 150px; 
+  display: flex;
+  margin-left: auto;
+  position: relative;
+  left: 1%;
+  margin-top: -39%;
+  margin-right: 100px;
+  margin-bottom: 70px;
   width: 368px; 
+}
+
+.form-selector-contador{
+  margin-top: 15%;
+  margin-bottom: 0px;
 }
 
 .new-form-selector {

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import Chart from 'chart.js/auto';
+import Chart, { ChartConfiguration } from 'chart.js/auto';
 import '../../styles/graph.css';
 
 interface GraphTicketProps {
@@ -7,13 +7,14 @@ interface GraphTicketProps {
 }
 
 const GraphTicket: React.FC<GraphTicketProps> = ({ data }) => {
-  const chartRef = useRef<HTMLCanvasElement>(null);
+  const chartRef = useRef<HTMLCanvasElement | null>(null);
+  let chartInstance: Chart<'doughnut'> | null = null;
 
   useEffect(() => {
     if (chartRef.current) {
       const ctx = chartRef.current.getContext('2d');
       if (ctx) {
-        const chart = new Chart(ctx, {
+        const chartConfig: ChartConfiguration<'doughnut'> = {
           type: 'doughnut',
           data: {
             labels: ['Tempo de Entrega', 'Preço do Produto', 'Transporte', 'Endereço Incorreto'],
@@ -29,17 +30,28 @@ const GraphTicket: React.FC<GraphTicketProps> = ({ data }) => {
             }],
           },
           options: {
-            cutout: '70%', 
+            cutout: '70%',
             plugins: {
               legend: {
                 display: false,
               },
             },
           },
-        });
-      
+        };
+
+        if (chartInstance) {
+          chartInstance.destroy();
+        }
+
+        chartInstance = new Chart(ctx, chartConfig);
       }
     }
+
+    return () => {
+      if (chartInstance) {
+        chartInstance.destroy();
+      }
+    };
   }, [data]);
 
   return (

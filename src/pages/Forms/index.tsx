@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import Navbar from '../../components/Navbar';
-import usersImage from '../../components/Image/users.svg';
-import sino from '../../components/Image/bell.svg';
-import fileTextImage from '../../components/Image/file-text.svg';
+import { FileTextIcon, UsersIcon, BellIcon } from '../../components/Image/icons';
 import '../../styles/forms.css'; 
 import MainForm from '../../components/Forms/MainForm';
 import FormSelector from '../../components/Forms/FormSelector';
 import Footer from '../../components/Forms/Footer';
-// import ButtonPath from '../../components/Forms/ButtonPath';
 import Dashboard from '../../components/Forms/Dashboard';
 
 const Forms: React.FC = () => {
@@ -18,30 +15,33 @@ const Forms: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="page-content">
       <Navbar />
       <h1 className="title">Formulários</h1>
-      <div style={{marginLeft:'100px'}}>
+      <div style={{marginLeft:'100px', display:'flex'}}>
         <button
           className={activePage === 'Formulário' ? 'blueButton' : 'grayButton'}
           onClick={() => handleButtonClick('Formulário')}
         >
-          <img src={usersImage} alt="Users" />
-          Formulário
+          <UsersIcon/>
+          <span>Formulário</span>
         </button>
+        <div style={{display:'inline-flex',}}>  
         <button
           className={activePage === 'Contador' ? 'blueButton' : 'grayButton'}
           onClick={() => handleButtonClick('Contador')}
-        >
-          <img src={sino} alt="Link" />
-          Contador
+        > 
+          <BellIcon/>
+         <span>Contador</span> 
+       
         </button>
+           </div>
         <button
           className={activePage === 'Painel' ? 'blueButton' : 'grayButton'}
           onClick={() => handleButtonClick('Painel')}
         >
-          <img src={fileTextImage} alt="File Text" />
-          Painel
+          <FileTextIcon/>
+          <span>Painel</span>
         </button>
       </div>
       {activePage === 'Formulário' && (
@@ -56,7 +56,9 @@ const Forms: React.FC = () => {
           </div>
           <MainForm />
           <FormSelector />
-          <Footer />
+          <div style={{marginTop: '100px'}}>
+            <Footer />
+          </div>
         </>
       )}
       {activePage === 'Contador' && (
@@ -80,8 +82,9 @@ const Forms: React.FC = () => {
               <button className="blueButtonPath">Formulário 7</button>
             </div>
           </div>
-          <FormSelector />
-          <div className="separador-contador"/>
+          <div className="form-selector-contador">
+            <FormSelector />
+          </div>
           <Footer />
         </>
       )}

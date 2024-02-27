@@ -22,19 +22,19 @@ export default function AddTicket({onUploadFile, onSetShow}) {
 
         <div className='section'>
           <div className='section-3'>
-            <span className='text-2add'>Atendimento via:</span>
+            <span className='text-2add'>Atendimento via:</span> 
           </div>
         </div>
 
         <div className='section'>
           <div className='section-3'>
-            <span className='text-2'>Cliente:</span>
+            <span className='text-2add'>Cliente:</span>
           </div>
         </div>
 
         <div className='section'>
           <div className='section-3'>
-            <span className='text-2'>Responsável:</span>
+            <span className='text-2add'>Responsável:</span>
           </div>
         </div>
 
@@ -163,7 +163,7 @@ export default function AddTicket({onUploadFile, onSetShow}) {
                 <div className='buttonContainerInput'>            
                 <input type="file"
                 className='inputs'
-                 onClick={() => handleFileUpload()} 
+                 onClick={handleFileUpload} 
                  />
                 <span className='attachFileSpan'>Buscar Arquivo</span>
                 </div>

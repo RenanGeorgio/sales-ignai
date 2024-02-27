@@ -1,21 +1,21 @@
+import React from 'react';
 import Navbar from "../../components/Navbar";
-import usersImage from '../../components/Image/users.svg';
-import fileTextImage from '../../components/Image/file-text.svg';
+import { FileTextIcon,UsersIcon } from '../../components/Image/icons';
 import '../../styles/chatbot.css';
 
 const Suporte = () => {
     return (
-        <div>
+        <div className="page-content">
             <Navbar />
             <h1 className="text">Suporte ao cliente Ignai</h1>
             <div>
             <div style={{marginLeft:'100px'}}>
                 <button className="blueButton">
-                <img src={usersImage} alt="Users" />
+            <UsersIcon/>
                 Pedido
                 </button>
                 <button className="grayButton">
-                <img src={fileTextImage} alt="File Text" />
+                <FileTextIcon />
                 Tickets
                 </button>
             </div>

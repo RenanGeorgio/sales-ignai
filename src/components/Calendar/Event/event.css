@@ -7,7 +7,7 @@
     align-items: flex-start;
      gap: 10px;
      display: inline-flex;
-     margin-right: 100px;
+     margin-right: 300px;
 }
 
 
@@ -15,9 +15,9 @@
     align-self: stretch;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 4;
+    gap:2px;
     display: inline-flex;
-    height: 57;
+    height: 65px;
     flex-direction: column;
     font-family: sans-serif;
 }
@@ -25,14 +25,13 @@
 .inputForm{
     align-self: stretch;
     background: white;
-    border-radius: 6;
+    border-radius: 6px;
     border: 1px #DBDADE solid;
     justify-content: flex-start;
     align-items: center;
     display: inline-flex;
-    height: 35px;
+    height: 40px;
     border-radius: 6px;
-    padding: 5px;
     text-align: justify;
 }
 
@@ -62,6 +61,7 @@
 
 .buttonContainer{
     gap: 16px;
+    margin-top: 5px;
 }
 
 .novoEvento{

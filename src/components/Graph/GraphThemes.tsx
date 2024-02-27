@@ -1,13 +1,7 @@
 import React from 'react';
 import '../../styles/graph.css'; 
-import setaVerde from '../../components/Image/chevron-up.svg';
-import setaVermelha from '../../components/Image/chevron-down.svg';
-import packageImg from '../../components/Image/package.svg';
-import truck from '../../components/Image/truck.svg';
-import circle from '../../components/Image/circle-check.svg';
-import percentage from '../../components/Image/percentage.svg';
-import clock from '../../components/Image/clock.svg';
-import users from '../../components/Image/users-red.svg';
+import { PackageIcon,PercentageIcon, ClockIcon,UsersIcon, 
+  TruckIcon, ChevronUpIcon, AvatarIcon, ChevronDownIcon } from '../Image/icons';
 
 interface GraphThemesProps {
   month: string;
@@ -21,10 +15,10 @@ const GraphThemes: React.FC<GraphThemesProps> = ({ month }) => {
       <div className="menu-icon-themes">&#8942;</div>
       <div className="data-row-themes">
         <div className="data-item">
-          <img src={packageImg} alt="Google" className="avatar-img" />
+          <PackageIcon />
           <span className="data-text">Problemas com pedido</span>
           <div className="percentage-container">
-            <img src={setaVerde}></img>
+            <ChevronUpIcon/>
             <h4>25.8%</h4>
           </div>
           <span className="data-number">200</span>
@@ -32,10 +26,10 @@ const GraphThemes: React.FC<GraphThemesProps> = ({ month }) => {
       </div>
       <div className="data-row-themes">
         <div className="data-item">
-          <img src={truck} alt="Facebook" className="avatar-img" />
+          <TruckIcon/>
           <span className="data-text">Problemas com transporte</span>
           <div className="percentage-container">
-            <img src={setaVerde}></img>
+            <ChevronUpIcon/>
             <h4>4.3%</h4>
           </div>
           <span className="data-number">150</span>
@@ -43,10 +37,10 @@ const GraphThemes: React.FC<GraphThemesProps> = ({ month }) => {
       </div>
       <div className="data-row-themes">
         <div className="data-item">
-          <img src={circle} alt="Instagram" className="avatar-img" />
+          <AvatarIcon />
           <span className="data-text">Pedido entregue no prazo</span>
           <div className="percentage-container">
-            <img src={setaVermelha}></img>
+            <ChevronDownIcon/>
             <h4>12.5%</h4>
           </div>
           <span className="data-number">100</span>
@@ -54,10 +48,10 @@ const GraphThemes: React.FC<GraphThemesProps> = ({ month }) => {
       </div>
       <div className="data-row-themes">
         <div className="data-item">
-          <img src={percentage} alt="LinkedIn" className="avatar-img" />
+          <PercentageIcon/>
           <span className="data-text">Preço do produto</span>
           <div className="percentage-container">
-            <img src={setaVerde}></img>
+            <ChevronUpIcon/>
             <h4>35.6%</h4>
           </div>
           <span className="data-number">95</span>
@@ -65,10 +59,10 @@ const GraphThemes: React.FC<GraphThemesProps> = ({ month }) => {
       </div>
       <div className="data-row-themes">
         <div className="data-item">
-          <img src={clock} alt="LinkedIn" className="avatar-img" />
+          <ClockIcon/>
           <span className="data-text">Tempo de entrega</span>
           <div className="percentage-container">
-            <img src={setaVermelha}></img>
+            <ChevronDownIcon/>
             <h4>2.15%</h4>
           </div>
           <span className="data-number">20</span>
@@ -76,10 +70,10 @@ const GraphThemes: React.FC<GraphThemesProps> = ({ month }) => {
       </div>
       <div className="data-row-themes">
         <div className="data-item">
-          <img src={users} alt="LinkedIn" className="avatar-img" />
+          <UsersIcon />
           <span className="data-text">Satisfação do cliente</span>
           <div className="percentage-container">
-            <img src={setaVerde}></img>
+            <ChevronUpIcon/>
             <h4>5.7%</h4>
           </div>
           <span className="data-number">20</span>
