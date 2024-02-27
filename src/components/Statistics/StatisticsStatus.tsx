@@ -100,7 +100,7 @@ const StatisticsStatus: React.FC<StatisticsStatusProps> = () => {
               <p>Your Earnings</p>
             </div>
           </div>
-          <ChartProjectStatus/>
+          <ChartProjectStatus />
           <div className="container-footer">
             <div className="container-footer-item">
               <p className="footer-label">Donates</p>

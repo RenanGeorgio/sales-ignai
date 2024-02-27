@@ -40,7 +40,8 @@ const Navbar: React.FC<NavbarProps> = () => {
             className="search-input"
           />
           <div className="icons">
-            <img className="icon" src={bellIcon} alt="Sininho" />
+            {/* <img className="icon" src={bellIcon} alt="Sininho" /> */}
+            <BellIcon />
             <img className="icon" src={userIcon} alt="Usuário" onClick={handleClick('bottom-start')} />
           </div>
 

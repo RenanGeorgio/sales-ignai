@@ -3,7 +3,11 @@ import '../../styles/statistics.css';
 
 import { ClockIcon,UsersIcon,ChartIcon, Chart2Icon, ChartPieIcon,MessageDots,
    CurrencyDollar ,BriefCaseIcon} from '../Image/icons';
+import ChartSessions from '../Graph/GraphSessions';
+import ChartSales from '../Graph/GraphSales';
+import ChartRevenue from '../Graph/GraphRevenue';
 
+interface StatisticsComponentProps {}
 const StatisticsComponent: React.FC<StatisticsComponentProps> = () => {
   return (
     <div className="dashboard-container">

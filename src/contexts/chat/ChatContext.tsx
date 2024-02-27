@@ -16,7 +16,7 @@ export const ChatProvider = ({ children }: any) => {
   const [messageError, setMessageError] = useState<string | null>(null);
   const [messages, setMessages] = useState<any>(null);
   const [textMessageError, setTextMessageError] = useState<string | null>(null);
-  const [newMessage, setNewMessage] = useState<string>("");
+  const [newMessage, setNewMessage] = useState<{}>({} as any);
   const [onlineUsers, setOnlineUsers] = useState<OnlineUser[]>([]);
 
   const [socket, setSocket] = useState<any>(null);
@@ -34,7 +34,7 @@ export const ChatProvider = ({ children }: any) => {
 
   useEffect(() => {
     if (socket === null) return;
-    socket.emit("addNewUser", user?._id);
+    socket.emit("addNewUser", user?.companyId);
     socket.on("onlineUsers", (users: any) => {
       setOnlineUsers(users);
     });
@@ -47,9 +47,10 @@ export const ChatProvider = ({ children }: any) => {
   useEffect(() => {
     if (!socket) return;
     const recipientId = currentChat?.members?.find(
-      (id: string) => id !== user?._id
+      (id: string) => id !== user?.companyId
     );
-    socket.emit("sendMessage", { newMessage, recipientId });
+    
+    socket.emit("sendMessage", { ...newMessage, recipientId });
   }, [newMessage]);
 
   useEffect(() => {
