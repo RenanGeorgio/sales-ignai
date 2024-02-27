@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import link from '../Image/link.svg';
+import { LinkIcon } from '../Image/icons';
 import '../../styles/business.css';
 
 
@@ -18,35 +18,35 @@ const InventarioModal: React.FC = () => {
             className={selectedButton === 'Estoque' ? 'selected' : ''}
             onClick={() => handleButtonClick('Estoque')}
           >
-            <img src={link} alt="Estoque" className='inventario-button-img' />
+            <LinkIcon />
             Estoque
           </button>
           <button
             className={selectedButton === 'Enviar' ? 'selected' : ''}
             onClick={() => handleButtonClick('Enviar')}
           >
-            <img src={link} alt="Enviar" className='inventario-button-img' />
+            <LinkIcon />
             Enviar
           </button>
           <button
             className={selectedButton === 'Delivery' ? 'selected' : ''}
             onClick={() => handleButtonClick('Delivery')}
           >
-            <img src={link} alt="Delivery" className='inventario-button-img'/>
+            <LinkIcon/>
             Delivery
           </button>
           <button
             className={selectedButton === 'Atributor' ? 'selected' : ''}
             onClick={() => handleButtonClick('Atributor')}
           >
-            <img src={link} alt="Atributor" className='inventario-button-img'/>
+            <LinkIcon/>
             Atributor
           </button>
           <button
             className={selectedButton === 'Avançado' ? 'selected' : ''}
             onClick={() => handleButtonClick('Avançado')}
           >
-            <img src={link} alt="Avançado" className='inventario-button-img' />
+            <LinkIcon/>
             Avançado
           </button>
         </div>
