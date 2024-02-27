@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../authContext";
+import { AuthContext } from "../AuthContext";
 import { SignInData, SignInResponse, User } from "../../../types";
 import { recoverUserInformation, signInRequest } from "../../provider/auth";
 import authApi from "../../../services/auth";
@@ -10,13 +10,22 @@ import { useApi } from "../../../hooks/useApi";
 import cookies from "js-cookie";
 
 export function AuthProvider({ children }) {
-  const [user, setUser] = useState<User | null>(null);
+  // const [user, setUser] = useState<User | null>(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const api = useApi();
 
   const isAuthenticated = useSelector((state: any) => state.session.status)
+  const userState = useSelector((state: any) => state.user)
+
   const [isOffline, setIsOffline] = useState(false); // todo: implementar lógica de offline, caso necessário
+  const [user, setUser] = useState<User | null>(null);
+  
+  useEffect(() => {
+    if(isAuthenticated) {
+     setUser(userState);
+    }
+  }, [userState, isAuthenticated]);
 
   async function signIn({ email, password }: SignInData) {
     const { token, error }: SignInResponse | any = await api.signIn({

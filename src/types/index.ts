@@ -27,3 +27,8 @@ export type Leads = {
     description: string
   }
 }
+
+export type OnlineUser = {
+  userId: string;
+  socketId: string;
+}
