@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../styles/dashboard.css'; 
-import arrow from '../../components/Image/arrow-up-circle.svg';
+import { ArrowUpCircleIcon } from '../Image/icons';;
 
 interface GraphTimeUserProps {
   month: string;
@@ -39,28 +39,28 @@ const GraphTimeUser: React.FC<GraphTimeUserProps> = ({ month }) => {
       </div>
       <div className="data-display">
         <div className="data-row">
-          <img src={arrow} alt="Arrow" />
+          <ArrowUpCircleIcon/>
           <span>Home</span>
           <span>2h 30min</span>
           <span>20%</span>
         </div>
         <hr />
         <div className="data-row">
-          <img src={arrow} alt="Arrow" />
+          <ArrowUpCircleIcon/>
           <span>Formulário 1</span>
           <span>1h 45min</span>
           <span>10%</span>
         </div>
         <hr />
         <div className="data-row">
-          <img src={arrow} alt="Arrow" />
+          <ArrowUpCircleIcon/>
           <span>Cadastro</span>
           <span>3h 10min</span>
           <span>20%</span>
         </div>
         <hr />
         <div className="data-row">
-          <img src={arrow} alt="Arrow" />
+          <ArrowUpCircleIcon/>
           <span>Blog</span>
           <span>4h 15min</span>
           <span>50%</span>

@@ -1,8 +1,5 @@
 import React, { useContext, useState } from "react";
 import Navbar from "../../components/Navbar";
-import usersImage from "../../components/Image/users.svg";
-import sino from "../../components/Image/bell.svg";
-import fileTextImage from "../../components/Image/file-text.svg";
 import "../../styles/forms.css";
 
 import Layout from "../../components/Layout/ChatLayout";
@@ -12,6 +9,11 @@ import GraphChat from "../../components/Graph/GraphChat";
 import GraphTicket from "../../components/Graph/GraphTicket";
 import GraphTicketYou from "../../components/Graph/GraphTicketYou";
 import GraphThemes from "../../components/Graph/GraphThemes";
+import {
+  BellIcon,
+  FileTextIcon,
+  UsersIcon,
+} from "../../components/Image/icons";
 
 const Chat: React.FC = () => {
   const [activePage, setActivePage] = useState("Atendimento");
@@ -28,21 +30,22 @@ const Chat: React.FC = () => {
           className={activePage === "Atendimento" ? "blueButton" : "grayButton"}
           onClick={() => handleButtonClick("Atendimento")}
         >
-          <img src={usersImage} alt="Users" />
+          <UsersIcon />
           Atendimento
         </button>
         <button
           className={activePage === "Histórico" ? "blueButton" : "grayButton"}
           onClick={() => handleButtonClick("Histórico")}
         >
-          <img src={sino} alt="Link" />
+          {/* <img src={"sino"} alt="Link" /> */}
+          <BellIcon />
           Histórico
         </button>
         <button
           className={activePage === "Painel" ? "blueButton" : "grayButton"}
           onClick={() => handleButtonClick("Painel")}
         >
-          <img src={fileTextImage} alt="File Text" />
+          <FileTextIcon />
           Painel
         </button>
       </div>

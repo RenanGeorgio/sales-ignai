@@ -82,7 +82,6 @@ export const ChatBox = ({ toggleAddTicket }): React.JSX.Element => {
     />
   );
   
-
   return (
     <div className="containerchat">
       <div className="header">

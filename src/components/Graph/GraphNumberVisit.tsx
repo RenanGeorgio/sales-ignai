@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../styles/dashboard.css'; 
-import avatarGreen from '../../components/Image/avatar-green.svg';
+import { AvatarGreenIcon } from '../Image/icons';
 
 interface GraphNumberVisitProps {
   month: string;
@@ -17,21 +17,21 @@ const GraphNumberVisit: React.FC<GraphNumberVisitProps> = ({ month }) => {
       </div>
       <div className="data-row-4">
         <div className="data-item">
-          <img src={avatarGreen} alt="Form 1" className="avatar-img" />
+          <AvatarGreenIcon/>
           <span className="data-text">Form 1</span>
           <span className="data-number">33</span>
         </div>
       </div>
       <div className="data-row-4">
         <div className="data-item">
-          <img src={avatarGreen} alt="Form 2" className="avatar-img" />
+          <AvatarGreenIcon/>
           <span className="data-text">Form 2</span>
           <span className="data-number">30</span>
         </div>
       </div>
       <div className="data-row-4">
         <div className="data-item">
-          <img src={avatarGreen} alt="Form 3" className="avatar-img" />
+          <AvatarGreenIcon/>
           <span className="data-text">Form 3</span>
           <span className="data-number">12</span>
         </div>

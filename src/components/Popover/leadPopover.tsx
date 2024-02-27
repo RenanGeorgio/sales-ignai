@@ -1,6 +1,7 @@
 import React,{ useEffect, useRef, useState } from "react";
 import './leadPopover.css';
 import { IconButton } from "@mui/material";
+import { Plus } from "../Image/icons";
 
 const LeadPopover = ({ children, title, handleClick, cardClassName }) => {
   const [showPopover, setShowPopover] = useState(false);
@@ -35,9 +36,9 @@ const LeadPopover = ({ children, title, handleClick, cardClassName }) => {
       <button ref={buttonRef} onClick={togglePopover}>{title}</button>
       {showPopover && (
         <div className={`popover ${cardClassName}`}>
-          <div style={{color:'black', display:'flex', alignItems:'center',justifyContent:'space-between', gap:10}}>
+          <div style={{color:'black', display:'flex', alignItems:'center',justifyContent:'space-between', gap:8}}>
           {children}
-          <IconButton size="small" style={{border:'1px solid black', display:'flex', marginLeft:'inherit'}} 
+          <IconButton size="small" style={{border:'1px solid black', color:'black',marginLeft:'inherit', borderRadius:5}} 
           onClick={(e) => handleClickBtn()}>+</IconButton>
           </div>
         </div>
