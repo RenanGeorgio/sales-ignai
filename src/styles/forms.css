@@ -61,10 +61,6 @@
   margin-right: 0;
 }
 
-.separador-contador {
-  margin-bottom: 270px;
-}
-
 .form-container {
   display: flex;
   flex-wrap: wrap;
@@ -267,7 +263,7 @@
 
 .form-selector-contador{
   margin-top: 15%;
-  margin-bottom: -20%;
+  margin-bottom: 0px;
 }
 
 .new-form-selector {

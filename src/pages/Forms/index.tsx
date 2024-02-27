@@ -56,7 +56,9 @@ const Forms: React.FC = () => {
           </div>
           <MainForm />
           <FormSelector />
-          <Footer />
+          <div style={{marginTop: '100px'}}>
+            <Footer />
+          </div>
         </>
       )}
       {activePage === 'Contador' && (
@@ -83,7 +85,6 @@ const Forms: React.FC = () => {
           <div className="form-selector-contador">
             <FormSelector />
           </div>
-          <div className="separador-contador"/>
           <Footer />
         </>
       )}

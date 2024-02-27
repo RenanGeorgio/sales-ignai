@@ -34,17 +34,8 @@
 
 .menu-icon {
   font-size: 20px;
-  margin-top: -6%;
-  margin-bottom: 3%;
-  margin-left: 48%;
-  cursor: pointer;
-}
-
-.menu-icon-you {
-  font-size: 20px;
-  margin-top: -6%;
-  margin-bottom: 3%;
-  margin-left: 46%;
+  margin-top: -7%;
+  display: flex;
   cursor: pointer;
 }
 
@@ -54,6 +45,23 @@
   max-height: 58%;
   margin-bottom: 5%;
   display: block;
+}
+
+.canvas-ticket-you {
+  margin: auto;
+  max-width: 40%; 
+  max-height: 58%;
+  margin-bottom: 5%;
+  display: block;
+}
+
+.menu-icon-you {
+  font-size: 20px;
+  margin-top: -7%;
+  margin-bottom: 3%;
+  display: flex;
+  margin-left: 54%;
+  cursor: pointer;
 }
 
 .legenda {
