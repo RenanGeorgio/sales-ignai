@@ -18,6 +18,8 @@ import ReactIcon from '../../components/Image/ReactIcon.png';
 import laravelLogo from '../../components/Image/laravel-logo.png';
 // import figmaLogo from '../../components/Image/Figma-logo.svg';
 import BootStrapLogo from '../../components/Image/BootstrapLogo.png';
+import { Chart } from 'chart.js/dist';
+import ChartProjectStatus from '../Graph/GraphProjectStatus';
 import { CurrencyDollar } from '../Image/icons';
 import { VectorIcon } from '../Image/icons';;
 
@@ -98,15 +100,14 @@ const StatisticsStatus: React.FC<StatisticsStatusProps> = () => {
               <p>Your Earnings</p>
             </div>
           </div>
-          <span className="earnings-percentage">+10.2%</span>
-        </div>
-        <VectorIcon/>
-        <div className="container-footer">
-          <div className="container-footer-item">
-            <p className="footer-label">Donates</p>
-            <div className="footer-amounts">
-              <p>$756.26</p>
-              <span className="red-percentage">-139.34</span>
+          <ChartProjectStatus/>
+          <div className="container-footer">
+            <div className="container-footer-item">
+              <p className="footer-label">Donates</p>
+              <div className="footer-amounts">
+                <p>$756.26</p>
+                <span className="red-percentage">-139.34</span>
+              </div>
             </div>
           </div>
           <div className="container-footer-item">

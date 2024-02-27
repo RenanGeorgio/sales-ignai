@@ -1,10 +1,8 @@
 import React from 'react';
 import '../../styles/statistics.css';
+
 import { ClockIcon,UsersIcon,ChartIcon, Chart2Icon, ChartPieIcon,MessageDots,
    CurrencyDollar ,BriefCaseIcon} from '../Image/icons';
-interface StatisticsComponentProps {
-  
-}
 
 const StatisticsComponent: React.FC<StatisticsComponentProps> = () => {
   return (
@@ -81,7 +79,9 @@ const StatisticsComponent: React.FC<StatisticsComponentProps> = () => {
           <div className="custom-number-label-container">
             <h3 className="custom-number-statistics">Sales</h3>
             <h4 className="custom-label">Last Year</h4>
-            <Chart2Icon />
+            <div className="custom-chart-image">
+              <ChartSales/>
+            </div>
             <h4 className="custom-number-statistics-left">175k</h4>
             <div className="custom-number-porcentage">
               <h4 className="custom-porcentage-text">-16.2%</h4>
@@ -93,7 +93,7 @@ const StatisticsComponent: React.FC<StatisticsComponentProps> = () => {
           <div className="custom-number-label-container">
             <h3 className="custom-number-statistics">Sessions</h3>
             <h4 className="custom-label">This Month</h4>
-            <ChartIcon />
+              <ChartSessions/>
             <h4 className="custom-number-statistics-left-2">45.1k</h4>
             <div className="custom-number-porcentage">
               <h4 className="custom-porcentage-text-2">+12.6%</h4>
@@ -126,7 +126,7 @@ const StatisticsComponent: React.FC<StatisticsComponentProps> = () => {
         </div>
   
         <div className="container-revenue">
-          <div className="number-label">
+          <div className="number-label-revenue">
             <h3 className="number-label-statistics">Revenue Growth</h3>
             <h4 className="label">Weekly Report</h4>
             <h2 className="number-label-statistics larger-number">$4,673</h2>
@@ -134,6 +134,7 @@ const StatisticsComponent: React.FC<StatisticsComponentProps> = () => {
               <h4>+15.2%</h4>
             </div>
           </div>
+            <ChartRevenue/>
         </div>
     
       </div>
