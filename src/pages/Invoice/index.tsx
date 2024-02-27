@@ -5,8 +5,9 @@ import GraphTicket from '../../components/Graph/GraphTicket';
 import GraphThemes from '../../components/Graph/GraphThemes';
 import GraphTicketYou from '../../components/Graph/GraphTicketYou';
 import Invoices from '../../components/Layout/InvoiceLayout';
-import dollar from '../../components/Image/file-dollar.svg';
-import fileTextImage from '../../components/Image/file-text.svg';
+import { FileDollarIcon, FileTextIcon } from '../../components/Image/icons';
+// import dollar from '../../components/Image/file-dollar.svg';
+// import fileTextImage from '../../components/Image/file-text.svg';
 
 interface InvoiceProps {}
 
@@ -27,14 +28,14 @@ const Invoice: React.FC<InvoiceProps> = () => {
           className={activePage === 'Fatura' ? 'blueButton' : 'grayButton'}
           onClick={() => handleButtonClick('Histórico')}
         >
-          <img src={dollar} alt="Link" />
+          <FileDollarIcon />
           Fatura
         </button>
         <button
           className={activePage === 'Painel' ? 'blueButton' : 'grayButton'}
           onClick={() => handleButtonClick('Painel')}
         >
-          <img src={fileTextImage} alt="File Text" />
+          <FileTextIcon />
           Painel
         </button>
       </div>

@@ -1,8 +1,6 @@
 import React from 'react';
 import Navbar from '../../components/Navbar';
-import usersImage from '../../components/Image/users.svg';
-import linkImage from '../../components/Image/link.svg';
-import fileTextImage from '../../components/Image/file-text.svg';
+import { UsersIcon,FileTextIcon, LinkIcon } from '../../components/Image/icons';
 import '../../styles/chatbot.css';
 
 const ChatBot = () => {
@@ -11,17 +9,17 @@ const ChatBot = () => {
       <Navbar />
       <h1 className='text'>Automação ChatBot</h1>
       <div>
-        <div style={{marginLeft:'100px'}}>
+        <div style={{marginLeft:'100px', display:'flex'}}>
           <button className="blueButton">
-            <img src={usersImage} alt="Users" />
+           <UsersIcon/>
             Estruturação
           </button>
           <button className="grayButton">
-            <img src={linkImage} alt="Link" />
+          <LinkIcon/>
             Flow Chart
           </button>
           <button className="grayButton">
-            <img src={fileTextImage} alt="File Text" />
+            <FileTextIcon/>
             Painel
           </button>
         </div>

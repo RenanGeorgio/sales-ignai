@@ -9,7 +9,7 @@ import { CircularProgress } from "@mui/material";
 import "./SignIn.css";
 // import { Link } from 'react-router-dom';
 import { SignInData } from "../../types";
-import { AuthContext } from "../../contexts/auth/authContext";
+import { AuthContext } from "../../contexts/auth/AuthContext";
 
 // import * as React from 'react';
 import Avatar from "@mui/material/Avatar";

@@ -1,4 +1,5 @@
-import React from 'react';
+import { Chart } from 'chart.js';
+import React, { useEffect, useRef } from 'react';
 import { Bar } from 'react-chartjs-2';
 
 interface GraphClientVolumeProps {
@@ -6,55 +7,62 @@ interface GraphClientVolumeProps {
 }
 
 const GraphClientVolume: React.FC<GraphClientVolumeProps> = ({ month }) => {
-  const labels = ['6', '5', '4', '3', '2', '1'];
-  const data = {
-    labels: labels,
-    datasets: [
-      {
-        axis: 'y',
-        label: '',
-        data: [35, 30, 20, 15, 15, 10],
-        fill: false,
-        backgroundColor: [
-          'rgba(115, 103, 240, 1)',
-          'rgba(0, 207, 232, 1)',
-          'rgba(40, 199, 111, 1)',
-          'rgba(168, 170, 174, 1)',
-          'rgba(234, 84, 85, 1)',
-          'rgba(255, 159, 67, 1)',
-        ],
-        borderWidth: 1,
-      },
-    ],
-  };
+  const chartRef = useRef<HTMLCanvasElement | null>(null);
+  const chartInstanceRef = useRef<Chart<'bar'> | null>(null);
 
-  const legendItems = [
-    ['Home', 'Form 1'],
-    ['Form 2', 'Cadastro'],
-    ['Solução', 'Blog'],
-  ];
+  useEffect(() => {
+    if (chartRef.current) {
+      const ctx = chartRef.current.getContext('2d');
+      if (ctx) {
+        if (chartInstanceRef.current) {
+          chartInstanceRef.current.destroy();
+        }
+
+        chartInstanceRef.current = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['6', '5', '4', '3', '2', '1'],
+            datasets: [
+              {
+                axis: 'y',
+                label: '',
+                data: [35, 30, 20, 15, 15, 10],
+                fill: false,
+                backgroundColor: [
+                  'rgba(115, 103, 240, 1)',
+                  'rgba(0, 207, 232, 1)',
+                  'rgba(40, 199, 111, 1)',
+                  'rgba(168, 170, 174, 1)',
+                  'rgba(234, 84, 85, 1)',
+                  'rgba(255, 159, 67, 1)',
+                ],
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            maintainAspectRatio: false,
+            indexAxis: 'y',
+            plugins: { legend: { display: false } },
+          },
+        });
+      }
+    }
+
+    return () => {
+      if (chartInstanceRef.current) {
+        chartInstanceRef.current.destroy();
+      }
+    };
+  }, [month]);
 
   return (
     <div className="graph-container-3">
       <h3>Maior volume de clientes</h3>
       <div className="graph">
-        <Bar data={data} options={{ maintainAspectRatio: false, indexAxis: 'y', plugins: { legend: { display: false } } }} />
+        <canvas ref={chartRef} />
       </div>
-      <div className="legend">
-        {legendItems.map((group, groupIndex) => (
-          <div key={groupIndex} className="legend-item-group">
-            {group.map((label, index) => (
-              <div key={index} className="legend-item">
-                <div className="color-dot" style={{ backgroundColor: data.datasets[0].backgroundColor[index + groupIndex * 2] }}></div>
-                <span className="legend-label">{label}</span>
-                <div className="number-container">
-                  <span className="number">{groupIndex === 0 ? '40%' : '30%'}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        ))}
-      </div>
+      {/* Your legend and other JSX here */}
     </div>
   );
 };

@@ -1,14 +1,15 @@
 
-import React from 'react'
-import { DataGrid, GridColDef, GridValueGetterParams,GRID_DATETIME_COL_DEF, GRID_DATE_COL_DEF } from '@mui/x-data-grid';
-import { Button, FormControl, InputLabel, MenuItem, Select, IconButton } from '@mui/material';
+import React, { useState } from 'react'
+import { DataGrid, GridColDef, GridValueGetterParams, GRID_DATETIME_COL_DEF, GRID_DATE_COL_DEF } from '@mui/x-data-grid';
+import { Button, FormControl, InputLabel, MenuItem, Select, IconButton, Modal } from '@mui/material';
 import { DotsVertical, Edit, Trash, } from '../../components/Image/icons';
 import rows from '../../dados/data-leads.json';
-import LeadIcon from '../../components/Image/LabelInitials.svg';
+import { LeadIcon } from '../../components/Image/icons';
 import avatar from '../../components/Image/Avatar3.png';
-import message from '../../components/Image/message-dots.svg';
-import paperclip from '../../components/Image/paperclip.svg';
+import { MessageDots } from '../../components/Image/icons';
+import { PaperClip } from '../../components/Image/icons';
 import { useSelector } from 'react-redux';
+import ModalSearch from './ModalSearch';
 
 interface SearchFilterProps {
     setShowList: () => void; // New prop
@@ -26,39 +27,43 @@ const leadOrigin = {
 const ContatoCell = ({ contato }) => {
     return (
         <>
-      <div style={{display:'flex', flexDirection:'column'}}>
-        <div style={{ fontWeight: 'bold' }}>{contato.name}</div>
-        <div style={{ fontSize: 12, color: 'gray' }}>{contato.description}</div>
-      </div>
-      </>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <div style={{ fontWeight: 'bold' }}>{contato.name}</div>
+                <div style={{ fontSize: 12, color: 'gray' }}>{contato.description}</div>
+            </div>
+        </>
     );
 };
 
-  const getStatusStyles = (status) => {
+const getStatusStyles = (status) => {
     const color = status === 'Contato inicial' ? 'rgba(40, 199, 111, 1)' : 'rgba(40, 199, 111, 1)';
     const backgroundColor = status === 'Contato inicial' ? '#e9e8e8' : '#e9e8e8';
 
 
-  return { color, backgroundColor };
-  };
+    return { color, backgroundColor };
+};
 
-  const columns: GridColDef[] = [
+const columns: GridColDef[] = [
     {
         field: 'lead',
         headerName: 'Lead',
         width: 550,
         renderCell: (params) => (
             <div style={{ display: 'flex', alignItems: 'center' }}>
-                <img src={LeadIcon} alt="Lead Icon" style={{ marginRight: '8px' }} />
+                <div style={{ marginRight: '8px' }}>
+                    <LeadIcon />
+                </div>
                 <ContatoCell contato={params.value} />
             </div>
         ),
     },
-    { field: 'leadOrigin', headerName: 'Lead Origem', width: 150,
-    renderCell: (params) => {
-        const origin = leadOrigin[params?.value]
-        return origin
-    } },
+    {
+        field: 'leadOrigin', headerName: 'Lead Origem', width: 150,
+        renderCell: (params) => {
+            const origin = leadOrigin[params?.value]
+            return origin
+        }
+    },
     { field: 'company', headerName: 'Empresa', width: 150 },
     {
         field: 'activity',
@@ -67,24 +72,29 @@ const ContatoCell = ({ contato }) => {
         renderCell: (params) => (
             <div style={{ display: 'flex', alignItems: 'center' }}>
                 {/* Add your history icons here */}
-                <img src={paperclip} alt="History Icon 1" style={{ marginRight: '4px' }} />
+                <IconButton>
+                    <PaperClip />
+                </IconButton>
                 <div style={{ marginRight: '4px' }}>{params.row.historicoClip}</div>
-                <img src={message} alt="History Icon 2" style={{ marginRight: '4px' }} />
+                <IconButton size='medium'>
+                    <MessageDots />
+                </IconButton>
                 <div style={{ marginRight: '4px' }}>{params.row.historicoMessage}</div>
                 <img src={avatar} alt="History Icon 3" />
             </div>
         ),
     },
-    { field: 'topic', headerName: 'Status', width: 150,
+    {
+        field: 'topic', headerName: 'Status', width: 150,
         renderCell: (params) => {
             const status = leadStatus[params?.value]
-            return(
-                <div style={{ 
-                    color: getStatusStyles(status).color, 
-                    backgroundColor: getStatusStyles(status).backgroundColor, 
+            return (
+                <div style={{
+                    color: getStatusStyles(status).color,
+                    backgroundColor: getStatusStyles(status).backgroundColor,
                     border: 'none',
-                    padding:'2px',
-                    borderRadius:'5px'
+                    padding: '2px',
+                    borderRadius: '5px'
                 }}>
                     {status}
                 </div>
@@ -99,19 +109,19 @@ const ContatoCell = ({ contato }) => {
             return (
                 <div>
                     <IconButton>
-                        <Edit/>
+                        <Edit />
                     </IconButton>
                     <IconButton
                         color="primary"
                         size="small"
                         onClick={() => {
-                        // ...
+                            // ...
                         }}
                     >
                         <Trash className={undefined} />
                     </IconButton>
                     <IconButton>
-                        <DotsVertical className={undefined}/>
+                        <DotsVertical className={undefined} />
                     </IconButton>
                 </div>
             );
@@ -120,21 +130,30 @@ const ContatoCell = ({ contato }) => {
 ];
 
 const SearchFilter: React.FC<SearchFilterProps> = ({ setShowList, leadsData }) => {
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
+
+
     return (
 
-        <div style={{ width: '92%', height: '100%', paddingTop: 25, paddingBottom: 24, paddingLeft: 100, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', gap: 1, display: 'inline-flex',  zIndex: '999', backgroundColor:'#fff'}}>
-            <div style={{boxShadow: '0 0 5px 2px rgba(138, 138, 138, 0.2)', width:'100%'}}>
-                <div style={{ alignSelf: 'stretch', paddingLeft: 4, paddingRight: 1, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'inline-flex', width: '100%', marginLeft:'15px', marginTop:'15px' }}>
+        <div style={{ width: '92%', height: '100%', paddingTop: 25, paddingBottom: 24, paddingLeft: 100, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', gap: 1, display: 'inline-flex', zIndex: '999', backgroundColor: '#fff' }}>
+            <div style={{ boxShadow: '0 0 5px 2px rgba(138, 138, 138, 0.2)', width: '100%' }}>
+                <div style={{ alignSelf: 'stretch', paddingLeft: 4, paddingRight: 1, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'inline-flex', width: '100%', marginLeft: '15px', marginTop: '15px' }}>
                     <div style={{ color: 'black', fontSize: 18, fontFamily: 'sans-serif', fontWeight: '500', lineHeight: 2, wordWrap: 'break-word' }}>Filtro de busca</div>
                 </div>
                 <div style={{ position: 'absolute', top: '110px', right: '50px' }}>
-                    <button onClick={() => setShowList(true)} style={{color:'rgba(75, 70, 92, 1)', width:'108px', fontSize: '18px', border: 'none', backgroundColor:'#fff'}}>Ver kanban</button>
+                    <button onClick={() => setShowList()} style={{
+                        color: 'rgba(75, 70, 92, 1)',
+                        width: '108px', fontSize: '18px', border: 'none', backgroundColor: '#fff'
+                    }}>Ver kanban</button>
                 </div>
-                <div style={{ justifyContent: 'space-between', alignItems: 'center', gap: 24, display: 'flex', width: '100%', padding: '5px 0px 1px 10px', marginBottom:'25px', marginLeft:'15px'}}>
+                <div style={{ justifyContent: 'space-between', alignItems: 'center', gap: 24, display: 'flex', width: '100%', padding: '5px 0px 1px 10px', marginBottom: '25px', marginLeft: '15px' }}>
                     <div style={{ flex: '1 ', height: 38, borderRadius: 6, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex', width: '100px' }}>
                         <div style={{ flex: '1 1 0', height: 38, background: 'white', borderRadius: 6, overflow: 'hidden', justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex' }}>
                             <form style={{ width: '100%', height: '95%' }}>
-                                <select style={{ width: '80%', height: '100%', borderRadius: 6}}>
+                                <select style={{ width: '80%', height: '100%', borderRadius: 6 }}>
                                     <option value="" selected>
                                         <em>Selecionar status de lead no pipeline</em>
                                     </option>
@@ -148,7 +167,7 @@ const SearchFilter: React.FC<SearchFilterProps> = ({ setShowList, leadsData }) =
                     <div style={{ flex: '1 1 0', height: 38, borderRadius: 6, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex' }}>
                         <div style={{ flex: '1 1 0', height: 38, background: 'white', borderRadius: 6, overflow: 'hidden', justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex' }}>
                             <form style={{ width: '100%', height: '95%' }}>
-                                <select style={{ margin: 1, width: '80%', height: '100%', borderRadius: 6}}>
+                                <select style={{ margin: 1, width: '80%', height: '100%', borderRadius: 6 }}>
                                     <option value="" selected>
                                         <em>Selecionar origem do lead</em>
                                     </option>
@@ -176,21 +195,21 @@ const SearchFilter: React.FC<SearchFilterProps> = ({ setShowList, leadsData }) =
                 </div>
             </div>
 
-            <div style={{ maxWidth:'98.5%', height: 38, justifyContent: 'space-between', alignItems: 'center', gap: 16, display: 'flex', width: '100%', borderRight: '1px #DBDADE solid', borderLeft: '1px #DBDADE solid', padding: 10, zIndex: '999', backgroundColor:'#fff' }}>
+            <div style={{ maxWidth: '98.5%', height: 38, justifyContent: 'space-between', alignItems: 'center', gap: 16, display: 'flex', width: '100%', borderRight: '1px #DBDADE solid', borderLeft: '1px #DBDADE solid', padding: 10, zIndex: '999', backgroundColor: '#fff' }}>
                 <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 15, height: '100%' }}>
-                    <select style={{ display: 'flex', justifyContent: 'center', height: '2rem', width:'5rem', padding: '5px 10px 5px 5px', borderRadius:'5px' }}>
+                    <select style={{ display: 'flex', justifyContent: 'center', height: '2rem', width: '5rem', padding: '5px 10px 5px 5px', borderRadius: '5px' }}>
                         <option selected>10</option>
                         <option >20</option>
                         <option >30</option>
                         <option >40</option>
                     </select>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 15, padding: 15, marginTop:'15px' }}>
-                    <select 
-                        style={{  
+                <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 15, padding: 15, marginTop: '15px' }}>
+                    <select
+                        style={{
                             height: 33, background: 'white',
                             borderRadius: 6, border: '1px #DBDADE solid',
-                            justifyContent: 'flex-start', width:'150px',
+                            justifyContent: 'flex-start', width: '150px',
                             alignItems: 'center', display: 'flex'
                         }}
                     >
@@ -221,8 +240,10 @@ const SearchFilter: React.FC<SearchFilterProps> = ({ setShowList, leadsData }) =
                             //   fontSize: 14,
                             display: 'flex',
                             cursor: 'pointer'
-                        }}>
-                           + Adicionar
+                        }}
+                            onClick={handleOpen}
+                        >
+                            + Adicionar
                         </Button>
                     </div>
                 </div>
@@ -244,9 +265,14 @@ const SearchFilter: React.FC<SearchFilterProps> = ({ setShowList, leadsData }) =
                 />
             </div>
 
+            <Modal
+                open={open}
+            >
+                <ModalSearch close={handleClose} />
+            </Modal>
 
         </div>
     )
 }
 
-export default  SearchFilter;
+export default SearchFilter;

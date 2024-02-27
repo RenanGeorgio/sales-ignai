@@ -1,11 +1,10 @@
 // LeadModal.tsx
 import React, { useEffect, useRef, useState } from "react";
 import "./leadmodal.css";
-import edit from "../../components/Image/edit.svg";
-import treding from "../../components/Image/trending-up.svg";
+import { Edit, MessageCircleIcon, TrendingUpIcon  } from "../Image/icons";
 import avatar from "../../components/Image/Avatar2.png";
 import avatar3 from "../../components/Image/Avatar3.png";
-import message from "../../components/Image/message-circle-2.svg";
+
 
 interface LeadModalProps {
   closeModal: () => void;
@@ -54,14 +53,14 @@ const LeadModal: React.FC<LeadModalProps> = ({ closeModal, handleClick, data }) 
               className={activeTab === "Editar" ? "active" : ""}
               onClick={() => setActiveTab("Editar")}
             >
-              <img src={edit} alt="Editar" />
+              <Edit />
               Editar
             </button>
             <button
               className={activeTab === "Atividade" ? "active" : ""}
               onClick={() => setActiveTab("Atividade")}
             >
-              <img src={treding} alt="Atividade" />
+              <TrendingUpIcon/>
               Atividade
             </button>
           </div>

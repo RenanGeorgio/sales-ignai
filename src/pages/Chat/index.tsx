@@ -1,76 +1,77 @@
-import React, { useState } from 'react';
-import Navbar from '../../components/Navbar';
-import usersImage from '../../components/Image/users.svg';
-import sino from '../../components/Image/bell.svg';
-import fileTextImage from '../../components/Image/file-text.svg';
-import '../../styles/forms.css'; 
+import React, { useContext, useState } from "react";
+import Navbar from "../../components/Navbar";
+import "../../styles/forms.css";
 
-import Layout from '../../components/Layout/ChatLayout';
-import History from '../../components/Layout/HistoryLayout';
+import Layout from "../../components/Layout/ChatLayout";
+import History from "../../components/Layout/HistoryLayout";
 
-import GraphChat from '../../components/Graph/GraphChat';
-import GraphTicket from '../../components/Graph/GraphTicket';
-import GraphTicketYou from '../../components/Graph/GraphTicketYou';
-import GraphThemes from '../../components/Graph/GraphThemes';
-
+import GraphChat from "../../components/Graph/GraphChat";
+import GraphTicket from "../../components/Graph/GraphTicket";
+import GraphTicketYou from "../../components/Graph/GraphTicketYou";
+import GraphThemes from "../../components/Graph/GraphThemes";
+import {
+  BellIcon,
+  FileTextIcon,
+  UsersIcon,
+} from "../../components/Image/icons";
 
 const Chat: React.FC = () => {
-  const [activePage, setActivePage] = useState('Atendimento'); 
-
+  const [activePage, setActivePage] = useState("Atendimento");
   const handleButtonClick = (pageName: string) => {
     setActivePage(pageName);
   };
 
   return (
-    <div style={{overflow:'hidden'}} className="page-content" >
+    <div style={{ overflow: "hidden" }} className="page-content">
       <Navbar />
       <h1 className="titleChat">Chat</h1>
-      <div style={{margin: '0 0 10px 95px'}}>
+      <div style={{ margin: "0 0 10px 95px" }}>
         <button
-          className={activePage === 'Atendimento' ? 'blueButton' : 'grayButton'}
-          onClick={() => handleButtonClick('Atendimento')}
+          className={activePage === "Atendimento" ? "blueButton" : "grayButton"}
+          onClick={() => handleButtonClick("Atendimento")}
         >
-          <img src={usersImage} alt="Users" />
+          <UsersIcon />
           Atendimento
         </button>
         <button
-          className={activePage === 'Histórico' ? 'blueButton' : 'grayButton'}
-          onClick={() => handleButtonClick('Histórico')}
+          className={activePage === "Histórico" ? "blueButton" : "grayButton"}
+          onClick={() => handleButtonClick("Histórico")}
         >
-          <img src={sino} alt="Link" />
+          {/* <img src={"sino"} alt="Link" /> */}
+          <BellIcon />
           Histórico
         </button>
         <button
-          className={activePage === 'Painel' ? 'blueButton' : 'grayButton'}
-          onClick={() => handleButtonClick('Painel')}
+          className={activePage === "Painel" ? "blueButton" : "grayButton"}
+          onClick={() => handleButtonClick("Painel")}
         >
-          <img src={fileTextImage} alt="File Text" />
+          <FileTextIcon />
           Painel
         </button>
       </div>
       <div>
-      {activePage === 'Atendimento' && (
-        <div >
-          <Layout props={undefined}/>
-        </div>
-      )}
-      {activePage === 'Histórico' && (
-        <>
-          <History />
-        </>
-      )}
-      {activePage === 'Painel' && (
-        <>
-          <div className='graph-row'>
-            <GraphChat />
-            <GraphTicket data={[50, 30, 20, 10]}/>
+        {activePage === "Atendimento" && (
+          <div>
+            <Layout />
           </div>
-          <div className='graph-row'>
-            <GraphThemes month={''} />
-            <GraphTicketYou data={[50, 30, 20, 10]}/>
-          </div>
-        </>
-      )}
+        )}
+        {activePage === "Histórico" && (
+          <>
+            <History />
+          </>
+        )}
+        {activePage === "Painel" && (
+          <>
+            <div className="graph-row">
+              <GraphChat />
+              <GraphTicket data={[50, 30, 20, 10]} />
+            </div>
+            <div className="graph-row">
+              <GraphThemes month={""} />
+              <GraphTicketYou data={[50, 30, 20, 10]} />
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
