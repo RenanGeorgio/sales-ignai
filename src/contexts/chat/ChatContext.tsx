@@ -18,7 +18,7 @@ export const ChatProvider = ({ children }: any) => {
   const [textMessageError, setTextMessageError] = useState<string | null>(null);
   const [newMessage, setNewMessage] = useState<string>("");
   const [onlineUsers, setOnlineUsers] = useState<OnlineUser[]>([]);
-  
+
   const [socket, setSocket] = useState<any>(null);
 
   const { user } = useAuth();
@@ -30,42 +30,38 @@ export const ChatProvider = ({ children }: any) => {
     return () => {
       newSocket.disconnect();
     };
-
   }, [user]);
 
   useEffect(() => {
-    if(socket === null) return;
+    if (socket === null) return;
     socket.emit("addNewUser", user?._id);
     socket.on("onlineUsers", (users: any) => {
       setOnlineUsers(users);
     });
-    
+
     return () => {
       socket.off("onlineUsers");
     };
   }, [socket]);
-  
 
   useEffect(() => {
     if (!socket) return;
-    const recipientId = currentChat?.members?.find((id: string) => id !== user?._id);
-
+    const recipientId = currentChat?.members?.find(
+      (id: string) => id !== user?._id
+    );
     socket.emit("sendMessage", { newMessage, recipientId });
-
   }, [newMessage]);
 
   useEffect(() => {
     if (!socket) return;
-
     socket.on("getMessage", (res: any) => {
-      if(currentChat?._id !== res.chatId) return;
+      if (currentChat?._id !== res.chatId) return;
       setMessages((prev) => [...prev, res]);
     });
 
     return () => {
       socket.off("getMessage");
     };
-    
   }, [socket, currentChat]);
 
   useEffect(() => {
@@ -97,9 +93,9 @@ export const ChatProvider = ({ children }: any) => {
 
   useEffect(() => {
     const getUserChats = async () => {
-      if (user?._id) {
+      if (user?.companyId) {
         setIsUserChatsLoading(true);
-        const response = await getRequest(`${baseUrl}/chat/${user._id}`);
+        const response = await getRequest(`${baseUrl}/chat/${user.companyId}`);
         if (response.error) {
           return setUserChatsError(response);
         } else {
@@ -139,21 +135,20 @@ export const ChatProvider = ({ children }: any) => {
   const sendTextMessage = useCallback(
     async (textMessage, sender, currentChatId, setTextMessage) => {
       if (textMessage === "") return;
-
-      const response = await postRequest(
-        `${baseUrl}/message`, {
-          text: textMessage,
-          senderId: sender._id,
-          chatId: currentChatId,
-        }
-      );
+      const response = await postRequest(`${baseUrl}/message`, {
+        text: textMessage,
+        senderId: sender.companyId,
+        chatId: currentChatId,
+      });
       if (response.error) {
         return setTextMessageError(response);
       }
       setNewMessage(response);
       setMessages((prev) => [...prev, response]);
       setTextMessage("");
-    },[]);
+    },
+    []
+  );
 
   return (
     <ChatContext.Provider

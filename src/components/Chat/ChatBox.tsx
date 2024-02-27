@@ -44,7 +44,7 @@ export const ChatBox = ({ toggleAddTicket }): React.JSX.Element => {
   };
 
   if (isMessagesLoading) return <p>Carregando mensagens...</p>;
-  console.log(dayjs(messages[0]?.createdAt).locale('pt-BR').format())
+
   return (
     <div className="containerchat">
       <div className="header">
@@ -81,7 +81,7 @@ export const ChatBox = ({ toggleAddTicket }): React.JSX.Element => {
           <div
             key={index}
             className={`${
-              message?.senderId === user?._id ? "text" : "message"
+              message?.senderId === user?.companyId ? "text" : "message"
             }`}
           >
             <p>{message?.text}</p>
