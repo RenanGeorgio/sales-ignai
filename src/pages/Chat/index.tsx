@@ -25,7 +25,7 @@ const Chat: React.FC = () => {
     <div style={{ overflow: "hidden" }} className="page-content">
       <Navbar />
       <h1 className="titleChat">Chat</h1>
-      <div style={{ margin: "0 0 10px 95px" }}>
+      <div className="button-container">
         <button
           className={activePage === "Atendimento" ? "blueButton" : "grayButton"}
           onClick={() => handleButtonClick("Atendimento")}

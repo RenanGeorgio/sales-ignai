@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../styles/graph.css'; 
 import { PackageIcon,PercentageIcon, ClockIcon,UsersIcon, 
-  TruckIcon, ChevronUpIcon, AvatarIcon, ChevronDownIcon } from '../Image/icons';
+  TruckIcon, ChevronUpIcon, AvatarIcon, ChevronDownIcon, CircleCheckIcon } from '../Image/icons';
 
 interface GraphThemesProps {
   month: string;
@@ -15,7 +15,9 @@ const GraphThemes: React.FC<GraphThemesProps> = ({ month }) => {
       <div className="menu-icon-themes">&#8942;</div>
       <div className="data-row-themes">
         <div className="data-item">
-          <PackageIcon />
+          <div className="graph-themes-icon">
+            <PackageIcon/>
+          </div>
           <span className="data-text">Problemas com pedido</span>
           <div className="percentage-container">
             <ChevronUpIcon/>
@@ -26,7 +28,9 @@ const GraphThemes: React.FC<GraphThemesProps> = ({ month }) => {
       </div>
       <div className="data-row-themes">
         <div className="data-item">
-          <TruckIcon/>
+          <div className="graph-themes-icon">        
+            <TruckIcon/>
+          </div>
           <span className="data-text">Problemas com transporte</span>
           <div className="percentage-container">
             <ChevronUpIcon/>
@@ -37,7 +41,9 @@ const GraphThemes: React.FC<GraphThemesProps> = ({ month }) => {
       </div>
       <div className="data-row-themes">
         <div className="data-item">
-          <AvatarIcon />
+          <div className="graph-themes-icon">
+            <CircleCheckIcon />
+          </div>
           <span className="data-text">Pedido entregue no prazo</span>
           <div className="percentage-container">
             <ChevronDownIcon/>
@@ -48,7 +54,9 @@ const GraphThemes: React.FC<GraphThemesProps> = ({ month }) => {
       </div>
       <div className="data-row-themes">
         <div className="data-item">
-          <PercentageIcon/>
+          <div className="graph-themes-icon">
+            <PercentageIcon/>
+          </div>
           <span className="data-text">Preço do produto</span>
           <div className="percentage-container">
             <ChevronUpIcon/>
@@ -59,7 +67,9 @@ const GraphThemes: React.FC<GraphThemesProps> = ({ month }) => {
       </div>
       <div className="data-row-themes">
         <div className="data-item">
-          <ClockIcon/>
+          <div className="graph-themes-icon">
+            <ClockIcon/>
+          </div>
           <span className="data-text">Tempo de entrega</span>
           <div className="percentage-container">
             <ChevronDownIcon/>
@@ -70,7 +80,9 @@ const GraphThemes: React.FC<GraphThemesProps> = ({ month }) => {
       </div>
       <div className="data-row-themes">
         <div className="data-item">
-          <UsersIcon />
+          <div className="graph-themes-icon">
+            <UsersIcon />
+          </div>
           <span className="data-text">Satisfação do cliente</span>
           <div className="percentage-container">
             <ChevronUpIcon/>
