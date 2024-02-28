@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import { Phone, Search, Video, DotsVertical } from "../Image/icons";
+import { Phone, Search, Video, DotsVertical, FaceBookIcon, InstagramIcon } from "../Image/icons";
+import Telegram from "../Image/Telegram_logo.png";
+import Web from "../Image/safari.png";
+import Avatar2 from "../Image/Avatar2.png"
 import ListarMensagens from "./MessegerPayload";
 import TextEnter from "./TextEnter";
 import AddTicket from "./AddTicket/AddTicket";
@@ -44,19 +47,61 @@ export const ChatBox = ({ toggleAddTicket }): React.JSX.Element => {
   };
 
   if (isMessagesLoading) return <p>Carregando mensagens...</p>;
+  console.log(dayjs(messages[0]?.createdAt).locale('pt-BR').format())
 
+  const getChatIcon = (origin) => {
+    switch (origin) {
+      case "facebook":
+        return <FaceBookIcon />;
+      case "instagram":
+        return <InstagramIcon />;
+      case "telegram":
+        return <Telegram />;
+      case "web":
+        return <Web />;
+      case "whatsapp":
+        return "https://c.animaapp.com/5uY2Jqwr/img/whatsapp-33-1-1@2x.png";
+      default:
+        return "https://c.animaapp.com/5uY2Jqwr/img/whatsapp-33-1-1@2x.png";
+    }
+  };
+
+  const getTextMessageAvatar = () => (
+    <img
+      className="img-avatar-message"
+      alt="Text Avatar"
+      src="https://c.animaapp.com/5uY2Jqwr/img/avatar-14@2x.png"
+    />
+  );
+  
+  const getMessageAvatar = () => (
+    <img
+      className="img-avatar-text"
+      alt="Message Avatar"
+      src={Avatar2}
+    />
+  );
+  
   return (
     <div className="containerchat">
       <div className="header">
-        <div>
+        <div className="initial-info">
           <img
-            className="img-2"
-            alt="Whatsapp"
-            src="https://c.animaapp.com/5uY2Jqwr/img/whatsapp-33-1-1@2x.png"
+            className="img-avatar"
+            alt="Avatar"
+            src="https://c.animaapp.com/5uY2Jqwr/img/avatar-14@2x.png"
           />
-          <div className="namr-time">
+          <div className="name-time">
             <div className="text-wrapper-4">{`${recipientUser?.name} ${recipientUser?.lastName}`}</div>
             <div className="text-wrapper-5">1 Minute</div>
+          </div>
+          <img
+            className="img-2"
+            alt={currentChat.origin}
+            src={getChatIcon(currentChat.origin) as string}
+          />
+          <div className="name-work">
+            <div>Fazenda Minas Pro</div>
           </div>
         </div>
         <div className="rightContainer">
@@ -78,16 +123,21 @@ export const ChatBox = ({ toggleAddTicket }): React.JSX.Element => {
       </div>
       <div className="chat">
         {messages?.map((message: any, index: number) => (
-          <div
-            key={index}
-            className={`${
-              message?.senderId === user?.companyId ? "text" : "message"
-            }`}
-          >
-            <p>{message?.text}</p>
-            <span>{dayjs().to(dayjs(message?.createdAt))}</span>
+          <div key={index} className={`message-wrapper`}>
+            {message?.senderId === user?._id ? getTextMessageAvatar() : getMessageAvatar()}
+            <div
+              className={`${
+                message?.senderId === user?._id ? "text" : "message"
+              }`}
+            >
+              <p>{message?.text}</p>
+            </div>
+            <div className={`message-time ${message?.senderId === user?._id ? 'time-left' : 'time-right'}`}>
+              <span>{dayjs().to(dayjs(message?.createdAt))}</span>
+            </div>
           </div>
         ))}
+
       </div>
       {toggleAddTicket ? (
           <AddTicket

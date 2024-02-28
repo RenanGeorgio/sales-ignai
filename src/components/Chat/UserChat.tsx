@@ -1,6 +1,7 @@
 import useChat from "../../hooks/useChat";
 import { useFetchRecipient } from "../../hooks/useFetchRecipient";
 import { OnlineUser } from "../../types";
+import Avatar2 from "../Image/Avatar2.png";
 import "./leftmenu.css";
 
 export const UserChat = ({ chat, user }) => {
@@ -12,6 +13,7 @@ export const UserChat = ({ chat, user }) => {
 
   return (
     <div className="list">
+      <img src={Avatar2} alt="Avatar" className="avatar-client" />
       <div className="text-2">
         <img
           className="img-2"
