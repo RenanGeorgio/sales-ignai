@@ -111,19 +111,29 @@
   background-color: #fff;
   width: calc(50% - 10px); 
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1); 
-  height: 350px; 
+  height: 360px; 
+}
+
+.graph-themes-icon {
+  display: flex;
+  position: relative;
+  margin-top: 10px;
+  margin-right: 5px;
+  padding: 0px;
+  background-color: rgba(216, 216, 216, 0.579);
+  border-radius: 5px;
 }
 
 .menu-icon-themes {
   font-size: 20px;
-  margin-top: -10%;
+  margin-top: -7%;
   margin-bottom: 0%;
   margin-left: 95%;
   cursor: pointer;
 }
 
 .data-row-themes {
-  margin-bottom: -20px;
+  margin-bottom: 0px;
 }
 
 .data-row-4 {
@@ -150,8 +160,8 @@
   align-items: center;
   text-align: left;
   position: absolute; 
-  margin-top: 5%; 
-  margin-left: 3%;
+  margin-top: 6%; 
+  margin-left: 5%;
 }
 
 .graph-subtitle {
