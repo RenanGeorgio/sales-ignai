@@ -6,7 +6,8 @@ export const useFetchRecipient = (chat, user) => {
   const [recipientUser, setRecipientUser] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
   // verificar se está renderizando multiplas vezes
-  const recipientId = chat?.members?.find((id: string) => id !== user?._id);
+  const recipientId = chat?.members?.find((id: string) => id !== user?.companyId);
+  console.log(recipientId);
  
   useEffect(() => {
     const fetchRecipient = async () => {
