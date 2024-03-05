@@ -12,11 +12,11 @@ export const UserChat = ({ chat, user }) => {
   const { recipientUser, error } = useFetchRecipient(chat, user);  
   
   const { onlineUsers } = useChat();
-
-  const isOnline = onlineUsers?.some((onlineUser: OnlineUser) => onlineUser.userId === recipientUser?.companyId);
+  console.log(recipientUser)
+  const isOnline = onlineUsers?.some((onlineUser: OnlineUser) => onlineUser.userId === recipientUser?._id);
 
   const origin = chat?.origin.platform;
-
+  console.log(chat.origin)
   const getChatIcon = () => {
     switch (origin) {
       case "facebook":
@@ -45,7 +45,7 @@ export const UserChat = ({ chat, user }) => {
           <div className="text-wrapper-4">{ `${recipientUser?.name} ${recipientUser?.lastName}`}</div>
           <div className="text-wrapper-5">{isOnline ? "online" : "offline"}</div>
         </div>
-        <div className="text-wrapper-6">Atraso no pedido</div>
+        <div className="text-wrapper-6"></div>
       </div>
     </div>
   );

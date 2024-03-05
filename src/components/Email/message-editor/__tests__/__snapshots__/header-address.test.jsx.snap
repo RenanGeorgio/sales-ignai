@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderAddress component test suite Snapshot render, should render HeaderAddress 1`] = `
+<div
+  className="message-editor__header-address mdc-menu-surface--anchor"
+  onClick={[Function]}
+  onDragOver={[Function]}
+  onDrop={[Function]}
+>
+  <label>
+    BlackLabel12yrs
+    :
+  </label>
+  <div
+    className="message-editor__header-chip mdc-chip"
+    draggable={true}
+    key="0"
+    onDragEnd={[Function]}
+    onDragStart={[Function]}
+  >
+    <div
+      className="mdc-chip__text"
+    >
+      name@email.com
+    </div>
+    <i
+      className="material-icons mdc-chip__icon
+               mdc-chip__icon--trailing"
+      onClick={[Function]}
+    >
+      cancel
+    </i>
+  </div>
+  <div
+    className="message-editor__header-chip mdc-chip"
+    draggable={true}
+    key="1"
+    onDragEnd={[Function]}
+    onDragStart={[Function]}
+  >
+    <div
+      className="mdc-chip__text"
+    >
+      other@e-mail.mail
+    </div>
+    <i
+      className="material-icons mdc-chip__icon
+               mdc-chip__icon--trailing"
+      onClick={[Function]}
+    >
+      cancel
+    </i>
+  </div>
+  <Autosuggest
+    alwaysRenderSuggestions={false}
+    focusInputOnSuggestionClick={true}
+    getSuggestionValue={[Function]}
+    highlightFirstSuggestion={false}
+    id="1"
+    inputProps={
+      Object {
+        "id": "I'mDown",
+        "onBlur": [Function],
+        "onChange": [Function],
+        "onKeyDown": [Function],
+        "type": "text",
+        "value": "",
+      }
+    }
+    multiSection={false}
+    onSuggestionSelected={[Function]}
+    onSuggestionsClearRequested={[Function]}
+    onSuggestionsFetchRequested={[Function]}
+    renderSuggestion={[Function]}
+    renderSuggestionsContainer={[Function]}
+    shouldRenderSuggestions={[Function]}
+    suggestions={Array []}
+    theme={
+      Object {
+        "container": "message-editor__header-auto-suggest ",
+        "suggestion": "mdc-list-item",
+        "suggestionHighlighted": "mdc-list-item--activated",
+        "suggestionsContainer": "mdc-menu mdc-menu-surface message-editor__header-auto-suggest-menu",
+        "suggestionsContainerOpen": "mdc-menu-surface--open",
+        "suggestionsList": "mdc-list mdc-list--dense",
+      }
+    }
+  />
+</div>
+`;

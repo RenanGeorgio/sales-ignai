@@ -37,10 +37,9 @@ const GraphChat: React.FC<GraphChatProps> = ({ data }) => {
               borderWidth: 1,
               barPercentage: 0.5,
             }, {
-              type: 'line',  
+              type: 'bar',  
               label: 'Inscritos',
-              data: [24, 28, 26, 29, 30, 40, 35, 31, 24, 28],  
-              fill: false,
+              data: [24, 28, 26, 29, 30, 40, 35, 31, 24, 28],
               borderColor: 'rgb(54, 162, 235)',
             }]
           },

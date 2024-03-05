@@ -1,0 +1,150 @@
+@import '../partials/variables';
+@import "@material/theme/variables";
+@import "@material/shape/mixins";
+@import "@material/elevation/mixins";
+@import "@material/dialog/variables";
+@import '@material/drawer/mdc-drawer';
+@import '@material/top-app-bar/mixins';
+
+$global-spinner-color: #333333;
+
+.main-layout {
+  $self: &;
+  display: flex;
+  height: 100vh;
+
+  & &__spinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($global-spinner-color, 0.5);
+    z-index: map-get($z-index, thermosphere);
+    .spinner-path {
+      stroke: $global-spinner-color;
+    }
+  }
+  .mdc-drawer {
+    display: flex;
+    position: fixed;
+    min-height: 100vh;
+    width: 0;
+    border: 0;
+    transition: width $drawerAnimationSpeed;
+    &.mdc-drawer--open {
+      width: $drawerWidth;
+      @include mdc-drawer-border-color($mdc-drawer-divider-color);
+      border-right-width: 1px;
+      border-right-style: solid;
+      @media screen and (max-width: $material-responsive-breakpoint-tablet-min) {
+        @include mdc-elevation($mdc-drawer-modal-elevation);
+      }
+      & + .mdc-drawer-scrim {
+        @media screen and (max-width: $material-responsive-breakpoint-tablet-min) {
+          display: block;
+        }
+      }
+    }
+  }
+  .mdc-drawer-scrim {
+    display: none;
+    $value: rgba(mdc-theme-prop-value($mdc-drawer-modal-scrim-color), $mdc-drawer-modal-scrim-opacity);
+    @include mdc-theme-prop(background-color, $value);
+  }
+  .mdc-top-app-bar {
+    $parent: &;
+    margin-left: 0;
+    width: 100%;
+    transition: margin $drawerAnimationSpeed, width $drawerAnimationSpeed;
+    @include mdc-top-app-bar-fill-color($mdc-theme-secondary);
+    @at-root #{$self}--with-side-bar#{$parent} {
+      margin-left: $drawerWidth;
+      width: calc(100% - #{$drawerWidth});
+      @media screen and (max-width: $material-responsive-breakpoint-tablet-min) {
+        margin-left: 0;
+        width: 100%;
+      }
+    }
+    & .mdc-menu {
+      & .mdc-list-item {
+        & .mdc-list-item__graphic {
+          margin-right: $default-spacing;
+        }
+      }
+    }
+  }
+  & &__content-wrapper {
+    $parent: &;
+    flex-grow: 1;
+    display: flex;
+    margin-left: 0;
+    width: 100%;
+    transition: margin $drawerAnimationSpeed;
+
+    @at-root #{$self}--with-side-bar#{$parent} {
+      margin-left: $drawerWidth;
+      width: calc(100% - #{$drawerWidth});
+      @media screen and (max-width: $material-responsive-breakpoint-tablet-min) {
+        margin-left: 0;
+        width: 100%;
+      }
+    }
+
+    & #{$self}__message-list {
+      background-color: #ffffff;
+      flex-grow: 1;
+      min-width: 0;
+    }
+    & #{$self}__message-viewer {
+      background-color: #ffffff;
+      flex-grow: 1;
+      min-width: 0;
+    }
+
+    & #{$self}__fab-container {
+      position: fixed;
+      right: $default-spacing;
+      bottom: $default-spacing;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  & &__message-editor-wrapper {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: $mdc-dialog-z-index;
+    .message-editor__scrim {
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      background-color: rgba(map-get($mdc-theme-property-values, on-surface), $mdc-dialog-scrim-opacity);
+    }
+    .message-editor {
+      $desktop-margin: 5%;
+      position: absolute;
+      left: $desktop-margin;
+      top: $desktop-margin;
+      right: $desktop-margin;
+      bottom: $desktop-margin;
+      z-index: 2;
+      @media screen and (max-width: $material-responsive-breakpoint-tablet-min) {
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+      }
+      @media screen and (min-width: #{$material-responsive-breakpoint-tablet-min + 1px}) {
+        @include mdc-shape-radius(medium);
+        @include mdc-elevation(24);
+      }
+    }
+  }
+}

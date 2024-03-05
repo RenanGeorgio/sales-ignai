@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import Navbar from "../../components/Navbar";
 import "../../styles/forms.css";
 
@@ -63,7 +63,7 @@ const Chat: React.FC = () => {
         {activePage === "Painel" && (
           <>
             <div className="graph-row">
-              <GraphChat />
+              <GraphChat data={{datasets: [], labels:[] }}/>
               <GraphTicket data={[50, 30, 20, 10]} />
             </div>
             <div className="graph-row">

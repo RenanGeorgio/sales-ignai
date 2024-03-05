@@ -66,6 +66,17 @@ export const ChatProvider = ({ children }: any) => {
   }, [socket, currentChat]);
 
   useEffect(() => {
+    if (socket === null) return;
+    socket.on("newUserChat", (user: any) => {
+      setUserChats((prev: any) => [...prev, user]);
+    });
+
+    return () => {
+      socket.off("newUserChat");
+    };
+  }, [socket]);
+
+  useEffect(() => {
     if (!userChats) return;
     const getClients = async () => {
       const response = await getRequest(`${baseUrl}/clients`);

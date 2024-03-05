@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ChatBox, Treatment } from "../../Chat/ChatBox";
+import { ChatBox } from "../../Chat/ChatBox";
 import { LeftMenu } from "../../Chat/LeftMenu";
 import "./layout.css";
 import { UserChat } from "../../Chat/UserChat";

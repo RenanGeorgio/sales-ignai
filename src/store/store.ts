@@ -14,6 +14,23 @@ import storage from "redux-persist/lib/storage"; // defaults to localStorage for
 import { sessionReducer as session } from "./session/sessionSlice";
 import { userReducer as user } from "./user/userSlice";
 import { leadsReducer as leads } from "./leads/leadsSlice";
+import emailCombinedReducer from "./email/reducers";
+// Email
+import { fetchConfiguration } from "services/email/configuration";
+import { loadState } from "services/email/state";
+import debounce from "services/email/debounce";
+
+const SAVE_STATE_DEBOUNCE_PERIOD_IN_MILLIS = 500;
+
+declare global {
+  interface Window {
+    isotopeConfiguration: any;
+  }
+}
+
+const [previousState, configuration] = await Promise.all([loadState(), fetchConfiguration()]);
+
+window.isotopeConfiguration = configuration;
 
 const persistConfig = {
   key: "root",
@@ -24,6 +41,7 @@ const rootReducer = combineReducers({
   session,
   user,
   leads,
+  email: emailCombinedReducer
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -36,6 +54,7 @@ const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
+    preloadedState: previousState
 });
 
 let persistor = persistStore(store);

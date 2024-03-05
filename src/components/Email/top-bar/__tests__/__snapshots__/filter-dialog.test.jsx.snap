@@ -1,0 +1,161 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterDialog component test suite Snapshot render Snapshot render, visible, should render filter-dialog 1`] = `
+<div
+  aria-hidden={false}
+  className="filter-dialog mdc-menu mdc-menu-surface
+    mdc-menu-surface--open"
+>
+  <ul
+    className="mdc-list mdc-list--dense"
+  >
+    <li
+      className="filter-dialog__item-text  mdc-list-item"
+    >
+      <input
+        className="text-field"
+        onChange={[Function]}
+        onMouseDown={[Function]}
+        value=""
+      />
+      <i
+        className="icon material-icons mdc-button__icon"
+      >
+        search
+      </i>
+    </li>
+    <li
+      className="filter-dialog__item-check mdc-list-item
+          mdc-list-item--selected"
+      key="ALL"
+      onClick={[Function]}
+    >
+      <i
+        className="check check--active material-icons"
+      >
+        check
+      </i>
+      messageList.filters.All
+    </li>
+    <li
+      className="filter-dialog__item-check mdc-list-item
+          "
+      key="READ"
+      onClick={[Function]}
+    >
+      <i
+        className="check  material-icons"
+      >
+        check
+      </i>
+      messageList.filters.Read
+    </li>
+    <li
+      className="filter-dialog__item-check mdc-list-item
+          "
+      key="UNREAD"
+      onClick={[Function]}
+    >
+      <i
+        className="check  material-icons"
+      >
+        check
+      </i>
+      messageList.filters.Unread
+    </li>
+    <li
+      className="filter-dialog__item-check mdc-list-item
+          "
+      key="FLAGGED"
+      onClick={[Function]}
+    >
+      <i
+        className="check  material-icons"
+      >
+        check
+      </i>
+      messageList.filters.Flagged
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`FilterDialog component test suite Snapshot render Snapshot render, visible=false, should render filter-dialog "hidden" 1`] = `
+<div
+  aria-hidden={true}
+  className="filter-dialog mdc-menu mdc-menu-surface
+    "
+>
+  <ul
+    className="mdc-list mdc-list--dense"
+  >
+    <li
+      className="filter-dialog__item-text  mdc-list-item"
+    >
+      <input
+        className="text-field"
+        onChange={[Function]}
+        onMouseDown={[Function]}
+        value=""
+      />
+      <i
+        className="icon material-icons mdc-button__icon"
+      >
+        search
+      </i>
+    </li>
+    <li
+      className="filter-dialog__item-check mdc-list-item
+          mdc-list-item--selected"
+      key="ALL"
+      onClick={[Function]}
+    >
+      <i
+        className="check check--active material-icons"
+      >
+        check
+      </i>
+      messageList.filters.All
+    </li>
+    <li
+      className="filter-dialog__item-check mdc-list-item
+          "
+      key="READ"
+      onClick={[Function]}
+    >
+      <i
+        className="check  material-icons"
+      >
+        check
+      </i>
+      messageList.filters.Read
+    </li>
+    <li
+      className="filter-dialog__item-check mdc-list-item
+          "
+      key="UNREAD"
+      onClick={[Function]}
+    >
+      <i
+        className="check  material-icons"
+      >
+        check
+      </i>
+      messageList.filters.Unread
+    </li>
+    <li
+      className="filter-dialog__item-check mdc-list-item
+          "
+      key="FLAGGED"
+      onClick={[Function]}
+    >
+      <i
+        className="check  material-icons"
+      >
+        check
+      </i>
+      messageList.filters.Flagged
+    </li>
+  </ul>
+</div>
+`;

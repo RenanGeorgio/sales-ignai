@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MessageSnackbar component test suite Snapshot render Renders hidden 1`] = `
+<Snackbar
+  alignStart={true}
+  buttonAction={[Function]}
+  buttonLabel=""
+  message=""
+  show={false}
+/>
+`;
+
+exports[`MessageSnackbar component test suite Snapshot render Renders with error 1`] = `
+<Snackbar
+  alignStart={true}
+  buttonAction={[Function]}
+  buttonLabel="messageSnackbar.retry"
+  message="messageSnackbar.messageError"
+  show={true}
+/>
+`;
+
+exports[`MessageSnackbar component test suite Snapshot render Renders with progress 1`] = `
+<Snackbar
+  alignStart={true}
+  buttonAction={[Function]}
+  buttonLabel=""
+  message="messageSnackbar.sendingMessage 133700"
+  show={true}
+/>
+`;
+
+exports[`MessageSnackbar component test suite Snapshot render Renders with sent status 1`] = `
+<Snackbar
+  alignStart={true}
+  buttonAction={[Function]}
+  buttonLabel=""
+  message="messageSnackbar.messageSent"
+  show={true}
+/>
+`;

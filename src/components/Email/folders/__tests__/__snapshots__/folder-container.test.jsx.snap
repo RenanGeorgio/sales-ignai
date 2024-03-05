@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FolderContainer component test suite Snapshot render, should render FolderContainer 1`] = `
+<nav
+  className="mdc-list"
+>
+  <Spinner
+    canvasClassName="spinnerCanvas"
+    className=""
+    pathClassName=""
+    visible={false}
+  />
+  <Connect(FolderListClass)
+    folderTree={
+      Array [
+        Object {
+          "folderTree": Array [],
+          "folders": Object {},
+        },
+      ]
+    }
+    folders={Object {}}
+  />
+  <div
+    isotip="sideBar.newFolder"
+    isotip-position="top"
+    isotip-size="small"
+  >
+    <IconButton
+      className="addButton"
+      disabled={false}
+      onClick={[Function]}
+    >
+      add_circle
+    </IconButton>
+  </div>
+  <Connect(Translate(FolderCreateDialog)) />
+  <Connect(Translate(FolderRenameDialog)) />
+</nav>
+`;

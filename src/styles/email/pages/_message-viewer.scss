@@ -1,0 +1,121 @@
+@import '../../../styles/email/partials/variables';
+
+$gravatar-size: 40px;
+$gravatar-margin: 6px;
+
+.message-viewer-menu {
+  $self: &;
+  right: 0;
+  min-width: 150px;
+  z-index: map-get($z-index, thermosphere);
+
+  .mdc-list-item {
+    white-space: nowrap;
+  }
+}
+
+.message-viewer {
+  $self: &;
+  position: relative;
+  padding: $default-spacing;
+  display: flex;
+  flex-direction: column;
+
+  & &__header {
+
+    & #{$self}__subject-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: $gravatar-margin;
+
+      & #{$self}__gravatar {
+        align-self: flex-start;
+        width: $gravatar-size;
+        height: $gravatar-size;
+        margin: 0 $gravatar-margin 0 0;
+
+        & #{$self}__gravatar-image {
+          border-radius: 50%;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
+        }
+      }
+      & #{$self}__subject {
+        flex: 1;
+        min-width: 0;
+        margin: 0;
+        font-size: 1.25 * $font-size-body;
+        font-weight: $font-weight-normal * 1.25;
+
+        & #{$self}__folder {
+          margin-left: $default-spacing;
+          height: 15px;
+          line-height: 15px;
+          font-size: 11px;
+        }
+      }
+    }
+    & #{$self}__from-date-container  {
+      display: flex;
+      flex-flow: row nowrap;
+      min-width: 0;
+
+      & #{$self}__from {
+        display: inline-block;
+        flex-grow: 1;
+        min-width: 0;
+        width: 1px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        & #{$self}__name {
+          font-size: 1.15 * $font-size-body;
+          margin-right: $default-spacing / 2;
+        }
+        & #{$self}__email {
+          color: lighten($base-color, 45%);
+          font-style: italic;
+        }
+      }
+      & #{$self}__date {
+        display: inline-block;
+        white-space: nowrap;
+      }
+    }
+    & #{$self}__to {
+      color: lighten($base-color, 45%);
+
+      & #{$self}__name {
+        margin-right: $default-spacing / 2;
+        color: lighten($base-color, 25%);
+      }
+    }
+  }
+  & #{$self}__body {
+    flex: 1;
+    height: 0;
+    margin-top: $default-spacing;
+    max-width: 100%;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    overflow: auto;
+
+    & #{$self}__attachments {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-bottom: $default-spacing;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    p {
+      margin: 0 auto;
+    }
+  }
+}

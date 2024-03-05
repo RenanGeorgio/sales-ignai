@@ -48,7 +48,7 @@ const Invoice: React.FC<InvoiceProps> = () => {
         {activePage === 'Painel' && (
           <>
             <div className='graph-row'>
-              <GraphChat />
+              <GraphChat data={{datasets: [], labels:[] }} />
               <GraphTicket data={[50, 30, 20, 10]}/>
             </div>
             <div className='graph-row'>

@@ -1,0 +1,24 @@
+@import '../../../styles/email/partials/variables';
+@import '@material/drawer/mdc-drawer';
+
+.side-bar {
+  &.dropZone {
+    background-color: darken($mdc-drawer-surface-fill-color, 15%);
+  }
+
+  .top-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    cursor: default;
+    color: $mdc-theme-secondary;
+
+    .toggle {
+      margin-left: auto;
+    }
+  }
+
+  .drawer-content {
+    overflow-y: auto;
+  }
+}

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthContext";
 import { SignInData, SignInResponse, User } from "../../../types";
-import { recoverUserInformation, signInRequest } from "../../provider/auth";
 import authApi from "../../../services/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { persistor, sessionActions, userActions } from "../../../store/store";

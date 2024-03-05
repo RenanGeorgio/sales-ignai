@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TopBarMessageList component test suite Snapshot render, with empty selected messages and not all unread, should render top bar message list 1`] = `
+<div
+  className="mdc-top-app-bar__row"
+>
+  <section
+    className="mdc-top-app-bar__section mdc-top-app-bar__section--align-start"
+  >
+    <Translate(ButtonCollapse)
+      collapsed={true}
+      sideBarToggle={[MockFunction]}
+    />
+    <span
+      className="mdc-top-app-bar__title"
+    >
+      sideshow bob
+    </span>
+  </section>
+  <section
+    className="mdc-top-app-bar__section mdc-top-app-bar__section--align-end"
+  >
+    <Connect(Translate(ButtonFilter)) />
+  </section>
+</div>
+`;
+
+exports[`TopBarMessageList component test suite Snapshot render, with selected messages and NOT all unread, should render top bar message list 1`] = `
+<div
+  className="mdc-top-app-bar__row"
+>
+  <section
+    className="mdc-top-app-bar__section mdc-top-app-bar__section--align-start"
+  >
+    <Translate(ButtonCollapse)
+      collapsed={true}
+      sideBarToggle={[MockFunction]}
+    />
+    <span
+      className="mdc-top-app-bar__title"
+    >
+      sideshow bob
+    </span>
+  </section>
+  <section
+    className="mdc-top-app-bar__section mdc-top-app-bar__section--align-end"
+  >
+    <span
+      isotip="topBar.delete"
+      isotip-position="bottom"
+      isotip-size="small"
+    >
+      <TopBarButton
+        className=""
+        onClick={[MockFunction]}
+      >
+        delete
+      </TopBarButton>
+    </span>
+    <span
+      isotip="topBar.markUnread"
+      isotip-position="bottom"
+      isotip-size="small"
+    >
+      <TopBarButton
+        className=""
+        onClick={[MockFunction]}
+      >
+        markunread
+      </TopBarButton>
+    </span>
+    <Connect(Translate(ButtonFilter)) />
+  </section>
+</div>
+`;
+
+exports[`TopBarMessageList component test suite Snapshot render, with selected messages and all unread, should render top bar message list 1`] = `
+<div
+  className="mdc-top-app-bar__row"
+>
+  <section
+    className="mdc-top-app-bar__section mdc-top-app-bar__section--align-start"
+  >
+    <Translate(ButtonCollapse)
+      collapsed={true}
+      sideBarToggle={[MockFunction]}
+    />
+    <span
+      className="mdc-top-app-bar__title"
+    >
+      sideshow bob
+    </span>
+  </section>
+  <section
+    className="mdc-top-app-bar__section mdc-top-app-bar__section--align-end"
+  >
+    <span
+      isotip="topBar.delete"
+      isotip-position="bottom"
+      isotip-size="small"
+    >
+      <TopBarButton
+        className=""
+        onClick={[MockFunction]}
+      >
+        delete
+      </TopBarButton>
+    </span>
+    <span
+      isotip="topBar.markRead"
+      isotip-position="bottom"
+      isotip-size="small"
+    >
+      <TopBarButton
+        className=""
+        onClick={[MockFunction]}
+      >
+        drafts
+      </TopBarButton>
+    </span>
+    <Connect(Translate(ButtonFilter)) />
+  </section>
+</div>
+`;

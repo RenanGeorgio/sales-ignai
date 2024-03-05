@@ -1,0 +1,11 @@
+@import '../../../styles/email/partials/variables';
+
+.spinnerCanvas {
+  width: 24px;
+}
+
+.addButton {
+  display: block;
+  margin: 0 auto;
+  color: $mdc-theme-primary;
+}

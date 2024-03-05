@@ -130,7 +130,7 @@ export const ChatBox = ({ toggleAddTicket }): React.JSX.Element => {
               <p>{message?.text}</p>
             </div>
             <div className={`message-time ${message?.senderId === user?.companyId ? 'time-left' : 'time-right'}`}>
-              <span>{dayjs().to(dayjs(message?.createdAt))}</span>
+              <span>{dayjs(message?.createdAt).format("HH:mm")}</span>
             </div>
           </div>
         ))}

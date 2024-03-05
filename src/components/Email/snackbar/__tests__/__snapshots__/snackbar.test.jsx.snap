@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snackbar component test suite Snapshot render Renders all elements 1`] = `
+<div
+  aria-atomic="true"
+  aria-hidden={false}
+  aria-live="assertive"
+  className="mdc-snackbar
+      
+      mdc-snackbar--leading
+      mdc-snackbar--open"
+>
+  <div
+    className="mdc-snackbar__surface"
+  >
+    <div
+      className="mdc-snackbar__label"
+    >
+      in a bottle
+    </div>
+    <div
+      className="mdc-snackbar__actions"
+    >
+      <button
+        className="mdc-button mdc-snackbar__action"
+        onClick={[Function]}
+        type="button"
+      >
+        White label
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Snackbar component test suite Snapshot render Renders all elements except button 1`] = `
+<div
+  aria-atomic="true"
+  aria-hidden={false}
+  aria-live="assertive"
+  className="mdc-snackbar
+      mdc-snackbar__no_action
+      mdc-snackbar--leading
+      mdc-snackbar--open"
+>
+  <div
+    className="mdc-snackbar__surface"
+  >
+    <div
+      className="mdc-snackbar__label"
+    >
+      in a bottle
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Snackbar component test suite Snapshot render Renders all elements, doesn't align start 1`] = `
+<div
+  aria-atomic="true"
+  aria-hidden={false}
+  aria-live="assertive"
+  className="mdc-snackbar
+      
+      
+      mdc-snackbar--open"
+>
+  <div
+    className="mdc-snackbar__surface"
+  >
+    <div
+      className="mdc-snackbar__label"
+    >
+      in a bottle
+    </div>
+    <div
+      className="mdc-snackbar__actions"
+    >
+      <button
+        className="mdc-button mdc-snackbar__action"
+        onClick={[Function]}
+        type="button"
+      >
+        White label
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Snackbar component test suite Snapshot render Renders all elements, hidden/not active 1`] = `
+<div
+  aria-atomic="true"
+  aria-hidden={true}
+  aria-live="assertive"
+  className="mdc-snackbar
+      
+      
+      "
+>
+  <div
+    className="mdc-snackbar__surface"
+  >
+    <div
+      className="mdc-snackbar__label"
+    >
+      in a bottle
+    </div>
+    <div
+      className="mdc-snackbar__actions"
+    >
+      <button
+        className="mdc-button mdc-snackbar__action"
+        onClick={[Function]}
+        type="button"
+      >
+        White label
+      </button>
+    </div>
+  </div>
+</div>
+`;

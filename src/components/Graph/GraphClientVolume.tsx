@@ -24,10 +24,10 @@ const GraphClientVolume: React.FC<GraphClientVolumeProps> = ({ month }) => {
             labels: ['6', '5', '4', '3', '2', '1'],
             datasets: [
               {
-                axis: 'y',
+                // axis: 'y',
                 label: '',
                 data: [35, 30, 20, 15, 15, 10],
-                fill: false,
+                // fill: false,
                 backgroundColor: [
                   'rgba(115, 103, 240, 1)',
                   'rgba(0, 207, 232, 1)',

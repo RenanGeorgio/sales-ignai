@@ -53,11 +53,11 @@ const ChartRevenue = () => {
   };
   
   const options = {
-    indexAxis: 'x',
+    // indexAxis: 'x',
     elements: {
       bar: {
         // borderWidth: 1,
-        width:5
+        // width:5
       },
     },
     responsive: true,

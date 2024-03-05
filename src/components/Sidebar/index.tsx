@@ -37,7 +37,7 @@ const Sidebar: React.FC<SidebarProps> = () => {
       <div className='section1'>
         <div className="sectionContainer">
         <p className={expanded ? 'show-text' : 'hide-text'}>Atendimento</p>
-        <Link className="link" to="/">
+        <Link className="link" to="/email">
           <div className="menu-item">
             <MailIcon />
             <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'>Email</p></span>

@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TopBarMessageViewer component test suite Snapshot render, should render top bar message viewer 1`] = `
+<div
+  className="mdc-top-app-bar__row"
+>
+  <section
+    className="mdc-top-app-bar__section mdc-top-app-bar__section--align-start"
+  >
+    <Translate(ButtonCollapse)
+      collapsed={true}
+      sideBarToggle={[MockFunction]}
+    />
+    <span
+      isotip="topBar.backToList"
+      isotip-position="bottom-start"
+      isotip-size="small"
+    >
+      <TopBarButton
+        className="mdc-top-app-bar__navigation-icon"
+        onClick={[MockFunction]}
+      >
+        arrow_back
+      </TopBarButton>
+    </span>
+  </section>
+  <section
+    className="mdc-top-app-bar__section mdc-top-app-bar__section--align-end"
+  >
+    <Translate(ButtonReplyAll)
+      outboxEmpty={true}
+      replyAllMessage={[MockFunction]}
+    />
+    <Translate(ButtonForward)
+      forwardMessage={[MockFunction]}
+      outboxEmpty={true}
+    />
+    <span
+      isotip="topBar.delete"
+      isotip-position="bottom"
+      isotip-size="small"
+    >
+      <TopBarButton
+        className=""
+        onClick={[MockFunction]}
+      >
+        delete
+      </TopBarButton>
+    </span>
+    <span
+      isotip="topBar.markUnread"
+      isotip-position="bottom-end"
+      isotip-size="small"
+    >
+      <TopBarButton
+        className=""
+        onClick={[MockFunction]}
+      >
+        markunread
+      </TopBarButton>
+    </span>
+    <Translate(ButtonMore)>
+      <Connect(Translate(MessageViewerMenu)) />
+    </Translate(ButtonMore)>
+  </section>
+</div>
+`;

@@ -71,7 +71,7 @@ const AddInfo: React.FC<AddInfoProps> = ({ setShowList }) => {
                 <div className="button-section">
                     <button className="gray">Descartar</button>
                     <button className="blue">Salvar</button>
-                    <button onClick={() => setShowList(true)} className="dark-blue">Publicar Pedido</button>
+                    <button onClick={() => setShowList()} className="dark-blue">Publicar Pedido</button>
                 </div>
             </div>
             <div style={{ display: 'flex', flexDirection: 'row' }}>

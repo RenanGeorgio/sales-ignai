@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FolderItem component test suite Snapshot render Context Menu Visible, Should render FolderItem with menu 1`] = `
+<a
+  className="the-one-percent mdc-list-item mdc-list-item__folder-item
+        listItem
+        mdc-list-item--activated
+        "
+  draggable={true}
+  href="#"
+  onDragLeave={[Function]}
+  onDragOver={[Function]}
+  onDragStart={[Function]}
+  onDrop={[Function]}
+  title="Red Label (13)"
+>
+  <span
+    className="material-icons mdc-list-item__graphic graphic"
+  >
+    Andy Warhol
+  </span>
+  <span
+    className="mdc-list-item__primary-text primaryText
+          hasNewMessages"
+  >
+    Red Label (13)
+  </span>
+  <span
+    className="actions visible "
+    onMouseLeave={[Function]}
+  >
+    <span
+      className="contextMenu"
+    >
+      <i
+        className="material-icons"
+        isotip="sideBar.folderList.delete"
+        isotip-position="bottom-end"
+        isotip-size="small"
+        onClick={[Function]}
+      >
+        delete
+      </i>
+      <i
+        className="material-icons"
+        isotip="sideBar.folderList.rename"
+        isotip-position="bottom-end"
+        isotip-size="small"
+        onClick={[Function]}
+      >
+        edit
+      </i>
+    </span>
+    <span
+      className="menuButton"
+    >
+      <i
+        className="material-icons"
+        isotip="sideBar.folderList.folderActions"
+        isotip-position="bottom-end"
+        isotip-size="small"
+        onClick={[Function]}
+      >
+        more_vert
+      </i>
+    </span>
+  </span>
+</a>
+`;
+
+exports[`FolderItem component test suite Snapshot render Defaults with actions, Should render FolderItem with hidden menu and actions 1`] = `
+<a
+  className="the-one-percent mdc-list-item mdc-list-item__folder-item
+        listItem
+        mdc-list-item--activated
+        "
+  draggable={true}
+  href="#"
+  onDragLeave={[Function]}
+  onDragOver={[Function]}
+  onDragStart={[Function]}
+  onDrop={[Function]}
+  title="Red Label (13)"
+>
+  <span
+    className="material-icons mdc-list-item__graphic graphic"
+  >
+    Andy Warhol
+  </span>
+  <span
+    className="mdc-list-item__primary-text primaryText
+          hasNewMessages"
+  >
+    Red Label (13)
+  </span>
+  <span
+    className="actions  "
+    onMouseLeave={[Function]}
+  >
+    <span
+      className="contextMenu"
+    >
+      <i
+        className="material-icons"
+        isotip="sideBar.folderList.delete"
+        isotip-position="bottom-end"
+        isotip-size="small"
+        onClick={[Function]}
+      >
+        delete
+      </i>
+      <i
+        className="material-icons"
+        isotip="sideBar.folderList.rename"
+        isotip-position="bottom-end"
+        isotip-size="small"
+        onClick={[Function]}
+      >
+        edit
+      </i>
+    </span>
+    <span
+      className="menuButton"
+    >
+      <i
+        className="material-icons"
+        isotip="sideBar.folderList.folderActions"
+        isotip-position="bottom-end"
+        isotip-size="small"
+        onClick={[Function]}
+      >
+        more_vert
+      </i>
+    </span>
+  </span>
+</a>
+`;
+
+exports[`FolderItem component test suite Snapshot render Defaults, Should render FolderItem with no menu and no actions 1`] = `
+<a
+  className="the-one-percent mdc-list-item mdc-list-item__folder-item
+        listItem
+        mdc-list-item--activated
+        "
+  draggable={true}
+  href="#"
+  onDragLeave={[Function]}
+  onDragOver={[Function]}
+  onDragStart={[Function]}
+  onDrop={[Function]}
+  title="Red Label (13)"
+>
+  <span
+    className="material-icons mdc-list-item__graphic graphic"
+  >
+    Andy Warhol
+  </span>
+  <span
+    className="mdc-list-item__primary-text primaryText
+          hasNewMessages"
+  >
+    Red Label (13)
+  </span>
+  <span
+    className="actions  "
+    onMouseLeave={[Function]}
+  >
+    <span
+      className="contextMenu"
+    />
+  </span>
+</a>
+`;

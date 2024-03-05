@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonCollapse component test suite Snapshot render, collapsed, should render button 1`] = `
+<span
+  isotip="topBar.showSideBar"
+  isotip-position="bottom-start"
+  isotip-size="small"
+>
+  <TopBarButton
+    className=""
+    onClick={[MockFunction]}
+  >
+    menu
+  </TopBarButton>
+</span>
+`;
+
+exports[`ButtonCollapse component test suite Snapshot render, not collapsed, should NOT render button 1`] = `""`;

@@ -1,0 +1,282 @@
+@import '../partials/variables';
+@import '@material/button/variables';
+@import '@material/chips/variables';
+@import '@material/chips/mixins';
+
+$editor-color: #333333 !default;
+$editor-container-padding: 8px !default;
+$editor-background-color: white !default;
+$editor-outline-color: $editor-color !default;
+$editor-border-color: lighten($editor-outline-color, 50%) !default;
+$editor-bottom-spacing: $default-spacing / 2;
+$header-field-spacing: $default-spacing / 2 !default;
+$header-label-color: lighten($base-color, 25%) !default;
+$header-chip-fill-color: white !default;
+$header-chip-outline-color: transparentize($editor-outline-color, 0.75) !default;
+$header-chip-margin: 2px 6px 2px 0;
+$header-chip-height: 25px;
+$action-buttons-height: 48px;
+.message-editor {
+  $self: &;
+  background-color: $editor-background-color;
+
+  & &__drop-zone {
+    pointer-events: none;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.05);
+
+    & #{$self}__drop-zone-message {
+      pointer-events: none;
+      position: absolute;
+      left: $default-spacing;
+      top: $default-spacing;
+      bottom: $default-spacing;
+      right: $default-spacing;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 4px dashed lighten($base-color, 50%);
+      border-radius: $default-spacing;
+      color: lighten($base-color, 40%);
+      font-size: 2.125 * $font-size-body;
+      text-align: center;
+
+      & #{$self}__drop-zone-icon {
+        font-size: 3 * $font-size-body;
+      }
+    }
+  }
+
+  & &__file-dialog-input {
+    display: none;
+  }
+
+  & &__header {
+    @media screen and (max-width: $material-responsive-breakpoint-tablet-min) {
+      margin-left: $default-spacing;
+      margin-right: $default-spacing;
+    }
+    input,
+    input:focus {
+      border: 0;
+      outline: 0;
+      color: $base-color;
+      font-family: $base-font-family;
+      font-size: $base-font-size;
+
+      &::placeholder {
+        color: $header-label-color;
+      }
+    }
+
+    & #{$self}__header-address {
+      display: flex;
+      flex-wrap: wrap;
+      padding: $header-field-spacing 0;
+      border-bottom: 1px solid $editor-border-color;
+
+      & #{$self}__header-chip {
+        $parent: &;
+        @include mdc-chip-fill-color($header-chip-fill-color);
+        @include mdc-chip-outline(1px, solid, $header-chip-outline-color);
+        @include mdc-chip-height($header-chip-height);
+        margin: $header-chip-margin;
+
+        & #{$self}__icon {
+          font-size: 15px;
+          height: 15px;
+          width: 15px;
+
+          &:hover {
+            color: darken($mdc-chip-ink-color-default, 30%);
+          }
+        }
+
+        @at-root #{$parent}--dragging {
+          &::before,
+          &::after {
+            display:none;
+          }
+        }
+      }
+
+      label {
+        margin-right: $header-field-spacing;
+        color: $header-label-color;
+        line-height: $header-chip-height;
+      }
+
+      & #{$self}__header-auto-suggest {
+        display: flex;
+        flex: 1;
+
+        & #{$self}__header-auto-suggest-menu {
+          left: 0;
+          top: 100%;
+          max-width: 100%;
+        }
+
+        input {
+          min-width: 60px;
+          flex: 1;
+        }
+      }
+    }
+
+    & #{$self}__header-subject {
+      input {
+        padding: $header-field-spacing 0;
+        width: 100%;
+      }
+    }
+  }
+
+  & &__wrapper {
+    flex: 1;
+    height: 1px;
+    min-height: 1px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $editor-border-color;
+    @media screen and (max-width: $material-responsive-breakpoint-tablet-min) {
+      height: initial;
+      min-height: initial;
+      margin-left: $default-spacing;
+      margin-right: $default-spacing;
+      border: 0;
+      border-top: 1px solid $editor-border-color;
+    }
+
+    & #{$self}__container {
+      flex: 1;
+
+      display: flex;
+      flex-direction: column;
+      overflow: auto;
+      height: 1px;
+      min-height: 1px;
+      padding: $editor-container-padding;
+      margin-bottom: $editor-container-padding;
+
+      & #{$self}__attachments {
+        margin-top: auto;
+
+        & #{$self}__attachment {
+          position: relative;
+          margin: 0 0 9px;
+          padding: 4px;
+          border: 1px solid transparent;
+          background-color: #f5f5f5;
+          font-size: $font-size-body-2;
+
+          display: flex;
+          align-items: center;
+
+          & #{$self}__file-name {
+            font-weight: $font-weight-bold;
+          }
+
+          & #{$self}__size {
+            margin-left: 4px;
+            font-size: $font-size-body-2 * 0.8;
+          }
+
+          & #{$self}__delete {
+            margin-left: auto;
+            min-width: auto;
+            height: 18px;
+            padding-right: 0;
+
+            & #{$self}__delete-icon {
+              padding: 0;
+            }
+          }
+        }
+      }
+    }
+
+    & #{$self}__button-container {
+      margin: auto $editor-container-padding $editor-container-padding $editor-container-padding;
+      display: flex;
+      flex-direction: row;
+      @media screen and (max-width: $material-responsive-breakpoint-tablet-min) {
+        position: fixed;
+        margin: 0;
+        height: $mdc-button-height;
+        bottom: $editor-bottom-spacing + $action-buttons-height;
+        left: 16px;
+        right: 16px;
+      }
+      & #{$self}__button {
+        min-width: auto;
+        color: $editor-color;
+
+        &:not(:first-child):not(:last-child) {
+          border-radius: 0;
+        }
+        &:first-child {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+        &:last-child {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+
+        &--active {
+          background-color: transparentize($editor-color, 0.93);
+        }
+
+        & #{$self}__button-icon {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  &  &__mobile-wrapper {
+    position: absolute;
+    top: $default-spacing;
+    left: $default-spacing;
+    bottom: #{$editor-bottom-spacing + $action-buttons-height};
+    right: $default-spacing;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: $material-responsive-breakpoint-tablet-min) {
+      display: block;
+      top: 0;
+      left: 0;
+      bottom: #{$editor-bottom-spacing + $mdc-button-height + $action-buttons-height};
+      right: 0;
+      overflow-y: auto;
+    }
+  }
+
+  & &__action-buttons {
+    position: absolute;
+    left: $default-spacing;
+    right: $default-spacing;
+    bottom: $editor-bottom-spacing;
+    height: $action-buttons-height;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    & #{$self}__action-button {
+      $parent: &;
+      @at-root #{$parent}#{$self}__send {
+        margin-left: 0;
+      }
+      @at-root #{$parent}#{$self}__cancel {
+        margin-left: auto;
+      }
+    }
+  }
+}

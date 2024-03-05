@@ -44,7 +44,7 @@ const ChartProjectStatus = () => {
   };
   
   const options = {
-    indexAxis: 'x',
+    // indexAxis: 'x',
     responsive: true,
     plugins: {
       legend: {

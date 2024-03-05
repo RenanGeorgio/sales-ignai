@@ -1,0 +1,67 @@
+@import '../../../styles/email/partials/variables';
+
+.listItem {
+  cursor: pointer;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: flex;
+
+  .graphic {
+    margin-right: $default-spacing;
+  }
+
+  .primaryText {
+    margin: 0px;
+    width: 1px;
+    min-width: 1px;
+    flex: 1;
+
+    &.hasNewMessages {
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  .actions {
+    display: none;
+    margin-right: -6px;
+
+    .contextMenu {
+      display:none;
+      transform: translateX(100%);
+      margin: 0;
+      padding: 0;
+    }
+
+    &.animating {
+      overflow: hidden;
+    }
+
+    &.visible {
+      $actions-menu-animation-duration: 0.5s; // Must match with component setTimeout for animation
+
+      .menuButton {
+        display: none;
+      }
+      .contextMenu {
+        display: block;
+        margin: -16px 0 -16px -16px;
+        padding: 16px 0 16px 16px;
+        max-height: 100%;
+
+        transform: translateX(0%);
+        animation: slide-in $actions-menu-animation-duration forwards;
+        @keyframes slide-in {
+          0% { transform: translateX(100%); }
+          99% { transform: translateX(0%); }
+        }
+      }
+    }
+  }
+
+  &:hover {
+    .actions {
+      display: block;
+    }
+  }
+}
