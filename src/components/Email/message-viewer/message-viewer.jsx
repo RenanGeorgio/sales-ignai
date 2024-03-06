@@ -115,9 +115,9 @@ MessageViewer.defaultProps = {
 };
 
 const mapStateToProps = state => ({
-  refreshMessageActiveRequests: state.application.refreshMessageActiveRequests,
+  refreshMessageActiveRequests: state.email.application.refreshMessageActiveRequests,
   currentFolder: getSelectedFolder(state) || {},
-  selectedMessage: state.application.selectedMessage
+  selectedMessage: state.email.application.selectedMessage
 });
 
 const mapDispatchToProps = dispatch => ({

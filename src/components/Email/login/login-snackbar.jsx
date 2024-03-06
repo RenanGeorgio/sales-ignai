@@ -22,7 +22,7 @@ export class LoginSnackbar extends Component {
   }
 }
 const mapStateToProps = state => ({
-  error: state.application.errors.authentication
+  error: state.email.application.errors.authentication
 });
 
 export default connect(mapStateToProps)(withTranslation()(LoginSnackbar));

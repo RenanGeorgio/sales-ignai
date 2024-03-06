@@ -91,8 +91,8 @@ SideBar.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  application: state.application,
-  errors: state.application.errors
+  application: state.email.application,
+  errors: state.email.application.errors
 });
 
 const mapDispatchToProps = dispatch => ({

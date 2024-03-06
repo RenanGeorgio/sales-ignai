@@ -117,10 +117,10 @@ FolderListClass.defaultProps = {
 };
 
 const mapStateToProps = state => ({
-  application: state.application,
+  application: state.email.application,
   selectedFolder: getSelectedFolder(state) || {},
-  foldersState: state.folders,
-  messages: state.messages
+  foldersState: state.email.folders,
+  messages: state.email.messages
 });
 
 const mapDispatchToProps = dispatch => ({

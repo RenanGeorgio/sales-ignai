@@ -142,8 +142,8 @@ export async function recoverState(userId, hash) {
  */
 export async function persistState(dispatch, state) {
   // Only persist state if it contains a folder and message cache (don't overwrite previously stored state with this info)
-  if (state.application.user.id && state.application.user.hash
-    && state.folders.items.length > 0 && Object.keys(state.messages.cache).length > 0) {
+  if (state.email.application.user.id && state.email.email.application.user.hash
+    && state.email.folders.items.length > 0 && Object.keys(state.email.messages.cache).length > 0) {
     // Create web-worker
     const worker = new SjclWorker();
     worker.onmessage = async encryptedStateMessage => {
@@ -152,16 +152,16 @@ export async function persistState(dispatch, state) {
         const db = await _openDatabaseSafe();
         const tx = db.transaction([STATE_STORE], 'readwrite');
         const store = tx.objectStore(STATE_STORE);
-        await store.put({key: state.application.user.id, value: encryptedStateMessage.data.encryptedData});
+        await store.put({key: state.email.application.user.id, value: encryptedStateMessage.data.encryptedData});
         await tx.complete;
         db.close();
-        if (state.application.errors.diskQuotaExceeded) {
+        if (state.email.application.errors.diskQuotaExceeded) {
           dispatch(setError('diskQuotaExceeded', false));
         }
       } catch (e) {
         // eslint-disable-next-line no-console
         console.error(`${e} ${e.name}`);
-        if (e.name === 'QuotaExceededError' && !state.application.errors.diskQuotaExceeded) {
+        if (e.name === 'QuotaExceededError' && !state.email.application.errors.diskQuotaExceeded) {
           dispatch(setError('diskQuotaExceeded', true));
         }
       }
@@ -171,7 +171,7 @@ export async function persistState(dispatch, state) {
 
     // Clone state
     const newState = {...state};
-    newState.application = {...state.application};
+    newState.application = {...state.email.application};
     newState.application.downloadedMessages = {};
     newState.application.outbox = null;
     if (newState.application.newMessage) {
@@ -196,7 +196,7 @@ export async function persistState(dispatch, state) {
 
     // Encrypt state
     const stateString = JSON.stringify(newState);
-    worker.postMessage({password: state.application.user.hash, data: stateString});
+    worker.postMessage({password: state.email.application.user.hash, data: stateString});
   }
 }
 /**

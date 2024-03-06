@@ -99,16 +99,16 @@ const mapStateToProps = state => {
   const selectedMessages = selectedFolderMessagesFilteredAndSelected(state);
   const selectedMessagesAllUnread = selectedMessages.filter(m => m.seen === true).length === 0;
   return ({
-    title: state.application.title,
-    newMessage: state.application.newMessage,
-    outbox: state.application.outbox,
+    title: state.email.application.title,
+    newMessage: state.email.application.newMessage,
+    outbox: state.email.application.outbox,
     selectedFolder: getSelectedFolder(state) || null,
     selectedMessagesIds: selectedMessagesIds(state),
     selectedMessages: selectedMessages,
     selectedMessage: selectedMessageSelector(state),
     selectedMessagesAllUnread: selectedMessagesAllUnread,
     credentials: getCredentials(state),
-    folders: state.folders
+    folders: state.email.folders
   });
 };
 

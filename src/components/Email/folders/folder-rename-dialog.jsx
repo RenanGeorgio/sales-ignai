@@ -33,8 +33,8 @@ FolderRenameDialog.defaultProps = {
 };
 
 const mapStateToProps = state => ({
-  application: state.application,
-  folderToRename: state.folders.explodedItems[state.application.renameFolderId] || null
+  application: state.email.application,
+  folderToRename: state.email.folders.explodedItems[state.email.application.renameFolderId] || null
 });
 
 const mapDispatchToProps = dispatch => ({

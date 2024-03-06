@@ -205,10 +205,10 @@ MessageList.defaultProps = {
 const mapStateToProps = state => ({
   credentials: getCredentials(state),
   selectedFolder: getSelectedFolder(state) || {},
-  activeRequests: state.messages.activeRequests,
+  activeRequests: state.email.messages.activeRequests,
   messages: selectedFolderMessagesFiltered(state),
-  selectedMessages: state.messages.selected,
-  downloadedMessages: state.application.downloadedMessages
+  selectedMessages: state.email.messages.selected,
+  downloadedMessages: state.email.application.downloadedMessages
 });
 
 const mapDispatchToProps = dispatch => ({

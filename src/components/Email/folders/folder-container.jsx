@@ -39,9 +39,9 @@ FolderContainer.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  activeRequests: state.folders.activeRequests,
-  folderTree: state.folders.items,
-  folders: state.folders.explodedItems
+  activeRequests: state.email.folders.activeRequests,
+  folderTree: state.email.folders.items,
+  folders: state.email.folders.explodedItems
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -45,7 +45,8 @@ const stateFromFormValues = formValues => ({
 export class Login extends Component {
   constructor(props) {
     super(props);
-    this.state = stateFromParams(new URLSearchParams(this.props.location.search));
+    console.log(props)
+    this.state = stateFromParams(new URLSearchParams(this.props.location?.search));
     if (this.props.formValues && Object.keys(this.props.formValues).length > 0) {
       this.state = stateFromFormValues(this.props.formValues);
     }
@@ -161,8 +162,8 @@ Login.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  application: state.application,
-  formValues: state.login.formValues
+  application: state.email.application,
+  formValues: state.email.login?.formValues
 });
 
 const mapDispatchToProps = dispatch => ({

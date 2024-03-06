@@ -393,16 +393,16 @@ MessageEditor.defaultProps = {
 };
 
 const mapStateToProps = state => ({
-  application: state.application,
+  application: state.email.application,
   credentials: getCredentials(state),
-  editedMessage: state.application.newMessage,
-  to: state.application.newMessage.to,
-  cc: state.application.newMessage.cc,
-  bcc: state.application.newMessage.bcc,
-  attachments: state.application.newMessage.attachments,
-  subject: state.application.newMessage.subject,
-  editor: state.application.newMessage.editor,
-  content: state.application.newMessage.content,
+  editedMessage: state.email.application.newMessage,
+  to: state.email.application.newMessage.to,
+  cc: state.email.application.newMessage.cc,
+  bcc: state.email.application.newMessage.bcc,
+  attachments: state.email.application.newMessage.attachments,
+  subject: state.email.application.newMessage.subject,
+  editor: state.email.application.newMessage.editor,
+  content: state.email.application.newMessage.content,
   getAddresses: value => getAddresses(value, cache(state))
 });
 

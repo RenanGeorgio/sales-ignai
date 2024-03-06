@@ -30,8 +30,8 @@ FolderCreateDialog.defaultProps = {
 };
 
 const mapStateToProps = state => ({
-  application: state.application,
-  folders: state.folders
+  application: state.email.application,
+  folders: state.email.folders
 });
 
 const mapDispatchToProps = dispatch => ({

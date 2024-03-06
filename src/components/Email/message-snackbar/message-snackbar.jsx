@@ -33,7 +33,7 @@ export class MessageSnackbar extends Component {
 }
 
 const mapStateToProps = state => ({
-  outbox: state.application.outbox
+  outbox: state.email.application.outbox
 });
 
 const mapDispatchToProps = dispatch => ({

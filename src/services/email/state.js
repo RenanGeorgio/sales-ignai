@@ -25,12 +25,12 @@ export async function loadState() {
   if (userId !== null && hash !== null) {
     const dbState = await recoverState(userId, hash);
     if (dbState && dbState.application && dbState.folders && dbState.messages) {
-      state.application = {...dbState.application};
-      state.folders.items = [...dbState.folders.items];
-      state.folders.explodedItems = {...dbState.folders.explodedItems};
+      state.email.application = {...dbState.application};
+      state.email.folders.items = [...dbState.folders.items];
+      state.email.folders.explodedItems = {...dbState.folders.explodedItems};
       processFolders(Object.values(state.folders.explodedItems));
-      state.login = {...dbState.login};
-      state.messages.cache = {...dbState.messages.cache};
+      state.email.login = {...dbState.login};
+      state.email.messages.cache = {...dbState.messages.cache};
     }
   }
   return state;
@@ -46,8 +46,8 @@ export async function loadState() {
  * @param state
  */
 export function saveState(dispatch, state) {
-  sessionStorage.setItem(KEY_USER_ID, state.application.user.id);
-  sessionStorage.setItem(KEY_HASH, state.application.user.hash);
+  sessionStorage.setItem(KEY_USER_ID, state.email.application.user.id);
+  sessionStorage.setItem(KEY_HASH, state.email.application.user.hash);
 
   persistState(dispatch, state);
 }

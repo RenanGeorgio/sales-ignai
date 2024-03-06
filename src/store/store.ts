@@ -28,16 +28,10 @@ declare global {
   }
 }
 
-try {
-  const [previousState, configuration] = await Promise.all([loadState(), fetchConfiguration()]);
-  console.log(previousState, configuration)
-} catch (error) {
-  console.log(error);
-}
 
+const [previousState, configuration] = await Promise.all([loadState(), fetchConfiguration()]);
 
-
-// window.isotopeConfiguration = configuration;
+window.isotopeConfiguration = configuration;
 
 const persistConfig = {
   key: "root",
@@ -52,7 +46,6 @@ const rootReducer = combineReducers({
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
-
 const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
@@ -60,8 +53,8 @@ const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }),
-    // preloadedState: previousState
+    })
+    
 });
 
 let persistor = persistStore(store);

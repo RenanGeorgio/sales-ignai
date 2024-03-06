@@ -144,9 +144,9 @@ Email.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  application: state.application,
+  application: state.email.application,
   credentials: getCredentials(state),
-  applicationNewMessage: state.application.newMessage,
+  applicationNewMessage: state.email.application.newMessage,
   selectedFolder: getSelectedFolder(state),
   outbox: outboxSelector(state),
   pollInterval: pollIntervalSelector(state)
