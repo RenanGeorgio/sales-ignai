@@ -7,5 +7,5 @@
  * @type {{LOGIN: string, FOLDERS: string}}
  */
 export const URLS = {
-  CONFIGURATION: '/api/v1/application/configuration'
+  CONFIGURATION: 'http://localhost:9010/v1/application/configuration'
 };

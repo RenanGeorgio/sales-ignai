@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {translate} from 'react-i18next';
+import {withTranslation} from 'react-i18next';
 import TopBarButton from './top-bar-button';
 
 export const ButtonCollapse = ({t, collapsed, sideBarToggle}) => (
@@ -15,4 +15,4 @@ ButtonCollapse.propTypes = {
   sideBarToggle: PropTypes.func.isRequired
 };
 
-export default translate()(ButtonCollapse);
+export default withTranslation()(ButtonCollapse);

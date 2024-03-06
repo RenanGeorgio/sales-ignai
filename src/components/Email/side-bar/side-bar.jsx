@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {translate} from 'react-i18next';
+import {withTranslation} from 'react-i18next';
 import PropTypes from 'prop-types';
 import FolderContainer from '../folders/folder-container';
 import {DroppablePayloadTypes} from '../folders/folder-list';
@@ -103,4 +103,4 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => (Object.assign({}, s
   moveFolderToFirstLevel: folder => dispatchProps.moveFolderToFirstLevel(stateProps.application.user, folder)
 }));
 
-export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(translate()(SideBar));
+export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(withTranslation()(SideBar));

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {translate} from 'react-i18next';
+import {withTranslation} from 'react-i18next';
 import mainCss from '../../../styles/email/main.scss';
 
 export const ComposeFabButton = ({t, onClick}) => (
@@ -18,4 +18,4 @@ ComposeFabButton.defaultProps = {
   onClick: () => {}
 };
 
-export default translate()(ComposeFabButton);
+export default withTranslation()(ComposeFabButton);

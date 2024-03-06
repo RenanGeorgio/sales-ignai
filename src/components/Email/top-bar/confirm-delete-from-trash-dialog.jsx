@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {translate} from 'react-i18next';
+import {withTranslation} from 'react-i18next';
 import Dialog from '../dialog/dialog';
 
 export const ConfirmDeleteFromTrashDialog = ({t, visible, cancelAction, deleteAction}) => {
@@ -25,4 +25,4 @@ ConfirmDeleteFromTrashDialog.propTypes = {
   deleteAction: PropTypes.func.isRequired
 };
 
-export default (translate()(ConfirmDeleteFromTrashDialog));
+export default (withTranslation()(ConfirmDeleteFromTrashDialog));

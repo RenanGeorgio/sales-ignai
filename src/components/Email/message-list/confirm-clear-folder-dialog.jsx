@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {translate} from 'react-i18next';
+import {withTranslation} from 'react-i18next';
 import Dialog from '../dialog/dialog';
 
 export const ConfirmClearFolderDialog = ({t, visible, cancelAction, deleteAction}) => {
@@ -25,4 +25,4 @@ ConfirmClearFolderDialog.propTypes = {
   deleteAction: PropTypes.func.isRequired
 };
 
-export default translate()(ConfirmClearFolderDialog);
+export default withTranslation()(ConfirmClearFolderDialog);

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {translate} from 'react-i18next';
+import {withTranslation} from 'react-i18next';
 import PropTypes from 'prop-types';
 import Autosuggest from 'react-autosuggest';
 import {validateEmail} from '../../../services/email/validation';
@@ -225,4 +225,4 @@ HeaderAddress.defaultProps = {
   onAddressMove: () => {}
 };
 
-export default (translate()(HeaderAddress));
+export default (withTranslation()(HeaderAddress));

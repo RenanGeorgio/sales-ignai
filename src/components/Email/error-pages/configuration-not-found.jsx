@@ -1,5 +1,5 @@
 import React from 'react';
-import {translate} from 'react-i18next';
+import {WithTranslation} from 'react-i18next';
 import mainCss from '../../styles/main.scss';
 
 export const ConfigurationNotFound = ({t}) => (
@@ -17,4 +17,4 @@ export const ConfigurationNotFound = ({t}) => (
   </div>
 );
 
-export default translate()(ConfigurationNotFound);
+export default WithTranslation()(ConfigurationNotFound);

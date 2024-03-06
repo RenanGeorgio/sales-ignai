@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {translate} from 'react-i18next';
+import {withTranslation} from 'react-i18next';
 import SingleInputDialog from '../dialog/single-input-dialog';
 import {renameFolder as actionRenameFolder} from '../../../store/email/actions/application';
 import {renameFolder as serviceRenameFolder} from '../../../services/email/folder';
@@ -48,4 +48,4 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => (Object.assign({}, s
     dispatchProps.renameFolder(stateProps.application.user, folderToRename, newName)
 }));
 
-export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(translate()(FolderRenameDialog));
+export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(withTranslation()(FolderRenameDialog));

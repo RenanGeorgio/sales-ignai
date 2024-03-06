@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {translate} from 'react-i18next';
+import {withTranslation} from 'react-i18next';
 import Spinner from '../spinner/spinner';
 import IconButton from '../buttons/icon-button';
 import FolderList from './folder-list';
@@ -48,4 +48,4 @@ const mapDispatchToProps = dispatch => ({
   createFolder: () => dispatch(createFolderAction(''))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(translate()(FolderContainer));
+export default connect(mapStateToProps, mapDispatchToProps)(withTranslation()(FolderContainer));

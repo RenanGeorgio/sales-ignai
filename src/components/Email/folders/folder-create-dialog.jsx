@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {translate} from 'react-i18next';
+import {withTranslation} from 'react-i18next';
 import SingleInputDialog from '../dialog/single-input-dialog';
 import {createFolder as actionCreateFolder} from '../../../store/email/actions/application';
 import {createChildFolder, createRootFolder} from '../../../services/email/folder';
@@ -53,4 +53,4 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => (Object.assign({}, s
   }
 }));
 
-export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(translate()(FolderCreateDialog));
+export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(withTranslation()(FolderCreateDialog));

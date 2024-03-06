@@ -16,7 +16,13 @@ const TABLET_BREAKPOINT_PX = 600;
  * @returns {Promise<Configuration>}
  */
 export async function fetchConfiguration() {
-  const response = await fetch(URLS.CONFIGURATION);
+  const response = await fetch(URLS.CONFIGURATION,{
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/hal+json;charset=UTF-8'
+    }
+  });
+  console.log(response)
   if (response.ok) {
     return await toJson(response);
   }

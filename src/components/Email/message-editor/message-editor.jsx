@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {translate} from 'react-i18next';
+import {withTranslation} from 'react-i18next';
 import PropTypes from 'prop-types';
 import {Editor} from '@tinymce/tinymce-react';
 import EDITOR_BUTTONS from './editor-buttons';
@@ -423,4 +423,4 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => (Object.assign({}, s
   close: () => dispatchProps.close(stateProps.application)
 }));
 
-export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(translate()(MessageEditor));
+export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(withTranslation()(MessageEditor));

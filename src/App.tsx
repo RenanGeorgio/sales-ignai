@@ -15,6 +15,7 @@ import Calendar from "./pages/Calendar";
 import Negocios from "./pages/Business";
 import Contact from "./pages/Contacts";
 import Invoice from "./pages/Invoice";
+import EmailLogin from "./components/Email/login/login"
 import CachingController from "./CachingController";
 import { AuthProvider } from "./contexts/auth/provider/AuthProvider";
 import SignInPage from "./pages/Auth/SignInPage";
@@ -25,7 +26,7 @@ import { Provider } from "react-redux";
 import { persistor, store } from "./store/store";
 import Anonymous from "./Anonymous";
 import { SidebarProvider } from "./contexts/sidebar/SidebarContext";
-import './styles/app.css';
+import "./styles/app.css";
 import NotFound from "./components/NotFound/NotFound";
 import { ChatProvider } from "./contexts/chat/ChatContext";
 
@@ -50,6 +51,7 @@ function App() {
                     <Route path="/chat" element={<Chat />} />
                     <Route path="/formulario" element={<Forms />} />
                     <Route path="/email" element={<Email />} />
+                    <Route path="/email-login" element={<EmailLogin />} />
                     <Route path="/estatisticas" element={<Statistics />} />
                     <Route path="/chatbot" element={<ChatBot />} />
                     <Route path="/whatsapp" element={<Whatsapp />} />

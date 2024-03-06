@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
-import {translate} from 'react-i18next';
+import {withTranslation} from 'react-i18next';
 import ButtonCollapse from './button-collapse';
 import TopBarButton from './top-bar-button';
 import ButtonFilter from './button-filter';
@@ -49,4 +49,4 @@ TopBarMessageList.propTypes = {
   onMarkUnreadClick: PropTypes.func.isRequired
 };
 
-export default translate()(TopBarMessageList);
+export default withTranslation()(TopBarMessageList);

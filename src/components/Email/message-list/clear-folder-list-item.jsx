@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {connect} from 'react-redux';
-import {translate} from 'react-i18next';
+import {withTranslation} from 'react-i18next';
 import Button from '../buttons/button';
 import ConfirmClearFolderDialog from './confirm-clear-folder-dialog';
 import {getCredentials} from '../../../store/email/selectors/application';
@@ -42,4 +42,4 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => (Object.assign({}, s
   clearFolder: () => dispatchProps.clearFolder(stateProps.credentials, stateProps.selectedFolder)
 }));
 
-export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(translate()(ClearFolderListItem));
+export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(withTranslation()(ClearFolderListItem));

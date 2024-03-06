@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {translate} from 'react-i18next';
+import {withTranslation} from 'react-i18next';
 import {
   setMessageFilterKey as setMessageFilterKeyAction,
   setMessageFilterText as setMessageFilterTextAction
@@ -74,4 +74,4 @@ const mapDispatchToProps = dispatch => ({
   setMessageFilterText: messageFilterText => dispatch(setMessageFilterTextAction(messageFilterText))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(translate()(FilterDialog));
+export default connect(mapStateToProps, mapDispatchToProps)(withTranslation()(FilterDialog));

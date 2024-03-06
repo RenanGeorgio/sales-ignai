@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {translate} from 'react-i18next';
+import {withTranslation} from 'react-i18next';
 import TopBarButton from './top-bar-button';
 
 export const ButtonReplyAll = ({t, outboxEmpty, replyAllMessage}) => (
@@ -15,4 +15,4 @@ ButtonReplyAll.propTypes = {
   replyAllMessage: PropTypes.func.isRequired
 };
 
-export default translate()(ButtonReplyAll);
+export default withTranslation()(ButtonReplyAll);

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {translate} from 'react-i18next';
+import {withTranslation} from 'react-i18next';
 import TopBarButton from './top-bar-button';
 
 export const ButtonForward = ({t, outboxEmpty, forwardMessage}) => (
@@ -15,4 +15,4 @@ ButtonForward.propTypes = {
   forwardMessage: PropTypes.func.isRequired
 };
 
-export default translate()(ButtonForward);
+export default withTranslation()(ButtonForward);

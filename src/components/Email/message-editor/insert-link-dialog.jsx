@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Dialog from '../dialog/dialog';
 import TextField from '../form/text-field/text-field';
-import {translate} from 'react-i18next';
+import {withTranslation} from 'react-i18next';
 import mainCss from '../../../styles/email/main.scss';
 
 export class InsertLinkDialog extends Component {
@@ -58,4 +58,4 @@ InsertLinkDialog.defaultProps = {
   visible: false
 };
 
-export default (translate()(InsertLinkDialog));
+export default (withTranslation()(InsertLinkDialog));

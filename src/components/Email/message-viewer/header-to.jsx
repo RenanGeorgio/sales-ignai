@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {translate} from 'react-i18next';
+import {withTranslation} from 'react-i18next';
 import {addressGroups} from './message-viewer';
 import styles from './header-to.scss';
 
@@ -107,4 +107,4 @@ HeaderTo.propTypes = {
   recipients: PropTypes.array.isRequired
 };
 
-export default (translate()(HeaderTo));
+export default (withTranslation()(HeaderTo));

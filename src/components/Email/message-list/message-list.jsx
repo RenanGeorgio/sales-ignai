@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
-import {translate} from 'react-i18next';
+import {withTranslation} from 'react-i18next';
 import PropTypes from 'prop-types';
 import {AutoSizer, List} from 'react-virtualized';
 import Checkbox from '../form/checkbox/checkbox';
@@ -230,4 +230,4 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => (Object.assign({}, s
     stateProps.credentials, stateProps.selectedFolder, message)
 }));
 
-export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(translate()(MessageList));
+export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(withTranslation()(MessageList));

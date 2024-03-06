@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Snackbar from '../snackbar/snackbar';
-import {translate} from 'react-i18next';
+import {withTranslation} from 'react-i18next';
 
 export class LoginSnackbar extends Component {
   constructor(props) {
@@ -25,4 +25,4 @@ const mapStateToProps = state => ({
   error: state.application.errors.authentication
 });
 
-export default connect(mapStateToProps)(translate()(LoginSnackbar));
+export default connect(mapStateToProps)(withTranslation()(LoginSnackbar));

@@ -1,21 +1,22 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {Redirect, withRouter} from 'react-router-dom';
-import {translate} from 'react-i18next';
+import {Link} from 'react-router-dom';
+import {withTranslation} from 'react-i18next';
 import {
   DEFAULT_IMAP_PORT,
   DEFAULT_IMAP_SSL,
   DEFAULT_SMTP_PORT,
   DEFAULT_SMTP_SSL,
   login
-} from '../../services/application';
+} from '../../../services/email/application';
 import Button from '../buttons/button';
 import LoginSnackbar from './login-snackbar';
 import Switch from '../form/switch/switch';
 import TextField from '../form/text-field/text-field';
 import Spinner from '../spinner/spinner';
-import mainCss from '../../styles/main.scss';
+import mainCss from '../../../styles/email/main.scss';
 import styles from './login.scss';
+import withRouter from 'hooks/withRouter';
 
 /**
  * Returns a Login component valid state from the current URL params
@@ -54,10 +55,11 @@ export class Login extends Component {
 
   render() {
     const t = this.props.t;
+    console.log(this.props)
     const {serverHost, serverPort, user, password, imapSsl, smtpHost, smtpPort, smtpSsl} = this.state.values;
     const {advanced} = this.state;
     if (this.props.application.user.credentials) {
-      return <Redirect to="/"/>;
+      return <Link to="/"/>;
     }
     return (
       <div className={styles['login--background']}>
@@ -167,4 +169,4 @@ const mapDispatchToProps = dispatch => ({
   dispatchLogin: credentials => login(dispatch, credentials)
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(translate()(withRouter(Login)));
+export default connect(mapStateToProps, mapDispatchToProps)(withTranslation()(withRouter(Login)));

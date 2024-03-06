@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {translate} from 'react-i18next';
+import {withTranslation} from 'react-i18next';
 import {FolderTypes} from '../../../services/email/folder';
 import styles from './folder-item.scss';
 import mainCss from '../../../styles/email/main.scss';
@@ -146,4 +146,4 @@ FolderItem.defaultProps = {
   onDelete: null
 };
 
-export default translate()(FolderItem);
+export default withTranslation()(FolderItem);

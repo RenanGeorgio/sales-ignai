@@ -2,9 +2,7 @@ import idb from 'idb';
 import sjcl from 'sjcl';
 import {processFolders} from './folder';
 import {setError} from '../../store/email/actions/application';
-// disable eslint for worker-loader
-// eslint-disable-next-line import/no-webpack-loader-syntax
-import SjclWorker from 'worker-loader?name=sjcl.worker.[hash].js&inline!./sjcl.worker.js';
+import SjclWorker from './sjcl.worker.js';
 
 const DATABASE_NAME = 'isotope';
 const DATABASE_VERSION = 2;

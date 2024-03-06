@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {translate} from 'react-i18next';
+import {withTranslation} from 'react-i18next';
 import ButtonCollapse from './button-collapse';
 import ButtonForward from './button-forward';
 import ButtonMore from './button-more';
@@ -52,4 +52,4 @@ TopBarMessageViewer.propTypes = {
   onMarkUnreadClick: PropTypes.func.isRequired
 };
 
-export default translate()(TopBarMessageViewer);
+export default withTranslation()(TopBarMessageViewer);

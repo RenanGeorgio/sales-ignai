@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import {translate} from 'react-i18next';
+import {withTranslation} from 'react-i18next';
 import DownloadListItem from './download-list-item';
 import ListUnsubscribeListItem from './list-unsubscribe-list-item';
 import ReplyListItem from './reply-list-item';
@@ -52,4 +52,4 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => (Object.assign({}, s
   replyMessage: () => dispatchProps.replyMessage(stateProps.selectedMessage)
 }));
 
-export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(translate()(MessageViewerMenu));
+export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(withTranslation()(MessageViewerMenu));

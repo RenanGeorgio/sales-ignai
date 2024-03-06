@@ -28,9 +28,16 @@ declare global {
   }
 }
 
-const [previousState, configuration] = await Promise.all([loadState(), fetchConfiguration()]);
+try {
+  const [previousState, configuration] = await Promise.all([loadState(), fetchConfiguration()]);
+  console.log(previousState, configuration)
+} catch (error) {
+  console.log(error);
+}
 
-window.isotopeConfiguration = configuration;
+
+
+// window.isotopeConfiguration = configuration;
 
 const persistConfig = {
   key: "root",
@@ -54,7 +61,7 @@ const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
-    preloadedState: previousState
+    // preloadedState: previousState
 });
 
 let persistor = persistStore(store);

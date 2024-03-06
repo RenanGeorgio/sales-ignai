@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Snackbar from '../snackbar/snackbar';
-import {translate} from 'react-i18next';
+import {withTranslation} from 'react-i18next';
 import {outboxMessageProcessed} from '../../../store/email/actions/application';
 import {editMessageAsNew} from '../../../services/email/application';
 
@@ -47,4 +47,4 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => (Object.assign({}, s
   retry: () => dispatchProps.retry(stateProps.outbox)
 }));
 
-export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(translate()(MessageSnackbar));
+export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(withTranslation()(MessageSnackbar));

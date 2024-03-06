@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {translate} from 'react-i18next';
+import {withTranslation} from 'react-i18next';
 import TopBarButton from './top-bar-button';
 import FilterDialog from './filter-dialog';
 import {messageFilterActive} from '../../../store/email/selectors/application';
@@ -56,4 +56,4 @@ const mapStateToProps = state => ({
   active: messageFilterActive(state)
 });
 
-export default connect(mapStateToProps)(translate()(ButtonFilter));
+export default connect(mapStateToProps)(withTranslation()(ButtonFilter));
