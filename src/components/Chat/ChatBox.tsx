@@ -21,6 +21,7 @@ dayjs.locale('pt-br')
 export const ChatBox = ({ toggleAddTicket }): React.JSX.Element => {
   const [exibirAddTicket, setExibirAddTicket] = useState(false);
   const [showAddTicket, setShowAddTicket] = useState(false);
+  const [showHeader, setShowHeader] = useState(false);
 
   const { user } = useAuth();
 
@@ -29,7 +30,38 @@ export const ChatBox = ({ toggleAddTicket }): React.JSX.Element => {
 
   const { recipientUser } = useFetchRecipient(currentChat, user);
 
-  if (!recipientUser) return <p>Nenhuma conversa selecionada.</p>;
+  if (!recipientUser) 
+  return(
+    <div className="headerBoxChat">
+    <div className="initial-info">
+     
+      <div className="name-time">
+    
+        {/* <div className="text-wrapper-5">1 Minute</div> */}
+      </div>
+
+ 
+    </div>
+    <div className="rightContainer">
+      <div className="rightContent">
+        <IconButton className="img-4">
+          <Phone />
+        </IconButton>
+        <IconButton className="img-4">
+          <Video className={undefined} />
+        </IconButton>
+        <IconButton className="img-4">
+          <Search className={undefined} />
+        </IconButton>
+        <IconButton className="img-4">
+          <DotsVertical className={undefined} />
+        </IconButton>
+      </div>
+    </div>
+  </div>
+    )
+  
+  // return <p>Nenhuma conversa selecionada.</p>;;
 
   const handleSendMessage = (textMessage, setTextMessage) => {
     sendTextMessage(textMessage, user, currentChat._id, setTextMessage);
@@ -85,7 +117,8 @@ export const ChatBox = ({ toggleAddTicket }): React.JSX.Element => {
   
   return (
     <div className="containerchat">
-      <div className="header">
+
+      <div className="headerBoxChat">
         <div className="initial-info">
           <img
             className="img-avatar"
@@ -118,6 +151,7 @@ export const ChatBox = ({ toggleAddTicket }): React.JSX.Element => {
           </div>
         </div>
       </div>
+      
       <div className="chat">
         {messages?.map((message: any, index: number) => (
           <div key={index} className={`message-wrapper`}>

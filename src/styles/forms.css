@@ -42,9 +42,10 @@
   justify-content: flex-start;
   gap: 5px; 
   font-size: 18px;
-  margin-bottom: 20px;
-  margin-top: 10px;
+  margin-bottom: 26px;
+  margin-top: 26px;
   margin-left: 6%;
+  width: 742px;
 }
 
 .gray-button {
@@ -158,34 +159,36 @@
 
 .buttonContainer {
   display: flex;
-  gap: 5px;
+  gap: 1px;
   margin-left: 6%;
-  margin-bottom: 15px;
+  margin-top: 26px;
+  margin-bottom: 26px;
 }
   
-.blueButton {
+.blueButtonChat {
   background-color: rgba(115, 103, 240, 1);
   color: white;
-  padding: 5px 10px;
+  padding: 10px 10px;
   border: none;
   border-radius: 5px;
-  margin-right: 10px;
-  left: 0%;
+  margin-right: 1px;
   cursor: pointer; 
   align-items: center;
   display: flex;
+  font-weight: inherit;
 }
 
-.grayButton {
-  background-color: rgba(168, 170, 174, 0.397);
-  color: rgba(168, 170, 174, 1);
-  padding: 5px 10px;
+.grayButtonChat {
+  background-color: rgba(114, 103, 240, 0.134);
+  color: rgba(115, 103, 240, 1);
+  padding: 10px 10px;
   border: none;
   border-radius: 5px;
-  margin-right: 10px;
+  margin-right: 1px;
   cursor: pointer; 
   align-items: center;
   display: flex;
+  font-weight: inherit;
 }
 
 .send-button {

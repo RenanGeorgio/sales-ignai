@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useChat from "../../hooks/useChat";
 import { useFetchRecipient } from "../../hooks/useFetchRecipient";
 import { OnlineUser } from "../../types";
@@ -34,8 +34,14 @@ export const UserChat = ({ chat, user }) => {
     }
   };
 
+  const [isSelected, setIsSelected] = useState(false);
+
+  const handleClick = () => {
+    setIsSelected(!isSelected);
+  };
+
   return (
-    <div className="list">
+    <div className="listLeftClient">
       <img src={Avatar2} alt="Avatar" className="avatar-client" />
       <div className="text-2">
         <div className="list-icon-chat">

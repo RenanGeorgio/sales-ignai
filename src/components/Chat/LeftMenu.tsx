@@ -44,7 +44,7 @@ export const LeftMenu = ({ onAddTicketClick, children }) => {
           {/* <ChevronDown1 className="icon-instance-node" /> */}
         </div>
         <div className="div-content">
-          <div className="list">
+          <div className="listLeftLead">
             <div className="text-2">
               <img
                 className="img-2"

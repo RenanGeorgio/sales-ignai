@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import Navbar from "../../components/Navbar";
 import "../../styles/forms.css";
 
@@ -9,11 +9,6 @@ import GraphChat from "../../components/Graph/GraphChat";
 import GraphTicket from "../../components/Graph/GraphTicket";
 import GraphTicketYou from "../../components/Graph/GraphTicketYou";
 import GraphThemes from "../../components/Graph/GraphThemes";
-import {
-  BellIcon,
-  FileTextIcon,
-  UsersIcon,
-} from "../../components/Image/icons";
 
 const Chat: React.FC = () => {
   const [activePage, setActivePage] = useState("Atendimento");
@@ -24,28 +19,23 @@ const Chat: React.FC = () => {
   return (
     <div style={{ overflow: "hidden" }} className="page-content">
       <Navbar />
-      <h1 className="titleChat">Chat</h1>
       <div className="button-container">
         <button
-          className={activePage === "Atendimento" ? "blueButton" : "grayButton"}
+          className={activePage === "Atendimento" ? "blueButtonChat" : "grayButtonChat"}
           onClick={() => handleButtonClick("Atendimento")}
         >
-          <UsersIcon />
           Atendimento
         </button>
         <button
-          className={activePage === "Histórico" ? "blueButton" : "grayButton"}
+          className={activePage === "Histórico" ? "blueButtonChat" : "grayButtonChat"}
           onClick={() => handleButtonClick("Histórico")}
         >
-          {/* <img src={"sino"} alt="Link" /> */}
-          <BellIcon />
           Histórico
         </button>
         <button
-          className={activePage === "Painel" ? "blueButton" : "grayButton"}
+          className={activePage === "Painel" ? "blueButtonChat" : "grayButtonChat"}
           onClick={() => handleButtonClick("Painel")}
         >
-          <FileTextIcon />
           Painel
         </button>
       </div>
