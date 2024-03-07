@@ -16,7 +16,10 @@ const messages = (state = INITIAL_STATE.messages, action = {}) => {
       return newState;
     }
     case ActionTypes.MESSAGES_UPDATE_CACHE: {
+      console.log(state)
+      console.log(action.payload)
       const newUpdateState = {...state};
+      console.log(newUpdateState)
       newUpdateState.cache = {...newUpdateState.cache};
       if (newUpdateState.cache[action.payload.folder.folderId] instanceof Map === false) {
         newUpdateState.cache[action.payload.folder.folderId] = new Map();

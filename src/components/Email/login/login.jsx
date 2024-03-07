@@ -60,7 +60,7 @@ export class Login extends Component {
     const {serverHost, serverPort, user, password, imapSsl, smtpHost, smtpPort, smtpSsl} = this.state.values;
     const {advanced} = this.state;
     if (this.props.application.user.credentials) {
-      return <Link to="/"/>;
+      return <Link to="/email"/>;
     }
     return (
       <div className={styles['login--background']}>

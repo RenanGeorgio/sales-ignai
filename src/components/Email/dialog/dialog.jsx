@@ -34,7 +34,7 @@ class Dialog extends Component {
         <div className={mainCss['mdc-dialog__scrim']} onClick={scrimClick}></div>
       </div>
     );
-    return ReactDOM.createPortal(dialog, modalRoot);
+    return modalRoot && ReactDOM.createPortal(dialog, modalRoot);
   }
 }
 

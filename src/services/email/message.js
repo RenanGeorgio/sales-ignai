@@ -16,6 +16,7 @@ import {abortControllerWrappers, abortFetch, AuthenticationException, credential
 import {persistMessageCache} from './indexed-db';
 import {notifyNewMail} from './notification';
 import {FolderTypes} from './folder';
+import {EventSourcePolyfill} from "event-source-polyfill";
 
 const _eventSourceWrappers = {};
 
@@ -52,7 +53,8 @@ export async function resetFolderMessagesCache(dispatch, user, folder) {
   if (folder) {
     const allMessages = [];
     // Prefer EventSourcePolyfill instead of EventSource to allow sending HTTP headers in all browsers
-    const es = new window.EventSourcePolyfill(
+    console.log(window)
+    const es = new EventSourcePolyfill(
       getIsotopeConfiguration()._links['folders.messages'].href.replace('{folderId}', folder.folderId), {
         headers: credentialsHeaders(user.credentials)
       });
@@ -61,6 +63,7 @@ export async function resetFolderMessagesCache(dispatch, user, folder) {
     let isFirstBatch = true;
     es.onmessage = e => {
       const messages = JSON.parse(e.data);
+      console.log(messages)
       allMessages.push(...messages);
 
       // Remove UIDs not included in batch update from store

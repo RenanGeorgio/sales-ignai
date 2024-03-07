@@ -28,6 +28,8 @@
     "crypto-js": "^4.2.0",
     "dayjs": "^1.11.10",
     "dompurify": "^1.0.7",
+    "event-source-polyfill": "^1.0.31",
+    "eventsource": "^2.0.2",
     "flowchart-react": "^3.16.1",
     "i18next": "^23.10.0",
     "i18next-http-backend": "^2.5.0",
@@ -53,13 +55,11 @@
     "react-scripts": "^5.0.1",
     "react-virtualized": "^9.20.1",
     "redux-persist": "^6.0.0",
-    "sass": "^1.71.1",
     "semantic-ui-css": "^2.5.0",
     "semantic-ui-react": "^2.1.5",
     "sjcl": "^1.0.8",
     "socket.io-client": "^4.7.4",
     "web-vitals": "^2.1.4",
-    "webpack": "^5.89.0",
     "worker-loader": "^3.0.8"
   },
   "scripts": {
@@ -114,11 +114,12 @@
     "babel-plugin-inline-react-svg": "^2.0.2",
     "crypto": "^1.0.1",
     "css-loader": "^6.10.0",
+    "mini-css-extract-plugin": "^2.8.1",
+    "sass": "^1.71.1",
+    "sass-loader": "^10.1.1",
+    "style-loader": "^3.3.4",
     "typescript": "^4.9.5",
     "vite-plugin-react-svg": "^0.2.0",
-    "webpack-dev-server": "^5.0.2"
-  },
-  "browser": {
-    "crypto": false
+    "webpack": "^5.90.3"
   }
 }

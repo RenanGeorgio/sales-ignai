@@ -28,9 +28,15 @@ declare global {
   }
 }
 
+const [previousState, configuration] = await Promise.all([
+  loadState(),
+  fetchConfiguration(),
+]).catch((error) => {
+  console.error("Failed to load state or configuration", error);
+  return [null, null];
+});
 
-const [previousState, configuration] = await Promise.all([loadState(), fetchConfiguration()]);
-
+console.log(configuration, previousState);
 window.isotopeConfiguration = configuration;
 
 const persistConfig = {
@@ -42,7 +48,7 @@ const rootReducer = combineReducers({
   session,
   user,
   leads,
-  email: emailCombinedReducer
+  email: emailCombinedReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -53,8 +59,7 @@ const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    })
-    
+    }),
 });
 
 let persistor = persistStore(store);
