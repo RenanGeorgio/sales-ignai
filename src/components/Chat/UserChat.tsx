@@ -34,25 +34,22 @@ export const UserChat = ({ chat, user }) => {
     }
   };
 
-  const [isSelected, setIsSelected] = useState(false);
-
-  const handleClick = () => {
-    setIsSelected(!isSelected);
-  };
 
   return (
-    <div className="listLeftClient">
+    <div className="messageBubble">
+    <div className="avatarWithName">
+      <div className='imageName'>
       <img src={Avatar2} alt="Avatar" className="avatar-client" />
-      <div className="text-2">
-        <div className="list-icon-chat">
-          { getChatIcon() }
-        </div>
-        <div className="namr-time">
-          <div className="text-wrapper-4">{ `${recipientUser?.name} ${recipientUser?.lastName}`}</div>
-          <div className="text-wrapper-5">{isOnline ? "online" : "offline"}</div>
-        </div>
-        <div className="text-wrapper-6"></div>
+      <div className="name">{ `${recipientUser?.name} ${recipientUser?.lastName}`}</div>
       </div>
+      <div className={isOnline ? "online" : "offline"}></div>
     </div>
+    <div className="messageDetails">
+      <div className="companyName">Fazenda Boa Esperança</div>
+      {/* <div className="time">1 Minute</div> */}
+    </div>
+    <div className="messageLogo">{ getChatIcon() }</div>
+  </div>
+  
   );
 };

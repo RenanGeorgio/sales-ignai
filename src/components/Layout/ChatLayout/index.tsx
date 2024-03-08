@@ -22,7 +22,7 @@ export default function LayoutChat() {
   } = useChat();
 
   return (
-      <div className="contenido">
+      <div className="wrapper-box">
     <div className="wrapp">
       <div className="side">
         <LeftMenu onAddTicketClick={toggleAddTicket}>
