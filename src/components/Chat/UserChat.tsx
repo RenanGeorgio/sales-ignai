@@ -45,7 +45,7 @@ export const UserChat = ({ chat, user }) => {
       <div className={isOnline ? "online" : "offline"}></div>
     </div>
     <div className="messageDetails">
-      <div className="companyName">Fazenda Boa Esperança</div>
+      <div className="companyName">Fazenda Minas Pro</div>
       {/* <div className="time">1 Minute</div> */}
     </div>
     <div className="messageLogo">{ getChatIcon() }</div>
