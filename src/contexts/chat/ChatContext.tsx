@@ -3,6 +3,7 @@ import { baseUrl, postRequest, getRequest } from "../../utils/chatService";
 import useAuth from "../../hooks/useAuth";
 import { io } from "socket.io-client";
 import { OnlineUser } from "../../types";
+import Cookies from "js-cookie";
 
 export const ChatContext = createContext<any>(null);
 
@@ -24,7 +25,11 @@ export const ChatProvider = ({ children }: any) => {
   const { user } = useAuth();
 
   useEffect(() => {
-    const newSocket = io(process.env.REACT_APP_SERVER_API as string);
+    const newSocket = io(process.env.REACT_APP_SERVER_API as string, {
+      auth: {
+        token: "Bearer " + Cookies.get("token"),
+      }
+    });
     setSocket(newSocket);
 
     return () => {
