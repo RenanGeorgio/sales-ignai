@@ -95,7 +95,7 @@ export default function HistoryComponent() {
     const handleClose = () => setOpen(false);
     return (
 
-        <div style={{ width: '94%', height: '100%', paddingTop: 2, paddingBottom: 24, paddingLeft: 80, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', gap: 1, display: 'inline-flex' }}>
+        <div style={{ width: '94%', height: '100%', paddingTop: 2, paddingBottom: 24, paddingLeft: 90, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', gap: 1, display: 'inline-flex' }}>
             <div style={{ borderRadius: 6, overflow: 'hidden', justifyContent: 'end', alignItems: 'flex-start', display: 'flex', width: '100%' }}>
                 <div style={{ borderTopLeftRadius: 5, borderBottomLeftRadius: 5, paddingLeft: 10, paddingRight: 10, background: '#DEDBFC', borderRight: '1px rgba(115, 103, 240, 0.24) solid', justifyContent: 'end', alignItems: 'center', display: 'flex' }}>
                     <Button>meus</Button>

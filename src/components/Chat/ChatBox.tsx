@@ -29,7 +29,32 @@ export const ChatBox = ({ toggleAddTicket }): React.JSX.Element => {
 
   const { recipientUser } = useFetchRecipient(currentChat, user);
 
-  if (!recipientUser) return <p>Nenhuma conversa selecionada.</p>;
+  if (!recipientUser)
+    return (
+      <div className="headerBoxChat">
+        <div className="initial-info">
+          <div className="name-time">
+          </div>
+        </div>
+        <div className="rightContainer">
+          <div className="rightContent">
+            <IconButton className="img-4">
+              <Phone />
+            </IconButton>
+            <IconButton className="img-4">
+              <Video className={undefined} />
+            </IconButton>
+            <IconButton className="img-4">
+              <Search className={undefined} />
+            </IconButton>
+            <IconButton className="img-4">
+              <DotsVertical className={undefined} />
+            </IconButton>
+          </div>
+        </div>
+      </div>
+    )
+
 
   const handleSendMessage = (textMessage, setTextMessage) => {
     sendTextMessage(textMessage, user, currentChat._id, setTextMessage);
@@ -59,7 +84,7 @@ export const ChatBox = ({ toggleAddTicket }): React.JSX.Element => {
       case "telegram":
         return <TelegramIcon />;
       case "web":
-        return <img src={web} style={{width: '30px', height:'30px'}}/>
+        return <img src={web} style={{ width: '30px', height: '30px' }} />
       case "whatsapp":
         return <WhatsAppIcon />;
       default:
@@ -74,7 +99,7 @@ export const ChatBox = ({ toggleAddTicket }): React.JSX.Element => {
       src="https://c.animaapp.com/5uY2Jqwr/img/avatar-14@2x.png"
     />
   );
-  
+
   const getMessageAvatar = () => (
     <img
       className="img-avatar-text"
@@ -82,10 +107,11 @@ export const ChatBox = ({ toggleAddTicket }): React.JSX.Element => {
       src={Avatar2}
     />
   );
-  
+
   return (
     <div className="containerchat">
-      <div className="header">
+
+      <div className="headerBoxChat">
         <div className="initial-info">
           <img
             className="img-avatar"
@@ -94,9 +120,9 @@ export const ChatBox = ({ toggleAddTicket }): React.JSX.Element => {
           />
           <div className="name-time">
             <div className="text-wrapper-4">{`${recipientUser?.name} ${recipientUser?.lastName}`}</div>
-            <div className="text-wrapper-5">1 Minute</div>
+            <div className="text-wrapper-box-header">1 Minute</div>
           </div>
-          { getChatIcon() }
+          {getChatIcon()}
           <div className="name-work">
             <div>Fazenda Minas Pro</div>
           </div>
@@ -118,14 +144,14 @@ export const ChatBox = ({ toggleAddTicket }): React.JSX.Element => {
           </div>
         </div>
       </div>
+
       <div className="chat">
         {messages?.map((message: any, index: number) => (
           <div key={index} className={`message-wrapper`}>
             {message?.senderId === user?.companyId ? getTextMessageAvatar() : getMessageAvatar()}
             <div
-              className={`${
-                message?.senderId === user?.companyId ? "text" : "message"
-              }`}
+              className={`${message?.senderId === user?.companyId ? "text" : "message"
+                }`}
             >
               <p>{message?.text}</p>
             </div>
@@ -137,17 +163,17 @@ export const ChatBox = ({ toggleAddTicket }): React.JSX.Element => {
 
       </div>
       {toggleAddTicket ? (
-          <AddTicket
-            onUploadFile={handleFileUpload}
-            onSetShow={setShowAddTicket}
-          />
-        ) : (
-          ""
-        )}
-        <TextEnter
-          onUploadFilePhoto={handleFileUploadPhoto}
-          onSendMessage={handleSendMessage}
+        <AddTicket
+          onUploadFile={handleFileUpload}
+          onSetShow={setShowAddTicket}
         />
+      ) : (
+        ""
+      )}
+      <TextEnter
+        onUploadFilePhoto={handleFileUploadPhoto}
+        onSendMessage={handleSendMessage}
+      />
     </div>
   );
 };

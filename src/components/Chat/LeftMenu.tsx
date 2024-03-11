@@ -23,6 +23,7 @@ export const LeftMenu = ({ onAddTicketClick, children }) => {
         />
         <input className="instance" placeholder="Search for contact..." />
       </header>
+
       <div className="div-3">
         <div className="heading">
           <button
@@ -38,13 +39,13 @@ export const LeftMenu = ({ onAddTicketClick, children }) => {
         </div>
         {children}
       </div>
+
       <div className="div-3">
         <div className="heading-3">
           <div className="text-wrapper-3">Leads</div>
-          {/* <ChevronDown1 className="icon-instance-node" /> */}
         </div>
         <div className="div-content">
-          <div className="list">
+          <div className="listLeftLead">
             <div className="text-2">
               <img
                 className="img-2"
