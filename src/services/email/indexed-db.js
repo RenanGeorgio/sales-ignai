@@ -1,8 +1,9 @@
 import idb from 'idb';
 import sjcl from 'sjcl';
-import {processFolders} from './folder';
-import {setError} from '../../store/email/actions/application';
+import { processFolders } from './folder';
+import { setError } from '../../store/email/actions/application';
 import SjclWorker from './sjcl.worker';
+import WebWorker from '@libs/webWorker/instance';
 
 const DATABASE_NAME = 'isotope';
 const DATABASE_VERSION = 2;
@@ -145,7 +146,7 @@ export async function persistState(dispatch, state) {
   if (state.email.application.user.id && state.email.email.application.user.hash
     && state.email.folders.items.length > 0 && Object.keys(state.email.messages.cache).length > 0) {
     // Create web-worker
-    const worker = new SjclWorker();
+    const worker = new WebWorker(SjclWorker);
     worker.onmessage = async encryptedStateMessage => {
       // Persist state
       try {
@@ -212,7 +213,7 @@ export async function persistState(dispatch, state) {
  * @returns {Promise<void>}
  */
 export async function persistMessageCache(userId, hash, folder, messages) {
-  const worker = new SjclWorker();
+  const worker = new WebWorker(SjclWorker);
   worker.onmessage = async m => {
     const messageCache = {
       // Key will not be used for data retrieval, index will be used instead
@@ -294,7 +295,7 @@ export async function deleteMessageCache(userId, hash, foldersToDeleteIds) {
  * @returns {Promise<void>}
  */
 export async function persistApplicationNewMessageContent(application, content = '') {
-  const worker = new SjclWorker();
+  const worker = new WebWorker(SjclWorker);
   worker.onmessage = async m => {
     const newMessage = {
       key: application.user.id,
@@ -311,4 +312,3 @@ export async function persistApplicationNewMessageContent(application, content =
   };
   worker.postMessage({password: application.user.hash, data: JSON.stringify(content)});
 }
-

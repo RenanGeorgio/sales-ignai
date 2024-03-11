@@ -1,27 +1,59 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "jsx": "preserve",
-    "lib": ["dom", "es2017"],
     "baseUrl": "./src",
+    "target": "es2020",
+    "module": "esnext",
+    "lib": ["dom", "dom.iterable", "esnext", "es6"],
     "moduleResolution": "node",
-    "strict": false,
     "allowJs": true,
-    "noEmit": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
     "skipLibCheck": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
+    "strict": true,
+    "alwaysStrict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    //"allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    //"noUnusedLocals": false,
+    //"noUnusedParameters": false,
+    "resolveJsonModule": true,
     "isolatedModules": true,
     "removeComments": false,
     "preserveConstEnums": true,
-    "sourceMap": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
+    //"sourceMap": true,
+    "jsx": "preserve",
+    "paths": {
+      "@components/*": ["components/*", "components/*/index", "components/index"],
+      "@styles/*": ["styles/*"],
+      "@contexts/*": ["contexts/*"],
+      "@services": ["services/index"],
+      "@types/*": ["types/index"],
+      "@helpers/*": ["helpers/*"],
+      "@store/*": ["store/*"],
+      "@store": ["store/index"],
+      "@libs/*": ["libs/*"]
+    },
     "incremental": true
   },
-  "exclude": ["dist", ".next", "out", "next.config.js"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  "exclude": [
+    "node_modules",
+    "dist",
+    "out"
+  ],
+  "include": [ 
+    "**/*.ts", 
+    "**/*.tsx", 
+    "**/*.js", 
+    "declarations.d.ts",
+    "src/**/*.mjs",
+    "src/**/*.html"
+  ],
+  "typeRoots": [
+    "node_modules/@types",
+    "src/types/*.ts"
+  ],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  }
 }
