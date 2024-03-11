@@ -109,7 +109,6 @@ function registerValidSW(wb, swUrl, config) {
     }  
   })();
 
-
   navigator.serviceWorker.register(swUrl).then((registration) => {
     registration.onupdatefound = () => {
       const installingWorker = registration.installing;
@@ -137,8 +136,10 @@ function registerValidSW(wb, swUrl, config) {
       };
 
       if (navigator.storage && navigator.storage.persist) {
-        const result = await navigator.storage.persist();
-        console.log(`Data persisted: ${result}`);
+        (async () => {
+          const result = await navigator.storage.persist();
+          console.log(`Data persisted: ${result}`);
+        })();
       }
     };
   }).catch((error) => {

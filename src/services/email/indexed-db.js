@@ -3,7 +3,7 @@ import sjcl from 'sjcl';
 import { processFolders } from './folder';
 import { setError } from '../../store/email/actions/application';
 import SjclWorker from './sjcl.worker';
-import WebWorker from '@libs/webWorker/instance';
+import WebWorker from '../../libs/webWorker/instance';
 
 const DATABASE_NAME = 'isotope';
 const DATABASE_VERSION = 2;
