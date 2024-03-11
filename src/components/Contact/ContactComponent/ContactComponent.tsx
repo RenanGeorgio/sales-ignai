@@ -259,7 +259,7 @@ const ContatoCell = ({ client }) => {
                     isCellEditable={(params) => params.row.Contato % 2 === 0}
                     onCellClick={(params, event) => {
                         // if (params.field === 'client') {
-                            navigate(`/details`);
+                            navigate(`/Details`);
                         // }
                     }}
                 />

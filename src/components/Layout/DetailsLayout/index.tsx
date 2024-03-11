@@ -1,5 +1,5 @@
 import React from 'react'
-import ContactDetails from '../../Contact/ContactDetails/ContactDetais'
+import ContactDetails from '../../Contact/ContactDetails/ContactDetails'
 
 export default function LayoutCalendar() {
   return (

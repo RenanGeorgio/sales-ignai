@@ -130,7 +130,7 @@
   }
 
   .blueButton {
-    background-color: rgba(115, 103, 240, 1);
+    /* background-color: rgba(115, 103, 240, 1);
     color: white;
     padding: 5px 10px;
     border: none;
@@ -138,7 +138,17 @@
     margin-right: 10px;
     left: 0%;
     cursor: pointer; 
+    align-items: center;  */
+    background-color: rgba(115, 103, 240, 1);
+    color: white;
+    padding: 10px 7px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 1px;
+    cursor: pointer; 
     align-items: center;
+    display: flex;
+    font-weight: inherit;
   }
   
   
@@ -146,12 +156,14 @@
   .grayButton {
     background-color: rgba(168, 170, 174, 0.397);
     color: rgba(168, 170, 174, 1);
-    padding: 5px 10px;
+    padding: 10px 7px;
     border: none;
     border-radius: 5px;
-    margin-right: 10px;
+    margin-right: 1px;
     cursor: pointer; 
     align-items: center;
+    display: flex;
+    font-weight: inherit;
   }
 
 .card-wrapper{
