@@ -1,3 +1,11 @@
+declare global {
+    namespace NodeJS {
+        interface ProcessEnv {
+            API_URL?: string;
+        }
+    }
+}
+
 declare module '.svg' {
     export const content: any;
 };

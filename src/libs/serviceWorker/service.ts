@@ -1,6 +1,4 @@
 // @ts-nocheck
-import dotenv from 'dotenv';
-dotenv.config(); 
 
 const isLocalhost = Boolean(
   window.location.hostname === 'localhost'
