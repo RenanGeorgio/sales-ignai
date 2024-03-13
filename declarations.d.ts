@@ -6,6 +6,11 @@ declare global {
     }
 }
 
+declare module '@osam2/react-calendar' {
+    function Calendar(): any
+    export Calendar;
+}
+
 declare module '.svg' {
     export const content: any;
 };

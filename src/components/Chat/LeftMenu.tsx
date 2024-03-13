@@ -1,12 +1,17 @@
-import React, { Children, useState } from "react";
-import "./leftmenu.css";
+import { useState } from "react";
 import { Phone } from "../Image/icons";
 import AddTicket from "./AddTicket/AddTicket";
+import "./leftmenu.css";
 
-export const LeftMenu = ({ onAddTicketClick, children }) => {
-  const [openPage, setOpenPage] = useState(false);
-  const [openTicket, setOpenTicket] = useState(false);
-  const [showAddTicket, setShowAddTicket] = useState(false);
+interface Props {
+  onAddTicketClick: () => void;
+  children?: React.ReactNode;
+};
+
+export const LeftMenu = ({ onAddTicketClick, children }: Props) => {
+  const [openPage, setOpenPage] = useState<boolean>(false);
+  const [openTicket, setOpenTicket] = useState<boolean>(false);
+  const [showAddTicket, setShowAddTicket] = useState<boolean>(false);
   
   const toggleAddTicket = () => {
     setShowAddTicket(!showAddTicket);
@@ -41,7 +46,6 @@ export const LeftMenu = ({ onAddTicketClick, children }) => {
       <div className="div-3">
         <div className="heading-3">
           <div className="text-wrapper-3">Leads</div>
-          {/* <ChevronDown1 className="icon-instance-node" /> */}
         </div>
         <div className="div-content">
           <div className="list">
@@ -59,4 +63,4 @@ export const LeftMenu = ({ onAddTicketClick, children }) => {
       </div>
     </div>
   );
-};
+}

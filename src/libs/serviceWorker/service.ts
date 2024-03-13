@@ -37,75 +37,73 @@ export function register(config) {
 }
 
 function registerValidSW(wb, swUrl, config) {
-  (async () => {
-    try {
-      if (process.env.NODE_ENV !== 'production') {
-        wb.addEventListener('installed', (event) => {
-          console.log(`Event ${event.type} is triggered.`)
-          console.log(event)
-        })
+  try {
+    if (process.env.NODE_ENV !== 'production') {
+      wb.addEventListener('installed', (event) => {
+        console.log(`Event ${event.type} is triggered.`)
+        console.log(event)
+      })
 
-        wb.addEventListener('controlling', (event) => {
-          console.log(`Event ${event.type} is triggered.`)
-          console.log(event)
-        })
+      wb.addEventListener('controlling', (event) => {
+        console.log(`Event ${event.type} is triggered.`)
+        console.log(event)
+      })
 
-        wb.addEventListener('activated', (event) => {
-          console.log(`Event ${event.type} is triggered.`)
-          console.log(event)
-        })
+      wb.addEventListener('activated', (event) => {
+        console.log(`Event ${event.type} is triggered.`)
+        console.log(event)
+      })
 
-        const promptNewVersionAvailable = (event) => {
-          // `event.wasWaitingBeforeRegister` será false se esta for a primeira vez que o service worker atualizado está esperando.
-          // Quando `event.wasWaitingBeforeRegister` é verdadeiro, um service worker atualizado anteriormente ainda está esperando.
-          // Você pode querer personalizar o prompt da interface do usuário de acordo.
-          if (confirm('Uma versão mais recente deste aplicativo da web está disponível, recarregar para atualizar?')) {
-            wb.addEventListener('controlling', (event) => {
-              window.location.reload()
-            })
+      const promptNewVersionAvailable = (event) => {
+        // `event.wasWaitingBeforeRegister` será false se esta for a primeira vez que o service worker atualizado está esperando.
+        // Quando `event.wasWaitingBeforeRegister` é verdadeiro, um service worker atualizado anteriormente ainda está esperando.
+        // Você pode querer personalizar o prompt da interface do usuário de acordo.
+        if (confirm('Uma versão mais recente deste aplicativo da web está disponível, recarregar para atualizar?')) {
+          wb.addEventListener('controlling', (event) => {
+            window.location.reload()
+          })
 
-            // Envia uma mensagem para o service worker em espera, instruindo-o a ativar.
-            wb.messageSkipWaiting()
-          } else {
-            console.log(
-              'O usuário rejeitou o recarregamento do aplicativo da Web. Continue usando a versão antiga. A nova versão será carregada automaticamente quando o usuário abrir o aplicativo na próxima vez.'
-            )
-          }
+          // Envia uma mensagem para o service worker em espera, instruindo-o a ativar.
+          wb.messageSkipWaiting()
+        } else {
+          console.log(
+            'O usuário rejeitou o recarregamento do aplicativo da Web. Continue usando a versão antiga. A nova versão será carregada automaticamente quando o usuário abrir o aplicativo na próxima vez.'
+          )
+        }
+      }
+
+      wb.addEventListener('waiting', promptNewVersionAvailable)
+
+      wb.addEventListener('message', (event) => {
+        if (event.data && event.data.type === 'SKIP_WAITING') {
+          // @ts-ignore
+          self?.skipWaiting();
         }
 
-        wb.addEventListener('waiting', promptNewVersionAvailable)
+        console.log(`Event ${event.type} is triggered.`)
+        console.log(event)
+      })
 
-        wb.addEventListener('message', (event) => {
-          if (event.data && event.data.type === 'SKIP_WAITING') {
-            // @ts-ignore
-            self?.skipWaiting();
-          }
+      /*
+      wb.addEventListener('redundant', event => {
+        console.log(`Event ${event.type} is triggered.`)
+        console.log(event)
+      })
 
-          console.log(`Event ${event.type} is triggered.`)
-          console.log(event)
-        })
+      wb.addEventListener('externalinstalled', event => {
+        console.log(`Event ${event.type} is triggered.`)
+        console.log(event)
+      })
 
-        /*
-        wb.addEventListener('redundant', event => {
-          console.log(`Event ${event.type} is triggered.`)
-          console.log(event)
-        })
-
-        wb.addEventListener('externalinstalled', event => {
-          console.log(`Event ${event.type} is triggered.`)
-          console.log(event)
-        })
-
-        wb.addEventListener('externalactivated', event => {
-          console.log(`Event ${event.type} is triggered.`)
-          console.log(event)
-        })
-        */
-      } 
-    } catch (err) {
-      console.log('😥 Falha no registro do Service worker: ', err);
-    }  
-  })();
+      wb.addEventListener('externalactivated', event => {
+        console.log(`Event ${event.type} is triggered.`)
+        console.log(event)
+      })
+      */
+    } 
+  } catch (err) {
+    console.log('😥 Falha no registro do Service worker: ', err);
+  }  
 
   navigator.serviceWorker.register(swUrl).then((registration) => {
     registration.onupdatefound = () => {

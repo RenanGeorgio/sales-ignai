@@ -1,12 +1,11 @@
-import React from 'react';
-import { useState } from 'react';
-import '../../styles/navbar.css';
+import { useState, MouseEvent } from 'react';
+import Popper, { PopperPlacementType } from '@mui/material/Popper';
+import { Button } from '@mui/material';
 import { BellIcon } from '../Image/icons';
 import userIcon from '../Image/Avatar.jpg';
 import { Search } from '../Image/icons';
 import useAuth from '../../hooks/useAuth';
-import Popper, { PopperPlacementType } from '@mui/material/Popper';
-import { Button } from '@mui/material';
+import '../../styles/navbar.css';
 
 interface NavbarProps { }
 
@@ -14,13 +13,13 @@ const Navbar: React.FC<NavbarProps> = () => {
   const [searchText, setSearchText] = useState('');
   const { signOut } = useAuth();
 
-  const [open, setOpen] = React.useState(false);
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const [placement, setPlacement] = React.useState<PopperPlacementType>();
+  const [open, setOpen] = useState(false);
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [placement, setPlacement] = useState<PopperPlacementType>();
 
   const handleClick =
   (newPlacement: PopperPlacementType) =>
-  (event: React.MouseEvent<HTMLElement>) => {
+  (event: MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
     setOpen((prev) => placement !== newPlacement || !prev);
     setPlacement(newPlacement);

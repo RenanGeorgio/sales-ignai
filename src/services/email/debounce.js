@@ -7,21 +7,26 @@
  */
 function debounce(func, period = 100) {
   let funcTimeout;
+
   function debounced() {
+    // eslint-disable-next-line @typescript-eslint/no-this-alias
     const funcContext = this;
     const funcArguments = arguments;
+
     const runDebounced = () => {
       funcTimeout = null;
       func.apply(funcContext, funcArguments);
     };
+
     clearTimeout(funcTimeout);
     funcTimeout = setTimeout(runDebounced, period);
   }
+
   debounced.cancel = function () {
     clearTimeout(funcTimeout);
   };
+
   return debounced;
 }
-
 
 export default debounce;

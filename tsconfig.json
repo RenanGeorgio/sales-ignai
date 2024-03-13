@@ -3,7 +3,7 @@
     "baseUrl": "./src",
     "target": "es2020",
     "module": "esnext",
-    "lib": ["dom", "dom.iterable", "esnext", "es6"],
+    "lib": ["dom", "dom.iterable", "esnext", "es2020"],
     "moduleResolution": "node",
     "allowJs": true,
     "skipLibCheck": true,
@@ -17,9 +17,9 @@
     //"noUnusedParameters": false,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    //"noImplicitAny": false,
+    "noImplicitAny": true,
     //"removeComments": false,
-    "preserveConstEnums": true,
+    //"preserveConstEnums": true,
     //"sourceMap": true,
     "jsx": "preserve",
     "paths": {
@@ -27,7 +27,7 @@
       "@styles/*": ["styles/*"],
       "@contexts/*": ["contexts/*"],
       "@services": ["services/index"],
-      "@types/*": ["types/index"],
+      "@types": ["types/index"],
       "@helpers/*": ["helpers/*"],
       "@store/*": ["store/*"],
       "@store": ["store/index"],
@@ -41,13 +41,10 @@
     "out"
   ],
   "include": [ 
-    "**/*.ts", 
-    "**/*.tsx", 
-    "**/*.js", 
-    "**/*.jsx",
     "declarations.d.ts",
-    "src/**/*.mjs",
-    "src/**/*.html"
+    "**/*.ts",  
+    "**/*.js", 
+    "src"
   ],
   "typeRoots": [
     "node_modules/@types",

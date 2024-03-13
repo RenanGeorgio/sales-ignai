@@ -3,7 +3,7 @@ import { ErrorResponse, SignInData, User } from "../../types";
 
 export interface AuthContextInterface {
   isAuthenticated: boolean;
-  user: User | any;
+  user: User | undefined;
   signIn: (data: SignInData) => Promise<void> | ErrorResponse;
   signOut: () => void;
 }

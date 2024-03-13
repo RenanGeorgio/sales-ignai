@@ -62,7 +62,7 @@ const store = configureStore({
     }),
 });
 
-let persistor = persistStore(store);
+const persistor = persistStore(store);
 
 export { sessionActions } from "./session/sessionSlice";
 export { userActions } from "./user/userSlice";

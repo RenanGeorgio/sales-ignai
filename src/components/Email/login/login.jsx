@@ -73,21 +73,21 @@ export class Login extends Component {
               <h1 className={styles.title}>{this.props.application.title}</h1>
               <h2 className={styles.subtitle}>{t('login.Login')}</h2>
             </header>
-            <form onSubmit={this.login}>
+            <form onSubmit={(event) => this.login(event)}>
               <div className={styles.server}>
                 <TextField id='serverHost' fieldClass={`${styles.formField} ${styles.serverHost}`}
-                  value={serverHost} onChange={this.onFieldChange}
+                  value={serverHost} onChange={(event) => this.onFieldChange(event)}
                   focused={this.isFocused('serverHost')} required={true} autoComplete='on' label={t('login.Host')}/>
                 <TextField key='serverPort' id='serverPort' fieldClass={`${styles.formField} ${styles.serverPort}`}
                   type='number' min='0'
-                  value={serverPort} onChange={this.onFieldChange}
+                  value={serverPort} onChange={(event) => this.onFieldChange(event)}
                   focused={this.isFocused('serverPort')} required={true} autoComplete='on' label={t('login.Port')}/>
               </div>
               <TextField id='user' fieldClass={`${styles.formField} ${styles.fullWidth}`}
-                value={user} onChange={this.onFieldChange}
+                value={user} onChange={(event) => this.onFieldChange(event)}
                 focused={this.isFocused('user')} required={true} autoComplete='on' label={t('login.User')}/>
               <TextField id='password' type={'password'} fieldClass={`${styles.formField} ${styles.fullWidth}`}
-                value={password} onChange={this.onFieldChange}
+                value={password} onChange={(event) => this.onFieldChange(event)}
                 focused={this.isFocused('password')} required={true} label={t('login.Password')}/>
               <Button className={styles.advancedButton} label={t('login.Advanced')}
                 icon={advanced ? 'unfold_less' : 'unfold_more'}
@@ -100,11 +100,11 @@ export class Login extends Component {
                   <h3 className={styles.section}>{t('login.SMTP')}</h3>
                   <div className={styles.server}>
                     <TextField id='smtpHost' fieldClass={`${styles.formField} ${styles.fullWidth} ${styles.serverHost}`}
-                      value={smtpHost} onChange={this.onFieldChange}
+                      value={smtpHost} onChange={(event) => this.onFieldChange(event)}
                       focused={this.isFocused('smtpHost')} label={t('login.Host')}/>
                     <TextField id='smtpPort' fieldClass={`${styles.formField} ${styles.fullWidth} ${styles.serverPort}`}
                       type='number' min='0' required={true}
-                      value={smtpPort} onChange={this.onFieldChange}
+                      value={smtpPort} onChange={(event) => this.onFieldChange(event)}
                       focused={this.isFocused('smtpPort')} label={t('login.Port')}/>
                   </div>
                   <Switch id='smtpSsl' checked={smtpSsl} label={t('login.SmtpSSL')}

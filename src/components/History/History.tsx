@@ -1,13 +1,22 @@
 
-import React from 'react'
+import { useState } from 'react';
 import { DataGrid, GridColDef, GridValueGetterParams, GRID_DATETIME_COL_DEF, GRID_DATE_COL_DEF } from '@mui/x-data-grid';
 import { Button, FormControl, InputLabel, MenuItem, Select, IconButton, Modal } from '@mui/material';
-import { DotsVertical, Edit, Trash, } from '../Image/icons'
+import { DotsVertical, Edit, Trash, } from '../Image/icons';
 import rows from '../../dados/data.json';
 import ModalHistory from './ModalHistory/index';
 
+type Contact = {
+    name: string;
+    description: string;
+}
 
-const ContatoCell = ({ contato }) => {
+interface ContactProp {
+    contato: Contact;
+    children?: React.ReactNode;
+};
+
+const ContatoCell = ({ contato }: ContactProp) => {
     return (
         <>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -18,37 +27,45 @@ const ContatoCell = ({ contato }) => {
     );
 };
 
-const getStatusStyles = (status) => {
+const getStatusStyles = (status: string) => {
     const color = status === 'pendente' ? 'red' : 'green';
     const backgroundColor = status === 'pendente' ? '#ffadad' : 'lightgreen';
-
 
     return { color, backgroundColor };
 };
 
 const columns: GridColDef[] = [
-    //   { field: 'id', headerName: 'ID', width: 70 },
     {
-        field: 'contato', headerName: 'Contato', width: 300,
+        field: 'contato', 
+        headerName: 'Contato', 
+        width: 300,
         renderCell: (params) => {
-            // Use a custom component to render the cell content
             return <ContatoCell contato={params.value} />;
         }
-
-
     },
-
-    { field: 'assunto', headerName: 'Assunto', width: 280 },
+    { 
+        field: 'assunto', 
+        headerName: 'Assunto', 
+        width: 280 
+    },
     {
-        field: 'date', headerName: 'Data', type: 'date', width: 190,
+        field: 'date', 
+        headerName: 'Data', 
+        type: 'date', 
+        width: 190,
         valueGetter: (params: GridValueGetterParams) => {
-            // Convert the string date to a Date object
             return params.row.date ? new Date(params.row.date) : null;
-        },
+        }
     },
-    { field: 'ticket', headerName: 'Ticket', width: 230 },
+    { 
+        field: 'ticket', 
+        headerName: 'Ticket', 
+        width: 230 
+    },
     {
-        field: 'status', headerName: 'Status', width: 230,
+        field: 'status', 
+        headerName: 'Status', 
+        width: 230,
         renderCell: (params) => (
             <div style={{
                 color: getStatusStyles(params.value).color,
@@ -74,9 +91,7 @@ const columns: GridColDef[] = [
                     <IconButton
                         color="primary"
                         size="small"
-                        onClick={() => {
-                            // ...
-                        }}
+                        onClick={() => {}}
                     >
                         <Trash className={undefined} />
                     </IconButton>
@@ -85,27 +100,26 @@ const columns: GridColDef[] = [
                     </IconButton>
                 </div>
             );
-        },
-    },
+        }
+    }
 ];
 
 export default function HistoryComponent() {
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState<boolean>(false);
+
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-    return (
 
+    return (
         <div style={{ width: '94%', height: '100%', paddingTop: 2, paddingBottom: 24, paddingLeft: 80, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', gap: 1, display: 'inline-flex' }}>
             <div style={{ borderRadius: 6, overflow: 'hidden', justifyContent: 'end', alignItems: 'flex-start', display: 'flex', width: '100%' }}>
                 <div style={{ borderTopLeftRadius: 5, borderBottomLeftRadius: 5, paddingLeft: 10, paddingRight: 10, background: '#DEDBFC', borderRight: '1px rgba(115, 103, 240, 0.24) solid', justifyContent: 'end', alignItems: 'center', display: 'flex' }}>
                     <Button>meus</Button>
                 </div>
                 <div style={{ paddingLeft: 10, paddingRight: 10, background: '#E8E6FC', justifyContent: 'end', alignItems: 'center', display: 'flex' }}>
-
                     <Button>Todos</Button>
                 </div>
             </div>
-
             <div style={{ justifyContent: 'space-between', alignItems: 'center', gap: 24, display: 'flex', width: '98%', padding: '5px 0px 1px 10px' }}>
                 <div style={{ flex: '1 ', height: 38, borderRadius: 6, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex', width: '100px' }}>
                     <div style={{ flex: '1 1 0', height: 38, background: 'white', borderRadius: 6, overflow: 'hidden', justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex' }}>
@@ -150,11 +164,9 @@ export default function HistoryComponent() {
                     </div>
                 </div>
             </div>
-
             <div style={{ alignSelf: 'stretch', paddingLeft: 4, paddingRight: 1, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'inline-flex', width: '100%' }}>
                 <div style={{ color: 'black', fontSize: 18, fontFamily: 'sans-serif', fontWeight: '500', lineHeight: 2, wordWrap: 'break-word' }}>Filtro de busca</div>
             </div>
-
             <div style={{ flex: '1 1 0', height: 38, justifyContent: 'space-between', alignItems: 'center', gap: 16, display: 'flex', width: '100%', borderTop: '1px #DBDADE solid', padding: 10 }}>
                 <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 15, height: '100%' }}>
                     <select style={{ display: 'flex', justifyContent: 'center', height: '2rem', width: '5rem', padding: '5px 10px 5px 5px', borderRadius: '5px' }}>
@@ -174,7 +186,6 @@ export default function HistoryComponent() {
                             justifyContent: 'flex-start',
                             alignItems: 'center', display: 'flex'
                         }} />
-
                     <div>
                         <Button style={{
                             background: '#7367F0',
@@ -183,7 +194,6 @@ export default function HistoryComponent() {
                             justifyContent: 'center',
                             alignItems: 'center',
                             color: '#fff',
-                            //   fontSize: 14,
                             display: 'flex'
                         }}
                             onClick={handleOpen}
@@ -193,28 +203,25 @@ export default function HistoryComponent() {
                     </div>
                 </div>
             </div>
-
             <div style={{ height: 370, width: '100%' }}>
                 <DataGrid
                     rows={rows}
                     columns={columns}
                     initialState={{
                         pagination: {
-                            paginationModel: { page: 0, pageSize: 5 },
-                        },
+                            paginationModel: { page: 0, pageSize: 5 }
+                        }
                     }}
                     pageSizeOptions={[5, 10]}
                     isCellEditable={(params) => params.row.Contato % 2 === 0}
                 />
             </div>
-
             <Modal
                 open={open}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description" >
-                <ModalHistory close={handleClose} />
+                    <ModalHistory close={handleClose} />
             </Modal>
-
         </div>
-    )
+    );
 }

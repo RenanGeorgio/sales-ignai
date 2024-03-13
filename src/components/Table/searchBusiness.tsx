@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { DataGrid, GridColDef, GridValueGetterParams, GRID_DATETIME_COL_DEF, GRID_DATE_COL_DEF } from '@mui/x-data-grid';
 import { Button, FormControl, InputLabel, MenuItem, Select, IconButton, Modal } from '@mui/material';
 import { DotsVertical, Edit, Trash, } from '../../components/Image/icons';
@@ -12,11 +12,22 @@ import AddInfo from '../Business/addInfo';
 import PrecoModal from '../Modal/price';
 import { useSidebar } from '../../contexts/sidebar/SidebarContext';
 import ModalSearchBusiness from './ModalSearchBusiness';
-// import '../../styles/business.css';
 
 interface SearchBusinessProps { }
 
-const ContatoCell = ({ contato }) => {
+type Contact = {
+  name: string;
+  description: string;
+}
+
+interface ContactProp {
+  contato: Contact;
+  children?: React.ReactNode;
+};
+
+type Status = 'Descoberta' | 'Proposta' | 'Negociação' | 'Completa' | 'Rejeitado' | undefined;
+
+const ContatoCell = ({ contato }: ContactProp) => {
   return (
     <>
       <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -27,9 +38,9 @@ const ContatoCell = ({ contato }) => {
   );
 };
 
-const getStatusStyles = (status) => {
-  let color = '#fff';
-  let backgroundColor = '';
+const getStatusStyles = (status: Status) => {
+  const color: string = '#fff';
+  let backgroundColor:string = '';
 
   switch (status) {
     case 'Descoberta':
@@ -65,7 +76,7 @@ const columns: GridColDef[] = [
         {params.row.id !== 5 && params.row.id !== 8 ? (
           <>
             <div style={{ marginRight: '8px' }}>
-            <LeadIcon/>         
+              <LeadIcon/>         
             </div>
             <ContatoCell contato={params.value} />
           </>
@@ -75,7 +86,7 @@ const columns: GridColDef[] = [
           </div>
         )}
       </div>
-    ),
+    )
   },
   {
     field: 'etapa',
@@ -101,9 +112,13 @@ const columns: GridColDef[] = [
           <div style={{ backgroundColor: '#fff', padding: '8px', borderRadius: '5px', width: '100%' }}></div>
         )}
       </>
-    ),
+    )
   },
-  { field: 'setor', headerName: 'Setor', width: 150 },
+  { 
+    field: 'setor', 
+    headerName: 'Setor', 
+    width: 150 
+  },
   {
     field: 'documentos',
     headerName: 'Documentos',
@@ -126,10 +141,13 @@ const columns: GridColDef[] = [
           </>
         ) : null}
       </div>
-    ),
+    )
   },
-  { field: 'valor', headerName: 'Valor', width: 150 },
-
+  { 
+    field: 'valor', 
+    headerName: 'Valor', 
+    width: 150 
+  },
   {
     field: 'acao',
     headerName: 'Ação',
@@ -142,7 +160,6 @@ const columns: GridColDef[] = [
           color="primary"
           style={{ marginLeft: '8px', padding: '5px', minWidth: '40px' }}
           onClick={() => {
-
           }}
         >
           +
@@ -167,14 +184,16 @@ const columns: GridColDef[] = [
           <div style={{ backgroundColor: '#fff', width: '100%' }}></div>
         )}
       </div>
-    ),
-  },
+    )
+  }
 ];
 
 const SearchBusiness: React.FC<SearchBusinessProps> = () => {
-  const [showKanban, setShowKanban] = useState(false);
+  const [showKanban, setShowKanban] = useState<boolean>(false);
+  const [open, setOpen] = useState<boolean>(false);
+
   const { isSidebarExpanded } = useSidebar();
-  const [open, setOpen] = React.useState(false);
+
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
@@ -186,12 +205,13 @@ const SearchBusiness: React.FC<SearchBusinessProps> = () => {
     setShowKanban(false);
   };
 
-  const rowsWithStylization = rows.map((row) => {
+  const rowsWithStylization = rows.map((row: any) => {
     if (row.id === 5) {
       return { ...row, negociosAtivos: { name: 'Negócios' } };
     } else if (row.id === 8) {
       return { ...row, negociosAtivos: { name: 'Negócios Rejeitados' } };
     }
+
     return row;
   });
 
@@ -253,7 +273,6 @@ const SearchBusiness: React.FC<SearchBusinessProps> = () => {
               </div>
             </div>
           </div>
-
           <div style={{ maxWidth: '98.5%', height: 38, justifyContent: 'space-between', 
           alignItems: 'center', gap: 16, display: 'flex', width: '100%', borderRight: '1px #DBDADE solid',
            borderLeft: '1px #DBDADE solid', padding: 10, backgroundColor: '#fff' }}>
@@ -277,7 +296,6 @@ const SearchBusiness: React.FC<SearchBusinessProps> = () => {
                 <option>Assignados a mim</option>
                 <option>Todos</option>
               </select>
-
               <input
                 title='Buscar'
                 placeholder='Buscar'
@@ -288,51 +306,40 @@ const SearchBusiness: React.FC<SearchBusinessProps> = () => {
                   alignItems: 'center', display: 'flex'
                 }}
               />
-
               <div>
                 <Button style={{
                   background: 'rgba(115, 103, 240, 1)',
-                  // boxShadow: '0px 2px 4px rgba(165, 163, 174, 0.30)',
-                  // borderRadius: 6,
-                  // justifyContent: 'center',
-                  // alignItems: 'center',
                   color: '#fff',
                   width: 300,
                   cursor: 'pointer',
                 }}
                   onClick={handleOpen}
                 >
-                                + Adicionar Pedido / Proposta
-                                </Button>
-                            </div>
-                        </div>
-                    </div>
-
+                  + Adicionar Pedido / Proposta
+                </Button>
+              </div>
+            </div>
+          </div>
           <div style={{ height: 620, width: '100%' }}>
             <DataGrid
               rows={rowsWithStylization}
               columns={columns}
               initialState={{
                 pagination: {
-                  paginationModel: { page: 0, pageSize: 10 },
-                },
+                  paginationModel: { page: 0, pageSize: 10 }
+                }
               }}
               pageSizeOptions={[10, 10]}
               isCellEditable={(params) => params.row.Contato % 2 === 0}
             />
           </div>
-          <Modal
-            open={open}
-          >
-            <ModalSearchBusiness
-              close={handleClose}
-            />
+          <Modal open={open} >
+            <ModalSearchBusiness close={handleClose}/>
           </Modal>
-
         </div>
       )}
     </div>
-  )
+  );
 }
 
 export default SearchBusiness;

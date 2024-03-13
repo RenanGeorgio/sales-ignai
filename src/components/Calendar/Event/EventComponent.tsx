@@ -1,10 +1,14 @@
-import * as React from 'react';
+import { useState } from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import './event.css'
-
 import TextField from '@mui/material/TextField';
 import Switch from '@mui/material/Switch';
+import './event.css'
+
+interface Props {
+    close: () => void;
+    children?: React.ReactNode;
+};
 
 const style = {
     position: 'absolute',
@@ -24,8 +28,9 @@ const style = {
 const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
 
-export default function EventModal({ close }) {
-    const [open, setOpen] = React.useState(true);
+export default function EventModal({ close }: Props) {
+    const [open, setOpen] = useState(true);
+    
     return (
         <div>
             {open ? (

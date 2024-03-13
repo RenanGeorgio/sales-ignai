@@ -27,7 +27,7 @@ export function AuthProvider({ children }) {
   }, [userState, isAuthenticated]);
 
   async function signIn({ email, password }: SignInData) {
-    const { token, error }: SignInResponse | any = await api.signIn({
+    const { token, error }: SignInResponse | undefined = await api.signIn({
       email,
       password,
     });

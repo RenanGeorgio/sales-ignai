@@ -26,8 +26,8 @@ class TextField extends Component {
           min={this.props.min}
           minLength={this.props.minLength}
           value={this.props.value}
-          onFocus={this.onFocus} onBlur={this.onBlur}
-          onChange={this.handleOnChange}
+          onFocus={() => this.onFocus()} onBlur={() => this.onBlur()}
+          onChange={(event) => this.handleOnChange(event)}
           onKeyPress={this.props.onKeyPress}
           onKeyDown={this.props.onKeyDown}
         />

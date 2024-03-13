@@ -1,10 +1,10 @@
 import { useEffect } from "react";
-import useAuth from "./hooks/useAuth";
+import { AxiosError, isAxiosError } from "axios";
+import { useQuery } from "react-query";
 import { connect, useDispatch } from "react-redux";
+import useAuth from "./hooks/useAuth";
 import authApi from "./services/auth";
 import { userActions, leadsActions } from "./store/store";
-import { useQuery } from "react-query";
-import { AxiosError, isAxiosError } from "axios";
 
 const CachingController = () => {
   const { isAuthenticated, signOut } = useAuth();
@@ -16,9 +16,8 @@ const CachingController = () => {
     async () => {
       const userRequest = authApi.get("/user");
       const leadsRequest = authApi.get("/leads");
-      const [user, leads]: any | AxiosError = await Promise.all([userRequest, leadsRequest]).then(function (
-        values
-      ) {
+
+      const [user, leads]: any = await Promise.all([userRequest, leadsRequest]).then(function (values) {
         return values;
       }).catch(function (e) {
         if(isAxiosError(e)) {

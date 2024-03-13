@@ -16,7 +16,7 @@ export const ChatProvider = ({ children }: any) => {
   const [messageError, setMessageError] = useState<string | null>(null);
   const [messages, setMessages] = useState<any>(null);
   const [textMessageError, setTextMessageError] = useState<string | null>(null);
-  const [newMessage, setNewMessage] = useState<{}>({} as any);
+  const [newMessage, setNewMessage] = useState<any>();
   const [onlineUsers, setOnlineUsers] = useState<OnlineUser[]>([]);
 
   const [socket, setSocket] = useState<any>(null);

@@ -1,9 +1,10 @@
-import * as React from 'react';
+import { useState } from 'react';
 import Button from '@mui/material/Button';
 import '../history.css'
 
 export default function ModalHistory({ close }) {
-    const [open, setOpen] = React.useState(true);
+    const [open, setOpen] = useState(true);
+
     return (
         <div>
             {open ? (
@@ -19,8 +20,7 @@ export default function ModalHistory({ close }) {
                         <div className='containerHistory'>
                             <span className='spanTitle'>Contato</span>
                             <input className='inputHistory' type="text" />
-                        </div>
-                  
+                        </div>      
                         <div className='containerHistory'>
                             <span className='spanTitle'>Assunto</span>
                             <input className='inputHistory' type="text" />
@@ -28,8 +28,7 @@ export default function ModalHistory({ close }) {
                         <div className='containerHistory'>
                             <span className='spanTitle'>Data</span>
                             <input className='inputHistory' type="date" />
-                        </div>
-                
+                        </div>           
                         <div className='containerHistory'>
                             <span className='spanTitle'>Ticket</span>
                             <input className='inputHistory' type="text" />
@@ -43,7 +42,6 @@ export default function ModalHistory({ close }) {
                             <Button variant='contained' disabled>Cancelar</Button>
                         </div>
                     </div>
-
                 </div>
             ) : ''}
         </div>

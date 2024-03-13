@@ -32,3 +32,8 @@ export type OnlineUser = {
   userId: string;
   socketId: string;
 }
+
+export type Consumer = {
+  _id?: string | number;
+  companyId: string | number?
+}

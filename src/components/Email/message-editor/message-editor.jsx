@@ -18,7 +18,7 @@ import {compressImage} from '../../../services/email/image';
 import {getAddresses} from '../../../services/email/message-addresses';
 import {prettySize} from '../../../services/email/prettify';
 import {sendMessage} from '../../../services/email/smtp';
-import {persistApplicationNewMessageContent} from '../../../services/email/indexed-db';
+import { persistApplicationNewMessageContent } from '../../../services/email/indexed-db';
 import mainCss from '../../../styles/email/main.scss';
 
 const SAVE_EDITOR_DEBOUNCE_PERIOD_IN_MILLIS = 500;
@@ -297,8 +297,10 @@ class MessageEditor extends Component {
    */
   editorChange(content) {
     this.props.editMessage({...this.props.editedMessage, content});
+
     // noinspection JSIgnoredPromiseFromCall
     persistApplicationNewMessageContent(this.props.application, content);
+
   }
 
   editorPaste(pasteEvent) {
@@ -406,9 +408,10 @@ const mapStateToProps = state => ({
   getAddresses: value => getAddresses(value, cache(state))
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
   close: application => {
     dispatch(editMessage(null));
+
     // Clear content (previous persist may be half way through -> force a message in the service worker to clear content after)
     // noinspection JSIgnoredPromiseFromCall
     persistApplicationNewMessageContent(application, '');

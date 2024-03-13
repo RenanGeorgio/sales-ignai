@@ -23,11 +23,9 @@ export class HeaderAddress extends Component {
   }
 
   render() {
-    const {
-      id,
-      label, addresses, onAddressRemove
-    } = this.props;
+    const { id, label, addresses, onAddressRemove } = this.props;
     const {suggestions, value} = this.state;
+    
     return (
       <div className={`${mainCss['message-editor__header-address']} ${mainCss['mdc-menu-surface--anchor']}`}
         onClick={() => this.fieldClick()}
@@ -36,8 +34,8 @@ export class HeaderAddress extends Component {
         {addresses.map((address, index) => (
           <div key={index} className={`${mainCss['message-editor__header-chip']} ${mainCss['mdc-chip']}`}
             draggable={true}
-            onDragStart={event => HeaderAddress.onAddressDragStart(event, id, address)}
-            onDragEnd={HeaderAddress.onAddressDragEnd}
+            onDragStart={(event) => HeaderAddress.onAddressDragStart(event, id, address)}
+            onDragEnd={(event) => HeaderAddress.onAddressDragEnd(event)}
           >
             <div className={mainCss['mdc-chip__text']}>{address}</div>
             <i onClick={() => onAddressRemove(id, address)} className={`material-icons ${mainCss['mdc-chip__icon']}
@@ -56,8 +54,8 @@ export class HeaderAddress extends Component {
             onKeyDown: this.handleOnHeaderKeyDown,
             onBlur: this.handleOnHeaderBlur
           }}
-          getSuggestionValue={HeaderAddress.getSuggestionValue}
-          renderSuggestion={HeaderAddress.renderSuggestion}
+          getSuggestionValue={() => HeaderAddress.getSuggestionValue()}
+          renderSuggestion={() => HeaderAddress.renderSuggestion()}
           onSuggestionsFetchRequested={this.handleOnSuggestionsFetchRequested}
           onSuggestionsClearRequested={this.handleOnSuggestionsClearRequested}
           onSuggestionSelected={this.handleOnSuggestionSelected}

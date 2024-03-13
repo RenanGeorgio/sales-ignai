@@ -34,15 +34,20 @@ const Leads = () => {
     }
   }, [leadsData]);
 
-  const onDragEnd = async (result) => {
+  const onDragEnd = (result) => {
     const newColumns = dragEnd(columns, result);
+
     if (newColumns) {
       const checkDif = newColumns.filter((x) => !columns.includes(x));
-      const response = await authApi.put(`/leads`, { leads: checkDif });
-      if (response.status === 204) {
-        dispatch(leadsActions.updateLeads(newColumns));
-        setColumns(newColumns);
-      }
+
+      (async () => {
+        const response = await authApi.put(`/leads`, { leads: checkDif });
+
+        if (response.status === 204) {
+          dispatch(leadsActions.updateLeads(newColumns));
+          setColumns(newColumns);
+        }
+      })();
     }
   };
 

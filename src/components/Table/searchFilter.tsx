@@ -1,5 +1,4 @@
-
-import React, { useState } from 'react'
+import { useState } from 'react';
 import { DataGrid, GridColDef, GridValueGetterParams, GRID_DATETIME_COL_DEF, GRID_DATE_COL_DEF } from '@mui/x-data-grid';
 import { Button, FormControl, InputLabel, MenuItem, Select, IconButton, Modal } from '@mui/material';
 import { DotsVertical, Edit, Trash, } from '../../components/Image/icons';
@@ -12,9 +11,19 @@ import { useSelector } from 'react-redux';
 import ModalSearch from './ModalSearch';
 
 interface SearchFilterProps {
-    setShowList: () => void; // New prop
-    leadsData: [];
+    setShowList: () => void;
+    leadsData: any[];
+};
+
+type Contact = {
+    name: string;
+    description: string;
 }
+  
+interface ContactProp {
+    contato: Contact;
+    children?: React.ReactNode;
+};
 
 const leadStatus = {
     INITIAL_CONTACT: "Contato Inicial"
@@ -24,7 +33,7 @@ const leadOrigin = {
     WHATSAPP: "Whatsapp"
 }
 
-const ContatoCell = ({ contato }) => {
+const ContatoCell = ({ contato }: ContactProp) => {
     return (
         <>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -35,10 +44,9 @@ const ContatoCell = ({ contato }) => {
     );
 };
 
-const getStatusStyles = (status) => {
+const getStatusStyles = (status: string) => {
     const color = status === 'Contato inicial' ? 'rgba(40, 199, 111, 1)' : 'rgba(40, 199, 111, 1)';
     const backgroundColor = status === 'Contato inicial' ? '#e9e8e8' : '#e9e8e8';
-
 
     return { color, backgroundColor };
 };
@@ -55,23 +63,28 @@ const columns: GridColDef[] = [
                 </div>
                 <ContatoCell contato={params.value} />
             </div>
-        ),
+        )
     },
     {
-        field: 'leadOrigin', headerName: 'Lead Origem', width: 150,
+        field: 'leadOrigin', 
+        headerName: 'Lead Origem', 
+        width: 150,
         renderCell: (params) => {
             const origin = leadOrigin[params?.value]
             return origin
         }
     },
-    { field: 'company', headerName: 'Empresa', width: 150 },
+    { 
+        field: 'company', 
+        headerName: 'Empresa', 
+        width: 150 
+    },
     {
         field: 'activity',
         headerName: 'Histórico',
         width: 180,
         renderCell: (params) => (
             <div style={{ display: 'flex', alignItems: 'center' }}>
-                {/* Add your history icons here */}
                 <IconButton>
                     <PaperClip />
                 </IconButton>
@@ -82,10 +95,12 @@ const columns: GridColDef[] = [
                 <div style={{ marginRight: '4px' }}>{params.row.historicoMessage}</div>
                 <img src={avatar} alt="History Icon 3" />
             </div>
-        ),
+        )
     },
     {
-        field: 'topic', headerName: 'Status', width: 150,
+        field: 'topic', 
+        headerName: 'Status', 
+        width: 150,
         renderCell: (params) => {
             const status = leadStatus[params?.value]
             return (
@@ -99,7 +114,7 @@ const columns: GridColDef[] = [
                     {status}
                 </div>
             )
-        },
+        }
     },
     {
         field: 'acao',
@@ -114,9 +129,7 @@ const columns: GridColDef[] = [
                     <IconButton
                         color="primary"
                         size="small"
-                        onClick={() => {
-                            // ...
-                        }}
+                        onClick={() => {}}
                     >
                         <Trash className={undefined} />
                     </IconButton>
@@ -125,19 +138,17 @@ const columns: GridColDef[] = [
                     </IconButton>
                 </div>
             );
-        },
-    },
+        }
+    }
 ];
 
-const SearchFilter: React.FC<SearchFilterProps> = ({ setShowList, leadsData }) => {
-    const [open, setOpen] = React.useState(false);
+const SearchFilter: React.FC<SearchFilterProps> = ({ setShowList, leadsData }: SearchFilterProps) => {
+    const [open, setOpen] = useState<boolean>(false);
+
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
-
-
     return (
-
         <div style={{ width: '92%', height: '100%', paddingTop: 25, paddingBottom: 24, paddingLeft: 100, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', gap: 1, display: 'inline-flex', zIndex: '999', backgroundColor: '#fff' }}>
             <div style={{ boxShadow: '0 0 5px 2px rgba(138, 138, 138, 0.2)', width: '100%' }}>
                 <div style={{ alignSelf: 'stretch', paddingLeft: 4, paddingRight: 1, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'inline-flex', width: '100%', marginLeft: '15px', marginTop: '15px' }}>
@@ -194,7 +205,6 @@ const SearchFilter: React.FC<SearchFilterProps> = ({ setShowList, leadsData }) =
                     </div>
                 </div>
             </div>
-
             <div style={{ maxWidth: '98.5%', height: 38, justifyContent: 'space-between', alignItems: 'center', gap: 16, display: 'flex', width: '100%', borderRight: '1px #DBDADE solid', borderLeft: '1px #DBDADE solid', padding: 10, zIndex: '999', backgroundColor: '#fff' }}>
                 <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 15, height: '100%' }}>
                     <select style={{ display: 'flex', justifyContent: 'center', height: '2rem', width: '5rem', padding: '5px 10px 5px 5px', borderRadius: '5px' }}>
@@ -216,7 +226,6 @@ const SearchFilter: React.FC<SearchFilterProps> = ({ setShowList, leadsData }) =
                         <option>Assignados a mim</option>
                         <option>Todos</option>
                     </select>
-
                     <input
                         title='Buscar'
                         placeholder='Buscar'
@@ -227,7 +236,6 @@ const SearchFilter: React.FC<SearchFilterProps> = ({ setShowList, leadsData }) =
                             alignItems: 'center', display: 'flex'
                         }}
                     />
-
                     <div>
                         <Button style={{
                             background: 'rgba(115, 103, 240, 1)',
@@ -237,7 +245,6 @@ const SearchFilter: React.FC<SearchFilterProps> = ({ setShowList, leadsData }) =
                             alignItems: 'center',
                             color: '#fff',
                             width: '137px',
-                            //   fontSize: 14,
                             display: 'flex',
                             cursor: 'pointer'
                         }}
@@ -248,31 +255,25 @@ const SearchFilter: React.FC<SearchFilterProps> = ({ setShowList, leadsData }) =
                     </div>
                 </div>
             </div>
-
             <div style={{ height: '80vh', width: '100%' }}>
                 <DataGrid
                     rows={[]}
                     columns={columns}
                     initialState={{
                         pagination: {
-                            paginationModel: { page: 0, pageSize: 5 },
-                        },
+                            paginationModel: { page: 0, pageSize: 5 }
+                        }
                     }}
                     autoPageSize
-                    // pageSizeOptions={[5, 10, 20]}
                     isCellEditable={(params) => params.row.Contato % 2 === 0}
                     getRowId={(row) => row._id}
                 />
             </div>
-
-            <Modal
-                open={open}
-            >
+            <Modal open={open} >
                 <ModalSearch close={handleClose} />
             </Modal>
-
         </div>
-    )
+    );
 }
 
 export default SearchFilter;

@@ -1,37 +1,45 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { IconButton } from "@mui/material";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+import 'dayjs/locale/pt-br'
 import { Phone, Search, Video, DotsVertical, FaceBookIcon, InstagramIcon, TelegramIcon, WhatsAppIcon } from "../Image/icons";
 import web from "../Image/web.svg";
 import Avatar2 from "../Image/Avatar2.png"
 import ListarMensagens from "./MessegerPayload";
 import TextEnter from "./TextEnter";
 import AddTicket from "./AddTicket/AddTicket";
-import { IconButton } from "@mui/material";
 import useAuth from "../../hooks/useAuth";
 import useChat from "../../hooks/useChat";
 import { useFetchRecipient } from "../../hooks/useFetchRecipient";
 import "./chat.css";
 
-import dayjs from "dayjs";
-import relativeTime from "dayjs/plugin/relativeTime";
-import 'dayjs/locale/pt-br'
-
 dayjs.extend(relativeTime)
 dayjs.locale('pt-br')
 
-export const ChatBox = ({ toggleAddTicket }): React.JSX.Element => {
+interface Props {
+  toggleAddTicket: boolean;
+};
+
+export const ChatBox = ({ toggleAddTicket }: Props): JSX.Element => {
   const [exibirAddTicket, setExibirAddTicket] = useState(false);
   const [showAddTicket, setShowAddTicket] = useState(false);
 
   const { user } = useAuth();
 
-  const { currentChat, isMessagesLoading, messages, sendTextMessage } =
-    useChat();
+  const { currentChat, isMessagesLoading, messages, sendTextMessage } = useChat();
 
   const { recipientUser } = useFetchRecipient(currentChat, user);
 
-  if (!recipientUser) return <p>Nenhuma conversa selecionada.</p>;
+  if (!recipientUser) {
+    return (
+      <p>
+        Nenhuma conversa selecionada.
+      </p>
+    );
+  }
 
-  const handleSendMessage = (textMessage, setTextMessage) => {
+  const handleSendMessage = (textMessage: string, setTextMessage: () => void) => {
     sendTextMessage(textMessage, user, currentChat._id, setTextMessage);
   };
 
@@ -45,7 +53,14 @@ export const ChatBox = ({ toggleAddTicket }): React.JSX.Element => {
     console.log("Arquivo recebido em Treatment:", file);
   };
 
-  if (isMessagesLoading) return <p>Carregando mensagens...</p>;
+  if (isMessagesLoading) {
+    return (
+      <p>
+        Carregando mensagens...
+      </p>
+    );
+  }
+
   console.log(dayjs(messages[0]?.createdAt).locale('pt-BR').format())
 
   const origin = currentChat?.origin.platform;
@@ -134,7 +149,6 @@ export const ChatBox = ({ toggleAddTicket }): React.JSX.Element => {
             </div>
           </div>
         ))}
-
       </div>
       {toggleAddTicket ? (
           <AddTicket

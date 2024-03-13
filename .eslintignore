@@ -1,3 +1,4 @@
 node_modules
-config-overrides.js
 build
+./src/components/Email/**/*.{js,jsx}
+./src/services/email/**/*.{js,jsx}

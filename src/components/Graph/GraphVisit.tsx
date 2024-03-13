@@ -43,7 +43,7 @@ const GraphVisit: React.FC<GraphVisitProps> = ({ month }) => {
                 beginAtZero: true,
                 max: 50,  
                 ticks: {
-                  callback: (value: string | number) => `${value}%` as string,  
+                  callback: (value: string | number) => `${value}%`  
                 },
               },
               x: {

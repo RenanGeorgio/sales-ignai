@@ -1,155 +1,173 @@
 
-import React from 'react'
+import { useState } from 'react';
+import { Navigate, useNavigate }  from 'react-router-dom';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import { Avatar, Button, IconButton } from '@mui/material';
 import { DotsVertical, Edit, MessageDots, PaperClip, Plus, Trash, } from '../../Image/icons'
 import rows from '../../../dados/data1.json';
-import  {Navigate, useNavigate}  from 'react-router-dom';
 
+type ContactProps = {
+    name: string;
+    email: string;
+    telefone: string | number;
+}
 
-const ContatoCell = ({ client }) => {
+type Priority = 'Alta' | 'Média' | 'Baixa' | undefined;
+
+interface Client {
+    client: ContactProps;
+    children?: React.ReactNode;
+};
+
+const ContatoCell = ({ client }: Client) => {
     return (
         <>
-      <div style={{display:'flex', flexDirection:'column'}}>
-        <div style={{ fontWeight: 'bold' }}>{client?.name}</div>
-        <div style={{ fontSize: 12, color: 'gray' }}>{client?.email} {client?.telefone}</div>
-      </div>
-      </>
+            <div style={{display:'flex', flexDirection:'column'}}>
+                <div style={{ fontWeight: 'bold' }}>{client?.name}</div>
+                <div style={{ fontSize: 12, color: 'gray' }}>{client?.email} {client?.telefone}</div>
+            </div>
+        </>
     );
 };
 
-// const Imagem =({profile}) =>{
-//     return(
-//         <>
-//         <img src={profile.image}  alt={`imagem de`} width="40" />
-//         </>
-//     )
-// }
-
-  const getStatusStyles = (status) => {
+const getStatusStyles = (status: string) => {
     const color = status === 'Não ativo' ? 'red' : 'green';
-  return { color, };
-  };
-  const getPriorityStyles = (priority) => {
-    let color, backgroundColor;
-  
+    return { color };
+};
+
+const getPriorityStyles = (priority: Priority) => {
+    let color: string = ''; 
+    let backgroundColor: string = '';
+
     if (priority === 'Alta') {
-      color = 'white';
-      backgroundColor = 'red';
+        color = 'white';
+        backgroundColor = 'red';
     } else if (priority === 'Média') {
-      color = 'white';
-      backgroundColor = 'orange';
+        color = 'white';
+        backgroundColor = 'orange';
     } else if (priority === 'Baixa') {
-      color = 'white';
-      backgroundColor = 'lightgreen';
+        color = 'white';
+        backgroundColor = 'lightgreen';
     } else {
-      // Tratamento padrão caso a prioridade não seja reconhecida
-      color = 'black';
-      backgroundColor = 'white';
+        // Tratamento padrão caso a prioridade não seja reconhecida
+        color = 'black';
+        backgroundColor = 'white';
     }
-  
+
     return { color, backgroundColor };
-  };
+};
   
-  
-  export default function ContactComponent() {
-    const [checkboxSelection, setCheckboxSelection] = React.useState(true);
-    
+export default function ContactComponent() {
+    const [checkboxSelection, setCheckboxSelection] = useState<boolean>(true);
     const navigate = useNavigate();
     
     const columns: GridColDef[] = [
-        { field: 'client', headerName: 'Cliente-Conta', width: 450,
-        renderCell: (params) => {
-      
-            return (
-              <div style={{ cursor: 'pointer' }} >
-                <ContatoCell client={params.value} />
-              </div>
-            );
-            
-         }
-   },
-      { field: 'priority', headerName: 'Prioridade',  width: 200, align:'center',
-      headerAlign:'center',
-      renderCell: (params) => (
-          <div style={{ 
-              color: getPriorityStyles(params.value).color, 
-              backgroundColor: getPriorityStyles(params.value).backgroundColor, 
-              border: '1px solid',
-              padding:'2px',
-              borderRadius:'5px',
-              width:'95px',
-              textAlign:'center'
-              }}>
-              {params.value}
-          </div>
-        ),
-  },
-      { field: 'sector', headerName: 'Setor', width: 190, align:'center',
-      headerAlign:'center',},
-      { field: 'document', headerName: 'Documentos', width: 250,align:'center',
-      headerAlign:'center',
-      renderCell:(params)=>{
-      return(
-          <div>
-      <IconButton size="small" aria-label="upload document"><PaperClip/> </IconButton>{params.value}
-      <IconButton size="small"> <MessageDots/></IconButton>{params.value}
-      </div>
-      )}
-  },
-  
-      { field: 'status', headerName: 'Status', width: 130,align:'center',
-      headerAlign:'center',
-      renderCell: (params) => (
-          <div style={{ 
-              color: getStatusStyles(params.value).color, 
-              // backgroundColor: getStatusStyles(params.value)
-              border: '1px solid',
-              padding:'2px',
-              borderRadius:'5px',
-              width:'95px',
-              textAlign:'center'
-              }}>
-              {params.value}
-          </div>
-        ),
-   },
-      {
-          field: 'acao',
-          headerName: 'Ação',
-          width: 160,
-          align:'right',
-      headerAlign:'center',
-          renderCell: (params) => {
-              return (
-                <div>
-                      <IconButton>
-                          <Edit/>
-                      </IconButton>
-                    <IconButton
-                      color="primary"
-                      size="small"
-                      onClick={() => {
-                        // ...
-                      }}
-                    >
-                      <Trash className={undefined} />
-                    </IconButton>
-                      <IconButton>
-                          <DotsVertical className={undefined}/>
-                      </IconButton>
+        { 
+            field: 'client', 
+            headerName: 'Cliente-Conta', 
+            width: 450,
+            renderCell: (params) => {
+                return (
+                <div style={{ cursor: 'pointer' }} >
+                    <ContatoCell client={params.value} />
                 </div>
-              );
+                );     
+            }
+        },
+        { 
+            field: 'priority', 
+            headerName: 'Prioridade',  
+            width: 200, 
+            align:'center',
+            headerAlign:'center',
+            renderCell: (params) => (
+                <div style={{ 
+                    color: getPriorityStyles(params.value).color, 
+                    backgroundColor: getPriorityStyles(params.value).backgroundColor, 
+                    border: '1px solid',
+                    padding:'2px',
+                    borderRadius:'5px',
+                    width:'95px',
+                    textAlign:'center'
+                }}>
+                    {params.value}
+                </div>
+            ),
+        },
+        { 
+            field: 'sector', 
+            headerName: 'Setor', 
+            width: 190, 
+            align:'center',
+            headerAlign:'center'
+        },
+        { 
+            field: 'document', 
+            headerName: 'Documentos', 
+            width: 250,
+            align: 'center',
+            headerAlign:'center',
+            renderCell: (params) => {
+                return (
+                    <div>
+                        <IconButton size="small" aria-label="upload document"><PaperClip/> </IconButton>{params.value}
+                        <IconButton size="small"> <MessageDots/></IconButton>{params.value}
+                    </div>
+                )
+            }
+        },
+        { 
+            field: 'status', 
+            headerName: 'Status', 
+            width: 130,
+            align: 'center',
+            headerAlign:'center',
+            renderCell: (params) => (
+                <div style={{ 
+                    color: getStatusStyles(params.value).color, 
+                    border: '1px solid',
+                    padding:'2px',
+                    borderRadius:'5px',
+                    width:'95px',
+                    textAlign:'center'
+                }}>
+                    {params.value}
+                </div>
+            ),
+        },
+        {
+            field: 'acao',
+            headerName: 'Ação',
+            width: 160,
+            align:'right',
+            headerAlign:'center',
+            renderCell: (params) => {
+                return (
+                    <div>
+                        <IconButton>
+                            <Edit/>
+                        </IconButton>
+                        <IconButton
+                            color="primary"
+                            size="small"
+                            onClick={() => {}}
+                        >
+                            <Trash className={undefined} />
+                        </IconButton>
+                        <IconButton>
+                            <DotsVertical className={undefined}/>
+                        </IconButton>
+                    </div>
+                );
             },
-      },
-  ];
-    return (
+        },
+    ];
 
+    return (
         <div style={{ width: '94%', height: '100%', paddingTop: 2, paddingBottom: 24, paddingLeft: 80, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', gap: 1, display: 'inline-flex' }}>
             <div style={{ alignSelf: 'stretch', paddingLeft: 4, paddingRight: 1, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'inline-flex', width: '100%' }}>
                 <div style={{ color: 'black', fontSize: 18, fontFamily: 'sans-serif', fontWeight: '500', lineHeight: 2, wordWrap: 'break-word' }}>Filtro de busca</div>
             </div>
-
             <div style={{ justifyContent: 'space-between', alignItems: 'center', gap: 24, display: 'flex', width: '98%', padding: '5px 0px 1px 10px' }}>
                 <div style={{ flex: '1 ', height: 38, borderRadius: 6, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex', width: '100px' }}>
                     <div style={{ flex: '1 1 0', height: 38, background: 'white', borderRadius: 6, overflow: 'hidden', justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex' }}>
@@ -194,9 +212,6 @@ const ContatoCell = ({ client }) => {
                     </div>
                 </div>
             </div>
-
-         
-
             <div style={{ flex: '1 1 0', height: 38, justifyContent: 'space-between', alignItems: 'center', gap: 16, display: 'flex', width: '100%', borderTop: '1px #DBDADE solid', padding: 10 }}>
                 <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 15, height: '100%' }}>
                     <select style={{ display: 'flex', justifyContent: 'center', height: '2rem', width:'5rem', padding: '5px 10px 5px 5px', borderRadius:'5px' }}>
@@ -226,7 +241,6 @@ const ContatoCell = ({ client }) => {
                             justifyContent: 'flex-start',
                             alignItems: 'center', display: 'flex'
                         }} />
-
                     <div>
                         <Button style={{
                             background: '#7367F0',
@@ -235,35 +249,30 @@ const ContatoCell = ({ client }) => {
                             justifyContent: 'center',
                             alignItems: 'center',
                             color: '#fff',
-                            //   fontSize: 14,
                             display: 'flex'
                         }}>
                            <span style={{alignItems:'center'}}><Plus /></span> 
-                           <span>Adicionar</span>
-                           
+                           <span>Adicionar</span>                        
                         </Button>
                     </div>
                 </div>
             </div>
-
             <div style={{ height: 470, width: '100%' }}>
                 <DataGrid
                     rows={rows}
                     columns={columns}
                     initialState={{
                         pagination: {
-                            paginationModel: { page: 0, pageSize: 7 },
-                        },
+                            paginationModel: { page: 0, pageSize: 7 }
+                        }
                     }}
                     pageSizeOptions={[7]}
                     isCellEditable={(params) => params.row.Contato % 2 === 0}
                     onCellClick={(params, event) => {
-                        // if (params.field === 'client') {
-                            navigate(`/details`);
-                        // }
+                        navigate('/details');
                     }}
                 />
             </div>
         </div>
-    )
+    );
 }

@@ -1,17 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
-// import Head from 'next/head';
-// import Link from 'next/link';
+import { useContext, useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { CircularProgress } from "@mui/material";
-// import { AuthContext } from '@contexts/authContext';
-// import { LoginProps } from '@typography/interfaces';
-
-import "./SignIn.css";
-// import { Link } from 'react-router-dom';
-import { SignInData } from "../../types";
-import { AuthContext } from "../../contexts/auth/AuthContext";
-
-// import * as React from 'react';
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -21,11 +10,13 @@ import Checkbox from "@mui/material/Checkbox";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-// import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { AuthContext } from "../../contexts/auth/AuthContext";
 import Copyright from "../Copyright";
+import { SignInData } from "../../types";
+import "./SignIn.css";
 
 const defaultTheme = "";
 
@@ -36,30 +27,32 @@ export default function SignIn(): JSX.Element {
   const [error, setError] = useState("");
 
   const { register, handleSubmit } = useForm<SignInData>();
-  const [checked, setChecked] = React.useState(false);
+  const [checked, setChecked] = useState(false);
 
   useEffect(() => {
     localStorage.setItem("persist", JSON.stringify(checked));
   }, [checked]);
 
-  const handleSignIn: SubmitHandler<SignInData> = async (data) => {
+  const handleSignIn: SubmitHandler<SignInData> = (data) => {
     setIsLoading(true);
     setError("");
 
-    const response = await signIn({
-      email: data.email,
-      password: data.password,
-    });
+    (async () => {
+      const response = await signIn({
+        email: data.email,
+        password: data.password,
+      });
     
-    if (response?.status === 401 || response?.status === 400) {
-      setError(response.message);
-      setIsLoading(false);
-    }
+      if (response?.status === 401 || response?.status === 400) {
+        setError(response.message);
+        setIsLoading(false);
+      }
 
-    if (response?.status === 500) {
-      setError(response.message);
-      setIsLoading(false);
-    }
+      if (response?.status === 500) {
+        setError(response.message);
+        setIsLoading(false);
+      }
+    })();
   };
 
   return (
@@ -82,6 +75,7 @@ export default function SignIn(): JSX.Element {
           </Typography>
           <Box
             component="form"
+            // eslint-disable-next-line @typescript-eslint/no-misused-promises
             onSubmit={handleSubmit(handleSignIn)}
             // noValidate
             sx={{ mt: 1 }}

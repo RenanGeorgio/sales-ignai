@@ -212,9 +212,10 @@ export async function persistState(dispatch, state) {
  * @param messages {Array}
  * @returns {Promise<void>}
  */
-export async function persistMessageCache(userId, hash, folder, messages) {
+export function persistMessageCache(userId, hash, folder, messages) {
   const worker = new WebWorker(SjclWorker);
-  worker.onmessage = async m => {
+
+  worker.onmessage = async (m) => {
     const messageCache = {
       // Key will not be used for data retrieval, index will be used instead
       // Key is only used to overwrite previous versions of the message cache, a has is enough
@@ -223,15 +224,21 @@ export async function persistMessageCache(userId, hash, folder, messages) {
       folderId: sjcl.encrypt(hash, folder.folderId),
       messages: m.data.encryptedData
     };
+
     const db = await _openDatabaseSafe();
+
     const tx = db.transaction([MESSAGE_CACHE_STORE], 'readwrite');
     const store = tx.objectStore(MESSAGE_CACHE_STORE);
+
     await store.put(messageCache);
+
     await tx.complete;
+
     db.close();
     worker.terminate();
     URL.revokeObjectURL(m.data.workerHref);
   };
+
   worker.postMessage({password: hash, data: JSON.stringify(messages)});
 }
 
@@ -294,21 +301,28 @@ export async function deleteMessageCache(userId, hash, foldersToDeleteIds) {
  * @param content
  * @returns {Promise<void>}
  */
-export async function persistApplicationNewMessageContent(application, content = '') {
+export function persistApplicationNewMessageContent(application, content = '') {
   const worker = new WebWorker(SjclWorker);
-  worker.onmessage = async m => {
+
+  worker.onmessage = async (m) => {
     const newMessage = {
       key: application.user.id,
       newMessageContent: m.data.encryptedData
     };
+
     const db = await _openDatabaseSafe();
+
     const tx = db.transaction([NEW_MESSAGE_STORE], 'readwrite');
     const store = tx.objectStore(NEW_MESSAGE_STORE);
+
     await store.put(newMessage);
+
     await tx.complete;
+
     db.close();
     worker.terminate();
     URL.revokeObjectURL(m.data.workerHref);
   };
+
   worker.postMessage({password: application.user.hash, data: JSON.stringify(content)});
 }

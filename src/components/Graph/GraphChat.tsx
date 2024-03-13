@@ -50,7 +50,7 @@ const GraphChat: React.FC<GraphChatProps> = ({ data }) => {
                 beginAtZero: true,
                 max: 50,  
                 ticks: {
-                  callback: (value: string | number) => `${value}%` as string,  
+                  callback: (value: string | number) => `${value}%`  
                 },
               },
               x: {
