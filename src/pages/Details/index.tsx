@@ -1,14 +1,17 @@
-import React from 'react';
-import Navbar from '../../components/Navbar';
-import DetailsLayout from '../../components/Layout/DetailsLayout'
+import React from "react";
+import Navbar from "../../components/Navbar";
+import { useLocation } from "react-router-dom";
+import ContactDetails from "components/Contact/ContactDetails/ContactDetails";
 
-const ContactPage = () => {
+const ContactDetailsPage = () => {
+  const { state } = useLocation();
+
   return (
     <div className="page-content">
       <Navbar />
-     <DetailsLayout/>
+      <ContactDetails client={state} />
     </div>
   );
 };
 
-export default ContactPage;
+export default ContactDetailsPage;

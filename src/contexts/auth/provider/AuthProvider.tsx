@@ -46,7 +46,9 @@ export function AuthProvider({ children }) {
     dispatch(sessionActions.signOut());
     persistor.pause();
     persistor.flush().then(() => {
-      return persistor.purge();
+      return persistor.purge().then(() => {
+        persistor.persist();
+      });
     });
     navigate("/sign-in");
   };

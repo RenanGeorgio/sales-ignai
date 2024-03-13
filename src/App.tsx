@@ -61,7 +61,7 @@ function App() {
                     <Route path="/leads" element={<Leads />} />
                     <Route path="/negocios" element={<Negocios />} />
                     <Route path="/contact" element={<Contact />} />
-                    <Route path="/details" element={<Details />} />
+                    <Route path="/contact/details" element={<Details />} />
                     <Route path="/invoice" element={<Invoice />} />
                   </Route>
                   <Route path="*" element={<NotFound />} />

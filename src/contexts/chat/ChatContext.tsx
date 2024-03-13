@@ -84,7 +84,7 @@ export const ChatProvider = ({ children }: any) => {
   useEffect(() => {
     if (!userChats) return;
     const getClients = async () => {
-      const response = await getRequest(`${baseUrl}/clients`);
+      const response = await getRequest(`${baseUrl}/chat/clients`);
 
       if (response.error) {
         return setUserChatsError(response);
@@ -130,7 +130,7 @@ export const ChatProvider = ({ children }: any) => {
       setMessageError(null);
       if (currentChat) {
         const response = await getRequest(
-          `${baseUrl}/message/${currentChat._id}`
+          `${baseUrl}/chat/message/${currentChat._id}`
         );
         setIsMessagesLoading(false);
 
@@ -152,7 +152,7 @@ export const ChatProvider = ({ children }: any) => {
   const sendTextMessage = useCallback(
     async (textMessage, sender, currentChatId, setTextMessage) => {
       if (textMessage === "") return;
-      const response = await postRequest(`${baseUrl}/message`, {
+      const response = await postRequest(`${baseUrl}/chat/message`, {
         text: textMessage,
         senderId: sender.companyId,
         chatId: currentChatId,
