@@ -14,6 +14,7 @@ import Statistics from "./pages/Statistics";
 import Calendar from "./pages/Calendar";
 import Negocios from "./pages/Business";
 import Contact from "./pages/Contacts";
+import Details from "./pages/Details";
 import Invoice from "./pages/Invoice";
 import EmailLogin from "./components/Email/login/login"
 import CachingController from "./CachingController";
@@ -60,6 +61,7 @@ function App() {
                     <Route path="/leads" element={<Leads />} />
                     <Route path="/negocios" element={<Negocios />} />
                     <Route path="/contact" element={<Contact />} />
+                    <Route path="/details" element={<Details />} />
                     <Route path="/invoice" element={<Invoice />} />
                   </Route>
                   <Route path="*" element={<NotFound />} />
