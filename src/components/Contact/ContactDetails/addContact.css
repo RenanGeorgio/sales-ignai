@@ -1,5 +1,5 @@
 .modal-form {
-  width: 100%;
+  /* width: 100%; */
   width: auto;
 }
 
@@ -9,6 +9,7 @@
 
 .form-group {
   margin-bottom: 10px;
+  /* width: 100%; */
 }
 
 .form-group label {
@@ -18,9 +19,24 @@
 }
 
 .form-input {
-  width: 100%;
+  /* width: 100%; */
   flex: 1;
-  width: 96%;
+  width: 93%;
+  padding: 1em;
+  line-height: 1.4;
+  background-color: #f9f9f9;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  -webkit-transition: 0.35s ease-in-out;
+  -moz-transition: 0.35s ease-in-out;
+  -o-transition: 0.35s ease-in-out;
+  transition: 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+
+.form-input-select {
+  flex: 1;
+  width: 100%;
   padding: 1em;
   line-height: 1.4;
   background-color: #f9f9f9;

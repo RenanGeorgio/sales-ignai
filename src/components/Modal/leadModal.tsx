@@ -106,7 +106,7 @@ const LeadModal: React.FC<LeadModalProps> = ({ closeModal, handleClick, data }) 
               <div className="comentario-container">
                 <input
                   type="text"
-                  className="comentario-input"
+                  className="input-lead"
                   placeholder="Escreva um comentário"
                   defaultValue={values?.comments}
                   name="comments"

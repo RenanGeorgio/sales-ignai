@@ -52,7 +52,7 @@ const AddContactForm = ({ onSubmit }) => {
         </div>
         <div className="form-group">
           <label htmlFor="state">Estado</label>
-          <select id="state" name="state" className="form-input">
+          <select id="state" name="state" className="form-input-select">
             <option value="">Selecione...</option>
             {stateList.UF.map((state) => (
               <option key={state.sigla} value={state.nome}>
