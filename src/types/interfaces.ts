@@ -6,7 +6,13 @@ export interface IClient {
   sector: string;
   status?: boolean;
   companyId: string;
+  contact?: IContact;
 };
+
+export interface IContact {
+  contactInfo: IContactInfo;
+  address: IAddress[];
+}
 
 export interface IContactInfo {
   client: string;

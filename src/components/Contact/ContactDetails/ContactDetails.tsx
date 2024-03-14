@@ -13,35 +13,43 @@ import ImageLogo from "../../Image/Queiroz_Galvão_Logo 1.png";
 import PaymentAddress from "./PaymentAdress/PaymentAddress";
 import Notification from "./Notifications/Notification";
 import "./PaymentAdress/payment.css";
-import { getPaymentStatusStyles, priorityStatus, getPriorityStyles } from "helpers/status";
+import {
+  getPaymentStatusStyles,
+  priorityStatus,
+  getPriorityStyles,
+} from "helpers/status";
 import { useQuery } from "react-query";
 import authApi from "services/auth";
+import ModalComponent from "components/Modal/Modal";
+import AddContact from "./addContactForm";
+import AddContactForm from "./addContactForm";
+import { IContactInfo } from "types/interfaces";
+import { useSelector } from "react-redux";
 
 // const ImageLogo = '../../Image/Queiroz_Galvão_Logo 1.png'
 
 const ContactDetails = ({ client }) => {
   const [activePage, setActivePage] = useState("pageName");
-  const navigate = useNavigate();
-
-  const [ priorityStyles, setPriorityStyles ] = useState({
+  const [openModal, setOpenModal] = useState(false);
+  const [priorityStyles, setPriorityStyles] = useState({
     color: "",
     backgroundColor: "",
-  })
+  });
+
+  const navigate = useNavigate();
 
   const handleButtonClick = (pageName: string) => {
     setActivePage(pageName);
   };
 
-  const fetchContact = async () => {
-    const res = await authApi.get(`/client/contact/${client?._id}`)
-    return res.data;
-  };
-
-  const { data, isLoading } = useQuery({ queryKey: ['contact', client._id], queryFn: fetchContact });
-
   useEffect(() => {
-    setPriorityStyles(getPriorityStyles(client.priority))
+    setPriorityStyles(getPriorityStyles(client.priority));
   }, [client.priority]);
+
+  const handleAddContact = async (contact: IContactInfo) => {
+    await authApi.post(`/client/${client._id}/contact`, contact);
+    setOpenModal(false);
+  };
 
   const columns: GridColDef[] = [
     {
@@ -89,7 +97,7 @@ const ContactDetails = ({ client }) => {
       align: "center",
       headerAlign: "center",
       renderCell: (params) => {
-        const {color, backgroundColor } = getPaymentStatusStyles(params.value);
+        const { color, backgroundColor } = getPaymentStatusStyles(params.value);
         return (
           <div
             style={{
@@ -346,7 +354,7 @@ const ContactDetails = ({ client }) => {
                       wordWrap: "break-word",
                     }}
                   >
-                    { client?.name }
+                    {client?.name}
                   </div>
                   <div
                     style={{
@@ -358,7 +366,7 @@ const ContactDetails = ({ client }) => {
                       wordWrap: "break-word",
                     }}
                   >
-                    Cliente ID {'#' + client?._id.slice(0, 10)}
+                    Cliente ID {"#" + client?._id.slice(0, 10)}
                   </div>
 
                   <div
@@ -506,232 +514,212 @@ const ContactDetails = ({ client }) => {
                 >
                   CONTATO
                 </div>
-                <Button variant="contained">Adicionar</Button>
+                <Button
+                  variant="contained"
+                  onClick={() => {
+                    setOpenModal(true);
+                  }}
+                >
+                  Adicionar
+                </Button>
               </div>
 
               {/* <bloco 1 esquerdo  */}
-              {isLoading ? (
-                <div>Loading...</div>
-              ) : data?.contactInfo?.map((item, index) => (
-                <div
-                style={{
-                  alignSelf: "stretch",
-                  height: 190,
-                  flexDirection: "column",
-                  justifyContent: "flex-start",
-                  alignItems: "flex-start",
-                  gap: 20,
-                  display: "flex",
-                }}
-              >
-                <div
-                  style={{
-                    alignSelf: "stretch",
-                    flexDirection: "column",
-                    justifyContent: "flex-start",
-                    alignItems: "flex-start",
-                    gap: 1,
-                    display: "flex",
-                  }}
-                >
-                  <div style={{ width: 284, lineHeight: 1.3 }}>
-                    <span
-                      style={{
-                        color: "black",
-                        fontSize: 15,
-                        fontFamily: "sans-serif",
-                        fontWeight: "600",
-                        lineHeight: 0,
-                        wordWrap: "break-word",
-                      }}
-                    >
-                      Contato:
-                    </span>
-                    <span
-                      style={{
-                        color: "black",
-                        fontSize: 15,
-                        fontFamily: "sans-serif",
-                        lineHeight: 1,
-                        wordWrap: "break-word",
-                      }}
-                    >
-                      {item?.contactName}
-                    </span>
-                  </div>
-
-                  <div style={{ width: 284, lineHeight: 1.3 }}>
-                    <span
-                      style={{
-                        color: "black",
-                        fontSize: 15,
-                        fontFamily: "sans-serif",
-                        fontWeight: "600",
-                        lineHeight: 0,
-                        wordWrap: "break-word",
-                      }}
-                    >
-                      Email:{" "}
-                    </span>
-                    <span
-                      style={{
-                        color: "black",
-                        fontSize: 15,
-                        fontFamily: "sans-serif",
-                        lineHeight: 1,
-                        wordWrap: "break-word",
-                      }}
-                    >
-                      vafgot@vultukir.org
-                    </span>
-                  </div>
-
+  
+                {client?.contact.contactInfo?.map((item, index) => (
                   <div
                     style={{
                       alignSelf: "stretch",
+                      height: 190,
+                      flexDirection: "column",
                       justifyContent: "flex-start",
-                      alignItems: "center",
-                      gap: 1,
-                      display: "inline-flex",
+                      alignItems: "flex-start",
+                      gap: 20,
+                      display: "flex",
                     }}
                   >
                     <div
                       style={{
-                        color: "black",
-                        fontSize: 15,
-                        fontFamily: "sans-serif",
-                        fontWeight: "600",
-                        lineHeight: 0,
-                        wordWrap: "break-word",
-                      }}
-                    >
-                      Status:
-                    </div>
-                    <div
-                      style={{
-                        padding: " 10px 20px",
-                        background: "rgba(40, 199, 111, 0.16)",
-                        borderRadius: 4,
+                        alignSelf: "stretch",
+                        flexDirection: "column",
                         justifyContent: "flex-start",
-                        alignItems: "center",
-                        gap: 10,
+                        alignItems: "flex-start",
+                        gap: 1,
                         display: "flex",
                       }}
                     >
+                      <div style={{ width: 284, lineHeight: 1.3 }}>
+                        <span
+                          style={{
+                            color: "black",
+                            fontSize: 15,
+                            fontFamily: "sans-serif",
+                            fontWeight: "600",
+                            lineHeight: 0,
+                            wordWrap: "break-word",
+                          }}
+                        >
+                          Contato:
+                        </span>
+                        <span
+                          style={{
+                            color: "black",
+                            fontSize: 15,
+                            fontFamily: "sans-serif",
+                            lineHeight: 1,
+                            wordWrap: "break-word",
+                          }}
+                        >
+                          {item?.contactName}
+                        </span>
+                      </div>
+
+                      <div style={{ width: 284, lineHeight: 1.3 }}>
+                        <span
+                          style={{
+                            color: "black",
+                            fontSize: 15,
+                            fontFamily: "sans-serif",
+                            fontWeight: "600",
+                            lineHeight: 0,
+                            wordWrap: "break-word",
+                          }}
+                        >
+                          Email:{" "}
+                        </span>
+                        <span
+                          style={{
+                            color: "black",
+                            fontSize: 15,
+                            fontFamily: "sans-serif",
+                            lineHeight: 1,
+                            wordWrap: "break-word",
+                          }}
+                        >
+                          {item?.email}
+                        </span>
+                      </div>
+
                       <div
                         style={{
-                          color: "#28C76F",
-                          fontSize: 13,
-                          fontFamily: "sans-serif",
-                          fontWeight: "500",
-                          lineHeight: 0,
-                          wordWrap: "break-word",
+                          alignSelf: "stretch",
+                          justifyContent: "flex-start",
+                          alignItems: "center",
+                          gap: 1,
+                          display: "inline-flex",
                         }}
                       >
-                        Ativo
+                        <div
+                          style={{
+                            color: "black",
+                            fontSize: 15,
+                            fontFamily: "sans-serif",
+                            fontWeight: "600",
+                            lineHeight: 0,
+                            wordWrap: "break-word",
+                          }}
+                        >
+                          Status:
+                        </div>
+                        <div
+                          style={{
+                            padding: " 10px 20px",
+                            background: "rgba(40, 199, 111, 0.16)",
+                            borderRadius: 4,
+                            justifyContent: "flex-start",
+                            alignItems: "center",
+                            gap: 10,
+                            display: "flex",
+                          }}
+                        >
+                          <div
+                            style={{
+                              color: "#28C76F",
+                              fontSize: 13,
+                              fontFamily: "sans-serif",
+                              fontWeight: "500",
+                              lineHeight: 0,
+                              wordWrap: "break-word",
+                            }}
+                          >
+                            {item?.status ? "Ativo" : "Inativo"}
+                          </div>
+                        </div>
+                      </div>
+
+                      <div style={{ width: 284, lineHeight: 1.3 }}>
+                        <span
+                          style={{
+                            color: "black",
+                            fontSize: 15,
+                            fontFamily: "sans-serif",
+                            fontWeight: "600",
+                            lineHeight: 0,
+                            wordWrap: "break-word",
+                          }}
+                        >
+                          Contato:
+                        </span>
+                        <span
+                          style={{
+                            color: "black",
+                            fontSize: 15,
+                            fontFamily: "sans-serif",
+                            lineHeight: 0,
+                            wordWrap: "break-word",
+                          }}
+                        >
+                          { item?.tel }
+                        </span>
+                      </div>
+
+                      <div style={{ width: 284, lineHeight: 1.5 }}>
+                        <span
+                          style={{
+                            color: "black",
+                            fontSize: 15,
+                            fontFamily: "sans-serif",
+                            fontWeight: "600",
+                            lineHeight: 0,
+                            wordWrap: "break-word",
+                          }}
+                        >
+                          Estado:{" "}
+                        </span>
+                        <span
+                          style={{
+                            color: "black",
+                            fontSize: 15,
+                            fontFamily: "sans-serif",
+                            lineHeight: 1,
+                            wordWrap: "break-word",
+                          }}
+                        >
+                          {item?.state}
+                        </span>
                       </div>
                     </div>
+
+                    <div
+                      style={{
+                        justifyContent: "flex-start",
+                        display: "inline-flex",
+                      }}
+                    >
+                      <Button
+                        size="small"
+                        style={{
+                          color: "white",
+                          fontFamily: "sans-serif",
+                          background: "#BABABD",
+                        }}
+                      >
+                        Editar detalhes
+                      </Button>
+                    </div>
                   </div>
-
-                  <div style={{ width: 284, lineHeight: 1.3 }}>
-                    <span
-                      style={{
-                        color: "black",
-                        fontSize: 15,
-                        fontFamily: "sans-serif",
-                        fontWeight: "600",
-                        lineHeight: 0,
-                        wordWrap: "break-word",
-                      }}
-                    >
-                      Contato:
-                    </span>
-                    <span
-                      style={{
-                        color: "black",
-                        fontSize: 15,
-                        fontFamily: "sans-serif",
-                        lineHeight: 0,
-                        wordWrap: "break-word",
-                      }}
-                    >
-                      (27) 99456-7890
-                    </span>
-                  </div>
-
-                  <div style={{ width: 284, lineHeight: 1.5 }}>
-                    <span
-                      style={{
-                        color: "black",
-                        fontSize: 15,
-                        fontFamily: "sans-serif",
-                        fontWeight: "600",
-                        lineHeight: 0,
-                        wordWrap: "break-word",
-                      }}
-                    >
-                      Estado:{" "}
-                    </span>
-                    <span
-                      style={{
-                        color: "black",
-                        fontSize: 15,
-                        fontFamily: "sans-serif",
-                        lineHeight: 1,
-                        wordWrap: "break-word",
-                      }}
-                    >
-                      Espírito Santo
-                    </span>
-                  </div>
-
-                  <div style={{ width: 284, lineHeight: 1 }}>
-                    <span
-                      style={{
-                        color: "black",
-                        fontSize: 15,
-                        fontFamily: "sans-serif",
-                        fontWeight: "600",
-                        lineHeight: 0,
-                        wordWrap: "break-word",
-                      }}
-                    >
-                      País:
-                    </span>
-                    <span
-                      style={{
-                        color: "black",
-                        fontSize: 15,
-                        fontFamily: "sans-serif",
-                        lineHeight: 0,
-                        wordWrap: "break-word",
-                      }}
-                    >
-                      Brasil
-                    </span>
-                  </div>
-                </div>
-
-                <div
-                  style={{
-                    justifyContent: "flex-start",
-                    display: "inline-flex",
-                  }}
-                >
-                  <Button
-                    size="small"
-                    style={{
-                      color: "white",
-                      fontFamily: "sans-serif",
-                      background: "#BABABD",
-                    }}
-                  >
-                    Editar detalhes
-                  </Button>
-                </div>
-                </div>
-              ))}
-
+                ))
+                      }
             </div>
           </div>
         </div>
@@ -792,7 +780,7 @@ const ContactDetails = ({ client }) => {
             )}
             {activePage === "Payment" && (
               <div>
-                <PaymentAddress address={data?.address} />
+                <PaymentAddress address={client?.contact.address} />
               </div>
             )}
             {activePage === "Painel" && (
@@ -901,6 +889,13 @@ const ContactDetails = ({ client }) => {
           </div>
         </div>
       </div>
+      <ModalComponent
+        open={openModal}
+        title={"Adicionar contato"}
+        onClose={() => setOpenModal(false)}
+      >
+        <AddContactForm onSubmit={(contact) => {handleAddContact(contact)}} />
+      </ModalComponent>
     </div>
   );
 };

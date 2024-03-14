@@ -1,0 +1,60 @@
+.modal-form {
+  width: 100%;
+  width: auto;
+}
+
+.modal-form h2 {
+  color: #000;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #000;
+}
+
+.form-input {
+  width: 100%;
+  flex: 1;
+  width: 96%;
+  padding: 1em;
+  line-height: 1.4;
+  background-color: #f9f9f9;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  -webkit-transition: 0.35s ease-in-out;
+  -moz-transition: 0.35s ease-in-out;
+  -o-transition: 0.35s ease-in-out;
+  transition: 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+
+.form-input:focus {
+  outline: 0;
+  border-color: #3700b3;
+}
+.form-input:focus + .input-icon i {
+  color: #f0a500;
+}
+.form-input:focus + .input-icon:after {
+  border-right-color: #f0a500;
+}
+
+.form-submit-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #6200ee;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
+}
+
+.form-submit-button:hover {
+  background-color: #3700b3;
+}
