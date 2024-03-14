@@ -28,7 +28,6 @@ export default function LayoutChat() {
         <LeftMenu onAddTicketClick={toggleAddTicket}>
           <div className="heading-2">
             <div className="text-wrapper-3">Clientes</div>
-            {/* <ChevronDown1 className="icon-instance-node" /> */}
           </div>
           <div className="div-content">
             {userChats?.map((chat, index) => (

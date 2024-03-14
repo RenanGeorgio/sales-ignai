@@ -1,0 +1,167 @@
+
+.wrapperDetails{
+  /* width: 94%;
+  min-width: 500px;
+  padding-left: 6%;
+  flex: 1;
+
+
+  height: 80%;
+  flex-direction: column;
+
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1;
+  display: inline-flex */
+
+  overflow:hidden;
+   height: 100%;
+width: 94%;
+        padding-top: 2;
+         padding-bottom: 24;
+         padding-left: 90px;
+        padding-right:1px;
+
+        flex-direction: column;
+         justify-content: center;
+
+        align-items: flex-start;
+         gap: 1;
+         display: flex 
+
+}
+
+.headerDetails{
+  /* width: 98%;
+   height: 30px;
+   justify-content: space-between;
+   align-items: center;
+   display: flex;
+   padding:15px */
+   justify-content: space-around;
+   display: flex;
+   height: min-content;
+   /* width: 100%; */
+   align-self: stretch;
+   align-items: center;
+   gap: 26px;
+   /* border: 1px solid red; */
+   padding-right: 15px;
+   padding-left: 5px;
+   margin-bottom: 5px;
+}
+
+.headingText {
+  /* height: min-content; */
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+  line-height: 1;
+}
+
+.clientID {
+  color: #4b465cdf;
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 500;
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+}
+
+.dateID{
+  color: #4b465cc6;
+  font-size: 12px;
+  line-height: 12px;
+  height: min-content;
+  align-self: stretch;
+  flex-direction: column;
+}
+
+
+.Container_module__body {
+  height: min-content;
+  align-self: stretch;
+  /* flex-direction: column; */
+  display: flex;
+  flex-direction: row;
+}
+
+.Container_module__row {
+  height: min-content;
+  align-self: stretch;
+  align-items: flex-start;
+  gap: 26px;
+  display: flex;
+}
+
+.Container_module__row2 {
+  width: 360px;
+  height: min-content;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.Container_module__card {
+  height: min-content;
+  align-self: stretch;
+  flex-direction: column;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0px 4px 18px 0px #4b465c1a;
+}
+
+.Container_module__userInfo {
+  height: min-content;
+  align-self: stretch;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 24px;
+}
+
+.Container_module__data {
+  height: min-content;
+  align-self: stretch;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 30px 0 0;
+}
+
+.Container_module_Logo1 {
+  width: 171px;
+  height: 49px;
+  /* background-image: webpackIgnore: true url(assets/queiroz_Galvao_Logo1.jpg); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.Container_module__data2 {
+  height: min-content;
+  align-self: stretch;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Container_module__row3 {
+  height: 861px;
+  /* flex: 1; */
+  /* flex-direction: column; */
+  /* align-items: flex-start; */
+  /* gap: 26px; */
+
+  flex: 1 1 0;
+   /* height: 100%; */
+
+        flex-direction: column;
+         justify-content: flex-start;
+
+        align-items: flex-start;
+         gap: 6;
+         display: inline-flex
+
+}
