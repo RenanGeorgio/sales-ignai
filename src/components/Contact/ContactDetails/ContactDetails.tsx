@@ -169,6 +169,7 @@ const ContactDetails = ({ client }) => {
         alignItems: "flex-start",
         gap: 1,
         display: "inline-flex",
+        overflow: "auto",
       }}
     >
       <div>
@@ -525,17 +526,37 @@ const ContactDetails = ({ client }) => {
               </div>
 
               {/* <bloco 1 esquerdo  */}
-  
+                <div 
+                style={{ 
+                  overflowY:'scroll',
+                   justifyContent:'center',
+                    display:'flex',
+                     height:'350px',
+                     width:'350px',
+                     marginLeft:5,
+                     paddingTop:20,
+                     flexDirection: 'column',
+                     border:'1px solid #ececec' ,
+                     borderRadius:8,
+                     scrollbarWidth:'thin',
+                     scrollbarColor: '#888 transparent'
+                     }}>
                 {client?.contact.contactInfo?.map((item, index) => (
                   <div
                     style={{
                       alignSelf: "stretch",
                       height: 190,
                       flexDirection: "column",
-                      justifyContent: "flex-start",
-                      alignItems: "flex-start",
+                      justifyContent: "center",
+                      alignItems: "center",
                       gap: 20,
                       display: "flex",
+                      borderBottom:'1px solid #ccc',
+                      marginTop:10,
+                      marginBottom:5,
+                      paddingBottom:5,
+                      paddingTop:20,
+                      paddingLeft:5,
                     }}
                   >
                     <div
@@ -720,6 +741,7 @@ const ContactDetails = ({ client }) => {
                   </div>
                 ))
                       }
+              </div>
             </div>
           </div>
         </div>
