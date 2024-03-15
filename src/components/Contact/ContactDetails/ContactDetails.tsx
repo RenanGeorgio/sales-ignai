@@ -172,8 +172,8 @@ const ContactDetails = ({ client }) => {
         overflow: "auto",
       }}
     >
-      <div>
-        <Button size="small" onClick={() => navigate(-1)}>
+      <div style={{color: '#4b465cca',}}>
+        <Button style={{color: '#4b465cca',}} size="small" onClick={() => navigate(-1)}>
           Voltar
         </Button>
       </div>
@@ -199,8 +199,8 @@ const ContactDetails = ({ client }) => {
         >
           <p
             style={{
-              color: "black",
-              fontSize: 22,
+              color: '#4b465cca',
+              fontSize: 20,
               fontFamily: "sans-serif",
               fontWeight: "500",
               wordWrap: "break-word",
@@ -211,8 +211,8 @@ const ContactDetails = ({ client }) => {
           <span
             style={{
               alignSelf: "stretch",
-              color: "black",
-              fontSize: 15,
+              color: '#4b465cca',
+              fontSize: 13,
               fontFamily: "sans-serif",
               fontWeight: "400",
               wordWrap: "break-word",
@@ -244,14 +244,15 @@ const ContactDetails = ({ client }) => {
         {/* Lado Esquerdo  */}
         <div
           style={{
-            width: 360,
-            height: "100%",
+            width: 300,
+            // height: "100%",
             flexDirection: "column",
             justifyContent: "flex-start",
             alignItems: "flex-start",
             gap: 1,
             display: "inline-flex",
             boxShadow: "0px 4px 18px rgba(75, 70, 92, 0.10)",
+            marginRight:10
           }}
         >
           <div
@@ -270,7 +271,7 @@ const ContactDetails = ({ client }) => {
             <div
               style={{
                 alignSelf: "stretch",
-                height: 560,
+                height: 600,
                 padding: 4,
                 flexDirection: "column",
                 justifyContent: "flex-start",
@@ -297,17 +298,17 @@ const ContactDetails = ({ client }) => {
                     height: 24,
                     justifyContent: "flex-end",
                     display: "flex",
-                    gap: 10,
+                    gap: 5,
                     border: "1px green",
                     alignItems: "center",
                   }}
                 >
                   <div
                     style={{
-                      color: "black",
+                      color: '#4b465cca',
                       fontSize: 13,
                       fontFamily: "sans-serif",
-                      fontWeight: "400",
+                      fontWeight: "600",
                       wordWrap: "break-word",
                     }}
                   >
@@ -332,7 +333,7 @@ const ContactDetails = ({ client }) => {
                   </div>
                   {/* </div> */}
                 </div>
-                <img style={{ width: 171, height: 49 }} src={ImageLogo} />
+                <img style={{ width: 171, height: 45 }} src={ImageLogo} alt="imagem" />
                 <div
                   style={{
                     alignSelf: "stretch",
@@ -341,13 +342,16 @@ const ContactDetails = ({ client }) => {
                     justifyContent: "flex-start",
                     alignItems: "center",
                     display: "flex",
+                    marginBottom:10,
+                    paddingBottom:10,
+                    borderBottom:'2px solid #DBDADE'
                   }}
                 >
                   <div
                     style={{
                       width: 284,
                       textAlign: "center",
-                      color: "black",
+                      color: '#4b465cca',
                       fontSize: 22,
                       fontFamily: "sans-serif",
                       fontWeight: "500",
@@ -359,7 +363,7 @@ const ContactDetails = ({ client }) => {
                   </div>
                   <div
                     style={{
-                      color: "black",
+                      color: '#4b465cca',
                       fontSize: 13,
                       fontFamily: "sans-serif",
                       fontWeight: "400",
@@ -376,7 +380,7 @@ const ContactDetails = ({ client }) => {
                       paddingTop: 24,
                       justifyContent: "space-around",
                       alignItems: "flex-start",
-                      gap: 10,
+                      gap: 5,
                       display: "inline-flex",
                     }}
                   >
@@ -384,7 +388,7 @@ const ContactDetails = ({ client }) => {
                       style={{
                         justifyContent: "space-around",
                         alignItems: "center",
-                        gap: 10,
+                        gap: 5,
                         display: "flex",
                       }}
                     >
@@ -411,7 +415,7 @@ const ContactDetails = ({ client }) => {
                       >
                         <div
                           style={{
-                            color: "black",
+                            color: '#4b465cca',
                             fontSize: 15,
                             fontFamily: "sans-serif",
                             fontWeight: "600",
@@ -423,7 +427,7 @@ const ContactDetails = ({ client }) => {
                         </div>
                         <div
                           style={{
-                            color: "black",
+                            color: '#4b465cca',
                             fontSize: 13,
                             fontFamily: "sans-serif",
                             fontWeight: "400",
@@ -466,7 +470,7 @@ const ContactDetails = ({ client }) => {
                       >
                         <div
                           style={{
-                            color: "black",
+                            color: '#4b465cca',
                             fontSize: 15,
                             fontFamily: "sans-serif",
                             fontWeight: "600",
@@ -478,7 +482,7 @@ const ContactDetails = ({ client }) => {
                         </div>
                         <div
                           style={{
-                            color: "black",
+                            color: '#4b465cca',
                             fontSize: 13,
                             fontFamily: "sans-serif",
                             fontWeight: "400",
@@ -506,16 +510,18 @@ const ContactDetails = ({ client }) => {
               >
                 <div
                   style={{
-                    color: "black",
+                    color: '#4b465cca',
                     fontSize: 13,
                     fontFamily: "sans-serif",
                     fontWeight: "400",
                     wordWrap: "break-word",
+                    borderTop:'1px solid #ececec'
                   }}
                 >
                   CONTATO
                 </div>
                 <Button
+                style={{textTransform:'capitalize'}}
                   variant="contained"
                   onClick={() => {
                     setOpenModal(true);
@@ -526,39 +532,9 @@ const ContactDetails = ({ client }) => {
               </div>
 
               {/* <bloco 1 esquerdo  */}
-                <div 
-                style={{ 
-                  overflowY:'scroll',
-                   justifyContent:'center',
-                    display:'flex',
-                     height:'350px',
-                     width:'350px',
-                     marginLeft:5,
-                     paddingTop:20,
-                     flexDirection: 'column',
-                     border:'1px solid #ececec' ,
-                     borderRadius:8,
-                     scrollbarWidth:'thin',
-                     scrollbarColor: '#888 transparent'
-                     }}>
+                <div  className="contactInfo-Container">
                 {client?.contact.contactInfo?.map((item, index) => (
-                  <div
-                    style={{
-                      alignSelf: "stretch",
-                      height: 190,
-                      flexDirection: "column",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      gap: 20,
-                      display: "flex",
-                      borderBottom:'1px solid #ccc',
-                      marginTop:10,
-                      marginBottom:5,
-                      paddingBottom:5,
-                      paddingTop:20,
-                      paddingLeft:5,
-                    }}
-                  >
+                  <div className="infoContact" >
                     <div
                       style={{
                         alignSelf: "stretch",
@@ -569,10 +545,10 @@ const ContactDetails = ({ client }) => {
                         display: "flex",
                       }}
                     >
-                      <div style={{ width: 284, lineHeight: 1.3 }}>
+                      <div style={{ width: 284,  }}>
                         <span
                           style={{
-                            color: "black",
+                            
                             fontSize: 15,
                             fontFamily: "sans-serif",
                             fontWeight: "600",
@@ -584,7 +560,7 @@ const ContactDetails = ({ client }) => {
                         </span>
                         <span
                           style={{
-                            color: "black",
+                            
                             fontSize: 15,
                             fontFamily: "sans-serif",
                             lineHeight: 1,
@@ -595,14 +571,14 @@ const ContactDetails = ({ client }) => {
                         </span>
                       </div>
 
-                      <div style={{ width: 284, lineHeight: 1.3 }}>
+                      <div style={{ width: 284, }}>
                         <span
                           style={{
-                            color: "black",
+                         
                             fontSize: 15,
                             fontFamily: "sans-serif",
                             fontWeight: "600",
-                            lineHeight: 0,
+                         
                             wordWrap: "break-word",
                           }}
                         >
@@ -610,10 +586,10 @@ const ContactDetails = ({ client }) => {
                         </span>
                         <span
                           style={{
-                            color: "black",
+                           
                             fontSize: 15,
                             fontFamily: "sans-serif",
-                            lineHeight: 1,
+                        
                             wordWrap: "break-word",
                           }}
                         >
@@ -632,7 +608,7 @@ const ContactDetails = ({ client }) => {
                       >
                         <div
                           style={{
-                            color: "black",
+                            
                             fontSize: 15,
                             fontFamily: "sans-serif",
                             fontWeight: "600",
@@ -668,14 +644,14 @@ const ContactDetails = ({ client }) => {
                         </div>
                       </div>
 
-                      <div style={{ width: 284, lineHeight: 1.3 }}>
+                      <div style={{ width: 284,  }}>
                         <span
                           style={{
-                            color: "black",
+                            
                             fontSize: 15,
                             fontFamily: "sans-serif",
                             fontWeight: "600",
-                            lineHeight: 0,
+                        
                             wordWrap: "break-word",
                           }}
                         >
@@ -683,10 +659,10 @@ const ContactDetails = ({ client }) => {
                         </span>
                         <span
                           style={{
-                            color: "black",
+                       
                             fontSize: 15,
                             fontFamily: "sans-serif",
-                            lineHeight: 0,
+                  
                             wordWrap: "break-word",
                           }}
                         >
@@ -694,14 +670,13 @@ const ContactDetails = ({ client }) => {
                         </span>
                       </div>
 
-                      <div style={{ width: 284, lineHeight: 1.5 }}>
+                      <div style={{ width: 284,  }}>
                         <span
                           style={{
-                            color: "black",
                             fontSize: 15,
                             fontFamily: "sans-serif",
                             fontWeight: "600",
-                            lineHeight: 0,
+                        
                             wordWrap: "break-word",
                           }}
                         >
@@ -709,10 +684,10 @@ const ContactDetails = ({ client }) => {
                         </span>
                         <span
                           style={{
-                            color: "black",
+                            
                             fontSize: 15,
                             fontFamily: "sans-serif",
-                            lineHeight: 1,
+                          
                             wordWrap: "break-word",
                           }}
                         >
@@ -750,12 +725,13 @@ const ContactDetails = ({ client }) => {
         <div
           style={{
             flex: "1 1 0",
-            height: "100%",
+            // height: "100%",
             flexDirection: "column",
             justifyContent: "flex-start",
             alignItems: "flex-start",
             gap: 6,
             display: "inline-flex",
+            width:'100%'
           }}
         >
           {/* 
@@ -837,7 +813,7 @@ const ContactDetails = ({ client }) => {
               {/* Header receita e search  */}
               <div
                 style={{
-                  height: 50,
+                  height: 40,
                   alignSelf: "stretch",
                   boxShadow: "0px 4px 18px rgba(75, 70, 92, 0.10)",
                   padding: 10,
@@ -845,13 +821,14 @@ const ContactDetails = ({ client }) => {
                   alignItems: "center",
                   display: "inline-flex",
                   fontFamily: "sans-serif",
+                  width:'98%'
                 }}
               >
                 <div
                   style={{
                     fontFamily: "sans-serif",
                     flex: "1 1 0",
-                    color: "black",
+                    color: "#4B465Cac",
                     fontSize: 18,
                     fontWeight: "500",
                     lineHeight: 2,
