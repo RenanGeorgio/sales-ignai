@@ -58,3 +58,8 @@
 .form-submit-button:hover {
   background-color: #3700b3;
 }
+
+.form-submit-button:disabled {
+  background-color: #c0c0c0;
+  cursor: not-allowed;
+}

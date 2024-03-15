@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
-import { Avatar, Button, IconButton, colors } from "@mui/material";
+import { Alert, Avatar, Button, IconButton, colors } from "@mui/material";
 import {
   DotsVertical,
   Edit,
@@ -12,7 +12,18 @@ import {
 
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { getStatusStyles, priorityStatus, getPriorityStyles } from "helpers/status";
+import {
+  getStatusStyles,
+  priorityStatus,
+  getPriorityStyles,
+} from "helpers/status";
+import ModalComponent from "components/Modal/Modal";
+import { IClient } from "types/interfaces";
+import { baseUrl, postRequest, putRequest } from "services/api/apiService";
+import { useDispatch } from "react-redux";
+import { clientsActions } from "store/clients/clientsSlice";
+import ClientForm from "../Forms/Client";
+import ModalForm from "components/Forms/Modal/ModalForm";
 
 const ContatoCell = ({ name, email, tel }) => {
   return (
@@ -28,10 +39,61 @@ const ContatoCell = ({ name, email, tel }) => {
 };
 
 export default function ContactComponent() {
-  const [checkboxSelection, setCheckboxSelection] = React.useState(true);
-  const clients = useSelector((state: any) => state.clients);
+  const [checkboxSelection, setCheckboxSelection] = useState(true);
 
+  const clientsSelector = useSelector((state: any) => state.clients);
+  const [clients, setClients] = useState<IClient[]>(clientsSelector);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const [openModal, setOpenModal] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [error, setError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [modalMode, setModalMode] = useState({
+    mode: "add",
+    title: "Adicionar Cliente",
+  });
+
+  const [selectedItem, setSelectedItem] = useState<IClient | null>(null);
+
+  useEffect(() => {
+    setClients(clientsSelector);
+  }, [clientsSelector]);
+
+  const handleAdd = async (client: IClient) => {
+    setIsLoading(true);
+    const response = await postRequest(`${baseUrl}/client`, client);
+    if (response.error) {
+      requestError(response.message);
+    } else {
+      dispatch(clientsActions.addClient(response));
+      setOpenModal(false);
+    }
+    setIsLoading(false);
+  };
+
+  const handleUpdate = async (client: IClient) => {
+    const response = await putRequest(
+      `${baseUrl}/client/${client._id}`,
+      client
+    );
+    if (response.error) {
+      requestError(response.message);
+    } else {
+      dispatch(clientsActions.updateClient(response));
+      setOpenModal(false);
+    }
+    setIsLoading(false);
+  };
+
+  const requestError = (error: string) => {
+    setError(true);
+    setErrorMessage(error);
+    setTimeout(() => {
+      setError(false);
+    }, 3000);
+  };
 
   const columns: GridColDef[] = [
     {
@@ -134,7 +196,13 @@ export default function ContactComponent() {
       renderCell: (params) => {
         return (
           <div>
-            <IconButton>
+            <IconButton
+              onClick={() => {
+                setModalMode({ mode: "edit", title: "Editar Cliente" });
+                setSelectedItem(params.row as IClient);
+                setOpenModal(true);
+              }}
+            >
               <Edit />
             </IconButton>
             <IconButton
@@ -154,6 +222,7 @@ export default function ContactComponent() {
       },
     },
   ];
+
   return (
     <div
       style={{
@@ -411,6 +480,10 @@ export default function ContactComponent() {
                 borderRadius: 6,
                 color: "#fff",
               }}
+              onClick={() => {
+                setModalMode({ mode: "add", title: "Adicionar Cliente" });
+                setOpenModal(true);
+              }}
             >
               <div
                 style={{ display: "inline-flex", alignItems: "center", gap: 5 }}
@@ -434,9 +507,10 @@ export default function ContactComponent() {
             },
           }}
           pageSizeOptions={[7]}
-          isCellEditable={(params) => params.row.Contato % 2 === 0}
+          disableRowSelectionOnClick
+          // isCellEditable={(params) => params.row.Contato % 2 === 0}
           onCellDoubleClick={(params, event) => {
-            navigate(`/contact/details`, { state: params.row });
+            navigate(`/contact/details`, { state: { id: params.id } });
           }}
           sx={{
             "& .MuiDataGrid-columnHeader": {
@@ -447,6 +521,27 @@ export default function ContactComponent() {
           }}
         />
       </div>
+      <ModalComponent
+        open={openModal}
+        title={modalMode.title}
+        onClose={() => setOpenModal(false)}
+      >
+        <ModalForm
+          onSubmit={(client: IClient) => {
+            modalMode.mode === "add" ? handleAdd(client) : handleUpdate(client);
+          }}
+          isLoading={isLoading}
+          mode={modalMode.mode}
+          initialValues={selectedItem}
+        >
+          <ClientForm />
+        </ModalForm>
+      </ModalComponent>
+      {error && (
+        <Alert variant="filled" severity="error" onClose={() => {}}>
+          {errorMessage}
+        </Alert>
+      )}
     </div>
   );
 }
