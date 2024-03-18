@@ -4,6 +4,7 @@ import { baseUrl, getRequest } from "../utils/chatService";
 export const useFetchRecipient = (chat, user) => {
   const [recipientUser, setRecipientUser] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
+
   // verificar se está renderizando multiplas vezes
   const recipientId = chat?.members?.find((id: string) => id !== user?.companyId);
   console.log(recipientId);
@@ -22,7 +23,9 @@ export const useFetchRecipient = (chat, user) => {
         console.log(error)
       }
     };
+    
     fetchRecipient();
-  }, [recipientId])
+  }, [recipientId]);
+
   return { recipientUser, error };
-};
+}

@@ -1,6 +1,5 @@
-import React from 'react';
 import Navbar from "../../components/Navbar";
-import { FileTextIcon, LinkIcon, UsersIcon } from '../../components/Image/icons';
+import { FileTextIcon, LinkIcon, UsersIcon } from '@icons';
 import '../../styles/chatbot.css';
 
 const Whatsapp = () => {

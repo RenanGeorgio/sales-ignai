@@ -2,9 +2,9 @@ import { useEffect } from "react";
 import { AxiosError, isAxiosError } from "axios";
 import { useQuery } from "react-query";
 import { connect, useDispatch } from "react-redux";
-import useAuth from "./hooks/useAuth";
-import authApi from "./services/auth";
-import { userActions, leadsActions } from "./store/store";
+import useAuth from "@hooks/useAuth";
+import authApi from "@services/auth";
+import { userActions, leadsActions } from "@store/store";
 
 const CachingController = () => {
   const { isAuthenticated, signOut } = useAuth();
@@ -47,6 +47,6 @@ const CachingController = () => {
   }, [data, dispatch]);
 
   return null;
-};
+}
 
 export default connect()(CachingController);

@@ -1,6 +1,5 @@
-import React from 'react';
-import '../../styles/dashboard.css'; 
-import { ArrowUpCircleIcon } from '../Image/icons';;
+import { ArrowUpCircleIcon } from "@icons";
+import "@styles/dashboard.css"; 
 
 interface GraphTimeUserProps {
   month: string;
@@ -68,6 +67,6 @@ const GraphTimeUser: React.FC<GraphTimeUserProps> = ({ month }) => {
       </div>
     </div>
   );
-};
+}
 
 export default GraphTimeUser;

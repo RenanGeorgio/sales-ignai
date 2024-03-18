@@ -1,5 +1,5 @@
 import { Context, createContext } from "react";
-import { ErrorResponse, SignInData, User } from "../../types";
+import { ErrorResponse, SignInData, User } from "@types";
 
 export interface AuthContextInterface {
   isAuthenticated: boolean;

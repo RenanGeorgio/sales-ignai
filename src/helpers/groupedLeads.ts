@@ -1,4 +1,4 @@
-import { Leads } from "../types";
+import { Leads } from "@types";
 
 // alterar depois, caso necessário
 const topics = {

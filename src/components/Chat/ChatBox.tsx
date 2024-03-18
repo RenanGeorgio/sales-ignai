@@ -2,16 +2,15 @@ import { useState } from "react";
 import { IconButton } from "@mui/material";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
-import 'dayjs/locale/pt-br'
-import { Phone, Search, Video, DotsVertical, FaceBookIcon, InstagramIcon, TelegramIcon, WhatsAppIcon } from "../Image/icons";
-import web from "../Image/web.svg";
-import Avatar2 from "../Image/Avatar2.png"
-import ListarMensagens from "./MessegerPayload";
+import "dayjs/locale/pt-br";
+import { PhoneIcon, SearchIcon, VideoIcon, VerticalDotsIcon, FacebookIcon, InstagramIcon, TelegramIcon, WhatsappIcon } from "@icons";
+import web from "@assets/images/web.svg";
+import Avatar2 from "@assets/images/Avatar2.png";
 import TextEnter from "./TextEnter";
 import AddTicket from "./AddTicket/AddTicket";
-import useAuth from "../../hooks/useAuth";
-import useChat from "../../hooks/useChat";
-import { useFetchRecipient } from "../../hooks/useFetchRecipient";
+import useAuth from "@hooks/useAuth";
+import useChat from "@hooks/useChat";
+import { useFetchRecipient } from "@hooks/useFetchRecipient";
 import "./chat.css";
 
 dayjs.extend(relativeTime)
@@ -68,7 +67,7 @@ export const ChatBox = ({ toggleAddTicket }: Props): JSX.Element => {
   const getChatIcon = () => {
     switch (origin) {
       case "facebook":
-        return <FaceBookIcon />;
+        return <FacebookIcon />;
       case "instagram":
         return <InstagramIcon />;
       case "telegram":
@@ -76,7 +75,7 @@ export const ChatBox = ({ toggleAddTicket }: Props): JSX.Element => {
       case "web":
         return <img src={web} style={{width: '30px', height:'30px'}}/>
       case "whatsapp":
-        return <WhatsAppIcon />;
+        return <WhatsappIcon />;
       default:
         return "https://c.animaapp.com/5uY2Jqwr/img/whatsapp-33-1-1@2x.png";
     }
@@ -119,16 +118,16 @@ export const ChatBox = ({ toggleAddTicket }: Props): JSX.Element => {
         <div className="rightContainer">
           <div className="rightContent">
             <IconButton className="img-4">
-              <Phone />
+              <PhoneIcon />
             </IconButton>
             <IconButton className="img-4">
-              <Video className={undefined} />
+              <VideoIcon className={undefined} />
             </IconButton>
             <IconButton className="img-4">
-              <Search className={undefined} />
+              <SearchIcon className={undefined} />
             </IconButton>
             <IconButton className="img-4">
-              <DotsVertical className={undefined} />
+              <VerticalDotsIcon className={undefined} />
             </IconButton>
           </div>
         </div>

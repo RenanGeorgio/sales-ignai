@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from 'react';
-import Chart, { ChartConfiguration } from 'chart.js/auto';
-import '../../styles/statistics-transaction.css';
-import { ChevronUpIcon } from '../Image/icons';;
+import { useEffect, useRef } from "react";
+import Chart, { ChartConfiguration } from "chart.js/auto";
+import { ChevronUpIcon } from '@icons';
+import "@styles/statistics-transaction.css";
 
 interface GraphStatisticsProps {
   data: number[];
@@ -64,6 +64,6 @@ const GraphStatistics: React.FC<GraphStatisticsProps> = ({ data }) => {
       <canvas ref={chartRef} className="canvas-statistics"></canvas>
     </div>
   );
-};
+}
 
 export default GraphStatistics;

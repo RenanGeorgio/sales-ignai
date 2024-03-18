@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import Navbar from "../../components/Navbar";
 import dragEnd from "../../helpers/dragEnd";
 import LeadModal from "../../components/Modal/leadModal";
 import SearchFilter from "../../components/Table/searchFilter";
-import "../../styles/leads.css";
 import LeadPopover from "../../components/Popover/leadPopover";
 import { useSelector } from "react-redux";
 import authApi from "../../services/auth";
-import { useDispatch } from "react-redux";
 import { leadsActions } from "../../store/store";
 import { IconButton } from "@mui/material";
-import { DotsVertical } from "../../components/Image/icons";
+import { VerticalDotsIcon } from "@icons";
+import "../../styles/leads.css";
 
 const Leads = () => {
   const leadsData = useSelector((state: any) => state.leads);
@@ -160,7 +160,7 @@ const Leads = () => {
                   <div className="headerColumn">
 
                   <h1 className="card-title">{column.title}</h1>
-                  <IconButton size="small"> <DotsVertical className={undefined}/></IconButton>
+                  <IconButton size="small"> <VerticalDotsIcon className={undefined}/></IconButton>
                   </div>
                   {isMounted ? (
                     <Droppable droppableId={column._id} key={key}>

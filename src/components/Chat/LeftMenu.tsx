@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Phone } from "../Image/icons";
+import { PhoneIcon } from "@icons";
 import AddTicket from "./AddTicket/AddTicket";
 import "./leftmenu.css";
 
@@ -37,7 +37,7 @@ export const LeftMenu = ({ onAddTicketClick, children }: Props) => {
           >
             Adicionar&nbsp;&nbsp;ticket
             <span className="phoneCall">
-              <Phone />
+              <PhoneIcon />
             </span>
           </button>
         </div>

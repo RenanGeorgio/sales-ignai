@@ -1,12 +1,12 @@
 // @ts-nocheck
-import { useState } from 'react';
-import Calendar from '@osam2/react-calendar';
-import { Button } from '@mui/material';
-import Modal from '@mui/material/Modal';
-import CalendarLeft from './CalendarLeft';
-import { Plus, Tag } from '../Image/icons';
-import EventModal from './Event/EventComponent';
-import './calendar.css'
+import { useState } from "react";
+import Calendar from "@osam2/react-calendar";
+import { Button } from "@mui/material";
+import Modal from "@mui/material/Modal";
+import CalendarLeft from "./CalendarLeft";
+import EventModal from "./Event/EventComponent";
+import { PlusIcon, TagIcon } from "@icons";
+import "./calendar.css";
 
 const events = [
     {
@@ -53,7 +53,7 @@ export default function CalendarComponent() {
                         <Button
                             onClick={handleOpen}
                             variant='contained' sx={{ width: '95%', height: '50px' }}>
-                            <span className='iconPlus'><Plus /></span>
+                            <span className='iconPlus'><PlusIcon /></span>
                             Novo evento
                         </Button>
                     </div>
@@ -61,7 +61,7 @@ export default function CalendarComponent() {
                     <div className='containerLabel'>
                         <div className='label'>Labels</div>
                         <div style={{ display: 'flex' }}>
-                            <span><Tag /></span>
+                            <span><TagIcon /></span>
                             <button>Adicionar / Remover</button>
                         </div>
                         <div className='list'>

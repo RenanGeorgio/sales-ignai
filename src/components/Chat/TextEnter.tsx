@@ -1,6 +1,6 @@
 import { ChangeEvent, useState, useEffect } from "react";
 import { IconButton } from "@mui/material";
-import { Mic, Photo } from "../Image/icons";
+import { MicIcon, PhotoIcon } from "@icons";
 import "./chat.css";
 
 interface Props {
@@ -50,10 +50,10 @@ export default function TextEnter({ onSendMessage, onUploadFilePhoto }: Props) {
           </div>
           <div className="btncontainer">
             <IconButton className="icon">
-              <Mic className={undefined} />
+              <MicIcon className={undefined} />
             </IconButton>
             <IconButton onClick={handleFileUploadPhoto} className="icon">
-              <Photo className={undefined} />
+              <PhotoIcon className={undefined} />
             </IconButton>
             <div className="btntxt">
               <button

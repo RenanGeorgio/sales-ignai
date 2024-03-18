@@ -42,4 +42,4 @@ export const getRequest = async (url: string) => {
   }
 
   return data;
-};
+}

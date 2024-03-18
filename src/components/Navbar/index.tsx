@@ -1,11 +1,10 @@
-import { useState, MouseEvent } from 'react';
-import Popper, { PopperPlacementType } from '@mui/material/Popper';
-import { Button } from '@mui/material';
-import { BellIcon } from '../Image/icons';
-import userIcon from '../Image/Avatar.jpg';
-import { Search } from '../Image/icons';
-import useAuth from '../../hooks/useAuth';
-import '../../styles/navbar.css';
+import { useState, MouseEvent } from "react";
+import Popper, { PopperPlacementType } from "@mui/material/Popper";
+import { Button } from "@mui/material";
+import { BellIcon, SearchIcon } from "@icons";
+import userIcon from "@assets/images/Avatar.jpg";
+import useAuth from "@hooks/useAuth";
+import "@styles/navbar.css";
 
 interface NavbarProps { }
 
@@ -30,7 +29,7 @@ const Navbar: React.FC<NavbarProps> = () => {
     <header className="navbar">
       <div className="search-container">
         <div className="search-wrapper">
-          <Search className={ 'search-icon'} />
+          <SearchIcon className={ 'search-icon'} />
           <input
             type="text"
             value={searchText}
@@ -56,6 +55,6 @@ const Navbar: React.FC<NavbarProps> = () => {
       </div>
     </header>
   );
-};
+}
 
 export default Navbar;

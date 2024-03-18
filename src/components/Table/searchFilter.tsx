@@ -1,14 +1,11 @@
-import { useState } from 'react';
-import { DataGrid, GridColDef, GridValueGetterParams, GRID_DATETIME_COL_DEF, GRID_DATE_COL_DEF } from '@mui/x-data-grid';
-import { Button, FormControl, InputLabel, MenuItem, Select, IconButton, Modal } from '@mui/material';
-import { DotsVertical, Edit, Trash, } from '../../components/Image/icons';
-import rows from '../../dados/data-leads.json';
-import { LeadIcon } from '../../components/Image/icons';
-import avatar from '../../components/Image/Avatar3.png';
-import { MessageDots } from '../../components/Image/icons';
-import { PaperClip } from '../../components/Image/icons';
-import { useSelector } from 'react-redux';
-import ModalSearch from './ModalSearch';
+import { useState } from "react";
+import { useSelector } from "react-redux";
+import { DataGrid, GridColDef, GridValueGetterParams, GRID_DATETIME_COL_DEF, GRID_DATE_COL_DEF } from "@mui/x-data-grid";
+import { Button, FormControl, InputLabel, MenuItem, Select, IconButton, Modal } from "@mui/material";
+import { VerticalDotsIcon, EditIcon, TrashIcon, LeadIcon, MessageDotsIcon, PaperClipIcon } from "@icons";
+import avatar from "@assets/images/Avatar3.png";
+import ModalSearch from "./ModalSearch";
+import rows from "../../dados/data-leads.json";
 
 interface SearchFilterProps {
     setShowList: () => void;
@@ -86,11 +83,11 @@ const columns: GridColDef[] = [
         renderCell: (params) => (
             <div style={{ display: 'flex', alignItems: 'center' }}>
                 <IconButton>
-                    <PaperClip />
+                    <PaperClipIcon />
                 </IconButton>
                 <div style={{ marginRight: '4px' }}>{params.row.historicoClip}</div>
                 <IconButton size='medium'>
-                    <MessageDots />
+                    <MessageDotsIcon />
                 </IconButton>
                 <div style={{ marginRight: '4px' }}>{params.row.historicoMessage}</div>
                 <img src={avatar} alt="History Icon 3" />
@@ -124,17 +121,17 @@ const columns: GridColDef[] = [
             return (
                 <div>
                     <IconButton>
-                        <Edit />
+                        <EditIcon />
                     </IconButton>
                     <IconButton
                         color="primary"
                         size="small"
                         onClick={() => {}}
                     >
-                        <Trash className={undefined} />
+                        <TrashIcon className={undefined} />
                     </IconButton>
                     <IconButton>
-                        <DotsVertical className={undefined} />
+                        <VerticalDotsIcon className={undefined} />
                     </IconButton>
                 </div>
             );

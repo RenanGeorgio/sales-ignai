@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { Line } from 'react-chartjs-2';
+import { useEffect, useState } from "react";
+import { Line } from "react-chartjs-2";
 
 const ChartSales = () => {
   const [chartData, setChartData] = useState<any>(null);

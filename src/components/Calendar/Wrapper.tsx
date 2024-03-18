@@ -1,6 +1,5 @@
 // @ts-nocheck
-import React from 'react';
-import Calendar from '@osam2/react-calendar';
+import Calendar from "@osam2/react-calendar";
 
 interface Props {
   comp: React.ElementType;

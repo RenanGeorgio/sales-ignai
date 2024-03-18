@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import Chart from 'chart.js/auto';
+import { useEffect, useRef } from "react";
+import Chart from "chart.js/auto";
 
 interface GraphVisitProps {
   month: string;
@@ -71,6 +71,6 @@ const GraphVisit: React.FC<GraphVisitProps> = ({ month }) => {
       <canvas ref={chartRef} width={400} height={115}></canvas>
     </div>
   );
-};
+}
 
 export default GraphVisit;

@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from 'react';
-import Chart, { ChartConfiguration } from 'chart.js/auto';
-import '../../styles/graph.css';
+import { useEffect, useRef } from "react";
+import Chart, { ChartConfiguration } from "chart.js/auto";
+import "@styles/graph.css";
 
 interface GraphTicketYouProps {
   data: number[];
@@ -81,6 +81,6 @@ const GraphTicketYou: React.FC<GraphTicketYouProps> = ({ data }) => {
       </div>
     </div>
   );
-};
+}
 
 export default GraphTicketYou;

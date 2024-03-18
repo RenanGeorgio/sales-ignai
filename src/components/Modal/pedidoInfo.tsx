@@ -1,6 +1,5 @@
-import React from 'react';
-import '../../styles/business.css';
-import avatar from '../../components/Image/Avatar2.png';
+import avatar from "@assets/images/Avatar2.png";
+import "@styles/business.css";
 
 const PedidoInfoModal: React.FC = () => {
     return (
@@ -32,6 +31,6 @@ const PedidoInfoModal: React.FC = () => {
             </div>
         </div>
     );
-};
+}
 
 export default PedidoInfoModal;

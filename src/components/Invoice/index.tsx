@@ -1,7 +1,7 @@
-import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
-import { Button, IconButton } from '@mui/material';
-import { DotsVertical, Edit, Trash, } from '../Image/icons';
-import rows from '../../dados/data-invoice.json';
+import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
+import { Button, IconButton } from "@mui/material";
+import { VerticalDotsIcon, EditIcon, TrashIcon } from "@icons";
+import rows from "../../dados/data-invoice.json";
 
 type Contact = {
     name: string;
@@ -83,17 +83,17 @@ const columns: GridColDef[] = [
             return (
               <div>
                     <IconButton>
-                        <Edit/>
+                        <EditIcon/>
                     </IconButton>
                     <IconButton
                         color="primary"
                         size="small"
                         onClick={() => {}}
                     >
-                        <Trash className={undefined} />
+                        <TrashIcon className={undefined} />
                         </IconButton>
                     <IconButton>
-                        <DotsVertical className={undefined}/>
+                        <VerticalDotsIcon className={undefined}/>
                     </IconButton>
               </div>
             )

@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { CurrencyDollar, DotsVertical, PaperClip, ShoppingCart } from '../../Image/icons';
-import { Button, IconButton } from '@mui/material';
-import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
-import { useNavigate } from 'react-router-dom';
-import rows from '../../../dados/data2.json'
-import ImageLogo from '../../Image/Queiroz_Galvão_Logo 1.png'
-import PaymentAddress from './PaymentAdress/PaymentAddress';
-import Notification from './Notifications/Notification';
-import './PaymentAdress/payment.css';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { CurrencyDollarIcon, VerticalDotsIcon, ShoppingCartIcon } from "@icons";
+import { Button, IconButton } from "@mui/material";
+import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
+import ImageLogo from "@assets/images/Queiroz_Galvão_Logo 1.png";
+import PaymentAddress from "./PaymentAdress/PaymentAddress';
+import Notification from "./Notifications/Notification";
+import rows from "../../../dados/data2.json";
+import "./PaymentAdress/payment.css";
 
 type Priority = 'Paga' | 'Aguardando' | 'Atrasada' | 'Cancelada' | undefined;
 
@@ -131,7 +131,7 @@ const DetailsPage = ({ match }: any) => {
             <IconButton size='small' style={{
               color: '#000', borderRadius: '50%'
             }}>
-              <DotsVertical className={undefined} />
+              <VerticalDotsIcon className={undefined} />
             </IconButton>
           </div>
         );
@@ -176,7 +176,7 @@ const DetailsPage = ({ match }: any) => {
                     <div style={{ width:'100%',paddingTop: 24, justifyContent: 'space-around', alignItems: 'flex-start', gap: 10, display: 'inline-flex'}}>
                       <div style={{ justifyContent: 'space-around', alignItems: 'center', gap: 10, display: 'flex' }}>
                         <div style={{ padding: 5, background: 'rgba(115, 103, 240, 0.08)', borderRadius: 6, justifyContent: 'flex-start', alignItems: 'flex-start', gap: 10, display: 'flex' }}>
-                          <ShoppingCart />
+                          <ShoppingCartIcon />
                         </div>
                       <div style={{ flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', display: 'inline-flex' }}>
                         <div style={{ color: 'black', fontSize: 15, fontFamily: 'sans-serif', fontWeight: '600', lineHeight: 1, wordWrap: 'break-word' }}>25</div>
@@ -185,7 +185,7 @@ const DetailsPage = ({ match }: any) => {
                     </div>
                     <div style={{ justifyContent: 'flex-start', alignItems: 'center', gap: 10, display: 'flex' }}>
                       <div style={{ padding: 5, background: 'rgba(115, 103, 240, 0.08)', borderRadius: 6, justifyContent: 'flex-start', alignItems: 'flex-start', gap: 1, display: 'flex' }}>
-                        <CurrencyDollar />
+                        <CurrencyDollarIcon />
                       </div>
                       <div style={{ flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', display: 'inline-flex' }}>
                         <div style={{ color: 'black', fontSize: 15, fontFamily: 'sans-serif', fontWeight: '600', lineHeight: 1, wordWrap: 'break-word' }}>R$12,378</div>

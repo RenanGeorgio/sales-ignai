@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import Button from '@mui/material/Button';
+import { useState } from "react";
+import Button from "@mui/material/Button";
 
 export default function ModalSearchBusiness({ close }) {
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState<boolean>(true);
 
     return (
         <div>

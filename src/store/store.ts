@@ -16,9 +16,9 @@ import { userReducer as user } from "./user/userSlice";
 import { leadsReducer as leads } from "./leads/leadsSlice";
 import emailCombinedReducer from "./email/reducers";
 // Email
-import { fetchConfiguration } from "services/email/configuration";
-import { loadState } from "services/email/state";
-import debounce from "services/email/debounce";
+import { fetchConfiguration } from "@services/email/configuration";
+import { loadState } from "@services/email/state";
+import debounce from "@services/email/debounce";
 
 const SAVE_STATE_DEBOUNCE_PERIOD_IN_MILLIS = 500;
 

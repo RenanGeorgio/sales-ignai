@@ -13,9 +13,9 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { AuthContext } from "../../contexts/auth/AuthContext";
+import { AuthContext } from "@contexts/auth/AuthContext";
 import Copyright from "../Copyright";
-import { SignInData } from "../../types";
+import { SignInData } from "@types";
 import "./SignIn.css";
 
 const defaultTheme = "";

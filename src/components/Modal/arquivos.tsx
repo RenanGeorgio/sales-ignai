@@ -1,6 +1,4 @@
-import React from 'react';
-// import FileUploadIcon from '@mui/icons-material/FileUpload';
-import '../../styles/business.css';
+import "@styles/business.css";
 
 const ArquivosModal: React.FC = () => {
   return (
@@ -25,6 +23,6 @@ const ArquivosModal: React.FC = () => {
       </div>
     </div>
   );
-};
+}
 
 export default ArquivosModal;

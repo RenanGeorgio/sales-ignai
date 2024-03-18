@@ -1,5 +1,4 @@
-import React from 'react';
-import '../../styles/business.css';
+import "@styles/business.css";
 
 const PrecoModal: React.FC = () => {
   return (
@@ -27,6 +26,6 @@ const PrecoModal: React.FC = () => {
       </div>
     </div>
   );
-};
+}
 
 export default PrecoModal;

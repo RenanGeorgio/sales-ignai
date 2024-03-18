@@ -1,7 +1,7 @@
-import { Button, IconButton } from '@mui/material';
-import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
-import { DotsVertical, ExportIcon } from '../../../Image/icons';
-import rows from '../../../../dados/data3.json';
+import { Button, IconButton } from "@mui/material";
+import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
+import { VerticalDotsIcon, ExportIcon } from "@icons";
+import rows from "../../../../dados/data3.json";
 
 type Priority = 'Em andamento' | 'Pendente' | 'Concluído' | 'Cancelada' | undefined;
 
@@ -103,7 +103,7 @@ const columns: GridColDef[] = [
       return (
         <div>
           <IconButton size='small' style={{color: '#000', borderRadius: '50%'}}>
-            <DotsVertical className={undefined} />
+            <VerticalDotsIcon className={undefined} />
           </IconButton>
         </div>
       );

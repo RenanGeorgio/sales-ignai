@@ -1,7 +1,5 @@
-import React from 'react';
-import '../../styles/graph.css'; 
-import { PackageIcon,PercentageIcon, ClockIcon,UsersIcon, 
-  TruckIcon, ChevronUpIcon, AvatarIcon, ChevronDownIcon, CircleCheckIcon } from '../Image/icons';
+import { PackageIcon, PercentageIcon, ClockIcon, UsersIcon, TruckIcon, ChevronUpIcon, AvatarIcon, ChevronDownIcon, CircleCheckIcon } from "@icons";
+import "@styles/graph.css";
 
 interface GraphThemesProps {
   month: string;
@@ -93,6 +91,6 @@ const GraphThemes: React.FC<GraphThemesProps> = ({ month }) => {
       </div>
     </div>
   );
-};
+}
 
 export default GraphThemes;

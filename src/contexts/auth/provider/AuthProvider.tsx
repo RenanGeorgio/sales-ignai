@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthContext";
-import { SignInData, SignInResponse, User } from "../../../types";
-import authApi from "../../../services/auth";
+import authApi from "@services/auth";
 import { useDispatch, useSelector } from "react-redux";
-import { persistor, sessionActions, userActions } from "../../../store/store";
-import { useApi } from "../../../hooks/useApi";
+import { persistor, sessionActions, userActions } from "@store/store";
+import { useApi } from "@hooks/useApi";
 import cookies from "js-cookie";
+import { SignInData, SignInResponse, User } from "@types";
 
 export function AuthProvider({ children }) {
   // const [user, setUser] = useState<User | null>(null);

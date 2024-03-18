@@ -1,6 +1,5 @@
-import React from 'react'; 
 import { IconButton } from '@mui/material';
-import { DotsVertical, Pencil, Trash, Upload } from '../../Image/icons';
+import { VerticalDotsIcon, PencilIcon, TrashIcon, UploadIcon } from '@icons';
 import './addticket.css';
 
 interface Props {
@@ -86,21 +85,21 @@ export default function AddTicket({ onUploadFile, onSetShow }: Props) {
             <div className='wrapper-9'>
               <div className='section-7'>           
                   <IconButton className='pic-2'>
-                  <Pencil className={undefined} />
+                  <PencilIcon className={undefined} />
                   </IconButton>           
               </div>
             </div>
             <div className='group-7'>
               <div className='section-8'>
                 <IconButton className='img-4'>
-                  <Trash className={undefined}/>
+                  <TrashIcon className={undefined}/>
                   </IconButton>
               </div>
             </div>
             <div className='wrapper-a'>
               <div className='group-8'>
                 <IconButton className='img-5'>
-                  <DotsVertical className={undefined}/>
+                  <VerticalDotsIcon className={undefined}/>
                   </IconButton>
               </div>
             </div>
@@ -118,21 +117,21 @@ export default function AddTicket({ onUploadFile, onSetShow }: Props) {
             <div className='wrapper-9'>
               <div className='section-7'>
                 <IconButton className='pic-2'>
-                  <Pencil className='pic2' />
+                  <PencilIcon className='pic2' />
                   </IconButton>
               </div>
             </div>
               <div className='group-7'>
               <div className='section-8'>
                 <IconButton className='img-4'>
-                  <Trash className={undefined}/>
+                  <TrashIcon className={undefined}/>
                   </IconButton>
               </div>
             </div>
               <div className='wrapper-a'>
               <div className='group-8'>
                 <IconButton className='img-5'>
-                  <DotsVertical className={undefined}/>
+                  <VerticalDotsIcon className={undefined}/>
                   </IconButton>
               </div>
             </div>
@@ -149,7 +148,7 @@ export default function AddTicket({ onUploadFile, onSetShow }: Props) {
             <div className='card-heading'>
               <div className='form'>
                 <div className='container-image-upload'>
-                  <div className='image-upload'><Upload className={undefined}/></div>
+                  <div className='image-upload'><UploadIcon className={undefined}/></div>
                 </div>
                 <span className='text-10'>Jogue aqui seu arquivo</span>
                 <span className='text-11'>ou</span>

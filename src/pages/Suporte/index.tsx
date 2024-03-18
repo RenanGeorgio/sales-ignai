@@ -1,6 +1,5 @@
-import React from 'react';
 import Navbar from "../../components/Navbar";
-import { FileTextIcon,UsersIcon } from '../../components/Image/icons';
+import { FileTextIcon, UsersIcon } from '@icons';
 import '../../styles/chatbot.css';
 
 const Suporte = () => {

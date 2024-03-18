@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from 'react';
-import Chart, { ChartConfiguration } from 'chart.js/auto';
-import '../../styles/graph.css';
+import { useEffect, useRef } from "react";
+import Chart, { ChartConfiguration } from "chart.js/auto";
+import "@styles/graph.css";
 
 interface GraphChatProps {
   data: {
@@ -82,6 +82,6 @@ const GraphChat: React.FC<GraphChatProps> = ({ data }) => {
       <canvas ref={chartRef} className="canvas-chart"></canvas>
     </div>
   );
-};
+}
 
 export default GraphChat;

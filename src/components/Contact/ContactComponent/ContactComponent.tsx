@@ -1,10 +1,10 @@
 
-import { useState } from 'react';
-import { Navigate, useNavigate }  from 'react-router-dom';
-import { DataGrid, GridColDef } from '@mui/x-data-grid';
-import { Avatar, Button, IconButton } from '@mui/material';
-import { DotsVertical, Edit, MessageDots, PaperClip, Plus, Trash, } from '../../Image/icons'
-import rows from '../../../dados/data1.json';
+import { useState } from "react";
+import { Navigate, useNavigate }  from "react-router-dom";
+import { DataGrid, GridColDef } from "@mui/x-data-grid";
+import { Avatar, Button, IconButton } from "@mui/material";
+import { VerticalDotsIcon, EditIcon, MessageDotsIcon, PaperClipIcon, PlusIcon, TrashIcon } from "@icons";
+import rows from "../../../dados/data1.json";
 
 type ContactProps = {
     name: string;
@@ -110,8 +110,8 @@ export default function ContactComponent() {
             renderCell: (params) => {
                 return (
                     <div>
-                        <IconButton size="small" aria-label="upload document"><PaperClip/> </IconButton>{params.value}
-                        <IconButton size="small"> <MessageDots/></IconButton>{params.value}
+                        <IconButton size="small" aria-label="upload document"><PaperClipIcon/> </IconButton>{params.value}
+                        <IconButton size="small"> <MessageDotsIcon/></IconButton>{params.value}
                     </div>
                 )
             }
@@ -145,17 +145,17 @@ export default function ContactComponent() {
                 return (
                     <div>
                         <IconButton>
-                            <Edit/>
+                            <EditIcon/>
                         </IconButton>
                         <IconButton
                             color="primary"
                             size="small"
                             onClick={() => {}}
                         >
-                            <Trash className={undefined} />
+                            <TrashIcon className={undefined} />
                         </IconButton>
                         <IconButton>
-                            <DotsVertical className={undefined}/>
+                            <VerticalDotsIcon className={undefined}/>
                         </IconButton>
                     </div>
                 );
@@ -251,7 +251,7 @@ export default function ContactComponent() {
                             color: '#fff',
                             display: 'flex'
                         }}>
-                           <span style={{alignItems:'center'}}><Plus /></span> 
+                           <span style={{alignItems:'center'}}><PlusIcon /></span> 
                            <span>Adicionar</span>                        
                         </Button>
                     </div>

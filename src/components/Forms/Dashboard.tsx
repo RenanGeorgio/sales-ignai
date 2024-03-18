@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import GraphVisit from '../Graph/GraphVisit';
-import GraphTimeUser from '../Graph/GraphTimeUser';
-import '../../styles/dashboard.css';
-import GraphClientVolume from '../Graph/GraphClientVolume';
-import GraphFontClick from '../Graph/GraphFontClick';
-import GraphFormConversation from '../Graph/GraphFormConversation';
-import GraphNumberVisit from '../Graph/GraphNumberVisit';
+import { useState } from "react";
+import GraphVisit from "../Graph/GraphVisit";
+import GraphTimeUser from "../Graph/GraphTimeUser";
+import GraphClientVolume from "../Graph/GraphClientVolume";
+import GraphFontClick from "../Graph/GraphFontClick";
+import GraphFormConversation from "../Graph/GraphFormConversation";
+import GraphNumberVisit from "../Graph/GraphNumberVisit";
+import "@styles/dashboard.css";
 
 const Dashboard: React.FC = () => {
   const [selectedMonth, setSelectedMonth] = useState('January');

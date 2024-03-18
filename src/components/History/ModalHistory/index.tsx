@@ -1,9 +1,14 @@
-import { useState } from 'react';
-import Button from '@mui/material/Button';
-import '../history.css'
+import { useState } from "react";
+import Button from "@mui/material/Button";
+import "../history.css";
 
-export default function ModalHistory({ close }) {
-    const [open, setOpen] = useState(true);
+interface Props {
+    close: () => void;
+    children?: React.ReactNode;
+};
+
+export default function ModalHistory({ close }: Props) {
+    const [open, setOpen] = useState<boolean>(true);
 
     return (
         <div>

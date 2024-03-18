@@ -1,10 +1,9 @@
-import React from 'react';
-import useChat from "../../hooks/useChat";
-import { useFetchRecipient } from "../../hooks/useFetchRecipient";
+import useChat from "@hooks/useChat";
+import { useFetchRecipient } from "@hooks/useFetchRecipient";
 import { OnlineUser, Consumer } from "@types";
-import Avatar2 from "../Image/Avatar2.png";
-import web from "../Image/web.svg";  
-import { FaceBookIcon, InstagramIcon, TelegramIcon, WhatsAppIcon } from "../Image/icons";
+import Avatar2 from "@assets/images/Avatar2.png";
+import web from "@assets/images/web.svg";  
+import { FacebookIcon, InstagramIcon, TelegramIcon, WhatsappIcon } from "@icons";
 import "./leftmenu.css";
 
 interface Props {
@@ -24,7 +23,7 @@ export const UserChat = ({ chat, user }: Props) => {
   const getChatIcon = () => {
     switch (origin) {
       case "facebook":
-        return <FaceBookIcon />;
+        return <FacebookIcon />;
       case "instagram":
         return <InstagramIcon />;
       case "telegram":
@@ -32,9 +31,9 @@ export const UserChat = ({ chat, user }: Props) => {
       case "web":
         return  <img src={web} style={{width: '30px', height:'30px'}}/>
       case "whatsapp":
-        return <WhatsAppIcon />;
+        return <WhatsappIcon />;
       default:
-        return <WhatsAppIcon />;
+        return <WhatsappIcon />;
     }
   };
 

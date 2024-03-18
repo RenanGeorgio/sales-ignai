@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-import { LinkIcon } from '../Image/icons';
-import '../../styles/business.css';
-
+import { useState } from "react";
+import { LinkIcon } from "@icons";
+import "@styles/business.css";
 
 const InventarioModal: React.FC = () => {
   const [selectedButton, setSelectedButton] = useState('Estoque');
@@ -50,9 +49,7 @@ const InventarioModal: React.FC = () => {
             Avançado
           </button>
         </div>
-        
         <hr style={{ border: '1px solid #ccc', margin: '20px 0', marginLeft: '25px' }} />
-
         <div className="inventario-opcao">
           <h3>Opção</h3>
           <label>Verificar estoque:</label>
@@ -70,6 +67,6 @@ const InventarioModal: React.FC = () => {
       </div>
     </div>
   );
-};
+}
 
 export default InventarioModal;

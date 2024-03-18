@@ -1,10 +1,9 @@
-
-import { useState } from 'react';
-import { DataGrid, GridColDef, GridValueGetterParams, GRID_DATETIME_COL_DEF, GRID_DATE_COL_DEF } from '@mui/x-data-grid';
-import { Button, FormControl, InputLabel, MenuItem, Select, IconButton, Modal } from '@mui/material';
-import { DotsVertical, Edit, Trash, } from '../Image/icons';
-import rows from '../../dados/data.json';
-import ModalHistory from './ModalHistory/index';
+import { useState } from "react";
+import { DataGrid, GridColDef, GridValueGetterParams, GRID_DATETIME_COL_DEF, GRID_DATE_COL_DEF } from "@mui/x-data-grid";
+import { Button, FormControl, InputLabel, MenuItem, Select, IconButton, Modal } from "@mui/material";
+import { VerticalDotsIcon, EditIcon, TrashIcon } from "@icons";
+import ModalHistory from "./ModalHistory";
+import rows from "../../dados/data.json";
 
 type Contact = {
     name: string;
@@ -86,17 +85,17 @@ const columns: GridColDef[] = [
             return (
                 <div>
                     <IconButton>
-                        <Edit />
+                        <EditIcon />
                     </IconButton>
                     <IconButton
                         color="primary"
                         size="small"
                         onClick={() => {}}
                     >
-                        <Trash className={undefined} />
+                        <TrashIcon className={undefined} />
                     </IconButton>
                     <IconButton>
-                        <DotsVertical className={undefined} />
+                        <VerticalDotsIcon className={undefined} />
                     </IconButton>
                 </div>
             );

@@ -1,34 +1,32 @@
-import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Sidebar from "./components/Sidebar";
-import ChatBot from "./pages/ChatBot";
-import Dashboard from "./pages/Dashboard";
-import Email from "./pages/Email";
-import Suporte from "./pages/Suporte";
-import Whatsapp from "./pages/Whatsapp";
-import Configuracoes from "./pages/Configuracoes";
-import Forms from "./pages/Forms";
-import Chat from "./pages/Chat";
-import Leads from "./pages/Leads";
-import Statistics from "./pages/Statistics";
-import Calendar from "./pages/Calendar";
-import Negocios from "./pages/Business";
-import Contact from "./pages/Contacts";
-import Invoice from "./pages/Invoice";
-import EmailLogin from "./components/Email/login/login"
-import CachingController from "./CachingController";
-import { AuthProvider } from "./contexts/auth/provider/AuthProvider";
-import SignInPage from "./pages/Auth/SignInPage";
-import RequireAuth from "./RequireAuth";
-import { PersistGate } from "redux-persist/integration/react";
-
 import { Provider } from "react-redux";
-import { persistor, store } from "./store/store";
+import { PersistGate } from "redux-persist/integration/react";
+import Sidebar from "@components/Sidebar";
+import ChatBot from "@pages/ChatBot";
+import Dashboard from "@pages/Dashboard";
+import Email from "@pages/Email";
+import Suporte from "@pages/Suporte";
+import Whatsapp from "@pages/Whatsapp";
+import Configuracoes from "@pages/Configuracoes";
+import Forms from "@pages/Forms";
+import Chat from "@pages/Chat";
+import Leads from "@pages/Leads";
+import Statistics from "@pages/Statistics";
+import Calendar from "@pages/Calendar";
+import Negocios from "@pages/Business";
+import Contact from "@pages/Contacts";
+import Invoice from "@pages/Invoice";
+import EmailLogin from "@components/Email/login/login"
+import { AuthProvider } from "@contexts/auth/provider/AuthProvider";
+import SignInPage from "@pages/Auth/SignInPage";
+import { persistor, store } from "@store/store";
+import { SidebarProvider } from "@contexts/sidebar/SidebarContext";
+import NotFound from "@components/NotFound/NotFound";
+import { ChatProvider } from "@contexts/chat/ChatContext";
+import CachingController from "./CachingController";
+import RequireAuth from "./RequireAuth";
 import Anonymous from "./Anonymous";
-import { SidebarProvider } from "./contexts/sidebar/SidebarContext";
-import "./styles/app.css";
-import NotFound from "./components/NotFound/NotFound";
-import { ChatProvider } from "./contexts/chat/ChatContext";
+import "@styles/app.css";
 
 function App() {
   return (

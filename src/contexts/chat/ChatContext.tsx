@@ -1,8 +1,8 @@
 import { createContext, useCallback, useEffect, useState } from "react";
 import { baseUrl, postRequest, getRequest } from "../../utils/chatService";
-import useAuth from "../../hooks/useAuth";
+import useAuth from "@hooks/useAuth";
 import { io } from "socket.io-client";
-import { OnlineUser } from "../../types";
+import { OnlineUser } from "@types";
 
 export const ChatContext = createContext<any>(null);
 
@@ -181,4 +181,4 @@ export const ChatProvider = ({ children }: any) => {
       {children}
     </ChatContext.Provider>
   );
-};
+}

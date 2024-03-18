@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": "src",
     "target": "es2020",
     "module": "esnext",
     "lib": ["dom", "dom.iterable", "esnext", "es2020"],
@@ -24,14 +24,19 @@
     "jsx": "preserve",
     "paths": {
       "@components/*": ["components/*", "components/*/index", "components/index"],
+      "@pages/*": ["pages/*", "pages/*/index", "pages/index"],
       "@styles/*": ["styles/*"],
       "@contexts/*": ["contexts/*"],
       "@services": ["services/index"],
       "@types": ["types/index"],
       "@helpers/*": ["helpers/*"],
       "@store/*": ["store/*"],
+      "@hooks/*": ["hooks/*"],
       "@store": ["store/index"],
-      "@libs/*": ["libs/*"]
+      "@libs/*": ["libs/*", "libs/*/index", "libs/index"],
+      "@icons/*": ["components/Icons/*"],
+      "@icons": ["components/Icons/index"],
+      "@assets/*": ["assets/*"]
     },
     "incremental": true
   },

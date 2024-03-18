@@ -1,6 +1,5 @@
-import React from 'react';
-import '../../styles/dashboard.css'; 
-import { AvatarIcon } from '../Image/icons';
+import { AvatarIcon } from "@icons";
+import "@styles/dashboard.css"; 
 
 interface GraphFontClickProps {
   month: string;
@@ -45,6 +44,6 @@ const GraphFontClick: React.FC<GraphFontClickProps> = ({ month }) => {
       </div>
     </div>
   );
-};
+}
 
 export default GraphFontClick;

@@ -1,6 +1,6 @@
-import { Chart } from 'chart.js';
-import React, { useEffect, useRef } from 'react';
-import { Bar } from 'react-chartjs-2';
+import { useEffect, useRef } from "react";
+import { Chart } from "chart.js";
+import { Bar } from "react-chartjs-2";
 
 interface GraphClientVolumeProps {
   month: string;
@@ -65,6 +65,6 @@ const GraphClientVolume: React.FC<GraphClientVolumeProps> = ({ month }) => {
       {/* Your legend and other JSX here */}
     </div>
   );
-};
+}
 
 export default GraphClientVolume;

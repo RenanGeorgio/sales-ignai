@@ -1,17 +1,13 @@
-
-import { useState } from 'react';
-import { DataGrid, GridColDef, GridValueGetterParams, GRID_DATETIME_COL_DEF, GRID_DATE_COL_DEF } from '@mui/x-data-grid';
-import { Button, FormControl, InputLabel, MenuItem, Select, IconButton, Modal } from '@mui/material';
-import { DotsVertical, Edit, Trash, } from '../../components/Image/icons';
-import rows from '../../dados/data-business.json';
-import { LeadIcon } from '../../components/Image/icons';
-import avatar from '../../components/Image/Avatar3.png';
-import { MessageDots } from '../../components/Image/icons';
-import { PaperClip } from '../../components/Image/icons';
-import AddInfo from '../Business/addInfo';
-import PrecoModal from '../Modal/price';
-import { useSidebar } from '../../contexts/sidebar/SidebarContext';
-import ModalSearchBusiness from './ModalSearchBusiness';
+import { useState } from "react";
+import { DataGrid, GridColDef, GridValueGetterParams, GRID_DATETIME_COL_DEF, GRID_DATE_COL_DEF } from "@mui/x-data-grid";
+import { Button, FormControl, InputLabel, MenuItem, Select, IconButton, Modal } from "@mui/material";
+import { VerticalDotsIcon, EditIcon, TrashIcon, LeadIcon, MessageDotsIcon, PaperClipIcon } from "@icons";
+import avatar from "@assets/images/Avatar3.png";
+import AddInfo from "../Business/addInfo";
+import PrecoModal from "../Modal/price";
+import { useSidebar } from "@contexts/sidebar/SidebarContext";
+import ModalSearchBusiness from "./ModalSearchBusiness";
+import rows from "../../dados/data-business.json";
 
 interface SearchBusinessProps { }
 
@@ -128,12 +124,12 @@ const columns: GridColDef[] = [
         {params.row.id !== 5 && params.row.id !== 8 ? (
           <>
           <IconButton>
-            <PaperClip/>
+            <PaperClipIcon/>
           </IconButton>
             <span style={{ marginLeft: '4px' }}>{params.row.acao}</span>
             <div style={{ marginRight: '4px' }}>{params.row.historicoClip}</div>
             <IconButton size='medium'>
-              <MessageDots/>
+              <MessageDotsIcon/>
             </IconButton>
             <span style={{ marginLeft: '4px' }}>{params.row.acao}</span>
             <div style={{ marginRight: '4px' }}>{params.row.historicoMessage}</div>
@@ -171,13 +167,13 @@ const columns: GridColDef[] = [
         {params.row.id !== 5 && params.row.id !== 8 ? (
           <>
             <IconButton>
-              <Edit />
+              <EditIcon />
             </IconButton>
             <IconButton color="primary" size="small" onClick={() => { }}>
-              <Trash className={undefined} />
+              <TrashIcon className={undefined} />
             </IconButton>
             <IconButton>
-              <DotsVertical className={undefined} />
+              <VerticalDotsIcon className={undefined} />
             </IconButton>
           </>
         ) : (

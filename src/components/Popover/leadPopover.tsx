@@ -1,7 +1,6 @@
-import React,{ useEffect, useRef, useState } from "react";
-import './leadPopover.css';
+import { useEffect, useRef, useState } from "react";
 import { IconButton } from "@mui/material";
-import { Plus } from "../Image/icons";
+import "./leadPopover.css";
 
 const LeadPopover = ({ children, title, handleClick, cardClassName }) => {
   const [showPopover, setShowPopover] = useState(false);
@@ -45,6 +44,6 @@ const LeadPopover = ({ children, title, handleClick, cardClassName }) => {
       )}
     </div>
   );
-};
+}
 
 export default LeadPopover;
