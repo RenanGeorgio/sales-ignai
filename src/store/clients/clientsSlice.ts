@@ -25,16 +25,48 @@ const { reducer, actions } = createSlice({
 
     // contatos
     updateContactList(state, action) {
-      const { id, contactInfo } = action.payload;
-      return state.map((client) => {
+      const { id, contacts } = action.payload;
+      console.log(contacts)
+      state.map((client) => {
         if (client._id === id) {
-          return {
-            ...client,
-            contact: {
-              ...client.contact,
-              contactInfo,
-            },
-          };
+          client.contacts = contacts;
+          return client;
+        } else {
+          return client;
+        }
+      });
+    },
+
+    updateAddressList(state, action) {
+      const { id, address } = action.payload;
+      state.map((client) => {
+        if (client._id === id) {
+          client.adresses= address;
+          return client;
+        } else {
+          return client;
+        }
+      });
+    },
+
+    removeAddress(state, action) {
+      const { id, addressId } = action.payload;
+      state.map((client) => {
+        if (client._id === id) {
+          client.adresses = client.adresses.filter((address) => address._id !== addressId);
+          return client;
+        } else {
+          return client;
+        }
+      });
+    },
+
+    removeContact(state, action) {
+      const { id, contactId } = action.payload;
+      state.map((client) => {
+        if (client._id === id) {
+          client.contacts = client.contacts.filter((contact) => contact._id !== contactId);
+          return client;
         } else {
           return client;
         }

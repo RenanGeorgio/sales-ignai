@@ -7,13 +7,10 @@ export interface IClient {
   sector: string;
   status?: boolean;
   companyId: string;
-  contact?: IContact;
+  contacts: IContactInfo[];
+  adresses: IAddress[];
 };
 
-export interface IContact {
-  contactInfo: IContactInfo[];
-  address: IAddress[];
-}
 
 export interface IContactInfo {
   _id?: string;
@@ -26,6 +23,7 @@ export interface IContactInfo {
 };
 
 export interface IAddress {
+  _id?: string;
   client: string;
   name: string;
   street: string;

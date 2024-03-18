@@ -72,3 +72,26 @@ export const putRequest = async (url: string, body: any) => {
 
   return data;
 };
+
+export const deleteRequest = async (url: string) => {
+  const response = await fetch(url, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${Cookies.get('token')}`
+    },
+  });
+
+  const data = await response.json();
+
+  if(!response.ok) {
+    let message = "Ocorreu um erro...";
+    if(data?.message) {
+      message = data.message;
+    }
+
+    return { error: true, message };
+  }
+
+  return data;
+};

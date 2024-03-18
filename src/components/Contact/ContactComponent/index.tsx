@@ -22,7 +22,7 @@ import { IClient } from "types/interfaces";
 import { baseUrl, postRequest, putRequest } from "services/api/apiService";
 import { useDispatch } from "react-redux";
 import { clientsActions } from "store/clients/clientsSlice";
-import ClientForm from "../Forms/Client";
+import ClientForm from "../FormFields/Client";
 import ModalForm from "components/Forms/Modal/ModalForm";
 
 const ContatoCell = ({ name, email, tel }) => {
@@ -191,7 +191,7 @@ export default function ContactComponent() {
       field: "acao",
       headerName: "Ação",
       width: 160,
-      align: "right",
+      align: "center",
       headerAlign: "center",
       renderCell: (params) => {
         return (
@@ -204,15 +204,6 @@ export default function ContactComponent() {
               }}
             >
               <Edit />
-            </IconButton>
-            <IconButton
-              color="primary"
-              size="small"
-              onClick={() => {
-                // ...
-              }}
-            >
-              <Trash className={undefined} />
             </IconButton>
             <IconButton>
               <DotsVertical className={undefined} />

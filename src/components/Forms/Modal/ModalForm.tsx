@@ -1,13 +1,23 @@
 import { cloneElement, useEffect, useState } from "react";
 import "./ModalForm.css";
 
-const ModalForm = ({ children, onSubmit, isLoading, initialValues, mode }) => {
+interface ModalFormProps {
+  children: any;
+  onSubmit: (formValues: any) => void;
+  isLoading: boolean;
+  initialValues: any;
+  mode: string;
+} 
+
+const ModalForm = ({ children, onSubmit, isLoading, initialValues, mode }: ModalFormProps) => {
+
+
   const [formValues, setFormValues] = useState({});
   const [disabled, setDisabled] = useState(true);
 
   const onChange = (e) => {
     const { name, value, type, checked } = e.target;
-    const newValue = type === 'checkbox' ? checked : value; // Trata a checkbox separadamente
+    const newValue = type === "checkbox" ? checked : value;
 
     setFormValues({
       ...formValues,
@@ -32,19 +42,19 @@ const ModalForm = ({ children, onSubmit, isLoading, initialValues, mode }) => {
 
   const newElement = cloneElement(children, {
     formValues,
-    mode
+    mode,
   });
 
   return (
     <div className="modal-form">
       <form onSubmit={(e) => handleSubmit(e)} onChange={(e) => onChange(e)}>
-        {newElement}
+        <div className="form-content">{newElement}</div>
         <button
           type="submit"
           className="form-submit-button"
           disabled={disabled}
         >
-          {mode === "edit" ? "Atualizar" : "Cadastrar"}
+          {mode === "edit" ? "Atualizar" : "Adicionar"}
         </button>
       </form>
     </div>

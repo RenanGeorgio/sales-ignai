@@ -5,31 +5,31 @@ import {
   PaperClip,
   ShoppingCart,
 } from "../../Image/icons";
-import { Alert, Button, IconButton } from "@mui/material";
-import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
+import { Alert, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import rows from "../../../dados/data2.json";
 import ImageLogo from "../../Image/Queiroz_Galvão_Logo 1.png";
 import PaymentAddress from "./PaymentAdress";
 import Notification from "./Notifications/Notification";
 import "./PaymentAdress/payment.css";
-import {
-  getPaymentStatusStyles,
-  priorityStatus,
-  getPriorityStyles,
-} from "helpers/status";
+import { priorityStatus, getPriorityStyles } from "helpers/status";
 import ModalComponent from "components/Modal/Modal";
-import { IContact, IContactInfo } from "types/interfaces";
-import { baseUrl, postRequest, putRequest } from "services/api/apiService";
+import { IContactInfo } from "types/interfaces";
+import {
+  baseUrl,
+  deleteRequest,
+  postRequest,
+  putRequest,
+} from "services/api/apiService";
 import ModalForm from "components/Forms/Modal/ModalForm";
-import ContactFormFields from "../Forms/Contact";
+import ContactFormFields from "../FormFields/Contact";
 import { useDispatch } from "react-redux";
 import { clientsActions } from "store/store";
+import Revenue from "./Revenue";
 
 // const ImageLogo = '../../Image/Queiroz_Galvão_Logo 1.png'
 
 const ContactDetails = ({ client }) => {
-  const [activePage, setActivePage] = useState("pageName");
+  const [activePage, setActivePage] = useState("Geral");
   const [openModal, setOpenModal] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [error, setError] = useState(false);
@@ -64,7 +64,7 @@ const ContactDetails = ({ client }) => {
     if (response.error) {
       requestError(response.message);
     } else {
-      updateClientContacts(contact);
+      updateClientContacts(response);
       setOpenModal(false);
     }
     setIsLoading(false);
@@ -84,13 +84,24 @@ const ContactDetails = ({ client }) => {
     setIsLoading(false);
   };
 
-  const updateClientContacts = (contactInfo: IContactInfo) => {
+  const updateClientContacts = (contacts: IContactInfo) => {
     dispatch(
       clientsActions.updateContactList({
         id: client._id,
-        contactInfo,
+        contacts,
       })
     );
+  };
+
+  const deleteClient = async () => {
+    // todo: Adicionar pop-up de confirmação
+    const response = await deleteRequest(`${baseUrl}/client/${client._id}`);
+    if (response.error) {
+      requestError(response.message);
+    } else {
+      dispatch(clientsActions.removeClient(client._id));
+      navigate(-1);
+    }
   };
 
   const requestError = (error: string) => {
@@ -100,113 +111,6 @@ const ContactDetails = ({ client }) => {
       setError(false);
     }, 3000);
   };
-
-  const columns: GridColDef[] = [
-    {
-      field: "nota",
-      headerName: "Nota",
-      width: 250,
-    },
-    {
-      field: "pdf",
-      headerName: "PDF",
-      width: 80,
-      align: "center",
-      headerAlign: "center",
-      renderCell: (params) => (
-        <div
-          style={{
-            color: "#818482",
-            backgroundColor: "rgba(247.76, 88.24, 66.48, 0.16)",
-            padding: "2px",
-            borderRadius: "5px",
-            width: "95px",
-            textAlign: "center",
-          }}
-        >
-          {params.value}
-        </div>
-      ),
-    },
-    {
-      field: "date",
-      headerName: "Data",
-      type: "date",
-      width: 190,
-      align: "center",
-      headerAlign: "center",
-      valueGetter: (params: GridValueGetterParams) => {
-        // Convert the string date to a Date object
-        return params.row.date ? new Date(params.row.date) : null;
-      },
-    },
-    {
-      field: "status-payment",
-      headerName: "Status De Pagamento",
-      width: 250,
-      align: "center",
-      headerAlign: "center",
-      renderCell: (params) => {
-        const { color, backgroundColor } = getPaymentStatusStyles(params.value);
-        return (
-          <div
-            style={{
-              color: color,
-              backgroundColor: backgroundColor,
-              padding: "3px 10px",
-              borderRadius: "5px",
-              textAlign: "center",
-            }}
-          >
-            {params.value}
-          </div>
-        );
-      },
-    },
-
-    {
-      field: "spending",
-      headerName: "Gastos",
-      type: "number",
-      width: 130,
-      align: "center",
-      headerAlign: "center",
-      renderCell: (params) => (
-        <div
-          style={{
-            padding: "2px",
-            borderRadius: "5px",
-            width: "95px",
-            textAlign: "center",
-          }}
-        >
-          {params.value}
-        </div>
-      ),
-    },
-    {
-      field: "acao",
-      headerName: "Ação",
-      width: 100,
-      align: "center",
-      headerAlign: "center",
-      renderCell: (params) => {
-        return (
-          <div>
-            <IconButton
-              size="small"
-              style={{
-                color: "#000",
-                borderRadius: "50%",
-              }}
-            >
-              <DotsVertical className={undefined} />
-            </IconButton>
-          </div>
-        );
-      },
-    },
-  ];
 
   return (
     <div
@@ -276,6 +180,7 @@ const ContactDetails = ({ client }) => {
             variant="outlined"
             color="error"
             style={{ color: "#EA5451", background: "rgba(234, 84, 85, 0.16)" }}
+            onClick={() => deleteClient()}
           >
             Deletar Cliente
           </Button>
@@ -381,7 +286,11 @@ const ContactDetails = ({ client }) => {
                   </div>
                   {/* </div> */}
                 </div>
-                <img style={{ width: 171, height: 49 }} src={ImageLogo} />
+                <img
+                  style={{ width: 171, height: 49 }}
+                  src={ImageLogo}
+                  alt="logo"
+                />
                 <div
                   style={{
                     alignSelf: "stretch",
@@ -566,7 +475,8 @@ const ContactDetails = ({ client }) => {
                 </div>
                 <Button
                   variant="contained"
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.stopPropagation();
                     setModalMode({ mode: "add", title: "Adicionar contato" });
                     setOpenModal(true);
                   }}
@@ -577,7 +487,7 @@ const ContactDetails = ({ client }) => {
 
               {/* <bloco 1 esquerdo  */}
 
-              {client?.contact.contactInfo?.map((item, index) => (
+              {client?.contacts?.map((item, index) => (
                 <div
                   style={{
                     alignSelf: "stretch",
@@ -621,6 +531,7 @@ const ContactDetails = ({ client }) => {
                           wordWrap: "break-word",
                         }}
                       >
+                        {" "}
                         {item?.contactName}
                       </span>
                     </div>
@@ -720,6 +631,7 @@ const ContactDetails = ({ client }) => {
                           wordWrap: "break-word",
                         }}
                       >
+                        {" "}
                         {item?.tel}
                       </span>
                     </div>
@@ -764,7 +676,8 @@ const ContactDetails = ({ client }) => {
                         fontFamily: "sans-serif",
                         background: "#BABABD",
                       }}
-                      onClick={() => {
+                      onClick={(e) => {
+                        e.stopPropagation();
                         setSelectedItem(item);
                         setModalMode({ mode: "edit", title: "Editar contato" });
                         setOpenModal(true);
@@ -830,13 +743,11 @@ const ContactDetails = ({ client }) => {
           </div>
 
           <div>
-            {activePage === "Geral" && (
-              <div>{/* Componente para a página "Atendimento" */}</div>
-            )}
+            {activePage === "Geral" && <Revenue />}
             {activePage === "Payment" && (
               <div>
                 <PaymentAddress
-                  address={client?.contact.address}
+                  address={client?.adresses}
                   clientId={client._id}
                 />
               </div>
@@ -846,99 +757,6 @@ const ContactDetails = ({ client }) => {
                 <Notification />
               </div>
             )}
-          </div>
-
-          <div
-            style={{
-              alignSelf: "stretch",
-              height: 560,
-              background: "white",
-              boxShadow: "1px 2px 1px rgba(75, 70, 92, 0.10)",
-              flexDirection: "column",
-              justifyContent: "flex-start",
-              alignItems: "flex-start",
-              display: activePage === "Geral" ? "flex" : "none",
-            }}
-          >
-            <div
-              style={{
-                alignSelf: "stretch",
-                height: 560,
-                flexDirection: "column",
-                justifyContent: "flex-start",
-                alignItems: "flex-start",
-                display: activePage === "Geral" ? "flex" : "none",
-              }}
-            >
-              {/* Header receita e search  */}
-              <div
-                style={{
-                  height: 50,
-                  alignSelf: "stretch",
-                  boxShadow: "0px 4px 18px rgba(75, 70, 92, 0.10)",
-                  padding: 10,
-                  justifyContent: "flex-start",
-                  alignItems: "center",
-                  display: "inline-flex",
-                  fontFamily: "sans-serif",
-                }}
-              >
-                <div
-                  style={{
-                    fontFamily: "sans-serif",
-                    flex: "1 1 0",
-                    color: "black",
-                    fontSize: 18,
-                    fontWeight: "500",
-                    lineHeight: 2,
-                    wordWrap: "break-word",
-                  }}
-                >
-                  Receita
-                </div>
-                <div
-                  style={{
-                    height: 38,
-                    background: "white",
-                    borderRadius: 6,
-                    border: "1px #DBDADE solid",
-                    justifyContent: "flex-start",
-                    alignItems: "center",
-                    display: "flex",
-                  }}
-                >
-                  <input
-                    placeholder="Search Order"
-                    style={{
-                      height: 38,
-                      background: "white",
-                      borderRadius: 6,
-                      border: "1px #DBDADE solid",
-                      justifyContent: "flex-start",
-                      alignItems: "end",
-                      display: "flex",
-                      textAlign: "left",
-                    }}
-                    type="text"
-                  />
-                </div>
-              </div>
-
-              <div style={{ height: 490, width: "100%" }}>
-                <DataGrid
-                  rows={rows}
-                  columns={columns}
-                  checkboxSelection
-                  initialState={{
-                    pagination: {
-                      paginationModel: { page: 0, pageSize: 7 },
-                    },
-                  }}
-                  pageSizeOptions={[7]}
-                  isCellEditable={(params) => params.row.Contato % 2 === 0}
-                />
-              </div>
-            </div>
           </div>
         </div>
       </div>

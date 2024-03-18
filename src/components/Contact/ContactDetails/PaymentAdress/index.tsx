@@ -1,45 +1,90 @@
 import { IconButton, Button, Badge, Checkbox, Alert } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { DotsVertical, Pencil, Trash } from "../../../Image/icons";
 import "./payment.css";
 import { IAddress } from "types/interfaces";
 import ModalComponent from "components/Modal/Modal";
-import { baseUrl, postRequest } from "services/api/apiService";
+import {
+  baseUrl,
+  deleteRequest,
+  postRequest,
+  putRequest,
+} from "services/api/apiService";
 import ModalForm from "components/Forms/Modal/ModalForm";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import PaymentAddressFormFields from "components/Contact/FormFields/PaymentAddress";
+import { clientsActions } from "store/store";
 
 export default function PaymentAddress({ address, clientId }) {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-
   const [openModal, setOpenModal] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [modalMode, setModalMode] = useState({
-    mode: "add",
-    title: "Adicionar Cliente",
+    mode: null,
+    title: null,
   });
 
-  const [selectedItem, setSelectedItem] = useState<IAddress | null>(null);
+  const [selectedItem, setSelectedItem] = useState({} as IAddress);
 
-  const handleAddAddress = async (address: IAddress) => {
+  const handleAdd = async (address: IAddress) => {
     setIsLoading(true);
     const response = await postRequest(
       `${baseUrl}/client/${clientId}/address`,
       address
     );
     if (response.error) {
-      setError(true);
-      setTimeout(() => {
-        setError(false);
-      }, 3000);
-      setErrorMessage(response.message);
+      requestError(response.message);
     } else {
+      updateClientAdresses(response);
       setOpenModal(false);
     }
     setIsLoading(false);
+  };
+
+  const handleUpdate = async (address: IAddress) => {
+    const response = await putRequest(
+      `${baseUrl}/client/${clientId}/address/${address._id}`,
+      address
+    );
+    if (response.error) {
+      requestError(response.message);
+    } else {
+      updateClientAdresses(response);
+      setOpenModal(false);
+    }
+    setIsLoading(false);
+  };
+
+  const handleRemove = async (addressId: string) => {
+    const response = await deleteRequest(
+      `${baseUrl}/client/${clientId}/address/${addressId}`
+    );
+    if (response.error) {
+      requestError(response.message);
+    } else {
+      dispatch(clientsActions.removeAddress({ id: clientId, addressId }));
+    }
+    setIsLoading(false);
+  };
+
+  const requestError = (error: string) => {
+    setError(true);
+    setErrorMessage(error);
+    setTimeout(() => {
+      setError(false);
+    }, 3000);
+  };
+
+  const updateClientAdresses = (address: IAddress[]) => {
+    dispatch(
+      clientsActions.updateAddressList({
+        id: clientId,
+        address: address,
+      })
+    );
   };
 
   return (
@@ -50,7 +95,14 @@ export default function PaymentAddress({ address, clientId }) {
             <div className="card">
               <div className="card-heading">
                 <div className="text-wrapper-19">Endereço</div>
-                <Button variant="outlined" onClick={() => setOpenModal(true)}>
+                <Button
+                  variant="outlined"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setModalMode({ mode: "add", title: "Novo endereço" });
+                    setOpenModal(true);
+                  }}
+                >
                   Novo endereço
                 </Button>
                 <ModalComponent
@@ -59,13 +111,17 @@ export default function PaymentAddress({ address, clientId }) {
                   onClose={() => setOpenModal(false)}
                 >
                   <ModalForm
-                    onSubmit={(address: IAddress) => {
-                      handleAddAddress(address);
+                    onSubmit={(contact) => {
+                      modalMode.mode === "add"
+                        ? handleAdd(contact)
+                        : handleUpdate(contact);
                     }}
                     isLoading={isLoading}
                     initialValues={selectedItem}
                     mode={modalMode.mode}
-                  ><div></div></ModalForm>
+                  >
+                    <PaymentAddressFormFields setFormValues={setSelectedItem} />
+                  </ModalForm>
                 </ModalComponent>
               </div>
               <div className="card-body">
@@ -76,7 +132,7 @@ export default function PaymentAddress({ address, clientId }) {
                         <div className="row-4">
                           <div className="text-wrapper-20">{addr.name}</div>
                           {addr.isMain ? (
-                            <span className="badge-3">{addr.name}</span>
+                            <span className="badge-3">Principal</span>
                           ) : (
                             ""
                           )}
@@ -90,10 +146,26 @@ export default function PaymentAddress({ address, clientId }) {
                         </p>
                       </div>
                       <div className="actions">
-                        <IconButton className="button-icon-instance">
+                        <IconButton
+                          className="button-icon-instance"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setSelectedItem(addr);
+                            setModalMode({
+                              mode: "edit",
+                              title: "Editar contato",
+                            });
+                            setOpenModal(true);
+                          }}
+                        >
                           <Pencil className="icon-instance-node" />
                         </IconButton>
-                        <IconButton>
+                        <IconButton
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleRemove(addr._id);
+                          }}
+                        >
                           <Trash className="icon-instance-node" />
                         </IconButton>
                         <IconButton>
