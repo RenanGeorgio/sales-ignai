@@ -16,13 +16,13 @@ const Navbar: React.FC<NavbarProps> = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [placement, setPlacement] = useState<PopperPlacementType>();
 
-  const handleClick =
-  (newPlacement: PopperPlacementType) =>
+  const handleClick = (newPlacement: PopperPlacementType) =>
   (event: MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
     setOpen((prev) => placement !== newPlacement || !prev);
     setPlacement(newPlacement);
   };
+
   const id = open ? 'simple-popper' : undefined;
 
   return (
@@ -42,7 +42,6 @@ const Navbar: React.FC<NavbarProps> = () => {
             <BellIcon />
             <img className="icon" src={userIcon} alt="Usuário" onClick={handleClick('bottom-start')} />
           </div>
-
           <Popper id={id} open={open} anchorEl={anchorEl} placement={placement}>
             <div style={{ border: 1, backgroundColor: 'lightgray',alignItems:'center', justifyContent: 'center', display:'flex',
             height: "8vh",width:'100%', padding: "5px",
@@ -50,7 +49,6 @@ const Navbar: React.FC<NavbarProps> = () => {
               <Button onClick={() => signOut()} variant='contained' color='error'>Sair</Button>
             </div>
           </Popper>
-
         </div>
       </div>
     </header>

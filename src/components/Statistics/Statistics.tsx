@@ -1,11 +1,8 @@
 import { 
   ClockIcon,
-  UsersIcon,
-  ChartIcon, 
-  Chart2Icon, 
   ChartPieIcon,
-  MessageDots,
-  CurrencyDollar,
+  MessageDotsIcon,
+  CurrencyDollarIcon,
   BriefCaseIcon
 } from "@icons";
 import ChartSessions from "../Graph/GraphSessions";
@@ -70,7 +67,7 @@ const StatisticsComponent: React.FC<StatisticsComponentProps> = () => {
           </div>
         </div>
         <div className="additional-statistics">
-          <MessageDots />
+          <MessageDotsIcon />
           <div className="number-label-container">
             <div className="number-statistics">3.4k</div>
             <div className="label">Review</div>
@@ -103,7 +100,7 @@ const StatisticsComponent: React.FC<StatisticsComponentProps> = () => {
           </div>
         </div>
         <div className="additional-item">
-          <CurrencyDollar/>
+          <CurrencyDollarIcon/>
           <div className="number-label-container-total">
             <h3 className="number-statistics">Total Profit</h3>
             <h4 className="label">Last week</h4>

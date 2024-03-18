@@ -3,8 +3,8 @@ import { BrowserRouter } from "react-router-dom";
 import { QueryClientProvider } from "react-query";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { queryClient } from "@services";
-import * as serviceWorker from "@libs/serviceWorker/service";
+import { queryClient } from "./services";
+import * as serviceWorker from "./libs/serviceWorker/service";
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 

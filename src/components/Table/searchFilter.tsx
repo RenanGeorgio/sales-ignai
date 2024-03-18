@@ -1,11 +1,9 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
-import { DataGrid, GridColDef, GridValueGetterParams, GRID_DATETIME_COL_DEF, GRID_DATE_COL_DEF } from "@mui/x-data-grid";
-import { Button, FormControl, InputLabel, MenuItem, Select, IconButton, Modal } from "@mui/material";
+import { DataGrid, GridColDef } from "@mui/x-data-grid";
+import { Button, IconButton, Modal } from "@mui/material";
 import { VerticalDotsIcon, EditIcon, TrashIcon, LeadIcon, MessageDotsIcon, PaperClipIcon } from "@icons";
 import avatar from "@assets/images/Avatar3.png";
 import ModalSearch from "./ModalSearch";
-import rows from "../../dados/data-leads.json";
 
 interface SearchFilterProps {
     setShowList: () => void;

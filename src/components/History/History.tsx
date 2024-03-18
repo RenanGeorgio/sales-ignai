@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { DataGrid, GridColDef, GridValueGetterParams, GRID_DATETIME_COL_DEF, GRID_DATE_COL_DEF } from "@mui/x-data-grid";
-import { Button, FormControl, InputLabel, MenuItem, Select, IconButton, Modal } from "@mui/material";
+import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
+import { Button, IconButton, Modal } from "@mui/material";
 import { VerticalDotsIcon, EditIcon, TrashIcon } from "@icons";
 import ModalHistory from "./ModalHistory";
 import rows from "../../dados/data.json";

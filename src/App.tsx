@@ -21,7 +21,7 @@ import { AuthProvider } from "@contexts/auth/provider/AuthProvider";
 import SignInPage from "@pages/Auth/SignInPage";
 import { persistor, store } from "@store/store";
 import { SidebarProvider } from "@contexts/sidebar/SidebarContext";
-import NotFound from "@components/NotFound/NotFound";
+import NotFound from "@components/NotFound";
 import { ChatProvider } from "@contexts/chat/ChatContext";
 import CachingController from "./CachingController";
 import RequireAuth from "./RequireAuth";

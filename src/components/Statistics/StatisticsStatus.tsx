@@ -15,9 +15,8 @@ import sketchLogo from "@assets/images/sketchLogo.png";
 import ReactIcon from "@assets/images/ReactIcon.png";
 import laravelLogo from "@assets/images/laravel-logo.png";
 import BootStrapLogo from "@assets/images/BootstrapLogo.png";
-import { Chart } from "chart.js/dist";
 import ChartProjectStatus from "../Graph/GraphProjectStatus";
-import { CurrencyDollarIcon, VectorIcon } from "@icons";
+import { CurrencyDollarIcon } from "@icons";
 import "@styles/statistics-status.css"; 
 
 interface StatisticsStatusProps {}

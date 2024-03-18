@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { PhoneIcon } from "@icons";
-import AddTicket from "./AddTicket/AddTicket";
 import "./leftmenu.css";
 
 interface Props {
@@ -9,8 +8,6 @@ interface Props {
 };
 
 export const LeftMenu = ({ onAddTicketClick, children }: Props) => {
-  const [openPage, setOpenPage] = useState<boolean>(false);
-  const [openTicket, setOpenTicket] = useState<boolean>(false);
   const [showAddTicket, setShowAddTicket] = useState<boolean>(false);
   
   const toggleAddTicket = () => {

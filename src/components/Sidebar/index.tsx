@@ -9,13 +9,13 @@ import {
   ComponentsIcon, 
   CopyIcon, 
   FileDollarIcon, 
-  FileTextIcon, 
+  TextFileIcon, 
   HeadPhoneIcon, 
-  LayoutNavIcon, 
+  NavLayoutIcon, 
   LayoutSideBarIcon, 
   MailIcon,
   MessageCircleIcon, 
-  SettingIcon, 
+  SettingsIcon, 
   SmartHomeIcon, 
   TextWrapIcon
 } from "@icons";
@@ -126,7 +126,7 @@ const Sidebar: React.FC<SidebarProps> = () => {
         </Link>
         <Link className="link" to="/chatbot">
           <div className="menu-item">
-            <LayoutNavIcon />
+            <NavLayoutIcon />
             <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'>ChatBot</p></span>
           </div>
         </Link>
@@ -137,7 +137,7 @@ const Sidebar: React.FC<SidebarProps> = () => {
         <p className={expanded ? 'show-text' : 'hide-text'}>Ajuda</p>
         <Link className="link" to="/configuracoes">
           <div className="menu-item">
-            <SettingIcon />
+            <SettingsIcon />
             <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'>Configurações</p></span>
           </div>
         </Link>
@@ -149,7 +149,7 @@ const Sidebar: React.FC<SidebarProps> = () => {
         </Link>
         <Link className="link" to="/">
           <div className="menu-item">
-            <FileTextIcon/>
+            <TextFileIcon/>
             <span className={expanded ? 'show-text' : 'hide-text'}><p className='textOpen'>Documentation</p></span>
           </div>
         </Link>

@@ -19,7 +19,7 @@ import { Export } from "./export-icon";
 import { Facebook } from "./facebook-icon";
 import { FileDollar } from "./file-dollar-icon";
 import { HeadPhone } from "./headphone-icon";
-import { Instagram } from "instagram-icon";
+import { Instagram } from "./instagram-icon";
 import { Label, GreenLabel, InitialsLabel } from "./label-icon";
 import { LayoutSideBar } from "./layout-sidebar-icon";
 import { Lead } from "./lead-icon";
@@ -51,7 +51,7 @@ import { Users } from "./users-icon";
 import { Vector } from "./vector-icon";
 import { Video } from "./video-icon";
 import { Website } from "./website-icon";
-import { Whatsapp } from "./whatsapp";
+import { Whatsapp } from "./whatsapp-icon";
 
 export {
     ArrowUpCircle as ArrowUpCircleIcon,
@@ -64,7 +64,7 @@ export {
     ChartBar as ChartBarIcon, 
     ChartPie as ChartPieIcon, 
     Chart as ChartIcon, 
-    Char as ChartIcon,
+    Chart2 as Chart2Icon,
     CircleCheck as CircleCheckIcon,
     ChevronUp as ChevronUpIcon, 
     ChevronDown as ChevronDownIcon,

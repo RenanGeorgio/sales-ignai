@@ -1,6 +1,6 @@
-import { IconButton } from '@mui/material';
-import { VerticalDotsIcon, PencilIcon, TrashIcon, UploadIcon } from '@icons';
-import './addticket.css';
+import { IconButton } from "@mui/material";
+import { VerticalDotsIcon, PencilIcon, TrashIcon, UploadIcon } from "@icons";
+import "./addticket.css";
 
 interface Props {
   onUploadFile: (file: any) => void;

@@ -1,9 +1,9 @@
 import { useEffect } from "react";
-import { AxiosError, isAxiosError } from "axios";
+import { isAxiosError } from "axios";
 import { useQuery } from "react-query";
 import { connect, useDispatch } from "react-redux";
 import useAuth from "@hooks/useAuth";
-import authApi from "@services/auth";
+import { authApi } from "@services";
 import { userActions, leadsActions } from "@store/store";
 
 const CachingController = () => {

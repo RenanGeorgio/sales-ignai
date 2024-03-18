@@ -1,8 +1,8 @@
 
 import { useState } from "react";
-import { Navigate, useNavigate }  from "react-router-dom";
+import { useNavigate }  from "react-router-dom";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
-import { Avatar, Button, IconButton } from "@mui/material";
+import { Button, IconButton } from "@mui/material";
 import { VerticalDotsIcon, EditIcon, MessageDotsIcon, PaperClipIcon, PlusIcon, TrashIcon } from "@icons";
 import rows from "../../../dados/data1.json";
 

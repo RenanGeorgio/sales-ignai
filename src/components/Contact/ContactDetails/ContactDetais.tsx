@@ -4,8 +4,8 @@ import { CurrencyDollarIcon, VerticalDotsIcon, ShoppingCartIcon } from "@icons";
 import { Button, IconButton } from "@mui/material";
 import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
 import ImageLogo from "@assets/images/Queiroz_Galvão_Logo 1.png";
-import PaymentAddress from "./PaymentAdress/PaymentAddress';
-import Notification from "./Notifications/Notification";
+import PaymentAddress from "./PaymentAdress";
+import Notification from "./Notifications";
 import rows from "../../../dados/data2.json";
 import "./PaymentAdress/payment.css";
 

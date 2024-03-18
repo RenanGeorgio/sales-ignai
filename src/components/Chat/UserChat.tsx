@@ -52,4 +52,4 @@ export const UserChat = ({ chat, user }: Props) => {
       </div>
     </div>
   );
-};
+}

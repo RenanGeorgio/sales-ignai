@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -91,7 +91,6 @@ const ChartRevenue = () => {
         options={options}
         height='250px'
         width='280px'
-        
       />
     </div>
   );

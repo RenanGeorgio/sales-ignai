@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { EditIcon, MessageCircleIcon, TrendingUpIcon  } from "@icons";
+import { useState } from "react";
+import { EditIcon, TrendingUpIcon  } from "@icons";
 import avatar from "@assets/images/Avatar2.png";
 import avatar3 from "@assets/images/Avatar3.png";
 import "./leadmodal.css";

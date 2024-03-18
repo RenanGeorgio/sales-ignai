@@ -22,7 +22,7 @@ const ListarMensagens: React.FC = () => {
       </ul>
     </div>
   );
-};
+}
 
 const Mensagem: React.FC<MensagemPayload> = ({ mensagem, nome }) => {
   return (
@@ -35,6 +35,6 @@ const Mensagem: React.FC<MensagemPayload> = ({ mensagem, nome }) => {
       </p>
     </li>
   );
-};
+}
 
 export default ListarMensagens;

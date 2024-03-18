@@ -1,4 +1,4 @@
-import { PackageIcon, PercentageIcon, ClockIcon, UsersIcon, TruckIcon, ChevronUpIcon, AvatarIcon, ChevronDownIcon, CircleCheckIcon } from "@icons";
+import { PackageIcon, PercentageIcon, ClockIcon, UsersIcon, TruckIcon, ChevronUpIcon, ChevronDownIcon, CircleCheckIcon } from "@icons";
 import "@styles/graph.css";
 
 interface GraphThemesProps {

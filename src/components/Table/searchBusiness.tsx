@@ -1,10 +1,9 @@
 import { useState } from "react";
-import { DataGrid, GridColDef, GridValueGetterParams, GRID_DATETIME_COL_DEF, GRID_DATE_COL_DEF } from "@mui/x-data-grid";
-import { Button, FormControl, InputLabel, MenuItem, Select, IconButton, Modal } from "@mui/material";
+import { DataGrid, GridColDef } from "@mui/x-data-grid";
+import { Button, IconButton, Modal } from "@mui/material";
 import { VerticalDotsIcon, EditIcon, TrashIcon, LeadIcon, MessageDotsIcon, PaperClipIcon } from "@icons";
 import avatar from "@assets/images/Avatar3.png";
 import AddInfo from "../Business/addInfo";
-import PrecoModal from "../Modal/price";
 import { useSidebar } from "@contexts/sidebar/SidebarContext";
 import ModalSearchBusiness from "./ModalSearchBusiness";
 import rows from "../../dados/data-business.json";
