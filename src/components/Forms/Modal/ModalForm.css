@@ -19,6 +19,23 @@
   padding-right: 5px;
 }
 
+.form-group-check-box {
+  margin-bottom: 15px;
+  padding-right: 5px;
+  display: inline-flex;
+margin-top: 10px;
+  box-sizing: border-box;
+  align-items: center;
+  /* flex-direction: row-reverse; */
+  /* flex-wrap: wrap; */
+  width: 100%;
+}
+
+.form-input-check-box{
+  width: 20px;
+  height: 20px;
+}
+
 .form-group label {
   display: block;
   margin-bottom: 5px;

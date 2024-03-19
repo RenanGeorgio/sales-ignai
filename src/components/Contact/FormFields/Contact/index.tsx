@@ -58,13 +58,13 @@ const ContactFormFields = (props: any) => {
         </select>
       </div>
       {mode === "edit" && (
-        <div className="form-group">
+        <div className="form-group-check-box">
           <label htmlFor="status">Status</label>
           <input
             type="checkbox"
             id="status"
             name="status"
-            className="form-input"
+            className="form-input-check-box"
             checked={formValues?.status}
           />
         </div>
