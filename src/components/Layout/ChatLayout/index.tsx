@@ -31,7 +31,7 @@ export default function LayoutChat() {
             {/* <ChevronDown1 className="icon-instance-node" /> */}
           </div>
           <div className="div-content">
-            {userChats?.map((chat, index) => (
+            { userChats?.map((chat, index) => (
               <div
                 key={index}
                 onClick={() => {

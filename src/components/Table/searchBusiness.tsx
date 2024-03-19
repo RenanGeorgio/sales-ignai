@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { DataGrid, GridColDef, GridValueGetterParams, GRID_DATETIME_COL_DEF, GRID_DATE_COL_DEF } from '@mui/x-data-grid';
 import { Button, FormControl, InputLabel, MenuItem, Select, IconButton, Modal } from '@mui/material';
 import { DotsVertical, Edit, Trash, } from '../../components/Image/icons';
-import rows from '../../dados/data-business.json';
+// import rows from '../../dados/data-business.json';
 import { LeadIcon } from '../../components/Image/icons';
 import avatar from '../../components/Image/Avatar3.png';
 import { MessageDots } from '../../components/Image/icons';
@@ -186,14 +186,14 @@ const SearchBusiness: React.FC<SearchBusinessProps> = () => {
     setShowKanban(false);
   };
 
-  const rowsWithStylization = rows.map((row) => {
-    if (row.id === 5) {
-      return { ...row, negociosAtivos: { name: 'Negócios' } };
-    } else if (row.id === 8) {
-      return { ...row, negociosAtivos: { name: 'Negócios Rejeitados' } };
-    }
-    return row;
-  });
+  // const rowsWithStylization = rows.map((row) => {
+  //   if (row.id === 5) {
+  //     return { ...row, negociosAtivos: { name: 'Negócios' } };
+  //   } else if (row.id === 8) {
+  //     return { ...row, negociosAtivos: { name: 'Negócios Rejeitados' } };
+  //   }
+  //   return row;
+  // });
 
   return (
     <div className={`business-app-container ${isSidebarExpanded ? 'sidebar-expanded' : ''}`}>
@@ -300,7 +300,7 @@ const SearchBusiness: React.FC<SearchBusinessProps> = () => {
                   width: 300,
                   cursor: 'pointer',
                 }}
-                  onClick={handleOpen}
+                  onClick={handleShowKanban}
                 >
                                 + Adicionar Pedido / Proposta
                                 </Button>
@@ -310,7 +310,7 @@ const SearchBusiness: React.FC<SearchBusinessProps> = () => {
 
           <div style={{ height: 620, width: '100%' }}>
             <DataGrid
-              rows={rowsWithStylization}
+              rows={[]}
               columns={columns}
               initialState={{
                 pagination: {
