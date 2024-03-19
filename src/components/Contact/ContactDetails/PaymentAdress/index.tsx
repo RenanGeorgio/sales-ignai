@@ -92,7 +92,7 @@ export default function PaymentAddress({ address, clientId }) {
       <div className="index">
         <div style={{}} className="card-wrapper">
           <div className="row-container">
-            <div className="card">
+            <div className="card top">
               <div className="card-heading">
                 <div className="text-wrapper-19">Endereço</div>
                 <Button
@@ -124,8 +124,8 @@ export default function PaymentAddress({ address, clientId }) {
                   </ModalForm>
                 </ModalComponent>
               </div>
-              <div className="card-body">
-                <div className="accordion-without">
+              <div className="card-body-top">
+                <div className="body-content">
                   {address?.map((addr: IAddress, key) => (
                     <div className="accordion-collapse" key={key}>
                       <div className="text-6">

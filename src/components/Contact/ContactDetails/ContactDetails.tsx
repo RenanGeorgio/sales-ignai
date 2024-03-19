@@ -4,8 +4,9 @@ import {
   DotsVertical,
   PaperClip,
   ShoppingCart,
+  Trash,
 } from "../../Image/icons";
-import { Alert, Button } from "@mui/material";
+import { Alert, Button, IconButton } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import ImageLogo from "../../Image/Queiroz_Galvão_Logo 1.png";
 import PaymentAddress from "./PaymentAdress";
@@ -154,7 +155,7 @@ const ContactDetails = ({ client }) => {
           <p
             style={{
               color: '#4b465cca',
-              fontSize: 20,
+              fontSize: 18,
               fontFamily: "sans-serif",
               fontWeight: "500",
               wordWrap: "break-word",
@@ -494,18 +495,10 @@ const ContactDetails = ({ client }) => {
 
               {/* <bloco 1 esquerdo  */}
 
+              <div className="contactInfo-Container">
+
               {client?.contacts?.map((item, index) => (
-                <div
-                  style={{
-                    alignSelf: "stretch",
-                    height: 190,
-                    flexDirection: "column",
-                    justifyContent: "flex-start",
-                    alignItems: "flex-start",
-                    gap: 20,
-                    display: "flex",
-                  }}
-                >
+                <div className="infoContact">
                   <div
                     style={{
                       alignSelf: "stretch",
@@ -516,25 +509,19 @@ const ContactDetails = ({ client }) => {
                       display: "flex",
                     }}
                   >
-                    <div style={{ width: 284, lineHeight: 1.3 }}>
+                    <div style={{ width: 284,  }}>
                       <span
-                        style={{
-                          color: "black",
-                          fontSize: 15,
+                        style={{                       
                           fontFamily: "sans-serif",
-                          fontWeight: "600",
-                          lineHeight: 0,
+                          fontWeight: "600",                      
                           wordWrap: "break-word",
                         }}
                       >
                         Contato:
                       </span>
                       <span
-                        style={{
-                          color: "black",
-                          fontSize: 15,
-                          fontFamily: "sans-serif",
-                          lineHeight: 1,
+                        style={{                       
+                          fontFamily: "sans-serif",                     
                           wordWrap: "break-word",
                         }}
                       >
@@ -543,25 +530,19 @@ const ContactDetails = ({ client }) => {
                       </span>
                     </div>
 
-                    <div style={{ width: 284, lineHeight: 1.3 }}>
+                    <div style={{ width: 284,  }}>
                       <span
-                        style={{
-                          color: "black",
-                          fontSize: 15,
+                        style={{                       
                           fontFamily: "sans-serif",
-                          fontWeight: "600",
-                          lineHeight: 0,
+                          fontWeight: "600",                       
                           wordWrap: "break-word",
                         }}
                       >
                         Email:{" "}
                       </span>
                       <span
-                        style={{
-                          color: "black",
-                          fontSize: 15,
-                          fontFamily: "sans-serif",
-                          lineHeight: 1,
+                        style={{                       
+                          fontFamily: "sans-serif",                         
                           wordWrap: "break-word",
                         }}
                       >
@@ -579,12 +560,9 @@ const ContactDetails = ({ client }) => {
                       }}
                     >
                       <div
-                        style={{
-                          color: "black",
-                          fontSize: 15,
+                        style={{                       
                           fontFamily: "sans-serif",
-                          fontWeight: "600",
-                          lineHeight: 0,
+                          fontWeight: "600",                       
                           wordWrap: "break-word",
                         }}
                       >
@@ -592,7 +570,7 @@ const ContactDetails = ({ client }) => {
                       </div>
                       <div
                         style={{
-                          padding: " 10px 20px",
+                          padding: " 1px 20px",
                           background: "rgba(40, 199, 111, 0.16)",
                           borderRadius: 4,
                           justifyContent: "flex-start",
@@ -606,8 +584,7 @@ const ContactDetails = ({ client }) => {
                             color: "#28C76F",
                             fontSize: 13,
                             fontFamily: "sans-serif",
-                            fontWeight: "500",
-                            lineHeight: 0,
+                            fontWeight: "500",                 
                             wordWrap: "break-word",
                           }}
                         >
@@ -616,25 +593,19 @@ const ContactDetails = ({ client }) => {
                       </div>
                     </div>
 
-                    <div style={{ width: 284, lineHeight: 1.3 }}>
+                    <div style={{ width: 284,  }}>
                       <span
-                        style={{
-                          color: "black",
-                          fontSize: 15,
+                        style={{                         
                           fontFamily: "sans-serif",
-                          fontWeight: "600",
-                          lineHeight: 0,
+                          fontWeight: "600",                       
                           wordWrap: "break-word",
                         }}
                       >
-                        Contato:
+                        Telefone:
                       </span>
                       <span
-                        style={{
-                          color: "black",
-                          fontSize: 15,
-                          fontFamily: "sans-serif",
-                          lineHeight: 0,
+                        style={{                         
+                          fontFamily: "sans-serif",                
                           wordWrap: "break-word",
                         }}
                       >
@@ -643,25 +614,19 @@ const ContactDetails = ({ client }) => {
                       </span>
                     </div>
 
-                    <div style={{ width: 284, lineHeight: 1.5 }}>
+                    <div style={{ width: 284, }}>
                       <span
-                        style={{
-                          color: "black",
-                          fontSize: 15,
+                        style={{                          
                           fontFamily: "sans-serif",
                           fontWeight: "600",
-                          lineHeight: 0,
                           wordWrap: "break-word",
                         }}
                       >
                         Estado:{" "}
                       </span>
                       <span
-                        style={{
-                          color: "black",
-                          fontSize: 15,
+                        style={{                                   
                           fontFamily: "sans-serif",
-                          lineHeight: 1,
                           wordWrap: "break-word",
                         }}
                       >
@@ -672,16 +637,18 @@ const ContactDetails = ({ client }) => {
 
                   <div
                     style={{
-                      justifyContent: "flex-start",
-                      display: "inline-flex",
+                      justifyContent: "space-between",
+                      display: "flex",
+                      width: '100%',
+                      alignItems:'center'
                     }}
                   >
                     <Button
-                      size="small"
                       style={{
                         color: "white",
                         fontFamily: "sans-serif",
                         background: "#BABABD",
+                        height:'30px'
                       }}
                       onClick={(e) => {
                         e.stopPropagation();
@@ -692,9 +659,14 @@ const ContactDetails = ({ client }) => {
                     >
                       Editar detalhes
                     </Button>
+
+                    <IconButton>
+                      <Trash className={undefined}/>
+                    </IconButton>
                   </div>
                 </div>
               ))}
+          </div>
             </div>
           </div>
         </div>
@@ -787,7 +759,7 @@ const ContactDetails = ({ client }) => {
         </ModalForm>
       </ModalComponent>
       {error && (
-        <Alert variant="filled" severity="error" onClose={() => {}}>
+        <Alert className="msg-error" variant="filled" severity="error" onClose={() => {}}>
           {errorMessage}
         </Alert>
       )}
