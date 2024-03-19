@@ -21,11 +21,11 @@ export type ErrorResponse = {
 
 export type Leads = {
   companyId: string,
-  topic: string,
-  lead: {
+  title: string,
+  items: [{
     name: string,
     description: string
-  }
+  }]
 }
 
 export type OnlineUser = {

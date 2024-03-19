@@ -12,11 +12,11 @@ export const UserChat = ({ chat, user }) => {
   const { recipientUser, error } = useFetchRecipient(chat, user);  
   
   const { onlineUsers } = useChat();
-  console.log(recipientUser)
+
   const isOnline = onlineUsers?.some((onlineUser: OnlineUser) => onlineUser.userId === recipientUser?._id);
 
   const origin = chat?.origin.platform;
-  console.log(chat.origin)
+
   const getChatIcon = () => {
     switch (origin) {
       case "facebook":

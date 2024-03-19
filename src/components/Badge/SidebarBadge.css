@@ -1,0 +1,14 @@
+.sidebar-badge {
+  content: attr(data-count);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 8px;
+  gap: 10px;
+  width: 24px;
+  height: 14px;
+  background: #ea5455;
+  color: #fff;
+  border-radius: 14px;
+  font-size: 0.9rem;
+}
