@@ -130,15 +130,6 @@
   }
 
   .blueButton {
-    /* background-color: rgba(115, 103, 240, 1);
-    color: white;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    margin-right: 10px;
-    left: 0%;
-    cursor: pointer; 
-    align-items: center;  */
     background-color: rgba(115, 103, 240, 1);
     color: white;
     padding: 10px 7px;
@@ -1257,3 +1248,36 @@
     width: 14px !important;
   }
   
+
+  .infoContact{
+    display: flex;
+    align-self: stretch;
+    line-height: 25px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-bottom:1px solid #ccc;
+    margin-top:2px;
+    margin-bottom:5px;
+    padding-bottom:5px;
+    padding-top:5px;
+    padding-left:5px;
+    color: #4b465cca;
+  }
+
+  .contactInfo-Container{
+    overflow-y:scroll;
+    overflow-x: hidden;
+    color: #4B465C;
+     display:flex;
+      height:450px;
+      width:290px;
+      margin-left:5;
+      padding-top:20;
+      flex-direction: column;
+      border:1px solid #ececec ;
+      border-radius:8;
+      scrollbar-width:thin;
+      scrollbar-color: #888 transparent;
+      line-height: 30px;
+  }

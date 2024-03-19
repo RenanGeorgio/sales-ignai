@@ -123,10 +123,11 @@ const ContactDetails = ({ client }) => {
         alignItems: "flex-start",
         gap: 1,
         display: "inline-flex",
+        overflow: "auto",
       }}
     >
-      <div>
-        <Button size="small" onClick={() => navigate(-1)}>
+      <div style={{color: '#4b465cca',}}>
+        <Button style={{color: '#4b465cca',}} size="small" onClick={() => navigate(-1)}>
           Voltar
         </Button>
       </div>
@@ -152,8 +153,8 @@ const ContactDetails = ({ client }) => {
         >
           <p
             style={{
-              color: "black",
-              fontSize: 22,
+              color: '#4b465cca',
+              fontSize: 20,
               fontFamily: "sans-serif",
               fontWeight: "500",
               wordWrap: "break-word",
@@ -164,8 +165,8 @@ const ContactDetails = ({ client }) => {
           <span
             style={{
               alignSelf: "stretch",
-              color: "black",
-              fontSize: 15,
+              color: '#4b465cca',
+              fontSize: 13,
               fontFamily: "sans-serif",
               fontWeight: "400",
               wordWrap: "break-word",
@@ -198,14 +199,15 @@ const ContactDetails = ({ client }) => {
         {/* Lado Esquerdo  */}
         <div
           style={{
-            width: 360,
-            height: "100%",
+            width: 300,
+            // height: "100%",
             flexDirection: "column",
             justifyContent: "flex-start",
             alignItems: "flex-start",
             gap: 1,
             display: "inline-flex",
             boxShadow: "0px 4px 18px rgba(75, 70, 92, 0.10)",
+            marginRight:10
           }}
         >
           <div
@@ -224,7 +226,7 @@ const ContactDetails = ({ client }) => {
             <div
               style={{
                 alignSelf: "stretch",
-                height: 560,
+                height: 600,
                 padding: 4,
                 flexDirection: "column",
                 justifyContent: "flex-start",
@@ -251,17 +253,17 @@ const ContactDetails = ({ client }) => {
                     height: 24,
                     justifyContent: "flex-end",
                     display: "flex",
-                    gap: 10,
+                    gap: 5,
                     border: "1px green",
                     alignItems: "center",
                   }}
                 >
                   <div
                     style={{
-                      color: "black",
+                      color: '#4b465cca',
                       fontSize: 13,
                       fontFamily: "sans-serif",
-                      fontWeight: "400",
+                      fontWeight: "600",
                       wordWrap: "break-word",
                     }}
                   >
@@ -299,13 +301,16 @@ const ContactDetails = ({ client }) => {
                     justifyContent: "flex-start",
                     alignItems: "center",
                     display: "flex",
+                    marginBottom:10,
+                    paddingBottom:10,
+                    borderBottom:'2px solid #DBDADE'
                   }}
                 >
                   <div
                     style={{
                       width: 284,
                       textAlign: "center",
-                      color: "black",
+                      color: '#4b465cca',
                       fontSize: 22,
                       fontFamily: "sans-serif",
                       fontWeight: "500",
@@ -317,7 +322,7 @@ const ContactDetails = ({ client }) => {
                   </div>
                   <div
                     style={{
-                      color: "black",
+                      color: '#4b465cca',
                       fontSize: 13,
                       fontFamily: "sans-serif",
                       fontWeight: "400",
@@ -334,7 +339,7 @@ const ContactDetails = ({ client }) => {
                       paddingTop: 24,
                       justifyContent: "space-around",
                       alignItems: "flex-start",
-                      gap: 10,
+                      gap: 5,
                       display: "inline-flex",
                     }}
                   >
@@ -342,7 +347,7 @@ const ContactDetails = ({ client }) => {
                       style={{
                         justifyContent: "space-around",
                         alignItems: "center",
-                        gap: 10,
+                        gap: 5,
                         display: "flex",
                       }}
                     >
@@ -369,7 +374,7 @@ const ContactDetails = ({ client }) => {
                       >
                         <div
                           style={{
-                            color: "black",
+                            color: '#4b465cca',
                             fontSize: 15,
                             fontFamily: "sans-serif",
                             fontWeight: "600",
@@ -381,7 +386,7 @@ const ContactDetails = ({ client }) => {
                         </div>
                         <div
                           style={{
-                            color: "black",
+                            color: '#4b465cca',
                             fontSize: 13,
                             fontFamily: "sans-serif",
                             fontWeight: "400",
@@ -424,7 +429,7 @@ const ContactDetails = ({ client }) => {
                       >
                         <div
                           style={{
-                            color: "black",
+                            color: '#4b465cca',
                             fontSize: 15,
                             fontFamily: "sans-serif",
                             fontWeight: "600",
@@ -436,7 +441,7 @@ const ContactDetails = ({ client }) => {
                         </div>
                         <div
                           style={{
-                            color: "black",
+                            color: '#4b465cca',
                             fontSize: 13,
                             fontFamily: "sans-serif",
                             fontWeight: "400",
@@ -464,16 +469,18 @@ const ContactDetails = ({ client }) => {
               >
                 <div
                   style={{
-                    color: "black",
+                    color: '#4b465cca',
                     fontSize: 13,
                     fontFamily: "sans-serif",
                     fontWeight: "400",
                     wordWrap: "break-word",
+                    borderTop:'1px solid #ececec'
                   }}
                 >
                   CONTATO
                 </div>
                 <Button
+                style={{textTransform:'capitalize'}}
                   variant="contained"
                   onClick={(e) => {
                     e.stopPropagation();
@@ -696,12 +703,13 @@ const ContactDetails = ({ client }) => {
         <div
           style={{
             flex: "1 1 0",
-            height: "100%",
+            // height: "100%",
             flexDirection: "column",
             justifyContent: "flex-start",
             alignItems: "flex-start",
             gap: 6,
             display: "inline-flex",
+            width:'100%'
           }}
         >
           {/* 
