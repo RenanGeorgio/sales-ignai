@@ -16,6 +16,24 @@
 
 .form-group {
   margin-bottom: 10px;
+  padding-right: 5px;
+}
+
+.form-group-check-box {
+  margin-bottom: 15px;
+  padding-right: 5px;
+  display: inline-flex;
+margin-top: 10px;
+  box-sizing: border-box;
+  align-items: center;
+  /* flex-direction: row-reverse; */
+  /* flex-wrap: wrap; */
+  width: 100%;
+}
+
+.form-input-check-box{
+  width: 20px;
+  height: 20px;
 }
 
 .form-group label {
@@ -27,7 +45,6 @@
 .form-input {
   width: 100%;
   flex: 1;
-  width: 90%;
   padding: 1em;
   line-height: 1.4;
   background-color: #f9f9f9;
@@ -38,6 +55,7 @@
   -o-transition: 0.35s ease-in-out;
   transition: 0.35s ease-in-out;
   transition: all 0.35s ease-in-out;
+  box-sizing: border-box;
 }
 
 .form-input:focus {

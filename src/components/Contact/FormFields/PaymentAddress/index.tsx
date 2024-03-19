@@ -121,13 +121,13 @@ const PaymentAddressFormFields = (props: any) => {
         />
       </div>
       {mode === "edit" && (
-        <div className="form-group">
+        <div className="form-group-check-box p">
           <label htmlFor="isMain">Endereço principal</label>
           <input
             type="checkbox"
             id="isMain"
             name="isMain"
-            className="form-input"
+            className="form-input-check-box"
             checked={formValues?.isMain}
           />
         </div>
