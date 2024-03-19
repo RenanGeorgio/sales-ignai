@@ -1,5 +1,5 @@
 import { createContext, useCallback, useEffect, useState } from "react";
-import { baseUrl, postRequest, getRequest } from "../../utils/chatService";
+import { baseUrl, postRequest, getRequest } from "../../services/api/apiService";
 import useAuth from "../../hooks/useAuth";
 import { io } from "socket.io-client";
 import { OnlineUser } from "../../types";
@@ -84,7 +84,7 @@ export const ChatProvider = ({ children }: any) => {
   useEffect(() => {
     if (!userChats) return;
     const getClients = async () => {
-      const response = await getRequest(`${baseUrl}/chat/clients`);
+      const response = await getRequest(`${baseUrl}/api/chat/clients`);
 
       if (response.error) {
         return setUserChatsError(response);
@@ -112,7 +112,7 @@ export const ChatProvider = ({ children }: any) => {
     const getUserChats = async () => {
       if (user?.companyId) {
         setIsUserChatsLoading(true);
-        const response = await getRequest(`${baseUrl}/chat/${user.companyId}`);
+        const response = await getRequest(`${baseUrl}/api/chat/${user.companyId}`);
         if (response.error) {
           return setUserChatsError(response);
         } else {
@@ -130,7 +130,7 @@ export const ChatProvider = ({ children }: any) => {
       setMessageError(null);
       if (currentChat) {
         const response = await getRequest(
-          `${baseUrl}/chat/message/${currentChat._id}`
+          `${baseUrl}/api/chat/message/${currentChat._id}`
         );
         setIsMessagesLoading(false);
 
@@ -152,7 +152,7 @@ export const ChatProvider = ({ children }: any) => {
   const sendTextMessage = useCallback(
     async (textMessage, sender, currentChatId, setTextMessage) => {
       if (textMessage === "") return;
-      const response = await postRequest(`${baseUrl}/chat/message`, {
+      const response = await postRequest(`${baseUrl}/api/chat/message`, {
         text: textMessage,
         senderId: sender.companyId,
         chatId: currentChatId,

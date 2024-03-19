@@ -1,5 +1,5 @@
 import React from 'react'
-import ContactComponent from '../../Contact/ContactComponent/ContactComponent'
+import ContactComponent from '../../Contact/ContactComponent'
 
 export default function LayoutContact() {
   return (

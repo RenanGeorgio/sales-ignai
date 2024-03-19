@@ -5,37 +5,46 @@ import {
   PaperClip,
   ShoppingCart,
 } from "../../Image/icons";
-import { Button, IconButton } from "@mui/material";
-import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
+import { Alert, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import rows from "../../../dados/data2.json";
 import ImageLogo from "../../Image/Queiroz_Galvão_Logo 1.png";
-import PaymentAddress from "./PaymentAdress/PaymentAddress";
+import PaymentAddress from "./PaymentAdress";
 import Notification from "./Notifications/Notification";
 import "./PaymentAdress/payment.css";
-import {
-  getPaymentStatusStyles,
-  priorityStatus,
-  getPriorityStyles,
-} from "helpers/status";
-import { useQuery } from "react-query";
-import authApi from "services/auth";
+import { priorityStatus, getPriorityStyles } from "helpers/status";
 import ModalComponent from "components/Modal/Modal";
-import AddContact from "./addContactForm";
-import AddContactForm from "./addContactForm";
 import { IContactInfo } from "types/interfaces";
-import { useSelector } from "react-redux";
+import {
+  baseUrl,
+  deleteRequest,
+  postRequest,
+  putRequest,
+} from "services/api/apiService";
+import ModalForm from "components/Forms/Modal/ModalForm";
+import ContactFormFields from "../FormFields/Contact";
+import { useDispatch } from "react-redux";
+import { clientsActions } from "store/store";
+import Revenue from "./Revenue";
 
 // const ImageLogo = '../../Image/Queiroz_Galvão_Logo 1.png'
 
 const ContactDetails = ({ client }) => {
-  const [activePage, setActivePage] = useState("pageName");
+  const [activePage, setActivePage] = useState("Geral");
   const [openModal, setOpenModal] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [error, setError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [selectedItem, setSelectedItem] = useState({} as IContactInfo);
   const [priorityStyles, setPriorityStyles] = useState({
     color: "",
     backgroundColor: "",
   });
+  const [modalMode, setModalMode] = useState({
+    mode: null,
+    title: null,
+  });
 
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleButtonClick = (pageName: string) => {
@@ -44,119 +53,64 @@ const ContactDetails = ({ client }) => {
 
   useEffect(() => {
     setPriorityStyles(getPriorityStyles(client.priority));
-  }, [client.priority]);
+  }, [client]);
 
-  const handleAddContact = async (contact: IContactInfo) => {
-    await authApi.post(`/client/${client._id}/contact`, contact);
-    setOpenModal(false);
+  const handleAdd = async (contact: IContactInfo) => {
+    setIsLoading(true);
+    const response = await postRequest(
+      `${baseUrl}/client/${client._id}/contact`,
+      contact
+    );
+    if (response.error) {
+      requestError(response.message);
+    } else {
+      updateClientContacts(response);
+      setOpenModal(false);
+    }
+    setIsLoading(false);
   };
 
-  const columns: GridColDef[] = [
-    {
-      field: "nota",
-      headerName: "Nota",
-      width: 250,
-    },
-    {
-      field: "pdf",
-      headerName: "PDF",
-      width: 80,
-      align: "center",
-      headerAlign: "center",
-      renderCell: (params) => (
-        <div
-          style={{
-            color: "#818482",
-            backgroundColor: "rgba(247.76, 88.24, 66.48, 0.16)",
-            padding: "2px",
-            borderRadius: "5px",
-            width: "95px",
-            textAlign: "center",
-          }}
-        >
-          {params.value}
-        </div>
-      ),
-    },
-    {
-      field: "date",
-      headerName: "Data",
-      type: "date",
-      width: 190,
-      align: "center",
-      headerAlign: "center",
-      valueGetter: (params: GridValueGetterParams) => {
-        // Convert the string date to a Date object
-        return params.row.date ? new Date(params.row.date) : null;
-      },
-    },
-    {
-      field: "status-payment",
-      headerName: "Status De Pagamento",
-      width: 250,
-      align: "center",
-      headerAlign: "center",
-      renderCell: (params) => {
-        const { color, backgroundColor } = getPaymentStatusStyles(params.value);
-        return (
-          <div
-            style={{
-              color: color,
-              backgroundColor: backgroundColor,
-              padding: "3px 10px",
-              borderRadius: "5px",
-              textAlign: "center",
-            }}
-          >
-            {params.value}
-          </div>
-        );
-      },
-    },
+  const handleUpdate = async (contact: IContactInfo) => {
+    const response = await putRequest(
+      `${baseUrl}/client/${client._id}/contact/${contact._id}`,
+      contact
+    );
+    if (response.error) {
+      requestError(response.message);
+    } else {
+      updateClientContacts(response);
+      setOpenModal(false);
+    }
+    setIsLoading(false);
+  };
 
-    {
-      field: "spending",
-      headerName: "Gastos",
-      type: "number",
-      width: 130,
-      align: "center",
-      headerAlign: "center",
-      renderCell: (params) => (
-        <div
-          style={{
-            padding: "2px",
-            borderRadius: "5px",
-            width: "95px",
-            textAlign: "center",
-          }}
-        >
-          {params.value}
-        </div>
-      ),
-    },
-    {
-      field: "acao",
-      headerName: "Ação",
-      width: 100,
-      align: "center",
-      headerAlign: "center",
-      renderCell: (params) => {
-        return (
-          <div>
-            <IconButton
-              size="small"
-              style={{
-                color: "#000",
-                borderRadius: "50%",
-              }}
-            >
-              <DotsVertical className={undefined} />
-            </IconButton>
-          </div>
-        );
-      },
-    },
-  ];
+  const updateClientContacts = (contacts: IContactInfo) => {
+    dispatch(
+      clientsActions.updateContactList({
+        id: client._id,
+        contacts,
+      })
+    );
+  };
+
+  const deleteClient = async () => {
+    // todo: Adicionar pop-up de confirmação
+    const response = await deleteRequest(`${baseUrl}/client/${client._id}`);
+    if (response.error) {
+      requestError(response.message);
+    } else {
+      dispatch(clientsActions.removeClient(client._id));
+      navigate(-1);
+    }
+  };
+
+  const requestError = (error: string) => {
+    setError(true);
+    setErrorMessage(error);
+    setTimeout(() => {
+      setError(false);
+    }, 3000);
+  };
 
   return (
     <div
@@ -227,6 +181,7 @@ const ContactDetails = ({ client }) => {
             variant="outlined"
             color="error"
             style={{ color: "#EA5451", background: "rgba(234, 84, 85, 0.16)" }}
+            onClick={() => deleteClient()}
           >
             Deletar Cliente
           </Button>
@@ -333,7 +288,11 @@ const ContactDetails = ({ client }) => {
                   </div>
                   {/* </div> */}
                 </div>
-                <img style={{ width: 171, height: 45 }} src={ImageLogo} alt="imagem" />
+                <img
+                  style={{ width: 171, height: 49 }}
+                  src={ImageLogo}
+                  alt="logo"
+                />
                 <div
                   style={{
                     alignSelf: "stretch",
@@ -523,7 +482,9 @@ const ContactDetails = ({ client }) => {
                 <Button
                 style={{textTransform:'capitalize'}}
                   variant="contained"
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setModalMode({ mode: "add", title: "Adicionar contato" });
                     setOpenModal(true);
                   }}
                 >
@@ -532,191 +493,208 @@ const ContactDetails = ({ client }) => {
               </div>
 
               {/* <bloco 1 esquerdo  */}
-                <div  className="contactInfo-Container">
-                {client?.contact.contactInfo?.map((item, index) => (
-                  <div className="infoContact" >
+
+              {client?.contacts?.map((item, index) => (
+                <div
+                  style={{
+                    alignSelf: "stretch",
+                    height: 190,
+                    flexDirection: "column",
+                    justifyContent: "flex-start",
+                    alignItems: "flex-start",
+                    gap: 20,
+                    display: "flex",
+                  }}
+                >
+                  <div
+                    style={{
+                      alignSelf: "stretch",
+                      flexDirection: "column",
+                      justifyContent: "flex-start",
+                      alignItems: "flex-start",
+                      gap: 1,
+                      display: "flex",
+                    }}
+                  >
+                    <div style={{ width: 284, lineHeight: 1.3 }}>
+                      <span
+                        style={{
+                          color: "black",
+                          fontSize: 15,
+                          fontFamily: "sans-serif",
+                          fontWeight: "600",
+                          lineHeight: 0,
+                          wordWrap: "break-word",
+                        }}
+                      >
+                        Contato:
+                      </span>
+                      <span
+                        style={{
+                          color: "black",
+                          fontSize: 15,
+                          fontFamily: "sans-serif",
+                          lineHeight: 1,
+                          wordWrap: "break-word",
+                        }}
+                      >
+                        {" "}
+                        {item?.contactName}
+                      </span>
+                    </div>
+
+                    <div style={{ width: 284, lineHeight: 1.3 }}>
+                      <span
+                        style={{
+                          color: "black",
+                          fontSize: 15,
+                          fontFamily: "sans-serif",
+                          fontWeight: "600",
+                          lineHeight: 0,
+                          wordWrap: "break-word",
+                        }}
+                      >
+                        Email:{" "}
+                      </span>
+                      <span
+                        style={{
+                          color: "black",
+                          fontSize: 15,
+                          fontFamily: "sans-serif",
+                          lineHeight: 1,
+                          wordWrap: "break-word",
+                        }}
+                      >
+                        {item?.email}
+                      </span>
+                    </div>
+
                     <div
                       style={{
                         alignSelf: "stretch",
-                        flexDirection: "column",
                         justifyContent: "flex-start",
-                        alignItems: "flex-start",
+                        alignItems: "center",
                         gap: 1,
-                        display: "flex",
-                      }}
-                    >
-                      <div style={{ width: 284,  }}>
-                        <span
-                          style={{
-                            
-                            fontSize: 15,
-                            fontFamily: "sans-serif",
-                            fontWeight: "600",
-                            lineHeight: 0,
-                            wordWrap: "break-word",
-                          }}
-                        >
-                          Contato:
-                        </span>
-                        <span
-                          style={{
-                            
-                            fontSize: 15,
-                            fontFamily: "sans-serif",
-                            lineHeight: 1,
-                            wordWrap: "break-word",
-                          }}
-                        >
-                          {item?.contactName}
-                        </span>
-                      </div>
-
-                      <div style={{ width: 284, }}>
-                        <span
-                          style={{
-                         
-                            fontSize: 15,
-                            fontFamily: "sans-serif",
-                            fontWeight: "600",
-                         
-                            wordWrap: "break-word",
-                          }}
-                        >
-                          Email:{" "}
-                        </span>
-                        <span
-                          style={{
-                           
-                            fontSize: 15,
-                            fontFamily: "sans-serif",
-                        
-                            wordWrap: "break-word",
-                          }}
-                        >
-                          {item?.email}
-                        </span>
-                      </div>
-
-                      <div
-                        style={{
-                          alignSelf: "stretch",
-                          justifyContent: "flex-start",
-                          alignItems: "center",
-                          gap: 1,
-                          display: "inline-flex",
-                        }}
-                      >
-                        <div
-                          style={{
-                            
-                            fontSize: 15,
-                            fontFamily: "sans-serif",
-                            fontWeight: "600",
-                            lineHeight: 0,
-                            wordWrap: "break-word",
-                          }}
-                        >
-                          Status:
-                        </div>
-                        <div
-                          style={{
-                            padding: " 10px 20px",
-                            background: "rgba(40, 199, 111, 0.16)",
-                            borderRadius: 4,
-                            justifyContent: "flex-start",
-                            alignItems: "center",
-                            gap: 10,
-                            display: "flex",
-                          }}
-                        >
-                          <div
-                            style={{
-                              color: "#28C76F",
-                              fontSize: 13,
-                              fontFamily: "sans-serif",
-                              fontWeight: "500",
-                              lineHeight: 0,
-                              wordWrap: "break-word",
-                            }}
-                          >
-                            {item?.status ? "Ativo" : "Inativo"}
-                          </div>
-                        </div>
-                      </div>
-
-                      <div style={{ width: 284,  }}>
-                        <span
-                          style={{
-                            
-                            fontSize: 15,
-                            fontFamily: "sans-serif",
-                            fontWeight: "600",
-                        
-                            wordWrap: "break-word",
-                          }}
-                        >
-                          Contato:
-                        </span>
-                        <span
-                          style={{
-                       
-                            fontSize: 15,
-                            fontFamily: "sans-serif",
-                  
-                            wordWrap: "break-word",
-                          }}
-                        >
-                          { item?.tel }
-                        </span>
-                      </div>
-
-                      <div style={{ width: 284,  }}>
-                        <span
-                          style={{
-                            fontSize: 15,
-                            fontFamily: "sans-serif",
-                            fontWeight: "600",
-                        
-                            wordWrap: "break-word",
-                          }}
-                        >
-                          Estado:{" "}
-                        </span>
-                        <span
-                          style={{
-                            
-                            fontSize: 15,
-                            fontFamily: "sans-serif",
-                          
-                            wordWrap: "break-word",
-                          }}
-                        >
-                          {item?.state}
-                        </span>
-                      </div>
-                    </div>
-
-                    <div
-                      style={{
-                        justifyContent: "flex-start",
                         display: "inline-flex",
                       }}
                     >
-                      <Button
-                        size="small"
+                      <div
                         style={{
-                          color: "white",
+                          color: "black",
+                          fontSize: 15,
                           fontFamily: "sans-serif",
-                          background: "#BABABD",
+                          fontWeight: "600",
+                          lineHeight: 0,
+                          wordWrap: "break-word",
                         }}
                       >
-                        Editar detalhes
-                      </Button>
+                        Status:
+                      </div>
+                      <div
+                        style={{
+                          padding: " 10px 20px",
+                          background: "rgba(40, 199, 111, 0.16)",
+                          borderRadius: 4,
+                          justifyContent: "flex-start",
+                          alignItems: "center",
+                          gap: 10,
+                          display: "flex",
+                        }}
+                      >
+                        <div
+                          style={{
+                            color: "#28C76F",
+                            fontSize: 13,
+                            fontFamily: "sans-serif",
+                            fontWeight: "500",
+                            lineHeight: 0,
+                            wordWrap: "break-word",
+                          }}
+                        >
+                          {item?.status ? "Ativo" : "Inativo"}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div style={{ width: 284, lineHeight: 1.3 }}>
+                      <span
+                        style={{
+                          color: "black",
+                          fontSize: 15,
+                          fontFamily: "sans-serif",
+                          fontWeight: "600",
+                          lineHeight: 0,
+                          wordWrap: "break-word",
+                        }}
+                      >
+                        Contato:
+                      </span>
+                      <span
+                        style={{
+                          color: "black",
+                          fontSize: 15,
+                          fontFamily: "sans-serif",
+                          lineHeight: 0,
+                          wordWrap: "break-word",
+                        }}
+                      >
+                        {" "}
+                        {item?.tel}
+                      </span>
+                    </div>
+
+                    <div style={{ width: 284, lineHeight: 1.5 }}>
+                      <span
+                        style={{
+                          color: "black",
+                          fontSize: 15,
+                          fontFamily: "sans-serif",
+                          fontWeight: "600",
+                          lineHeight: 0,
+                          wordWrap: "break-word",
+                        }}
+                      >
+                        Estado:{" "}
+                      </span>
+                      <span
+                        style={{
+                          color: "black",
+                          fontSize: 15,
+                          fontFamily: "sans-serif",
+                          lineHeight: 1,
+                          wordWrap: "break-word",
+                        }}
+                      >
+                        {item?.state}
+                      </span>
                     </div>
                   </div>
-                ))
-                      }
-              </div>
+
+                  <div
+                    style={{
+                      justifyContent: "flex-start",
+                      display: "inline-flex",
+                    }}
+                  >
+                    <Button
+                      size="small"
+                      style={{
+                        color: "white",
+                        fontFamily: "sans-serif",
+                        background: "#BABABD",
+                      }}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedItem(item);
+                        setModalMode({ mode: "edit", title: "Editar contato" });
+                        setOpenModal(true);
+                      }}
+                    >
+                      Editar detalhes
+                    </Button>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -773,12 +751,13 @@ const ContactDetails = ({ client }) => {
           </div>
 
           <div>
-            {activePage === "Geral" && (
-              <div>{/* Componente para a página "Atendimento" */}</div>
-            )}
+            {activePage === "Geral" && <Revenue />}
             {activePage === "Payment" && (
               <div>
-                <PaymentAddress address={client?.contact.address} />
+                <PaymentAddress
+                  address={client?.adresses}
+                  clientId={client._id}
+                />
               </div>
             )}
             {activePage === "Painel" && (
@@ -787,114 +766,31 @@ const ContactDetails = ({ client }) => {
               </div>
             )}
           </div>
-
-          <div
-            style={{
-              alignSelf: "stretch",
-              height: 560,
-              background: "white",
-              boxShadow: "1px 2px 1px rgba(75, 70, 92, 0.10)",
-              flexDirection: "column",
-              justifyContent: "flex-start",
-              alignItems: "flex-start",
-              display: activePage === "Geral" ? "flex" : "none",
-            }}
-          >
-            <div
-              style={{
-                alignSelf: "stretch",
-                height: 560,
-                flexDirection: "column",
-                justifyContent: "flex-start",
-                alignItems: "flex-start",
-                display: activePage === "Geral" ? "flex" : "none",
-              }}
-            >
-              {/* Header receita e search  */}
-              <div
-                style={{
-                  height: 40,
-                  alignSelf: "stretch",
-                  boxShadow: "0px 4px 18px rgba(75, 70, 92, 0.10)",
-                  padding: 10,
-                  justifyContent: "flex-start",
-                  alignItems: "center",
-                  display: "inline-flex",
-                  fontFamily: "sans-serif",
-                  width:'98%'
-                }}
-              >
-                <div
-                  style={{
-                    fontFamily: "sans-serif",
-                    flex: "1 1 0",
-                    color: "#4B465Cac",
-                    fontSize: 18,
-                    fontWeight: "500",
-                    lineHeight: 2,
-                    wordWrap: "break-word",
-                  }}
-                >
-                  Receita
-                </div>
-                <div
-                  style={{
-                    height: 38,
-                    background: "white",
-                    borderRadius: 6,
-                    border: "1px #DBDADE solid",
-                    justifyContent: "flex-start",
-                    alignItems: "center",
-                    display: "flex",
-                  }}
-                >
-                  <input
-                    placeholder="Search Order"
-                    style={{
-                      height: 38,
-                      background: "white",
-                      borderRadius: 6,
-                      border: "1px #DBDADE solid",
-                      justifyContent: "flex-start",
-                      alignItems: "end",
-                      display: "flex",
-                      textAlign: "left",
-                    }}
-                    type="text"
-                  />
-                </div>
-              </div>
-
-              <div style={{ height: 490, width: "100%" }}>
-                <DataGrid
-                  rows={rows}
-                  columns={columns}
-                  checkboxSelection
-                  initialState={{
-                    pagination: {
-                      paginationModel: { page: 0, pageSize: 7 },
-                    },
-                  }}
-                  pageSizeOptions={[7]}
-                  isCellEditable={(params) => params.row.Contato % 2 === 0}
-                  onCellClick={(params, event) => {
-                    // if (params.field === 'client') {
-                    navigate(`/details`);
-                    // }
-                  }}
-                />
-              </div>
-            </div>
-          </div>
         </div>
       </div>
       <ModalComponent
         open={openModal}
-        title={"Adicionar contato"}
+        title={modalMode.title}
         onClose={() => setOpenModal(false)}
       >
-        <AddContactForm onSubmit={(contact) => {handleAddContact(contact)}} />
+        <ModalForm
+          onSubmit={(contact) => {
+            modalMode.mode === "add"
+              ? handleAdd(contact)
+              : handleUpdate(contact);
+          }}
+          isLoading={isLoading}
+          initialValues={selectedItem}
+          mode={modalMode.mode}
+        >
+          <ContactFormFields />
+        </ModalForm>
       </ModalComponent>
+      {error && (
+        <Alert variant="filled" severity="error" onClose={() => {}}>
+          {errorMessage}
+        </Alert>
+      )}
     </div>
   );
 };

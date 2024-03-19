@@ -71,7 +71,6 @@ export const ChatBox = ({ toggleAddTicket }): React.JSX.Element => {
   };
 
   if (isMessagesLoading) return <p>Carregando mensagens...</p>;
-  console.log(dayjs(messages[0]?.createdAt).locale('pt-BR').format())
 
   const origin = currentChat?.origin.platform;
 

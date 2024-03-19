@@ -9,11 +9,12 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
+  width: 500,
+  maxHeight: '70vh',
   bgcolor: "background.paper",
   boxShadow: "0px 3px 10px -2px rgba(0, 0, 0, 0.2)",
   borderRadius: '4.2px',
-  p: "1em 3em 2em 3em",
+  p: "1em 1em 1em 2em",
   margin: "0em auto"
 };
 
@@ -33,6 +34,7 @@ const ModalComponent = ({ open, onClose, title, children }) => {
             timeout: 500,
           },
         }}
+        sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
       >
         <Fade in={open}>
           <Box sx={style}>
