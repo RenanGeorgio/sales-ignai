@@ -351,7 +351,7 @@ export default function PaymentAddress({ address, clientId }) {
         </div>
       </div>
       {error && (
-        <Alert variant="filled" severity="error" onClose={() => {}}>
+        <Alert className="msg-error" variant="filled" severity="error" onClose={() => {}}>
           {errorMessage}
         </Alert>
       )}
