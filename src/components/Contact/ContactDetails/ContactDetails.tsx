@@ -214,14 +214,15 @@ const ContactDetails = ({ client }) => {
           <div
             style={{
               alignSelf: "stretch",
-              height: 615,
+              height: 605,
               background: "white",
-              boxShadow: "0px 4px 18px rgba(75, 70, 92, 0.10)",
+              // boxShadow: "0px 4px 18px rgba(75, 70, 92, 0.10)",
               borderRadius: 6,
               flexDirection: "column",
               justifyContent: "flex-start",
               alignItems: "flex-start",
               display: "flex",
+              paddingBottom:5
             }}
           >
             <div
