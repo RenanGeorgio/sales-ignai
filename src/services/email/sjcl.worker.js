@@ -11,6 +11,6 @@ onmessage = event => {
   console.log("event inside onmessage", event)
   postMessage({
     encryptedData: sjcl.encrypt(event.data.password, event.data.data),
-    workerHref: self.location.href
+    workerHref: window.self.location.href
   });
 };

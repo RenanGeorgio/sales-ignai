@@ -22,9 +22,7 @@ import logo from "../Image/image 1.png";
 import "../../styles/sidebar.css";
 import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
-import SidebarBadge from "../Badge/SiderbarBadge";
-import { useSelector } from "react-redux";
-import { Leads } from "types";
+import SidebarBadge from "../Badge/SidebarBadge";
 interface SidebarProps {}
 
 const Sidebar: React.FC<SidebarProps> = () => {
