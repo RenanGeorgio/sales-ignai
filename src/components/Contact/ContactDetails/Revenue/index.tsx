@@ -1,8 +1,8 @@
 import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
-import rows from "../../../../dados/data2.json";
 import { IconButton } from "@mui/material";
-import { DotsVertical } from "components/Image/icons";
-import { getPaymentStatusStyles } from "helpers/status";
+import { VerticalDotsIcon } from "@icons";
+import { getPaymentStatusStyles } from "@helpers/status";
+import rows from "../../../../dados/data2.json";
 
 const columns: GridColDef[] = [
   {
@@ -38,8 +38,7 @@ const columns: GridColDef[] = [
     width: 190,
     align: "center",
     headerAlign: "center",
-    valueGetter: (params: GridValueGetterParams) => {
-      // Convert the string date to a Date object
+    valueGetter: (params: GridValueGetterParams) => { // Convert the string date to a Date object
       return params.row.date ? new Date(params.row.date) : null;
     },
   },
@@ -66,7 +65,6 @@ const columns: GridColDef[] = [
       );
     },
   },
-
   {
     field: "spending",
     headerName: "Gastos",
@@ -103,7 +101,7 @@ const columns: GridColDef[] = [
               borderRadius: "50%",
             }}
           >
-            <DotsVertical className={undefined} />
+            <VerticalDotsIcon className={undefined} />
           </IconButton>
         </div>
       );
@@ -189,7 +187,6 @@ const Revenue = () => {
           />
         </div>
       </div>
-
       <div style={{ height: 490, width: "100%" }}>
         <DataGrid
           rows={rows}
@@ -207,6 +204,6 @@ const Revenue = () => {
     </div>
   </div>
   );
-};
+}
 
 export default Revenue;
