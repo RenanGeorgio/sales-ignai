@@ -92,7 +92,7 @@ export default function PaymentAddress({ address, clientId }) {
       <div className="index">
         <div style={{}} className="card-wrapper">
           <div className="row-container">
-            <div className="card top">
+            <div className="card-top">
               <div className="card-heading">
                 <div className="text-wrapper-19">Endereço</div>
                 <Button

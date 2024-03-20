@@ -208,7 +208,8 @@ const ContactDetails = ({ client }) => {
             gap: 1,
             display: "inline-flex",
             boxShadow: "0px 4px 18px rgba(75, 70, 92, 0.10)",
-            marginRight:10
+            marginRight:10,
+            borderRadius: 6
           }}
         >
           <div
@@ -216,7 +217,6 @@ const ContactDetails = ({ client }) => {
               alignSelf: "stretch",
               height: 605,
               background: "white",
-              // boxShadow: "0px 4px 18px rgba(75, 70, 92, 0.10)",
               borderRadius: 6,
               flexDirection: "column",
               justifyContent: "flex-start",
@@ -235,6 +235,7 @@ const ContactDetails = ({ client }) => {
                 alignItems: "flex-start",
                 gap: 1,
                 display: "flex",
+                borderRadius:6
               }}
             >
               <div
@@ -739,6 +740,7 @@ const ContactDetails = ({ client }) => {
               </div>
             )}
           </div>
+
         </div>
       </div>
       <ModalComponent
