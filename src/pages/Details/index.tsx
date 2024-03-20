@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import Navbar from "../../components/Navbar";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import ContactDetails from "components/Contact/ContactDetails/ContactDetails";
-import { IClient } from "types/interfaces";
 import { useSelector } from "react-redux";
+import Navbar from "@components/Navbar";
+import ContactDetails from "@components/Contact/ContactDetails/ContactDetails";
+import { IClient } from "@types/interfaces";
 
 const ContactDetailsPage = () => {
   const { state } = useLocation();
@@ -21,6 +21,6 @@ const ContactDetailsPage = () => {
       {client && <ContactDetails client={client} />}
     </div>
   );
-};
+}
 
 export default ContactDetailsPage;
