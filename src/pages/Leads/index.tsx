@@ -11,7 +11,7 @@ import authApi from "../../services/auth";
 import { useDispatch } from "react-redux";
 import { leadsActions } from "../../store/store";
 import { IconButton } from "@mui/material";
-import { DotsVertical } from "../../components/Image/icons";
+import { AvatarIcon, DotsVertical, MessageDots, PaperClip } from "../../components/Image/icons";
 
 const Leads = () => {
   const leadsData = useSelector((state: any) => state.leads);
@@ -147,16 +147,16 @@ const Leads = () => {
           <DragDropContext onDragEnd={onDragEnd}>
             <div className="board-container">
               {columns?.map((column, key) => (
-                <div
-                className="kanban-column"
-
-                  key={key}
-                >
+                <div className="kanban-column" key={key}>
                   <div className="headerColumn">
-
-                  <h1 className="card-title">{column.title}</h1>
-                  <IconButton size="small"> <DotsVertical className={undefined}/></IconButton>
+                    <div>
+                     <h1 className="card-title">{column.title}</h1>
+                    </div>
+                    <div>
+                     <IconButton size="small"> <DotsVertical className={undefined}/></IconButton>
+                    </div>
                   </div>
+
                   {isMounted ? (
                     <Droppable droppableId={column._id} key={key}>
                       {(provided) => (
@@ -180,18 +180,44 @@ const Leads = () => {
                                   {...provided.draggableProps}
                                   {...provided.dragHandleProps}
                                   ref={provided.innerRef}
-                                  style={{
-                                    backgroundColor: "#fff",
-                                    margin: "0 0 10px",
-                                    padding: "10PX",
-                                    boxShadow:
-                                      "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
-                                    borderRadius: "5px",
-                                    ...provided.draggableProps.style,
-                                  }}
+                                  className="task-kanban"
+                                  // style={{
+                                  //   backgroundColor: "#ececec",
+                                  //   margin: "0 0 10px",
+                                  //   padding: "10px",
+                                  //   boxShadow:
+                                  //     "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
+                                  //   borderRadius: "5px",
+                                  //   ...provided.draggableProps.style,
+                                  // }}
                                   onDoubleClick={() => handleModalOpen(item)}
                                 >
                                   {item.title}
+
+                                  <div 
+                                    style={{position: "relative", bottom:'-20px',width:'100%'}}
+                                  // style={{display:'flex', height:36,  border:'1px solid #000',padding:3,
+                                  //  justifyContent: 'space-between', flexDirection:'row', width:'100%', alignItems:'baseline'}}
+                                   >
+                                    <div
+                                    style={{display:'flex', height:36,padding:3,
+                                   justifyContent: 'space-between', flexDirection:'row', width:'100%', alignItems:'baseline'}}
+                                    >
+                                    <div style={{display:'inline-flex', alignItems: 'center', gap:15}}>
+                                      <div style={{display:'inline-flex'}}>
+                                      <PaperClip/>
+                                      <label htmlFor="">4</label>
+                                      </div>
+                                      <div style={{display:'inline-flex'}}>
+                                      <MessageDots/>
+                                      <label htmlFor="">13</label>
+                                      </div>
+                                    </div>
+                                    <div style={{display:'flex'}}>
+                                      <AvatarIcon/>
+                                    </div>
+                                    </div>
+                                  </div>
                                 </div>
                               )}
                             </Draggable>

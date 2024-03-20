@@ -11,7 +11,7 @@
 .button-group {
   display: flex;
   align-items: center;
-  box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.3);
+  box-shadow: 0 0 5px 2px rgba(138tas 138, 138, 0.3);
   gap: 5px;
   margin-top: 2%;
   width: 400px;
@@ -70,7 +70,7 @@
   overflow-y: hidden;
   border-radius: 5px;
   padding-inline: 10px;
-  gap: 15px;
+  gap: 26px;
   box-shadow: 0px 0px 0px 1px #00000000, 0px 1px 1px #03040403, 0px 0px 1px #03040480;
 }
 
@@ -172,6 +172,21 @@
   justify-content: space-between;
   padding: 5px 0 5px 5px;
   text-transform: capitalize;
+
+  /* display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+
+width: 262.5px;
+height: 24px;
+
+
+
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0; */
 }
 
 .kanban-columns {
@@ -183,24 +198,51 @@
 .kanban-column {
   max-height: 100%;
   margin-top: 20px;
-  /* margin-left: 20px; */
-  padding: 1px;
+  padding: 5px 5px 5px 0;
   height: 95%;
   box-sizing: border-box;
   border-radius: 8px;
-  box-shadow: 0px 0px 0px 1px #00000000, 0px 1px 1px #0304044a, 0px 0px 1px #03040480;
+  box-shadow: 0px 0px 0px 1px #00000000, 0px 1px 1px #0304040c, 0px 0px 1px #0304043c;
+ background-color: #fff;
+  gap: 16px;
+
+}
+
+.task-kanban{
+  /* background-color: #ff2121;
+  margin: 0 0 10px;
+  padding: 10px;
+  box-shadow:rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  border-radius: 5px; */
+
+  display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 6px;
+gap: 10px;
+margin: 0 0 10px 0;
+/* width: 262.5px; */
+/* width: 100%; */
+height: 90px;
+
+background: #F4F1FF;
+/* Light/Gray/Card */
+/* box-shadow: 0px 4px 18px rgba(75, 70, 92, 0.1); */
+border-radius: 6px;
+  
 }
 
 .column-content{
-  width: 240px;
+  width: 262.5px;
   height: 320px;
   padding: 6px 6px;
   overflow-y:auto;
   overflow-x: hidden;
   min-height:380px;
-  background-color: #ededed57;
+  /* background-color: #ededed57; */
   border-radius: 5px;
   /* gap: 5px; */
+  row-gap: 16px;
 }
 
 .column-content::-webkit-scrollbar{
