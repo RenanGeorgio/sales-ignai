@@ -1,4 +1,5 @@
 import { memo, useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   BookIcon,
   CalendarIcon,
@@ -16,18 +17,18 @@ import {
   SettingIcon,
   SmartHomeIcon,
   TextWrapIcon,
-} from "../Image/icons";
-import logo from "../Image/image 1.png";
-
-import "../../styles/sidebar.css";
-import { Link } from "react-router-dom";
-import useAuth from "../../hooks/useAuth";
+} from "@icons";
+import logo from "@assets/images/image 1.png";
+import useAuth from "@hooks/useAuth";
 import SidebarBadge from "../Badge/SidebarBadge";
+import "@styles/sidebar.css";
+
 interface SidebarProps {}
 
 const Sidebar: React.FC<SidebarProps> = () => {
   const { isAuthenticated } = useAuth();
-  const [expanded, setExpanded] = useState(false);
+  
+  const [expanded, setExpanded] = useState<boolean>(false);
 
   const toggleSidebar = () => {
     setExpanded(!expanded);
@@ -83,7 +84,6 @@ const Sidebar: React.FC<SidebarProps> = () => {
           </Link>
         </div>
       </div>
-
       <div className="section1">
         <div className="sectionContainer">
           <p className={expanded ? "show-text" : "hide-text"}>Vendas</p>
@@ -124,7 +124,6 @@ const Sidebar: React.FC<SidebarProps> = () => {
           </Link>
         </div>
       </div>
-
       <div className="section1">
         <div className="sectionContainer">
           <p className={expanded ? "show-text" : "hide-text"}>
@@ -138,7 +137,6 @@ const Sidebar: React.FC<SidebarProps> = () => {
               </span>
             </div>
           </Link>
-
           <Link className="link" to="/email">
             <div className="menu-item">
               <SmartHomeIcon />
@@ -147,7 +145,6 @@ const Sidebar: React.FC<SidebarProps> = () => {
               </span>
             </div>
           </Link>
-
           <Link className="link" to="/whatsapp">
             <div className="menu-item">
               <CopIcon />
@@ -156,7 +153,6 @@ const Sidebar: React.FC<SidebarProps> = () => {
               </span>
             </div>
           </Link>
-
           <Link className="link" to="/chatbot">
             <div className="menu-item">
               <LayoutNavIcon />
@@ -167,7 +163,6 @@ const Sidebar: React.FC<SidebarProps> = () => {
           </Link>
         </div>
       </div>
-
       <div className="section1">
         <div className="sectionContainer">
           <p className={expanded ? "show-text" : "hide-text"}>Ajuda</p>
@@ -179,7 +174,6 @@ const Sidebar: React.FC<SidebarProps> = () => {
               </span>
             </div>
           </Link>
-
           <Link className="link" to="/suporte">
             <div className="menu-item">
               <HeadPhoneIcon />
@@ -188,7 +182,6 @@ const Sidebar: React.FC<SidebarProps> = () => {
               </span>
             </div>
           </Link>
-
           <Link className="link" to="/">
             <div className="menu-item">
               <FileTextIcon />
@@ -201,6 +194,6 @@ const Sidebar: React.FC<SidebarProps> = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Sidebar;
