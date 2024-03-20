@@ -1,20 +1,20 @@
-import { IconButton, Button, Badge, Checkbox, Alert } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { DotsVertical, Pencil, Trash } from "../../../Image/icons";
-import "./payment.css";
-import { IAddress } from "types/interfaces";
-import ModalComponent from "components/Modal/Modal";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { IconButton, Button, Badge, Checkbox, Alert } from "@mui/material";
+import { VerticalDotsIcon, PencilIcon, TrashIcon } from "@icons";
+import ModalComponent from "@components/Modal/Modal";
 import {
   baseUrl,
   deleteRequest,
   postRequest,
   putRequest,
-} from "services/api/apiService";
-import ModalForm from "components/Forms/Modal/ModalForm";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import PaymentAddressFormFields from "components/Contact/FormFields/PaymentAddress";
-import { clientsActions } from "store/store";
+} from "@services/api/apiService";
+import ModalForm from "@components/Forms/Modal/ModalForm";
+import PaymentAddressFormFields from "@components/Contact/FormFields/PaymentAddress";
+import { clientsActions } from "@store/store";
+import { IAddress } from "types/interfaces";
+import "./payment.css";
 
 export default function PaymentAddress({ address, clientId }) {
   const dispatch = useDispatch();
@@ -158,7 +158,7 @@ export default function PaymentAddress({ address, clientId }) {
                             setOpenModal(true);
                           }}
                         >
-                          <Pencil className="icon-instance-node" />
+                          <PencilIcon className="icon-instance-node" />
                         </IconButton>
                         <IconButton
                           onClick={(e) => {
@@ -166,10 +166,10 @@ export default function PaymentAddress({ address, clientId }) {
                             handleRemove(addr._id);
                           }}
                         >
-                          <Trash className="icon-instance-node" />
+                          <TrashIcon className="icon-instance-node" />
                         </IconButton>
                         <IconButton>
-                          <DotsVertical className="icon-instance-node" />
+                          <VerticalDotsIcon className="icon-instance-node" />
                         </IconButton>
                       </div>
                     </div>
@@ -198,13 +198,13 @@ export default function PaymentAddress({ address, clientId }) {
                     </div>
                     <div className="actions">
                       <IconButton className="button-icon-instance">
-                        <Pencil className="icon-instance-node" />
+                        <PencilIcon className="icon-instance-node" />
                       </IconButton>
                       <IconButton>
-                        <Trash className="icon-instance-node" />
+                        <TrashIcon className="icon-instance-node" />
                       </IconButton>
                       <IconButton>
-                        <DotsVertical className="icon-instance-node" />
+                        <VerticalDotsIcon className="icon-instance-node" />
                       </IconButton>
                     </div>
                   </div>
@@ -230,13 +230,13 @@ export default function PaymentAddress({ address, clientId }) {
                       </div>
                       <div className="actions">
                         <IconButton className="button-icon-instance">
-                          <Pencil className="icon-instance-node" />
+                          <PencilIcon className="icon-instance-node" />
                         </IconButton>
                         <IconButton>
-                          <Trash className="icon-instance-node" />
+                          <TrashIcon className="icon-instance-node" />
                         </IconButton>
                         <IconButton>
-                          <DotsVertical className="icon-instance-node" />
+                          <VerticalDotsIcon className="icon-instance-node" />
                         </IconButton>
                       </div>
                     </div>
@@ -324,13 +324,13 @@ export default function PaymentAddress({ address, clientId }) {
                     </div>
                     <div className="actions">
                       <IconButton className="button-icon-instance">
-                        <Pencil className="icon-instance-node" />
+                        <PencilIcon className="icon-instance-node" />
                       </IconButton>
                       <IconButton>
-                        <Trash className="icon-instance-node" />
+                        <TrashIcon className="icon-instance-node" />
                       </IconButton>
                       <IconButton>
-                        <DotsVertical className="icon-instance-node" />
+                        <VerticalDotsIcon className="icon-instance-node" />
                       </IconButton>
                     </div>
                   </div>
