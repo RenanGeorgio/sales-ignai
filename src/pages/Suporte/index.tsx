@@ -1,5 +1,5 @@
 import Navbar from "../../components/Navbar";
-import { FileTextIcon, UsersIcon } from '@icons';
+import { TextFileIcon, UsersIcon } from '@icons';
 import '../../styles/chatbot.css';
 
 const Suporte = () => {
@@ -14,7 +14,7 @@ const Suporte = () => {
                 Pedido
                 </button>
                 <button className="grayButton">
-                <FileTextIcon />
+                <TextFileIcon />
                 Tickets
                 </button>
             </div>

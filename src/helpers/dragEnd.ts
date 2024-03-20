@@ -1,4 +1,8 @@
-export default function dragEnd(columns, dragResult){
+import { DragResult } from "@types";
+
+type Item = { _id: string | number; }
+
+export default function dragEnd(columns: any[], dragResult: DragResult){
   const { source, destination, draggableId } = dragResult;
 
   if (!destination) { // Se não houver destino, não faz nada
@@ -12,7 +16,7 @@ export default function dragEnd(columns, dragResult){
     return;
   }
 
-  const draggedItem = sourceColumn.items.find(item => item._id === draggableId);
+  const draggedItem = sourceColumn.items.find((item: Item) => item._id === draggableId);
 
   if (!draggedItem) { // Se o item arrastado não for encontrado, não faz nada
     return;

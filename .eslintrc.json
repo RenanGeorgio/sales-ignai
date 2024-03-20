@@ -11,6 +11,14 @@
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
         "prettier"
     ],
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [".js", ".jsx", ".ts", ".tsx", ".d.ts"]
+          },
+            "typescript": {}
+        }
+    },
     "rules": {
         "@typescript-eslint/no-unused-vars": ["warn", { "args": "after-used", "ignoreRestSiblings": false, "argsIgnorePattern": "^_.*?$" }],
         "@typescript-eslint/explicit-module-boundary-types": 0,

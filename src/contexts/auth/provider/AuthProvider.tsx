@@ -1,24 +1,22 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthContext";
-import authApi from "@services/auth";
 import { useDispatch, useSelector } from "react-redux";
-import { persistor, sessionActions, userActions } from "@store/store";
+import { persistor, sessionActions } from "@store/store";
 import { useApi } from "@hooks/useApi";
 import cookies from "js-cookie";
 import { SignInData, SignInResponse, User } from "@types";
 
-export function AuthProvider({ children }) {
-  // const [user, setUser] = useState<User | null>(null);
+export function AuthProvider({ children }: any) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   const api = useApi();
+
+  const [user, setUser] = useState<User | null>(null);
 
   const isAuthenticated = useSelector((state: any) => state.session.status)
   const userState = useSelector((state: any) => state.user)
-
-  const [isOffline, setIsOffline] = useState(false); // todo: implementar lógica de offline, caso necessário
-  const [user, setUser] = useState<User | null>(null);
   
   useEffect(() => {
     if(isAuthenticated) {
@@ -27,7 +25,8 @@ export function AuthProvider({ children }) {
   }, [userState, isAuthenticated]);
 
   async function signIn({ email, password }: SignInData) {
-    const { token, error }: SignInResponse | undefined = await api.signIn({
+    // @ts-ignore
+    const { token, error }: SignInResponse = await api.signIn({
       email,
       password,
     });
@@ -36,7 +35,7 @@ export function AuthProvider({ children }) {
       return error;
     }
     
-    cookies.set("token", token, { expires: 0.5 });
+    cookies.set("token", token as string, { expires: 0.5 });
     dispatch(sessionActions.signIn());
     navigate("/");
   }

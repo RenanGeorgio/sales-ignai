@@ -2,7 +2,7 @@ import Visa from "@assets/images/Visa.png";
 import Mastercard from "@assets/images/MasterCard.png";
 import AmericanExpress from "@assets/images/american-express.png";
 import Avatar from "@assets/images/Avatar2.png";
-import List from "@assets/images/list-details.svg';
+import List from "@assets/images/list-details.svg";
 import { DotIcon } from "@icons";
 import "@styles/statistics-transaction.css";
 

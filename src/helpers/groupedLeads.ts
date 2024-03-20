@@ -9,11 +9,13 @@ const topics = {
 }
 
 export default function groupedLeads(leads: Leads[]) {
-  return leads.reduce((acc, lead) => {
-    if (!acc[topics[lead.topic]]) {
-      acc[topics[lead.topic]] = [];
-    }
-    acc[topics[lead.topic]].push(lead);
+  return leads.reduce((acc: any, lead: Leads) => {
+    // @ts-ignore
+    if (!acc[topics[lead?.topic]]) { acc[topics[lead?.topic]] = []; }
+
+    // @ts-ignore
+    acc[topics[lead?.topic]].push(lead);
+
     return acc;
   }, {} as Record<string, Leads[]>);
 }

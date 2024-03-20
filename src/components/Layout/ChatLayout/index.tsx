@@ -1,15 +1,13 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { ChatBox } from "../../Chat/ChatBox";
 import { LeftMenu } from "../../Chat/LeftMenu";
 import { UserChat } from "../../Chat/UserChat";
-import useAuth from "../../../hooks/useAuth";
-import useChat from "../../../hooks/useChat";
-import { useFetchRecipient } from "../../../hooks/useFetchRecipient";
-import { OnlineUser } from "../../../types";
+import useAuth from "@hooks/useAuth";
+import useChat from "@hooks/useChat";
 import "./layout.css";
 
 export default function LayoutChat() {
-  const [showAddTicket, setShowAddTicket] = useState(false);
+  const [showAddTicket, setShowAddTicket] = useState<boolean>(false);
 
   const { user } = useAuth();
   const { userChats, updateCurrentChat } = useChat();
@@ -26,7 +24,7 @@ export default function LayoutChat() {
             <div className="text-wrapper-3">Clientes</div>
           </div>
           <div className="div-content">
-            {userChats?.map((chat, index) => (
+            {userChats?.map((chat: any, index: string | number) => (
               <div
                 key={index}
                 onClick={() => {

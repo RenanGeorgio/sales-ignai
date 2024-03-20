@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { baseUrl, getRequest } from "../utils/chatService";
+import { Consumer } from "@types";
 
-export const useFetchRecipient = (chat, user) => {
+export const useFetchRecipient = (chat: any, user: Consumer) => {
   const [recipientUser, setRecipientUser] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -11,9 +12,13 @@ export const useFetchRecipient = (chat, user) => {
  
   useEffect(() => {
     const fetchRecipient = async () => {
-      if(!recipientId) return;
+      if(!recipientId) {
+        return;
+      }
+      
       try {
         const response = await getRequest(`${baseUrl}/client/${recipientId}`);
+
         if(response.error) {
           return setError(response);
         } else {

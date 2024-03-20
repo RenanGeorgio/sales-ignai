@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Navbar from '../../components/Navbar';
-import { FileTextIcon, UsersIcon, BellIcon } from '@icons';
+import { TextFileIcon, UsersIcon, BellIcon } from '@icons';
 import MainForm from '../../components/Forms/MainForm';
 import FormSelector from '../../components/Forms/FormSelector';
 import Footer from '../../components/Forms/Footer';
@@ -40,7 +40,7 @@ const Forms: React.FC = () => {
           className={activePage === 'Painel' ? 'blueButton' : 'grayButton'}
           onClick={() => handleButtonClick('Painel')}
         >
-          <FileTextIcon/>
+          <TextFileIcon/>
           <span>Painel</span>
         </button>
       </div>

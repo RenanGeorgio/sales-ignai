@@ -305,18 +305,10 @@
   }
   
   .left-menu .text-wrapper-5 {
-    /* color: var(--lightsolid-colorextrawhite);
-    font-family: var(--light-basic-typography-paragraph-small-font-family);
-    font-size: var(--light-basic-typography-paragraph-small-font-size);
-    font-style: var(--light-basic-typography-paragraph-small-font-style);
-    font-weight: var(--light-basic-typography-paragraph-small-font-weight);
-    letter-spacing: var(--light-basic-typography-paragraph-small-letter-spacing);
-    line-height: var(--light-basic-typography-paragraph-small-line-height); */
     margin-top: -1px;
     position: relative;
-    text-align: start;
+    text-align: flex-start;
     white-space: nowrap;
-    /* width: fit-content; */
   }
   
   .left-menu .text-wrapper-6 {

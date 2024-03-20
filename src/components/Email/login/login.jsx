@@ -16,7 +16,7 @@ import TextField from '../form/text-field/text-field';
 import Spinner from '../spinner/spinner';
 import mainCss from '../../../styles/email/main.scss';
 import styles from './login.scss';
-import withRouter from 'hooks/withRouter';
+import withRouter from '@hooks/withRouter';
 
 /**
  * Returns a Login component valid state from the current URL params

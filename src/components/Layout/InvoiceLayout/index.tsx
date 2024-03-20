@@ -1,5 +1,4 @@
-import React from 'react'
-import InvoiceComponent from '../../Invoice/Invoice';
+import InvoiceComponent from '../../Invoice';
 
 export default function Invoices() {
   return (

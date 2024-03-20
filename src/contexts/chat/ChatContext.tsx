@@ -1,8 +1,8 @@
 import { createContext, useCallback, useEffect, useState } from "react";
+import { io } from "socket.io-client";
 import { baseUrl, postRequest, getRequest } from "../../utils/chatService";
 import useAuth from "@hooks/useAuth";
-import { io } from "socket.io-client";
-import { OnlineUser } from "@types";
+import { OnlineUser, Consumer } from "@types";
 
 export const ChatContext = createContext<any>(null);
 
@@ -15,13 +15,38 @@ export const ChatProvider = ({ children }: any) => {
   const [isMessagesLoading, setIsMessagesLoading] = useState<boolean>(false);
   const [messageError, setMessageError] = useState<string | null>(null);
   const [messages, setMessages] = useState<any>(null);
-  const [textMessageError, setTextMessageError] = useState<string | null>(null);
   const [newMessage, setNewMessage] = useState<any>();
   const [onlineUsers, setOnlineUsers] = useState<OnlineUser[]>([]);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [textMessageError, setTextMessageError] = useState<string | null>(null);
 
   const [socket, setSocket] = useState<any>(null);
 
   const { user } = useAuth();
+
+  const updateCurrentChat = useCallback((chat: any) => {
+    setCurrentChat(chat);
+  }, []);
+
+  const sendTextMessage = useCallback(async (textMessage: string, sender: Consumer, currentChatId: number | string, setTextMessage: any) => {
+    if (textMessage === "") {
+      return;
+    }
+
+    const response = await postRequest(`${baseUrl}/message`, {
+      text: textMessage,
+      senderId: sender.companyId,
+      chatId: currentChatId,
+    });
+
+    if (response.error) {
+      return setTextMessageError(response);
+    }
+
+    setNewMessage(response);
+    setMessages((prev: any) => [...prev, response]);
+    setTextMessage("");
+  }, []);
 
   useEffect(() => {
     const newSocket = io(process.env.REACT_APP_SERVER_API as string);
@@ -33,8 +58,12 @@ export const ChatProvider = ({ children }: any) => {
   }, [user]);
 
   useEffect(() => {
-    if (socket === null) return;
+    if (socket === null) {
+      return;
+    }
+
     socket.emit("addNewUser", user?.companyId);
+    
     socket.on("onlineUsers", (users: any) => {
       setOnlineUsers(users);
     });
@@ -42,22 +71,33 @@ export const ChatProvider = ({ children }: any) => {
     return () => {
       socket.off("onlineUsers");
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [socket]);
 
   useEffect(() => {
-    if (!socket) return;
+    if (!socket) {
+      return;
+    }
+    
     const recipientId = currentChat?.members?.find(
       (id: string) => id !== user?.companyId
     );
     
     socket.emit("sendMessage", { ...newMessage, recipientId });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [newMessage]);
 
   useEffect(() => {
-    if (!socket) return;
+    if (!socket) {
+      return;
+    }
+
     socket.on("getMessage", (res: any) => {
-      if (currentChat?._id !== res.chatId) return;
-      setMessages((prev) => [...prev, res]);
+      if (currentChat?._id !== res.chatId) {
+        return;
+      }
+
+      setMessages((prev: any) => [...prev, res]);
     });
 
     return () => {
@@ -66,7 +106,10 @@ export const ChatProvider = ({ children }: any) => {
   }, [socket, currentChat]);
 
   useEffect(() => {
-    if (socket === null) return;
+    if (socket === null) {
+      return;
+    }
+
     socket.on("newUserChat", (user: any) => {
       setUserChats((prev: any) => [...prev, user]);
     });
@@ -77,17 +120,23 @@ export const ChatProvider = ({ children }: any) => {
   }, [socket]);
 
   useEffect(() => {
-    if (!userChats) return;
+    if (!userChats) {
+      return;
+    }
+    
     const getClients = async () => {
       const response = await getRequest(`${baseUrl}/clients`);
 
       if (response.error) {
         return setUserChatsError(response);
       }
+
       const pChats = response?.filter((client: any) => {
         let isChatCreated = false;
 
-        if (!user?._id === client?._id) return false;
+        if (!user?._id === client?._id) {
+          return false;
+        }
 
         if (userChats) {
           isChatCreated = userChats?.some((chat: any) =>
@@ -97,17 +146,21 @@ export const ChatProvider = ({ children }: any) => {
 
         return !isChatCreated;
       });
+      
       setPotentialChats(pChats);
     };
 
     getClients();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userChats]);
 
   useEffect(() => {
     const getUserChats = async () => {
       if (user?.companyId) {
         setIsUserChatsLoading(true);
+
         const response = await getRequest(`${baseUrl}/chat/${user.companyId}`);
+
         if (response.error) {
           return setUserChatsError(response);
         } else {
@@ -122,14 +175,15 @@ export const ChatProvider = ({ children }: any) => {
   useEffect(() => {
     const getMessages = async () => {
       setIsMessagesLoading(true);
+
       setMessageError(null);
+
       if (currentChat) {
-        const response = await getRequest(
-          `${baseUrl}/message/${currentChat._id}`
-        );
+        const response = await getRequest(`${baseUrl}/message/${currentChat._id}`);
+
         setIsMessagesLoading(false);
 
-        if (response.error) {
+        if (response?.error) {
           setMessageError(response);
         }
 
@@ -139,28 +193,6 @@ export const ChatProvider = ({ children }: any) => {
 
     getMessages();
   }, [currentChat]);
-
-  const updateCurrentChat = useCallback((chat: any) => {
-    setCurrentChat(chat);
-  }, []);
-
-  const sendTextMessage = useCallback(
-    async (textMessage, sender, currentChatId, setTextMessage) => {
-      if (textMessage === "") return;
-      const response = await postRequest(`${baseUrl}/message`, {
-        text: textMessage,
-        senderId: sender.companyId,
-        chatId: currentChatId,
-      });
-      if (response.error) {
-        return setTextMessageError(response);
-      }
-      setNewMessage(response);
-      setMessages((prev) => [...prev, response]);
-      setTextMessage("");
-    },
-    []
-  );
 
   return (
     <ChatContext.Provider

@@ -21,17 +21,18 @@ import {
 } from "@icons";
 import "@styles/sidebar.css";
 
-interface SidebarProps {}
-
-const Sidebar: React.FC<SidebarProps> = () => {
+const Sidebar: React.FC<any> = (): JSX.Element | null => {
   const { isAuthenticated } = useAuth();
-  const [expanded, setExpanded] = useState(false);
+
+  const [expanded, setExpanded] = useState<boolean>(false);
 
   const toggleSidebar = () => {
     setExpanded(!expanded);
   };
 
-  if(!isAuthenticated) return;
+  if (!isAuthenticated) {
+    return null;
+  }
   
   return (
     <div className={`sidebar ${expanded ? 'expanded' : ''}`}>

@@ -4,6 +4,7 @@ import { Button, IconButton, Modal } from "@mui/material";
 import { VerticalDotsIcon, EditIcon, TrashIcon, LeadIcon, MessageDotsIcon, PaperClipIcon } from "@icons";
 import avatar from "@assets/images/Avatar3.png";
 import ModalSearch from "./ModalSearch";
+import { Obj } from "@types";
 
 interface SearchFilterProps {
     setShowList: () => void;
@@ -64,7 +65,8 @@ const columns: GridColDef[] = [
         field: 'leadOrigin', 
         headerName: 'Lead Origem', 
         width: 150,
-        renderCell: (params) => {
+        renderCell: (params: Obj) => {
+            // @ts-ignore
             const origin = leadOrigin[params?.value]
             return origin
         }
@@ -96,8 +98,9 @@ const columns: GridColDef[] = [
         field: 'topic', 
         headerName: 'Status', 
         width: 150,
-        renderCell: (params) => {
-            const status = leadStatus[params?.value]
+        renderCell: (params: Obj) => {
+            // @ts-ignore
+            const status: string = leadStatus[params?.value]
             return (
                 <div style={{
                     color: getStatusStyles(status).color,
@@ -115,7 +118,7 @@ const columns: GridColDef[] = [
         field: 'acao',
         headerName: 'Ação',
         width: 150,
-        renderCell: (params) => {
+        renderCell: (_params: any) => {
             return (
                 <div>
                     <IconButton>
@@ -137,6 +140,7 @@ const columns: GridColDef[] = [
     }
 ];
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const SearchFilter: React.FC<SearchFilterProps> = ({ setShowList, leadsData }: SearchFilterProps) => {
     const [open, setOpen] = useState<boolean>(false);
 

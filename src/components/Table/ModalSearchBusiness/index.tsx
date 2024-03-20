@@ -1,7 +1,13 @@
 import { useState } from "react";
 import Button from "@mui/material/Button";
 
-export default function ModalSearchBusiness({ close }) {
+interface Props {
+    close: () => void;
+    children?: React.ReactNode;
+};
+
+export default function ModalSearchBusiness({ close }: Props): JSX.Element {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [open, setOpen] = useState<boolean>(true);
 
     return (

@@ -5,7 +5,7 @@ import GraphTicket from '../../components/Graph/GraphTicket';
 import GraphThemes from '../../components/Graph/GraphThemes';
 import GraphTicketYou from '../../components/Graph/GraphTicketYou';
 import Invoices from '../../components/Layout/InvoiceLayout';
-import { FileDollarIcon, FileTextIcon } from '@icons';
+import { FileDollarIcon, TextFileIcon } from '@icons';
 
 interface InvoiceProps {}
 
@@ -33,7 +33,7 @@ const Invoice: React.FC<InvoiceProps> = () => {
           className={activePage === 'Painel' ? 'blueButton' : 'grayButton'}
           onClick={() => handleButtonClick('Painel')}
         >
-          <FileTextIcon />
+          <TextFileIcon />
           Painel
         </button>
       </div>

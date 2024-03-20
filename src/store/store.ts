@@ -18,8 +18,10 @@ import emailCombinedReducer from "./email/reducers";
 // Email
 import { fetchConfiguration } from "@services/email/configuration";
 import { loadState } from "@services/email/state";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import debounce from "@services/email/debounce";
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const SAVE_STATE_DEBOUNCE_PERIOD_IN_MILLIS = 500;
 
 declare global {

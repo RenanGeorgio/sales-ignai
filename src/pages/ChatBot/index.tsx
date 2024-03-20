@@ -1,5 +1,5 @@
 import Navbar from '@components/Navbar';
-import { UsersIcon, FileTextIcon, LinkIcon } from '@icons';
+import { UsersIcon, TextFileIcon, LinkIcon } from '@icons';
 import '@styles/chatbot.css';
 
 const ChatBot = () => {
@@ -18,7 +18,7 @@ const ChatBot = () => {
             Flow Chart
           </button>
           <button className="grayButton">
-            <FileTextIcon/>
+            <TextFileIcon/>
             Painel
           </button>
         </div>

@@ -6,7 +6,7 @@ import GraphChat from "../../components/Graph/GraphChat";
 import GraphTicket from "../../components/Graph/GraphTicket";
 import GraphTicketYou from "../../components/Graph/GraphTicketYou";
 import GraphThemes from "../../components/Graph/GraphThemes";
-import { BellIcon, FileTextIcon, UsersIcon } from "@icons";
+import { BellIcon, TextFileIcon, UsersIcon } from "@icons";
 import "../../styles/forms.css";
 
 const Chat: React.FC = () => {
@@ -39,7 +39,7 @@ const Chat: React.FC = () => {
           className={activePage === "Painel" ? "blueButton" : "grayButton"}
           onClick={() => handleButtonClick("Painel")}
         >
-          <FileTextIcon />
+          <TextFileIcon />
           Painel
         </button>
       </div>
