@@ -2,8 +2,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 100%;
-    width: 100%; */
     background-color: black;
 }
 
@@ -72,13 +70,11 @@
 
 .title {
     font-size: 2rem;
-    /* font-family: Roboto; */
     lighting-color: #ffffff;
 }
 
 .titleReset {
     font-size: 2rem;
-    /* font-family: Roboto; */
     lighting-color: #ffffff;
     margin: -50px auto 10px auto;
 }
@@ -117,7 +113,6 @@
     display: flex;
     flex-direction: column;
     max-width: 400px;
-    /* max-height: min-content; */
     width: 100%;
     color: black;
     font-weight: 700;
@@ -131,7 +126,6 @@
     word-break: keep-all;
     line-break: break-all;
     padding: 50px;
-
 }
 
 .textReset {
@@ -145,9 +139,7 @@
     padding: 20px 0px 10px 0px;
     z-index: 9;
     left: 5px;
-    /* bottom: 10px; */
     color: red;
-
 }
 
 .inputGroup {
@@ -156,7 +148,6 @@
     padding: 3px;
     align-items: flex-end;
 }
-
 
 .input {
     width: 100%;
@@ -203,8 +194,6 @@
     margin-right: 15%;
 }
 
-
-
 .iconContainer {
     cursor: pointer;
     display: flex;
@@ -221,7 +210,6 @@
     width: 30px;
     margin-right: 5px;
 }
-
 
 [data-theme="dark"] .inputGroup {
     display: flex;
