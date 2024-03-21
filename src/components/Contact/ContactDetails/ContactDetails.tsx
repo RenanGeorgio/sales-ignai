@@ -1,49 +1,36 @@
-import React, { useEffect, useState } from "react";
-import {
-  CurrencyDollar,
-  DotsVertical,
-  PaperClip,
-  ShoppingCart,
-  Trash,
-} from "../../Image/icons";
-import { Alert, Button, IconButton } from "@mui/material";
-import { useNavigate } from "react-router-dom";
-import ImageLogo from "../../Image/Queiroz_Galvão_Logo 1.png";
-import PaymentAddress from "./PaymentAdress";
-import Notification from "./Notifications/Notification";
-import "./PaymentAdress/payment.css";
-import { priorityStatus, getPriorityStyles } from "helpers/status";
-import ModalComponent from "components/Modal/Modal";
-import { IContactInfo } from "types/interfaces";
-import {
-  baseUrl,
-  deleteRequest,
-  postRequest,
-  putRequest,
-} from "services/api/apiService";
-import ModalForm from "components/Forms/Modal/ModalForm";
-import ContactFormFields from "../FormFields/Contact";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { clientsActions } from "store/store";
+import { useNavigate } from "react-router-dom";
+import { Alert, Button, IconButton } from "@mui/material";
+import { CurrencyDollarIcon, ShoppingCartIcon, TrashIcon } from "@icons";
+import ImageLogo from "@assets/images/Queiroz_Galvão_Logo 1.png";
+import PaymentAddress from "./PaymentAdress";
+import Notification from "./Notifications";
+import { priorityStatus, getPriorityStyles } from "@helpers/status";
+import ModalComponent from "@components/Modal/Modal";
+import { baseUrl, deleteRequest, postRequest, putRequest } from "@services/api/apiService";
+import ModalForm from "@components/Forms/Modal/ModalForm";
+import ContactFormFields from "../FormFields/Contact";
+import { clientsActions } from "@store/store";
 import Revenue from "./Revenue";
+import { IContactInfo, IClient, IAddress } from "@interfaces";
+import { Obj } from "@types";
+import "./PaymentAdress/payment.css";
 
-// const ImageLogo = '../../Image/Queiroz_Galvão_Logo 1.png'
+interface Props {
+  client: IClient;
+  children?: React.ReactNode;
+};
 
-const ContactDetails = ({ client }) => {
-  const [activePage, setActivePage] = useState("Geral");
-  const [openModal, setOpenModal] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
-  const [error, setError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [selectedItem, setSelectedItem] = useState({} as IContactInfo);
-  const [priorityStyles, setPriorityStyles] = useState({
-    color: "",
-    backgroundColor: "",
-  });
-  const [modalMode, setModalMode] = useState({
-    mode: null,
-    title: null,
-  });
+const ContactDetails = ({ client }: Props) => {
+  const [activePage, setActivePage] = useState<string>("Geral");
+  const [openModal, setOpenModal] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string>("");
+  const [error, setError] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [selectedItem, setSelectedItem] = useState<IContactInfo>({} as IContactInfo);
+  const [priorityStyles, setPriorityStyles] = useState<Obj>({ color: "", backgroundColor: "" });
+  const [modalMode, setModalMode] = useState<Obj>({ mode: null, title: null });
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -52,66 +39,66 @@ const ContactDetails = ({ client }) => {
     setActivePage(pageName);
   };
 
-  useEffect(() => {
-    setPriorityStyles(getPriorityStyles(client.priority));
-  }, [client]);
-
   const handleAdd = async (contact: IContactInfo) => {
     setIsLoading(true);
-    const response = await postRequest(
-      `${baseUrl}/client/${client._id}/contact`,
-      contact
-    );
+    
+    const response = await postRequest(`${baseUrl}/client/${client._id}/contact`, contact);
+
     if (response.error) {
       requestError(response.message);
     } else {
       updateClientContacts(response);
       setOpenModal(false);
     }
+
     setIsLoading(false);
   };
 
   const handleUpdate = async (contact: IContactInfo) => {
-    const response = await putRequest(
-      `${baseUrl}/client/${client._id}/contact/${contact._id}`,
-      contact
-    );
+    const response = await putRequest(`${baseUrl}/client/${client._id}/contact/${contact._id}`, contact);
+
     if (response.error) {
       requestError(response.message);
     } else {
       updateClientContacts(response);
       setOpenModal(false);
     }
+
     setIsLoading(false);
   };
 
   const updateClientContacts = (contacts: IContactInfo) => {
-    dispatch(
-      clientsActions.updateContactList({
-        id: client._id,
-        contacts,
-      })
-    );
-  };
+    dispatch(clientsActions?.updateContactList({
+      id: client._id,
+      contacts,
+    })
+  )};
 
-  const deleteClient = async () => {
-    // todo: Adicionar pop-up de confirmação
-    const response = await deleteRequest(`${baseUrl}/client/${client._id}`);
-    if (response.error) {
-      requestError(response.message);
-    } else {
-      dispatch(clientsActions.removeClient(client._id));
-      navigate(-1);
-    }
+  const deleteClient = () => { // todo: Adicionar pop-up de confirmação
+    (async () => {
+      const response = await deleteRequest(`${baseUrl}/client/${client._id}`);
+
+      if (response.error) {
+        requestError(response.message);
+      } else {
+        dispatch(clientsActions.removeClient(client._id));
+        navigate(-1);
+      }
+    })();
   };
 
   const requestError = (error: string) => {
     setError(true);
     setErrorMessage(error);
+
     setTimeout(() => {
       setError(false);
     }, 3000);
   };
+
+  useEffect(() => {
+    setPriorityStyles(getPriorityStyles(client?.priority));
+  }, [client]);
 
   return (
     <div
@@ -176,7 +163,6 @@ const ContactDetails = ({ client }) => {
             Ago 17, 2020, 5:48 (ET)
           </span>
         </div>
-
         <div style={{ display: "flex" }}>
           <Button
             variant="outlined"
@@ -188,7 +174,6 @@ const ContactDetails = ({ client }) => {
           </Button>
         </div>
       </div>
-
       <div
         style={{
           justifyContent: "space-between",
@@ -201,7 +186,6 @@ const ContactDetails = ({ client }) => {
         <div
           style={{
             width: 300,
-            // height: "100%",
             flexDirection: "column",
             justifyContent: "flex-start",
             alignItems: "flex-start",
@@ -287,6 +271,7 @@ const ContactDetails = ({ client }) => {
                       wordWrap: "break-word",
                     }}
                   >
+                    {/* @ts-ignore */}
                     {priorityStatus[client?.priority]}
                   </div>
                   {/* </div> */}
@@ -335,7 +320,6 @@ const ContactDetails = ({ client }) => {
                   >
                     Cliente ID {"#" + client?._id.slice(0, 10)}
                   </div>
-
                   <div
                     style={{
                       width: "100%",
@@ -365,7 +349,7 @@ const ContactDetails = ({ client }) => {
                           display: "flex",
                         }}
                       >
-                        <ShoppingCart />
+                        <ShoppingCartIcon />
                       </div>
                       <div
                         style={{
@@ -420,7 +404,7 @@ const ContactDetails = ({ client }) => {
                           display: "flex",
                         }}
                       >
-                        <CurrencyDollar />
+                        <CurrencyDollarIcon />
                       </div>
                       <div
                         style={{
@@ -459,7 +443,6 @@ const ContactDetails = ({ client }) => {
                   </div>
                 </div>
               </div>
-
               <div
                 style={{
                   width: "100%",
@@ -494,12 +477,9 @@ const ContactDetails = ({ client }) => {
                   Adicionar
                 </Button>
               </div>
-
               {/* <bloco 1 esquerdo  */}
-
               <div className="contactInfo-Container">
-
-              {client?.contacts?.map((item, index) => (
+              {client?.contacts?.map((item: any, _index: number | string) => (
                 <div className="infoContact">
                   <div
                     style={{
@@ -531,7 +511,6 @@ const ContactDetails = ({ client }) => {
                         {item?.contactName}
                       </span>
                     </div>
-
                     <div style={{ width: 284,  }}>
                       <span
                         style={{                       
@@ -551,7 +530,6 @@ const ContactDetails = ({ client }) => {
                         {item?.email}
                       </span>
                     </div>
-
                     <div
                       style={{
                         alignSelf: "stretch",
@@ -594,7 +572,6 @@ const ContactDetails = ({ client }) => {
                         </div>
                       </div>
                     </div>
-
                     <div style={{ width: 284,  }}>
                       <span
                         style={{                         
@@ -615,7 +592,6 @@ const ContactDetails = ({ client }) => {
                         {item?.tel}
                       </span>
                     </div>
-
                     <div style={{ width: 284, }}>
                       <span
                         style={{                          
@@ -636,7 +612,6 @@ const ContactDetails = ({ client }) => {
                       </span>
                     </div>
                   </div>
-
                   <div
                     style={{
                       justifyContent: "space-between",
@@ -661,9 +636,8 @@ const ContactDetails = ({ client }) => {
                     >
                       Editar detalhes
                     </Button>
-
                     <IconButton>
-                      <Trash className={undefined}/>
+                      <TrashIcon className={undefined}/>
                     </IconButton>
                   </div>
                 </div>
@@ -672,12 +646,10 @@ const ContactDetails = ({ client }) => {
             </div>
           </div>
         </div>
-
         {/* wrap tabela lado direito  */}
         <div
           style={{
             flex: "1 1 0",
-            // height: "100%",
             flexDirection: "column",
             justifyContent: "flex-start",
             alignItems: "flex-start",
@@ -686,12 +658,7 @@ const ContactDetails = ({ client }) => {
             width:'100%'
           }}
         >
-          {/* 
-                secção Geral endereço pagamento  */}
-          <div
-            //  style={{ justifyContent: 'flex-start', alignItems: 'center', display: 'inline-flex', height: 50, gap:15}}
-            className="buttonContainer"
-          >
+          <div className="buttonContainer">
             <div>
               <button
                 className={activePage === "Geral" ? "blueButton" : "grayButton"}
@@ -700,7 +667,6 @@ const ContactDetails = ({ client }) => {
                 Geral
               </button>
             </div>
-
             <div>
               <button
                 className={
@@ -711,7 +677,6 @@ const ContactDetails = ({ client }) => {
                 Endereço e Pagamento{" "}
               </button>
             </div>
-
             <div>
               <button
                 className={
@@ -723,15 +688,12 @@ const ContactDetails = ({ client }) => {
               </button>
             </div>
           </div>
-
           <div>
             {activePage === "Geral" && <Revenue />}
             {activePage === "Payment" && (
               <div>
-                <PaymentAddress
-                  address={client?.adresses}
-                  clientId={client._id}
-                />
+                {/* @ts-ignore */}
+                <PaymentAddress address={client?.adresses} clientId={client._id} />
               </div>
             )}
             {activePage === "Painel" && (
@@ -740,7 +702,6 @@ const ContactDetails = ({ client }) => {
               </div>
             )}
           </div>
-
         </div>
       </div>
       <ModalComponent
@@ -768,6 +729,6 @@ const ContactDetails = ({ client }) => {
       )}
     </div>
   );
-};
+}
 
 export default ContactDetails;

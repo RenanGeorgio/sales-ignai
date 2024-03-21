@@ -1,31 +1,24 @@
-import React, { useEffect, useState } from "react";
-import { DataGrid, GridColDef } from "@mui/x-data-grid";
-import { Alert, Avatar, Button, IconButton, colors } from "@mui/material";
-import {
-  DotsVertical,
-  Edit,
-  MessageDots,
-  PaperClip,
-  Plus,
-  Trash,
-} from "../../Image/icons";
-
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-import {
-  getStatusStyles,
-  priorityStatus,
-  getPriorityStyles,
-} from "helpers/status";
-import ModalComponent from "components/Modal/Modal";
-import { IClient } from "types/interfaces";
-import { baseUrl, postRequest, putRequest } from "services/api/apiService";
-import { useDispatch } from "react-redux";
-import { clientsActions } from "store/clients/clientsSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { DataGrid, GridColDef } from "@mui/x-data-grid";
+import { Alert, Button, IconButton } from "@mui/material";
+import { VerticalDotsIcon, EditIcon, MessageDotsIcon, PaperClipIcon } from "@icons";
+import { getStatusStyles, priorityStatus, getPriorityStyles } from "@helpers/status";
+import ModalComponent from "@components/Modal/Modal";
+import { baseUrl, postRequest, putRequest } from "@services/api/apiService";
+import { clientsActions } from "@store/clients/clientsSlice";
 import ClientForm from "../FormFields/Client";
-import ModalForm from "components/Forms/Modal/ModalForm";
+import ModalForm from "@components/Forms/Modal/ModalForm";
+import { IClient } from "@interfaces";
 
-const ContatoCell = ({ name, email, tel }) => {
+interface ContatoCellProps {
+  name: string;
+  email: string;
+  tel: string;
+};
+
+const ContatoCell = ({ name, email, tel }: ContatoCellProps) => {
   return (
     <>
       <div style={{ display: "flex", flexDirection: "column" }}>
@@ -36,64 +29,67 @@ const ContatoCell = ({ name, email, tel }) => {
       </div>
     </>
   );
-};
+}
 
 export default function ContactComponent() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [checkboxSelection, setCheckboxSelection] = useState(true);
 
   const clientsSelector = useSelector((state: any) => state.clients);
   const [clients, setClients] = useState<IClient[]>(clientsSelector);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const [openModal, setOpenModal] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
-  const [error, setError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [modalMode, setModalMode] = useState({
-    mode: "add",
-    title: "Adicionar Cliente",
-  });
+  const [openModal, setOpenModal] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string>("");
+  const [error, setError] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [modalMode, setModalMode] = useState<any>({ mode: "add", title: "Adicionar Cliente" });
 
+  // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
   const [selectedItem, setSelectedItem] = useState<IClient | null>(null);
-
-  useEffect(() => {
-    setClients(clientsSelector);
-  }, [clientsSelector]);
 
   const handleAdd = async (client: IClient) => {
     setIsLoading(true);
+
     const response = await postRequest(`${baseUrl}/client`, client);
+
     if (response.error) {
       requestError(response.message);
     } else {
       dispatch(clientsActions.addClient(response));
       setOpenModal(false);
     }
+
     setIsLoading(false);
   };
 
   const handleUpdate = async (client: IClient) => {
-    const response = await putRequest(
-      `${baseUrl}/client/${client._id}`,
-      client
-    );
+    const response = await putRequest(`${baseUrl}/client/${client._id}`, client);
+
     if (response.error) {
       requestError(response.message);
     } else {
       dispatch(clientsActions.updateClient(response));
       setOpenModal(false);
     }
+
     setIsLoading(false);
   };
 
   const requestError = (error: string) => {
     setError(true);
     setErrorMessage(error);
+
     setTimeout(() => {
       setError(false);
     }, 3000);
   };
+
+  useEffect(() => {
+    setClients(clientsSelector);
+  }, [clientsSelector]);
 
   const columns: GridColDef[] = [
     {
@@ -108,7 +104,7 @@ export default function ContactComponent() {
             <ContatoCell name={row?.name} email={row?.email} tel={row?.tel} />
           </div>
         );
-      },
+      }
     },
     {
       field: "priority",
@@ -130,10 +126,11 @@ export default function ContactComponent() {
               textAlign: "center",
             }}
           >
+            {/* @ts-ignore */}
             {priorityStatus[params.value]}
           </div>
         );
-      },
+      }
     },
     {
       field: "sector",
@@ -152,19 +149,18 @@ export default function ContactComponent() {
         return (
           <div>
             <IconButton size="small" aria-label="upload document">
-              <PaperClip />{" "}
+              <PaperClipIcon />{" "}
             </IconButton>
             {params.value}
             <IconButton size="small">
               {" "}
-              <MessageDots />
+              <MessageDotsIcon />
             </IconButton>
             {params.value}
           </div>
         );
-      },
+      }
     },
-
     {
       field: "status",
       headerName: "Status",
@@ -175,7 +171,6 @@ export default function ContactComponent() {
         <div
           style={{
             color: getStatusStyles(params.value).color,
-            // backgroundColor: getStatusStyles(params.value)
             border: "1px solid",
             padding: "2px",
             borderRadius: "5px",
@@ -203,15 +198,15 @@ export default function ContactComponent() {
                 setOpenModal(true);
               }}
             >
-              <Edit />
+              <EditIcon />
             </IconButton>
             <IconButton>
-              <DotsVertical className={undefined} />
+              <VerticalDotsIcon className={undefined} />
             </IconButton>
           </div>
         );
-      },
-    },
+      }
+    }
   ];
 
   return (
@@ -256,7 +251,6 @@ export default function ContactComponent() {
           Filtro de busca
         </div>
       </div>
-
       <div
         style={{
           justifyContent: "space-between",
@@ -396,7 +390,6 @@ export default function ContactComponent() {
           </div>
         </div>
       </div>
-
       <div
         style={{
           display: "flex",
@@ -422,7 +415,6 @@ export default function ContactComponent() {
             <option>40</option>
           </select>
         </div>
-
         <div
           style={{
             display: "flex",
@@ -462,7 +454,6 @@ export default function ContactComponent() {
               display: "flex",
             }}
           />
-
           <div>
             <Button
               style={{
@@ -476,9 +467,7 @@ export default function ContactComponent() {
                 setOpenModal(true);
               }}
             >
-              <div
-                style={{ display: "inline-flex", alignItems: "center", gap: 5 }}
-              >
+              <div style={{ display: "inline-flex", alignItems: "center", gap: 5 }}>
                 <div>+</div>
                 <div>Adicionar</div>
               </div>
@@ -486,7 +475,6 @@ export default function ContactComponent() {
           </div>
         </div>
       </div>
-
       <div style={{ height: 470, width: "100%", minWidth: 400 }}>
         <DataGrid
           rows={clients}
@@ -495,12 +483,12 @@ export default function ContactComponent() {
           initialState={{
             pagination: {
               paginationModel: { page: 0, pageSize: 7 },
-            },
+            }
           }}
           pageSizeOptions={[7]}
           disableRowSelectionOnClick
-          // isCellEditable={(params) => params.row.Contato % 2 === 0}
-          onCellDoubleClick={(params, event) => {
+          // @ts-ignore
+          onCellDoubleClick={(params: any, _event: Event) => {
             navigate(`/contact/details`, { state: { id: params.id } });
           }}
           sx={{

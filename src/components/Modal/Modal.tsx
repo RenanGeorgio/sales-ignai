@@ -4,8 +4,15 @@ import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import Typography from "@mui/material/Typography";
 
+interface Props {
+  open: boolean;
+  onClose: () => void;
+  title: string; 
+  children: React.ReactNode;
+};
+
 const style = {
-  position: "absolute" as "absolute",
+  position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
@@ -19,7 +26,7 @@ const style = {
 };
 
 
-const ModalComponent = ({ open, onClose, title, children }) => {
+const ModalComponent = ({ open, onClose, title, children }: Props) => {
   return (
     <div>
       <Modal
@@ -49,6 +56,6 @@ const ModalComponent = ({ open, onClose, title, children }) => {
       </Modal>
     </div>
   );
-};
+}
 
 export default ModalComponent;

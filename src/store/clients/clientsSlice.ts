@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { IClient } from "types/interfaces";
+import { IClient } from "@interfaces";
 
 const initialState: IClient[] = []; // Defina o tipo do estado inicial aqui
 
@@ -22,9 +22,7 @@ const { reducer, actions } = createSlice({
     removeClient(state, action) {
       return state.filter((client) => client._id !== action.payload);
     },
-
-    // contatos
-    updateContactList(state, action) {
+    updateContactList(state, action) { // contatos
       const { id, contacts } = action.payload;
       console.log(contacts)
       state.map((client) => {
@@ -36,7 +34,6 @@ const { reducer, actions } = createSlice({
         }
       });
     },
-
     updateAddressList(state, action) {
       const { id, address } = action.payload;
       state.map((client) => {
@@ -48,7 +45,6 @@ const { reducer, actions } = createSlice({
         }
       });
     },
-
     removeAddress(state, action) {
       const { id, addressId } = action.payload;
       state.map((client) => {
@@ -60,7 +56,6 @@ const { reducer, actions } = createSlice({
         }
       });
     },
-
     removeContact(state, action) {
       const { id, contactId } = action.payload;
       state.map((client) => {

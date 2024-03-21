@@ -1,91 +1,85 @@
-import { useEffect, useState } from "react";
+import { Key, useState } from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { IconButton, Button, Badge, Checkbox, Alert } from "@mui/material";
+import { IconButton, Button, Checkbox, Alert } from "@mui/material";
 import { VerticalDotsIcon, PencilIcon, TrashIcon } from "@icons";
 import ModalComponent from "@components/Modal/Modal";
-import {
-  baseUrl,
-  deleteRequest,
-  postRequest,
-  putRequest,
-} from "@services/api/apiService";
+import { baseUrl, deleteRequest, postRequest, putRequest } from "@services/api/apiService";
 import ModalForm from "@components/Forms/Modal/ModalForm";
 import PaymentAddressFormFields from "@components/Contact/FormFields/PaymentAddress";
 import { clientsActions } from "@store/store";
-import { IAddress } from "types/interfaces";
+import { IAddress } from "@interfaces";
 import "./payment.css";
 
-export default function PaymentAddress({ address, clientId }) {
-  const dispatch = useDispatch();
-  const [openModal, setOpenModal] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
-  const [error, setError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [modalMode, setModalMode] = useState({
-    mode: null,
-    title: null,
-  });
+interface Props {
+  address?: IAddress[];
+  clientId?: number | string;
+};
 
-  const [selectedItem, setSelectedItem] = useState({} as IAddress);
+export default function PaymentAddress({ address, clientId }: Props) {
+  const dispatch = useDispatch();
+
+  const [openModal, setOpenModal] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string>("");
+  const [error, setError] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [modalMode, setModalMode] = useState<any>({ mode: null, title: null });
+  const [selectedItem, setSelectedItem] = useState<IAddress>({} as IAddress);
 
   const handleAdd = async (address: IAddress) => {
     setIsLoading(true);
-    const response = await postRequest(
-      `${baseUrl}/client/${clientId}/address`,
-      address
-    );
+
+    const response = await postRequest(`${baseUrl}/client/${clientId}/address`, address);
+
     if (response.error) {
       requestError(response.message);
     } else {
       updateClientAdresses(response);
       setOpenModal(false);
     }
+
     setIsLoading(false);
   };
 
   const handleUpdate = async (address: IAddress) => {
-    const response = await putRequest(
-      `${baseUrl}/client/${clientId}/address/${address._id}`,
-      address
-    );
+    const response = await putRequest(`${baseUrl}/client/${clientId}/address/${address._id}`, address);
+
     if (response.error) {
       requestError(response.message);
     } else {
       updateClientAdresses(response);
       setOpenModal(false);
     }
+
     setIsLoading(false);
   };
 
   const handleRemove = async (addressId: string) => {
-    const response = await deleteRequest(
-      `${baseUrl}/client/${clientId}/address/${addressId}`
-    );
+    const response = await deleteRequest(`${baseUrl}/client/${clientId}/address/${addressId}`);
+
     if (response.error) {
       requestError(response.message);
     } else {
       dispatch(clientsActions.removeAddress({ id: clientId, addressId }));
     }
+
     setIsLoading(false);
   };
 
   const requestError = (error: string) => {
     setError(true);
     setErrorMessage(error);
+
     setTimeout(() => {
       setError(false);
     }, 3000);
   };
 
   const updateClientAdresses = (address: IAddress[]) => {
-    dispatch(
-      clientsActions.updateAddressList({
-        id: clientId,
-        address: address,
-      })
-    );
-  };
+    dispatch(clientsActions?.updateAddressList({
+      id: clientId,
+      address: address,
+    })
+  )};
 
   return (
     <>
@@ -126,7 +120,8 @@ export default function PaymentAddress({ address, clientId }) {
               </div>
               <div className="card-body-top">
                 <div className="body-content">
-                  {address?.map((addr: IAddress, key) => (
+                  {/* @ts-ignore */}
+                  {address?.map((addr: IAddress, key: Key) => (
                     <div className="accordion-collapse" key={key}>
                       <div className="text-6">
                         <div className="row-4">
@@ -148,13 +143,10 @@ export default function PaymentAddress({ address, clientId }) {
                       <div className="actions">
                         <IconButton
                           className="button-icon-instance"
-                          onClick={(e) => {
+                          onClick={(e: any) => {
                             e.stopPropagation();
                             setSelectedItem(addr);
-                            setModalMode({
-                              mode: "edit",
-                              title: "Editar contato",
-                            });
+                            setModalMode({ mode: "edit", title: "Editar contato" });
                             setOpenModal(true);
                           }}
                         >
@@ -163,6 +155,7 @@ export default function PaymentAddress({ address, clientId }) {
                         <IconButton
                           onClick={(e) => {
                             e.stopPropagation();
+                            // @ts-ignore
                             handleRemove(addr._id);
                           }}
                         >

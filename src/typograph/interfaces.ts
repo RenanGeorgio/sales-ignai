@@ -27,7 +27,7 @@ export interface IAddress {
   client: string;
   name: string;
   street: string;
-  number: Number;
+  number: number;
   district: string;
   city: string;
   state: string;

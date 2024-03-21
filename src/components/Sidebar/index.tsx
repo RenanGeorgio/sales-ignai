@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "@assets/images/image 1.png";
 import useAuth from "@hooks/useAuth";
 import { 
   BookIcon, 
@@ -19,6 +18,8 @@ import {
   SmartHomeIcon, 
   TextWrapIcon
 } from "@icons";
+import SidebarBadge from "@components/Badge/SidebarBadge";
+import logo from "@assets/images/image 1.png";
 import "@styles/sidebar.css";
 
 const Sidebar: React.FC<any> = (): JSX.Element | null => {
@@ -26,13 +27,13 @@ const Sidebar: React.FC<any> = (): JSX.Element | null => {
 
   const [expanded, setExpanded] = useState<boolean>(false);
 
-  const toggleSidebar = () => {
-    setExpanded(!expanded);
-  };
-
   if (!isAuthenticated) {
     return null;
   }
+
+  const toggleSidebar = () => {
+    setExpanded(!expanded);
+  };
   
   return (
     <div className={`sidebar ${expanded ? 'expanded' : ''}`}>

@@ -21,8 +21,10 @@ interface Props {
 };
 
 export const ChatBox: React.FC<any> = ({ toggleAddTicket }: Props): JSX.Element => {
-  const [exibirAddTicket, setExibirAddTicket] = useState(false);
-  const [showAddTicket, setShowAddTicket] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [exibirAddTicket, setExibirAddTicket] = useState<boolean>(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [showAddTicket, setShowAddTicket] = useState<boolean>(false);
 
   const { user } = useAuth();
 
@@ -40,16 +42,16 @@ export const ChatBox: React.FC<any> = ({ toggleAddTicket }: Props): JSX.Element 
         <div className="rightContainer">
           <div className="rightContent">
             <IconButton className="img-4">
-              <Phone />
+              <PhoneIcon />
             </IconButton>
             <IconButton className="img-4">
-              <Video className={undefined} />
+              <VideoIcon className={undefined} />
             </IconButton>
             <IconButton className="img-4">
-              <Search className={undefined} />
+              <SearchIcon className={undefined} />
             </IconButton>
             <IconButton className="img-4">
-              <DotsVertical className={undefined} />
+              <VerticalDotsIcon className={undefined} />
             </IconButton>
           </div>
         </div>

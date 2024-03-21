@@ -18,6 +18,7 @@ const CachingController = () => {
       const leadsRequest = authApi.get("/leads");
       const clientsRequest = authApi.get("/clients");
 
+      // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
       const [user, leads, clients]: any | AxiosError = await Promise.all([
         userRequest,
         leadsRequest,
@@ -36,6 +37,7 @@ const CachingController = () => {
             }
           }
         });
+        
       return { user: user.data, leads: leads.data, clients: clients.data };
     },
     {
@@ -47,6 +49,7 @@ const CachingController = () => {
   useEffect(() => {
     if (data) {
       const { user, leads, clients } = data;
+
       dispatch(userActions.updateUser(user));
       dispatch(leadsActions.updateLeads(leads));
       dispatch(clientsActions.updateClients(clients));

@@ -1,4 +1,5 @@
 import { createContext, useCallback, useEffect, useState } from "react";
+import Cookies from "js-cookie";
 import { io } from "socket.io-client";
 import { baseUrl, postRequest, getRequest } from "../../utils/chatService";
 import useAuth from "@hooks/useAuth";
@@ -54,6 +55,7 @@ export const ChatProvider = ({ children }: any) => {
         token: "Bearer " + Cookies.get("token"),
       }
     });
+    
     setSocket(newSocket);
 
     return () => {

@@ -1,4 +1,4 @@
-import { cloneElement, useEffect, useState } from "react";
+import { FormEvent, cloneElement, useEffect, useState } from "react";
 import "./ModalForm.css";
 
 interface ModalFormProps {
@@ -10,13 +10,12 @@ interface ModalFormProps {
 } 
 
 const ModalForm = ({ children, onSubmit, isLoading, initialValues, mode }: ModalFormProps) => {
+  const [formValues, setFormValues] = useState<any>({});
+  const [disabled, setDisabled] = useState<boolean>(true);
 
+  const onChange = (e: FormEvent<HTMLFormElement>) => {
+    const { name, value, type, checked }: any = e.target;
 
-  const [formValues, setFormValues] = useState({});
-  const [disabled, setDisabled] = useState(true);
-
-  const onChange = (e) => {
-    const { name, value, type, checked } = e.target;
     const newValue = type === "checkbox" ? checked : value;
 
     setFormValues({
@@ -25,10 +24,16 @@ const ModalForm = ({ children, onSubmit, isLoading, initialValues, mode }: Modal
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    // @ts-ignore
     e.preventDefault();
     onSubmit(formValues);
   };
+
+  const newElement = cloneElement(children, {
+    formValues,
+    mode,
+  });
 
   useEffect(() => {
     setDisabled(isLoading);
@@ -39,11 +44,6 @@ const ModalForm = ({ children, onSubmit, isLoading, initialValues, mode }: Modal
       setFormValues(initialValues);
     }
   }, [initialValues, mode]);
-
-  const newElement = cloneElement(children, {
-    formValues,
-    mode,
-  });
 
   return (
     <div className="modal-form">
@@ -59,6 +59,6 @@ const ModalForm = ({ children, onSubmit, isLoading, initialValues, mode }: Modal
       </form>
     </div>
   );
-};
+}
 
 export default ModalForm;
