@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-globals */
 
-import sjcl from 'sjcl';
+import sjcl from "sjcl";
 
 export default () => {
   /**
@@ -15,7 +15,7 @@ export default () => {
 
     postMessage({
       encryptedData: sjcl.encrypt(event.data.password, event.data.data),
-      workerHref: self.location.href
+      workerHref: window.self.location.href
     });
   };
 }

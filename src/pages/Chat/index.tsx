@@ -18,28 +18,23 @@ const Chat: React.FC = () => {
   return (
     <div style={{ overflow: "hidden" }} className="page-content">
       <Navbar />
-      <h1 className="titleChat">Chat</h1>
       <div className="button-container">
         <button
-          className={activePage === "Atendimento" ? "blueButton" : "grayButton"}
+          className={activePage === "Atendimento" ? "blueButtonChat" : "grayButtonChat"}
           onClick={() => handleButtonClick("Atendimento")}
         >
-          <UsersIcon />
           Atendimento
         </button>
         <button
-          className={activePage === "Histórico" ? "blueButton" : "grayButton"}
+          className={activePage === "Histórico" ? "blueButtonChat" : "grayButtonChat"}
           onClick={() => handleButtonClick("Histórico")}
         >
-          {/* <img src={"sino"} alt="Link" /> */}
-          <BellIcon />
           Histórico
         </button>
         <button
-          className={activePage === "Painel" ? "blueButton" : "grayButton"}
+          className={activePage === "Painel" ? "blueButtonChat" : "grayButtonChat"}
           onClick={() => handleButtonClick("Painel")}
         >
-          <TextFileIcon />
           Painel
         </button>
       </div>

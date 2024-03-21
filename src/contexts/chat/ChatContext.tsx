@@ -33,7 +33,7 @@ export const ChatProvider = ({ children }: any) => {
       return;
     }
 
-    const response = await postRequest(`${baseUrl}/message`, {
+    const response = await postRequest(`${baseUrl}/api/chat/message`, {
       text: textMessage,
       senderId: sender.companyId,
       chatId: currentChatId,
@@ -49,7 +49,11 @@ export const ChatProvider = ({ children }: any) => {
   }, []);
 
   useEffect(() => {
-    const newSocket = io(process.env.REACT_APP_SERVER_API as string);
+    const newSocket = io(process.env.REACT_APP_SERVER_API as string, {
+      auth: {
+        token: "Bearer " + Cookies.get("token"),
+      }
+    });
     setSocket(newSocket);
 
     return () => {
@@ -125,7 +129,7 @@ export const ChatProvider = ({ children }: any) => {
     }
     
     const getClients = async () => {
-      const response = await getRequest(`${baseUrl}/clients`);
+      const response = await getRequest(`${baseUrl}/api/chat/clients`);
 
       if (response.error) {
         return setUserChatsError(response);
@@ -159,7 +163,7 @@ export const ChatProvider = ({ children }: any) => {
       if (user?.companyId) {
         setIsUserChatsLoading(true);
 
-        const response = await getRequest(`${baseUrl}/chat/${user.companyId}`);
+        const response = await getRequest(`${baseUrl}/api/chat/${user.companyId}`);
 
         if (response.error) {
           return setUserChatsError(response);
@@ -179,7 +183,7 @@ export const ChatProvider = ({ children }: any) => {
       setMessageError(null);
 
       if (currentChat) {
-        const response = await getRequest(`${baseUrl}/message/${currentChat._id}`);
+        const response = await getRequest(`${baseUrl}/api/chat/message/${currentChat._id}`);
 
         setIsMessagesLoading(false);
 

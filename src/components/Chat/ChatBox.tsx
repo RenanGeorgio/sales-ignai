@@ -20,7 +20,7 @@ interface Props {
   toggleAddTicket: boolean;
 };
 
-export const ChatBox = ({ toggleAddTicket }: Props): JSX.Element => {
+export const ChatBox: React.FC<any> = ({ toggleAddTicket }: Props): JSX.Element => {
   const [exibirAddTicket, setExibirAddTicket] = useState(false);
   const [showAddTicket, setShowAddTicket] = useState(false);
 
@@ -32,9 +32,28 @@ export const ChatBox = ({ toggleAddTicket }: Props): JSX.Element => {
 
   if (!recipientUser) {
     return (
-      <p>
-        Nenhuma conversa selecionada.
-      </p>
+      <div className="headerBoxChat">
+        <div className="initial-info">
+          <div className="name-time">
+          </div>
+        </div>
+        <div className="rightContainer">
+          <div className="rightContent">
+            <IconButton className="img-4">
+              <Phone />
+            </IconButton>
+            <IconButton className="img-4">
+              <Video className={undefined} />
+            </IconButton>
+            <IconButton className="img-4">
+              <Search className={undefined} />
+            </IconButton>
+            <IconButton className="img-4">
+              <DotsVertical className={undefined} />
+            </IconButton>
+          </div>
+        </div>
+      </div>
     );
   }
 
@@ -99,7 +118,7 @@ export const ChatBox = ({ toggleAddTicket }: Props): JSX.Element => {
   
   return (
     <div className="containerchat">
-      <div className="header">
+      <div className="headerBoxChat">
         <div className="initial-info">
           <img
             className="img-avatar"
@@ -108,9 +127,9 @@ export const ChatBox = ({ toggleAddTicket }: Props): JSX.Element => {
           />
           <div className="name-time">
             <div className="text-wrapper-4">{`${recipientUser?.name} ${recipientUser?.lastName}`}</div>
-            <div className="text-wrapper-5">1 Minute</div>
+            <div className="text-wrapper-box-header">1 Minute</div>
           </div>
-          { getChatIcon() }
+          {getChatIcon()}
           <div className="name-work">
             <div>Fazenda Minas Pro</div>
           </div>
@@ -163,4 +182,4 @@ export const ChatBox = ({ toggleAddTicket }: Props): JSX.Element => {
         />
     </div>
   );
-};
+}

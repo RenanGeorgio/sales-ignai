@@ -8,7 +8,6 @@ export const useFetchRecipient = (chat: any, user: Consumer) => {
 
   // verificar se está renderizando multiplas vezes
   const recipientId = chat?.members?.find((id: string) => id !== user?.companyId);
-  console.log(recipientId);
  
   useEffect(() => {
     const fetchRecipient = async () => {
@@ -17,7 +16,7 @@ export const useFetchRecipient = (chat: any, user: Consumer) => {
       }
       
       try {
-        const response = await getRequest(`${baseUrl}/client/${recipientId}`);
+        const response = await getRequest(`${baseUrl}/api/chat/client/${recipientId}`);
 
         if(response.error) {
           return setError(response);
