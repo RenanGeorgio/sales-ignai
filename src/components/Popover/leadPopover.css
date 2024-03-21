@@ -22,6 +22,14 @@
 
 }
 
+.lead-popover-container > button{
+  color: rgba(102, 102, 102, 0.876);
+  font-weight: normal;
+}
+
+.lead-popover-container > button:hover{
+  color: rgba(37, 37, 37, 0.876);
+}
 
 .popLead {
   position: absolute;
