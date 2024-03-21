@@ -2,20 +2,16 @@
   align-items: flex-start;
   border: 1px rgba(145, 145, 145, 0.261) solid;
   border-radius: 3px 0px 0px 6px;
-  /* border-right-style: solid; */
   border-right-width: 1px;
   display: flex;
   flex-direction: column;
-  /* position: relative; */
   width: auto;
   height: auto;
   margin-left: 20%;
   height: auto;
-  /* overflow-y: scroll; */
 }
 
 .left-menu .header-left {
-
   display: inline-flex;
   padding: 10px 5px 10px 1px;
   align-items: center;
@@ -25,8 +21,6 @@
   border-bottom: 1px rgba(100, 100, 100, 0.048) solid;
   justify-content: space-around;
   height: 23px;
-  /* box-shadow:  0 -5px 5px -5px #333; */
-  /* border: 1px solid rgba(117, 117, 117, 0.281); */
 }
 
 .left-menu .status-indicator-instance {
@@ -39,7 +33,6 @@
 
 .left-menu .instance {
   border-radius: 20px !important;
-  /* flex: 1 !important; */
   flex-grow: 1 0 !important;
   width: 80% !important;
   height: 100%;
@@ -69,7 +62,6 @@
   height: 300px;
   overflow-y: hidden !important;
   overflow-x: hidden !important;
-  /* border: 1px solid red */
 }
 
 .left-menu .heading {
@@ -85,8 +77,6 @@
 
 .left-menu .adicionar-ticket {
   color: #c4c2c2;
-
-  /* background-color: #8E83FB; */
   margin-top: -1px;
   position: relative;
   white-space: nowrap;
@@ -105,7 +95,6 @@
   padding: 10px;
   border: none;
   border-radius: none;
-  /* margin-right: 10px; */
   cursor: pointer;
   align-items: center;
   width: 100%;
@@ -124,7 +113,6 @@
   padding: 10px;
   border: none;
   border-radius: 0px;
-  /* margin-right: 10px; */
   cursor: pointer;
   align-items: center;
   width: 100%;
@@ -142,7 +130,6 @@
   position: relative !important;
   width: 22px !important;
   color: #FFF !important;
-
 }
 
 .left-menu .chevron-down {
@@ -159,7 +146,6 @@
   flex: 0 0 auto;
   gap: 192px;
   padding: 10px 16px;
-  /* position: fixed; */
   width: 100%;
   border-bottom: #33333328 1px solid;
 }
@@ -174,23 +160,18 @@
 
 .div-content::-webkit-scrollbar {
   width: 6px;
-  /* width of the entire scrollbar */
   border-radius: 20px;
 }
 
 .div-content::-webkit-scrollbar-track {
   background: rgb(192, 192, 192);
   width: 8px;
-  /* color of the tracking area */
   border-radius: 20px;
 }
 
 .div-content::-webkit-scrollbar-thumb {
   background-color: rgb(109, 109, 109);
-  /* color of the scroll thumb */
   border-radius: 20px;
-  /* roundness of the scroll thumb */
-
 }
 
 .left-menu .text-wrapper-3 {
@@ -228,8 +209,6 @@
   width: 95%;
   cursor: pointer;
 }
-
-
 
 .left-menu .list-icon-chat {
   display: block;
@@ -477,8 +456,6 @@
   width: 30px;
 }
 
-
-
 .messageBubble {
   background-color: #8f83fb;
   padding: 20px;
@@ -532,8 +509,6 @@
 
 .messageContent {
   color: #FFFFFF;
-  /* font-size: 1.2em;
-  margin-top: 10px; */
   position: absolute;
   right: 5px;
 }
@@ -545,24 +520,24 @@
   width: 22px;
 }
 
-.imageName{
+.imageName {
   display:flex;
-   align-items:center;
-   gap:10px
+  align-items:center;
+  gap:10px
 }
 
-.online{
-background-color: rgb(0, 255, 0);
-width: 10px;
-height: 10px;
-border-radius: 50%;
-border: 1px solid white;
-position: absolute;
-bottom: 18px;
-left: 30px;
+.online {
+  background-color: rgb(0, 255, 0);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid white;
+  position: absolute;
+  bottom: 18px;
+  left: 30px;
 }
 
-.offline{
+.offline {
   background-color: grey;
   width: 10px;
   height: 10px;

@@ -20,12 +20,7 @@
 .sidebar img {
   width: 22px;
   height: 18px;
-  /* margin-bottom: 15px; */
   margin-right: 1px;
-}
-
-.sidebar span {
-  /* margin-left: 10px; */
 }
 
 .sidebar img:hover {
@@ -34,17 +29,10 @@
 
 .sidebar.expanded {
   width: 235px;
-  /* align-items: flex-start;  */
   display: flex;
-  /* justify-content: center; */
-  /* flex-direction: column; */
-  /* overflow-y: scroll; */
 }
 
 .sidebar.expanded .menu-item {
-  /* margin-left: -15px;  */
-  /* align-items: baseline; */
-  /* justify-content: space-between; */
   display: flex;
   align-items: center;
   margin-right: 25px;
@@ -52,12 +40,8 @@
   padding-inline: 5px;
   color: #4b465c;
 }
-.expanded img {
-  /* display: flex; */
-  /* align-items: baseline; */
-  /* position: relative; */
-}
-.sidebar div img {
+
+.sidebar div img{
   margin-bottom: 10px;
 }
 
@@ -65,29 +49,17 @@
   margin-left: 90px;
 }
 
-.menu-item {
-  /* display: flex;
-  align-items: center;
-  margin-right: 25px;
-  width: 100%;
-  padding-inline: 15px; */
-  /* height: 20px; */
-}
-
 .link {
   text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* gap: 25px; */
   height: 25px;
   margin-bottom: 5px;
 }
 
 .menu-item img {
-  /* width: 22px; */
   height: 22px;
-  /* margin-right: 10px; */
 }
 
 .hide-text {
@@ -100,7 +72,7 @@
   padding-left: 7px;
   padding-right: 10px;
   text-align: center;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .section1 {
@@ -109,25 +81,29 @@
   border-bottom: 1px solid rgba(183, 183, 183, 0.585);
   color: #4b465c;
   width: 98%;
-  /* margin-bottom: 10px; */
   gap: 15px;
   margin-top: -1px;
   padding-bottom: 15px;
   padding-top: 1px;
 }
+
 .sectionContainer {
   margin-top: 15px;
 }
+
 .sectionContainer .link {
   margin: 1px 0px 5px 0px;
 }
+
 .expanded .sectionContainer .link {
   margin: auto;
 }
+
 .expanded .sectionContainer {
   margin-top: -10px;
   gap: inherit;
 }
+
 .expanded .section1 {
   gap: inherit;
   margin-bottom: inherit;
@@ -148,7 +124,7 @@
 
   .sidebar.expanded {
     width: 100px;
-    align-items: flex-start;
+    align-items: flex-start; 
   }
 
   .sidebar img {

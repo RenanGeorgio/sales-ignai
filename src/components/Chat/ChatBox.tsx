@@ -1,35 +1,36 @@
-import React, { useState } from "react";
-import { Phone, Search, Video, DotsVertical, FaceBookIcon, InstagramIcon, TelegramIcon, WhatsAppIcon } from "../Image/icons";
-import web from "../Image/web.svg";
-import Avatar2 from "../Image/Avatar2.png"
-import ListarMensagens from "./MessegerPayload";
-import TextEnter from "./TextEnter";
-import AddTicket from "./AddTicket/AddTicket";
+import { useState } from "react";
 import { IconButton } from "@mui/material";
-import useAuth from "../../hooks/useAuth";
-import useChat from "../../hooks/useChat";
-import { useFetchRecipient } from "../../hooks/useFetchRecipient";
-import "./chat.css";
-
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
-import 'dayjs/locale/pt-br'
+import "dayjs/locale/pt-br";
+import { PhoneIcon, SearchIcon, VideoIcon, VerticalDotsIcon, FacebookIcon, InstagramIcon, TelegramIcon, WhatsappIcon } from "@icons";
+import web from "@assets/images/web.svg";
+import Avatar2 from "@assets/images/Avatar2.png";
+import TextEnter from "./TextEnter";
+import AddTicket from "./AddTicket/AddTicket";
+import useAuth from "@hooks/useAuth";
+import useChat from "@hooks/useChat";
+import { useFetchRecipient } from "@hooks/useFetchRecipient";
+import "./chat.css";
 
 dayjs.extend(relativeTime)
 dayjs.locale('pt-br')
 
-export const ChatBox = ({ toggleAddTicket }): React.JSX.Element => {
+interface Props {
+  toggleAddTicket: boolean;
+};
+
+export const ChatBox: React.FC<any> = ({ toggleAddTicket }: Props): JSX.Element => {
   const [exibirAddTicket, setExibirAddTicket] = useState(false);
   const [showAddTicket, setShowAddTicket] = useState(false);
 
   const { user } = useAuth();
 
-  const { currentChat, isMessagesLoading, messages, sendTextMessage } =
-    useChat();
+  const { currentChat, isMessagesLoading, messages, sendTextMessage } = useChat();
 
   const { recipientUser } = useFetchRecipient(currentChat, user);
 
-  if (!recipientUser)
+  if (!recipientUser) {
     return (
       <div className="headerBoxChat">
         <div className="initial-info">
@@ -53,10 +54,10 @@ export const ChatBox = ({ toggleAddTicket }): React.JSX.Element => {
           </div>
         </div>
       </div>
-    )
+    );
+  }
 
-
-  const handleSendMessage = (textMessage, setTextMessage) => {
+  const handleSendMessage = (textMessage: string, setTextMessage: () => void) => {
     sendTextMessage(textMessage, user, currentChat._id, setTextMessage);
   };
 
@@ -70,22 +71,30 @@ export const ChatBox = ({ toggleAddTicket }): React.JSX.Element => {
     console.log("Arquivo recebido em Treatment:", file);
   };
 
-  if (isMessagesLoading) return <p>Carregando mensagens...</p>;
+  if (isMessagesLoading) {
+    return (
+      <p>
+        Carregando mensagens...
+      </p>
+    );
+  }
+
+  console.log(dayjs(messages[0]?.createdAt).locale('pt-BR').format())
 
   const origin = currentChat?.origin.platform;
 
   const getChatIcon = () => {
     switch (origin) {
       case "facebook":
-        return <FaceBookIcon />;
+        return <FacebookIcon />;
       case "instagram":
         return <InstagramIcon />;
       case "telegram":
         return <TelegramIcon />;
       case "web":
-        return <img src={web} style={{ width: '30px', height: '30px' }} />
+        return <img src={web} style={{width: '30px', height:'30px'}}/>
       case "whatsapp":
-        return <WhatsAppIcon />;
+        return <WhatsappIcon />;
       default:
         return "https://c.animaapp.com/5uY2Jqwr/img/whatsapp-33-1-1@2x.png";
     }
@@ -98,7 +107,7 @@ export const ChatBox = ({ toggleAddTicket }): React.JSX.Element => {
       src="https://c.animaapp.com/5uY2Jqwr/img/avatar-14@2x.png"
     />
   );
-
+  
   const getMessageAvatar = () => (
     <img
       className="img-avatar-text"
@@ -106,10 +115,9 @@ export const ChatBox = ({ toggleAddTicket }): React.JSX.Element => {
       src={Avatar2}
     />
   );
-
+  
   return (
     <div className="containerchat">
-
       <div className="headerBoxChat">
         <div className="initial-info">
           <img
@@ -129,28 +137,28 @@ export const ChatBox = ({ toggleAddTicket }): React.JSX.Element => {
         <div className="rightContainer">
           <div className="rightContent">
             <IconButton className="img-4">
-              <Phone />
+              <PhoneIcon />
             </IconButton>
             <IconButton className="img-4">
-              <Video className={undefined} />
+              <VideoIcon className={undefined} />
             </IconButton>
             <IconButton className="img-4">
-              <Search className={undefined} />
+              <SearchIcon className={undefined} />
             </IconButton>
             <IconButton className="img-4">
-              <DotsVertical className={undefined} />
+              <VerticalDotsIcon className={undefined} />
             </IconButton>
           </div>
         </div>
       </div>
-
       <div className="chat">
         {messages?.map((message: any, index: number) => (
           <div key={index} className={`message-wrapper`}>
             {message?.senderId === user?.companyId ? getTextMessageAvatar() : getMessageAvatar()}
             <div
-              className={`${message?.senderId === user?.companyId ? "text" : "message"
-                }`}
+              className={`${
+                message?.senderId === user?.companyId ? "text" : "message"
+              }`}
             >
               <p>{message?.text}</p>
             </div>
@@ -159,20 +167,19 @@ export const ChatBox = ({ toggleAddTicket }): React.JSX.Element => {
             </div>
           </div>
         ))}
-
       </div>
       {toggleAddTicket ? (
-        <AddTicket
-          onUploadFile={handleFileUpload}
-          onSetShow={setShowAddTicket}
+          <AddTicket
+            onUploadFile={handleFileUpload}
+            onSetShow={setShowAddTicket}
+          />
+        ) : (
+          ""
+        )}
+        <TextEnter
+          onUploadFilePhoto={handleFileUploadPhoto}
+          onSendMessage={handleSendMessage}
         />
-      ) : (
-        ""
-      )}
-      <TextEnter
-        onUploadFilePhoto={handleFileUploadPhoto}
-        onSendMessage={handleSendMessage}
-      />
     </div>
   );
-};
+}
