@@ -1,12 +1,14 @@
-import React from 'react';
-import './addticket.css'; 
-import { DotsVertical, Pencil, Trash, Upload } from '../../Image/icons';
-import { IconButton } from '@mui/material';
+import { IconButton } from "@mui/material";
+import { VerticalDotsIcon, PencilIcon, TrashIcon, UploadIcon } from "@icons";
+import "./addticket.css";
 
+interface Props {
+  onUploadFile: (file: any) => void;
+  onSetShow: (key: boolean) => void;
+};
 
-export default function AddTicket({onUploadFile, onSetShow}) {
-
-  const handleFileUpload = (file) => {
+export default function AddTicket({ onUploadFile, onSetShow }: Props) {
+  const handleFileUpload = (file: any) => {
     // Aqui você pode fazer algo com o arquivo, como enviar para o servidor
     console.log('Arquivo enviado:', file);
 
@@ -15,31 +17,26 @@ export default function AddTicket({onUploadFile, onSetShow}) {
       onUploadFile(file);
     }
   };
+
   return (
     <div className='main-container'>
-
       <div className='box'>
-
         <div className='section'>
           <div className='section-3'>
             <span className='text-2add'>Atendimento via:</span> 
           </div>
         </div>
-
         <div className='section'>
           <div className='section-3'>
             <span className='text-2add'>Cliente:</span>
           </div>
         </div>
-
         <div className='section'>
           <div className='section-3'>
             <span className='text-2add'>Responsável:</span>
           </div>
         </div>
-
       </div>
-
       <div className='group-2'>
         {/* primeiro select  */}
         <div className='group-3'>
@@ -49,7 +46,6 @@ export default function AddTicket({onUploadFile, onSetShow}) {
             </select>
           </div>
         </div>
-
         {/* segundo select  */}
         <div className='group-3'>
           <div className='wrapper-3'>
@@ -58,7 +54,6 @@ export default function AddTicket({onUploadFile, onSetShow}) {
             </select>
           </div>
         </div>
-
         {/* terceiro select  */}
         <div className='group-3'>
           <div className='wrapper-4'>
@@ -68,7 +63,6 @@ export default function AddTicket({onUploadFile, onSetShow}) {
           </div>
         </div>
       </div>
-
       <div className='wrapper-5'>
         <div className='wrapper-6'>
           {/* <div className='img-3' /> */}
@@ -91,21 +85,21 @@ export default function AddTicket({onUploadFile, onSetShow}) {
             <div className='wrapper-9'>
               <div className='section-7'>           
                   <IconButton className='pic-2'>
-                  <Pencil className={undefined} />
+                  <PencilIcon className={undefined} />
                   </IconButton>           
               </div>
             </div>
             <div className='group-7'>
               <div className='section-8'>
                 <IconButton className='img-4'>
-                  <Trash className={undefined}/>
+                  <TrashIcon className={undefined}/>
                   </IconButton>
               </div>
             </div>
             <div className='wrapper-a'>
               <div className='group-8'>
                 <IconButton className='img-5'>
-                  <DotsVertical className={undefined}/>
+                  <VerticalDotsIcon className={undefined}/>
                   </IconButton>
               </div>
             </div>
@@ -123,21 +117,21 @@ export default function AddTicket({onUploadFile, onSetShow}) {
             <div className='wrapper-9'>
               <div className='section-7'>
                 <IconButton className='pic-2'>
-                  <Pencil className='pic2' />
+                  <PencilIcon className='pic2' />
                   </IconButton>
               </div>
             </div>
               <div className='group-7'>
               <div className='section-8'>
                 <IconButton className='img-4'>
-                  <Trash className={undefined}/>
+                  <TrashIcon className={undefined}/>
                   </IconButton>
               </div>
             </div>
               <div className='wrapper-a'>
               <div className='group-8'>
                 <IconButton className='img-5'>
-                  <DotsVertical className={undefined}/>
+                  <VerticalDotsIcon className={undefined}/>
                   </IconButton>
               </div>
             </div>
@@ -154,24 +148,18 @@ export default function AddTicket({onUploadFile, onSetShow}) {
             <div className='card-heading'>
               <div className='form'>
                 <div className='container-image-upload'>
-                  <div className='image-upload'><Upload className={undefined}/></div>
+                  <div className='image-upload'><UploadIcon className={undefined}/></div>
                 </div>
-
                 <span className='text-10'>Jogue aqui seu arquivo</span>
                 <span className='text-11'>ou</span>
-
                 <div className='buttonContainerInput'>            
-                <input type="file"
-                className='inputs'
-                 onClick={handleFileUpload} 
-                 />
-                <span className='attachFileSpan'>Buscar Arquivo</span>
+                  <input type="file" className='inputs' onClick={handleFileUpload} />
+                  <span className='attachFileSpan'>Buscar Arquivo</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-       
       </div>
     </div>
   );

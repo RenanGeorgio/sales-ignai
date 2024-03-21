@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Navbar from '../../components/Navbar';
-import { FileTextIcon, UsersIcon, BellIcon } from '../../components/Image/icons';
-import '../../styles/forms.css'; 
+import { TextFileIcon, UsersIcon, BellIcon } from '@icons';
 import MainForm from '../../components/Forms/MainForm';
 import FormSelector from '../../components/Forms/FormSelector';
 import Footer from '../../components/Forms/Footer';
 import Dashboard from '../../components/Forms/Dashboard';
+import '../../styles/forms.css'; 
 
 const Forms: React.FC = () => {
   const [activePage, setActivePage] = useState('Formulário'); 
@@ -40,7 +40,7 @@ const Forms: React.FC = () => {
           className={activePage === 'Painel' ? 'blueButton' : 'grayButton'}
           onClick={() => handleButtonClick('Painel')}
         >
-          <FileTextIcon/>
+          <TextFileIcon/>
           <span>Painel</span>
         </button>
       </div>

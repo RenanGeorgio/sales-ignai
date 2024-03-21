@@ -1,10 +1,8 @@
-// LeadModal.tsx
-import React, { useEffect, useRef, useState } from "react";
+import { useState } from "react";
+import { EditIcon, TrendingUpIcon  } from "@icons";
+import avatar from "@assets/images/Avatar2.png";
+import avatar3 from "@assets/images/Avatar3.png";
 import "./leadmodal.css";
-import { Edit, MessageCircleIcon, TrendingUpIcon  } from "../Image/icons";
-import avatar from "../../components/Image/Avatar2.png";
-import avatar3 from "../../components/Image/Avatar3.png";
-
 
 interface LeadModalProps {
   closeModal: () => void;
@@ -53,7 +51,7 @@ const LeadModal: React.FC<LeadModalProps> = ({ closeModal, handleClick, data }) 
               className={activeTab === "Editar" ? "active" : ""}
               onClick={() => setActiveTab("Editar")}
             >
-              <Edit />
+              <EditIcon />
               Editar
             </button>
             <button
@@ -138,6 +136,6 @@ const LeadModal: React.FC<LeadModalProps> = ({ closeModal, handleClick, data }) 
       </div>
     </div>
   );
-};
+}
 
 export default LeadModal;

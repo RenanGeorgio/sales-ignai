@@ -1,7 +1,6 @@
-import React from 'react';
-import Navbar from '../../components/Navbar';
-import { UsersIcon,FileTextIcon, LinkIcon } from '../../components/Image/icons';
-import '../../styles/chatbot.css';
+import Navbar from '@components/Navbar';
+import { UsersIcon, TextFileIcon, LinkIcon } from '@icons';
+import '@styles/chatbot.css';
 
 const ChatBot = () => {
   return (
@@ -19,7 +18,7 @@ const ChatBot = () => {
             Flow Chart
           </button>
           <button className="grayButton">
-            <FileTextIcon/>
+            <TextFileIcon/>
             Painel
           </button>
         </div>

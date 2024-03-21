@@ -1,28 +1,30 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-import Navbar from "../../components/Navbar";
-import dragEnd from "../../helpers/dragEnd";
-import LeadModal from "../../components/Modal/leadModal";
-import SearchFilter from "../../components/Table/searchFilter";
-import "../../styles/leads.css";
-import LeadPopover from "../../components/Popover/leadPopover";
-import { useSelector } from "react-redux";
-import authApi from "../../services/auth";
-import { useDispatch } from "react-redux";
-import { leadsActions } from "../../store/store";
+import Navbar from "@components/Navbar";
+import dragEnd from "@helpers/dragEnd";
+import LeadModal from "@components/Modal/leadModal";
+import SearchFilter from "@components/Table/searchFilter";
+import LeadPopover from "@components/Popover/leadPopover";
+import { authApi } from "@services";
+import { leadsActions } from "@store/store";
 import { IconButton } from "@mui/material";
-import { DotsVertical } from "../../components/Image/icons";
+import { VerticalDotsIcon } from "@icons";
+import { Obj, DragResult } from "@types";
+import "@styles/leads.css";
 
 const Leads = () => {
   const leadsData = useSelector((state: any) => state.leads);
+
+  const [isMounted, setIsMounted] = useState<boolean>(false);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [showKanban, setShowKanban] = useState<boolean>(false);
+  const [columnName, setColumnName] = useState<string>("");
+  const [cardName, setCardName] = useState<string>("");
+  const [columns, setColumns] = useState<any[]>(leadsData);
+  const [cardInfo, setCardInfo] = useState<Obj>({});
+
   const dispatch = useDispatch();
-  const [isMounted, setIsMounted] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [showKanban, setShowKanban] = useState(false);
-  const [columnName, setColumnName] = useState("");
-  const [cardName, setCardName] = useState("");
-  const [columns, setColumns] = useState(leadsData);
-  const [cardInfo, setCardInfo] = useState({});
 
   useEffect(() => {
     setIsMounted(true);
@@ -34,15 +36,20 @@ const Leads = () => {
     }
   }, [leadsData]);
 
-  const onDragEnd = async (result) => {
+  const onDragEnd = (result: DragResult) => {
     const newColumns = dragEnd(columns, result);
+
     if (newColumns) {
       const checkDif = newColumns.filter((x) => !columns.includes(x));
-      const response = await authApi.put(`/leads`, { leads: checkDif });
-      if (response.status === 204) {
-        dispatch(leadsActions.updateLeads(newColumns));
-        setColumns(newColumns);
-      }
+
+      (async () => {
+        const response = await authApi.put(`/leads`, { leads: checkDif });
+
+        if (response.status === 204) {
+          dispatch(leadsActions.updateLeads(newColumns));
+          setColumns(newColumns);
+        }
+      })();
     }
   };
 
@@ -54,60 +61,81 @@ const Leads = () => {
     setShowKanban(false);
   };
 
-  const addNewColumn = async () => {
-    if (columnName === "") return;
+  const addNewColumn = () => {
+    if (columnName === "") {
+      return;
+    }
+
     const newColumn = {
       title: columnName,
       items: [],
     };
 
-    const response = await authApi.post("/leads", newColumn);
-    if (response.status === 201) {
-      const newColumns = [...columns, response.data];
+    (async () => {
+      const response = await authApi.post("/leads", newColumn);
+
+      if (response?.status === 201) {
+        const newColumns = [...columns, response.data];
+
+        dispatch(leadsActions.updateLeads(newColumns));
+        setColumns(newColumns);
+      }
+    })();
+  };
+
+  const addNewCard = (id: string) => {
+    if (cardName === "") {
+      return;
+    }
+
+    (async () => {
+      const response = await authApi.post(`/leads/${id}/items`, {
+        title: cardName
+      });
+  
+      const newColumns = columns.map((column) => {
+        if (column._id === id) {
+          column = response.data;
+        }
+  
+        return column;
+      });
+  
+      setCardName("");
       dispatch(leadsActions.updateLeads(newColumns));
       setColumns(newColumns);
-    }
+    })();
   };
 
-  const addNewCard = async (id: string) => {
-    if (cardName === "") return;
-    const response = await authApi.post(`/leads/${id}/items`, {
-      title: cardName,
-    });
-    const newColumns = columns.map((column) => {
-      if (column._id === id) {
-        column = response.data;
-      }
-      return column;
-    });
-    setCardName("");
-    dispatch(leadsActions.updateLeads(newColumns));
-    setColumns(newColumns);
-  };
-
-  const updateCardInfo = async (values: {
+  const updateCardInfo = (values: {
     title: string;
     _id: string;
     comments: string;
   }) => {
     const { _id, title, comments } = values;
-    const response = await authApi.put(`/leads/card/${_id}`, {
-      title,
-      comments,
-    });
 
-    if (response.status === 200) {
-      const data = response.data;
-      const cardIndex = columns.findIndex((column) => column._id === data._id);
-      const newColumns = [...columns];
-      newColumns.splice(cardIndex, 1, data);
-      dispatch(leadsActions.updateLeads(newColumns));
-      setColumns(newColumns);
-      setIsModalOpen(false);
-    }
+    (async () => {
+      const response = await authApi.put(`/leads/card/${_id}`, {
+        title,
+        comments
+      });
+  
+      if (response.status === 200) {
+        const data = response.data;
+  
+        const cardIndex = columns.findIndex((column) => column._id === data._id);
+        const newColumns = [...columns];
+  
+        newColumns.splice(cardIndex, 1, data);
+  
+        dispatch(leadsActions.updateLeads(newColumns));
+        setColumns(newColumns);
+        setIsModalOpen(false);
+      }
+    })();
   };
 
-  const handleModalOpen = (info) => {
+  const handleModalOpen = (info: Obj) => {
     setCardInfo(info);
     setIsModalOpen(true);
   };
@@ -120,56 +148,45 @@ const Leads = () => {
       ) : (
         <div className="leads-kanban">
           <div className="kanbanHead">
-          <div className="button-group">
-            <LeadPopover cardClassName='' title="+ Coluna" handleClick={addNewColumn}>
-              <input
-              style={{width:'100%'}}
-                type="text"
-                placeholder="Nova Coluna"
-                onChange={(e) => {
-                  setColumnName(e.target.value);
-                }}
-              />
-              {/* <IconButton size="small" style={{border:'1px solid black', display:'flex'}} onClick={()=>handleClick}>+</IconButton> */}
-            </LeadPopover>
-            <div className="divider"></div>
-            <button onClick={handleShowKanban}>Ver Lista</button>
-            <div className="divider"></div>
-            <button>Editar</button>
+            <div className="button-group">
+              <LeadPopover cardClassName='' title="+ Coluna" handleClick={addNewColumn}>
+                <input
+                style={{width:'100%'}}
+                  type="text"
+                  placeholder="Nova Coluna"
+                  onChange={(e) => {
+                    setColumnName(e.target.value);
+                  }}
+                />
+                {/* <IconButton size="small" style={{border:'1px solid black', display:'flex'}} onClick={()=>handleClick}>+</IconButton> */}
+              </LeadPopover>
+              <div className="divider"></div>
+              <button onClick={handleShowKanban}>Ver Lista</button>
+              <div className="divider"></div>
+              <button>Editar</button>
+            </div>
+            <div className="select-box">
+              <select className="select-box">
+                <option>Assignados a mim</option>
+                <option>Todos</option>
+              </select>
+            </div>
           </div>
-          <div className="select-box">
-            <select className="select-box">
-              <option>Assignados a mim</option>
-              <option>Todos</option>
-            </select>
-          </div>
-          </div>
+          {/* @ts-ignore */}
           <DragDropContext onDragEnd={onDragEnd}>
             <div className="board-container">
               {columns?.map((column, key) => (
-                <div
-                className="kanban-column"
-
-                  key={key}
-                >
+                <div className="kanban-column" key={key}>
                   <div className="headerColumn">
-
-                  <h1 className="card-title">{column.title}</h1>
-                  <IconButton size="small"> <DotsVertical className={undefined}/></IconButton>
+                    <h1 className="card-title">{column.title}</h1>
+                    <IconButton size="small"> <VerticalDotsIcon className={undefined}/></IconButton>
                   </div>
                   {isMounted ? (
                     <Droppable droppableId={column._id} key={key}>
                       {(provided) => (
-                        <div
-                        className="column-content"
-                          // style={{
-                          //   marginBottom: "10px",
-                          //   width: "200px",
-                          // }}
-                          ref={provided.innerRef}
-                        >
+                        <div className="column-content" ref={provided.innerRef}>
                           {provided.placeholder}
-                          {column.items?.map((item, index) => (
+                          {column.items?.map((item: any, index: number) => (
                             <Draggable
                               draggableId={item._id}
                               key={item._id}
@@ -201,12 +218,12 @@ const Leads = () => {
                     </Droppable>
                   ) : null}
                   <LeadPopover
-                  cardClassName='popLead'
+                    cardClassName='popLead'
                     title="+ Card"
                     handleClick={() => addNewCard(column._id)}
                   >
                     <input
-                    style={{width:'95%'}}
+                      style={{width:'95%'}}
                       type="text"
                       placeholder="Novo Card"
                       onChange={(e) => {
@@ -221,6 +238,7 @@ const Leads = () => {
           {isModalOpen && (
             <LeadModal
               closeModal={() => setIsModalOpen(false)}
+              // @ts-ignore
               handleClick={updateCardInfo}
               data={cardInfo}
             />
@@ -229,6 +247,6 @@ const Leads = () => {
       )}
     </div>
   );
-};
+}
 
 export default Leads;

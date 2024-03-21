@@ -1,8 +1,9 @@
 import idb from 'idb';
 import sjcl from 'sjcl';
-import {processFolders} from './folder';
-import {setError} from '../../store/email/actions/application';
+import { processFolders } from './folder';
+import { setError } from '../../store/email/actions/application';
 import SjclWorker from './sjcl.worker';
+import WebWorker from '../../libs/webWorker/instance';
 
 const DATABASE_NAME = 'isotope';
 const DATABASE_VERSION = 2;
@@ -145,7 +146,7 @@ export async function persistState(dispatch, state) {
   if (state.email.application.user.id && state.email.email.application.user.hash
     && state.email.folders.items.length > 0 && Object.keys(state.email.messages.cache).length > 0) {
     // Create web-worker
-    const worker = new SjclWorker();
+    const worker = new WebWorker(SjclWorker);
     worker.onmessage = async encryptedStateMessage => {
       // Persist state
       try {
@@ -211,9 +212,10 @@ export async function persistState(dispatch, state) {
  * @param messages {Array}
  * @returns {Promise<void>}
  */
-export async function persistMessageCache(userId, hash, folder, messages) {
-  const worker = new SjclWorker();
-  worker.onmessage = async m => {
+export function persistMessageCache(userId, hash, folder, messages) {
+  const worker = new WebWorker(SjclWorker);
+
+  worker.onmessage = async (m) => {
     const messageCache = {
       // Key will not be used for data retrieval, index will be used instead
       // Key is only used to overwrite previous versions of the message cache, a has is enough
@@ -222,15 +224,21 @@ export async function persistMessageCache(userId, hash, folder, messages) {
       folderId: sjcl.encrypt(hash, folder.folderId),
       messages: m.data.encryptedData
     };
+
     const db = await _openDatabaseSafe();
+
     const tx = db.transaction([MESSAGE_CACHE_STORE], 'readwrite');
     const store = tx.objectStore(MESSAGE_CACHE_STORE);
+
     await store.put(messageCache);
+
     await tx.complete;
+
     db.close();
     worker.terminate();
     URL.revokeObjectURL(m.data.workerHref);
   };
+
   worker.postMessage({password: hash, data: JSON.stringify(messages)});
 }
 
@@ -293,22 +301,28 @@ export async function deleteMessageCache(userId, hash, foldersToDeleteIds) {
  * @param content
  * @returns {Promise<void>}
  */
-export async function persistApplicationNewMessageContent(application, content = '') {
-  const worker = new SjclWorker();
-  worker.onmessage = async m => {
+export function persistApplicationNewMessageContent(application, content = '') {
+  const worker = new WebWorker(SjclWorker);
+
+  worker.onmessage = async (m) => {
     const newMessage = {
       key: application.user.id,
       newMessageContent: m.data.encryptedData
     };
+
     const db = await _openDatabaseSafe();
+
     const tx = db.transaction([NEW_MESSAGE_STORE], 'readwrite');
     const store = tx.objectStore(NEW_MESSAGE_STORE);
+
     await store.put(newMessage);
+
     await tx.complete;
+
     db.close();
     worker.terminate();
     URL.revokeObjectURL(m.data.workerHref);
   };
+
   worker.postMessage({password: application.user.hash, data: JSON.stringify(content)});
 }
-

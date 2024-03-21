@@ -1,7 +1,5 @@
-import React from 'react';
-import '../../styles/forms.css';
-import { LabelGreenIcon, LabelIcon } from '../Image/icons';;
-
+import { GreenLabelIcon, LabelIcon } from "@icons";
+import "@styles/forms.css";
 
 const FormSelector: React.FC = () => {
   return (
@@ -14,7 +12,7 @@ const FormSelector: React.FC = () => {
             Formulário 1
           </button>
           <button className="new-form-selector-button">
-            <LabelGreenIcon />
+            <GreenLabelIcon />
             Formulário 2
           </button>
           <button className="new-form-selector-button">
@@ -22,7 +20,7 @@ const FormSelector: React.FC = () => {
             Formulário 3
           </button>
           <button className="new-form-selector-button">
-            <LabelGreenIcon />
+            <GreenLabelIcon />
             Formulário 4
           </button>
           <button className="new-form-selector-button">
@@ -30,7 +28,7 @@ const FormSelector: React.FC = () => {
             Formulário 5
           </button>
           <button className="new-form-selector-button">
-            <LabelGreenIcon />
+            <GreenLabelIcon />
             Formulário 6
           </button>
           <button className="new-form-selector-button">
@@ -41,6 +39,6 @@ const FormSelector: React.FC = () => {
       </div>
     </div>
   );
-};
+}
 
 export default FormSelector;

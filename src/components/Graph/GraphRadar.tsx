@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import Chart from 'chart.js/auto';
+import { useEffect, useRef } from "react";
+import Chart from "chart.js/auto";
 
 interface GraphRadarProps {}
 
@@ -62,7 +62,9 @@ const GraphRadar: React.FC<GraphRadarProps> = () => {
     };
   }, []); 
 
-  return <canvas ref={chartRef} />;
-};
+  return (
+    <canvas ref={chartRef} />
+  );
+}
 
 export default GraphRadar;

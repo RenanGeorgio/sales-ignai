@@ -1,12 +1,14 @@
-import React, { Children, useState } from "react";
+import { useState } from "react";
+import { PhoneIcon } from "@icons";
 import "./leftmenu.css";
-import { Phone } from "../Image/icons";
-import AddTicket from "./AddTicket/AddTicket";
 
-export const LeftMenu = ({ onAddTicketClick, children }) => {
-  const [openPage, setOpenPage] = useState(false);
-  const [openTicket, setOpenTicket] = useState(false);
-  const [showAddTicket, setShowAddTicket] = useState(false);
+interface Props {
+  onAddTicketClick: () => void;
+  children?: React.ReactNode;
+};
+
+export const LeftMenu = ({ onAddTicketClick, children }: Props) => {
+  const [showAddTicket, setShowAddTicket] = useState<boolean>(false);
   
   const toggleAddTicket = () => {
     setShowAddTicket(!showAddTicket);
@@ -33,7 +35,7 @@ export const LeftMenu = ({ onAddTicketClick, children }) => {
           >
             Adicionar&nbsp;&nbsp;ticket
             <span className="phoneCall">
-              <Phone />
+              <PhoneIcon />
             </span>
           </button>
         </div>
@@ -60,4 +62,4 @@ export const LeftMenu = ({ onAddTicketClick, children }) => {
       </div>
     </div>
   );
-};
+}

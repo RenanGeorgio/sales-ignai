@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@components/*": ["components/*", "components/*/index", "components/index"],
+      "@pages/*": ["pages/*", "pages/*/index", "pages/index"],
+      "@styles/*": ["styles/*"],
+      "@contexts/*": ["contexts/*", "contexts/*/index", "contexts/index"],
+      "@services": ["services/index"],
+      "@services/*": ["services/*", "services/*/index"],
+      "@types": ["types/index"],
+      "@helpers/*": ["helpers/*"],
+      "@store": ["store/index"],
+      "@store/*": ["store/*", "store/*/index"],
+      "@hooks/*": ["hooks/*"],
+      "@libs/*": ["libs/*", "libs/*/index", "libs/index"],
+      "@icons/*": ["components/Icons/*"],
+      "@icons": ["components/Icons/index"],
+      "@assets/*": ["assets/*"]
+    }
+  }
+}

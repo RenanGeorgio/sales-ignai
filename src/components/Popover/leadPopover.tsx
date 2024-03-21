@@ -1,10 +1,17 @@
-import React,{ useEffect, useRef, useState } from "react";
-import './leadPopover.css';
+import { useEffect, useRef, useState } from "react";
 import { IconButton } from "@mui/material";
-import { Plus } from "../Image/icons";
+import "./leadPopover.css";
 
-const LeadPopover = ({ children, title, handleClick, cardClassName }) => {
-  const [showPopover, setShowPopover] = useState(false);
+interface Props {
+  title: string;
+  cardClassName?: string;
+  handleClick: () => void;
+  children?: React.ReactNode;
+};
+
+const LeadPopover = ({ title, handleClick, cardClassName, children }: Props) => {
+  const [showPopover, setShowPopover] = useState<boolean>(false);
+
   const popoverRef = useRef(null);
   const buttonRef = useRef(null);
 
@@ -12,10 +19,18 @@ const LeadPopover = ({ children, title, handleClick, cardClassName }) => {
     setShowPopover(!showPopover);
   };
 
+  const handleClickBtn = () => {
+    handleClick();
+    setShowPopover(false);
+  };
+
   useEffect(() => {
-    const handleOutsideClick = (event) => {
-      if (popoverRef.current && !popoverRef.current.contains(event.target)) {
-        setShowPopover(false);
+    const handleOutsideClick = (event: Event) => {
+      if (popoverRef.current) {
+        // @ts-ignore
+        if (!popoverRef.current.contains(event.target)) {
+          setShowPopover(false);
+        }
       }
     };
 
@@ -26,25 +41,23 @@ const LeadPopover = ({ children, title, handleClick, cardClassName }) => {
     };
   }, []);
 
-  const handleClickBtn = () => {
-    handleClick();
-    setShowPopover(false);
-  };
-
   return (
     <div className="lead-popover-container" ref={popoverRef}>
       <button ref={buttonRef} onClick={togglePopover}>{title}</button>
       {showPopover && (
         <div className={`popover ${cardClassName}`}>
-          <div style={{color:'black', display:'flex', alignItems:'center',justifyContent:'space-between', gap:8}}>
-          {children}
-          <IconButton size="small" style={{border:'1px solid black', color:'black',marginLeft:'inherit', borderRadius:5}} 
-          onClick={(e) => handleClickBtn()}>+</IconButton>
+          <div style={{color:'black', display:'flex', alignItems:'center', justifyContent:'space-between', gap:8}}>
+            {children}
+            <IconButton size="small" style={{border:'1px solid black', color:'black', marginLeft:'inherit', borderRadius:5}} 
+              onClick={(_e: any) => handleClickBtn()}
+            >
+                +
+            </IconButton>
           </div>
         </div>
       )}
     </div>
   );
-};
+}
 
 export default LeadPopover;

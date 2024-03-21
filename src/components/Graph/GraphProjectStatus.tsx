@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Bar, Line } from 'react-chartjs-2';
+import { useState } from "react";
+import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -8,7 +8,8 @@ import {
   Title,
   Tooltip,
   Legend,
-} from 'chart.js';
+} from "chart.js";
+
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -79,7 +80,6 @@ const ChartProjectStatus = () => {
         options={options}
         height='270px'
         width='480px'
-        
       />
     </div>
   );

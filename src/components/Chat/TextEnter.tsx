@@ -1,12 +1,17 @@
-import React, { ChangeEvent, useState, useEffect } from "react";
-import "./chat.css";
-import { Mic, Photo } from "../Image/icons";
+import { ChangeEvent, useState, useEffect } from "react";
 import { IconButton } from "@mui/material";
+import { MicIcon, PhotoIcon } from "@icons";
+import "./chat.css";
 
-export default function TextEnter({ onSendMessage, onUploadFilePhoto }) {
+interface Props {
+  onSendMessage: (textMessage: string, setTextMessage: () => void) => void;
+  onUploadFilePhoto: (file: any) => void;
+};
+
+export default function TextEnter({ onSendMessage, onUploadFilePhoto }: Props) {
   const [textMessage, setTextMessage] = useState<string>("");
 
-  const handleFileUploadPhoto = (file) => {
+  const handleFileUploadPhoto = (file: any) => {
     // Aqui você pode fazer algo com o arquivo, como enviar para o servidor
     console.log("Arquivo Imagem:", file);
 
@@ -45,14 +50,15 @@ export default function TextEnter({ onSendMessage, onUploadFilePhoto }) {
           </div>
           <div className="btncontainer">
             <IconButton className="icon">
-              <Mic className={undefined} />
+              <MicIcon className={undefined} />
             </IconButton>
             <IconButton onClick={handleFileUploadPhoto} className="icon">
-              <Photo className={undefined} />
+              <PhotoIcon className={undefined} />
             </IconButton>
             <div className="btntxt">
               <button
                 onClick={() => {
+                  // @ts-ignore
                   onSendMessage(textMessage, setTextMessage);
                 }}
                 className="btntxt"

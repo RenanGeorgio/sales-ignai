@@ -1,16 +1,26 @@
-export default function dragEnd(columns, dragResult){
+import { DragResult } from "@types";
+
+type Item = { _id: string | number; }
+
+export default function dragEnd(columns: any[], dragResult: DragResult){
   const { source, destination, draggableId } = dragResult;
 
-  if (!destination) return; // Se não houver destino, não faz nada
+  if (!destination) { // Se não houver destino, não faz nada
+    return;
+  }
 
   const sourceColumn = columns.find(column => column._id === source.droppableId);
   const destinationColumn = columns.find(column => column._id === destination.droppableId);
 
-  if (!sourceColumn || !destinationColumn) return; // Se uma das colunas não for encontrada, não faz nada
+  if (!sourceColumn || !destinationColumn) { // Se uma das colunas não for encontrada, não faz nada
+    return;
+  }
 
-  const draggedItem = sourceColumn.items.find(item => item._id === draggableId);
+  const draggedItem = sourceColumn.items.find((item: Item) => item._id === draggableId);
 
-  if (!draggedItem) return; // Se o item arrastado não for encontrado, não faz nada
+  if (!draggedItem) { // Se o item arrastado não for encontrado, não faz nada
+    return;
+  }
 
   const sourceItems = Array.from(sourceColumn.items);
   const destinationItems = Array.from(destinationColumn.items);

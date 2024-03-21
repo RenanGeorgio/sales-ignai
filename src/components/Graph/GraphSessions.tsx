@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Bar } from 'react-chartjs-2';
+import { useEffect, useState } from "react";
+import { Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -8,7 +8,8 @@ import {
   Title,
   Tooltip,
   Legend,
-} from 'chart.js';
+} from "chart.js";
+
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -19,36 +20,37 @@ ChartJS.register(
 );
 
 const ChartSessions = () => {
-  const [chartData, setChartData] = useState(null);
+  const [chartData, setChartData] = useState<any>(null);
 
   useEffect(() => {
-    const xValues = [];
-    const yValues = [''];
+    const xValues: number[] = [];
+    const yValues: string[] = [''];
+
     generateData("Math.sin(x)", 0, 10, 0.5);
 
     setChartData({
       labels: xValues,
       datasets: [
         {
-        label: "", // Define o rótulo do conjunto de dados para uma string vazia
-        fill: false,
-        backgroundColor:'red',
-        pointRadius: 0,
-        borderColor: "#94e2a1",
-        data: yValues,
+          label: "", // Define o rótulo do conjunto de dados para uma string vazia
+          fill: false,
+          backgroundColor:'red',
+          pointRadius: 0,
+          borderColor: "#94e2a1",
+          data: yValues
         },
         {
-          label:'',
-          fill:false,
-          backgroundColor:'blue',
-          borderColor :["#3cba9f"],
+          label: '',
+          fill: false,
+          backgroundColor: 'blue',
+          borderColor: ["#3cba9f"],
           showLine: true,
           data: yValues
-        
-      }]
+        }
+      ]
     });
 
-    function generateData(value, i1, i2, step = 1) {
+    function generateData(value: any, i1: number, i2: number, step: number = 1) {
       for (let x = i1; x <= i2; x += step) {
         yValues.push(eval(value));
         xValues.push(x);
@@ -65,14 +67,13 @@ const ChartSessions = () => {
         display: false
       },
       title: {
-        display: false,
-        
-      },
+        display: false
+      }
     },
     responsive: true,
     interaction: {
       mode: 'index' as const,
-      intersect: false,
+      intersect: false
     },
     scales: {
       x: {
@@ -82,8 +83,8 @@ const ChartSessions = () => {
       y: {
         stacked: true,
         display: false
-      },
-    },
+      }
+    }
   };
 
   return (

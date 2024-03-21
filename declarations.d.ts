@@ -1,3 +1,16 @@
+declare global {
+    namespace NodeJS {
+        interface ProcessEnv {
+            API_URL?: string;
+        }
+    }
+}
+
+declare module '@osam2/react-calendar' {
+    function Calendar(): any
+    export Calendar;
+}
+
 declare module '.svg' {
     export const content: any;
 };

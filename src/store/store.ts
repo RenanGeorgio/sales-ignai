@@ -18,10 +18,12 @@ import { clientsReducer as clients } from "./clients/clientsSlice";
 
 import emailCombinedReducer from "./email/reducers";
 // Email
-import { fetchConfiguration } from "services/email/configuration";
-import { loadState } from "services/email/state";
-import debounce from "services/email/debounce";
+import { fetchConfiguration } from "@services/email/configuration";
+import { loadState } from "@services/email/state";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import debounce from "@services/email/debounce";
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const SAVE_STATE_DEBOUNCE_PERIOD_IN_MILLIS = 500;
 
 declare global {
@@ -65,7 +67,7 @@ const store = configureStore({
     }),
 });
 
-let persistor = persistStore(store);
+const persistor = persistStore(store);
 
 export { sessionActions } from "./session/sessionSlice";
 export { userActions } from "./user/userSlice";

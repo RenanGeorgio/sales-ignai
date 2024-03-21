@@ -1,6 +1,5 @@
-import React from 'react';
-import { Bar, Line } from 'react-chartjs-2';
-import '../../styles/statistics.css';
+import { Bar } from "react-chartjs-2";
+import "@styles/statistics.css";
 
 interface GraphProps {}
 
@@ -56,6 +55,6 @@ const GraphSource: React.FC<GraphProps> = () => {
       </div>
     </div>
   );
-};
+}
 
 export default GraphSource;

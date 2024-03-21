@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import Calendar from 'react-calendar'
-import './calendarleft.css'
+import { useState } from "react";
+import Calendar from "react-calendar";
+import "./calendarleft.css";
 
 export default function CalendarLeft() {
   const [value, onChange] = useState(new Date());
@@ -8,10 +8,10 @@ export default function CalendarLeft() {
   return (
     <div >
       <Calendar
-       value={value}
-       showNeighboringMonth={false}
-       onClickDay={(day) => {onChange(day)}}
+        value={value}
+        showNeighboringMonth={false}
+        onClickDay={(day) => {onChange(day)}}
       />
     </div>
-  )
+  );
 }

@@ -13,7 +13,7 @@ import {
 import {updateFolder, updateFolderProperties} from '../../store/email/actions/folders';
 import {getIsotopeConfiguration} from '../../store/email/selectors/globals';
 import {abortControllerWrappers, abortFetch, AuthenticationException, credentialsHeaders, toJson} from './fetch';
-import {persistMessageCache} from './indexed-db';
+import { persistMessageCache } from './indexed-db';
 import {notifyNewMail} from './notification';
 import {FolderTypes} from './folder';
 import {EventSourcePolyfill} from "event-source-polyfill";
@@ -100,6 +100,7 @@ export async function resetFolderMessagesCache(dispatch, user, folder) {
         if (minUid) {
           dispatch(deleteFromCache(folder, [], {to: minUid - 1}));
         }
+
         // Manually persist newest version of message cache
         persistMessageCache(user.id, user.hash, folder, [...allMessages]);
       }

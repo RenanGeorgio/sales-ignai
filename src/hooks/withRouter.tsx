@@ -1,5 +1,4 @@
-import React from 'react';
-import { useNavigate, useParams, NavigateFunction } from 'react-router-dom';
+import { useNavigate, useParams, NavigateFunction } from "react-router-dom";
 
 interface WithRouterProps {
   navigate: NavigateFunction;
@@ -15,6 +14,6 @@ const withRouter = <P extends WithRouterProps>(WrappedComponent: React.Component
 
     return <WrappedComponent {...props as P} {...withRouterProps} />;
   };
-};
+}
 
 export default withRouter;

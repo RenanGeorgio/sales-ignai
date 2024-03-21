@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Navbar from '../../components/Navbar';
 import GraphChat from '../../components/Graph/GraphChat';
 import GraphTicket from '../../components/Graph/GraphTicket';
 import GraphThemes from '../../components/Graph/GraphThemes';
 import GraphTicketYou from '../../components/Graph/GraphTicketYou';
 import Invoices from '../../components/Layout/InvoiceLayout';
-import { FileDollarIcon, FileTextIcon } from '../../components/Image/icons';
-// import dollar from '../../components/Image/file-dollar.svg';
-// import fileTextImage from '../../components/Image/file-text.svg';
+import { FileDollarIcon, TextFileIcon } from '@icons';
 
 interface InvoiceProps {}
 
@@ -35,7 +33,7 @@ const Invoice: React.FC<InvoiceProps> = () => {
           className={activePage === 'Painel' ? 'blueButton' : 'grayButton'}
           onClick={() => handleButtonClick('Painel')}
         >
-          <FileTextIcon />
+          <TextFileIcon />
           Painel
         </button>
       </div>

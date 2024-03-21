@@ -18,7 +18,7 @@ class Checkbox extends Component {
           required={this.props.required}
           checked={this.props.checked}
           onFocus={this.onFocus} onBlur={this.onBlur}
-          onChange={this.handleOnChange} />
+          onChange={(event) => this.handleOnChange(event)} />
         <div className={`${mainCss['mdc-checkbox__background']}`}>
           <svg className={mainCss['mdc-checkbox__checkmark']} viewBox="0 0 24 24">
             <path className={mainCss['mdc-checkbox__checkmark-path']} fill="none"

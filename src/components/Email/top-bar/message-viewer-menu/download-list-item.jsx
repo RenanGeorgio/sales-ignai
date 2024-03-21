@@ -2,15 +2,20 @@ import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import mainCss from '../../../../styles/email/main.scss';
 
-const DownloadListItem = ({t, downloadMessage}) => {
+const DownloadListItem = ({ t, downloadMessage }) => {
   const [downloading, setDownloading] = useState(false);
-  const onDownloadClick = async () => {
+
+  const onDownloadClick = () => {
     if (!downloading) {
       setDownloading(true);
-      await downloadMessage();
-      setDownloading(false);
+
+      (async () => {
+        await downloadMessage();
+        setDownloading(false);
+      })();
     }
   };
+  
   return (
     <li
       className={`${mainCss['mdc-list-item']} ${downloading ? mainCss['mdc-list-item--disabled'] : ''}`}

@@ -10,7 +10,7 @@ export type SignInData = {
 
 export type SignInResponse = {
   token: number | string;
-  user: {};
+  user: any;
   error: ErrorResponse;
 };
 
@@ -31,4 +31,24 @@ export type Leads = {
 export type OnlineUser = {
   userId: string;
   socketId: string;
+}
+
+export type Consumer = {
+  _id?: string | number;
+  companyId: string | number;
+}
+
+export type Obj = {
+  [key: string]: any;
+}
+
+type DragInstance = {
+  index: number;
+  droppableId: number | string;
+}
+
+export type DragResult = { 
+  source: DragInstance; 
+  destination: DragInstance; 
+  draggableId: number | string;
 }

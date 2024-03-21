@@ -1,6 +1,5 @@
-import React from 'react';
-import '../../styles/dashboard.css'; 
-import { AvatarGreenIcon } from '../Image/icons';
+import { AvatarGreenIcon } from "@icons";
+import "@styles/dashboard.css";
 
 interface GraphNumberVisitProps {
   month: string;
@@ -38,6 +37,6 @@ const GraphNumberVisit: React.FC<GraphNumberVisitProps> = ({ month }) => {
       </div>
     </div>
   );
-};
+}
 
 export default GraphNumberVisit;

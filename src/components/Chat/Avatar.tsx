@@ -1,13 +1,18 @@
-import PropTypes from "prop-types";
-import React from "react";
 import "./avatar.css";
+
+interface AvatarProps {
+  size: "thirty-eight" | "twenty-six" | "forty-eight" | "seventy-two" | "thirty-two" | "sixty-four";
+  className?: string;
+  backgroundClassName?: string
+  avatar: string;
+};
 
 export const Avatar = ({
   size,
   className,
   backgroundClassName,
   avatar = "https://c.animaapp.com/luvsX3DA/img/avatar-1@2x.png",
-}) => {
+}: AvatarProps) => {
   return (
     <div className={`avatar ${size} ${className}`}>
       <div className="overlap-group">
@@ -34,9 +39,4 @@ export const Avatar = ({
       </div>
     </div>
   );
-};
-
-Avatar.propTypes = {
-  size: PropTypes.oneOf(["thirty-eight", "twenty-six", "forty-eight", "seventy-two", "thirty-two", "sixty-four"]),
-  avatar: PropTypes.string,
-};
+}

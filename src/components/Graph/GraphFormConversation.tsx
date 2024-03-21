@@ -1,6 +1,5 @@
-import { Chart } from 'chart.js';
-import React, { useEffect, useRef } from 'react';
-import { Bar } from 'react-chartjs-2';
+import { useEffect, useRef } from "react";
+import { Chart } from "chart.js";
 
 interface GraphFormConversationProps {
   month: string;
@@ -65,6 +64,6 @@ const GraphFormConversation: React.FC<GraphFormConversationProps> = ({ month }) 
       {/* Your legend and other JSX here */}
     </div>
   );
-};
+}
 
 export default GraphFormConversation;

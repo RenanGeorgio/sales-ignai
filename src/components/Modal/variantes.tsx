@@ -1,5 +1,4 @@
-import React from 'react';
-import '../../styles/business.css';
+import "@styles/business.css";
 
 const VariantesModal: React.FC = () => {
   return (
@@ -27,6 +26,6 @@ const VariantesModal: React.FC = () => {
       </div>
     </div>
   );
-};
+}
 
 export default VariantesModal;

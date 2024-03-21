@@ -1,4 +1,5 @@
-import React, {Component, Fragment} from 'react';
+// @ts-nocheck
+import {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 // import history from '../routes/history';
@@ -39,25 +40,17 @@ class Email extends Component {
     this.toggleSideBar = this.toggleSideBar.bind(this);
   }
 
-  render() {
-    const {application} = this.props;
-    const {sideBar} = this.state;
-    return (
-      <div className={`${mainCss['main-layout']}
-          ${sideBar.collapsed ? '' : mainCss['main-layout--with-side-bar']}`}>
-        <Spinner
-          visible={application.activeRequests > 0}
-          className={mainCss['main-layout__spinner']} pathClassName={mainCss['spinner-path']}/>
-        <TopBar sideBarCollapsed={sideBar.collapsed} sideBarToggle={this.toggleSideBar}/>
-        <SideBar collapsed={sideBar.collapsed} sideBarToggle={this.toggleSideBar}/>
-        <div className={mainCss['mdc-drawer-scrim']} onClick={this.toggleSideBar}></div>
-        <div className={`${mainCss['mdc-top-app-bar--fixed-adjust']} ${mainCss['main-layout__content-wrapper']}`}>
-          {this.renderContent()}
-        </div>
-        <MessageEditorWrapper {...this.props}/>
-        <MessageSnackbar/>
-      </div>
-    );
+  componentDidMount() {
+    document.title = this.props.application.title;
+    this.startPoll();
+  }
+
+  componentDidUpdate() {
+    this.startPoll();
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.refreshPollTimeout);
   }
 
   renderContent() {
@@ -73,19 +66,6 @@ class Email extends Component {
         </div>
       </Fragment>
     );
-  }
-
-  componentDidMount() {
-    document.title = this.props.application.title;
-    this.startPoll();
-  }
-
-  componentDidUpdate() {
-    this.startPoll();
-  }
-
-  componentWillUnmount() {
-    clearTimeout(this.refreshPollTimeout);
   }
 
   startPoll() {
@@ -117,6 +97,7 @@ class Email extends Component {
       }
     }
     if (keepPolling) {
+      // eslint-disable-next-line @typescript-eslint/no-misused-promises
       this.refreshPollTimeout = setTimeout(this.refreshPoll.bind(this), pollInterval);
     }
   }
@@ -128,6 +109,27 @@ class Email extends Component {
         collapsed: toggleCollapsed
       }
     });
+  }
+
+  render() {
+    const {application} = this.props;
+    const {sideBar} = this.state;
+    return (
+      <div className={`${mainCss['main-layout']}
+          ${sideBar.collapsed ? '' : mainCss['main-layout--with-side-bar']}`}>
+        <Spinner
+          visible={application.activeRequests > 0}
+          className={mainCss['main-layout__spinner']} pathClassName={mainCss['spinner-path']}/>
+        <TopBar sideBarCollapsed={sideBar.collapsed} sideBarToggle={() => this.toggleSideBar()}/>
+        <SideBar collapsed={sideBar.collapsed} sideBarToggle={() => this.toggleSideBar()}/>
+        <div className={mainCss['mdc-drawer-scrim']} onClick={() => this.toggleSideBar()}></div>
+        <div className={`${mainCss['mdc-top-app-bar--fixed-adjust']} ${mainCss['main-layout__content-wrapper']}`}>
+          {this.renderContent()}
+        </div>
+        <MessageEditorWrapper {...this.props}/>
+        <MessageSnackbar/>
+      </div>
+    );
   }
 }
 

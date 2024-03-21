@@ -1,11 +1,14 @@
-import React from 'react';
-import '../../styles/statistics.css';
-
-import { ClockIcon,UsersIcon,ChartIcon, Chart2Icon, ChartPieIcon,MessageDots,
-   CurrencyDollar ,BriefCaseIcon} from '../Image/icons';
-import ChartSessions from '../Graph/GraphSessions';
-import ChartSales from '../Graph/GraphSales';
-import ChartRevenue from '../Graph/GraphRevenue';
+import { 
+  ClockIcon,
+  ChartPieIcon,
+  MessageDotsIcon,
+  CurrencyDollarIcon,
+  BriefCaseIcon
+} from "@icons";
+import ChartSessions from "../Graph/GraphSessions";
+import ChartSales from "../Graph/GraphSales";
+import ChartRevenue from "../Graph/GraphRevenue";
+import "@styles/statistics.css";
 
 interface StatisticsComponentProps {}
 const StatisticsComponent: React.FC<StatisticsComponentProps> = () => {
@@ -16,7 +19,6 @@ const StatisticsComponent: React.FC<StatisticsComponentProps> = () => {
           <div className="title-statistics">Statistics</div>
           <h5 className="subtitle-statistics">Updated 1 month ago</h5>
         </div>
-
         <div className="statistics-items-container">
           <div className="statistics-item">
             <div className="content-with-labels">
@@ -27,7 +29,6 @@ const StatisticsComponent: React.FC<StatisticsComponentProps> = () => {
               </div>
             </div>
           </div>
-
           <div className="statistics-item">
             <div className="content-with-labels">
               <img src={"users"} alt="Usuários" className="img-statistics" />
@@ -37,7 +38,6 @@ const StatisticsComponent: React.FC<StatisticsComponentProps> = () => {
               </div>
             </div>
           </div>
-
           <div className="statistics-item">
             <div className="content-with-labels">
               <img src={"chart"} alt="Carrinho" className="img-statistics" />
@@ -47,7 +47,6 @@ const StatisticsComponent: React.FC<StatisticsComponentProps> = () => {
               </div>
             </div>
           </div>
-
           <div className="statistics-item">
             <div className="content-with-labels">
               <img src={"money"} alt="Dinheiro" className="img-statistics" />
@@ -59,7 +58,6 @@ const StatisticsComponent: React.FC<StatisticsComponentProps> = () => {
           </div>
         </div>
       </div>
-
       <div className="additional-statistics-container">
         <div className="additional-statistics">
           <BriefCaseIcon />
@@ -68,16 +66,14 @@ const StatisticsComponent: React.FC<StatisticsComponentProps> = () => {
             <div className="label">Orders</div>
           </div>
         </div>
-
         <div className="additional-statistics">
-          <MessageDots />
+          <MessageDotsIcon />
           <div className="number-label-container">
             <div className="number-statistics">3.4k</div>
             <div className="label">Review</div>
           </div>
         </div>
       </div>
-
       <div className="additional-items-container">
         <div className="custom-additional-item">
           <div className="custom-number-label-container">
@@ -92,7 +88,6 @@ const StatisticsComponent: React.FC<StatisticsComponentProps> = () => {
             </div>
           </div>
         </div>
-
         <div className="custom-additional-item">
           <div className="custom-number-label-container">
             <h3 className="custom-number-statistics">Sessions</h3>
@@ -104,9 +99,8 @@ const StatisticsComponent: React.FC<StatisticsComponentProps> = () => {
             </div>
           </div>
         </div>
-
         <div className="additional-item">
-          <CurrencyDollar/>
+          <CurrencyDollarIcon/>
           <div className="number-label-container-total">
             <h3 className="number-statistics">Total Profit</h3>
             <h4 className="label">Last week</h4>
@@ -116,7 +110,6 @@ const StatisticsComponent: React.FC<StatisticsComponentProps> = () => {
             </div>
           </div>
         </div>
-
         <div className="additional-item">
           <ChartPieIcon/>
           <div className="number-label-container-total">
@@ -128,7 +121,6 @@ const StatisticsComponent: React.FC<StatisticsComponentProps> = () => {
             </div>
           </div>
         </div>
-  
         <div className="container-revenue">
           <div className="number-label-revenue">
             <h3 className="number-label-statistics">Revenue Growth</h3>
@@ -140,10 +132,9 @@ const StatisticsComponent: React.FC<StatisticsComponentProps> = () => {
           </div>
             <ChartRevenue/>
         </div>
-    
       </div>
     </div>
   );
-};
+}
 
 export default StatisticsComponent;

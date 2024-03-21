@@ -1,10 +1,19 @@
-import React from 'react'
-import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
-import { Button, IconButton } from '@mui/material';
-import { DotsVertical, Edit, Trash, } from '../Image/icons'
-import rows from '../../dados/data-invoice.json';
+import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
+import { Button, IconButton } from "@mui/material";
+import { VerticalDotsIcon, EditIcon, TrashIcon } from "@icons";
+import rows from "../../dados/data-invoice.json";
 
-const ContatoCell = ({ contato }) => {
+type Contact = {
+    name: string;
+    description: string;
+}
+
+interface ContactProp {
+    contato: Contact;
+    children?: React.ReactNode;
+};
+
+const ContatoCell = ({ contato }: ContactProp) => {
     return (
         <>
             <div style={{display:'flex', flexDirection:'column'}}>
@@ -15,7 +24,7 @@ const ContatoCell = ({ contato }) => {
     );
 };
 
-const getStatusStyles = (status) => {
+const getStatusStyles = (status: string) => {
     const color = status === 'pendente' ? 'red' : 'green';
     const backgroundColor = status === 'pendente' ? '#ffadad' : 'lightgreen';
 
@@ -23,32 +32,48 @@ const getStatusStyles = (status) => {
 };
 
 const columns: GridColDef[] = [
-
-    { field: 'contato', headerName: 'Contato', width: 300,
+    { 
+        field: 'contato', 
+        headerName: 'Contato', 
+        width: 300,
         renderCell: (params) => {
-        return <ContatoCell contato={params.value} />;
+            return <ContatoCell contato={params.value} />;
         }
     },
-
-    { field: 'atividade', headerName: 'Atividade', width: 280 },
-    { field: 'date', headerName: 'Data', type: 'date', width: 190, 
-    valueGetter: (params: GridValueGetterParams) => {
-        return params.row.date ? new Date(params.row.date) : null;
-      },
+    { 
+        field: 'atividade', 
+        headerName: 'Atividade', 
+        width: 280 
     },
-    { field: 'fatura', headerName: 'Faturamento', width: 230 },
-    { field: 'status', headerName: 'Status', width: 230,
-    renderCell: (params) => (
-        <div style={{ 
-            color: getStatusStyles(params.value).color, 
-            backgroundColor: getStatusStyles(params.value).backgroundColor, 
-            border: '1px solid',
-            padding:'2px',
-            borderRadius:'5px'
+    { 
+        field: 'date', 
+        headerName: 'Data', 
+        type: 'date', 
+        width: 190, 
+        valueGetter: (params: GridValueGetterParams) => {
+            return params.row.date ? new Date(params.row.date) : null;
+        }
+    },
+    { 
+        field: 'fatura', 
+        headerName: 'Faturamento', 
+        width: 230 
+    },
+    { 
+        field: 'status', 
+        headerName: 'Status', 
+        width: 230,
+        renderCell: (params) => (
+            <div style={{ 
+                color: getStatusStyles(params.value).color, 
+                backgroundColor: getStatusStyles(params.value).backgroundColor, 
+                border: '1px solid',
+                padding:'2px',
+                borderRadius:'5px'
             }}>
-            {params.value}
-        </div>
-      ),
+                {params.value}
+            </div>
+        )
     },
     {
         field: 'acao',
@@ -58,39 +83,35 @@ const columns: GridColDef[] = [
             return (
               <div>
                     <IconButton>
-                        <Edit/>
+                        <EditIcon/>
                     </IconButton>
                     <IconButton
-                    color="primary"
-                    size="small"
-                    onClick={() => {
-                      // ...
-                    }}
-                  >
-                    <Trash className={undefined} />
-                    </IconButton>
+                        color="primary"
+                        size="small"
+                        onClick={() => {}}
+                    >
+                        <TrashIcon className={undefined} />
+                        </IconButton>
                     <IconButton>
-                        <DotsVertical className={undefined}/>
+                        <VerticalDotsIcon className={undefined}/>
                     </IconButton>
               </div>
-            );
-          },
-    },
+            )
+        }
+    }
 ];
 
 export default function InvoiceComponent() {
-  return (
+    return (
         <div style={{ width: '94%', height: '100%', paddingTop: 2, paddingBottom: 24, paddingLeft: 80, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', gap: 1, display: 'inline-flex' }}>
             <div style={{ borderRadius: 6, overflow: 'hidden', justifyContent: 'end', alignItems: 'flex-start', display: 'flex', width: '100%' }}>
                 <div style={{ borderTopLeftRadius: 5, borderBottomLeftRadius: 5, paddingLeft: 10, paddingRight: 10, background: '#DEDBFC', borderRight: '1px rgba(115, 103, 240, 0.24) solid', justifyContent: 'end', alignItems: 'center', display: 'flex' }}>
                     <Button>Meus</Button>
                 </div>
                 <div style={{ paddingLeft: 10, paddingRight: 10, background: '#E8E6FC', justifyContent: 'end', alignItems: 'center', display: 'flex' }}>
-                
                     <Button>Todos</Button>
                 </div>
             </div>
-
             <div style={{ justifyContent: 'space-between', alignItems: 'center', gap: 24, display: 'flex', width: '98%', padding: '5px 0px 1px 10px' }}>
                 <div style={{ flex: '1 ', height: 38, borderRadius: 6, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex', width: '100px' }}>
                     <div style={{ flex: '1 1 0', height: 38, background: 'white', borderRadius: 6, overflow: 'hidden', justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex' }}>
@@ -135,11 +156,9 @@ export default function InvoiceComponent() {
                     </div>
                 </div>
             </div>
-
             <div style={{ alignSelf: 'stretch', paddingLeft: 4, paddingRight: 1, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'inline-flex', width: '100%' }}>
                 <div style={{ color: 'black', fontSize: 18, fontFamily: 'sans-serif', fontWeight: '500', lineHeight: 2, wordWrap: 'break-word' }}>Filtro de busca</div>
             </div>
-
             <div style={{ flex: '1 1 0', height: 38, justifyContent: 'space-between', alignItems: 'center', gap: 16, display: 'flex', width: '100%', borderTop: '1px #DBDADE solid', padding: 10 }}>
                 <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 15, height: '100%' }}>
                     <select style={{ display: 'flex', justifyContent: 'center', height: '2rem', width:'5rem', padding: '5px 10px 5px 5px', borderRadius:'5px' }}>
@@ -159,7 +178,6 @@ export default function InvoiceComponent() {
                             justifyContent: 'flex-start',
                             alignItems: 'center', display: 'flex'
                         }} />
-
                     <div>
                         <Button style={{
                             background: '#7367F0',
@@ -175,20 +193,19 @@ export default function InvoiceComponent() {
                     </div>
                 </div>
             </div>
-
             <div style={{ height: 370, width: '100%' }}>
                 <DataGrid
                     rows={rows}
                     columns={columns}
                     initialState={{
                         pagination: {
-                            paginationModel: { page: 0, pageSize: 5 },
-                        },
+                            paginationModel: { page: 0, pageSize: 5 }
+                        }
                     }}
                     pageSizeOptions={[5, 10]}
                     isCellEditable={(params) => params.row.Contato % 2 === 0} 
                 />
             </div>
         </div>
-    )
+    );
 }

@@ -1,6 +1,5 @@
-import React from 'react';
 import Navbar from "../../components/Navbar";
-import { FileTextIcon, LinkIcon, UsersIcon } from '../../components/Image/icons';
+import { TextFileIcon, LinkIcon, UsersIcon } from '@icons';
 import '../../styles/chatbot.css';
 
 const Whatsapp = () => {
@@ -19,7 +18,7 @@ const Whatsapp = () => {
                         Flow Chart
                     </button>
                     <button className="grayButton">
-                        <FileTextIcon />
+                        <TextFileIcon />
                         Painel
                     </button>
                 </div>

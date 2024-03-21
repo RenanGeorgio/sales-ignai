@@ -1,11 +1,10 @@
-import React from 'react';
-import PedidoInfoModal from '../Modal/pedidoInfo';
-import '../../styles/business.css';
-import PrecoModal from '../Modal/price';
-import ArquivosModal from '../Modal/arquivos';
-import OrganizeModal from '../Modal/organize';
-import VariantesModal from '../Modal/variantes';
-import InventarioModal from '../Modal/inventario';
+import PedidoInfoModal from "../Modal/pedidoInfo";
+import PrecoModal from "../Modal/price";
+import ArquivosModal from "../Modal/arquivos";
+import OrganizeModal from "../Modal/organize";
+import VariantesModal from "../Modal/variantes";
+import InventarioModal from "../Modal/inventario";
+import "@styles/business.css";
 
 interface AddInfoProps {
     setShowList: () => void;

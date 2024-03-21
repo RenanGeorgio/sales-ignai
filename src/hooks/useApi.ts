@@ -1,4 +1,4 @@
-import authApi from "../services/auth";
+import authApi from "@services/auth";
 
 type SignInRequestData = {
   email: string;

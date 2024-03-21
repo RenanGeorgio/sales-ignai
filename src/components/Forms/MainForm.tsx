@@ -1,5 +1,4 @@
-import React from 'react';
-import '../../styles/forms.css';
+import "@styles/forms.css";
 
 const MainForm: React.FC = () => {
   return (
@@ -51,6 +50,6 @@ const MainForm: React.FC = () => {
         </form>
     </div>
   );
-};
+}
 
 export default MainForm;
