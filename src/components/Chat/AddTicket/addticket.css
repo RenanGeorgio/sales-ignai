@@ -5,10 +5,6 @@
       "Source Han Sans CN", sans-serif;
   }
   
-  /* .main-container {
-    overflow: hidden;
-  } */
-  
    .main-container,
   .main-container * {
     box-sizing: border-box;
@@ -18,13 +14,9 @@
   select,
   textarea,
   button {
-    outline: 2px;
+    /* outline: 2px; */
   }
   
-  /* .attachFileSpan{
-    color:#2b6dad;
-    cursor:pointer;
-    } */
     .attachFileSpan:hover{
     /* text-decoration: underline; */
     cursor: pointer; 

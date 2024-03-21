@@ -1,18 +1,12 @@
-
-import React, { useState } from 'react';
-import { DataGrid, GridColDef, GridValueGetterParams, GRID_DATETIME_COL_DEF, GRID_DATE_COL_DEF } from '@mui/x-data-grid';
-import { Button, FormControl, InputLabel, MenuItem, Select, IconButton, Modal } from '@mui/material';
-import { DotsVertical, Edit, Trash, } from '../../components/Image/icons';
-import rows from '../../dados/data-business.json';
-import { LeadIcon } from '../../components/Image/icons';
-import avatar from '../../components/Image/Avatar3.png';
-import { MessageDots } from '../../components/Image/icons';
-import { PaperClip } from '../../components/Image/icons';
-import AddInfo from '../Business/addInfo';
-import PrecoModal from '../Modal/price';
-import { useSidebar } from '../../contexts/sidebar/SidebarContext';
-import ModalSearchBusiness from './ModalSearchBusiness';
-// import '../../styles/business.css';
+import { useState } from "react";
+import { DataGrid, GridColDef, GridValueGetterParams, GRID_DATETIME_COL_DEF, GRID_DATE_COL_DEF } from "@mui/x-data-grid";
+import { Button, FormControl, InputLabel, MenuItem, Select, IconButton, Modal } from "@mui/material";
+import { VerticalDotsIcon, EditIcon, TrashIcon, LeadIcon, PaperClipIcon, MessageDotsIcon } from "@icons";
+import avatar from "@assets/images/Avatar3.png";
+import AddInfo from "../Business/addInfo";
+import PrecoModal from "../Modal/price";
+import { useSidebar } from "@contexts/sidebar/SidebarContext";
+import ModalSearchBusiness from "./ModalSearchBusiness";
 
 interface SearchBusinessProps { }
 
@@ -113,12 +107,12 @@ const columns: GridColDef[] = [
         {params.row.id !== 5 && params.row.id !== 8 ? (
           <>
           <IconButton>
-            <PaperClip/>
+            <PaperClipIcon />
           </IconButton>
             <span style={{ marginLeft: '4px' }}>{params.row.acao}</span>
             <div style={{ marginRight: '4px' }}>{params.row.historicoClip}</div>
             <IconButton size='medium'>
-              <MessageDots/>
+              <MessageDotsIcon />
             </IconButton>
             <span style={{ marginLeft: '4px' }}>{params.row.acao}</span>
             <div style={{ marginRight: '4px' }}>{params.row.historicoMessage}</div>
@@ -154,13 +148,13 @@ const columns: GridColDef[] = [
         {params.row.id !== 5 && params.row.id !== 8 ? (
           <>
             <IconButton>
-              <Edit />
+              <EditIcon />
             </IconButton>
             <IconButton color="primary" size="small" onClick={() => { }}>
-              <Trash className={undefined} />
+              <TrashIcon className={undefined} />
             </IconButton>
             <IconButton>
-              <DotsVertical className={undefined} />
+              <VerticalDotsIcon className={undefined} />
             </IconButton>
           </>
         ) : (
@@ -185,15 +179,6 @@ const SearchBusiness: React.FC<SearchBusinessProps> = () => {
   const handleShowList = () => {
     setShowKanban(false);
   };
-
-  const rowsWithStylization = rows.map((row) => {
-    if (row.id === 5) {
-      return { ...row, negociosAtivos: { name: 'Negócios' } };
-    } else if (row.id === 8) {
-      return { ...row, negociosAtivos: { name: 'Negócios Rejeitados' } };
-    }
-    return row;
-  });
 
   return (
     <div className={`business-app-container ${isSidebarExpanded ? 'sidebar-expanded' : ''}`}>
@@ -253,7 +238,6 @@ const SearchBusiness: React.FC<SearchBusinessProps> = () => {
               </div>
             </div>
           </div>
-
           <div style={{ maxWidth: '98.5%', height: 38, justifyContent: 'space-between', 
           alignItems: 'center', gap: 16, display: 'flex', width: '100%', borderRight: '1px #DBDADE solid',
            borderLeft: '1px #DBDADE solid', padding: 10, backgroundColor: '#fff' }}>
@@ -277,7 +261,6 @@ const SearchBusiness: React.FC<SearchBusinessProps> = () => {
                 <option>Assignados a mim</option>
                 <option>Todos</option>
               </select>
-
               <input
                 title='Buscar'
                 placeholder='Buscar'
@@ -288,7 +271,6 @@ const SearchBusiness: React.FC<SearchBusinessProps> = () => {
                   alignItems: 'center', display: 'flex'
                 }}
               />
-
               <div>
                 <Button style={{
                   background: 'rgba(115, 103, 240, 1)',
@@ -300,17 +282,16 @@ const SearchBusiness: React.FC<SearchBusinessProps> = () => {
                   width: 300,
                   cursor: 'pointer',
                 }}
-                  onClick={handleOpen}
+                  onClick={handleShowKanban}
                 >
                                 + Adicionar Pedido / Proposta
                                 </Button>
                             </div>
                         </div>
                     </div>
-
           <div style={{ height: 620, width: '100%' }}>
             <DataGrid
-              rows={rowsWithStylization}
+              rows={[]}
               columns={columns}
               initialState={{
                 pagination: {
@@ -328,7 +309,6 @@ const SearchBusiness: React.FC<SearchBusinessProps> = () => {
               close={handleClose}
             />
           </Modal>
-
         </div>
       )}
     </div>

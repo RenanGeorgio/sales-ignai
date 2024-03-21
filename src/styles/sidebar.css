@@ -50,14 +50,14 @@
   margin-right: 25px;
   width: 100%;
   padding-inline: 5px;
-  color: #4B465C;
+  color: #4b465c;
 }
-.expanded img{
+.expanded img {
   /* display: flex; */
   /* align-items: baseline; */
   /* position: relative; */
 }
-.sidebar div img{
+.sidebar div img {
   margin-bottom: 10px;
 }
 
@@ -74,7 +74,7 @@
   /* height: 20px; */
 }
 
-.link{
+.link {
   text-decoration: none;
   display: flex;
   justify-content: center;
@@ -105,37 +105,37 @@
 
 .section1 {
   display: flex;
-  flex-direction:column;
-  border-bottom:1px solid rgba(183, 183, 183, 0.585);
-  color: #4B465C;
+  flex-direction: column;
+  border-bottom: 1px solid rgba(183, 183, 183, 0.585);
+  color: #4b465c;
   width: 98%;
   /* margin-bottom: 10px; */
-  gap:15px;
+  gap: 15px;
   margin-top: -1px;
   padding-bottom: 15px;
   padding-top: 1px;
 }
-.sectionContainer{
-  margin-top:15px;
+.sectionContainer {
+  margin-top: 15px;
 }
-.sectionContainer .link{
+.sectionContainer .link {
   margin: 1px 0px 5px 0px;
 }
-.expanded .sectionContainer .link{
+.expanded .sectionContainer .link {
   margin: auto;
 }
-.expanded .sectionContainer{
+.expanded .sectionContainer {
   margin-top: -10px;
   gap: inherit;
 }
-.expanded .section1{
+.expanded .section1 {
   gap: inherit;
   margin-bottom: inherit;
   margin-top: inherit;
   padding-bottom: inherit;
 }
 
-.textOpen{
+.textOpen {
   text-align: center;
   margin-left: 0;
 }
@@ -148,7 +148,7 @@
 
   .sidebar.expanded {
     width: 100px;
-    align-items: flex-start; 
+    align-items: flex-start;
   }
 
   .sidebar img {

@@ -14,6 +14,8 @@ import storage from "redux-persist/lib/storage"; // defaults to localStorage for
 import { sessionReducer as session } from "./session/sessionSlice";
 import { userReducer as user } from "./user/userSlice";
 import { leadsReducer as leads } from "./leads/leadsSlice";
+import { clientsReducer as clients } from "./clients/clientsSlice";
+
 import emailCombinedReducer from "./email/reducers";
 // Email
 import { fetchConfiguration } from "services/email/configuration";
@@ -48,6 +50,7 @@ const rootReducer = combineReducers({
   session,
   user,
   leads,
+  clients,
   email: emailCombinedReducer,
 });
 
@@ -67,5 +70,5 @@ let persistor = persistStore(store);
 export { sessionActions } from "./session/sessionSlice";
 export { userActions } from "./user/userSlice";
 export { leadsActions } from "./leads/leadsSlice";
-
+export { clientsActions } from "./clients/clientsSlice";
 export { persistor, store, rootReducer, storage };
