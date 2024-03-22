@@ -1,7 +1,7 @@
 import { createContext, useCallback, useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import { io } from "socket.io-client";
-import { baseUrl, postRequest, getRequest } from "../../utils/chatService";
+import { baseUrl, postRequest, getRequest } from "../../services/api/apiService";
 import useAuth from "@hooks/useAuth";
 import { OnlineUser, Consumer } from "@types";
 

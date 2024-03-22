@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { baseUrl, getRequest } from "../utils/chatService";
+import { baseUrl, getRequest } from "../services/api/apiService";
 import { Consumer } from "@types";
 
 export const useFetchRecipient = (chat: any, user: Consumer) => {
