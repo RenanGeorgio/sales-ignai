@@ -11,6 +11,7 @@
   left: 100%; /* Alterado para abrir sempre à direita */
   color: black;
   gap: 5px;
+  height: 50px;
 }
 .popover button {
   margin-top: -15px;
