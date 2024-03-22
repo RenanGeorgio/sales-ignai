@@ -1,27 +1,38 @@
 // @ts-nocheck
-import {Component, Fragment} from 'react';
-import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
-// import history from '../routes/history';
-import Spinner from '../../components/Email/spinner/spinner';
-import TopBar from '../../components/Email/top-bar/top-bar';
-import SideBar from '../../components/Email/side-bar/side-bar';
-import MessageEditor from '../../components/Email/message-editor/message-editor';
-import MessageList from '../../components/Email/message-list/message-list';
-import MessageViewer from '../../components/Email/message-viewer/message-viewer';
-import MessageSnackbar from '../../components/Email/message-snackbar/message-snackbar';
-import ComposeFabButton from '../../components/Email/buttons/compose-fab-button';
-import {clearUserCredentials} from '../../store/email/actions/application';
-import {getCredentials, outbox as outboxSelector, pollInterval as pollIntervalSelector} from '../../store/email/selectors/application';
-import {getSelectedFolder} from '../../store/email/selectors/folders';
-import {editNewMessage} from '../../services/email/application';
-import {isDesktop} from '../../services/email/configuration';
-import {AuthenticationException} from '../../services/email/fetch';
-import {getFolders} from '../../services/email/folder';
-import {resetFolderMessagesCache} from '../../services/email/message';
-import mainCss from '../../styles/email/main.scss';
+import { Component, Fragment } from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import Spinner from "@components/Email/spinner/spinner";
+import TopBar from "@components/Email/top-bar/top-bar";
+import SideBar from "@components/Email/side-bar/side-bar";
+import MessageEditor from "@components/Email/message-editor/message-editor";
+import MessageList from "@components/Email/message-list/message-list";
+import MessageViewer from "@components/Email/message-viewer/message-viewer";
+import MessageSnackbar from "@components/Email/message-snackbar/message-snackbar";
+import ComposeFabButton from "@components/Email/buttons/compose-fab-button";
+import { clearUserCredentials } from "@store/email/actions/application";
+import { getCredentials, outbox as outboxSelector, pollInterval as pollIntervalSelector } from "@store/email/selectors/application";
+import { getSelectedFolder } from "@store/email/selectors/folders";
+import { editNewMessage } from "@services/email/application";
+import { isDesktop } from "@services/email/configuration";
+import { AuthenticationException } from "@services/email/fetch";
+import { getFolders } from "@services/email/folder";
+import { resetFolderMessagesCache } from "@services/email/message";
+import mainCss from "@styles/email/main.scss";
 
-const MessageEditorWrapper = ({applicationNewMessage}) => (
+interface Props {
+  application: PropTypes.object;
+  credentials: PropTypes.object;
+  selectedFolder: PropTypes.object
+  outbox: PropTypes.object;
+  pollInterval: number;
+  reloadFolders: PropTypes.func;
+  reloadMessageCache: PropTypes.func;
+  newMessage: PropTypes.func.isRequired;
+  logout: PropTypes.func;
+};
+
+const MessageEditorWrapper = ({ applicationNewMessage }) => (
   (applicationNewMessage && Object.keys(applicationNewMessage).length > 0) &&
   <div className={mainCss['main-layout__message-editor-wrapper']}>
     <div className={mainCss['message-editor__scrim']}></div>
@@ -30,13 +41,24 @@ const MessageEditorWrapper = ({applicationNewMessage}) => (
 );
 
 class Email extends Component {
-  constructor(props) {
+  application: PropTypes.object;
+  credentials: PropTypes.object;
+  selectedFolder: PropTypes.object;
+  outbox: PropTypes.object;
+  pollInterval: number;
+  reloadFolders: PropTypes.func;
+  reloadMessageCache: PropTypes.func;
+  newMessage: PropTypes.func.isRequired;
+  logout: PropTypes.func;
+
+  constructor(props: Props) {
     super(props);
     this.state = {
       sideBar: {
         collapsed: !isDesktop()
       }
     };
+
     this.toggleSideBar = this.toggleSideBar.bind(this);
   }
 
@@ -55,9 +77,11 @@ class Email extends Component {
 
   renderContent() {
     const {application, outbox} = this.props;
+
     if (application.selectedMessage && Object.keys(application.selectedMessage).length > 0) {
       return <MessageViewer className={mainCss['main-layout__message-viewer']} />;
     }
+
     return (
       <Fragment>
         <MessageList className={mainCss['main-layout__message-list']} />
@@ -69,7 +93,6 @@ class Email extends Component {
   }
 
   startPoll() {
-    // Start polling when everything is ready
     if (this.props.selectedFolder && !this.pollStarted) {
       this.pollStarted = true;
       this.refreshPoll();
@@ -83,19 +106,24 @@ class Email extends Component {
    */
   async refreshPoll() {
     let keepPolling = true;
+
     const {pollInterval, reloadFolders, reloadMessageCache, logout} = this.props;
+
     try {
       const folderPromise = reloadFolders();
       const messagePromise = reloadMessageCache();
+
       await Promise.all([folderPromise, messagePromise]);
     } catch (e) {
       // eslint-disable-next-line no-console
       console.log(`Error in refresh poll: ${e}`);
+
       if (e instanceof AuthenticationException) {
         keepPolling = false;
         logout();
       }
     }
+
     if (keepPolling) {
       // eslint-disable-next-line @typescript-eslint/no-misused-promises
       this.refreshPollTimeout = setTimeout(this.refreshPoll.bind(this), pollInterval);
@@ -104,6 +132,7 @@ class Email extends Component {
 
   toggleSideBar() {
     const toggleCollapsed = !this.state.sideBar.collapsed;
+
     this.setState({
       sideBar: {
         collapsed: toggleCollapsed
@@ -112,8 +141,9 @@ class Email extends Component {
   }
 
   render() {
-    const {application} = this.props;
-    const {sideBar} = this.state;
+    const { application } = this.props;
+    const { sideBar } = this.state;
+
     return (
       <div className={`${mainCss['main-layout']}
           ${sideBar.collapsed ? '' : mainCss['main-layout--with-side-bar']}`}>
@@ -133,18 +163,6 @@ class Email extends Component {
   }
 }
 
-Email.propTypes = {
-  application: PropTypes.object,
-  credentials: PropTypes.object,
-  selectedFolder: PropTypes.object,
-  outbox: PropTypes.object,
-  pollInterval: PropTypes.number,
-  reloadFolders: PropTypes.func,
-  reloadMessageCache: PropTypes.func,
-  newMessage: PropTypes.func.isRequired,
-  logout: PropTypes.func
-};
-
 const mapStateToProps = state => ({
   application: state.email.application,
   credentials: getCredentials(state),
@@ -159,8 +177,7 @@ const mapDispatchToProps = dispatch => ({
   reloadMessageCache: (user, folder) => resetFolderMessagesCache(dispatch, user, folder),
   newMessage: () => editNewMessage(dispatch),
   logout: () => {
-    dispatch(clearUserCredentials());
-    // history.push('/login');
+    dispatch(clearUserCredentials())
   }
 });
 
