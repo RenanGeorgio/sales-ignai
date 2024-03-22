@@ -163,14 +163,15 @@ const Leads = () => {
                     title="+ Adicionar"
                     handleClick={() => addNewCard(column._id)}
                   >
-                    <input
-                      style={{ width: '95%' }}
+                    <div style={{width: "auto", display:'flex'}}>
+                    <input                    
                       type="text"
                       placeholder="Novo Card"
                       onChange={(e) => {
                         setCardName(e.target.value);
                       }}
                     />
+                    </div>
                   </LeadPopover>
                   </div>
                   {isMounted ? (
