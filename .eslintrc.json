@@ -1,4 +1,8 @@
 {
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
     "parser": "@typescript-eslint/parser",
     "plugins": ["@typescript-eslint", "react-hooks"],
     "parserOptions": {
@@ -12,11 +16,32 @@
         "prettier"
     ],
     "settings": {
+        "react": {
+            "version": "detect"
+        },
         "import/resolver": {
             "node": {
                 "extensions": [".js", ".jsx", ".ts", ".tsx", ".d.ts"]
-          },
-            "typescript": {}
+            },
+            "typescript": {},
+            "alias": {
+                "map": [
+                    ["@components", "./src/components"],
+                    ["@pages", "./src/pages"],
+                    ["@styles", "./src/styles"],
+                    ["@contexts", "./src/contexts"],
+                    ["@services", "./src/services"],
+                    ["@types", "./src/typograph/types"],
+                    ["@interfaces", "./src/typograph/interfaces"],
+                    ["@helpers", "./src/helpers"],
+                    ["@store", "./src.store"],
+                    ["@hooks", "./src/hooks"],
+                    ["@libs", "./src/libs"],
+                    ["@icons", "./src/components/Icons"],
+                    ["@assets", "./src/assets"]
+                ],
+                "extensions": [".ts", ".tsx", ".js", ".jsx"]
+            }
         }
     },
     "rules": {

@@ -21,7 +21,7 @@
     "noImplicitAny": true,
     //"removeComments": false,
     //"preserveConstEnums": true,
-    //"sourceMap": true,
+    "sourceMap": true,
     "jsx": "react-jsx",
     "incremental": true
   },
@@ -43,7 +43,7 @@
   ],
   "typeRoots": [
     "node_modules/@types",
-    "src/types/*.ts"
+    "src/typograph/**/*.ts"
   ],
   "ts-node": {
     "compilerOptions": {
