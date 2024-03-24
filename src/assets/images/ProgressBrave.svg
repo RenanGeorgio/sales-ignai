@@ -1,6 +1,6 @@
 <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="Progress">
-<ellipse id="Ellipse" cx="15.0362" cy="15.406" rx="12.9637" ry="12.9822" stroke="#DBDADE" stroke-width="3"/>
-<path id="Ellipse_2" d="M22.2385 4.61182C20.1067 3.18532 17.6003 2.42392 15.0363 2.42392" stroke="#EA5455" stroke-width="3" stroke-linecap="round"/>
+<ellipse id="Ellipse" cx="15.0362" cy="15.406" rx="12.9637" ry="12.9822" stroke="#DBDADE" strokeWidth="3"/>
+<path id="Ellipse_2" d="M22.2385 4.61182C20.1067 3.18532 17.6003 2.42392 15.0363 2.42392" stroke="#EA5455" strokeWidth="3" strokeLinecap="round"/>
 </g>
 </svg>
