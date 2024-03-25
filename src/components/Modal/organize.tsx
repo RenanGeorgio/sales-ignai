@@ -3,7 +3,7 @@ import '../../styles/business.css';
 
 const OrganizeModal: React.FC = () => {
   return (
-    <div className="business-modal-organize-container">
+    <div className="business-modal-organize-container"> 
       <div className="business-modal-header">
         <h2>Organize</h2>
       </div>

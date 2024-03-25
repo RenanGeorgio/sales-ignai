@@ -1,14 +1,17 @@
 /* Estilos para o modal de informações do pedido */
 .business-modal-container {
-  width: 55%;
-  max-width: 800px;
+  width: 100%;
+  /* max-width: 800px; */
   margin-right: auto;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* position: relative; */
   margin-top: 20px;
-  left: 15px;
+  /* left: -275px; */
   box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.4);
   color: #4B465C;
-  font-family: "Public Sans";
+  /* font-family: "Public Sans"; */
+  padding: 15px;
 }
 
 .business-modal-header {
@@ -36,7 +39,8 @@
 .sku-barcode-container {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom:10px;
+  gap: 10px;
 }
 
 .sku-container {  
@@ -63,7 +67,10 @@
   display: flex;
   flex-direction: column;
 }
-
+.modal-business-form{
+  display: flex;
+  flex-direction: column;
+}
 .business-modal-content label {
   margin-bottom: 5px;
   margin-left: 10px;
@@ -71,15 +78,26 @@
 
 .business-modal-content input,
 .business-modal-content textarea {
-  width: 94%;
+  /* width: 100%; */
   padding: 8px;
-  margin-left: 10px;
+  /* margin-left: 10px; */
   margin-bottom: 10px;
   height: 20px;
+  border-radius: 6px;
+  border: #4b465c42 1px solid;
+  outline: #8f8f8f;
 }
 
 .business-modal-content textarea {
-  height: 150px;
+  height: 120px;
+  resize: none;
+  border: #4b465c42 1px solid;
+}
+
+.business-modal-content textarea:active {
+  height: 120px;
+  resize: none;
+  border: #4b465c42 1px solid;
 }
 
 .sku-barcode-container {
@@ -98,25 +116,46 @@
 
 /* Estilos para o modal de preço */
 .business-modal-price-container {
-  width: 50%;
-  height: calc(100% - 200px);
+  width: 80%;
+  height: calc(100% - 100px);
   max-width: 400px; 
   margin-top: 20px;
   margin-right: auto;
   position: relative;
-  left: -60px;
+  left: 0px;
   box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.4);
   color: #4B465C;
   font-family: "Public Sans";
+  /* display: flex; */
+ 
 }
 
 .business-modal-content-price {
   display: flex;
   flex-direction: column;
   padding: 6px;
-  margin-top: 0px;
+  margin-top: 5px;
   margin-bottom: 0px;
   margin-left: 15px;
+  gap: 10px;
+  /* height: 100%; */
+  /* box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.4); */
+ 
+}
+
+.modal-price-form{
+  display: flex;
+  flex-direction: column;
+  row-gap: 3px;
+  /* margin-top: 25px; */
+  padding: 5px 0;
+}
+
+.modal-price-form input{
+  height: 20px;
+  padding: 8px;
+  border: #4b465c42 1px solid;
+  border-radius: 6px;
 }
 
 .business-modal-content-price input{
@@ -139,8 +178,11 @@
 .checkbox-container-footer {
   margin-bottom: 0px;
   margin-top: -20px;
-  width: auto;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
   height: 60px;
+  display: flex;
 }
 
 .checkbox-container-footer h2 {
@@ -148,7 +190,7 @@
   font-size: 23px;
 }
 
-.checkbox-container-footer input {
+/* .checkbox-container-footer input {
   display: flex;
   margin-left: auto;
   margin: auto;
@@ -158,26 +200,44 @@
   height: 20px;
   margin-bottom: 0px;
   margin-right: 10px;
-}
+} */
 
 /* Estilos para a página de adição de pedido/proposta */
 .business-add-info-container {
   width: 95%;
   margin-left: 72px;
+  display: flex;
+  flex-direction: column;
 }
 
 .title-section {
   color: #4B465C;
-  font-family: "Public Sans";
+  /* font-family: "Public Sans"; */
 }
 
 .info-section{
   margin-top: -30px;
+  display: flex;
+  column-gap: 10px;
+  justify-content: space-around;
 }
 
 .title-section span {
   display: flex;
   margin-top: -10px;
+}
+
+.container-section-business{
+  display: flex;
+  justify-content:space-between;
+  padding-left: 20px;
+  gap:18px
+}
+.content-section-business{
+  width: 100%;
+  /* width: 740px; */
+  display: flex;
+  justify-content: center;
 }
 
 .business-add-info-container .button-section {
@@ -218,11 +278,11 @@
 
 /* Estilos para o modal de arquivos */
 .business-modal-arquivos-container {
-  width: 55%;
-  max-width: 800px;
-  height: calc(100% - 200px);
+  width: 100%;
+  /* max-width: 800px; */
+  /* height: calc(100% - 200px); */
   margin-right: auto;
-  position: relative;
+  /* position: relative; */
   left: 15px;
   margin-top: 30px; 
   box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.4);
@@ -282,23 +342,24 @@
 
 /* Estilos para o modal de organize */
 .business-modal-organize-container {
+  width: 80%;
+    /* height: calc(100% - 100px); */
+    max-width: 400px;
+    margin-top: 20px;
+    margin-right: auto;
+    position: relative;
+    left: 0px;
   color: #4B465C;
-  font-family: "Public Sans";
-  width: 50%;
-  max-width: 400px;
-  height: calc(100% + 400px);
-  margin-right: auto;
-  position: relative;
-  left: -60px;
-  margin-top: -50px;
   box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.4);
 }
 
 .business-modal-content-organize {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 6px;
+  /* width: 100%; */
   margin-left: 15px;
+  gap: 10px;
 }
 
 .business-modal-content-organize label {

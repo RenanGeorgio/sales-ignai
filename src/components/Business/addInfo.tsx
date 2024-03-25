@@ -13,7 +13,7 @@ interface AddInfoProps {
 
 const AddInfo: React.FC<AddInfoProps> = ({ setShowList }) => {
     return (
-        <div className="business-add-info-container">
+        <div className="business-add-info-container"> 
             <div style={{width:'98%'}}>
                 <div style={{ alignSelf: 'stretch', paddingLeft: 4, paddingRight: 1, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'inline-flex', width: '100%', marginLeft:'10px', marginTop:'15px' }}>
                     <div style={{ color: 'black', fontSize: 18, fontFamily: 'sans-serif', fontWeight: '500', lineHeight: 2, wordWrap: 'break-word' }}>Adicionar Pedido / Proposta</div>
@@ -74,13 +74,27 @@ const AddInfo: React.FC<AddInfoProps> = ({ setShowList }) => {
                     <button onClick={() => setShowList()} className="dark-blue">Publicar Pedido</button>
                 </div>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'row' }}>
-                <PedidoInfoModal />
+            <div
+            className='container-section-business'
+            //  style={{ display: 'flex', flexDirection: 'row' }}
+             >
+                <div className='content-section-business'>
+                <PedidoInfoModal/>
+                </div>
+                <div className='content-section-business'>
                 <PrecoModal />
+                </div>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'row' }}>
+            <div
+                className='container-section-business'
+            //  style={{ display: 'flex', flexDirection: 'row' }}
+             >
+                <div className='content-section-business'>
                 <ArquivosModal />
+                </div>
+                <div className='content-section-business'>
                 <OrganizeModal />
+                </div>
             </div>
             <div>
                 <VariantesModal />

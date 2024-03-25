@@ -15,8 +15,11 @@ const PedidoInfoModal: React.FC = () => {
                 </div>
             </div>
             <div className="business-modal-content">
+                <div className='modal-business-form'>
                 <label>Nome</label>
                 <input type="text" placeholder="Título do produto" />
+                </div>
+
                 <div className="sku-barcode-container">
                     <div className="sku-container">
                         <label>SKU</label>
@@ -27,8 +30,9 @@ const PedidoInfoModal: React.FC = () => {
                         <input type="text" placeholder="0123-4567" style={{ width: '88%' }} />
                     </div>
                 </div>
+
                 <label>Descrição</label>
-                <textarea placeholder="Descrição do produto"></textarea>
+                <textarea  rows={3} maxLength={250} placeholder="Descrição do produto"></textarea>
             </div>
         </div>
     );
