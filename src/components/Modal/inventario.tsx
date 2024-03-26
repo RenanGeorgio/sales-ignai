@@ -51,7 +51,7 @@ const InventarioModal: React.FC = () => {
           </button>
         </div>
         
-        <hr style={{ border: '1px solid #ccc', margin: '20px 0', marginLeft: '25px' }} />
+        {/* <hr style={{ border: '1px solid #ccc', margin: '20px 0', marginLeft: '25px' }} /> */}
 
         <div className="inventario-opcao">
           <h3>Opção</h3>
@@ -67,6 +67,7 @@ const InventarioModal: React.FC = () => {
             <span>Estoque total movimentado: 2.430</span>
           </div>
         </div>
+        
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ import AddInfo from '../Business/addInfo';
 import PrecoModal from '../Modal/price';
 import { useSidebar } from '../../contexts/sidebar/SidebarContext';
 import ModalSearchBusiness from './ModalSearchBusiness';
-// import '../../styles/business.css';
+import '../../styles/business.css';
 
 interface SearchBusinessProps { }
 
@@ -208,10 +208,13 @@ const SearchBusiness: React.FC<SearchBusinessProps> = () => {
             <div style={{ alignSelf: 'stretch', paddingLeft: 4, paddingRight: 1, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'inline-flex', width: '100%', marginLeft: '25px', marginTop: '15px' }}>
               <div style={{ color: 'black', fontSize: 18, fontFamily: 'sans-serif', fontWeight: '500', lineHeight: 2, wordWrap: 'break-word' }}>Filtro de busca: Negócios</div>
             </div>
-            <div style={{ justifyContent: 'space-between', alignItems: 'center', gap: 24, display: 'flex', width: '98%', padding: '5px 0px 1px 10px', marginBottom: '25px', marginLeft: '15px' }}>
-              <div style={{ flex: '1 ', height: 38, borderRadius: 6, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex', width: '100px' }}>
-                <div style={{ flex: '1 1 0', height: 38, background: 'white', borderRadius: 6, overflow: 'hidden', justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex' }}>
-                  <form style={{ width: '100%', height: '95%' }}>
+            <div style={{ justifyContent: 'space-between', alignItems: 'center', gap: 24, display: 'flex',
+             width: '98%', padding: '5px 0px 1px 10px', marginBottom: '25px', marginLeft: '15px' }}>
+              <div style={{ flex: '1 ', height: 38, borderRadius: 6, justifyContent: 'flex-start',
+               alignItems: 'flex-start', display: 'flex', width: '100px' }}>
+                <div style={{ flex: '1 1 0', height: 38, background: 'white', borderRadius: 6, overflow: 'hidden',
+                 justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex' }}>
+                  <form style={{ width: '100%', height: '95%',  }}>
                     <select style={{ width: '80%', height: '100%', borderRadius: 6 }}>
                       <option value="" selected>
                         <em>Selecionar por ativos</em>
@@ -257,7 +260,12 @@ const SearchBusiness: React.FC<SearchBusinessProps> = () => {
           <div style={{ maxWidth: '98.5%', height: 38, justifyContent: 'space-between', 
           alignItems: 'center', gap: 16, display: 'flex', width: '100%', borderRight: '1px #DBDADE solid',
            borderLeft: '1px #DBDADE solid', padding: 10, backgroundColor: '#fff' }}>
-            <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 15, height: '100%' }}>
+            <div style={{ display: 'flex', 
+            justifyContent: 'flex-start',
+             gap: 15, 
+             height: '100%',
+             width:'100%'
+             }}>
               <select style={{ display: 'flex', justifyContent: 'center', height: '2rem', width: '5rem', padding: '5px 10px 5px 5px', borderRadius: '5px' }}>
                 <option selected>10</option>
                 <option >20</option>
@@ -265,12 +273,12 @@ const SearchBusiness: React.FC<SearchBusinessProps> = () => {
                 <option >40</option>
               </select>
             </div>
-            <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 15, padding: 15, marginTop: '15px' }}>
+            <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 15, padding: 15, marginTop: '1px', width:'100%' }}>
               <select
                 style={{
                   height: 33, background: 'white',
                   borderRadius: 6, border: '1px #DBDADE solid',
-                  justifyContent: 'flex-start', width: '150px',
+                  justifyContent: 'flex-start', width: '150px', minWidth:100,
                   alignItems: 'center', display: 'flex'
                 }}
               >
@@ -285,7 +293,8 @@ const SearchBusiness: React.FC<SearchBusinessProps> = () => {
                   height: 33, background: 'white',
                   borderRadius: 6, border: '1px #DBDADE solid',
                   justifyContent: 'flex-start',
-                  alignItems: 'center', display: 'flex'
+                  alignItems: 'center', display: 'flex',
+                  minWidth:50
                 }}
               />
 
@@ -297,7 +306,7 @@ const SearchBusiness: React.FC<SearchBusinessProps> = () => {
                   // justifyContent: 'center',
                   // alignItems: 'center',
                   color: '#fff',
-                  width: 300,
+                  width: 'max-content',
                   cursor: 'pointer',
                 }}
                   onClick={handleShowKanban}

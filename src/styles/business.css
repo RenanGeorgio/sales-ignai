@@ -1,7 +1,7 @@
 /* Estilos para o modal de informações do pedido */
 .business-modal-container {
   width: 100%;
-  /* max-width: 800px; */
+  min-width: 100px;
   margin-right: auto;
   display: flex;
   flex-direction: column;
@@ -10,7 +10,7 @@
   /* left: -275px; */
   box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.4);
   color: #4B465C;
-  /* font-family: "Public Sans"; */
+  
   padding: 15px;
 }
 
@@ -19,7 +19,7 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 0px;
-  margin-left: 25px;
+  margin-left: 20px;
 }
 
 .business-modal-subheader {
@@ -66,10 +66,12 @@
 .business-modal-content {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .modal-business-form{
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .business-modal-content label {
   margin-bottom: 5px;
@@ -125,7 +127,7 @@
   left: 0px;
   box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.4);
   color: #4B465C;
-  font-family: "Public Sans";
+  
   /* display: flex; */
  
 }
@@ -212,10 +214,10 @@
 
 .title-section {
   color: #4B465C;
-  /* font-family: "Public Sans"; */
+  /*  */
 }
 
-.info-section{
+.info-section-business{
   margin-top: -30px;
   display: flex;
   column-gap: 10px;
@@ -240,6 +242,43 @@
   justify-content: center;
 }
 
+.container-section-business-2{
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  gap:18px;
+  padding-right: 20px;
+  width: 100%;
+  align-items: baseline;
+}
+
+.content-section-business-2{
+  width: 100%;
+  max-width: 760px;
+  /* width: fit-content; */
+  display: flex;
+  justify-content: center;
+  margin-right: 50px;
+  flex-direction: column;
+  height: calc(100% - 100px)
+}
+
+.container-section-business-3{
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  gap:18px;
+  /* margin-right: 50px; */
+}
+.content-section-business-3{
+  /* width: 100%; */
+  /* width: 740px; */
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+}
+
+
 .business-add-info-container .button-section {
   display: flex;
   justify-content: flex-end;
@@ -247,6 +286,7 @@
   margin-left: auto;
   margin-bottom: 0px;
   cursor: pointer;
+  height: fit-content;
 }
 
 .business-add-info-container .button-section button {
@@ -280,14 +320,15 @@
 .business-modal-arquivos-container {
   width: 100%;
   /* max-width: 800px; */
-  /* height: calc(100% - 200px); */
+  height: calc(100% - 200px);
   margin-right: auto;
   /* position: relative; */
-  left: 15px;
+  /* left: 15px; */
   margin-top: 30px; 
   box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.4);
   color: #4B465C;
-  font-family: "Public Sans";
+display: flex;
+flex-direction: column;
 }
 
 .business-modal-content-arquivos {
@@ -345,7 +386,7 @@
   width: 80%;
     /* height: calc(100% - 100px); */
     max-width: 400px;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-right: auto;
     position: relative;
     left: 0px;
@@ -392,24 +433,28 @@
 /* Estilos para o modal de variantes */
 .business-modal-variantes-container {
   color: #4B465C;
-  font-family: "Public Sans";
-  width: 55%;
-  max-width: 800px;
+  width: 100%;
+  /* max-width: 800px; */
   margin-right: auto;
-  position: relative;
-  left: 15px;
-  margin-top: -50px;
+  /* position: relative; */
+  /* left: 15px; */
+  margin-top: 30px;
   box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.4);
+  display: flex;
+  flex-direction: column;
+  padding-right: 5px;
 }
 
 .business-modal-content-variantes {
   display: flex;
   flex-direction: column;
   padding: 10px;
+  width: 100%;
 }
 
 .business-modal-header-v {
-  display: inline-block;
+  display:flex;
+  flex-direction: column;
   margin-left: 15px;
 }
 
@@ -417,10 +462,14 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
+  /* width: 100%; */
+  gap: 8px;
+  padding: 8px 30px 6px 2px;
+
 }
 
 .variantes-inputs-f {
-  width: 200px;
+  width: 70%;
 }
 
 .variantes-inputs-f select {
@@ -431,12 +480,25 @@
 }
 
 .variantes-inputs-s {
-  width: 500px;
+  width: 100%;
   margin-right: 10px;
 }
 
+.variantes-inputs-s input{
+  padding: 8px;
+ 
+    margin-bottom: 10px;
+    height: 20px;
+    border-radius: 6px;
+    border: #4b465c42 1px solid;
+    outline: #8f8f8f;
+    width: 100%;
+}
+
+
 .business-modal-content-variantes button {
-  width: 200px;
+  min-width: 150px;
+  max-width: 200px;
   background-color: rgba(115, 103, 240, 1);
   color: white;
   border: none;
@@ -448,49 +510,76 @@
 /* Estilos para o modal de inventário */
 .business-modal-inventario-container {
   color: #4B465C;
-  font-family: "Public Sans";
-  width: 55%;
-  max-width: 800px;
-  margin-right: auto;
-  position: relative;
-  left: 15px;
+  /* width: 50%; */
+  /* max-width: 800px; */
+  /* margin-right: auto; */
+  /* position: relative; */
+  /* left: 15px; */
+  display: flex;
   margin-top: 30px;
   margin-bottom: 25px;
   box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.4);
+
+  padding: 6px;
 }
 
 .inventario-input-container {
   display: flex;
   margin-bottom: 10px;
   margin-left: -10px;
+  width: 100%;
+  justify-content: space-between;
 }
+
+.inventario-input-container input{
+  width: 100%;
+  display: flex;
+  border-radius: 6px ;
+  border: #4b465c3d solid 1px;
+  min-width: 50px;
+  
+}
+
+/* .inventario-input-container button{
+  width: 100%;
+  display: flex;
+  border-radius: 6px ;
+  border: #4b465c3d solid 1px;
+  
+} */
 
 .business-modal-content-inventario {
   display: flex;
-  flex-direction: row; 
+  /* flex-direction: row;  */
   padding: 10px;
+  gap: 30px;
+  width: 100%;
 }
 
 .inventario-buttons {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  /* gap: 10px;
   margin-top: 25px;
+  padding: 6px; */
+  width: 100%;
 }
 
 .inventario-buttons button {
-  background-color: white;
+  /* background-color: white; */
   color: gray;
   border: none;
   padding: 8px;
   border-radius: 5px;
-  width: 170px;
+  /* width: 170px; */
+  max-width: 170px;
   cursor: pointer;
   display: flex;
   text-align: start;
   margin-left: 10px;
   margin-top: 0px;
   cursor: pointer;
+  font-size: 1em;
 }
 
 .inventario-buttons button.selected {
@@ -501,9 +590,12 @@
 }
 
 .inventario-opcao {
-  margin-left: 20px; 
+  /* margin-left: 20px;  */
   display: flex;
   flex-direction: column;
+  border-left: #4B465C 1px solid;
+  padding: 6px 6px 0px 10px;
+  width: 100%;
 }
 
 .inventario-opcao label {
@@ -517,7 +609,7 @@
 }
 
 .inventario-opcao button {
-  width: 120px;
+  /* min-width: 80px; */
   padding: 8px;
   margin-bottom: 10px;
   margin-left: 10px;
@@ -527,16 +619,19 @@
   padding: 10px 25px;
   border-radius: 4px;
   cursor: pointer;
+  width: 100%;
+  display: flex;
 }
 
 .inventario-spans {
   display: flex;
   flex-direction: column;
-  width: 500px;
+  /* max-width: 900px; */
+  width: 100%;
 }
 
 .inventario-spans span {
-  width: 50%; 
+  width: 100%; 
   margin-bottom: 5px;
 }
 

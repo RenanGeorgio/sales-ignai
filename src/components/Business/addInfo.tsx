@@ -63,7 +63,7 @@ const AddInfo: React.FC<AddInfoProps> = ({ setShowList }) => {
                     </div>
                 </div>
             </div>
-            <div className="info-section">
+            <div className="info-section-business">
                 <div className="title-section">
                     <h2>Complete as informações necessárias</h2>
                     <span>Escreva a ordem do pedido</span>
@@ -96,9 +96,15 @@ const AddInfo: React.FC<AddInfoProps> = ({ setShowList }) => {
                 <OrganizeModal />
                 </div>
             </div>
-            <div>
+            <div className='container-section-business-2'>
+            <div className='content-section-business-2'>
                 <VariantesModal />
+                </div>
+                </div>
+                <div className='container-section-business-3'>
+                <div className='content-section-business-3'>
                 <InventarioModal />
+            </div>
             </div>
         </div>
     );
