@@ -23,6 +23,11 @@
     //"preserveConstEnums": true,
     "sourceMap": true,
     "jsx": "react-jsx",
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      }
+    ],
     "incremental": true
   },
   "exclude": [
@@ -35,11 +40,9 @@
     "declarations.d.ts",
     "./src",
     "**/*.ts",  
-    "**/*.js",
+    "**/*.tsx",
     "**/*.js",  
-    "**/*.jsx",
-    "**/**/*.ts",
-    "**/**/*.tsx"
+    "**/*.jsx"
   ],
   "typeRoots": [
     "node_modules/@types",

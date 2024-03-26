@@ -1,7 +1,16 @@
 const CracoAlias = require("craco-alias");
-const StylelintWebpackPlugin = require("stylelint-webpack-plugin");
+//const StylelintWebpackPlugin = require("stylelint-webpack-plugin");
+const sassResourcesLoader = require("craco-sass-resources-loader");
+//const BabelRcPlugin = require("@jackwilsdon/craco-use-babelrc");
 const path = require("path");
 const crypto = require("crypto");
+
+const devMode = (process.env.NODE_ENV === 'development');
+console.log(`${ devMode ? 'development' : 'production' } mode bundle`);
+
+function isDev() {
+  return devMode;
+}
 
 function threeLetterHash() {
   const randomBytes = crypto.randomBytes(16);
@@ -26,13 +35,23 @@ module.exports = {
       // localIdentName: '[local]-[hash:base64:3]',
     },
     postcss: {
+      mode: 'extends',
       plugins: [
         require('tailwindcss'),
         require('autoprefixer'),
+        require('postcss-preset-env'),
+        require('postcss-scss'),
       ],
+      env: {
+        stage: !isDev() ? 2 : 1,
+      },
+      loaderOptions: (postcssLoaderOptions, { env, paths }) => {
+        return postcssLoaderOptions;
+      },
     },
     css: {
       loaderOptions: (cssLoaderOptions, { env, paths }) => {
+
         return cssLoaderOptions;
       },
      // {
@@ -51,6 +70,9 @@ module.exports = {
     },
     sass: {
       loaderOptions: (sassLoaderOptions, { env, paths }) => {
+        sassLoaderOptions.implementation = require('sass');
+        sassLoaderOptions.webpackImporter = false;
+        
         return sassLoaderOptions;
       },
     }
