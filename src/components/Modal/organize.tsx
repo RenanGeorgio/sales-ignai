@@ -3,7 +3,7 @@ import '../../styles/business.css';
 
 const OrganizeModal: React.FC = () => {
   return (
-    <div className="business-modal-organize-container"> 
+    <div className="business-modal-organize-container">
       <div className="business-modal-header">
         <h2>Organize</h2>
       </div>
@@ -16,7 +16,7 @@ const OrganizeModal: React.FC = () => {
           <option value="fornecedor1">Fornecedor 1</option>
           <option value="fornecedor2">Fornecedor 2</option>
         </select>
-        
+
         <div className="container-select-organize">
           <label>Categoria</label>
           <span>Adicionar</span>
@@ -47,8 +47,11 @@ const OrganizeModal: React.FC = () => {
           <option value="status2">Status 2</option>
         </select>
 
-        <label>Tags</label>
-        <input type="text" placeholder="Tags" />
+        <div className='modal-organize-form input'>
+          <label>Tags</label>
+          <input type="text" placeholder="Tags" />
+        </div>
+
       </div>
     </div>
   );
