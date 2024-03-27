@@ -1,12 +1,13 @@
 import { IconButton } from "@mui/material";
 import { VerticalDotsIcon, PencilIcon, TrashIcon, UploadIcon } from "@icons";
-import "./addticket.css";
+import "./AddTicket.module.css";
 
 interface Props {
   onUploadFile: (file: any) => void;
   onSetShow: (key: boolean) => void;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default function AddTicket({ onUploadFile, onSetShow }: Props) {
   const handleFileUpload = (file: any) => {
     // Aqui você pode fazer algo com o arquivo, como enviar para o servidor

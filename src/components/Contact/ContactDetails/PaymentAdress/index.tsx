@@ -8,7 +8,7 @@ import ModalForm from "@components/Forms/Modal/ModalForm";
 import PaymentAddressFormFields from "@components/Contact/FormFields/PaymentAddress";
 import { clientsActions } from "@store/store";
 import { IAddress } from "@interfaces";
-import "./payment.css";
+import "./PaymentAdress.module.css";
 
 interface Props {
   address?: IAddress[];

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { IconButton } from "@mui/material";
-import "./leadPopover.css";
+import "./LeadPopover.module.css";
 
 interface Props {
   title: string;

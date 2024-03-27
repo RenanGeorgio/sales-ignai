@@ -8,7 +8,7 @@ import {
 import ChartSessions from "../Graph/GraphSessions";
 import ChartSales from "../Graph/GraphSales";
 import ChartRevenue from "../Graph/GraphRevenue";
-import "@styles/statistics.css";
+import "@styles/statistics.module.css";
 
 interface StatisticsComponentProps {}
 const StatisticsComponent: React.FC<StatisticsComponentProps> = () => {

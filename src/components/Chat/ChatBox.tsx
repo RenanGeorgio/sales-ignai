@@ -11,7 +11,7 @@ import AddTicket from "./AddTicket/AddTicket";
 import useAuth from "@hooks/useAuth";
 import useChat from "@hooks/useChat";
 import { useFetchRecipient } from "@hooks/useFetchRecipient";
-import "./chat.css";
+import "./ChatBox.module.css";
 
 dayjs.extend(relativeTime)
 dayjs.locale('pt-br')

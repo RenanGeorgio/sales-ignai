@@ -20,7 +20,7 @@ import {
 } from "@icons";
 import SidebarBadge from "@components/Badge/SidebarBadge";
 import logo from "@assets/images/image 1.png";
-import "@styles/sidebar.css";
+import "@styles/sidebar.module.css";
 
 const Sidebar: React.FC<any> = (): JSX.Element | null => {
   const { isAuthenticated } = useAuth();

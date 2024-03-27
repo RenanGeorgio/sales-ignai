@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from '../../components/Navbar';
-import '../../styles/statistics.css'; 
+import '../../styles/statistics.module.css'; 
 import StatisticsComponent from '../../components/Statistics/Statistics';
 import GraphSource from '../../components/Graph/GraphSource';
 import GraphRadar from '../../components/Graph/GraphRadar';

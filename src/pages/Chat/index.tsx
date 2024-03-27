@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import Navbar from "../../components/Navbar";
 import Layout from "../../components/Layout/ChatLayout";
 import History from "../../components/Layout/HistoryLayout";
@@ -6,8 +6,7 @@ import GraphChat from "../../components/Graph/GraphChat";
 import GraphTicket from "../../components/Graph/GraphTicket";
 import GraphTicketYou from "../../components/Graph/GraphTicketYou";
 import GraphThemes from "../../components/Graph/GraphThemes";
-import { BellIcon, TextFileIcon, UsersIcon } from "@icons";
-import "../../styles/forms.css";
+import "../../styles/forms.module.css";
 
 const Chat: React.FC = () => {
   const [activePage, setActivePage] = useState("Atendimento");

@@ -3,15 +3,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import Navbar from "@components/Navbar";
 import dragEnd from "@helpers/dragEnd";
-import LeadModal from "@components/Modal/leadModal";
+import LeadModal from "@components/Modal/LeadModal";
 import SearchFilter from "@components/Table/searchFilter";
-import LeadPopover from "@components/Popover/leadPopover";
+import LeadPopover from "@components/Popover/LeadPopover";
 import { authApi } from "@services";
 import { leadsActions } from "@store/store";
 import { IconButton } from "@mui/material";
 import { VerticalDotsIcon } from "@icons";
 import { Obj, DragResult } from "@types";
-import "@styles/leads.css";
+import "@styles/leads.module.css";
 
 const Leads = () => {
   const leadsData = useSelector((state: any) => state.leads);

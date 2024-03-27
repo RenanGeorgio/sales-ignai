@@ -1,5 +1,5 @@
 import { PackageIcon, PercentageIcon, ClockIcon, UsersIcon, TruckIcon, ChevronUpIcon, ChevronDownIcon, CircleCheckIcon } from "@icons";
-import "@styles/graph.css";
+import "@styles/graph.module.css";
 
 interface GraphThemesProps {
   month: string;

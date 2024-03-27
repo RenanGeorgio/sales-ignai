@@ -1,5 +1,5 @@
 import { ArrowUpCircleIcon } from "@icons";
-import "@styles/dashboard.css"; 
+import "@styles/dashboard.module.css"; 
 
 interface GraphTimeUserProps {
   month: string;

@@ -27,7 +27,7 @@ import { ChatProvider } from "@contexts/chat/ChatContext";
 import CachingController from "./CachingController";
 import RequireAuth from "./RequireAuth";
 import Anonymous from "./Anonymous";
-import "@styles/app.css";
+import "@styles/app.module.css";
 
 function App() {
   return (

@@ -1,6 +1,6 @@
 import Navbar from '../../components/Navbar';
 import { CopyIcon, LinkIcon, EmailIcon, FacebookIcon, InstagramIcon, WebsiteIcon, WhatsappIcon } from '@icons';
-import '../../styles/configuracoes.css';
+import '../../styles/configuracoes.module.css';
 
 const Configuracoes = () => {
   return (

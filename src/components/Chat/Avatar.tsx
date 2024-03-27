@@ -1,4 +1,4 @@
-import "./avatar.css";
+import "./Avatar.module.css";
 
 interface AvatarProps {
   size: "thirty-eight" | "twenty-six" | "forty-eight" | "seventy-two" | "thirty-two" | "sixty-four";

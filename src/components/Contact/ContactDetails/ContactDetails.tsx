@@ -13,9 +13,9 @@ import ModalForm from "@components/Forms/Modal/ModalForm";
 import ContactFormFields from "../FormFields/Contact";
 import { clientsActions } from "@store/store";
 import Revenue from "./Revenue";
-import { IContactInfo, IClient, IAddress } from "@interfaces";
+import { IContactInfo, IClient } from "@interfaces";
 import { Obj } from "@types";
-import "./PaymentAdress/payment.css";
+import "./PaymentAdress/PaymentAdress.module.css";
 
 interface Props {
   client: IClient;

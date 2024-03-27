@@ -1,5 +1,5 @@
 import { AvatarIcon } from "@icons";
-import "@styles/dashboard.css"; 
+import "@styles/dashboard.module.css"; 
 
 interface GraphFontClickProps {
   month: string;

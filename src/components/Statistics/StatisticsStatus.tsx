@@ -17,7 +17,7 @@ import laravelLogo from "@assets/images/laravel-logo.png";
 import BootStrapLogo from "@assets/images/BootstrapLogo.png";
 import ChartProjectStatus from "../Graph/GraphProjectStatus";
 import { CurrencyDollarIcon } from "@icons";
-import "@styles/statistics-status.css"; 
+import "@styles/statistics-status.module.css"; 
 
 interface StatisticsStatusProps {}
 

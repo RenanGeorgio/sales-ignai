@@ -4,7 +4,7 @@ import AmericanExpress from "@assets/images/american-express.png";
 import Avatar from "@assets/images/Avatar2.png";
 import List from "@assets/images/list-details.svg";
 import { DotIcon } from "@icons";
-import "@styles/statistics-transaction.css";
+import "@styles/statistics-transaction.module.css";
 
 const rows = [
   { card: <><img src={Visa}alt="Visa" /> <span>*4230</span> <br /> Credit</>, date: <>Sent <br /> 17 Mar 2022</>, status: 'Verified', trend: '+$1,678' },

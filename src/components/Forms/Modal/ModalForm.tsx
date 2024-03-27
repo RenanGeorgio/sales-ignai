@@ -1,5 +1,5 @@
 import { FormEvent, cloneElement, useEffect, useState } from "react";
-import "./ModalForm.css";
+import "./ModalForm.module.css";
 
 interface ModalFormProps {
   children: any;

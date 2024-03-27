@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Button from "@mui/material/Button";
-import "../history.css";
+import "../History.module.css";
 
 interface Props {
     close: () => void;
@@ -8,6 +8,7 @@ interface Props {
 };
 
 export default function ModalHistory({ close }: Props) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [open, setOpen] = useState<boolean>(true);
 
     return (

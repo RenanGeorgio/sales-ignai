@@ -6,7 +6,7 @@ import Modal from "@mui/material/Modal";
 import CalendarLeft from "./CalendarLeft";
 import EventModal from "./Event/EventComponent";
 import { PlusIcon, TagIcon } from "@icons";
-import "./calendar.css";
+import "./CalendarComponent.module.css";
 
 const events = [
     {
@@ -40,6 +40,7 @@ const events = [
 ];
 
 export default function CalendarComponent() {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [view, setView] = useState('month');
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);

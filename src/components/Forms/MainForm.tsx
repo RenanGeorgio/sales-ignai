@@ -1,4 +1,4 @@
-import "@styles/forms.css";
+import "@styles/forms.module.css";
 
 const MainForm: React.FC = () => {
   return (

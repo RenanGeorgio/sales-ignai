@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { PhoneIcon } from "@icons";
-import "./leftmenu.css";
+import "./LeftMenu.module.css";
 
 interface Props {
   onAddTicketClick: () => void;

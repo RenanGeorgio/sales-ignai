@@ -15,7 +15,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { AuthContext } from "@contexts/auth/AuthContext";
 import Copyright from "../Copyright";
 import { SignInData } from "@types";
-import "./SignIn.css";
+import "./SignIn.module.css";
 
 const defaultTheme = "";
 

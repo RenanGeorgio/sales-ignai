@@ -7,7 +7,7 @@ import ImageLogo from "@assets/images/Queiroz_Galvão_Logo 1.png";
 import PaymentAddress from "./PaymentAdress";
 import Notification from "./Notifications";
 import rows from "../../../dados/data2.json";
-import "./PaymentAdress/payment.css";
+import "./PaymentAdress/PaymentAdress.module.css";
 
 type Priority = 'Paga' | 'Aguardando' | 'Atrasada' | 'Cancelada' | undefined;
 
@@ -35,6 +35,7 @@ const getPriorityStyles = (priority: Priority) => {
   return { color, backgroundColor };
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const DetailsPage = ({ match }: any) => {
   const navigate = useNavigate();
   
@@ -125,7 +126,7 @@ const DetailsPage = ({ match }: any) => {
       width: 100,
       align: 'center',
       headerAlign: 'center',
-      renderCell: (params) => {
+      renderCell: (_params) => {
         return (
           <div>
             <IconButton size='small' style={{
@@ -333,7 +334,7 @@ const DetailsPage = ({ match }: any) => {
                   }}
                   pageSizeOptions={[7]}
                   isCellEditable={(params) => params.row.Contato % 2 === 0}
-                  onCellClick={(params, event) => {
+                  onCellClick={(_params, _event) => {
                     navigate('/details');
                   }}
                 />

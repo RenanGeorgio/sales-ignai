@@ -1,4 +1,4 @@
-import "./SidebarBadge.css";
+import "./SidebarBadge.module.css";
 
 export default function SidebarBadge({ value }: { value: number | string }) {
   return (

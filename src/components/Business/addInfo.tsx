@@ -4,7 +4,7 @@ import ArquivosModal from "../Modal/arquivos";
 import OrganizeModal from "../Modal/organize";
 import VariantesModal from "../Modal/variantes";
 import InventarioModal from "../Modal/inventario";
-import "@styles/business.css";
+import "@styles/business.module.css";
 
 interface AddInfoProps {
     setShowList: () => void;

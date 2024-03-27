@@ -4,7 +4,7 @@ import { OnlineUser, Consumer } from "@types";
 import Avatar2 from "@assets/images/Avatar2.png";
 import web from "@assets/images/web.svg";  
 import { FacebookIcon, InstagramIcon, TelegramIcon, WhatsappIcon } from "@icons";
-import "./leftmenu.css";
+import "./leftmenu.module.css";
 
 interface Props {
   chat: any;

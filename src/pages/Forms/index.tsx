@@ -5,7 +5,7 @@ import MainForm from '../../components/Forms/MainForm';
 import FormSelector from '../../components/Forms/FormSelector';
 import Footer from '../../components/Forms/Footer';
 import Dashboard from '../../components/Forms/Dashboard';
-import '../../styles/forms.css'; 
+import '../../styles/forms.module.css'; 
 
 const Forms: React.FC = () => {
   const [activePage, setActivePage] = useState('Formulário'); 

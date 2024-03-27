@@ -1,6 +1,6 @@
 import html from "@assets/images/html.svg";
 import css from "@assets/images/css.svg";
-import "@styles/forms.css";
+import "@styles/forms.module.css";
 
 const Footer: React.FC = () => {
   return (

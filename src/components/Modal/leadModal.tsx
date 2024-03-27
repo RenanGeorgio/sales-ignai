@@ -2,7 +2,7 @@ import { useState } from "react";
 import { EditIcon, TrendingUpIcon  } from "@icons";
 import avatar from "@assets/images/Avatar2.png";
 import avatar3 from "@assets/images/Avatar3.png";
-import "./leadmodal.css";
+import "./LeadModal.module.css";
 
 interface LeadModalProps {
   closeModal: () => void;

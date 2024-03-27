@@ -1,6 +1,6 @@
 import Navbar from '@components/Navbar';
 import { UsersIcon, TextFileIcon, LinkIcon } from '@icons';
-import '@styles/chatbot.css';
+import '@styles/chatbot.module.css';
 
 const ChatBot = () => {
   return (

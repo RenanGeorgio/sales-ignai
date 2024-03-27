@@ -1,4 +1,4 @@
-import "@styles/business.css";
+import "@styles/business.module.css";
 
 const OrganizeModal: React.FC = () => {
   return (

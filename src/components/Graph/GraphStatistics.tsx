@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import Chart, { ChartConfiguration } from "chart.js/auto";
 import { ChevronUpIcon } from "@icons";
-import "@styles/statistics-transaction.css";
+import "@styles/statistics-transaction.module.css";
 
 interface GraphStatisticsProps {
   data: number[];
