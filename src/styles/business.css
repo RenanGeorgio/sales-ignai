@@ -344,7 +344,7 @@
 .business-modal-arquivos-container {
   width: 100%;
   /* max-width: 800px; */
-  height: calc(100% - 200px);
+  /* height: calc(100% - 200px); */
   margin-right: auto;
   /* position: relative; */
   /* left: 15px; */
@@ -623,12 +623,13 @@ flex-direction: column;
   border: none;
   padding: 8px;
   border-radius: 5px;
-  /* width: 170px; */
+  min-width: 120px;
   max-width: 170px;
   cursor: pointer;
   display: flex;
   text-align: start;
-  margin-left: 10px;
+  /* justify-content: center; */
+  margin-left: 0px;
   margin-top: 0px;
   cursor: pointer;
   font-size: 1em;
