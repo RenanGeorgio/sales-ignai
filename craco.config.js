@@ -28,6 +28,12 @@ module.exports = {
         baseUrl: './src',
         tsConfigPath: './tsconfig.paths.json'
       }
+    },
+    {
+      plugin: require('craco-plugin-scoped-css'),
+      options: {
+        include: '.module.scss$'
+      }
     }
   ],
   style: {

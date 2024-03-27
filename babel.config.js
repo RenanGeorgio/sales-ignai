@@ -7,6 +7,12 @@ module.exports = function(api) {
       '@babel/preset-react'
     ],
     plugins: [
+      [
+        'babel-plugin-react-scoped-css',
+        {
+          "include": '.module.scss$'
+        }
+      ]
     ]
   };
 };
