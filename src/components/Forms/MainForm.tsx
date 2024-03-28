@@ -3,7 +3,7 @@ import '../../styles/forms.css';
 
 const MainForm: React.FC = () => {
   return (
-    <div className="container">
+    <div className="container-form">
         <form className="form-container">
           <div className="form-row">
             <label>Primeiro nome</label>

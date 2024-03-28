@@ -54,8 +54,10 @@ const Forms: React.FC = () => {
             <button className="gray-button">Modelos</button>
             <button className="gray-button">Importar (Figma / Adobe XD)</button>
           </div>
+          <div style={{justifyContent:'space-between', display:'flex',gap:20}}>
           <MainForm />
           <FormSelector />
+          </div>
           <div style={{marginTop: '100px'}}>
             <Footer />
           </div>
