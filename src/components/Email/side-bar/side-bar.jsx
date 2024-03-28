@@ -6,8 +6,8 @@ import FolderContainer from '../folders/folder-container';
 import {DroppablePayloadTypes} from '../folders/folder-list';
 import IconButton from '../buttons/icon-button';
 import {moveFolder} from '../../../services/email/folder';
-import mainCss from '../../../styles/email/main.scss';
-import styles from './side-bar.scss';
+import mainCss from '../../../styles/email/main.module.scss';
+import styles from './side-bar.module.scss';
 
 
 class SideBar extends Component {

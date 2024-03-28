@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-import mainCss from '../../../../styles/email/main.scss';
+import React, {Component} from "react";
+import PropTypes from "prop-types";
+import mainCss from "../../../../styles/email/main.module.scss";
 
 class Checkbox extends Component {
   constructor(props) {

@@ -1,10 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import {withTranslation} from 'react-i18next';
-import SingleInputDialog from '../dialog/single-input-dialog';
-import {createFolder as actionCreateFolder} from '../../../store/email/actions/application';
-import {createChildFolder, createRootFolder} from '../../../services/email/folder';
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { withTranslation } from "react-i18next";
+import SingleInputDialog from "../dialog/single-input-dialog";
+import { createFolder as actionCreateFolder } from "../../../store/email/actions/application";
+import { createChildFolder, createRootFolder } from "../../../services/email/folder";
 
 export const FolderCreateDialog = ({t, application, cancel, createFolder}) => {
   const visible = Object.keys(application).includes('createFolderParentId') && application.createFolderParentId !== null;

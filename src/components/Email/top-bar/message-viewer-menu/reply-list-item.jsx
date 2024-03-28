@@ -1,6 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import mainCss from '../../../../styles/email/main.scss';
+import mainCss from '../../../../styles/email/main.module.scss';
 
 const ReplyListItem = ({t, replyAction}) => (
   <li

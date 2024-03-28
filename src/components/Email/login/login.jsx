@@ -1,22 +1,16 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
-import {withTranslation} from 'react-i18next';
-import {
-  DEFAULT_IMAP_PORT,
-  DEFAULT_IMAP_SSL,
-  DEFAULT_SMTP_PORT,
-  DEFAULT_SMTP_SSL,
-  login
-} from '../../../services/email/application';
-import Button from '../buttons/button';
-import LoginSnackbar from './login-snackbar';
-import Switch from '../form/switch/switch';
-import TextField from '../form/text-field/text-field';
-import Spinner from '../spinner/spinner';
-import mainCss from '../../../styles/email/main.scss';
-import styles from './login.scss';
-import withRouter from '@hooks/withRouter';
+import { Component } from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { withTranslation } from "react-i18next";
+import { DEFAULT_IMAP_PORT, DEFAULT_IMAP_SSL, DEFAULT_SMTP_PORT, DEFAULT_SMTP_SSL, login } from "../../../services/email/application";
+import Button from "../buttons/button";
+import LoginSnackbar from "./login-snackbar";
+import Switch from "../form/switch/switch";
+import TextField from "../form/text-field/text-field";
+import Spinner from "../spinner/spinner";
+import mainCss from "../../../styles/email/main.module.scss";
+import styles from "./login.module.scss";
+import withRouter from "@hooks/withRouter";
 
 /**
  * Returns a Login component valid state from the current URL params

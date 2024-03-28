@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react';
+import { Component, Fragment } from 'react';
 import {connect} from 'react-redux';
 import {withTranslation} from 'react-i18next';
 import PropTypes from 'prop-types';
@@ -15,8 +15,8 @@ import {selectMessage} from '../../../store/email/actions/application';
 import {setSelected} from '../../../store/email/actions/messages';
 import {preloadMessages, setMessageFlagged} from '../../../services/email/message';
 import {readMessage} from '../../../services/email/message-read';
-import mainCss from '../../../styles/email/main.scss';
-import styles from './message-list.scss';
+import mainCss from '../../../styles/email/main.module.scss';
+import styles from './message-list.module.scss';
 
 function parseFrom(from) {
   const firstFrom = from && from.length > 0 ? from[0] : '';

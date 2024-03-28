@@ -1,15 +1,15 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Spinner from '../spinner/spinner';
 import HeaderTo from './header-to';
 import AttachmentCard from '../attachment/attachment-card';
-import {selectFolder} from '../../../store/email/actions/application';
-import {getSelectedFolder} from '../../../store/email/selectors/folders';
+import { selectFolder}  from '../../../store/email/actions/application';
+import { getSelectedFolder } from '../../../store/email/selectors/folders';
 import {clearSelectedMessage, mailto} from '../../../services/email/application';
-import {imageUrl} from '../../../services/email/gravatar';
+import { imageUrl } from '../../../services/email/gravatar';
 import sanitize from '../../../services/email/sanitize';
-import mainCss from '../../../styles/email/main.scss';
+import mainCss from '../../../styles/email/main.module.scss';
 
 export function addressGroups(address) {
   const ret = {

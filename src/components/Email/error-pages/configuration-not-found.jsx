@@ -1,6 +1,4 @@
-import React from 'react';
-import {WithTranslation} from 'react-i18next';
-import mainCss from '../../styles/main.scss';
+import mainCss from "../../styles/main.module.scss";
 
 export const ConfigurationNotFound = ({t}) => (
   <div className={mainCss['isotope-error-page']}>

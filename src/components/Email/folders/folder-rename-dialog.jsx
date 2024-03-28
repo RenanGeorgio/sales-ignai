@@ -1,10 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import {withTranslation} from 'react-i18next';
-import SingleInputDialog from '../dialog/single-input-dialog';
-import {renameFolder as actionRenameFolder} from '../../../store/email/actions/application';
-import {renameFolder as serviceRenameFolder} from '../../../services/email/folder';
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { withTranslation } from "react-i18next";
+import SingleInputDialog from "../dialog/single-input-dialog";
+import { renameFolder as actionRenameFolder } from "../../../store/email/actions/application";
+import { renameFolder as serviceRenameFolder } from "../../../services/email/folder";
 
 export const FolderRenameDialog = ({t, folderToRename, cancel, renameFolder, application}) => {
   const visible = folderToRename !== null;

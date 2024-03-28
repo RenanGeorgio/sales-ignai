@@ -1,7 +1,6 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import ButtonCollapse from './button-collapse';
-import mainCss from '../../../styles/email/main.scss';
+import mainCss from '../../../styles/email/main.module.scss';
 
 const TopBarMessageEditor = (
   {

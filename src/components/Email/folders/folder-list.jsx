@@ -1,15 +1,15 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
-import FolderItem from './folder-item';
-import {createFolder as createFolderAction, renameFolder, selectFolder} from '../../../store/email/actions/application';
-import {clearSelected} from '../../../store/email/actions/messages';
-import {clearSelectedMessage} from '../../../services/email/application';
-import {deleteFolder, findTrashFolder, FolderTypes, moveFolder} from '../../../services/email/folder';
-import {moveMessages, resetFolderMessagesCache} from '../../../services/email/message';
-import {getSelectedFolder} from '../../../store/email/selectors/folders';
-import styles from './folder-list.scss';
-import mainCss from '../../../styles/email/main.scss';
+import { Component } from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import FolderItem from "./folder-item";
+import { createFolder as createFolderAction, renameFolder, selectFolder } from "../../../store/email/actions/application";
+import { clearSelected } from "../../../store/email/actions/messages";
+import { clearSelectedMessage } from "../../../services/email/application";
+import { deleteFolder, findTrashFolder, FolderTypes, moveFolder } from "../../../services/email/folder";
+import { moveMessages, resetFolderMessagesCache } from "../../../services/email/message";
+import { getSelectedFolder } from "../../../store/email/selectors/folders";
+import styles from "./folder-list.module.scss";
+import mainCss from "../../../styles/email/main.module.scss";
 
 export const DroppablePayloadTypes = {
   FOLDER: 'FOLDER',

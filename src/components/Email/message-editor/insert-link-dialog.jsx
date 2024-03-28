@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Dialog from '../dialog/dialog';
 import TextField from '../form/text-field/text-field';
 import {withTranslation} from 'react-i18next';
-import mainCss from '../../../styles/email/main.scss';
+import mainCss from '../../../styles/email/main.module.scss';
 
 export class InsertLinkDialog extends Component {
   constructor(props) {

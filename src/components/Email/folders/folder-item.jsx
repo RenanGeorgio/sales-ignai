@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-import {withTranslation} from 'react-i18next';
-import {FolderTypes} from '../../../services/email/folder';
-import styles from './folder-item.scss';
-import mainCss from '../../../styles/email/main.scss';
+import { Component } from "react";
+import PropTypes from "prop-types";
+import { withTranslation } from "react-i18next";
+import { FolderTypes } from "../../../services/email/folder";
+import styles from "./folder-item.module.scss";
+import mainCss from "../../../styles/email/main.module.scss";
 
 const ACTIONS_MENU_ANIMATION_DURATION_MS = 500;
 

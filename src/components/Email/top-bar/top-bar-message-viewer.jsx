@@ -7,7 +7,7 @@ import ButtonMore from './button-more';
 import ButtonReplyAll from './button-reply-all';
 import {MessageViewerMenu} from './message-viewer-menu';
 import TopBarButton from './top-bar-button';
-import mainCss from '../../../styles/email/main.scss';
+import mainCss from '../../../styles/email/main.module.scss';
 
 export const TopBarMessageViewer = (
   {

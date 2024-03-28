@@ -18,7 +18,7 @@ import { isDesktop } from "@services/email/configuration";
 import { AuthenticationException } from "@services/email/fetch";
 import { getFolders } from "@services/email/folder";
 import { resetFolderMessagesCache } from "@services/email/message";
-import mainCss from "@styles/email/main.scss";
+import mainCss from "@styles/email/main.module.scss";
 
 interface Props {
   application: PropTypes.object;

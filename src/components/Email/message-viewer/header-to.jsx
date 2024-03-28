@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-import {withTranslation} from 'react-i18next';
-import {addressGroups} from './message-viewer';
-import styles from './header-to.scss';
+import { Component } from "react";
+import PropTypes from "prop-types";
+import { withTranslation } from "react-i18next";
+import { addressGroups } from "./message-viewer";
+import styles from "./header-to.module.scss";
 
 
 class HeaderTo extends Component {

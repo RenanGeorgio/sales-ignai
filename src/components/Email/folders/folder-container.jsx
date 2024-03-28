@@ -1,15 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import {withTranslation} from 'react-i18next';
-import Spinner from '../spinner/spinner';
-import IconButton from '../buttons/icon-button';
-import FolderList from './folder-list';
-import FolderCreateDialog from './folder-create-dialog';
-import FolderRenameDialog from './folder-rename-dialog';
-import {createFolder as createFolderAction} from '../../../store/email/actions/application';
-import styles from './folder-container.scss';
-import mainCss from '../../../styles/email/main.scss';
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { withTranslation } from "react-i18next";
+import Spinner from "../spinner/spinner";
+import IconButton from "../buttons/icon-button";
+import FolderList from "./folder-list";
+import FolderCreateDialog from "./folder-create-dialog";
+import FolderRenameDialog from "./folder-rename-dialog";
+import { createFolder as createFolderAction } from "../../../store/email/actions/application";
+import styles from "./folder-container.module.scss";
+import mainCss from "../../../styles/email/main.module.scss";
 
 export const FolderContainer = ({t, activeRequests, folderTree, folders, createFolder}) => {
   const initialListLoading = activeRequests > 0 && folderTree.length === 0;

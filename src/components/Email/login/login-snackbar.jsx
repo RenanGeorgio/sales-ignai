@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import Snackbar from '../snackbar/snackbar';
-import {withTranslation} from 'react-i18next';
+import { Component } from "react";
+import { connect } from "react-redux";
+import Snackbar from "../snackbar/snackbar";
+import { withTranslation } from "react-i18next";
 
 export class LoginSnackbar extends Component {
   constructor(props) {

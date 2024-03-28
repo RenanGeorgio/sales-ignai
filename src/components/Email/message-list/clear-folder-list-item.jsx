@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {connect} from 'react-redux';
 import {withTranslation} from 'react-i18next';
 import Button from '../buttons/button';
@@ -7,7 +7,7 @@ import {getCredentials} from '../../../store/email/selectors/application';
 import {getSelectedFolder} from '../../../store/email/selectors/folders';
 import {FolderTypes} from '../../../services/email/folder';
 import {deleteAllFolderMessages} from '../../../services/email/message';
-import styles from './message-list.scss';
+import styles from './message-list.module.scss';
 
 const isVisible = selectedFolder => [FolderTypes.TRASH, FolderTypes.JUNK].includes(selectedFolder.type);
 

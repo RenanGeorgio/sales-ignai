@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import IconButton from '../buttons/icon-button';
-import mainCss from '../../../styles/email/main.scss';
+import mainCss from '../../../styles/email/main.module.scss';
 
 const TopBarButton = ({onClick, className, children}) => (
   <IconButton
