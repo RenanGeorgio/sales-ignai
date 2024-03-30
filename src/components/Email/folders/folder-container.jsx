@@ -8,7 +8,7 @@ import FolderCreateDialog from "./folder-create-dialog";
 import FolderRenameDialog from "./folder-rename-dialog";
 import { createFolder as createFolderAction } from "../../../store/email/actions/application";
 import styles from "./folder-container.module.scss";
-import mainCss from "../../../styles/email/main.module.scss";
+import mainCss from "../../../styles/email/main.scss";
 
 export const FolderContainer = ({t, activeRequests, folderTree, folders, createFolder}) => {
   const initialListLoading = activeRequests > 0 && folderTree.length === 0;

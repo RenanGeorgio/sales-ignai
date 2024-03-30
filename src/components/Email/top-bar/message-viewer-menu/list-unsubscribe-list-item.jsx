@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import mainCss from '../../../../styles/email/main.module.scss';
+import mainCss from '../../../../styles/email/main.scss';
 
 const ListUnsubscribeListItem = ({t, message}) => {
   let listItem = null;

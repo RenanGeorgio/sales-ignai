@@ -19,7 +19,7 @@ import {getAddresses} from '../../../services/email/message-addresses';
 import {prettySize} from '../../../services/email/prettify';
 import {sendMessage} from '../../../services/email/smtp';
 import { persistApplicationNewMessageContent } from '../../../services/email/indexed-db';
-import mainCss from '../../../styles/email/main.module.scss';
+import mainCss from '../../../styles/email/main.scss';
 
 const SAVE_EDITOR_DEBOUNCE_PERIOD_IN_MILLIS = 500;
 const PASTED_IMAGE_COMPRESS_SIZE_THRESHOLD = 1024 * 1024;

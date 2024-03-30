@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import mainCss from '../../../styles/email/main.module.scss';
+import mainCss from '../../../styles/email/main.scss';
 
 const Snackbar = ({show, message, buttonAction, buttonLabel, alignStart}) => {
   const hasButton = buttonLabel.length > 0;

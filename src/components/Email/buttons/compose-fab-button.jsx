@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { withTranslation } from "react-i18next";
-import mainCss from "../../../styles/email/main.module.scss";
+import mainCss from "../../../styles/email/main.scss";
 
 export const ComposeFabButton = ({t, onClick}) => (
   <button className={`${mainCss['mdc-fab']} ${mainCss['compose-fab-button']}`} onClick={onClick}>

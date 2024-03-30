@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import mainCss from "../../../styles/email/main.module.scss";
+import mainCss from "../../../styles/email/main.scss";
 
 const Button = ({className, iconClassName, type, label, icon, onClick, disabled}) =>
   (<button type={type} className={`${mainCss['mdc-button']} ${className}`}

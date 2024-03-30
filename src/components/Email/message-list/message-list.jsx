@@ -15,7 +15,7 @@ import {selectMessage} from '../../../store/email/actions/application';
 import {setSelected} from '../../../store/email/actions/messages';
 import {preloadMessages, setMessageFlagged} from '../../../services/email/message';
 import {readMessage} from '../../../services/email/message-read';
-import mainCss from '../../../styles/email/main.module.scss';
+import mainCss from '../../../styles/email/main.scss';
 import styles from './message-list.module.scss';
 
 function parseFrom(from) {

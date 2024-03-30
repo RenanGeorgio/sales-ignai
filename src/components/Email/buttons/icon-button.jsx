@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import mainCss from "../../../styles/email/main.module.scss";
+import mainCss from "../../../styles/email/main.scss";
 
 const IconButton = ({className, onClick, disabled, children, ...otherProps}) =>
   (<button className={`material-icons ${mainCss['mdc-icon-button']} ${className}`}

@@ -4,7 +4,7 @@ import {withTranslation} from 'react-i18next';
 import { setMessageFilterKey as setMessageFilterKeyAction, setMessageFilterText as setMessageFilterTextAction } from "../../../store/email/actions/application";
 import MessageFilters from '../../../services/email/message-filters';
 import styles from './filter-dialog.module.scss';
-import mainCss from '../../../styles/email/main.module.scss';
+import mainCss from '../../../styles/email/main.scss';
 import {
   activeMessageFilter as activeMessageFilterSelector,
   messageFilterText as messageFilterTextSelector} from '../../../store/email/selectors/application';

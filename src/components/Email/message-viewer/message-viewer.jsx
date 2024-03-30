@@ -9,7 +9,7 @@ import { getSelectedFolder } from '../../../store/email/selectors/folders';
 import {clearSelectedMessage, mailto} from '../../../services/email/application';
 import { imageUrl } from '../../../services/email/gravatar';
 import sanitize from '../../../services/email/sanitize';
-import mainCss from '../../../styles/email/main.module.scss';
+import mainCss from '../../../styles/email/main.scss';
 
 export function addressGroups(address) {
   const ret = {

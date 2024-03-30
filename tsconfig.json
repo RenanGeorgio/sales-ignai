@@ -1,8 +1,9 @@
 {
   "extends": "./tsconfig.paths.json",
   "compilerOptions": {
-    "target": "es2020",
-    "module": "esnext",
+    "rootDir": "src",
+    "target": "esnext",
+    "module": "ESNext",
     "lib": ["dom", "dom.iterable", "esnext", "es2020"],
     "moduleResolution": "node",
     "allowJs": true,
@@ -18,11 +19,11 @@
     //"noUnusedParameters": false,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noImplicitAny": true,
-    //"removeComments": false,
-    //"preserveConstEnums": true,
+    "noImplicitAny": false,
+    //"emitDeclarationOnly": true,
     "sourceMap": true,
     "jsx": "react-jsx",
+    "declaration": true,
     "plugins": [
       {
         "name": "typescript-plugin-css-modules"
@@ -32,17 +33,11 @@
   },
   "exclude": [
     "node_modules",
-    "build",
-    "dist",
-    "out"
+    "build"
   ],
   "include": [ 
     "declarations.d.ts",
-    "./src",
-    "**/*.ts",  
-    "**/*.tsx",
-    "**/*.js",  
-    "**/*.jsx"
+    "src"
   ],
   "typeRoots": [
     "node_modules/@types",

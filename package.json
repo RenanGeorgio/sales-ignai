@@ -9,7 +9,7 @@
   "engines": {
     "node": ">=12"
   },
-  "cracoConfig": "craco.config.js",
+  "cracoConfig": "craco.config.ts",
   "scripts": {
     "start": "craco start",
     "build": "craco build",

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Dialog from "../dialog/dialog";
 import TextField from "../form/text-field/text-field";
 import styles from "./single-input-dialog.module.scss";
-import mainCss from "../../../styles/email/main.module.scss";
+import mainCss from "../../../styles/email/main.scss";
 
 class SingleInputDialog extends Component {
   constructor(props) {

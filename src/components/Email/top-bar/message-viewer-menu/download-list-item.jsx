@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import mainCss from '../../../../styles/email/main.module.scss';
+import mainCss from '../../../../styles/email/main.scss';
 
 const DownloadListItem = ({ t, downloadMessage }) => {
   const [downloading, setDownloading] = useState(false);

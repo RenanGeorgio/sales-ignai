@@ -8,7 +8,7 @@ import LoginSnackbar from "./login-snackbar";
 import Switch from "../form/switch/switch";
 import TextField from "../form/text-field/text-field";
 import Spinner from "../spinner/spinner";
-import mainCss from "../../../styles/email/main.module.scss";
+import mainCss from "../../../styles/email/main.scss";
 import styles from "./login.module.scss";
 import withRouter from "@hooks/withRouter";
 

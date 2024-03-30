@@ -1,6 +1,4 @@
-node_modules
 build
 .git
-craco.config.js
 ./src/components/Email/**/*.{js,jsx}
 ./src/services/email/**/*.{js,jsx}

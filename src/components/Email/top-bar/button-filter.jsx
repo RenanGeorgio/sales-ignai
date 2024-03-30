@@ -4,7 +4,7 @@ import {withTranslation} from 'react-i18next';
 import TopBarButton from './top-bar-button';
 import FilterDialog from './filter-dialog';
 import {messageFilterActive} from '../../../store/email/selectors/application';
-import mainCss from '../../../styles/email/main.module.scss';
+import mainCss from '../../../styles/email/main.scss';
 import styles from './button-filter.module.scss';
 
 export class ButtonFilter extends React.Component {

@@ -11,7 +11,7 @@ import {selectedFolderMessagesFilteredAndSelected, selectedMessagesIds} from '..
 import {findTrashFolder, FolderTypes} from '../../../services/email/folder';
 import {forwardMessage, replyAllMessage, clearSelectedMessage} from '../../../services/email/application';
 import {deleteMessages, moveMessages, setMessagesSeen} from '../../../services/email/message';
-import mainCss from '../../../styles/email/main.module.scss';
+import mainCss from '../../../styles/email/main.scss';
 
 export class TopBar extends Component {
   constructor(props) {

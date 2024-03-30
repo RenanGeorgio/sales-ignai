@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {withTranslation} from 'react-i18next';
 import TopBarButton from './top-bar-button';
-import mainCss from '../../../styles/email/main.module.scss';
+import mainCss from '../../../styles/email/main.scss';
 
 export const ButtonMore = ({t, children}) => {
   const [menuOpen, setMenuOpen] = useState(false);

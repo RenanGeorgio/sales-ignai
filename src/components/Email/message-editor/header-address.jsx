@@ -3,7 +3,7 @@ import {withTranslation} from 'react-i18next';
 import PropTypes from 'prop-types';
 import Autosuggest from 'react-autosuggest';
 import {validateEmail} from '../../../services/email/validation';
-import mainCss from '../../../styles/email/main.module.scss';
+import mainCss from '../../../styles/email/main.scss';
 
 export class HeaderAddress extends Component {
   constructor(props) {

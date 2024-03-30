@@ -1,10 +1,11 @@
-@import '../partials/variables';
-@import "@material/theme/variables";
-@import "@material/shape/mixins";
-@import "@material/elevation/mixins";
-@import "@material/dialog/variables";
-@import '@material/drawer/mdc-drawer';
-@import '@material/top-app-bar/mixins';
+@import "~@material/theme/variables";
+@import "~@material/shape/mixins";
+@import "~@material/elevation/mixins";
+@import "~@material/dialog/variables";
+@import "~@material/drawer/mdc-drawer";
+@import "~@material/top-app-bar/mixins";
+
+@import "../partials/variables";
 
 $global-spinner-color: #333333;
 

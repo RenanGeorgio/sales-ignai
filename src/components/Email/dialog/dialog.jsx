@@ -2,7 +2,7 @@ import { Component } from "react";
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 import Button from "../buttons/button";
-import mainCss from "../../../styles/email/main.module.scss";
+import mainCss from "../../../styles/email/main.scss";
 
 const modalRoot = document.getElementById('modal-root');
 

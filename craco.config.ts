@@ -1,9 +1,12 @@
-const CracoAlias = require("craco-alias");
+import CracoAlias from "craco-alias";
 //const StylelintWebpackPlugin = require("stylelint-webpack-plugin");
-const sassResourcesLoader = require("craco-sass-resources-loader");
+//const sassResourcesLoader = require("craco-sass-resources-loader");
 //const BabelRcPlugin = require("@jackwilsdon/craco-use-babelrc");
-const path = require("path");
-const crypto = require("crypto");
+import path from "path";
+import crypto from "crypto";
+import { CracoConfig } from '@craco/types';
+
+//import pkg from './package.json' assert {type: 'json'};
 
 const devMode = (process.env.NODE_ENV === 'development');
 console.log(`${ devMode ? 'development' : 'production' } mode bundle`);
@@ -19,7 +22,7 @@ function threeLetterHash() {
   return hash.substring(0, 4);
 }
 
-module.exports = {
+const config: CracoConfig = {
   plugins: [
     {
       plugin: CracoAlias,
@@ -27,12 +30,6 @@ module.exports = {
         source: 'tsconfig',
         baseUrl: './src',
         tsConfigPath: './tsconfig.paths.json'
-      }
-    },
-    {
-      plugin: require('craco-plugin-scoped-css'),
-      options: {
-        include: '.module.scss$'
       }
     }
   ],
@@ -112,8 +109,8 @@ module.exports = {
       //  }),
       //);
 
-      webpackConfig.resolve.fallback = {
-        ...webpackConfig.resolve.fallback,
+      // @ts-ignore
+      webpackConfig.resolve.fallback = { ...webpackConfig.resolve.fallback,
         crypto: false,
         path: false
       };
@@ -122,3 +119,6 @@ module.exports = {
     }
   }
 };
+
+// eslint-disable-next-line import/no-unused-modules
+export default config;

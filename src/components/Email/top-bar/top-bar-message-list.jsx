@@ -4,7 +4,7 @@ import {withTranslation} from 'react-i18next';
 import ButtonCollapse from './button-collapse';
 import TopBarButton from './top-bar-button';
 import ButtonFilter from './button-filter';
-import mainCss from '../../../styles/email/main.module.scss';
+import mainCss from '../../../styles/email/main.scss';
 
 export const TopBarMessageList = (
   {

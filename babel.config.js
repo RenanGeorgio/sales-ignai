@@ -6,13 +6,6 @@ module.exports = function(api) {
       '@babel/preset-env',
       '@babel/preset-react'
     ],
-    plugins: [
-      [
-        'babel-plugin-react-scoped-css',
-        {
-          "include": '.module.scss$'
-        }
-      ]
-    ]
+    plugins: [],
   };
 };

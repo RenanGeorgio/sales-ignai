@@ -1,5 +1,5 @@
 @import 'variables';
-@import '@material/snackbar/mdc-snackbar';
+@import '~@material/snackbar/mdc-snackbar';
 
 .mdc-snackbar {
   z-index: map-get($z-index, exosphere);

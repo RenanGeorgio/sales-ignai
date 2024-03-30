@@ -11,20 +11,19 @@
 @import 'partials/tinymce';
 @import 'partials/tooltip';
 
-
-// Third-party
-@import '@material/button/mdc-button';
-@import '@material/card/mdc-card';
-@import '@material/checkbox/mdc-checkbox';
-@import '@material/chips/mdc-chips';
-@import '@material/dialog/mdc-dialog';
-@import '@material/drawer/mdc-drawer';
-@import '@material/fab/mdc-fab';
-@import '@material/icon-button/mdc-icon-button';
-@import '@material/line-ripple/mdc-line-ripple';
-@import '@material/menu/mdc-menu';
-@import '@material/menu-surface/mdc-menu-surface';
-@import '@material/top-app-bar/mdc-top-app-bar';
+// Third Party
+@import '~@material/button/mdc-button';
+@import '~@material/card/mdc-card';
+@import '~@material/checkbox/mdc-checkbox';
+@import '~@material/chips/mdc-chips';
+@import '~@material/dialog/mdc-dialog';
+@import '~@material/drawer/mdc-drawer';
+@import '~@material/fab/mdc-fab';
+@import '~@material/icon-button/mdc-icon-button';
+@import '~@material/line-ripple/mdc-line-ripple';
+@import '~@material/menu/mdc-menu';
+@import '~@material/menu-surface/mdc-menu-surface';
+@import '~@material/top-app-bar/mdc-top-app-bar';
 
 // Components
 @import 'components/buttons';

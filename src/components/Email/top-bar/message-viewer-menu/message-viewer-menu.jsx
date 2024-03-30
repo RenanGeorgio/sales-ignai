@@ -8,7 +8,7 @@ import {getCredentials, selectedMessage as selectedMessageSelector} from '../../
 import {getSelectedFolder} from '../../../../store/email/selectors/folders';
 import {replyMessage as applicationReplyMessage} from '../../../../services/email/application';
 import {downloadMessage as downloadMessageService} from '../../../../services/email/message';
-import mainCss from '../../../../styles/email/main.module.scss';
+import mainCss from '../../../../styles/email/main.scss';
 
 export const MessageViewerMenu = ({t, visible, selectedFolder, selectedMessage, replyMessage, downloadMessage}) =>
   selectedFolder && selectedMessage && (

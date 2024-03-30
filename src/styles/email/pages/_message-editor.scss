@@ -1,7 +1,7 @@
 @import '../partials/variables';
-@import '@material/button/variables';
-@import '@material/chips/variables';
-@import '@material/chips/mixins';
+@import '~@material/button/variables';
+@import '~@material/chips/variables';
+@import '~@material/chips/mixins';
 
 $editor-color: #333333 !default;
 $editor-container-padding: 8px !default;

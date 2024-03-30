@@ -9,7 +9,7 @@ import { deleteFolder, findTrashFolder, FolderTypes, moveFolder } from "../../..
 import { moveMessages, resetFolderMessagesCache } from "../../../services/email/message";
 import { getSelectedFolder } from "../../../store/email/selectors/folders";
 import styles from "./folder-list.module.scss";
-import mainCss from "../../../styles/email/main.module.scss";
+import mainCss from "../../../styles/email/main.scss";
 
 export const DroppablePayloadTypes = {
   FOLDER: 'FOLDER',

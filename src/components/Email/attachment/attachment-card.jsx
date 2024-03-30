@@ -5,7 +5,7 @@ import { getCredentials } from "../../../store/email/selectors/application";
 import { downloadAttachment } from '../../../services/email/message';
 import { prettySize } from "../../../services/email/prettify";
 import Spinner from "../spinner/spinner";
-import mainCss from "../../../styles/email/main.module.scss"; // NOSONAR
+import mainCss from "../../../styles/email/main.scss"; // NOSONAR
 import styles from './attachment-card.module.scss';
 
 export class AttachmentCard extends Component {
