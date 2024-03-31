@@ -1,67 +1,68 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "react-hooks"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "parser": "@typescript-eslint/parser",
-    "plugins": ["@typescript-eslint", "react-hooks"],
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        //"project": "./tsconfig.json",
-        "ecmaVersion": 2020,
-        "sourceType": "module"
+    //"project": "./tsconfig.json",
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "extends": [
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "prettier"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
     },
-    "extends": [
-        "plugin:@typescript-eslint/eslint-recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:@typescript-eslint/recommended-requiring-type-checking",
-        "prettier"
-    ],
-    "settings": {
-        "react": {
-            "version": "detect"
-        },
-        "import/resolver": {
-            "node": {
-                "extensions": [".js", ".jsx", ".ts", ".tsx", ".d.ts"]
-            },
-            "typescript": {},
-            "alias": {
-                "map": [
-                    ["@components", "./src/components"],
-                    ["@pages", "./src/pages"],
-                    ["@styles", "./src/styles"],
-                    ["@contexts", "./src/contexts"],
-                    ["@services", "./src/services"],
-                    ["@types", "./src/typograph/types"],
-                    ["@interfaces", "./src/typograph/interfaces"],
-                    ["@helpers", "./src/helpers"],
-                    ["@store", "./src.store"],
-                    ["@hooks", "./src/hooks"],
-                    ["@libs", "./src/libs"],
-                    ["@icons", "./src/components/Icons"],
-                    ["@assets", "./src/assets"]
-                ],
-                "extensions": [".ts", ".tsx", ".js", ".jsx"]
-            }
-        }
-    },
-    "rules": {
-        "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "warn",
-        "@typescript-eslint/explicit-module-boundary-types": 0,
-        "@typescript-eslint/no-unsafe-member-access": 0,
-        "@typescript-eslint/no-non-null-assertion": 0,
-        "@typescript-eslint/no-unsafe-call": 0,
-        "@typescript-eslint/no-unsafe-return": 0,
-        "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/no-floating-promises": 0,
-        "@typescript-eslint/no-unsafe-assignment": "off",
-        "@typescript-eslint/no-unsafe-argument": "off",
-        "@typescript-eslint/restrict-template-expressions": 0,
-        "@typescript-eslint/no-empty-function": 0,
-        "@typescript-eslint/ban-ts-comment": "off"
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx", ".d.ts"]
+      },
+      "typescript": {},
+      "alias": {
+        "map": [
+          ["@components", "./src/components"],
+          ["@pages", "./src/pages"],
+          ["@styles", "./src/styles"],
+          ["@contexts", "./src/contexts"],
+          ["@services", "./src/services"],
+          ["@types", "./src/typograph/types"],
+          ["@interfaces", "./src/typograph/interfaces"],
+          ["@helpers", "./src/helpers"],
+          ["@store", "./src.store"],
+          ["@hooks", "./src/hooks"],
+          ["@libs", "./src/libs"],
+          ["@icons", "./src/components/Icons"],
+          ["@assets", "./src/assets"],
+          ["@routes", "./src/routes/index"]
+        ],
+        "extensions": [".ts", ".tsx", ".js", ".jsx"]
+      }
     }
+  },
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "@typescript-eslint/explicit-module-boundary-types": 0,
+    "@typescript-eslint/no-unsafe-member-access": 0,
+    "@typescript-eslint/no-non-null-assertion": 0,
+    "@typescript-eslint/no-unsafe-call": 0,
+    "@typescript-eslint/no-unsafe-return": 0,
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-floating-promises": 0,
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/no-unsafe-argument": "off",
+    "@typescript-eslint/restrict-template-expressions": 0,
+    "@typescript-eslint/no-empty-function": 0,
+    "@typescript-eslint/ban-ts-comment": "off"
+  }
 }

@@ -17,7 +17,8 @@
       "@libs/*": ["libs/*", "libs/*/index", "libs/index"],
       "@icons/*": ["components/Icons/*"],
       "@icons": ["components/Icons/index"],
-      "@assets/*": ["assets/*"]
+      "@assets/*": ["assets/*"],
+      "@routes": ["routes/index"]
     }
   }
 }

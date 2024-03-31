@@ -25,7 +25,7 @@
     "lint:js": "eslint . --fix && echo lint js competed.",
     "lint:style": "stylelint '**/*.{css,scss}' --fix && echo stylelint competed.",
     "lint": "yarn lint:js && yarn lint:style",
-    "eject": "react-scripts eject" 
+    "eject": "react-scripts eject"
   },
   "dependencies": {
     "@craco/craco": "^7.1.0",
@@ -114,6 +114,7 @@
     "@material/typography": "^1.0.0",
     "@typescript-eslint/eslint-plugin": "^7.1.1",
     "@typescript-eslint/parser": "^7.1.1",
+    "craco-alias": "^3.0.1",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-alias": "^1.1.2",
