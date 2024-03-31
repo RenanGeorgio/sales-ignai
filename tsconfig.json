@@ -12,21 +12,21 @@
     "alwaysStrict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "noEmit": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    //"noUnusedLocals": false,
-    //"noUnusedParameters": false,
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "noEmit": false,
     "noImplicitAny": false,
-    //"emitDeclarationOnly": true,
     "sourceMap": true,
     "jsx": "react-jsx",
     "declaration": true,
     "plugins": [
       {
-        "name": "typescript-plugin-css-modules"
+        "name": "typescript-plugin-css-modules",
+        "options": {
+          "customTemplate": "./formatClassNamesTypes.ts"
+        }
       }
     ],
     "incremental": true
@@ -35,7 +35,7 @@
     "node_modules",
     "build"
   ],
-  "include": [ 
+  "include": [
     "declarations.d.ts",
     "src"
   ],

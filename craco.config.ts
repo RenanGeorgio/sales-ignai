@@ -1,5 +1,5 @@
 import CracoAlias from "craco-alias";
-//const StylelintWebpackPlugin = require("stylelint-webpack-plugin");
+import StylelintWebpackPlugin from "stylelint-webpack-plugin";
 //const sassResourcesLoader = require("craco-sass-resources-loader");
 //const BabelRcPlugin = require("@jackwilsdon/craco-use-babelrc");
 import path from "path";
@@ -54,30 +54,27 @@ const config: CracoConfig = {
     },
     css: {
       loaderOptions: (cssLoaderOptions, { env, paths }) => {
-
-        return cssLoaderOptions;
-      },
-     // {
-        /*modules: {
-          getLocalIdent: (context, localIdentName, localName) => {
+        cssLoaderOptions.modules = {
+          getLocalIdent: (context: unknown, localIdentName: string, localName: string) => {
             if (localName.startsWith('key')) {
               return localName;
             }
 
             return `${localName}-${threeLetterHash()}`;
           },
-          exportLocalsConvention: (className) =>
-            className.replace(/--/g, '_modifier_').replace(/-/g, '_'),
-        },*/
-      //},
+          exportLocalsConvention: (className: string) => className.replace(/--/g, '_modifier_').replace(/-/g, '_')
+        }
+
+        return cssLoaderOptions;
+      }
     },
     sass: {
       loaderOptions: (sassLoaderOptions, { env, paths }) => {
         sassLoaderOptions.implementation = require('sass');
         sassLoaderOptions.webpackImporter = false;
-        
+
         return sassLoaderOptions;
-      },
+      }
     }
   },
   webpack: {
@@ -103,11 +100,12 @@ const config: CracoConfig = {
         webpackConfig.devtool = 'eval-source-map';
       }
 
-      //webpackConfig.plugins?.push(
-      //  new StylelintWebpackPlugin({
-      //    files: '**/*.{scss,css}'
-      //  }),
-      //);
+      webpackConfig.plugins?.push(
+        new StylelintWebpackPlugin({
+          files: '**/*.{scss,css}',
+          configFile: './.stylelintrc',
+        }),
+      );
 
       // @ts-ignore
       webpackConfig.resolve.fallback = { ...webpackConfig.resolve.fallback,
