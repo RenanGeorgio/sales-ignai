@@ -49,11 +49,62 @@
   width: 742px;
 }
 
+.blueButton{
+  background-color: rgba(115, 103, 240, 1);
+  color: white;
+  padding: 10px 7px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 1px;
+  cursor: pointer;
+  align-items: center;
+  display: flex;
+  font-weight: inherit;
+}
+
+.blueButton-form {
+  background-color: rgba(115, 103, 240, 1);
+  color: white;
+  padding: 1px 7px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 1px;
+  cursor: pointer;
+  align-items: center;
+  display: flex;
+  font-weight: inherit;
+}
+
+
+.blueButton-form svg {
+  /* color: #fff; */
+  fill: #fff !important;
+  stroke: #fff;
+}
+
+.grayButton-form {
+  background-color: rgb(255, 255, 255);
+  color: rgba(168, 170, 174, 1);
+  border: none;
+  padding: 5px 12px;
+  border-radius: 4px;
+  margin-right: 5px; 
+  cursor: pointer;
+  align-items: center;
+  display: flex;
+  /* font-weight: inherit; */
+}
+
+.grayButton-form svg{
+  stroke: #5b5b5b9e ;
+ fill: #a8aaae;
+}
+
 .gray-button {
   background-color: rgb(255, 255, 255);
   color: rgba(168, 170, 174, 1);
   border: none;
-  padding: 8px 12px;
+  padding: 5px 12px;
   border-radius: 4px;
   margin-right: 5px; 
   cursor: pointer;
@@ -76,6 +127,11 @@
   gap: 10px;
   flex-basis: 48%;
   position: relative;
+}
+
+.button-group-form{
+  margin-left:100px;
+  display:flex
 }
 
 .form-row label {
@@ -266,6 +322,7 @@
   /* padding: 5px; */
   border: 1px solid rgb(196, 194, 194);
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
 }
 
 .form-selector-contador{
@@ -279,6 +336,7 @@
   /* padding: 2px; */
   max-height: 100%;
   width: 100%;
+  border-radius: 5px;
 }
 
 .new-form-selector-input {
@@ -334,6 +392,7 @@
   cursor: pointer;
 }
 
+
 .blueButtonsContainer {
   display: flex;
   flex-direction: column;
@@ -352,4 +411,13 @@
   display: block;
   width: 150px;
   cursor: pointer;
+}
+
+
+.contador-content{
+  display: flex;
+  align-items: center;
+  margin-top: -230px;
+  justify-content: space-between;
+  padding: 20px
 }

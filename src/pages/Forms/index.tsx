@@ -18,26 +18,29 @@ const Forms: React.FC = () => {
     <div className="page-content">
       <Navbar />
       <h1 className="title">Formulários</h1>
-      <div style={{marginLeft:'100px', display:'flex'}}>
+      <div
+      className='button-group-form'
+      //  style={{marginLeft:'100px', display:'flex'}}
+       >
         <button
-          className={activePage === 'Formulário' ? 'blueButton' : 'grayButton'}
+          className={activePage === 'Formulário' ? 'blueButton-form' : 'grayButton-form'}
           onClick={() => handleButtonClick('Formulário')}
         >
           <UsersIcon/>
           <span>Formulário</span>
         </button>
-        <div style={{display:'inline-flex',}}>  
+        {/* <div style={{display:'inline-flex',}}>   */}
         <button
-          className={activePage === 'Contador' ? 'blueButton' : 'grayButton'}
+          className={activePage === 'Contador' ? 'blueButton-form' : 'grayButton-form'}
           onClick={() => handleButtonClick('Contador')}
         > 
-          <BellIcon/>
+          <BellIcon />
          <span>Contador</span> 
        
         </button>
-           </div>
+           {/* </div> */}
         <button
-          className={activePage === 'Painel' ? 'blueButton' : 'grayButton'}
+          className={activePage === 'Painel' ? 'blueButton-form' : 'grayButton-form'}
           onClick={() => handleButtonClick('Painel')}
         >
           <FileTextIcon/>
@@ -72,6 +75,7 @@ const Forms: React.FC = () => {
             <button className="gray-button">Colorir</button>
             <button className="gray-button">Modelos</button>
           </div>
+          <div className="contador-content">
           <div className="button-path-container">
             <div>
               <button className="yellowButton">Home</button>
@@ -86,8 +90,9 @@ const Forms: React.FC = () => {
           </div>
           <div className="form-selector-contador">
             <FormSelector />
+            </div>
           </div>
-          <Footer />
+          {/* <Footer /> */}
         </>
       )}
       {activePage === 'Painel' && (

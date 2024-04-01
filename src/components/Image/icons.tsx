@@ -474,12 +474,17 @@ export const FileTextIcon = () => {
 }
 
 export const BellIcon = () => {
+ 
   return (
     <div>
-      <svg width="22" height="22" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="22" height="22" viewBox="0 0 18 19" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <g id="bell">
-          <path id="Path" d="M7.5 4.45312C7.5 3.6247 8.17157 2.95312 9 2.95312C9.82843 2.95312 10.5 3.6247 10.5 4.45312C12.2551 5.28304 13.409 7.01381 13.5 8.95312V11.2031C13.6145 12.1487 14.1712 12.9838 15 13.4531H3C3.82884 12.9838 4.38554 12.1487 4.5 11.2031V8.95312C4.59103 7.01381 5.74487 5.28304 7.5 4.45312" stroke="#A8AAAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-          <path id="Path_2" d="M6.75 13.4531V14.2031C6.75 15.4458 7.75736 16.4531 9 16.4531C10.2426 16.4531 11.25 15.4458 11.25 14.2031V13.4531" stroke="#A8AAAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path id="Path" d="M7.5 4.45312C7.5 3.6247 8.17157
+           2.95312 9 2.95312C9.82843 2.95312 10.5 3.6247 10.5
+            4.45312C12.2551 5.28304 13.409 7.01381 13.5 8.95312V11.2031C13.6145
+             12.1487 14.1712 12.9838 15 13.4531H3C3.82884 12.9838 4.38554 12.1487
+              4.5 11.2031V8.95312C4.59103 7.01381 5.74487 5.28304 7.5 4.45312"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path id="Path_2" d="M6.75 13.4531V14.2031C6.75 15.4458 7.75736 16.4531 9 16.4531C10.2426 16.4531 11.25 15.4458 11.25 14.2031V13.4531"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
         </g>
       </svg>
 
@@ -508,12 +513,12 @@ export const DotsHorizonIcon = () => {
 
 export const UsersIcon = () => {
   return (
-      <svg width="22" height="22" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="22" height="22" className="currentColor" viewBox="0 0 18 19" stroke="currentColor" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <g id="users">
-          <circle id="Oval" cx="6.75" cy="5.95312" r="3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-          <path id="Path" d="M2.25 16.4531V14.9531C2.25 13.2963 3.59315 11.9531 5.25 11.9531H8.25C9.90685 11.9531 11.25 13.2963 11.25 14.9531V16.4531" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-          <path id="Path_2" d="M12 3.05078C13.3274 3.39066 14.2559 4.58677 14.2559 5.95703C14.2559 7.32729 13.3274 8.5234 12 8.86328" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-          <path id="Path_3" d="M15.75 16.4539V14.9539C15.7422 13.5923 14.8184 12.4068 13.5 12.0664" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <circle id="Oval" cx="6.75" cy="5.95312" r="3"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path id="Path" d="M2.25 16.4531V14.9531C2.25 13.2963 3.59315 11.9531 5.25 11.9531H8.25C9.90685 11.9531 11.25 13.2963 11.25 14.9531V16.4531"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path id="Path_2" d="M12 3.05078C13.3274 3.39066 14.2559 4.58677 14.2559 5.95703C14.2559 7.32729 13.3274 8.5234 12 8.86328"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path id="Path_3" d="M15.75 16.4539V14.9539C15.7422 13.5923 14.8184 12.4068 13.5 12.0664"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
         </g>
       </svg>
   )
@@ -543,7 +548,7 @@ export const LinkIcon = () => {
     <div>
       <svg width="22" height="22" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g id="link">
-          <path id="Path" d="M7.5 11.2024C7.99373 11.7063 8.66952 11.9903 9.375 11.9903C10.0805 11.9903 10.7563 11.7063 11.25 11.2024L14.25 8.20243C15.2855 7.1669 15.2855 5.48797 14.25 4.45243C13.2145 3.4169 11.5355 3.4169 10.5 4.45243L10.125 4.82743" stroke="#A8AAAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path id="Path" d="M7.5 11.2024C7.99373 11.7063 8.66952 11.9903 9.375 11.9903C10.0805 11.9903 10.7563 11.7063 11.25 11.2024L14.25 8.20243C15.2855 7.1669 15.2855 5.48797 14.25 4.45243C13.2145 3.4169 11.5355 3.4169 10.5 4.45243L10.125 4.82743"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
           <path id="Path_2" d="M10.4999 8.2039C10.0062 7.69998 9.3304 7.41602 8.62492 7.41602C7.91944 7.41602 7.24365 7.69998 6.74992 8.2039L3.74992 11.2039C2.71438 12.2394 2.71438 13.9184 3.74992 14.9539C4.78545 15.9894 6.46438 15.9894 7.49992 14.9539L7.87492 14.5789" stroke="#A8AAAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
         </g>
       </svg>
