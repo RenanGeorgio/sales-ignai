@@ -1,14 +1,17 @@
 /* Estilos para o modal de informações do pedido */
 .business-modal-container {
-  width: 55%;
-  max-width: 800px;
+  width: 100%;
+  min-width: 100px;
   margin-right: auto;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* position: relative; */
   margin-top: 20px;
-  left: 15px;
+  /* left: -275px; */
   box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.4);
   color: #4B465C;
-  font-family: "Public Sans";
+  
+  padding: 15px;
 }
 
 .business-modal-header {
@@ -16,7 +19,7 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 0px;
-  margin-left: 25px;
+  margin-left: 20px;
 }
 
 .business-modal-subheader {
@@ -36,7 +39,8 @@
 .sku-barcode-container {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom:10px;
+  gap: 10px;
 }
 
 .sku-container {  
@@ -62,8 +66,13 @@
 .business-modal-content {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
-
+.modal-business-form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 .business-modal-content label {
   margin-bottom: 5px;
   margin-left: 10px;
@@ -71,15 +80,26 @@
 
 .business-modal-content input,
 .business-modal-content textarea {
-  width: 94%;
+  /* width: 100%; */
   padding: 8px;
-  margin-left: 10px;
+  /* margin-left: 10px; */
   margin-bottom: 10px;
   height: 20px;
+  border-radius: 6px;
+  border: #4b465c42 1px solid;
+  outline: #8f8f8f;
 }
 
 .business-modal-content textarea {
-  height: 150px;
+  height: 120px;
+  resize: none;
+  border: #4b465c42 1px solid;
+}
+
+.business-modal-content textarea:active {
+  height: 120px;
+  resize: none;
+  border: #4b465c42 1px solid;
 }
 
 .sku-barcode-container {
@@ -98,25 +118,46 @@
 
 /* Estilos para o modal de preço */
 .business-modal-price-container {
-  width: 50%;
-  height: calc(100% - 200px);
+  width: 80%;
+  height: calc(100% - 100px);
   max-width: 400px; 
   margin-top: 20px;
   margin-right: auto;
   position: relative;
-  left: -60px;
+  left: 0px;
   box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.4);
   color: #4B465C;
-  font-family: "Public Sans";
+  
+  /* display: flex; */
+ 
 }
 
 .business-modal-content-price {
   display: flex;
   flex-direction: column;
   padding: 6px;
-  margin-top: 0px;
+  margin-top: 5px;
   margin-bottom: 0px;
   margin-left: 15px;
+  gap: 10px;
+  /* height: 100%; */
+  /* box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.4); */
+ 
+}
+
+.modal-price-form{
+  display: flex;
+  flex-direction: column;
+  row-gap: 3px;
+  /* margin-top: 25px; */
+  padding: 5px 0;
+}
+
+.modal-price-form input{
+  height: 20px;
+  padding: 8px;
+  border: #4b465c42 1px solid;
+  border-radius: 6px;
 }
 
 .business-modal-content-price input{
@@ -139,8 +180,11 @@
 .checkbox-container-footer {
   margin-bottom: 0px;
   margin-top: -20px;
-  width: auto;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
   height: 60px;
+  display: flex;
 }
 
 .checkbox-container-footer h2 {
@@ -148,7 +192,7 @@
   font-size: 23px;
 }
 
-.checkbox-container-footer input {
+/* .checkbox-container-footer input {
   display: flex;
   margin-left: auto;
   margin: auto;
@@ -158,27 +202,106 @@
   height: 20px;
   margin-bottom: 0px;
   margin-right: 10px;
-}
+} */
 
 /* Estilos para a página de adição de pedido/proposta */
 .business-add-info-container {
   width: 95%;
   margin-left: 72px;
+  display: flex;
+  flex-direction: column;
 }
 
 .title-section {
   color: #4B465C;
-  font-family: "Public Sans";
+  /*  */
 }
 
-.info-section{
+.info-section-business{
   margin-top: -30px;
+  display: flex;
+  column-gap: 10px;
+  justify-content: space-around;
 }
 
 .title-section span {
   display: flex;
   margin-top: -10px;
 }
+
+.container-section-business{
+  display: flex;
+  justify-content:space-between;
+  padding-left: 20px;
+  gap:18px
+}
+.content-section-business{
+  width: 100%;
+  /* width: 740px; */
+  display: flex;
+  justify-content: center;
+}
+
+.container-section-business-2{
+  /* display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  gap:18px;
+  padding-right: 20px;
+  width: 100%;
+  align-items: baseline; */
+
+  display: flex;
+  justify-content:space-between;
+  padding-left: 20px;
+  gap:18px;
+  max-width: 50%;
+  
+}
+
+.content-section-business-2{
+  /* width: 100%;
+  max-width: 760px;
+  display: flex;
+  justify-content: center;
+  margin-right: 50px;
+  flex-direction: column;
+  height: calc(100% - 100px) */
+
+  width: 100%;
+  /* width: 740px; */
+  display: flex;
+  justify-content: center;
+
+
+}
+
+.container-section-business-3{
+  /* display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  gap:18px;
+  width: 100%; */
+
+  display: flex;
+  justify-content:space-between;
+  padding-left: 20px;
+  gap:18px;
+  max-width: 50%;
+
+}
+.content-section-business-3{
+  /* width: 100%;
+  width: fit-content;
+  display: flex;
+  justify-content: center; */
+
+  width: 100%;
+  /* width: 740px; */
+  display: flex;
+  justify-content: center;
+}
+
 
 .business-add-info-container .button-section {
   display: flex;
@@ -187,6 +310,7 @@
   margin-left: auto;
   margin-bottom: 0px;
   cursor: pointer;
+  height: fit-content;
 }
 
 .business-add-info-container .button-section button {
@@ -218,16 +342,17 @@
 
 /* Estilos para o modal de arquivos */
 .business-modal-arquivos-container {
-  width: 55%;
-  max-width: 800px;
-  height: calc(100% - 200px);
+  width: 100%;
+  /* max-width: 800px; */
+  /* height: calc(100% - 200px); */
   margin-right: auto;
-  position: relative;
-  left: 15px;
+  /* position: relative; */
+  /* left: 15px; */
   margin-top: 30px; 
   box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.4);
   color: #4B465C;
-  font-family: "Public Sans";
+display: flex;
+flex-direction: column;
 }
 
 .business-modal-content-arquivos {
@@ -282,23 +407,25 @@
 
 /* Estilos para o modal de organize */
 .business-modal-organize-container {
+  width: 80%;
+    /* height: calc(100% - 100px); */
+    max-width: 400px;
+    margin-top: 30px;
+    margin-right: auto;
+    position: relative;
+    left: 0px;
   color: #4B465C;
-  font-family: "Public Sans";
-  width: 50%;
-  max-width: 400px;
-  height: calc(100% + 400px);
-  margin-right: auto;
-  position: relative;
-  left: -60px;
-  margin-top: -50px;
   box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.4);
+  padding-bottom: 35px;
 }
 
 .business-modal-content-organize {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 6px;
+  /* width: 100%; */
   margin-left: 15px;
+  gap: 5px;
 }
 
 .business-modal-content-organize label {
@@ -310,9 +437,31 @@
   margin-bottom: 15px; 
 }
 
+.modal-organize-form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2px;
+  margin-top: 5px;
+  padding: 5px 0;
+  width: 95%;
+}
+
+.modal-organize-form input{
+  /* display: flex;
+  flex-direction: column;
+  height: 20px;
+    padding: 8px;
+    border-radius: 6px; */
+    /* width: 95%; */
+    border: #4b465c42 1px solid;
+    margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 6px
+}
+
 .business-modal-content-organize select {
   width: 95%;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   padding: 10px;
   border-radius: 6px;
 }
@@ -331,24 +480,28 @@
 /* Estilos para o modal de variantes */
 .business-modal-variantes-container {
   color: #4B465C;
-  font-family: "Public Sans";
-  width: 55%;
-  max-width: 800px;
+  width: 100%;
+  /* max-width: 800px; */
   margin-right: auto;
-  position: relative;
-  left: 15px;
-  margin-top: -50px;
+  /* position: relative; */
+  /* left: 15px; */
+  margin-top: 30px;
   box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.4);
+  display: flex;
+  flex-direction: column;
+  padding-right: 5px;
 }
 
 .business-modal-content-variantes {
   display: flex;
   flex-direction: column;
   padding: 10px;
+  width: 100%;
 }
 
 .business-modal-header-v {
-  display: inline-block;
+  display:flex;
+  flex-direction: column;
   margin-left: 15px;
 }
 
@@ -356,10 +509,14 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
+  /* width: 100%; */
+  gap: 8px;
+  padding: 8px 30px 6px 2px;
+
 }
 
 .variantes-inputs-f {
-  width: 200px;
+  width: 70%;
 }
 
 .variantes-inputs-f select {
@@ -370,12 +527,25 @@
 }
 
 .variantes-inputs-s {
-  width: 500px;
+  width: 100%;
   margin-right: 10px;
 }
 
+.variantes-inputs-s input{
+  padding: 8px;
+ 
+    margin-bottom: 10px;
+    height: 20px;
+    border-radius: 6px;
+    border: #4b465c42 1px solid;
+    outline: #8f8f8f;
+    width: 100%;
+}
+
+
 .business-modal-content-variantes button {
-  width: 200px;
+  min-width: 150px;
+  max-width: 200px;
   background-color: rgba(115, 103, 240, 1);
   color: white;
   border: none;
@@ -387,49 +557,82 @@
 /* Estilos para o modal de inventário */
 .business-modal-inventario-container {
   color: #4B465C;
-  font-family: "Public Sans";
-  width: 55%;
-  max-width: 800px;
-  margin-right: auto;
-  position: relative;
-  left: 15px;
+  width: 100%;
+  /* max-width: 800px; */
+  /* margin-right: auto; */
+  /* position: relative; */
+  /* left: 15px; */
+  display: flex;
   margin-top: 30px;
   margin-bottom: 25px;
   box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.4);
+
+  padding: 6px;
 }
 
 .inventario-input-container {
   display: flex;
   margin-bottom: 10px;
   margin-left: -10px;
+  width: 100%;
+  justify-content: space-between;
 }
+
+.inventario-input-container input{
+  width: 100%;
+  display: flex;
+  border-radius: 6px ;
+  border: #4b465c3d solid 1px;
+  min-width: 50px;
+  
+}
+
+/* .inventario-input-container button{
+  width: 100%;
+  display: flex;
+  border-radius: 6px ;
+  border: #4b465c3d solid 1px;
+  
+} */
 
 .business-modal-content-inventario {
   display: flex;
-  flex-direction: row; 
+  /* flex-direction: row;  */
   padding: 10px;
+  gap: 30px;
+  width: 100%;
 }
 
 .inventario-buttons {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  /* gap: 10px;
   margin-top: 25px;
+  padding: 6px; */
+  /* width: auto;
+  max-width:  350px;
+  min-width: 150px; */
+  /* width: 40vw;
+  min-width: 100px; */
+  flex: 1 1 600px;
 }
 
 .inventario-buttons button {
-  background-color: white;
+  /* background-color: white; */
   color: gray;
   border: none;
   padding: 8px;
   border-radius: 5px;
-  width: 170px;
+  min-width: 120px;
+  max-width: 170px;
   cursor: pointer;
   display: flex;
   text-align: start;
-  margin-left: 10px;
+  /* justify-content: center; */
+  margin-left: 0px;
   margin-top: 0px;
   cursor: pointer;
+  font-size: 1em;
 }
 
 .inventario-buttons button.selected {
@@ -440,9 +643,15 @@
 }
 
 .inventario-opcao {
-  margin-left: 20px; 
+  /* margin-left: 20px;  */
   display: flex;
   flex-direction: column;
+  border-left: #4B465C 1px solid;
+  padding: 6px 6px 0px 10px;
+  width: 100%;
+  min-width: 100px;
+  flex: 1 auto;;
+  /* font-size: clamp(16px , 0.3vw); */
 }
 
 .inventario-opcao label {
@@ -456,26 +665,32 @@
 }
 
 .inventario-opcao button {
-  width: 120px;
-  padding: 8px;
+  min-width: 60px;
+  padding:  10px;
   margin-bottom: 10px;
-  margin-left: 10px;
+  margin-left: 3px;
   background-color: rgba(115, 103, 240, 1);
   color: white;
   border: none;
   padding: 10px 25px;
   border-radius: 4px;
   cursor: pointer;
+  max-width: 40%;
+  display: flex;
+  justify-content: center;
 }
 
 .inventario-spans {
   display: flex;
   flex-direction: column;
-  width: 500px;
+  /* max-width: 900px; */
+  width: 100%;
 }
 
 .inventario-spans span {
-  width: 50%; 
+  text-wrap:  wrap;
+  word-break: break-word;
+  width: 100%; 
   margin-bottom: 5px;
 }
 

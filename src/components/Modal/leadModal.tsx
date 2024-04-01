@@ -56,7 +56,7 @@ const LeadModal: React.FC<LeadModalProps> = ({ closeModal, handleClick, data }) 
               <Edit />
               Editar
             </button>
-            <button
+            <button 
               className={activeTab === "Atividade" ? "active" : ""}
               onClick={() => setActiveTab("Atividade")}
             >
@@ -68,9 +68,10 @@ const LeadModal: React.FC<LeadModalProps> = ({ closeModal, handleClick, data }) 
         <div className="modal-content">
           {activeTab === "Editar" && (
             <>
+            <div  className="input-group-modal">
               <label>Título do card</label>
-              <input type="text" name="title" defaultValue={values?.title} placeholder="" onChange={handleUpdateField} />
-
+              <input className="input-title" type="text" name="title" defaultValue={values?.title} placeholder="" onChange={handleUpdateField} />
+              </div>
               {/* <label>Contato</label>
               <input type="text" placeholder="Marcos Batista" />
 
@@ -101,7 +102,7 @@ const LeadModal: React.FC<LeadModalProps> = ({ closeModal, handleClick, data }) 
                   <label>Nenhum arquivo selecionado</label>
                 </div>
               </div> */}
-
+              <div className="input-group-modal">
               <label>Comentários</label>
               <div className="comentario-container">
                 <input
@@ -112,7 +113,8 @@ const LeadModal: React.FC<LeadModalProps> = ({ closeModal, handleClick, data }) 
                   name="comments"
                   onChange={handleUpdateField}
                 />
-                <button className="blue-button" onClick={handleClickBtn}>Atualizar</button>
+                <button className="blue-button-modal" onClick={handleClickBtn}>Atualizar</button>
+              </div>
               </div>
             </>
           )}

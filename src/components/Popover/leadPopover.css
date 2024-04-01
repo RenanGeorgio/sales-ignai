@@ -3,7 +3,7 @@
   background-color: #ffffff;
   border: 1px solid #cccccc;
   border-radius: 5px;
-  padding: 10px 10px 0px 10px;
+  padding: 5px;
   width: 200px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -11,9 +11,21 @@
   left: 100%; /* Alterado para abrir sempre à direita */
   color: black;
   gap: 5px;
+ 
 }
+
+.popover-content{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 8px;
+  padding: 10px ;
+  /* border: black 1px solid; */
+}
+
 .popover button {
-  margin-top: -15px;
+  /* margin-top: -15px; */
+  height: 10px;
 }
 
 .lead-popover-container {
@@ -22,19 +34,58 @@
 
 }
 
+.lead-popover-container > button{
+  color: rgba(102, 102, 102, 0.876);
+  font-weight: normal;
+}
+
+.lead-popover-container > button:hover{
+  color: rgba(37, 37, 37, 0.876);
+}
 
 .popLead {
   position: absolute;
   background-color: #ffffff;
   border: 1px solid #cccccc;
   border-radius: 5px;
-  padding: 10px 10px 0px 10px;
+  padding: 5px;
   width: 200px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  top: -45px;
+  top: 5px;
   left: 100%; /* Alterado para abrir sempre à direita */
   color: black;
-  /* gap: 10px; */
+}
 
+.popover-content :nth-child(1){
+  width: 100%;
+}
+
+
+.popover-content>div>input{
+  width: 150px;
+}
+
+.popLead .popover-content>div>button.btn-popover{
+  border:1px solid black !important;
+  color:black;
+  border-radius:5px;
+  height: max-content !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center;
+  padding: 5px 10px;
+  margin-left: 5px !important;
+}
+
+.popover .popover-content>div>button.btn-popover{
+  border:1px solid black !important;
+  color:black;
+  border-radius:5px;
+  height: max-content !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center;
+  padding: 5px 10px;
+  margin-left: 15px;
 }

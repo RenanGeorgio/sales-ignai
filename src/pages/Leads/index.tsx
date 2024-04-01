@@ -11,7 +11,7 @@ import authApi from "../../services/auth";
 import { useDispatch } from "react-redux";
 import { leadsActions } from "../../store/store";
 import { IconButton } from "@mui/material";
-import { DotsVertical } from "../../components/Image/icons";
+import { AvatarIcon, DotsVertical, LabelGreenIcon, LabelIcon, MessageDots, PaperClip, Photo } from "../../components/Image/icons";
 
 const Leads = () => {
   const leadsData = useSelector((state: any) => state.leads);
@@ -29,7 +29,7 @@ const Leads = () => {
   }, []);
 
   useEffect(() => {
-    if(leadsData){
+    if (leadsData) {
       setColumns(leadsData);
     }
   }, [leadsData]);
@@ -120,48 +120,65 @@ const Leads = () => {
       ) : (
         <div className="leads-kanban">
           <div className="kanbanHead">
-          <div className="button-group">
-            <LeadPopover cardClassName='' title="+ Coluna" handleClick={addNewColumn}>
-              <input
-              style={{width:'100%'}}
-                type="text"
-                placeholder="Nova Coluna"
-                onChange={(e) => {
-                  setColumnName(e.target.value);
-                }}
-              />
-              {/* <IconButton size="small" style={{border:'1px solid black', display:'flex'}} onClick={()=>handleClick}>+</IconButton> */}
-            </LeadPopover>
-            <div className="divider"></div>
-            <button onClick={handleShowKanban}>Ver Lista</button>
-            <div className="divider"></div>
-            <button>Editar</button>
-          </div>
-          <div className="select-box">
-            <select className="select-box">
-              <option>Assignados a mim</option>
-              <option>Todos</option>
-            </select>
-          </div>
+            <div className="button-group">
+              <LeadPopover cardClassName='' title="+ Coluna" handleClick={addNewColumn}>
+                <input
+                  style={{ width: '100%' }}
+                  type="text"
+                  placeholder="Nova Coluna"
+                  onChange={(e) => {
+                    setColumnName(e.target.value);
+                  }}
+                />
+                {/* <IconButton size="small" style={{border:'1px solid black', display:'flex'}} onClick={()=>handleClick}>+</IconButton> */}
+              </LeadPopover>
+              <div className="divider"></div>
+              <button onClick={handleShowKanban}>Ver Lista</button>
+              <div className="divider"></div>
+              <button>Editar</button>
+            </div>
+            <div className="select-box">
+              <select className="select-box">
+                <option>Assignados a mim</option>
+                <option>Todos</option>
+              </select>
+            </div>
           </div>
           <DragDropContext onDragEnd={onDragEnd}>
             <div className="board-container">
               {columns?.map((column, key) => (
-                <div
-                className="kanban-column"
-
-                  key={key}
-                >
+                <div className="kanban-column" key={key}>
                   <div className="headerColumn">
+                    <div>
+                      <h1 className="card-title">{column.title}</h1>
+                    </div>
+                    <div>
+                      <IconButton size="small"> <DotsVertical className={undefined} /></IconButton>
+                    </div>
 
-                  <h1 className="card-title">{column.title}</h1>
-                  <IconButton size="small"> <DotsVertical className={undefined}/></IconButton>
+                  </div>
+                  <div style={{margin:'5px 5px', fontWeight:'bold'}}>
+                    <LeadPopover
+                    cardClassName='popLead'
+                    title="+ Adicionar"
+                    handleClick={() => addNewCard(column._id)}
+                  >
+                    <div style={{width: "auto", display:'flex'}}>
+                    <input                    
+                      type="text"
+                      placeholder="Novo Card"
+                      onChange={(e) => {
+                        setCardName(e.target.value);
+                      }}
+                    />
+                    </div>
+                  </LeadPopover>
                   </div>
                   {isMounted ? (
                     <Droppable droppableId={column._id} key={key}>
                       {(provided) => (
                         <div
-                        className="column-content"
+                          className="column-content"
                           // style={{
                           //   marginBottom: "10px",
                           //   width: "200px",
@@ -180,18 +197,42 @@ const Leads = () => {
                                   {...provided.draggableProps}
                                   {...provided.dragHandleProps}
                                   ref={provided.innerRef}
-                                  style={{
-                                    backgroundColor: "#fff",
-                                    margin: "0 0 10px",
-                                    padding: "10PX",
-                                    boxShadow:
-                                      "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
-                                    borderRadius: "5px",
-                                    ...provided.draggableProps.style,
-                                  }}
+                                  className="task-kanban"
                                   onDoubleClick={() => handleModalOpen(item)}
                                 >
+                                  <div className="task-title">
                                   {item.title}
+                                  </div>
+
+                                  <div style={{ position: "relative", bottom: '-10px', width: '100%',}}>
+                                    <div
+                                      style={{
+                                        display: 'flex', height: 36, padding:' 3px, 6px',
+                                        justifyContent: 'space-between', flexDirection: 'row', width: '100%', alignItems: 'baseline'
+                                      }}
+                                    >
+                                      <div style={{ display: 'inline-flex', alignItems: 'center', gap: 15 }}>
+                                        <div style={{ display: 'inline-flex' }}>
+                                          <PaperClip />
+                                          <label htmlFor="">4</label>
+                                        </div>
+                                        <div style={{ display: 'inline-flex' }}>
+                                          <MessageDots />
+                                          <label htmlFor="">13</label>
+                                        </div>
+                                      </div>
+                                      <div style={{ display: 'flex',paddingRight:5 }}>
+                                        <div style={{ display: 'flex', width: 20, height: 20 }}>
+                                          <LabelGreenIcon style={{width:25, height:25}}/>
+                                        </div>
+                                        <div 
+                                        style={{display:'flex', width:20, height:20}}
+                                        >
+                                          <LabelIcon style={{width:25, height:25}}/>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
                                 </div>
                               )}
                             </Draggable>
@@ -200,20 +241,7 @@ const Leads = () => {
                       )}
                     </Droppable>
                   ) : null}
-                  <LeadPopover
-                  cardClassName='popLead'
-                    title="+ Card"
-                    handleClick={() => addNewCard(column._id)}
-                  >
-                    <input
-                    style={{width:'95%'}}
-                      type="text"
-                      placeholder="Novo Card"
-                      onChange={(e) => {
-                        setCardName(e.target.value);
-                      }}
-                    />
-                  </LeadPopover>
+                  
                 </div>
               ))}
             </div>

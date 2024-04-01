@@ -92,7 +92,7 @@ export default function PaymentAddress({ address, clientId }) {
       <div className="index">
         <div style={{}} className="card-wrapper">
           <div className="row-container">
-            <div className="card top">
+            <div className="card-top">
               <div className="card-heading">
                 <div className="text-wrapper-19">Endereço</div>
                 <Button
@@ -208,13 +208,8 @@ export default function PaymentAddress({ address, clientId }) {
                       </IconButton>
                     </div>
                   </div>
-                  <img
-                    className="divider"
-                    alt="Divider"
-                    src="https://cdn.animaapp.com/projects/654154912a46b119340afa31/releases/65bb83897b26ce5f64b90797/img/divider-1.svg"
-                  />
                   <div className="accordion-expanded">
-                    <div className="accordion-collapse">
+                    <div className="accordion-collapse-medium">
                       <div className="text-7">
                         <img
                           className="img-3"
@@ -315,12 +310,7 @@ export default function PaymentAddress({ address, clientId }) {
                       </div>
                     </div>
                   </div>
-                  <img
-                    className="divider"
-                    alt="Divider"
-                    src="https://cdn.animaapp.com/projects/654154912a46b119340afa31/releases/65bb83897b26ce5f64b90797/img/divider-1.svg"
-                  />
-                  <div className="accordion-collapse">
+                  <div className="accordion-collapse-footer">
                     <div className="text-7">
                       <img
                         className="img-3"

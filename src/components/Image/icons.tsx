@@ -923,10 +923,10 @@ export const AvatarIcon = () => {
   )
 }
 
-export const LabelIcon = () => {
+export const LabelIcon = ({style}) => {
   return (
     <div>
-      <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="38" height="38" style={style} viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="Label Initials">
 <g clip-path="url(#clip0_250_34852)">
 <rect id="Background" x="-0.1604" y="0.0273438" width="38" height="38" fill="#7367F0" fill-opacity="0.16"/>
@@ -943,10 +943,10 @@ export const LabelIcon = () => {
   )
 }
 
-export const LabelGreenIcon = () => {
+export const LabelGreenIcon = ({style}) => {
   return (
     <div>
-      <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="38" height="38" style={style} viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="Label Initials">
 <g clip-path="url(#clip0_252_36348)">
 <rect id="Background" x="-0.1604" y="0.0273438" width="38" height="38" fill="#67F07D" fill-opacity="0.16"/>

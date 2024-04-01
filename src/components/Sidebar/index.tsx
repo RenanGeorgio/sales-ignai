@@ -37,7 +37,7 @@ const Sidebar: React.FC<SidebarProps> = () => {
 
   return (
     <div className={`sidebar ${expanded ? "expanded" : ""}`}>
-      <div onClick={toggleSidebar}>
+      <div className="container-logo" onClick={toggleSidebar}>
         <img src={logo} alt="Logo" className="logo" />
       </div>
       <div className="section1">
@@ -55,7 +55,7 @@ const Sidebar: React.FC<SidebarProps> = () => {
         <div className="sectionContainer">
           <p className={expanded ? "show-text" : "hide-text"}>Atendimento</p>
           <Link className="link" to="/email">
-            <div className="menu-item">
+            <div className="menu-item"> 
               <MailIcon />
               <span className={expanded ? "show-text" : "hide-text"}>
                 <p className="textOpen">Email</p>
