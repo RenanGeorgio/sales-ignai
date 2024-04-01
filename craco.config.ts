@@ -105,7 +105,7 @@ const config: CracoConfig = {
 
       webpackConfig.plugins?.push(
         new StylelintWebpackPlugin({
-          files: '**/*.{scss}',
+          files: '**/*.{scss,css}',
           configFile: './.stylelintrc',
         }),
       );
