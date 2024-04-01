@@ -1,0 +1,56 @@
+$color_1: #4B465C;
+$font-family_1: sans-serif;
+
+.containerBody {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-left: 6%;
+}
+.body {
+	box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.3);
+	width: calc(32.33% - 5px);
+	margin-bottom: 20px;
+	height: 110px;
+	box-sizing: border-box;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	h4 {
+		color: $color_1;
+		margin: 0;
+		flex: 1;
+	}
+	h2 {
+		color: $color_1;
+		margin: 0;
+	}
+	img.link {
+		width: 30px;
+		height: 30px;
+		margin-left: auto;
+		margin-right: 5px;
+		margin-top: -20px;
+		cursor: pointer;
+	}
+	img.copy {
+		width: 30px;
+		height: 30px;
+		order: 0;
+		margin-top: 5px;
+		cursor: pointer;
+	}
+}
+.title {
+	margin-left: 6%;
+	color: $color_1;
+	font-family: $font-family_1;
+	font-size: 22px;
+}
+.text {
+	margin-left: 6%;
+	margin-bottom: 25px;
+	color: $color_1;
+	font-size: 18px;
+}
