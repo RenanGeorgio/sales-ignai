@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Switch from "@mui/material/Switch";
-import "./EventComponent.module.css";
+import "./EventComponent.module.scss";
 
 interface Props {
     close: () => void;
@@ -31,7 +31,7 @@ const label = { inputProps: { 'aria-label': 'Switch demo' } };
 export default function EventModal({ close }: Props) {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [open, setOpen] = useState<boolean>(true);
-    
+
     return (
         <div>
             {open ? (
@@ -42,7 +42,7 @@ export default function EventModal({ close }: Props) {
                             <button onClick={close}>X</button>
                         </div>
                     </div>
-                    <div 
+                    <div
                     className='formModal'>
                         <div className='containerInput'>
                             <span className='spanTitle'>Título</span>

@@ -5,7 +5,7 @@ import GraphClientVolume from "../Graph/GraphClientVolume";
 import GraphFontClick from "../Graph/GraphFontClick";
 import GraphFormConversation from "../Graph/GraphFormConversation";
 import GraphNumberVisit from "../Graph/GraphNumberVisit";
-import "@styles/dashboard.module.css";
+import "@styles/dashboard.scss";
 
 const Dashboard: React.FC = () => {
   const [selectedMonth, setSelectedMonth] = useState('January');

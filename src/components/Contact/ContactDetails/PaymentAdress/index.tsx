@@ -8,7 +8,7 @@ import ModalForm from "@components/Forms/Modal/ModalForm";
 import PaymentAddressFormFields from "@components/Contact/FormFields/PaymentAddress";
 import { clientsActions } from "@store/store";
 import { IAddress } from "@interfaces";
-import "./PaymentAdress.module.css";
+import "./PaymentAdress.module.scss";
 
 interface Props {
   address?: IAddress[];
@@ -133,9 +133,9 @@ export default function PaymentAddress({ address, clientId }: Props) {
                           )}
                         </div>
                         <p className="text-wrapper-21">
-                          {`${addr.street}, 
-                            ${addr.number}, 
-                            ${addr.district}, 
+                          {`${addr.street},
+                            ${addr.number},
+                            ${addr.district},
                             ${addr.city} - ${addr.state}
                           `}
                         </p>

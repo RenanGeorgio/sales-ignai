@@ -1,6 +1,6 @@
-import Navbar from '../../components/Navbar';
-import { CopyIcon, LinkIcon, EmailIcon, FacebookIcon, InstagramIcon, WebsiteIcon, WhatsappIcon } from '@icons';
-import '../../styles/configuracoes.module.css';
+import Navbar from "@components/Navbar";
+import { CopyIcon, LinkIcon, EmailIcon, FacebookIcon, InstagramIcon, WebsiteIcon, WhatsappIcon } from "@icons";
+import "@styles/configuracoes.scss";
 
 const Configuracoes = () => {
   return (
@@ -36,7 +36,7 @@ const Configuracoes = () => {
           <h4>1 domínio conectado</h4>
             <WebsiteIcon/>
             </div>
-   
+
           <h2>Conectar Chatbot ao website</h2>
           <CopyIcon />
         </div>
@@ -63,7 +63,7 @@ const Configuracoes = () => {
           <LinkIcon/>
           <h2>Assinatura</h2>
           <CopyIcon />
-        </div> 
+        </div>
         <div className='body'>
           <h4>Total de usuários</h4>
           <LinkIcon/>

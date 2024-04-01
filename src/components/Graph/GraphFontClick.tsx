@@ -1,10 +1,10 @@
 import { AvatarIcon } from "@icons";
-import "@styles/dashboard.module.css"; 
+import "@styles/dashboard.scss";
 
 interface GraphFontClickProps {
   month: string;
 }
-  
+
 const GraphFontClick: React.FC<GraphFontClickProps> = ({ month }) => {
   return (
     <div className="graph-container-4">

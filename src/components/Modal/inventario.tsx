@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { LinkIcon } from "@icons";
-import "@styles/business.module.css";
+import "@styles/business.scss";
 
 const InventarioModal: React.FC = () => {
   const [selectedButton, setSelectedButton] = useState('Estoque');

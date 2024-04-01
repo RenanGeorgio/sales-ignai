@@ -6,7 +6,7 @@ import GraphChat from "../../components/Graph/GraphChat";
 import GraphTicket from "../../components/Graph/GraphTicket";
 import GraphTicketYou from "../../components/Graph/GraphTicketYou";
 import GraphThemes from "../../components/Graph/GraphThemes";
-import "../../styles/forms.module.css";
+import "@styles/forms.scss";
 
 const Chat: React.FC = () => {
   const [activePage, setActivePage] = useState("Atendimento");

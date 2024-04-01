@@ -2,7 +2,7 @@ import { useState } from "react";
 import { EditIcon, TrendingUpIcon  } from "@icons";
 import avatar from "@assets/images/Avatar2.png";
 import avatar3 from "@assets/images/Avatar3.png";
-import "./LeadModal.module.css";
+import "./LeadModal.module.scss";
 
 interface LeadModalProps {
   closeModal: () => void;
@@ -36,7 +36,7 @@ const LeadModal: React.FC<LeadModalProps> = ({ closeModal, handleClick, data }) 
   const handleModalClick = (e: React.MouseEvent) => {
     e.stopPropagation();
   };
-  
+
   // melhorar depois
   const handleClickBtn = () => {
     handleClick(values);

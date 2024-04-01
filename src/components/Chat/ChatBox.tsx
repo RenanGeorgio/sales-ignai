@@ -11,7 +11,7 @@ import AddTicket from "./AddTicket/AddTicket";
 import useAuth from "@hooks/useAuth";
 import useChat from "@hooks/useChat";
 import { useFetchRecipient } from "@hooks/useFetchRecipient";
-import "./ChatBox.module.css";
+import "./ChatBox.module.scss";
 
 dayjs.extend(relativeTime)
 dayjs.locale('pt-br')
@@ -109,7 +109,7 @@ export const ChatBox: React.FC<any> = ({ toggleAddTicket }: Props): JSX.Element 
       src="https://c.animaapp.com/5uY2Jqwr/img/avatar-14@2x.png"
     />
   );
-  
+
   const getMessageAvatar = () => (
     <img
       className="img-avatar-text"
@@ -117,7 +117,7 @@ export const ChatBox: React.FC<any> = ({ toggleAddTicket }: Props): JSX.Element 
       src={Avatar2}
     />
   );
-  
+
   return (
     <div className="containerchat">
       <div className="headerBoxChat">

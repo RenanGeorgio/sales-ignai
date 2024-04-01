@@ -1,5 +1,5 @@
 import avatar from "@assets/images/Avatar2.png";
-import "@styles/business.module.css";
+import "@styles/business.scss";
 
 const PedidoInfoModal: React.FC = () => {
     return (

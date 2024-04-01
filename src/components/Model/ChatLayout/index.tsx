@@ -4,7 +4,7 @@ import { LeftMenu } from "../../Chat/LeftMenu";
 import { UserChat } from "../../Chat/UserChat";
 import useAuth from "@hooks/useAuth";
 import useChat from "@hooks/useChat";
-import "./ChatLayout.module.css";
+import "./ChatLayout.module.scss";
 
 export default function LayoutChat() {
   const [showAddTicket, setShowAddTicket] = useState<boolean>(false);

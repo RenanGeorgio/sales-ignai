@@ -4,7 +4,7 @@ import AmericanExpress from "@assets/images/american-express.png";
 import Avatar from "@assets/images/Avatar2.png";
 import List from "@assets/images/list-details.svg";
 import { DotIcon } from "@icons";
-import "@styles/statistics-transaction.module.css";
+import "@styles/statistics-transaction.scss";
 
 const rows = [
   { card: <><img src={Visa}alt="Visa" /> <span>*4230</span> <br /> Credit</>, date: <>Sent <br /> 17 Mar 2022</>, status: 'Verified', trend: '+$1,678' },
@@ -13,7 +13,7 @@ const rows = [
   { card: <><img src={Visa} alt="Visa" /> <span>*5699</span> <br /> Credit</>, date: <>Sent <br /> 08 Jan 2022</>, status: 'Pending', trend: '+$2,345' },
   { card: <><img src={Visa} alt="Visa" /> <span>*5699</span> <br /> Credit</>, date: <>Sent <br /> 08 Jan 2022</>, status: 'Rejected', trend: '+$2,345' },
 ];
-  
+
 export default function LastTransactionTable() {
   return (
     <div className="last-transaction-container">

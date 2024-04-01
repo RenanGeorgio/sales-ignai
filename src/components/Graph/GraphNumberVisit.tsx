@@ -1,10 +1,10 @@
 import { AvatarGreenIcon } from "@icons";
-import "@styles/dashboard.module.css";
+import "@styles/dashboard.scss";
 
 interface GraphNumberVisitProps {
   month: string;
 }
-  
+
 const GraphNumberVisit: React.FC<GraphNumberVisitProps> = ({ month }) => {
   return (
     <div className="graph-container-4">

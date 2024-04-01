@@ -1,4 +1,4 @@
-import "@styles/business.module.css";
+import "@styles/business.scss";
 
 const VariantesModal: React.FC = () => {
   return (

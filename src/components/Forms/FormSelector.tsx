@@ -1,5 +1,5 @@
 import { GreenLabelIcon, LabelIcon } from "@icons";
-import "@styles/forms.module.css";
+import "@styles/forms.scss";
 
 const FormSelector: React.FC = () => {
   return (

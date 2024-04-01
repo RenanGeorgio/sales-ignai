@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { IconButton } from "@mui/material";
-import "./LeadPopover.module.css";
+import "./LeadPopover.module.scss";
 
 interface Props {
   title: string;
@@ -48,7 +48,7 @@ const LeadPopover = ({ title, handleClick, cardClassName, children }: Props) => 
         <div className={`popover ${cardClassName}`}>
           <div style={{color:'black', display:'flex', alignItems:'center', justifyContent:'space-between', gap:8}}>
             {children}
-            <IconButton size="small" style={{border:'1px solid black', color:'black', marginLeft:'inherit', borderRadius:5}} 
+            <IconButton size="small" style={{border:'1px solid black', color:'black', marginLeft:'inherit', borderRadius:5}}
               onClick={(_e: any) => handleClickBtn()}
             >
                 +

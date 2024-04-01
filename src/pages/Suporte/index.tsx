@@ -1,6 +1,6 @@
-import Navbar from "../../components/Navbar";
-import { TextFileIcon, UsersIcon } from '@icons';
-import '../../styles/chatbot.module.css';
+import Navbar from "@components/Navbar";
+import { TextFileIcon, UsersIcon } from "@icons";
+import "@styles/chatbot.scss";
 
 const Suporte = () => {
     return (

@@ -7,12 +7,12 @@ import ImageLogo from "@assets/images/Queiroz_Galvão_Logo 1.png";
 import PaymentAddress from "./PaymentAdress";
 import Notification from "./Notifications";
 import rows from "../../../dados/data2.json";
-import "./PaymentAdress/PaymentAdress.module.css";
+import "./PaymentAdress/PaymentAdress.module.scss";
 
 type Priority = 'Paga' | 'Aguardando' | 'Atrasada' | 'Cancelada' | undefined;
 
 const getPriorityStyles = (priority: Priority) => {
-  let color: string = ""; 
+  let color: string = "";
   let backgroundColor: string = "";
 
   if (priority === 'Paga') {
@@ -38,24 +38,24 @@ const getPriorityStyles = (priority: Priority) => {
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const DetailsPage = ({ match }: any) => {
   const navigate = useNavigate();
-  
+
   // Usar o ID da URL para obter os detalhes do cliente
-  const [activePage, setActivePage] = useState('pageName'); 
-  
+  const [activePage, setActivePage] = useState('pageName');
+
   const handleButtonClick = (pageName: string) => {
     setActivePage(pageName);
   };
 
   const columns: GridColDef[] = [
     {
-      field: 'nota', 
-      headerName: 'Nota', 
+      field: 'nota',
+      headerName: 'Nota',
       width: 250
     },
     {
-      field: 'pdf', 
-      headerName: 'PDF', 
-      width: 80, 
+      field: 'pdf',
+      headerName: 'PDF',
+      width: 80,
       align: 'center',
       headerAlign: 'center',
       renderCell: (params) => (
@@ -72,10 +72,10 @@ const DetailsPage = ({ match }: any) => {
       ),
     },
     {
-      field: 'date', 
-      headerName: 'Data', 
-      type: 'date', 
-      width: 190, 
+      field: 'date',
+      headerName: 'Data',
+      type: 'date',
+      width: 190,
       align: 'center',
       headerAlign: 'center',
       valueGetter: (params: GridValueGetterParams) => {
@@ -83,9 +83,9 @@ const DetailsPage = ({ match }: any) => {
       }
     },
     {
-      field: 'status-payment', 
-      headerName: 'Status De Pagamento', 
-      width: 250, 
+      field: 'status-payment',
+      headerName: 'Status De Pagamento',
+      width: 250,
       align: 'center',
       headerAlign: 'center',
       renderCell: (params) => {
@@ -103,10 +103,10 @@ const DetailsPage = ({ match }: any) => {
       }
     },
     {
-      field: 'spending', 
-      headerName: 'Gastos', 
-      type: 'number', 
-      width: 130, 
+      field: 'spending',
+      headerName: 'Gastos',
+      type: 'number',
+      width: 130,
       align: 'center',
       headerAlign: 'center',
       renderCell: (params) => (
@@ -158,8 +158,8 @@ const DetailsPage = ({ match }: any) => {
       </div>
       <div style={{ justifyContent: 'space-between', alignItems: 'flex-start', gap: 1, display: 'inline-flex'}}>
         {/* Lado Esquerdo  */}
-        <div style={{ width: 360, height: '100%', flexDirection: 'column', 
-        justifyContent: 'flex-start', alignItems: 'flex-start', gap: 1, 
+        <div style={{ width: 360, height: '100%', flexDirection: 'column',
+        justifyContent: 'flex-start', alignItems: 'flex-start', gap: 1,
         display: 'inline-flex', boxShadow: '0px 4px 18px rgba(75, 70, 92, 0.10)' }}>
           <div style={{ alignSelf: 'stretch', height: 615, background: 'white', boxShadow: '0px 4px 18px rgba(75, 70, 92, 0.10)', borderRadius: 6, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex' }}>
             <div style={{ alignSelf: 'stretch', height: 560, padding: 4, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: 1, display: 'flex' }}>
@@ -230,7 +230,7 @@ const DetailsPage = ({ match }: any) => {
                     <span style={{ color: 'black', fontSize: 15, fontFamily: 'sans-serif', lineHeight: 0, wordWrap: 'break-word' }}>Brasil</span>
                   </div>
                 </div>
-                <div style={{ justifyContent: 'flex-start', display: 'inline-flex' }}>       
+                <div style={{ justifyContent: 'flex-start', display: 'inline-flex' }}>
                   <Button size='small' style={{ color: 'white', fontFamily: 'sans-serif',background: '#BABABD',  }}>Editar detalhes</Button>
                 </div>
               </div>
@@ -264,7 +264,7 @@ const DetailsPage = ({ match }: any) => {
                     <span style={{ color: 'black', fontSize: 15, fontFamily: 'sans-serif', fontWeight: '400', lineHeight: 0, wordWrap: 'break-word' }}>Brasil</span>
                   </div>
                 </div>
-                <div style={{ justifyContent: 'flex-start', display: 'inline-flex' }}>       
+                <div style={{ justifyContent: 'flex-start', display: 'inline-flex' }}>
                   <Button size='small' style={{ color: 'white', fontFamily: 'sans-serif',background: '#BABABD',  }}>Editar detalhes</Button>
                 </div>
               </div>
@@ -285,11 +285,11 @@ const DetailsPage = ({ match }: any) => {
                 <button
                   className={activePage === 'Payment' ? 'blueButton' : 'grayButton'}
                   onClick={() => handleButtonClick('Payment')}>
-                    Endereço e Pagamento 
+                    Endereço e Pagamento
                 </button>
               </div>
               <div >
-                <button 
+                <button
                   className={activePage === 'Painel' ? 'blueButton' : 'grayButton'}
                   onClick={() => handleButtonClick('Painel')}>
                     Notificação

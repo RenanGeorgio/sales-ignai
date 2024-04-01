@@ -1,4 +1,4 @@
-import { 
+import {
   ClockIcon,
   ChartPieIcon,
   MessageDotsIcon,
@@ -8,7 +8,7 @@ import {
 import ChartSessions from "../Graph/GraphSessions";
 import ChartSales from "../Graph/GraphSales";
 import ChartRevenue from "../Graph/GraphRevenue";
-import "@styles/statistics.module.css";
+import "@styles/statistics.scss";
 
 interface StatisticsComponentProps {}
 const StatisticsComponent: React.FC<StatisticsComponentProps> = () => {

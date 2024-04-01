@@ -1,0 +1,163 @@
+$background-color_1: #ffffff4c;
+$background-color_2: var(--lightsolid-colordangerdanger-400);
+$background-color_3: var(--lightsolid-colorwarningwarning-400);
+$background-color_4: var(--lightsolid-colorinfoinfo-400);
+$background-color_5: var(--lightsolid-colorprimaryprimary-400);
+$background-color_6: var(--lightsolid-colorsuccesssuccess-400);
+$background-color_7: var(--lightsolid-colorsecondarysecondary-400);
+
+.avatar {
+	border-radius: 100px;
+	overflow: hidden;
+	.overlap-group {
+		position: relative;
+	}
+	.background {
+		left: 0;
+		position: absolute;
+		top: 0;
+	}
+	.overlay {
+		background-color: $background-color_1;
+		border-radius: 100px;
+		position: relative;
+	}
+	.img {
+		left: 0;
+		object-fit: cover;
+		position: absolute;
+		top: 0;
+	}
+}
+.avatar.thirty-eight {
+	height: 38px;
+	width: 38px;
+	.overlap-group {
+		height: 38px;
+	}
+	.background {
+		background-color: $background-color_2;
+		height: 38px;
+		width: 38px;
+	}
+	.overlay {
+		height: 31px;
+		left: 4px;
+		top: 4px;
+		width: 31px;
+	}
+	.img {
+		height: 38px;
+		width: 38px;
+	}
+}
+.avatar.sixty-four {
+	height: 64px;
+	width: 64px;
+	.overlap-group {
+		height: 64px;
+	}
+	.background {
+		background-color: $background-color_3;
+		height: 64px;
+		width: 64px;
+	}
+	.overlay {
+		height: 52px;
+		left: 6px;
+		top: 6px;
+		width: 52px;
+	}
+	.img {
+		height: 64px;
+		width: 64px;
+	}
+}
+.avatar.thirty-two {
+	height: 32px;
+	width: 32px;
+	.overlap-group {
+		height: 32px;
+	}
+	.background {
+		background-color: $background-color_4;
+		height: 32px;
+		width: 32px;
+	}
+	.overlay {
+		height: 26px;
+		left: 3px;
+		top: 3px;
+		width: 26px;
+	}
+	.img {
+		height: 32px;
+		width: 32px;
+	}
+}
+.avatar.seventy-two {
+	height: 72px;
+	width: 72px;
+	.overlap-group {
+		height: 72px;
+	}
+	.background {
+		background-color: $background-color_5;
+		height: 72px;
+		width: 72px;
+	}
+	.overlay {
+		height: 58px;
+		left: 7px;
+		top: 7px;
+		width: 58px;
+	}
+	.img {
+		height: 72px;
+		width: 72px;
+	}
+}
+.avatar.forty-eight {
+	height: 48px;
+	width: 48px;
+	.overlap-group {
+		height: 48px;
+	}
+	.background {
+		background-color: $background-color_6;
+		height: 48px;
+		width: 48px;
+	}
+	.overlay {
+		height: 39px;
+		left: 5px;
+		top: 5px;
+		width: 39px;
+	}
+	.img {
+		height: 48px;
+		width: 48px;
+	}
+}
+.avatar.twenty-six {
+	height: 26px;
+	width: 26px;
+	.overlap-group {
+		height: 26px;
+	}
+	.background {
+		background-color: $background-color_7;
+		height: 26px;
+		width: 26px;
+	}
+	.overlay {
+		height: 21px;
+		left: 3px;
+		top: 3px;
+		width: 21px;
+	}
+	.img {
+		height: 26px;
+		width: 26px;
+	}
+}

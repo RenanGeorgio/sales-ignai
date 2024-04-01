@@ -1,7 +1,7 @@
 import { ChangeEvent, useState, useEffect } from "react";
 import { IconButton } from "@mui/material";
 import { MicIcon, PhotoIcon } from "@icons";
-import "./ChatBox.module.css";
+import "./ChatBox.module.scss";
 
 interface Props {
   onSendMessage: (textMessage: string, setTextMessage: () => void) => void;

@@ -15,7 +15,7 @@ import { clientsActions } from "@store/store";
 import Revenue from "./Revenue";
 import { IContactInfo, IClient } from "@interfaces";
 import { Obj } from "@types";
-import "./PaymentAdress/PaymentAdress.module.css";
+import "./PaymentAdress/PaymentAdress.module.scss";
 
 interface Props {
   client: IClient;
@@ -41,7 +41,7 @@ const ContactDetails = ({ client }: Props) => {
 
   const handleAdd = async (contact: IContactInfo) => {
     setIsLoading(true);
-    
+
     const response = await postRequest(`${baseUrl}/client/${client._id}/contact`, contact);
 
     if (response.error) {
@@ -493,17 +493,17 @@ const ContactDetails = ({ client }: Props) => {
                   >
                     <div style={{ width: 284,  }}>
                       <span
-                        style={{                       
+                        style={{
                           fontFamily: "sans-serif",
-                          fontWeight: "600",                      
+                          fontWeight: "600",
                           wordWrap: "break-word",
                         }}
                       >
                         Contato:
                       </span>
                       <span
-                        style={{                       
-                          fontFamily: "sans-serif",                     
+                        style={{
+                          fontFamily: "sans-serif",
                           wordWrap: "break-word",
                         }}
                       >
@@ -513,17 +513,17 @@ const ContactDetails = ({ client }: Props) => {
                     </div>
                     <div style={{ width: 284,  }}>
                       <span
-                        style={{                       
+                        style={{
                           fontFamily: "sans-serif",
-                          fontWeight: "600",                       
+                          fontWeight: "600",
                           wordWrap: "break-word",
                         }}
                       >
                         Email:{" "}
                       </span>
                       <span
-                        style={{                       
-                          fontFamily: "sans-serif",                         
+                        style={{
+                          fontFamily: "sans-serif",
                           wordWrap: "break-word",
                         }}
                       >
@@ -540,9 +540,9 @@ const ContactDetails = ({ client }: Props) => {
                       }}
                     >
                       <div
-                        style={{                       
+                        style={{
                           fontFamily: "sans-serif",
-                          fontWeight: "600",                       
+                          fontWeight: "600",
                           wordWrap: "break-word",
                         }}
                       >
@@ -564,7 +564,7 @@ const ContactDetails = ({ client }: Props) => {
                             color: "#28C76F",
                             fontSize: 13,
                             fontFamily: "sans-serif",
-                            fontWeight: "500",                 
+                            fontWeight: "500",
                             wordWrap: "break-word",
                           }}
                         >
@@ -574,17 +574,17 @@ const ContactDetails = ({ client }: Props) => {
                     </div>
                     <div style={{ width: 284,  }}>
                       <span
-                        style={{                         
+                        style={{
                           fontFamily: "sans-serif",
-                          fontWeight: "600",                       
+                          fontWeight: "600",
                           wordWrap: "break-word",
                         }}
                       >
                         Telefone:
                       </span>
                       <span
-                        style={{                         
-                          fontFamily: "sans-serif",                
+                        style={{
+                          fontFamily: "sans-serif",
                           wordWrap: "break-word",
                         }}
                       >
@@ -594,7 +594,7 @@ const ContactDetails = ({ client }: Props) => {
                     </div>
                     <div style={{ width: 284, }}>
                       <span
-                        style={{                          
+                        style={{
                           fontFamily: "sans-serif",
                           fontWeight: "600",
                           wordWrap: "break-word",
@@ -603,7 +603,7 @@ const ContactDetails = ({ client }: Props) => {
                         Estado:{" "}
                       </span>
                       <span
-                        style={{                                   
+                        style={{
                           fontFamily: "sans-serif",
                           wordWrap: "break-word",
                         }}

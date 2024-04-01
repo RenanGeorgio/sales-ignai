@@ -1,5 +1,5 @@
 import { FormEvent, cloneElement, useEffect, useState } from "react";
-import "./ModalForm.module.css";
+import "./ModalForm.module.scss";
 
 interface ModalFormProps {
   children: any;
@@ -7,7 +7,7 @@ interface ModalFormProps {
   isLoading: boolean;
   initialValues: any;
   mode: string;
-} 
+}
 
 const ModalForm = ({ children, onSubmit, isLoading, initialValues, mode }: ModalFormProps) => {
   const [formValues, setFormValues] = useState<any>({});

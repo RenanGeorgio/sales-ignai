@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import Navbar from '../../components/Navbar';
-import '../../styles/statistics.module.css'; 
-import StatisticsComponent from '../../components/Statistics/Statistics';
-import GraphSource from '../../components/Graph/GraphSource';
-import GraphRadar from '../../components/Graph/GraphRadar';
-import StatisticsStatus from '../../components/Statistics/StatisticsStatus';
-import LastTransactionTable from '../../components/Statistics/LastTransactionTable';
-import GraphStatistics from '../../components/Graph/GraphStatistics';
+import { useState } from "react";
+import Navbar from "@components/Navbar";
+import StatisticsComponent from "@components/Statistics/Statistics";
+import GraphSource from "@components/Graph/GraphSource";
+import GraphRadar from "@components/Graph/GraphRadar";
+import StatisticsStatus from "@components/Statistics/StatisticsStatus";
+import LastTransactionTable from "@components/Statistics/LastTransactionTable";
+import GraphStatistics from "@components/Graph/GraphStatistics";
+import "@styles/statistics.scss";
 
 const Statistics: React.FC = () => {
-  const [activePage, setActivePage] = useState('Estatísticas'); 
+  const [activePage, setActivePage] = useState('Estatísticas');
 
   const handleButtonClick = (pageName: string) => {
     setActivePage(pageName);

@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import Navbar from '../../components/Navbar';
-import { TextFileIcon, UsersIcon, BellIcon } from '@icons';
-import MainForm from '../../components/Forms/MainForm';
-import FormSelector from '../../components/Forms/FormSelector';
-import Footer from '../../components/Forms/Footer';
-import Dashboard from '../../components/Forms/Dashboard';
-import '../../styles/forms.module.css'; 
+import { useState } from "react";
+import Navbar from "@components/Navbar";
+import { TextFileIcon, UsersIcon, BellIcon } from "@icons";
+import MainForm from "@components/Forms/MainForm";
+import FormSelector from "@components/Forms/FormSelector";
+import Footer from "@components/Forms/Footer";
+import Dashboard from "@components/Forms/Dashboard";
+import "@styles/forms.scss";
 
 const Forms: React.FC = () => {
-  const [activePage, setActivePage] = useState('Formulário'); 
+  const [activePage, setActivePage] = useState('Formulário');
 
   const handleButtonClick = (pageName: string) => {
     setActivePage(pageName);
@@ -26,14 +26,14 @@ const Forms: React.FC = () => {
           <UsersIcon/>
           <span>Formulário</span>
         </button>
-        <div style={{display:'inline-flex',}}>  
+        <div style={{display:'inline-flex',}}>
         <button
           className={activePage === 'Contador' ? 'blueButton' : 'grayButton'}
           onClick={() => handleButtonClick('Contador')}
-        > 
+        >
           <BellIcon/>
-         <span>Contador</span> 
-       
+         <span>Contador</span>
+
         </button>
            </div>
         <button

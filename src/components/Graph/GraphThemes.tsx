@@ -1,10 +1,10 @@
 import { PackageIcon, PercentageIcon, ClockIcon, UsersIcon, TruckIcon, ChevronUpIcon, ChevronDownIcon, CircleCheckIcon } from "@icons";
-import "@styles/graph.module.css";
+import "@styles/graph.scss";
 
 interface GraphThemesProps {
   month: string;
 }
-  
+
 const GraphThemes: React.FC<GraphThemesProps> = ({ month }) => {
   return (
     <div className="graph-container-themes">
@@ -26,7 +26,7 @@ const GraphThemes: React.FC<GraphThemesProps> = ({ month }) => {
       </div>
       <div className="data-row-themes">
         <div className="data-item">
-          <div className="graph-themes-icon">        
+          <div className="graph-themes-icon">
             <TruckIcon/>
           </div>
           <span className="data-text">Problemas com transporte</span>

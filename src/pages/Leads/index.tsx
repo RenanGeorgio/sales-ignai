@@ -11,7 +11,7 @@ import { leadsActions } from "@store/store";
 import { IconButton } from "@mui/material";
 import { VerticalDotsIcon } from "@icons";
 import { Obj, DragResult } from "@types";
-import "@styles/leads.module.css";
+import "@styles/leads.scss";
 
 const Leads = () => {
   const leadsData = useSelector((state: any) => state.leads);
@@ -92,15 +92,15 @@ const Leads = () => {
       const response = await authApi.post(`/leads/${id}/items`, {
         title: cardName
       });
-  
+
       const newColumns = columns.map((column) => {
         if (column._id === id) {
           column = response.data;
         }
-  
+
         return column;
       });
-  
+
       setCardName("");
       dispatch(leadsActions.updateLeads(newColumns));
       setColumns(newColumns);
@@ -119,15 +119,15 @@ const Leads = () => {
         title,
         comments
       });
-  
+
       if (response.status === 200) {
         const data = response.data;
-  
+
         const cardIndex = columns.findIndex((column) => column._id === data._id);
         const newColumns = [...columns];
-  
+
         newColumns.splice(cardIndex, 1, data);
-  
+
         dispatch(leadsActions.updateLeads(newColumns));
         setColumns(newColumns);
         setIsModalOpen(false);

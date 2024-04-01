@@ -15,7 +15,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { AuthContext } from "@contexts/auth/AuthContext";
 import Copyright from "../Copyright";
 import { SignInData } from "@types";
-import "./SignIn.module.css";
+import "./SignIn.module.scss";
 
 const defaultTheme = "";
 
@@ -41,7 +41,7 @@ export default function SignIn(): JSX.Element {
         email: data.email,
         password: data.password,
       });
-    
+
       if (response?.status === 401 || response?.status === 400) {
         setError(response.message);
         setIsLoading(false);

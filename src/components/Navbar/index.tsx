@@ -4,7 +4,7 @@ import { Button } from "@mui/material";
 import { BellIcon, SearchIcon } from "@icons";
 import userIcon from "@assets/images/Avatar.jpg";
 import useAuth from "@hooks/useAuth";
-import "@styles/navbar.module.css";
+import "@styles/navbar.scss";
 
 interface NavbarProps { }
 

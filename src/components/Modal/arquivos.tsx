@@ -1,4 +1,4 @@
-import "@styles/business.module.css";
+import "@styles/business.scss";
 
 const ArquivosModal: React.FC = () => {
   return (
@@ -16,7 +16,7 @@ const ArquivosModal: React.FC = () => {
           <div style={{display:'flex', justifyContent:'center', marginTop:'40px'}}>
             {/* <FileUploadIcon /> */}
           </div>
-          <span className='business-span'>Jogue seu arquivo aqui</span> 
+          <span className='business-span'>Jogue seu arquivo aqui</span>
           <span>ou</span>
           <button>Buscar arquivo</button>
         </div>

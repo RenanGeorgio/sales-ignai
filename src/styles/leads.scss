@@ -1,0 +1,211 @@
+$color_1: rgb(85, 85, 85);
+$color_2: #333;
+$color_3: rgb(48, 47, 47);
+$background-color_1: #fff;
+$background-color_2: #3498db59;
+$background-color_3: #028d3c56;
+$background-color_4: #f1c40f52;
+$background-color_5: #e74d3c5d;
+$background-color_6: #ededed57;
+$background-color_7: rgb(210, 210, 210);
+$background-color_8: rgb(98, 98, 98);
+
+.leads-kanban {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 93%;
+	margin: auto;
+	margin-left: 5.5%;
+	user-select: none;
+}
+.button-group {
+	display: flex;
+	align-items: center;
+	box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.3);
+	gap: 5px;
+	margin-top: 2%;
+	width: 400px;
+	height: 42px;
+	border-radius: 5px;
+	button {
+		padding: 5px 10px;
+		color: $color_1;
+		background-color: $background-color_1;
+		border: none;
+		cursor: pointer;
+		width: auto;
+		height: auto;
+		margin-left: 30px;
+	}
+}
+.divider {
+	border-right: 1px solid #ccc;
+	height: 30px;
+	margin-top: 1px;
+	margin-left: 30px;
+	align-items: center;
+	justify-content: center;
+}
+.select-box {
+	width: 190px;
+	height: 38px;
+	margin-right: 10px;
+	margin-bottom: 5px;
+	margin-top: 2%;
+	border-radius: 5px;
+	option {
+		margin-left: 15px;
+	}
+}
+.kanbanHead {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	width: 100%;
+	padding: 0px 3px;
+}
+.board-container {
+	display: flex;
+	width: 98%;
+	height: 535px;
+	margin: 10px 0px;
+	padding: 5px 0px;
+	align-items: flex-start;
+	overflow-x: auto;
+	overflow-y: hidden;
+	border-radius: 5px;
+	padding-inline: 10px;
+	gap: 15px;
+	box-shadow: 0px 0px 0px 1px #00000000, 0px 1px 1px #03040403, 0px 0px 1px #03040480;
+	&::-webkit-scrollbar {
+		height: 7px;
+		border-radius: 5px;
+	}
+	&::-webkit-scrollbar-track {
+		background-color: $background-color_7;
+		border-radius: 5px;
+	}
+	&::-webkit-scrollbar-thumb {
+		color: $color_2;
+		background-color: $background-color_8;
+		border-radius: 5px;
+	}
+}
+.card-title {
+	margin-top: 5px;
+	font-size: 20px;
+	color: $color_2;
+}
+.contact-column {
+	background-color: $background-color_2;
+}
+.discussion-column {
+	background-color: $background-color_3;
+}
+.decision-column {
+	background-color: $background-color_4;
+}
+.contract-column {
+	background-color: $background-color_5;
+}
+.kanban-column {
+	h2 {
+		margin-bottom: 10px;
+		color: $color_3;
+	}
+	max-height: 100%;
+	margin-top: 20px;
+	padding: 1px;
+	height: 95%;
+	box-sizing: border-box;
+	border-radius: 8px;
+	box-shadow: 0px 0px 0px 1px #00000000, 0px 1px 1px #0304044a, 0px 0px 1px #03040480;
+}
+.add-button {
+	margin-bottom: 10px;
+	background-color: $background-color_1;
+	color: $color_2;
+	border: none;
+	cursor: pointer;
+	padding: 5px 10px;
+	cursor: pointer;
+	margin-top: 15px;
+}
+.info-section {
+	display: flex;
+	align-items: flex-start;
+	padding: 10px;
+	border-radius: 6px;
+	p {
+		margin-right: 10px;
+		font-size: 20px;
+		margin-top: 3px;
+		margin-left: 5px;
+		margin-bottom: 5px;
+		margin-right: 5px;
+		font-size: 20px;
+		margin-top: 3px;
+		margin-left: 5px;
+		margin-bottom: 5px;
+	}
+}
+.icons-section {
+	display: flex;
+	align-items: flex-start;
+	align-self: flex-start;
+	margin-top: 35px;
+	margin-left: -100px;
+	img {
+		width: 20px;
+		margin-bottom: 5px;
+	}
+}
+.right-icon {
+	margin-left: auto;
+	margin-top: 10%;
+}
+.last-number {
+	margin-right: 10px;
+}
+.menu-icon-leads {
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 5px;
+	margin-top: -8%;
+	cursor: pointer;
+}
+.headerColumn {
+	display: flex;
+	justify-content: space-between;
+	padding: 5px 0 5px 5px;
+	text-transform: capitalize;
+}
+.kanban-columns {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+.column-content {
+	width: 240px;
+	height: 320px;
+	padding: 6px 6px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	min-height: 380px;
+	background-color: $background-color_6;
+	border-radius: 5px;
+	&::-webkit-scrollbar {
+		width: 5px;
+		border-radius: 5px;
+	}
+	&::-webkit-scrollbar-track {
+		background-color: $background-color_7;
+		border-radius: 5px;
+	}
+	&::-webkit-scrollbar-thumb {
+		color: $color_2;
+		background-color: $background-color_8;
+		border-radius: 5px;
+	}
+}

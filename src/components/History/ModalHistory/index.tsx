@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Button from "@mui/material/Button";
-import "../History.module.css";
+import "../History.module.scss";
 
 interface Props {
     close: () => void;
@@ -21,12 +21,12 @@ export default function ModalHistory({ close }: Props) {
                             <button onClick={close}>X</button>
                         </div>
                     </div>
-                    <div 
+                    <div
                     className='formHistory'>
                         <div className='containerHistory'>
                             <span className='spanTitle'>Contato</span>
                             <input className='inputHistory' type="text" />
-                        </div>      
+                        </div>
                         <div className='containerHistory'>
                             <span className='spanTitle'>Assunto</span>
                             <input className='inputHistory' type="text" />
@@ -34,7 +34,7 @@ export default function ModalHistory({ close }: Props) {
                         <div className='containerHistory'>
                             <span className='spanTitle'>Data</span>
                             <input className='inputHistory' type="date" />
-                        </div>           
+                        </div>
                         <div className='containerHistory'>
                             <span className='spanTitle'>Ticket</span>
                             <input className='inputHistory' type="text" />

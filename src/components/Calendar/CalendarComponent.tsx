@@ -6,7 +6,7 @@ import Modal from "@mui/material/Modal";
 import CalendarLeft from "./CalendarLeft";
 import EventModal from "./Event/EventComponent";
 import { PlusIcon, TagIcon } from "@icons";
-import "./CalendarComponent.module.css";
+import "./CalendarComponent.module.scss";
 
 const events = [
     {

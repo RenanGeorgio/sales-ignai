@@ -1,0 +1,19 @@
+$color_1: #333;
+$font-family_1: Arial, sans-serif;
+
+.not-found {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	font-family: $font-family_1;
+	color: $color_1;
+	h1 {
+		font-size: 5rem;
+		margin-bottom: 1rem;
+	}
+	p {
+		font-size: 1.5rem;
+	}
+}

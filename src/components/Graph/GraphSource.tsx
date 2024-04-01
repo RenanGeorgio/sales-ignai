@@ -1,5 +1,5 @@
 import { Bar } from "react-chartjs-2";
-import "@styles/statistics.module.css";
+import "@styles/statistics.scss";
 
 interface GraphProps {}
 

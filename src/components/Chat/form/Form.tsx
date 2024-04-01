@@ -1,4 +1,4 @@
-import "./style.module.css";
+import "./style.module.scss";
 
 interface FormProps {
   size: "default" | "large" | "small";

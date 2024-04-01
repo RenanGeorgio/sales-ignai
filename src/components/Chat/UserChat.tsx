@@ -2,9 +2,9 @@ import useChat from "@hooks/useChat";
 import { useFetchRecipient } from "@hooks/useFetchRecipient";
 import { OnlineUser, Consumer } from "@types";
 import Avatar2 from "@assets/images/Avatar2.png";
-import web from "@assets/images/web.svg";  
+import web from "@assets/images/web.svg";
 import { FacebookIcon, InstagramIcon, TelegramIcon, WhatsappIcon } from "@icons";
-import "./leftmenu.module.css";
+import "./leftmenu.module.scss";
 
 interface Props {
   chat: any;
@@ -12,14 +12,14 @@ interface Props {
 };
 
 export const UserChat = ({ chat, user }: Props) => {
-  const { recipientUser, error } = useFetchRecipient(chat, user);  
-  
+  const { recipientUser, error } = useFetchRecipient(chat, user);
+
   const { onlineUsers } = useChat();
-  
+
   const isOnline = onlineUsers?.some((onlineUser: OnlineUser) => onlineUser.userId === recipientUser?._id);
 
   const origin = chat?.origin.platform;
-  
+
   const getChatIcon = () => {
     switch (origin) {
       case "facebook":

@@ -1,6 +1,6 @@
 import { IconButton } from "@mui/material";
 import { VerticalDotsIcon, PencilIcon, TrashIcon, UploadIcon } from "@icons";
-import "./AddTicket.module.css";
+import "./AddTicket.module.scss";
 
 interface Props {
   onUploadFile: (file: any) => void;
@@ -24,7 +24,7 @@ export default function AddTicket({ onUploadFile, onSetShow }: Props) {
       <div className='box'>
         <div className='section'>
           <div className='section-3'>
-            <span className='text-2add'>Atendimento via:</span> 
+            <span className='text-2add'>Atendimento via:</span>
           </div>
         </div>
         <div className='section'>
@@ -84,10 +84,10 @@ export default function AddTicket({ onUploadFile, onSetShow }: Props) {
           </div>
           <div className='wrapper-8'>
             <div className='wrapper-9'>
-              <div className='section-7'>           
+              <div className='section-7'>
                   <IconButton className='pic-2'>
                   <PencilIcon className={undefined} />
-                  </IconButton>           
+                  </IconButton>
               </div>
             </div>
             <div className='group-7'>
@@ -153,7 +153,7 @@ export default function AddTicket({ onUploadFile, onSetShow }: Props) {
                 </div>
                 <span className='text-10'>Jogue aqui seu arquivo</span>
                 <span className='text-11'>ou</span>
-                <div className='buttonContainerInput'>            
+                <div className='buttonContainerInput'>
                   <input type="file" className='inputs' onClick={handleFileUpload} />
                   <span className='attachFileSpan'>Buscar Arquivo</span>
                 </div>

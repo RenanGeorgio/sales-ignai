@@ -6,7 +6,7 @@ import { SidebarProvider } from "@contexts/sidebar/SidebarContext";
 import { ChatProvider } from "@contexts/chat/ChatContext";
 import CachingController from "./CachingController";
 import { Main } from "@views";
-import "@styles/app.module.css";
+import "@styles/app.scss";
 
 function App() {
   return (

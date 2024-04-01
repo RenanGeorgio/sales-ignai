@@ -1,26 +1,26 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useAuth from "@hooks/useAuth";
-import { 
-  BookIcon, 
-  CalendarIcon, 
-  ChartBarIcon, 
-  ComponentsIcon, 
-  CopyIcon, 
-  FileDollarIcon, 
-  TextFileIcon, 
-  HeadPhoneIcon, 
-  NavLayoutIcon, 
-  LayoutSideBarIcon, 
+import {
+  BookIcon,
+  CalendarIcon,
+  ChartBarIcon,
+  ComponentsIcon,
+  CopyIcon,
+  FileDollarIcon,
+  TextFileIcon,
+  HeadPhoneIcon,
+  NavLayoutIcon,
+  LayoutSideBarIcon,
   MailIcon,
-  MessageCircleIcon, 
-  SettingsIcon, 
-  SmartHomeIcon, 
+  MessageCircleIcon,
+  SettingsIcon,
+  SmartHomeIcon,
   TextWrapIcon
 } from "@icons";
 import SidebarBadge from "@components/Badge/SidebarBadge";
 import logo from "@assets/images/image 1.png";
-import "@styles/sidebar.module.css";
+import "@styles/sidebar.scss";
 
 const Sidebar: React.FC<any> = (): JSX.Element | null => {
   const { isAuthenticated } = useAuth();
@@ -34,7 +34,7 @@ const Sidebar: React.FC<any> = (): JSX.Element | null => {
   const toggleSidebar = () => {
     setExpanded(!expanded);
   };
-  
+
   return (
     <div className={`sidebar ${expanded ? 'expanded' : ''}`}>
       <div onClick={toggleSidebar}>

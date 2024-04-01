@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import Chart, { ChartConfiguration } from "chart.js/auto";
-import "@styles/graph.module.css";
+import "@styles/graph.scss";
 
 interface GraphTicketProps {
   data: number[];
