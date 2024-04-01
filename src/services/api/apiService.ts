@@ -7,7 +7,8 @@ export const postRequest = async (url: string, body: any) => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${Cookies.get('token')}`
+      'Authorization': `Bearer ${Cookies.get('token')}`,
+      "ngrok-skip-browser-warning": "69420",
     },
     body: JSON.stringify(body)
   });
@@ -31,7 +32,8 @@ export const getRequest = async (url: string) => {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${Cookies.get('token')}`
+      'Authorization': `Bearer ${Cookies.get('token')}`,
+      "ngrok-skip-browser-warning": "69420",
     }
   });
 
@@ -54,7 +56,8 @@ export const putRequest = async (url: string, body: any) => {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${Cookies.get('token')}`
+      'Authorization': `Bearer ${Cookies.get('token')}`,
+      "ngrok-skip-browser-warning": "69420",
     },
     body: JSON.stringify(body)
   });
@@ -78,7 +81,8 @@ export const deleteRequest = async (url: string) => {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${Cookies.get('token')}`
+      'Authorization': `Bearer ${Cookies.get('token')}`,
+      "ngrok-skip-browser-warning": "69420",
     },
   });
 

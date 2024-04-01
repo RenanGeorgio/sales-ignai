@@ -1,9 +1,14 @@
 import { createContext, useCallback, useEffect, useState } from "react";
-import { baseUrl, postRequest, getRequest } from "../../services/api/apiService";
+import {
+  baseUrl,
+  postRequest,
+  getRequest,
+} from "../../services/api/apiService";
 import useAuth from "../../hooks/useAuth";
 import { io } from "socket.io-client";
 import { OnlineUser } from "../../types";
 import Cookies from "js-cookie";
+import compareArrays from "helpers/compareArrays";
 
 export const ChatContext = createContext<any>(null);
 
@@ -28,7 +33,10 @@ export const ChatProvider = ({ children }: any) => {
     const newSocket = io(process.env.REACT_APP_SERVER_API as string, {
       auth: {
         token: "Bearer " + Cookies.get("token"),
-      }
+      },
+      extraHeaders: {
+        "ngrok-skip-browser-warning": "69420",
+      },
     });
     setSocket(newSocket);
 
@@ -54,7 +62,7 @@ export const ChatProvider = ({ children }: any) => {
     const recipientId = currentChat?.members?.find(
       (id: string) => id !== user?.companyId
     );
-    
+
     socket.emit("sendMessage", { ...newMessage, recipientId });
   }, [newMessage]);
 
@@ -72,10 +80,16 @@ export const ChatProvider = ({ children }: any) => {
 
   useEffect(() => {
     if (socket === null) return;
-    socket.on("newUserChat", (user: any) => {
-      setUserChats((prev: any) => [...prev, user]);
-    });
+    socket.on("newUserChat", (client: any) => {
+      const isChatCreated = userChats?.some((chat) =>
+        compareArrays(chat.members, client.members)
+      );
 
+      if (isChatCreated) return;
+
+      setUserChats((prev: any) => [...prev, client]);
+    });
+    
     return () => {
       socket.off("newUserChat");
     };
@@ -112,7 +126,9 @@ export const ChatProvider = ({ children }: any) => {
     const getUserChats = async () => {
       if (user?.companyId) {
         setIsUserChatsLoading(true);
-        const response = await getRequest(`${baseUrl}/api/chat/${user.companyId}`);
+        const response = await getRequest(
+          `${baseUrl}/api/chat/${user.companyId}`
+        );
         if (response.error) {
           return setUserChatsError(response);
         } else {
