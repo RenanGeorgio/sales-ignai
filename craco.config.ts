@@ -92,7 +92,9 @@ const config: CracoConfig = {
       '@libs': path.resolve(__dirname, 'src/libs'),
       '@icons': path.resolve(__dirname, 'src/icons'),
       '@assets': path.resolve(__dirname, 'src/assets'),
-      '@routes': path.resolve(__dirname, 'src/routes/index')
+      '@routes': path.resolve(__dirname, 'src/routes/index'),
+      '@utils': path.resolve(__dirname, 'src/utils'),
+      '@views': path.resolve(__dirname, 'src/views/index')
     },
     configure: (webpackConfig, { env, paths }) => {
       if (env === "production") {
@@ -103,7 +105,7 @@ const config: CracoConfig = {
 
       webpackConfig.plugins?.push(
         new StylelintWebpackPlugin({
-          files: '**/*.{scss,css}',
+          files: '**/*.{scss}',
           configFile: './.stylelintrc',
         }),
       );

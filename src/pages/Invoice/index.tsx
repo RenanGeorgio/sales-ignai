@@ -4,19 +4,19 @@ import GraphChat from '../../components/Graph/GraphChat';
 import GraphTicket from '../../components/Graph/GraphTicket';
 import GraphThemes from '../../components/Graph/GraphThemes';
 import GraphTicketYou from '../../components/Graph/GraphTicketYou';
-import Invoices from '../../components/Layout/InvoiceLayout';
+import Invoices from '../../components/Model/InvoiceLayout';
 import { FileDollarIcon, TextFileIcon } from '@icons';
 
 interface InvoiceProps {}
 
 const Invoice: React.FC<InvoiceProps> = () => {
- 
-  const [activePage, setActivePage] = useState('Fatura'); 
-  
+
+  const [activePage, setActivePage] = useState('Fatura');
+
   const handleButtonClick = (pageName: string) => {
     setActivePage(pageName);
   };
-  
+
   return (
     <div style={{overflow:'hidden'}} className="page-content" >
       <Navbar />

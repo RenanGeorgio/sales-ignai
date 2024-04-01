@@ -1,10 +1,14 @@
-import Footer from '@components/layout/footer/Footer';
-import Header from '@components/layout/header/Header';
+import { Routes, Route } from "react-router-dom";
+import { Footer, Header } from "@components/Layout";
+import Sidebar from "@components/Sidebar";
+import SignInPage from "@pages/Auth/SignInPage";
+import NotFound from "@components/NotFound";
+import RequireAuth from "../RequireAuth";
+import Anonymous from "../Anonymous";
 import { routes } from "@routes";
-import { Routes, Route } from 'react-router-dom';
-import '@styles/global.scss';
-import { classes } from '@utils/classes';
-import useTheme from './hooks/useTheme';
+import { classes } from "@utils/classes";
+import useTheme from "@hooks/useTheme";
+import "@styles/global.scss";
 
 function Main() {
   // eslint-disable-next-line no-console
@@ -16,7 +20,7 @@ function Main() {
   const { mode } = useTheme();
 
   return (
-    <div className="app-container">
+    <>
       <Header />
       <main className={classes('main', mode)}>
         <Sidebar />
@@ -34,7 +38,7 @@ function Main() {
         </Routes>
       </main>
       <Footer />
-    </div>
+    </>
   );
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from '../../components/Navbar';
-import LayoutCalendar from '../../components/Layout/CalendarLayout'
+import LayoutCalendar from '../../components/Model/CalendarLayout'
 
 const CalendarPage = () => {
   return (

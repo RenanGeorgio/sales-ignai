@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from '../../components/Navbar';
-import LayoutContact from '../../components/Layout/ContactLayout'
+import LayoutContact from '../../components/Model/ContactLayout'
 
 const ContactPage = () => {
   return (

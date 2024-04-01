@@ -18,7 +18,9 @@
       "@icons/*": ["components/Icons/*"],
       "@icons": ["components/Icons/index"],
       "@assets/*": ["assets/*"],
-      "@routes": ["routes/index"]
+      "@routes": ["routes/index"],
+      "@utils/*": ["utils/*"],
+      "@views": ["views/index"]
     }
   }
 }

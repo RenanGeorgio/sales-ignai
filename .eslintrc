@@ -43,7 +43,9 @@
           ["@libs", "./src/libs"],
           ["@icons", "./src/components/Icons"],
           ["@assets", "./src/assets"],
-          ["@routes", "./src/routes/index"]
+          ["@routes", "./src/routes/index"],
+          ["@utils", "./src/utils"],
+          ["@views", "./src/views/index"]
         ],
         "extensions": [".ts", ".tsx", ".js", ".jsx"]
       }
