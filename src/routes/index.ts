@@ -7,6 +7,7 @@ const routes = {
   details: '/details',
   formulario: '/formulario',
   email: '/email',
+  emailautomation: '/emailautomation',
   estatisticas: '/estatisticas',
   whatsapp: '/whatsapp',
   configuracoes: '/configuracoes',

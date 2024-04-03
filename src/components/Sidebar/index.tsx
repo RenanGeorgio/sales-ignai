@@ -139,7 +139,7 @@ const Sidebar: React.FC<SidebarProps> = () => {
             </div>
           </Link>
 
-          <Link className="link" to="/email">
+          <Link className="link" to="/emailautomation">
             <div className="menu-item">
               <SmartHomeIcon />
               <span className={expanded ? "show-text" : "hide-text"}>

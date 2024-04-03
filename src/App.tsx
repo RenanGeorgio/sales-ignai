@@ -30,6 +30,7 @@ import { SidebarProvider } from "./contexts/sidebar/SidebarContext";
 import "./styles/app.css";
 import NotFound from "./components/NotFound/NotFound";
 import { ChatProvider } from "./contexts/chat/ChatContext";
+import EmailAutomation from "pages/EmailAutomation";
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
                     <Route path="/chat" element={<Chat />} />
                     <Route path="/formulario" element={<Forms />} />
                     <Route path="/email" element={<Email />} />
+                    <Route path="/emailautomation" element={<EmailAutomation />} />
                     <Route path="/email-login" element={<EmailLogin />} />
                     <Route path="/estatisticas" element={<Statistics />} />
                     <Route path="/chatbot" element={<ChatBot />} />

@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../../components/Navbar';
 import { UsersIcon,FileTextIcon, LinkIcon } from '../../components/Image/icons';
-import '../../styles/chatbot.css';
+import '../../styles/automations.css';
 
 const ChatBot = () => {
   return (

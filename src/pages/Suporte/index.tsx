@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from "../../components/Navbar";
 import { FileTextIcon,UsersIcon } from '../../components/Image/icons';
-import '../../styles/chatbot.css';
+import '../../styles/automations.css';
 
 const Suporte = () => {
     return (
@@ -9,7 +9,7 @@ const Suporte = () => {
             <Navbar />
             <h1 className="text">Suporte ao cliente Ignai</h1>
             <div>
-            <div style={{marginLeft:'100px'}}>
+            <div style={{marginLeft:'100px', display: 'flex', gap:5}} > 
                 <button className="blueButton">
             <UsersIcon/>
                 Pedido
