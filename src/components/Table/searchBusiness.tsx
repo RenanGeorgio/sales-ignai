@@ -59,7 +59,7 @@ const columns: GridColDef[] = [
   {
     field: 'negociosAtivos',
     headerName: 'Negócios Ativos',
-    width: 550,
+    width: 450,
     renderCell: (params) => (
       <div style={{ display: 'flex', alignItems: 'center' }}>
         {params.row.id !== 5 && params.row.id !== 8 ? (
