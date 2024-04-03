@@ -47,7 +47,7 @@ const columns: GridColDef[] = [
     {
         field: 'lead',
         headerName: 'Lead',
-        width: 550,
+        width: 400,
         renderCell: (params) => (
             <div style={{ display: 'flex', alignItems: 'center' }}>
                 <div style={{ marginRight: '8px' }}>
