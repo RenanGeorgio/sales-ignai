@@ -10,7 +10,7 @@ interface ThemeContext {
 export const ThemeContext = createContext<ThemeContext | null>(null);
 
 interface Props {
-  children: JSX.Element | JSX.Element;
+  children: JSX.Element;
 }
 
 function ThemeCtxProvider({ children }: Props) {

@@ -78,21 +78,6 @@ $background-color_2: rgb(153, 255, 75);
 	background: #8cff0034;
 	color: $color_5;
 }
-.react-calendar__year-view__months {
-	display: grid !important;
-	grid-template-columns: 20% 20% 20% 20% 20%;
-	&.react-calendar__year-view__months { grid-template-columns: 33.3% 33.3% 33.3%;
-}
-.react-calendar__decade-view__years {
-	display: grid !important;
-	grid-template-columns: 20% 20% 20% 20% 20%;
-	&.react-calendar__year-view__months { grid-template-columns: 33.3% 33.3% 33.3%;
-}
-.react-calendar__century-view__decades {
-	display: grid !important;
-	grid-template-columns: 20% 20% 20% 20% 20%;
-	&.react-calendar__year-view__months { grid-template-columns: 33.3% 33.3% 33.3%;
-}
 .react-calendar__tile {
 	max-width: initial !important;
 	&:enabled {
@@ -106,11 +91,6 @@ $background-color_2: rgb(153, 255, 75);
 			color: $color_5;
 			border-radius: 6px;
 		}
-	}
-}
-} {
-	abbr[title] {
-		text-decoration: none;
 	}
 }
 .react-calendar__tile--now {

@@ -19,7 +19,7 @@ import slugs from "./slugs";
 
 type Route = {
   path: string;
-  Component: (() => JSX.Element) | React.FC<{}>;
+  Component: (() => JSX.Element) | React.FC<any>;
   name: string;
   isVisible?: boolean;
 };

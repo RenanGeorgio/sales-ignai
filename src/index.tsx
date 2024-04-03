@@ -34,6 +34,7 @@ if (process.env.NODE_ENV === 'production') {
       })();
     });
 
+    // @ts-ignore
     serviceWorker.register();
   }
 } else {

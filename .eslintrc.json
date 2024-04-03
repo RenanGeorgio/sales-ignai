@@ -9,12 +9,12 @@
     "ecmaFeatures": {
       "jsx": true
     },
-    //"project": "./tsconfig.json",
+    "project": ["./tsconfig.json"],
     "ecmaVersion": 2020,
     "sourceType": "module"
   },
   "extends": [
-    "plugin:@typescript-eslint/eslint-recommended",
+    "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier"
@@ -54,6 +54,15 @@
   "rules": {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
+      }
+    ],
     "@typescript-eslint/explicit-module-boundary-types": 0,
     "@typescript-eslint/no-unsafe-member-access": 0,
     "@typescript-eslint/no-non-null-assertion": 0,

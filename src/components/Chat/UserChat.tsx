@@ -12,6 +12,7 @@ interface Props {
 };
 
 export const UserChat = ({ chat, user }: Props) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { recipientUser, error } = useFetchRecipient(chat, user);
 
   const { onlineUsers } = useChat();

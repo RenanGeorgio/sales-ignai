@@ -37,21 +37,6 @@ const config: CracoConfig = {
     modules: {
       // localIdentName: '[local]-[hash:base64:3]',
     },
-    postcss: {
-      mode: 'extends',
-      plugins: [
-        require('tailwindcss'),
-        require('autoprefixer'),
-        require('postcss-preset-env'),
-        require('postcss-scss'),
-      ],
-      env: {
-        stage: !isDev() ? 2 : 1,
-      },
-      loaderOptions: (postcssLoaderOptions, { env, paths }) => {
-        return postcssLoaderOptions;
-      },
-    },
     css: {
       loaderOptions: (cssLoaderOptions, { env, paths }) => {
         cssLoaderOptions.modules = {
@@ -68,14 +53,6 @@ const config: CracoConfig = {
         return cssLoaderOptions;
       }
     },
-    sass: {
-      loaderOptions: (sassLoaderOptions, { env, paths }) => {
-        sassLoaderOptions.implementation = require('sass');
-        sassLoaderOptions.webpackImporter = false;
-
-        return sassLoaderOptions;
-      }
-    }
   },
   webpack: {
     alias: {

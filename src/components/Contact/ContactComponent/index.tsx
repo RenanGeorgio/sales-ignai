@@ -488,7 +488,7 @@ export default function ContactComponent() {
           pageSizeOptions={[7]}
           disableRowSelectionOnClick
           // @ts-ignore
-          onCellDoubleClick={(params: any, _event: Event) => {
+          onCellDoubleClick={(params: any, event: Event) => {
             navigate(`/contact/details`, { state: { id: params.id } });
           }}
           sx={{

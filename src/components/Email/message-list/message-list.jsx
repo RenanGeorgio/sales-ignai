@@ -1,31 +1,35 @@
-import { Component, Fragment } from 'react';
-import {connect} from 'react-redux';
-import {withTranslation} from 'react-i18next';
-import PropTypes from 'prop-types';
-import {AutoSizer, List} from 'react-virtualized';
-import Checkbox from '../form/checkbox/checkbox';
-import Spinner from '../spinner/spinner';
-import ClearFolderListItem from './clear-folder-list-item';
-import {DroppablePayloadTypes} from '../folders/folder-list';
-import {getCredentials} from '../../../store/email/selectors/application';
-import {getSelectedFolder} from '../../../store/email/selectors/folders';
-import {selectedFolderMessagesFiltered} from '../../../store/email/selectors/messages';
-import {prettyDate, prettySize} from '../../../services/email/prettify';
-import {selectMessage} from '../../../store/email/actions/application';
-import {setSelected} from '../../../store/email/actions/messages';
-import {preloadMessages, setMessageFlagged} from '../../../services/email/message';
-import {readMessage} from '../../../services/email/message-read';
-import mainCss from '../../../styles/email/main.scss';
-import styles from './message-list.module.scss';
+import { Component, Fragment } from "react";
+import { connect } from "react-redux";
+import { withTranslation } from "react-i18next";
+import PropTypes from "prop-types";
+import { AutoSizer, List } from "react-virtualized";
+import Checkbox from "../form/checkbox/checkbox";
+import Spinner from "../spinner/spinner";
+import ClearFolderListItem from "./clear-folder-list-item";
+import { DroppablePayloadTypes } from "../folders/folder-list";
+import { getCredentials } from "@store/email/selectors/application";
+import { getSelectedFolder } from "@store/email/selectors/folders";
+import { selectedFolderMessagesFiltered } from "@store/email/selectors/messages";
+import { prettyDate, prettySize } from "@services/email/prettify";
+import { selectMessage } from "@store/email/actions/application";
+import { setSelected } from "@store/email/actions/messages";
+import { preloadMessages, setMessageFlagged } from "@services/email/message";
+import { readMessage } from "@services/email/message-read";
+import mainCss from "@styles/email/main.scss";
+import styles from "./message-list.module.scss";
 
 function parseFrom(from) {
   const firstFrom = from && from.length > 0 ? from[0] : '';
+
+  // eslint-disable-next-line no-useless-escape
   const formattedFrom = firstFrom.match(/^\"(.*)\"/);
+
   return formattedFrom !== null ? formattedFrom[1] : firstFrom;
 }
 
 function _dragImage(t, messages, x, y) {
   const imageNode = document.createElement('span');
+
   imageNode.draggable = true;
   imageNode.style.opacity = '1';
   imageNode.style.position = 'absolute';
@@ -34,7 +38,9 @@ function _dragImage(t, messages, x, y) {
   imageNode.style.pointerEvents = 'none';
   imageNode.style.padding = '6px';
   imageNode.style.backgroundColor = 'white';
+
   imageNode.innerHTML = t('messageList.moveEmails', {emailCount: messages.length});
+
   return imageNode;
 }
 
@@ -88,6 +94,7 @@ class MessageList extends Component {
     const folder = this.props.selectedFolder;
     const message = this.props.messages[index];
     const selected = this.props.selectedMessages.indexOf(message.uid) > -1;
+
     return (
       <li key={key} style={style}
         draggable={true}
@@ -123,23 +130,28 @@ class MessageList extends Component {
   onDragStart(event, fromFolder, message) {
     event.stopPropagation();
     const payload = {type: DroppablePayloadTypes.MESSAGES, fromFolder};
+
     if (this.props.selectedMessages.length > 0) {
       // Prevent dragging single messages when there is a selection and message is not part of the selection
       if (this.props.selectedMessages.indexOf(message.uid) < 0) {
         event.preventDefault();
         return;
       }
+
       const messages = this.props.messages.filter(m => this.props.selectedMessages.indexOf(m.uid) > -1);
+
       if (event.dataTransfer.setDragImage) {
         const image = _dragImage(this.props.t, messages, event.pageX, event.pageY);
         const appendedImage = document.body.appendChild(image);
         setTimeout(() => document.body.removeChild(appendedImage));
         event.dataTransfer.setDragImage(image, -8, -16);
       }
+
       payload.messages = messages;
     } else {
       payload.messages = [message];
     }
+
     event.dataTransfer.setData('application/json', JSON.stringify(payload));
   }
 
@@ -155,11 +167,13 @@ class MessageList extends Component {
   selectMessage(event, message) {
     event.stopPropagation();
     const checked = event.target.checked;
+
     if (checked && event.nativeEvent && event.nativeEvent.shiftKey && this.props.selectedMessages.length > 0) {
       // Range selection
       const messagesToSelect = [];
       const lastSelectedMessageUid = this.props.selectedMessages[this.props.selectedMessages.length - 1];
       let selecting = false;
+
       this.props.messages.forEach(m => {
         if (m.uid === message.uid || m.uid === lastSelectedMessageUid) {
           selecting = !selecting;
@@ -168,6 +182,7 @@ class MessageList extends Component {
           messagesToSelect.push(m);
         }
       });
+
       this.props.messageSelected(messagesToSelect, checked);
     } else {
       // Single selection
@@ -182,6 +197,7 @@ class MessageList extends Component {
     const messagesToPreload = 15;
     const previousIds = previousProps.messages.slice(0, messagesToPreload).map(m => m.messageId);
     const currentIds = this.props.messages.slice(0, messagesToPreload).map(m => m.messageId);
+
     if (currentIds.some(id => !previousIds.includes(id))) {
       const latestMessagesUids = this.props.messages
         .slice(0, messagesToPreload)
