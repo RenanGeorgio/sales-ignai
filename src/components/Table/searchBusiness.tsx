@@ -71,7 +71,7 @@ const columns: GridColDef[] = [
         {params.row.id !== 5 && params.row.id !== 8 ? (
           <>
             <div style={{ marginRight: '8px' }}>
-              <LeadIcon/>         
+              <LeadIcon/>
             </div>
             <ContatoCell contato={params.value} />
           </>
@@ -109,10 +109,10 @@ const columns: GridColDef[] = [
       </>
     )
   },
-  { 
-    field: 'setor', 
-    headerName: 'Setor', 
-    width: 150 
+  {
+    field: 'setor',
+    headerName: 'Setor',
+    width: 150
   },
   {
     field: 'documentos',
@@ -138,16 +138,16 @@ const columns: GridColDef[] = [
       </div>
     )
   },
-  { 
-    field: 'valor', 
-    headerName: 'Valor', 
-    width: 150 
+  {
+    field: 'valor',
+    headerName: 'Valor',
+    width: 150
   },
   {
     field: 'acao',
     headerName: 'Ação',
     width: 150,
-    renderHeader: (params) => (
+    renderHeader: (_params) => (
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <div>Ação</div>
         <Button
@@ -189,6 +189,7 @@ const SearchBusiness: React.FC<SearchBusinessProps> = () => {
 
   const { isSidebarExpanded } = useSidebar();
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
@@ -215,9 +216,9 @@ const SearchBusiness: React.FC<SearchBusinessProps> = () => {
       {showKanban ? (
         <AddInfo setShowList={handleShowList} />
       ) : (
-        <div style={{ width: '91.5%', height: '100%', paddingTop: 25, 
-        paddingBottom: 24, margin: 'auto', position: 'relative', left: 90, 
-        flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', 
+        <div style={{ width: '91.5%', height: '100%', paddingTop: 25,
+        paddingBottom: 24, margin: 'auto', position: 'relative', left: 90,
+        flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start',
         gap: 1, display: 'inline-flex',  }}>
           <div style={{ boxShadow: '0 0 5px 2px rgba(138, 138, 138, 0.2)', width: '100%' }}>
             <div style={{ alignSelf: 'stretch', paddingLeft: 4, paddingRight: 1, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'inline-flex', width: '100%', marginLeft: '25px', marginTop: '15px' }}>
@@ -268,7 +269,7 @@ const SearchBusiness: React.FC<SearchBusinessProps> = () => {
               </div>
             </div>
           </div>
-          <div style={{ maxWidth: '98.5%', height: 38, justifyContent: 'space-between', 
+          <div style={{ maxWidth: '98.5%', height: 38, justifyContent: 'space-between',
           alignItems: 'center', gap: 16, display: 'flex', width: '100%', borderRight: '1px #DBDADE solid',
            borderLeft: '1px #DBDADE solid', padding: 10, backgroundColor: '#fff' }}>
             <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 15, height: '100%' }}>

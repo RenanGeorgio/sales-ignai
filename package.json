@@ -12,7 +12,7 @@
   "cracoConfig": "craco.config.ts",
   "scripts": {
     "start": "run-script-os",
-    "start:win32": "del -rf node_modules/.cache && craco start",
+    "start:win32": "del -rf node_modules\\.cache && craco start",
     "start:darwin:linux": "rm -rf node_modules/.cache && craco start",
     "start:default": "rm -rf node_modules/.cache && craco start",
     "build": "run-script-os",

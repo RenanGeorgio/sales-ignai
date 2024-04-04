@@ -14,10 +14,10 @@ import Container from "@mui/material/Container";
 import { ThemeProvider } from "@mui/material/styles";
 import { AuthContext } from "@contexts/auth/AuthContext";
 import Copyright from "../Copyright";
-import { SignInData } from "@types";
+import { SignInData, Obj } from "@types";
 import "./SignIn.module.scss";
 
-const defaultTheme = "";
+const defaultTheme: Obj = {} as any;
 
 export default function SignIn(): JSX.Element {
   const { signIn } = useContext(AuthContext);
