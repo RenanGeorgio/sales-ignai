@@ -1,21 +1,21 @@
 @import '../../../styles/email/partials/variables';
 
 .listItem {
+  display: flex;
   cursor: pointer;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  display: flex;
 
   .graphic {
     margin-right: $default-spacing;
   }
 
   .primaryText {
-    margin: 0px;
+    flex: 1;
     width: 1px;
     min-width: 1px;
-    flex: 1;
+    margin: 0;
 
     &.hasNewMessages {
       font-weight: $font-weight-bold;
@@ -28,9 +28,9 @@
 
     .contextMenu {
       display:none;
-      transform: translateX(100%);
       margin: 0;
       padding: 0;
+      transform: translateX(100%);
     }
 
     &.animating {
@@ -43,11 +43,12 @@
       .menuButton {
         display: none;
       }
+      
       .contextMenu {
         display: block;
+        max-height: 100%;
         margin: -16px 0 -16px -16px;
         padding: 16px 0 16px 16px;
-        max-height: 100%;
 
         transform: translateX(0%);
         animation: slide-in $actions-menu-animation-duration forwards;

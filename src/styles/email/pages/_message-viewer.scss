@@ -6,8 +6,8 @@ $gravatar-margin: 6px;
 .message-viewer-menu {
   $self: &;
   right: 0;
-  min-width: 150px;
   z-index: map-get($z-index, thermosphere);
+  min-width: 150px;
 
   .mdc-list-item {
     white-space: nowrap;
@@ -15,11 +15,11 @@ $gravatar-margin: 6px;
 }
 
 .message-viewer {
-  $self: &;
   position: relative;
-  padding: $default-spacing;
   display: flex;
   flex-direction: column;
+  padding: $default-spacing;
+  $self: &;
 
   & &__header {
 
@@ -35,10 +35,10 @@ $gravatar-margin: 6px;
         margin: 0 $gravatar-margin 0 0;
 
         & #{$self}__gravatar-image {
-          border-radius: 50%;
+          pointer-events: none;
           width: 100%;
           height: 100%;
-          pointer-events: none;
+          border-radius: 50%;
         }
       }
       & #{$self}__subject {
@@ -49,10 +49,10 @@ $gravatar-margin: 6px;
         font-weight: $font-weight-normal * 1.25;
 
         & #{$self}__folder {
-          margin-left: $default-spacing;
           height: 15px;
-          line-height: 15px;
+          margin-left: $default-spacing;
           font-size: 11px;
+          line-height: 15px;
         }
       }
     }
@@ -62,17 +62,17 @@ $gravatar-margin: 6px;
       min-width: 0;
 
       & #{$self}__from {
+        overflow: hidden;
         display: inline-block;
         flex-grow: 1;
-        min-width: 0;
         width: 1px;
-        overflow: hidden;
+        min-width: 0;
         text-overflow: ellipsis;
         white-space: nowrap;
 
         & #{$self}__name {
-          font-size: 1.15 * $font-size-body;
           margin-right: $default-spacing / 2;
+          font-size: 1.15 * $font-size-body;
         }
         & #{$self}__email {
           color: lighten($base-color, 45%);
@@ -93,15 +93,16 @@ $gravatar-margin: 6px;
       }
     }
   }
+
   & #{$self}__body {
+    overflow: auto;
+    position: relative;
+    display: inline-block;
     flex: 1;
+    width: 100%;
+    max-width: 100%;
     height: 0;
     margin-top: $default-spacing;
-    max-width: 100%;
-    width: 100%;
-    display: inline-block;
-    position: relative;
-    overflow: auto;
 
     & #{$self}__attachments {
       display: flex;

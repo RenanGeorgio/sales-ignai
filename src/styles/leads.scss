@@ -19,193 +19,219 @@ $background-color_8: rgb(98, 98, 98);
 	margin-left: 5.5%;
 	user-select: none;
 }
+
 .button-group {
 	display: flex;
 	align-items: center;
-	box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.3);
-	gap: 5px;
-	margin-top: 2%;
 	width: 400px;
 	height: 42px;
+	margin-top: 2%;
+	gap: 5px;
 	border-radius: 5px;
+	box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.3);
+
 	button {
-		padding: 5px 10px;
-		color: $color_1;
-		background-color: $background-color_1;
-		border: none;
-		cursor: pointer;
 		width: auto;
 		height: auto;
 		margin-left: 30px;
+		border: none;
+		padding: 5px 10px;
+		background-color: $background-color_1;
+		color: $color_1;
+		cursor: pointer;
 	}
 }
+
 .divider {
-	border-right: 1px solid #ccc;
+	justify-content: center;
+	align-items: center;
 	height: 30px;
 	margin-top: 1px;
 	margin-left: 30px;
-	align-items: center;
-	justify-content: center;
+	border-right: 1px solid #ccc;
 }
+
 .select-box {
 	width: 190px;
 	height: 38px;
+	margin-top: 2%;
 	margin-right: 10px;
 	margin-bottom: 5px;
-	margin-top: 2%;
 	border-radius: 5px;
+
 	option {
 		margin-left: 15px;
 	}
 }
+
 .kanbanHead {
 	display: flex;
-	align-items: flex-end;
 	justify-content: space-between;
+	align-items: flex-end;
 	width: 100%;
-	padding: 0px 3px;
+	padding: 0 3px;
 }
+
 .board-container {
-	display: flex;
-	width: 98%;
-	height: 535px;
-	margin: 10px 0px;
-	padding: 5px 0px;
-	align-items: flex-start;
 	overflow-x: auto;
 	overflow-y: hidden;
+	display: flex;
+	align-items: flex-start;
+	width: 98%;
+	height: 535px;
+	margin: 10px 0;
 	border-radius: 5px;
 	padding-inline: 10px;
+	padding: 5px 0;
 	gap: 15px;
-	box-shadow: 0px 0px 0px 1px #00000000, 0px 1px 1px #03040403, 0px 0px 1px #03040480;
+	box-shadow: 0 0 0 1px #000, 0 1px 1px #03040403, 0 0 1px #03040480;
+
 	&::-webkit-scrollbar {
 		height: 7px;
 		border-radius: 5px;
 	}
+
 	&::-webkit-scrollbar-track {
+		border-radius: 5px;
 		background-color: $background-color_7;
-		border-radius: 5px;
 	}
+
 	&::-webkit-scrollbar-thumb {
-		color: $color_2;
-		background-color: $background-color_8;
 		border-radius: 5px;
+		background-color: $background-color_8;
+		color: $color_2;
 	}
 }
+
 .card-title {
 	margin-top: 5px;
-	font-size: 20px;
 	color: $color_2;
+	font-size: 20px;
 }
+
 .contact-column {
 	background-color: $background-color_2;
 }
+
 .discussion-column {
 	background-color: $background-color_3;
 }
+
 .decision-column {
 	background-color: $background-color_4;
 }
+
 .contract-column {
 	background-color: $background-color_5;
 }
+
 .kanban-column {
+
 	h2 {
 		margin-bottom: 10px;
 		color: $color_3;
 	}
+
+	box-sizing: border-box;
+	height: 95%;
 	max-height: 100%;
 	margin-top: 20px;
-	padding: 1px;
-	height: 95%;
-	box-sizing: border-box;
 	border-radius: 8px;
-	box-shadow: 0px 0px 0px 1px #00000000, 0px 1px 1px #0304044a, 0px 0px 1px #03040480;
+	padding: 1px;
+	box-shadow: 0 0 0 1px #000, 0px 1px 1px #0304044a, 0 0 1px #03040480;
 }
+
 .add-button {
+	margin-top: 15px;
 	margin-bottom: 10px;
+	border: none;
+	padding: 5px 10px;
 	background-color: $background-color_1;
 	color: $color_2;
-	border: none;
 	cursor: pointer;
-	padding: 5px 10px;
-	cursor: pointer;
-	margin-top: 15px;
 }
+
 .info-section {
 	display: flex;
 	align-items: flex-start;
-	padding: 10px;
 	border-radius: 6px;
+	padding: 10px;
+
 	p {
-		margin-right: 10px;
-		font-size: 20px;
 		margin-top: 3px;
-		margin-left: 5px;
-		margin-bottom: 5px;
 		margin-right: 5px;
-		font-size: 20px;
-		margin-top: 3px;
-		margin-left: 5px;
 		margin-bottom: 5px;
+		margin-left: 5px;
+		font-size: 20px;
 	}
 }
+
 .icons-section {
 	display: flex;
 	align-items: flex-start;
 	align-self: flex-start;
 	margin-top: 35px;
 	margin-left: -100px;
+
 	img {
 		width: 20px;
 		margin-bottom: 5px;
 	}
 }
+
 .right-icon {
-	margin-left: auto;
 	margin-top: 10%;
+	margin-left: auto;
 }
+
 .last-number {
 	margin-right: 10px;
 }
+
 .menu-icon-leads {
 	display: flex;
 	justify-content: flex-end;
-	margin-right: 5px;
 	margin-top: -8%;
+	margin-right: 5px;
 	cursor: pointer;
 }
+
 .headerColumn {
 	display: flex;
 	justify-content: space-between;
 	padding: 5px 0 5px 5px;
 	text-transform: capitalize;
 }
+
 .kanban-columns {
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
 }
+
 .column-content {
+	overflow-x: hidden;
+	overflow-y: auto;
 	width: 240px;
 	height: 320px;
-	padding: 6px 6px;
-	overflow-y: auto;
-	overflow-x: hidden;
 	min-height: 380px;
-	background-color: $background-color_6;
 	border-radius: 5px;
+	padding: 6px;
+	background-color: $background-color_6;
+	
 	&::-webkit-scrollbar {
 		width: 5px;
 		border-radius: 5px;
 	}
+
 	&::-webkit-scrollbar-track {
+		border-radius: 5px;
 		background-color: $background-color_7;
-		border-radius: 5px;
 	}
+
 	&::-webkit-scrollbar-thumb {
-		color: $color_2;
-		background-color: $background-color_8;
 		border-radius: 5px;
+		background-color: $background-color_8;
+		color: $color_2;
 	}
 }

@@ -1,37 +1,40 @@
-$color_1: black;
-$background-color_1: #ffffff;
+$color_1: rgb(0, 0, 0);
+$background-color_1: #fff;
 
 .popover {
 	position: absolute;
-	background-color: $background-color_1;
-	border: 1px solid #cccccc;
-	border-radius: 5px;
-	padding: 10px 10px 0px 10px;
-	width: 200px;
-	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-	z-index: 1;
 	top: 30px;
 	left: 100%;
-	color: $color_1;
+	z-index: 1;
+	width: 200px;
 	gap: 5px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 10px 10px 0;
+	background-color: $background-color_1;
+	color: $color_1;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	
 	button {
 		margin-top: -15px;
 	}
 }
+
 .lead-popover-container {
 	position: relative;
 	display: inline-flex;
 }
+
 .popLead {
 	position: absolute;
-	background-color: $background-color_1;
-	border: 1px solid #cccccc;
-	border-radius: 5px;
-	padding: 10px 10px 0px 10px;
-	width: 200px;
-	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-	z-index: 1;
 	top: -45px;
 	left: 100%;
+	z-index: 1;
+	width: 200px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 10px 10px 0;
+	background-color: $background-color_1;
 	color: $color_1;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }

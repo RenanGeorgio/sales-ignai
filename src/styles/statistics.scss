@@ -1,4 +1,4 @@
-$color_1: white;
+$color_1: rgb(255, 255, 255);
 $color_2: rgba(115, 103, 240, 1);
 $color_3: #777;
 $color_4: rgba(75, 70, 92, 1);
@@ -15,67 +15,76 @@ $background-color_6: rgb(148, 226, 161);
 
 .buttonContainer-statistics {
 	display: flex;
-	margin-left: 6%;
-	margin-bottom: 0px;
 	margin-top: 2%;
+	margin-bottom: 0;
+	margin-left: 6%;
 }
+
 .blueButton {
-	padding: 5px 10px;
-	border: none;
-	border-radius: 2px;
-	cursor: pointer;
 	align-items: center;
+	margin-right: 0;
+	border: none;
+	border-right: 1px solid rgba(115, 103, 240, 1);
+	border-radius: 2px;
+	padding: 5px 10px;
 	background-color: $background-color_1;
 	color: $color_1;
-	margin-right: 0px;
-	border-right: 1px solid rgba(115, 103, 240, 1);
+	cursor: pointer;
+	
 	&:last-child {
 		border-right: none;
 	}
 }
+
 .grayButton {
-	padding: 5px 10px;
-	border: none;
-	border-radius: 2px;
-	cursor: pointer;
 	align-items: center;
+	margin-right: 0;
+	border: none;
+	border-right: 1px solid rgba(115, 103, 240, 1);
+	border-radius: 2px;
+	padding: 5px 10px;
 	background-color: $background-color_2;
 	color: $color_2;
-	margin-right: 0px;
-	border-right: 1px solid rgba(115, 103, 240, 1);
+	cursor: pointer;
+	
 	&:last-child {
 		border-right: none;
 	}
 }
+
 .statistics-container {
 	display: flex;
+	flex: 0 0 60%;
 	flex-direction: column;
 	align-items: center;
-	padding: 20px;
-	border: none;
-	margin: 10px;
 	width: 64%;
+	margin: 10px;
 	margin-left: 5%;
-	flex: 0 0 60%;
+	border: none;
+	padding: 20px;
 	box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.2);
 }
+
 .statistics-items-container {
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
 }
+
 .title-subtitle-container {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin-bottom: 2%;
 	width: 100%;
+	margin-bottom: 2%;
 }
+
 .title-statistics {
+	color: $color_3;
 	font-size: 1.2em;
 	font-weight: bold;
-	color: $color_3;
 }
+
 .subtitle-statistics {
 	color: $color_3;
 	text-align: right;
@@ -83,163 +92,190 @@ $background-color_6: rgb(148, 226, 161);
 	margin-bottom: 5px;
 	flex-grow: 1;
 }
+
 .content {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
+
 .number-label {
-	text-align: left;
 	margin-left: 25px;
+	text-align: left;
 }
+
 .number-label-revenue {
-	text-align: left;
-	margin-left: 25px;
 	flex-direction: column;
+	margin-left: 25px;
+	text-align: left;
 }
+
 .number-label-statistics {
-	font-size: 18px;
-	margin-bottom: 0px;
-	font: Public Sans;
-	margin-bottom: 5px;
 	margin-top: 20px;
+	margin-bottom: 5px;
+	font: Public Sans;
+	font-size: 18px;
 }
+
 .number-label-container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	margin-top: 5px;
+
 	h3 {
 		margin: 0;
 		font: 1em Public Sans;
 	}
+
 	h4 {
 		margin: 0;
 		font: 1em Public Sans;
 	}
 }
+
 .number-label-container-total {
 	flex-direction: column;
-	text-align: left;
 	margin-left: 25px;
+	text-align: left;
+
 	h3 {
 		margin: 0;
-		margin-left: 15px;
 		margin-bottom: 15px;
+		margin-left: 15px;
 		font: 1em Public Sans;
 	}
+
 	h4 {
 		margin: 0;
-		margin-left: 15px;
 		margin-bottom: 15px;
+		margin-left: 15px;
 		font: 1em Public Sans;
 	}
+
 	.number-porcentage {
-		margin-left: 10px;
-		background-color: $background-color_3;
 		width: 80px;
 		height: 23px;
+		margin-left: 10px;
 		border-radius: 10px;
+		background-color: $background-color_3;
 	}
+
 	.number-statistics {
 		font-size: 1.5em;
-		margin-bottom: 15px;
 		margin-top: 0;
+		margin-bottom: 15px;
 		margin-left: 15px;
 	}
 }
+
 .statistics-item {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	margin-top: 20px;
 	width: 48%;
+	margin-top: 20px;
+	
 	&:first-child {
 		margin-right: 4%;
 		margin-left: 4%;
 	}
 }
+
 .img-statistics {
 	width: 50px;
 	height: 40px;
 	margin-right: 10px;
 }
+
 .number-statistics {
-	font-size: 1.5em;
 	margin-bottom: 5px;
+	font-size: 1.5em;
 }
+
 .label {
 	color: $color_3;
 }
+
 .content-with-labels {
 	display: flex;
 	align-items: center;
 }
+
 .dashboard-container {
-	margin: auto;
 	position: relative;
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
 	align-items: flex-start;
+	margin: auto;
 }
+
 .additional-statistics {
-	margin-top: 20px;
-	margin-bottom: 0px;
-	text-align: center;
-	border: none;
-	box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.2);
+	box-sizing: border-box;
 	width: 195px;
 	height: 162px;
-	box-sizing: border-box;
+	margin-top: 20px;
 	margin-right: 20px;
+	margin-bottom: 0px;
+	border: none;
+	text-align: center;
+	box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.2);
+
 	img {
 		margin-top: 35px;
 		margin-bottom: 10px;
 	}
 }
+
 .additional-statistics-container {
+	position: relative;
+	left: 37%;
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
+	width: 390px;
+	height: 50px;
 	margin: auto;
 	margin-top: -5%;
 	margin-left: auto;
-	position: relative;
-	width: 390px;
-	height: 50px;
-	left: 37%;
 }
+
 .additional-items-container {
 	display: flex;
 	justify-content: space-between;
-	margin-top: 20px;
 	width: 97%;
+	margin-top: 20px;
 	margin-left: 5%;
 }
+
 .additional-item {
-	text-align: center;
-	box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.2);
+	box-sizing: border-box;
 	width: calc((100% - 20px) / 5);
 	height: 220px;
-	box-sizing: border-box;
 	margin-right: 20px;
+	text-align: center;
+	box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.2);
+
 	&:nth-child(5) {
 		width: calc(((90% - 20px) / 5) * 2);
 	}
+
 	img {
 		display: flex;
-		margin-top: 10px;
-		margin-bottom: 10px;
-		margin-left: 35px;
 		width: 44px;
 		height: 44px;
+		margin-top: 10px;
 		margin-right: auto;
+		margin-bottom: 10px;
+		margin-left: 35px;
 	}
+
 	.number-label-container {
-		margin-top: 0px;
+		margin-top: 0;
 	}
 }
+
 .container-revenue {
 	display: flex;
 	width: 460px;
@@ -249,166 +285,188 @@ $background-color_6: rgb(148, 226, 161);
 	background-color: $background-color_4;
 	box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.2);
 }
+
 .container-graph-source {
-	margin-left: 7%;
 	width: 85%;
 	margin-bottom: 10px;
+	margin-left: 7%;
 }
+
 .graph-source {
 	width: 60%;
 	height: 90%;
 	margin-top: 0%;
 }
+
 .legend-source {
 	display: flex;
 	flex-direction: column;
+	width: calc(30% - 5px);
 	margin-top: -38%;
 	margin-left: 70%;
-	width: calc(30% - 5px);
 }
+
 .graph-container-source {
-	margin: auto;
 	position: relative;
 	right: 13%;
-	padding: 10px;
-	border: 1px solid #ddd;
-	border-radius: 6px;
-	background-color: $background-color_4;
 	width: calc(70% - 10px);
-	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
 	height: 350px;
+	margin: auto;
+	border: 1px solid #ddd;
+	border-radius: 6vh;
+	padding: 10px;
+	background-color: $background-color_4;
+	box-shadow: 0 0 8 rgba(0, 0, 0, 0.1);
+
 	h3 {
 		margin-top: 1%;
-		margin-left: 2%;
 		margin-bottom: 0%;
+		margin-left: 2%;
 		color: $color_4;
 	}
 }
+
 .container-graph-radar {
 	width: calc(27% - 10px);
 	height: 350px;
-	padding: 10px;
-	border: 1px solid #ddd;
-	border-radius: 6px;
-	background-color: $background-color_4;
-	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
 	margin: auto;
-	margin-right: 1%;
 	margin-top: -25%;
+	margin-right: 1%;
+	border: 1px solid #ddd;
+	border-radius: 6vh;
+	padding: 10px;
+	background-color: $background-color_4;
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+
 	h3 {
 		margin-top: 2%;
+		margin-bottom: 5vw;
 		margin-left: 2%;
-		margin-bottom: 5px;
 		color: $color_4;
 	}
+
 	span {
 		margin-left: 10px;
 		color: $color_4;
 	}
 }
+
 .graph-radar {
 	width: 310px;
 	height: 290px;
 	margin: auto;
 	margin-top: 5px;
 }
+
 .custom-number-label-container {
 	position: relative;
-	text-align: left;
-	margin-left: 5px;
-	margin-right: 20px;
-	background-color: $background-color_4;
-	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 	width: 219px;
 	height: 220px;
+	margin-right: 20px;
+	margin-left: 5px;
+	background-color: $background-color_4;
+	text-align: left;
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
+
 .custom-number-statistics {
 	display: flex;
-	margin-left: 25px;
 	margin-top: 0;
-	font-size: 18px;
-	padding-top: 8px;
-}
-.custom-label {
-	margin: 0;
-	font: 1em Public Sans;
 	margin-left: 25px;
+	padding-top: 8px;
+	font-size: 18px;
+}
+
+.custom-label {
 	top: 10px;
+	margin: 0;
+	margin-left: 25px;
+	font: 1em Public Sans;
 	color: $color_5;
 }
+
 .custom-number-statistics-left {
-	font: 1em Public Sans;
-	margin-left: 25px;
 	margin-top: -15px;
-	font-size: 22px;
-}
-.custom-number-statistics-left-2 {
-	font: 1em Public Sans;
 	margin-left: 25px;
-	margin-top: 10px;
+	font: 1em Public Sans;
 	font-size: 22px;
 }
+
+.custom-number-statistics-left-2 {
+	margin-top: 10px;
+	margin-left: 25px;
+	font: 1em Public Sans;
+	font-size: 22px;
+}
+
 .custom-chart-image {
 	display: block;
-	margin-top: -10px;
-	margin-bottom: 10px;
 	width: 100%;
 	height: 150px;
+	margin-top: -10px;
+	margin-bottom: 10px;
 	margin-left: auto;
 }
+
 .custom-chart-image-2 {
 	width: 100%;
 	height: 40%;
 	margin-top: 10px;
 }
+
 .custom-number-porcentage {
 	position: absolute;
-	bottom: 20px;
 	right: 0;
+	bottom: 20px;
 	width: 80px;
 	height: 20px;
 	border-radius: 10px;
-	text-align: center;
 	padding: 5px;
+	text-align: center;
 }
+
 .custom-porcentage-text {
 	margin: 0;
 	color: $color_6;
 }
+
 .custom-porcentage-text-2 {
 	margin: 0;
 	color: $color_7;
 }
+
 .larger-number {
-	font-size: 24px;
-	margin-bottom: 15px;
 	margin-top: 50px;
+	margin-bottom: 15px;
+	font-size: 24px;
 }
+
 .green-percent {
+	width: 55px;
+	height: max-content;
+	margin-top: 15px;
+	border-radius: 10px;
+	background-color: $background-color_5;
 	color: $color_8;
 	text-align: center;
-	margin-top: 15px;
-	height: max-content;
-	background-color: $background-color_5;
-	width: 55px;
-	background-color: $background-color_6;
-	width: 80px;
-	height: 23px;
-	border-radius: 10px;
 }
+
 .revenue-growth-container {
-	margin-top: 0px;
+	margin-top: 0;
 }
+
 @media screen and (max-width: 600px) {
 	.statistics-item {
 		flex-direction: column;
 		align-items: flex-start;
 		width: 100%;
 	}
+
 	.img-statistics {
 		margin-right: 0;
 		margin-bottom: 10px;
 	}
+
 	.number-label-container {
 		text-align: center;
 	}

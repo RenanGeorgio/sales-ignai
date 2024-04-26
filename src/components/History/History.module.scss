@@ -1,69 +1,75 @@
 $color_1: #000;
 $font-family_1: sans-serif;
 $font-family_2: Public Sans;
-$background-color_1: #ffffff;
+$background-color_1: #fff;
 $background-color_2: #4B465C29;
 
 .wrapperHistory {
 	position: absolute;
-	background-color: $background-color_1;
 	right: 5px;
 	width: 400px;
+	height: 100%;
 	padding: 15px;
-	height: 100%;
+	background-color: $background-color_1;
 }
+
 .formHistory {
-	width: 100%;
-	height: 100%;
+	display: inline-flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
 	gap: 10px;
-	display: inline-flex;
+	width: 100%;
+	height: 100%;
 }
+
 .containerHistory {
-	align-self: stretch;
+	display: inline-flex;
+	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
+	align-self: stretch;
 	gap: 2px;
-	display: inline-flex;
 	height: 75px;
-	flex-direction: column;
 	font-family: $font-family_1;
 	text-transform: capitalize;
 }
+
 .inputHistory {
-	align-self: stretch;
-	background: rgb(242, 242, 242);
-	border-radius: 6px;
-	border: 1px #DBDADE solid;
+	display: inline-flex;
 	justify-content: flex-start;
 	align-items: center;
-	display: inline-flex;
+	align-self: stretch;
 	height: 60px;
+	border: 1px #DBDADE solid;
 	border-radius: 6px;
+	background: rgb(242, 242, 242);
 	text-align: justify;
 	text-transform: uppercase;
 }
+
 input {
 	height: inherit;
 }
+
 .spanTitle {
 	flex: 1 1 0;
-	color: $color_1;
-	font-size: 13;
-	font-family: $font-family_2;
-	font-weight: 400;
 	word-wrap: break-word;
+	color: $color_1;
+	font-family: $font-family_2;
 	font-family: $font-family_1;
+	font-size: 13;
+	font-weight: 400;
 }
+
 .buttonContainerHistory {
-	gap: 16px;
-	margin-top: 5px;
-	width: 100%;
 	display: flex;
 	justify-content: space-between;
+	gap: 16px;
+	width: 100%;
+	margin-top: 5px;
 }
+
 .add {
 	display: flex;
 	justify-content: space-between;
@@ -71,17 +77,19 @@ input {
 	margin-bottom: 1rem;
 	font-family: $font-family_1;
 }
+
 .textTitle {
 	font-size: 18px;
 	font-weight: 600;
 }
+
 .btnClose {
 	button {
-		width: 30;
-		height: 30;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		width: 30;
+		height: 30;
 		border: 1px solid rgba(0, 0, 0, 0.075);
 		border-width: 2px;
 		border-radius: 4px;

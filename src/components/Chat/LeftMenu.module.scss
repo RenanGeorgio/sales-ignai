@@ -1,5 +1,5 @@
 $color_1: #c4c2c2;
-$color_2: white;
+$color_2: #fff;
 $color_3: rgba(168, 170, 174, 1);
 $color_4: #FFF;
 $color_5: #7367F0;
@@ -8,7 +8,7 @@ $color_7: #fff;
 $color_8: #686efe;
 $color_9: var(--lighttypography-colorheading-text);
 $color_10: var(--lighttypography-colormuted-text);
-$color_11: #FFFFFF;
+$color_11: #FFF;
 $color_12: #686EFE;
 $font-family_1: Arial, Helvetica, sans-serif;
 $font-family_2: var(--light-basic-typography-h5-heading-font-family);
@@ -28,496 +28,554 @@ $background-color_9: var(--lightsolid-colorsecondarysecondary-400);
 $background-color_10: var(--lightsolid-colorinfoinfo-400);
 $background-color_11: #DEDDDD;
 $background-color_12: rgb(0, 255, 0);
-$background-color_13: grey;
+$background-color_13: #808080;
 $border-color_1: var(--lightsolid-colorextracard-background);
 $border-color_2: var(--lightsolid-colorextradivider);
 
 .left-menu {
-	align-items: flex-start;
-	border: 1px rgba(145, 145, 145, 0.261) solid;
-	border-radius: 3px 0px 0px 6px;
-	border-right-width: 1px;
 	display: flex;
 	flex-direction: column;
+	align-items: flex-start;
 	width: auto;
 	height: auto;
 	margin-left: 20%;
-	height: auto;
+	border: 1px rgba(145, 145, 145, 0.261) solid;
+	border-radius: 3px 0 0 6px;
+	border-right-width: 1px;
+
 	.header-left {
 		display: inline-flex;
-		padding: 10px 5px 10px 1px;
+		justify-content: space-around;
 		align-items: center;
-		gap: 1px;
 		align-self: stretch;
 		width: 100%;
-		border-bottom: 1px rgba(100, 100, 100, 0.048) solid;
-		justify-content: space-around;
 		height: 23px;
+		border-bottom: 1px rgba(100, 100, 100, 0.048) solid;
+		padding: 10px 5px 10px 1px;
+		gap: 1px;
 	}
+
 	.status-indicator-instance {
 		position: relative !important;
 	}
+
 	.design-component-instance-node {
 		background-color: $background-color_1 !important;
 	}
+
 	.instance {
-		border-radius: 20px !important;
-		flex-grow: 1 0 !important;
 		width: 80% !important;
 		height: 100%;
-		padding: 2px;
+		flex-grow: 1 0 !important;
 		margin-top: 15px;
 		border: #c4c2c27c 1px solid;
+		border-radius: 20px !important;
+		padding: 2px;
 	}
+
 	.icon-instance-node {
-		height: 30px !important;
 		position: relative !important;
 		width: 30px !important;
-		background-color: $background-color_2;
+		height: 30px !important;
 		border-radius: 50%;
+		background-color: $background-color_2;
 	}
+
 	.heading {
-		align-items: flex-start;
-		align-self: stretch;
 		display: flex;
 		flex: 0 0 auto;
-		padding: 10px, 16px, 10px, 10px;
+		align-items: flex-start;
+		align-self: stretch;
 		width: 100%;
-		border: #c4c2c2 1px solid;
 		margin-left: -0%;
+		border: #c4c2c2 1px solid;
+		padding: 10px, 16px, 10px, 10px;
 	}
+
 	.adicionar-ticket {
-		color: $color_1;
-		margin-top: -1px;
 		position: relative;
-		white-space: nowrap;
-		width: 100%;
-		height: 100%;
 		display: flex;
-		gap: 5px;
 		justify-content: space-evenly;
 		align-items: center;
+		width: 100%;
+		height: 100%;
+		gap: 5px;
+		margin-top: -1px;
+		color: $color_1;
+		white-space: nowrap;
 		cursor: pointer;
 	}
+
 	.chevron-down {
-		height: 20px !important;
-		margin-right: -156px !important;
 		position: relative !important;
 		width: 20px !important;
+		height: 20px !important;
+		margin-right: -156px !important;
 	}
+
 	.heading-2 {
-		align-items: flex-start;
-		align-self: stretch;
 		display: flex;
 		flex: 0 0 auto;
-		gap: 192px;
-		padding: 10px 16px;
+		align-items: flex-start;
+		align-self: stretch;
 		width: 100%;
 		border-bottom: #33333328 1px solid;
+		padding: 10px 16px;
+		gap: 192px;
 	}
+
 	.text-wrapper-3 {
+		position: relative;
+		width: fit-content;
+		margin-top: -1px;
+		color: $color_5;
 		font-family: $font-family_2;
 		font-style: var(--light-basic-typography-h5-heading-font-style);
 		font-weight: var(--light-basic-typography-h5-heading-font-weight);
-		margin-top: -1px;
-		position: relative;
-		width: fit-content;
-		color: $color_5;
 	}
+
 	.listLeftClient {
 		display: flex;
-		align-items: center;
 		justify-content: space-between;
-		background-color: $background-color_6;
-		border: 0px none;
+		align-items: center;
 		margin: 5px;
-		color: $color_4;
+		border: 0 none;
 		border-radius: 6px;
-		gap: 12px;
 		padding: 8px 10px;
+		gap: 12px;
+		background-color: $background-color_6;
+		color: $color_4;
 		cursor: pointer;
 	}
+
 	.listLeftLead {
 		display: flex;
+		flex: 0 0 auto;
 		align-items: center;
 		align-self: stretch;
-		border: 0.5px solid rgba(72, 72, 72, 0.081);
-		flex: 0 0 auto;
-		gap: 12px;
-		padding: 8px 10px;
 		width: 95%;
+		gap: 12px;
+		border: 0.5px solid rgba(72, 72, 72, 0.081);
+		padding: 8px 10px;
 		cursor: pointer;
 	}
+
 	.list-icon-chat {
 		display: block;
 		align-self: center;
-		margin-left: 105px;
 		margin-bottom: -25px;
+		margin-left: 105px;
 	}
+
 	.avatar-client {
 		width: 30px;
 		height: 30px;
 		margin: auto;
-		background-color: $background-color_2;
-		border-radius: 50%;
 		border: 1px solid #fff;
+		border-radius: 50%;
+		background-color: $background-color_2;
 	}
+
 	.status-indicator-2 {
-		border-radius: 100px !important;
-		height: 42px !important;
-		left: -2px !important;
 		top: -2px !important;
+		left: -2px !important;
 		width: 42px !important;
-	}
-	.status-indicator-3 {
-		border: 2px solid !important;
-		border-color: $border-color_1 !important;
 		height: 42px !important;
-		left: 0 !important;
+		border-radius: 100px !important;
+	}
+
+	.status-indicator-3 {
 		position: absolute !important;
 		top: 0 !important;
+		left: 0 !important;
 		width: 42px !important;
+		height: 42px !important;
+		border: 2px solid !important;
+		border-color: $border-color_1 !important;
 	}
+
 	.status-indicator-4 {
 		width: 38px !important;
 	}
+
 	.status-indicator-5 {
-		left: 28px !important;
 		top: 29px !important;
+		left: 28px !important;
 	}
+
 	.design-component-instance-node-2 {
 		background-color: $background-color_7 !important;
 	}
+
 	.text-2 {
-		align-items: flex-start;
+		position: relative;
 		display: flex;
 		flex: 1;
 		flex-direction: column;
 		flex-grow: 1;
-		gap: 1px;
-		position: relative;
+		align-items: flex-start;
 		width: min-content;
+		gap: 1px;
 	}
+
 	.img-2 {
-		height: 24px;
-		object-fit: cover;
 		position: relative;
 		width: 24px;
+		height: 24px;
+		object-fit: cover;
 	}
+
 	.namr-time {
-		align-items: flex-start;
-		align-self: stretch;
+		position: relative;
 		display: flex;
 		flex: 0 0 auto;
-		position: relative;
+		align-items: flex-start;
+		align-self: stretch;
 		width: 100%;
 	}
+
 	.text-wrapper-4 {
-		color: $color_6;
+		position: relative;
 		flex: 1;
+		margin-top: -1px;
+		color: $color_6;
 		font-family: $font-family_3;
 		font-size: var(--light-basic-typography-h6-heading-font-size);
 		font-style: var(--light-basic-typography-h6-heading-font-style);
 		font-weight: var(--light-basic-typography-h6-heading-font-weight);
-		letter-spacing: var(--light-basic-typography-h6-heading-letter-spacing);
 		line-height: var(--light-basic-typography-h6-heading-line-height);
-		margin-top: -1px;
-		position: relative;
+		letter-spacing: var(--light-basic-typography-h6-heading-letter-spacing);
 	}
+
 	.text-wrapper-5 {
-		color: $color_7;
-		margin-top: -1px;
 		position: relative;
+		margin-top: -1px;
+		margin-left: 5px;
+		color: $color_7;
 		text-align: start;
 		white-space: nowrap;
-		margin-left: 5px;
 	}
+
 	.text-wrapper-6 {
+		position: relative;
 		align-self: stretch;
 		color: $color_6;
 		font-family: $font-family_4;
 		font-size: var(--light-basic-typography-paragraph-font-size);
 		font-style: var(--light-basic-typography-paragraph-font-style);
 		font-weight: var(--light-basic-typography-paragraph-font-weight);
-		letter-spacing: var(--light-basic-typography-paragraph-letter-spacing);
 		line-height: var(--light-basic-typography-paragraph-line-height);
-		position: relative;
+		letter-spacing: var(--light-basic-typography-paragraph-letter-spacing);
 	}
+
 	.badge-instance {
-		background-color: $background-color_8 !important;
-		border-radius: 20px !important;
-		left: 96px !important;
 		overflow: hidden !important;
 		position: absolute !important;
 		top: 0 !important;
+		left: 96px !important;
+		border-radius: 20px !important;
+		background-color: $background-color_8 !important;
 	}
+
 	.badge-2 {
 		color: $color_8 !important;
 	}
+
 	.list-2 {
-		align-items: center;
-		align-self: stretch;
-		border: 0px none;
-		border-color: $border-color_2;
+		position: relative;
 		display: flex;
 		flex: 0 0 auto;
-		gap: 12px;
-		padding: 8px 12px;
-		position: relative;
+		align-items: center;
+		align-self: stretch;
 		width: 100%;
+		border: 0 none;
+		border-color: $border-color_2;
+		padding: 8px 12px;
+		gap: 12px;
 	}
+
 	.design-component-instance-node-3 {
-		left: 0 !important;
 		position: absolute !important;
 		top: 0 !important;
+		left: 0 !important;
 	}
+
 	.design-component-instance-node-4 {
 		background-color: $background-color_9 !important;
 	}
+
 	.text-wrapper-7 {
-		color: $color_9;
+		position: relative;
 		flex: 1;
+		margin-top: -1px;
+		color: $color_9;
 		font-family: $font-family_3;
 		font-size: var(--light-basic-typography-h6-heading-font-size);
 		font-style: var(--light-basic-typography-h6-heading-font-style);
 		font-weight: var(--light-basic-typography-h6-heading-font-weight);
-		letter-spacing: var(--light-basic-typography-h6-heading-letter-spacing);
 		line-height: var(--light-basic-typography-h6-heading-line-height);
-		margin-top: -1px;
-		position: relative;
+		letter-spacing: var(--light-basic-typography-h6-heading-letter-spacing);
 	}
+
 	.text-wrapper-8 {
+		position: relative;
+		width: fit-content;
+		margin-top: -1px;
 		color: $color_10;
 		font-family: $font-family_5;
 		font-size: var(--light-basic-typography-paragraph-small-font-size);
 		font-style: var(--light-basic-typography-paragraph-small-font-style);
 		font-weight: var(--light-basic-typography-paragraph-small-font-weight);
-		letter-spacing: var(--light-basic-typography-paragraph-small-letter-spacing);
 		line-height: var(--light-basic-typography-paragraph-small-line-height);
-		margin-top: -1px;
-		position: relative;
+		letter-spacing: var(--light-basic-typography-paragraph-small-letter-spacing);
 		text-align: right;
 		white-space: nowrap;
-		width: fit-content;
 	}
+
 	.text-wrapper-9 {
+		position: relative;
 		align-self: stretch;
 		color: $color_10;
 		font-family: $font-family_4;
 		font-size: var(--light-basic-typography-paragraph-font-size);
 		font-style: var(--light-basic-typography-paragraph-font-style);
 		font-weight: var(--light-basic-typography-paragraph-font-weight);
-		letter-spacing: var(--light-basic-typography-paragraph-letter-spacing);
 		line-height: var(--light-basic-typography-paragraph-line-height);
-		position: relative;
+		letter-spacing: var(--light-basic-typography-paragraph-letter-spacing);
 	}
+
 	.badge-3 {
-		background-color: $background-color_8 !important;
-		border-radius: 20px !important;
-		left: 84px !important;
 		overflow: hidden !important;
 		position: absolute !important;
 		top: 0 !important;
+		left: 84px !important;
+		border-radius: 20px !important;
+		background-color: $background-color_8 !important;
 	}
+
 	.label-initials-instance {
 		left: 7px !important;
 	}
+
 	.status-indicator-6 {
 		top: 1px !important;
 	}
+
 	.heading-3 {
-		align-items: flex-start;
-		align-self: stretch;
+		position: relative;
 		display: flex;
 		flex: 0 0 auto;
-		gap: 213px;
-		padding: 10px 16px;
-		position: relative;
-		font-weight: bold;
-		font-family: $font-family_6;
-		border-bottom: #33333328 1px solid;
-		border-top: #33333328 1px solid;
+		align-items: flex-start;
+		align-self: stretch;
 		width: 100%;
+		border-top: #33333328 1px solid;
+		border-bottom: #33333328 1px solid;
+		padding: 10px 16px;
+		gap: 213px;
+		font-family: $font-family_6;
+		font-weight: bold;
 	}
+
 	.pngwing {
-		height: 23px;
-		object-fit: cover;
 		position: relative;
 		width: 25px;
+		height: 23px;
+		object-fit: cover;
 	}
+
 	.text-wrapper-10 {
+		position: relative;
 		align-self: stretch;
 		color: $color_9;
 		font-family: $font-family_3;
 		font-size: var(--light-basic-typography-h6-heading-font-size);
 		font-style: var(--light-basic-typography-h6-heading-font-style);
 		font-weight: var(--light-basic-typography-h6-heading-font-weight);
-		letter-spacing: var(--light-basic-typography-h6-heading-letter-spacing);
 		line-height: var(--light-basic-typography-h6-heading-line-height);
-		position: relative;
+		letter-spacing: var(--light-basic-typography-h6-heading-letter-spacing);
 	}
+
 	.avatar-instance {
 		background-color: $background-color_10 !important;
 	}
+
 	.pngwing-2 {
-		height: 22px;
-		object-fit: cover;
 		position: relative;
 		width: 30px;
+		height: 22px;
+		object-fit: cover;
 	}
 }
+
 .div-3 {
-	align-items: flex-start;
-	align-self: stretch;
+	overflow-x: hidden !important;
+	overflow-y: hidden !important;
+	position: relative;
 	display: flex;
 	flex: 0 0 auto;
 	flex-direction: column;
-	gap: 4px;
-	padding: 10px -5px 0px 3px;
-	position: relative;
+	align-items: flex-start;
+	align-self: stretch;
 	width: 100%;
 	height: 300px;
-	overflow-y: hidden !important;
-	overflow-x: hidden !important;
+	padding: 10px -5px 0 3px;
+	gap: 4px;
 }
+
 .blueButtonTicket {
-	background-color: $background-color_3;
-	color: $color_2;
-	padding: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 100% !important;
 	border: none;
 	border-radius: none;
-	cursor: pointer;
-	align-items: center;
-	width: 100%;
-	height: 100% !important;
-	display: flex;
-	justify-content: space-between;
+	padding: 10px;
+	background-color: $background-color_3;
+	color: $color_2;
 	font-family: $font-family_1;
 	font-size: 18px;
 	font-weight: 500;
 	line-height: 24px;
+	cursor: pointer;
 }
+
 .grayButtonTicket {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 100% !important;
+	border: none;
+	border-radius: 0;
+	padding: 10px;
 	background-color: $background-color_4;
 	color: $color_3;
-	padding: 10px;
-	border: none;
-	border-radius: 0px;
-	cursor: pointer;
-	align-items: center;
-	width: 100%;
-	height: 100% !important;
-	display: flex;
-	justify-content: space-between;
 	font-family: $font-family_1;
 	font-size: 18px;
 	font-weight: 500;
 	line-height: 24px;
+	cursor: pointer;
 }
+
 .phoneCall {
-	height: 22px !important;
 	position: relative !important;
 	width: 22px !important;
+	height: 22px !important;
 	color: $color_4 !important;
 }
+
 .div-content {
-	overflow-y: auto;
 	overflow-x: hidden;
+	overflow-y: auto;
 	width: 100%;
 	height: 100%;
-	padding: 0px 0px 30px 0px;
+	padding: 0 0 30px;
+	
 	&::-webkit-scrollbar {
 		width: 6px;
 		border-radius: 20px;
 	}
+
 	&::-webkit-scrollbar-track {
-		background: rgb(192, 192, 192);
 		width: 8px;
 		border-radius: 20px;
+		background: rgb(192, 192, 192);
 	}
+
 	&::-webkit-scrollbar-thumb {
-		background-color: $background-color_5;
 		border-radius: 20px;
+		background-color: $background-color_5;
 	}
 }
+
 .messageBubble {
-	background-color: $background-color_6;
-	padding: 20px;
-	border-radius: 10px;
-	margin: 5px;
-	color: $color_2;
+	position: relative;
 	display: flex;
 	align-items: center;
-	position: relative;
+	margin: 5px;
+	border-radius: 10px;
+	padding: 20px;
+	background-color: $background-color_6;
+	color: $color_2;
 }
+
 .avatarWithName {
 	display: flex;
-	align-items: center;
 	justify-content: space-between;
+	align-items: center;
 	width: 100%;
 	margin-left: -10px;
 }
+
 .avatar-client {
 	width: 50px;
 	height: 50px;
-	border-radius: 50%;
 	margin-right: 1px;
+	border-radius: 50%;
 }
+
 .name {
 	color: $color_11;
 	font-size: 15px;
 }
+
 .companyName {
-	font-size: 0.7em;
-	color: $color_12;
 	position: relative;
-	background-color: $background-color_11;
-	padding: 3px 8px;
-	border-radius: 10px;
-	position: absolute;
-	right: 10px;
 	top: 3px;
+	right: 10px;
+	border-radius: 10px;
+	padding: 3px 8px;
+	background-color: $background-color_11;
+	color: $color_12;
+	font-size: 0.7em;
 }
+
 .time {
-	font-size: 0.6em;
-	color: $color_11;
 	position: relative;
 	right: 40px;
 	bottom: -10px;
-}
-.messageContent {
 	color: $color_11;
+	font-size: 0.6em;
+}
+
+.messageContent {
 	position: absolute;
 	right: 5px;
+	color: $color_11;
 }
+
 .messageLogo {
 	position: absolute;
-	top: -0px;
+	top: 0;
 	left: 50px;
 	width: 22px;
 }
+
 .imageName {
 	display: flex;
 	align-items: center;
 	gap: 10px;
 }
+
 .online {
+	position: absolute;
+	bottom: 18px;
+	left: 30px;
+	width: 10px;
+	height: 10px;
+	border: 1px solid #fff;
+	border-radius: 50%;
 	background-color: $background-color_12;
-	width: 10px;
-	height: 10px;
-	border-radius: 50%;
-	border: 1px solid white;
-	position: absolute;
-	bottom: 18px;
-	left: 30px;
 }
+
 .offline {
-	background-color: $background-color_13;
-	width: 10px;
-	height: 10px;
-	border-radius: 50%;
-	border: 1px solid white;
 	position: absolute;
 	bottom: 18px;
 	left: 30px;
+	width: 10px;
+	height: 10px;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	background-color: $background-color_13;
 }

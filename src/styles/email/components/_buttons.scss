@@ -4,9 +4,9 @@ $animation-duration: 0.3s;
 $max-width--extended: 200px;
 
 .compose-fab-button {
+  width: auto;
   max-width: $mdc-fab-height;
   min-width: $mdc-fab-height;
-  width: auto;
 
   .compose-fab-button__label {
     @include mdc-fab--label_;
@@ -16,9 +16,9 @@ $max-width--extended: 200px;
 
   &:hover {
     @include mdc-fab--extended_;
-    margin-bottom: ($mdc-fab-height - $mdc-fab-extended-height)/2;
-    max-width: $max-width--extended;
     width: auto;
+    max-width: $max-width--extended;
+    margin-bottom: ($mdc-fab-height - $mdc-fab-extended-height)/2;
     transition: max-width $animation-duration linear;
 
     .compose-fab-button__label {

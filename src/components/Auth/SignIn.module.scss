@@ -1,9 +1,9 @@
-$color_1: #ffffff;
-$color_2: black;
-$color_3: red;
-$color_4: blue;
-$color_5: white;
-$background-color_1: black;
+$color_1: #fff;
+$color_2: rgb(0, 0, 0);
+$color_3: rgb(253, 7, 7);
+$color_4: rgb(0, 0, 255);
+$color_5: rgb(255, 255, 255);
+$background-color_1: rgb(0, 0, 0);
 $background-color_2: rgba(253, 250, 102, 0.86);
 $background-color_3: rgba(24, 24, 24, 0.872);
 $background-color_4: rgba(253, 250, 102, 0.89);
@@ -15,246 +15,278 @@ $background-color_5: rgba(0, 0, 0, 0.833);
 	align-items: center;
 	background-color: $background-color_1;
 }
+
 .wrapperRecovery {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	width: 100%;
-	background-color: $background-color_2;
 	overflow-y: auto;
-	padding: 0px;
-}
-.containerRecovery {
-	margin: auto;
 	display: flex;
-	align-items: center;
 	justify-content: center;
-	background-color: $background-color_1;
-	color: $color_1;
-	flex-direction: column;
-	padding: 5px 30px;
-	border-radius: 10px;
-	border-style: double;
-	border: 3px solid rgb(251, 255, 0);
-	max-width: 500px;
-	z-index: 1;
-}
-.containerReset {
-	margin: auto;
-	display: flex;
 	align-items: center;
-	justify-content: center;
-	background-color: $background-color_1;
-	color: $color_1;
-	flex-direction: column;
-	padding: 40px 30px;
-	border-radius: 10px;
-	border-style: double;
-	border: 3px solid rgb(251, 255, 0);
-	max-width: 500px;
-	z-index: 1;
-}
-.divFaixa {
-	background-color: $background-color_3;
 	width: 100%;
-	height: 150px;
+	height: 100vh;
+	padding: 0;
+	background-color: $background-color_2;
+}
+
+.containerRecovery {
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	max-width: 500px;
+	margin: auto;
+	border: 3px solid rgb(251, 255, 0);
+	border-style: double;
+	border-radius: 10px;
+	padding: 5px 30px;
+	background-color: $background-color_1;
+	color: $color_1;
+}
+
+.containerReset {
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	max-width: 500px;
+	margin: auto;
+	border: 3px solid rgb(251, 255, 0);
+	border-style: double;
+	border-radius: 10px;
+	padding: 40px 30px;
+	background-color: $background-color_1;
+	color: $color_1;
+}
+
+.divFaixa {
 	position: fixed;
 	top: 80px;
+	width: 100%;
+	height: 150px;
+	background-color: $background-color_3;
 }
+
 .container {
 	display: flex;
-	align-items: center;
-	background-color: $background-color_2;
 	flex-direction: column;
-	padding: 30px;
-	border-radius: 3px;
-	border-style: double;
-	border: 3px solid rgb(251, 255, 0);
+	align-items: center;
 	max-width: 500px;
+	border: 3px solid rgb(251, 255, 0);
+	border-style: double;
+	border-radius: 3px;
+	padding: 30px;
+	background-color: $background-color_2;
 }
+
 .title {
 	font-size: 2rem;
-	lighting-color: #ffffff;
+	lighting-color: #fff;
 }
+
 .titleReset {
+	margin: -50px auto 10px;
 	font-size: 2rem;
-	lighting-color: #ffffff;
-	margin: -50px auto 10px auto;
+	lighting-color: #fff;
 }
+
 .form {
-	background: #ffffff70;
-	border-radius: .5em;
-	padding: 20px;
-	margin: auto;
-	justify-content: center;
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 	max-width: 300px;
+	margin: auto;
+	border-radius: .5em;
+	padding: 20px;
+	background: #ffffff70;
 }
+
 .formRecovery {
-	background-color: $background-color_4;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+	max-width: 400px;
 	border: 3px solid rgb(251, 255, 0);
 	border-radius: .5em;
 	padding: 20px;
-	justify-content: center;
-	display: flex;
-	flex-direction: column;
-	max-width: 400px;
-	width: 100%;
+	background-color: $background-color_4;
 	color: $color_2;
 	font-weight: 700;
 }
+
 .formReset {
-	background-color: $background-color_4;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+	max-width: 400px;
 	border: 3px solid rgb(251, 255, 0);
 	border-radius: .5em;
-	padding: 20px 0px 20px 0px;
-	justify-content: center;
-	display: flex;
-	flex-direction: column;
-	max-width: 400px;
-	width: 100%;
+	padding: 20px 0px;
+	background-color: $background-color_4;
 	color: $color_2;
 	font-weight: 700;
 }
+
 .textRecovery {
 	display: flex;
 	justify-content: center;
-	text-align: center;
-	font: italic 300 15px/130% Arial;
-	word-break: keep-all;
-	line-break: break-all;
 	padding: 50px;
-}
-.textReset {
-	display: block;
-	position: relative;
-	justify-content: center;
+	font: italic 300 15px/130% Arial;
 	text-align: center;
-	font: italic 800 15px/130% Arial;
 	word-break: keep-all;
 	line-break: break-all;
-	padding: 20px 0px 10px 0px;
-	z-index: 9;
-	left: 5px;
-	color: $color_3;
 }
+
+.textReset {
+	position: relative;
+	left: 5px;
+	z-index: 9;
+	display: block;
+	justify-content: center;
+	padding: 20px 0 10px;
+	word-break: keep-all;
+	line-break: break-all;
+	color: $color_3;
+	font: italic 800 15px/130% Arial;
+	text-align: center;
+}
+
 .inputGroup {
 	display: flex;
+	align-items: flex-end;
 	margin-bottom: 14px;
 	padding: 3px;
-	align-items: flex-end;
 }
+
 .input {
-	width: 100%;
-	border-radius: 3px;
-	height: 1.5rem;
-	align-items: flex-end;
 	display: flex;
+	align-items: flex-end;
+	width: 100%;
+	height: 1.5rem;
+	border-radius: 3px;
 }
+
 .inputGroupResetSenha {
 	display: flex;
-	margin-bottom: 14px;
-	padding: 3px 50px 3px 50px;
-	align-items: flex-end;
 	justify-content: center;
-}
-.inputResetSenha {
-	width: 100%;
-	border-radius: 5px;
-	height: 2rem;
 	align-items: flex-end;
+	margin-bottom: 14px;
+	padding: 3px 50px;
+}
+
+.inputResetSenha {
+	position: relative;
 	display: flex;
 	justify-content: flex-end;
-	position: relative;
+	vertical-align: bottom;
+	align-items: flex-end;
+	width: 100%;
+	height: 2rem;
+	border-radius: 5px;
 	padding-left: 5px;
 	text-align: justify;
-	vertical-align: bottom;
 }
+
 .labelPassword {
 	margin-right: 5%;
 }
+
 .labelEmail {
 	margin-right: 8%;
 }
+
 .inputLabel {
 	margin-right: 15%;
 }
+
 .inputLabelPassWord {
 	margin-right: 15%;
 }
+
 .iconContainer {
-	cursor: pointer;
 	display: flex;
 	justify-content: center;
-	height: 30px;
 	align-items: center;
-}
-.iconEye {
+	height: 30px;
 	cursor: pointer;
+}
+
+.iconEye {
 	display: flex;
 	justify-content: flex-end;
-	height: 30px;
 	width: 30px;
+	height: 30px;
 	margin-right: 5px;
+	cursor: pointer;
 }
+
 [data-theme="dark"] {
 	.inputGroup {
 		display: flex;
+		align-items: flex-end;
 		margin-bottom: 14px;
 		padding: 3px;
-		align-items: flex-end;
 	}
 }
+
 [data-theme="light"] {
 	.inputGroup {
 		display: flex;
+		align-items: flex-end;
 		margin-bottom: 14px;
 		padding: 3px;
-		align-items: flex-end;
 	}
 }
+
 .containerRemember {
 	display: flex;
 	justify-content: flex-start;
 	margin-top: 30px;
 	margin-left: -5px;
 }
+
 .btnContainer {
 	display: block;
 	margin-top: 10px;
 }
+
 .forgotPass {
-	font-size: small;
 	display: flex;
 	justify-content: flex-end;
 	margin-top: 20px;
 	color: $color_4;
+	font-size: small;
 }
+
 .btnEntrar {
 	width: 100%;
+	border-radius: 4px;
+	padding: 8px;
 	background-color: $background-color_5;
 	color: $color_5;
-	padding: 8px;
-	border-radius: 4px;
 	cursor: pointer;
+
 	&:hover {
 		background-color: $background-color_1;
 	}
 }
+
 .btnContainerRecovery {
 	display: flex;
-	margin-top: 20px;
 	justify-content: center;
+	margin-top: 20px;
 }
+
 .btnEntrarRecovery {
 	width: 50%;
+	border-radius: 4px;
+	padding: 8px;
 	background-color: $background-color_5;
 	color: $color_5;
-	padding: 8px;
-	border-radius: 4px;
 	cursor: pointer;
+	
 	&:hover {
 		background-color: $background-color_1;
 	}

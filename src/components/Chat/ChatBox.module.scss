@@ -1,6 +1,6 @@
 $color_1: #4b465cba;
 $color_2: #1200d4;
-$color_3: black;
+$color_3: rgb(10, 10, 10);
 $color_4: #403e47d1;
 $color_5: var(--lighttypography-colormuted-text);
 $color_6: #f7f7f7;
@@ -8,13 +8,13 @@ $color_7: var(--lightsolid-colorextrawhite);
 $color_8: var(--lighttypography-colorbody-text);
 $color_9: #4b465cc5;
 $color_10: rgb(0, 0, 0);
-$color_11: white;
+$color_11: #fff;
 $font-family_1: "Public Sans", Helvetica;
 $font-family_2: var(--light-basic-typography-paragraph-font-family);
 $font-family_3: var(--light-basic-typography-paragraph-small-font-family);
 $font-family_4: Public Sans;
 $font-family_5: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-$background-color_1: #ffffff;
+$background-color_1: #fff;
 $background-color_2: #ffffffc2;
 $background-color_3: #c4c2c2;
 $background-color_4: rgb(202, 201, 201);
@@ -27,464 +27,521 @@ $background-color_10: var(--lightsolid-colorextracard-background);
 $background-color_11: #7367F0;
 
 .containerchat {
+	overflow: hidden;
 	display: flex;
-	justify-content: center;
 	flex-direction: column;
+	justify-content: center;
+	width: 100% !important;
+	height: 650vh;
 	margin-left: 0%;
 	gap: 20px;
 	border: 1px rgba(54, 54, 54, 0.098) solid;
-	height: 650px;
-	width: 100% !important;
-	overflow: hidden;
 }
+
 .chat {
+	overflow-x: hidden;
 	overflow-y: scroll;
+	position: relative;
 	display: flex;
 	flex-direction: column;
-	padding: 0px 5px 1px 5px;
-	position: relative;
-	height: 100%;
 	width: 100%;
-	overflow-x: hidden;
-	.user {
-		align-items: flex-start;
-		align-self: stretch;
+	height: 100%;
+	padding: 0 5px 1px;
+	
+	user {
+		position: relative;
 		display: flex;
 		flex: 0 0 auto;
-		gap: 12px;
-		position: relative;
+		align-items: flex-start;
+		align-self: stretch;
 		width: 100%;
+		gap: 12px;
 	}
+
 	.message {
 		display: block;
 		flex-direction: column;
-		gap: 4px;
-		align-items: flex-start;
 		justify-content: center;
+		align-items: flex-start;
 		width: fit-content;
-		word-wrap: break-word;
-		background-color: $background-color_6;
-		color: $color_4;
-		border-radius: 6px;
-		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.27);
-		padding: 10px 16px;
 		margin: 4px 0;
 		margin-left: 40px;
+		gap: 4px;
+		word-wrap: break-word;
+		border-radius: 6px;
+		padding: 10px 16px;
+		background-color: $background-color_6;
+		color: $color_4;
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.27);
+	
 		p {
 			margin: 0;
 		}
 	}
+
 	.text {
 		p {
 			margin: 0;
 		}
-		background-color: $background-color_7;
-		border-radius: 6px;
-		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.686);
+
 		display: block;
 		flex-direction: column;
-		gap: 14px;
 		width: fit-content;
 		word-wrap: break-word;
-		color: $color_6;
-		padding: 10px 16px;
 		margin: 4px 0;
-		margin-left: auto;
 		margin-right: 40px;
+		margin-left: auto;
+		gap: 14px;
+		border-radius: 6px;
+		padding: 10px 16px;
+		background-color: $background-color_7;
+		color: $color_6;
 		font-size: 15px;
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.686);
 	}
+
 	.div {
+		position: relative;
 		flex: 0 0 auto;
-		position: relative;
 	}
+
 	.text-wrapper {
-		color: $color_5;
-		font-family: $font-family_1;
-		font-size: 15px;
-		font-weight: 400;
-		letter-spacing: 0;
-		line-height: 20px;
 		position: relative;
-		text-align: right;
-		white-space: nowrap;
 		width: fit-content;
+		color: $color_5;
+		text-align: right;
+		font-family: $font-family_1;
+		font-size: 15vw;
+		font-weight: 400;
+		line-height: 20vw;
+		letter-spacing: 0;
+		white-space: nowrap;
 	}
+
 	.admin {
-		align-items: flex-start;
+		position: relative;
 		display: flex;
 		flex: 0 0 auto;
-		gap: 12px;
 		justify-content: flex-end;
-		position: relative;
+		align-items: flex-start;
 		width: 80%;
+		gap: 12px;
 	}
+
 	.message-2 {
-		align-items: flex-end;
+		position: relative;
 		display: inline-flex;
 		flex: 0 0 auto;
 		flex-direction: column;
+		align-items: flex-end;
 		gap: 4px;
-		position: relative;
 	}
+
 	.p {
+		position: relative;
+		width: fit-content;
+		margin-top: -1px;
 		color: $color_7;
 		font-family: $font-family_2;
 		font-size: var(--light-basic-typography-paragraph-font-size);
 		font-style: var(--light-basic-typography-paragraph-font-style);
 		font-weight: var(--light-basic-typography-paragraph-font-weight);
-		letter-spacing: var(--light-basic-typography-paragraph-letter-spacing);
 		line-height: var(--light-basic-typography-paragraph-line-height);
-		margin-top: -1px;
-		position: relative;
+		letter-spacing: var(--light-basic-typography-paragraph-letter-spacing);
 		text-align: right;
 		white-space: nowrap;
-		width: fit-content;
 	}
+
 	.time {
-		align-items: center;
+		position: relative;
 		display: inline-flex;
 		flex: 0 0 auto;
+		align-items: center;
 		gap: 6px;
-		position: relative;
 	}
+
 	.checks {
-		height: 18px;
 		position: relative;
 		width: 18px;
-	}
-	.path {
 		height: 18px;
-		left: -2768px;
+	}
+
+	.path {
 		position: absolute;
 		top: -9807px;
+		left: -2768px;
 		width: 18px;
+		height: 18px;
 	}
+	
 	.overlap-group-2 {
-		height: 9px;
-		left: 1px;
 		position: absolute;
 		top: 4px;
+		left: 1px;
 		width: 16px;
+		height: 9px;
 	}
+
 	.path-2 {
-		height: 9px;
+		position: absolute;
+		top: 0;
 		left: 4px;
-		position: absolute;
-		top: 0;
 		width: 13px;
-	}
-	.shape {
 		height: 9px;
-		left: 0;
+	}
+
+	.shape {
 		position: absolute;
 		top: 0;
+		left: 0;
 		width: 13px;
+		height: 9px;
 	}
+
 	.text-wrapper-2 {
+		position: relative;
+		width: fit-content;
+		margin-top: -1px;
 		color: $color_5;
 		font-family: $font-family_3;
 		font-size: var(--light-basic-typography-paragraph-small-font-size);
 		font-style: var(--light-basic-typography-paragraph-small-font-style);
 		font-weight: var(--light-basic-typography-paragraph-small-font-weight);
-		letter-spacing: var(--light-basic-typography-paragraph-small-letter-spacing);
 		line-height: var(--light-basic-typography-paragraph-small-line-height);
-		margin-top: -1px;
-		position: relative;
+		letter-spacing: var(--light-basic-typography-paragraph-small-letter-spacing);
 		text-align: right;
 		white-space: nowrap;
-		width: fit-content;
 	}
+
 	.avatar-instance {
 		position: relative !important;
 	}
+
 	.design-component-instance-node {
 		background-color: $background-color_8 !important;
 	}
+
 	.avatar-2 {
 		background-color: $background-color_9 !important;
 	}
+	
 	.message-3 {
-		align-items: flex-start;
+		position: relative;
 		display: inline-flex;
 		flex: 0 0 auto;
 		flex-direction: column;
+		align-items: flex-start;
 		gap: 12px;
-		position: relative;
 	}
+
 	.div-wrapper {
-		align-items: flex-start;
-		background-color: $background-color_10;
-		border-radius: 0px 6px 6px 6px;
-		box-shadow: var(--light-gray-gray-SM);
+		position: relative;
 		display: inline-flex;
 		flex: 0 0 auto;
 		flex-direction: column;
+		align-items: flex-start;
+		border-radius: 0 6px 6px;
 		padding: 10px 16px;
-		position: relative;
+		background-color: $background-color_10;
+		box-shadow: var(--light-gray-gray-SM);
 	}
+
 	.text-wrapper-3 {
+		position: relative;
+		width: fit-content;
+		margin-top: -1px;
 		color: $color_8;
 		font-family: $font-family_2;
 		font-size: var(--light-basic-typography-paragraph-font-size);
 		font-style: var(--light-basic-typography-paragraph-font-style);
 		font-weight: var(--light-basic-typography-paragraph-font-weight);
-		letter-spacing: var(--light-basic-typography-paragraph-letter-spacing);
 		line-height: var(--light-basic-typography-paragraph-line-height);
-		margin-top: -1px;
-		position: relative;
+		letter-spacing: var(--light-basic-typography-paragraph-letter-spacing);
 		white-space: nowrap;
-		width: fit-content;
 	}
+
 	.text-wrapper-4 {
+		position: relative;
+		width: fit-content;
 		color: $color_5;
 		font-family: $font-family_3;
 		font-size: var(--light-basic-typography-paragraph-small-font-size);
 		font-style: var(--light-basic-typography-paragraph-small-font-style);
 		font-weight: var(--light-basic-typography-paragraph-small-font-weight);
-		letter-spacing: var(--light-basic-typography-paragraph-small-letter-spacing);
 		line-height: var(--light-basic-typography-paragraph-small-line-height);
-		position: relative;
+		letter-spacing: var(--light-basic-typography-paragraph-small-letter-spacing);
 		text-align: right;
 		white-space: nowrap;
-		width: fit-content;
 	}
+
 	.message-4 {
-		align-items: flex-end;
+		position: relative;
 		display: inline-flex;
 		flex: 0 0 auto;
 		flex-direction: column;
+		justify-content: center;
+		align-items: flex-end;
 		gap: 4px;
-		justify-content: center;
-		position: relative;
 	}
+
 	.message-5 {
-		align-items: flex-end;
+		position: relative;
 		display: inline-flex;
 		flex: 0 0 auto;
 		flex-direction: column;
-		gap: 12px;
 		justify-content: center;
-		position: relative;
+		align-items: flex-end;
+		gap: 12px;
 	}
+
 	.text-2 {
-		align-items: flex-start;
-		background-color: $background-color_8;
-		border-radius: 6px 0px 6px 6px;
-		box-shadow: var(--light-gray-gray-SM);
+		position: relative;
 		display: inline-flex;
 		flex: 0 0 auto;
 		flex-direction: column;
+		align-items: flex-start;
+		border-radius: 6px 0 6px 6px;
 		padding: 10px 16px;
-		position: relative;
+		background-color: $background-color_8;
+		box-shadow: var(--light-gray-gray-SM);
 	}
+
 	.time-2 {
-		align-items: center;
+		position: relative;
 		display: inline-flex;
 		flex: 0 0 auto;
-		gap: 6px;
 		justify-content: flex-end;
-		position: relative;
+		align-items: center;
+		gap: 6px;
 	}
+
 	.path-3 {
-		height: 18px;
-		left: -2765px;
 		position: absolute;
 		top: -10025px;
-		width: 18px;
-	}
-	.path-4 {
-		height: 18px;
 		left: -2765px;
+		width: 18px;
+		height: 18px;
+	}
+
+	.path-4 {
 		position: absolute;
 		top: -10297px;
+		left: -2765px;
 		width: 18px;
+		height: 18px;
 	}
 }
+
 .headerBoxChat {
 	display: inline-flex;
-	padding: 5px 20px 5px 10px;
+	justify-content: space-between;
 	align-items: center;
-	gap: 1px;
 	width: 97%;
 	height: 2.9rem;
 	border: 1px rgba(112, 112, 112, 0.072) solid;
+	gap: 1px;
+	padding: 5px 20px 5px 10px;
 	background-color: $background-color_1;
-	justify-content: space-between;
 }
+
 .rightContainer {
-	padding: 5px 5px 3px 3px;
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
-	gap: 2px;
-	background-color: $background-color_2;
 	width: auto;
 	height: 80%;
 	margin: 1px 15px;
+	gap: 2px;
+	padding: 5px 5px 3px 3px;
+	background-color: $background-color_2;
 }
+
 .rightContent {
 	display: inline-flex;
 	justify-content: space-between;
-	gap: 35px;
 	align-items: center;
+	gap: 35px;
 }
+
 .img-avatar {
-	height: 35px !important;
 	position: relative !important;
 	width: 35px !important;
-	background-color: $background-color_3;
+	height: 35px !important;
 	border-radius: 50%;
+	background-color: $background-color_3;
 }
+
 .initial-info {
 	display: flex;
 	align-items: center;
 }
+
 .name-time {
-	margin-left: 15px;
 	margin-right: 25px;
+	margin-left: 15px;
 }
+
 .message-wrapper {
 	display: flex;
 	flex-direction: column;
-	margin-bottom: -20px;
 	margin-right: 10px;
+	margin-bottom: -20px;
 	font-size: 15px;
 }
+
 .message-time {
 	color: $color_1;
 	font-size: 13px;
 }
+
 .time-right {
-	text-align: left;
 	margin-left: 50px;
+	text-align: left;
 }
+
 .time-left {
-	text-align: right;
 	margin-right: 50px;
+	text-align: right;
 }
+
 .name-work {
-	background-color: $background-color_4;
-	padding: 5px;
-	border-radius: 10px;
 	margin-left: 25px;
+	border-radius: 10px;
+	padding: 5px;
+	background-color: $background-color_4;
+
 	div {
 		color: $color_2;
 	}
 }
+
 .img-2 {
-	height: 24px;
-	object-fit: cover;
 	position: relative;
 	width: 24px;
+	height: 24px;
+	object-fit: cover;
 }
+
 .talks {
+	border: 1px solid rgb(0, 128, 0);
 	background-color: $background-color_5;
 	color: $color_3;
-	border: 1px solid green;
 }
+
 .text-wrapper-box-header {
+	position: relative;
+	width: fit-content;
 	color: $color_9;
 	font-family: $font-family_1;
 	font-size: 13px;
 	font-weight: 500;
-	letter-spacing: 0;
 	line-height: 20px;
-	position: relative;
+	letter-spacing: 0;
 	white-space: nowrap;
-	width: fit-content;
 }
+
 .img-avatar-text {
-	height: 35px !important;
 	position: relative !important;
-	width: 35px !important;
 	top: 43%;
-	background-color: $background-color_3;
-	border-radius: 50%;
 	display: flex;
 	align-self: flex-start;
-}
-.img-avatar-message {
-	height: 35px !important;
-	position: relative !important;
 	width: 35px !important;
-	top: 43%;
-	background-color: $background-color_3;
+	height: 35px !important;
 	border-radius: 50%;
+	background-color: $background-color_3;
+}
+
+.img-avatar-message {
+	position: relative !important;
+	top: 43%;
 	display: flex;
 	align-self: flex-end;
+	width: 35px !important;
+	height: 35px !important;
+	border-radius: 50%;
+	background-color: $background-color_3;
 }
+
 .wrapperTextEnter {
-	width: 98% !important;
-	padding: 5px 15px 5px 5px;
-	background: white;
-	box-shadow: 0px 2px 4px rgba(165, 163, 174, 0.056);
-	border-radius: 6px;
 	display: flex;
-	margin: auto 5px 0px auto !important;
 	align-items: flex-end;
+	width: 98% !important;
+	margin: auto 5px 0 auto !important;
+	border-radius: 6px;
+	padding: 5px 15px 5px 5px;
+	background: rgb(255, 255, 255);
+	box-shadow: 0 2px 4px rgba(165, 163, 174, 0.056);
 }
+
 .containertxt {
+	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	gap: 2px;
-	display: flex;
 	width: 100%;
+	gap: 2px;
 }
+
 .txtwrapp {
 	width: 100%;
 	height: 100%;
 	margin-right: 20px;
 	text-overflow: clip;
 }
+
 .txt {
 	flex: 1 1 0;
-	color: $color_10;
-	font-size: 15px;
-	font-family: $font-family_4;
-	font-weight: 400;
-	word-wrap: break-word;
 	width: 100%;
 	height: 100%;
+	word-wrap: break-word;
 	margin-left: 5px;
-	text-overflow: clip;
-	padding: 0;
 	border: none;
+	padding: 0;
+	color: $color_10;
+	font-family: $font-family_4;
+	font-size: 15px;
+	font-weight: 400;
 	resize: none;
+	text-overflow: clip;
+	
 	&:focus {
-		box-shadow: 0 0 0 0;
 		outline: 0;
+		box-shadow: 0 0 0 0;
 	}
 }
+
 input {
 	&:focus {
-		box-shadow: 0 0 0 0;
 		outline: 0;
+		box-shadow: 0 0 0 0;
 	}
 }
+
 .btncontainer {
 	display: flex;
 	justify-content: space-around;
 	align-items: flex-end;
-	gap: 10px;
 	width: 20%;
+	gap: 10px;
 }
+
 .icon {
-	border-radius: 50%;
-	padding: 3px;
 	width: 30px;
 	height: 30px;
 	border: rgba(255, 255, 255, 0.50) 1px solid;
+	border-radius: 50%;
+	padding: 3px;
 	cursor: pointer;
 }
+
 .btntxt {
-	color: $color_11;
-	font-size: 15px;
-	font-family: $font-family_5;
-	font-weight: 500;
-	background-color: $background-color_11;
-	cursor: pointer;
-	height: 2.3rem;
 	width: 4rem;
-	border-radius: 3px;
+	height: 2.3rem;
 	border: none;
+	border-radius: 3px;
+	background-color: $background-color_11;
+	color: $color_11;
+	font-family: $font-family_5;
+	font-size: 15px;
+	font-weight: 500;
+	cursor: pointer;
 }

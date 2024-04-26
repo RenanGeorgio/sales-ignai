@@ -13,21 +13,26 @@
     &::before {
       display: none;
     }
+
     &::after {
       display: none;
     }
+
     &:hover {
-      transition: background 75ms linear;
-      background-color: rgba(#000, 0.04);
       z-index: map-get($z-index, troposhere);
-    }
-    &:active {
+      background-color: rgba(#000, 0.04);
       transition: background 75ms linear;
-      background-color: rgba(#000, 0.16);
     }
+
+    &:active {
+      background-color: rgba(#000, 0.16);
+      transition: background 75ms linear;
+    }
+
     &.mdc-list-item--activated {
       background-color: rgba($mdc-theme-primary, 0.12);
     }
+    
     &.mdc-list-item--selected {
       background-color: rgba($mdc-theme-primary, 0.09);
 

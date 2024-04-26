@@ -1,4 +1,4 @@
-$editor-background-color: white !default;
+$editor-background-color: #fff !default;
 $editor-h1-margin: 6px 0 16px 0 !default;
 $editor-h1-font-size: 3rem;
 $editor-h2-margin: 6px 0 12px 0 !default;
@@ -38,27 +38,27 @@ $editor-code-block-background: darken($editor-background-color, 8%) !default;
 
   h3 {
     margin: $editor-h3-margin;
-    font-weight: bold;
     font-size: $editor-h3-font-size;
+    font-weight: bold;
   }
 
   blockquote {
-    border-left: 5px solid $editor-code-block-background;
-    font-style: italic;
     margin: 0;
+    border-left: 5px solid $editor-code-block-background;
     padding: 0 $default-spacing * 2;
+    font-style: italic;
   }
 
   pre.code {
-    background-color: $editor-code-block-background;
     margin: 0;
     padding: $editor-block-padding;
+    background-color: $editor-code-block-background;
   }
 
   code{
-    background-color: $editor-code-block-background;
     margin: 0;
     padding: 0 $editor-block-padding;
+    background-color: $editor-code-block-background;
 
     &:first-child {
       padding-top: $editor-block-padding;

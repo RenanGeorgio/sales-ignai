@@ -13,10 +13,12 @@
   .entry {
 
     &::before {
+
       content: '; ';
     }
 
     &:first-child::before {
+      
       content: none;
     }
 
@@ -38,25 +40,24 @@
   &.collapsed {
 
     .collapsedList {
+      overflow: hidden;
       display: inline-block;
       flex-grow: 1;
-      min-width: 0;
       width: 1px;
+      min-width: 0;
       margin-left: $default-spacing / 2;
-
-      overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
     }
   }
 
   &.expanded {
-    max-height: 150px;
     overflow-y: auto;
     position: relative;
     display: flex;
     flex-flow: row nowrap;
     min-width: 0;
+    max-height: 150px;
 
     .recipientGroupContainer {
       flex: 1;

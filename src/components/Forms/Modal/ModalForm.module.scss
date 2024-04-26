@@ -11,60 +11,70 @@ $border-right-color_1: #f0a500;
 .modal-form {
 	width: 100%;
 	width: auto;
+	
 	h2 {
 		color: $color_1;
 	}
 }
+
 .form-content {
-	height: calc(70vh - 120px);
-	overflow-y: auto;
 	overflow-x: hidden;
+	overflow-y: auto;
+	height: calc(70vh - 120px);
 	margin-bottom: 60px;
 }
+
 .form-group {
 	margin-bottom: 10px;
 	padding-right: 5px;
+
 	label {
 		display: block;
 		margin-bottom: 5px;
 		color: $color_1;
 	}
 }
+
 .form-group-check-box {
-	margin-bottom: 15px;
-	padding-right: 5px;
-	display: inline-flex;
-	margin-top: 10px;
 	box-sizing: border-box;
+	display: inline-flex;
 	align-items: center;
 	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 15px;
+	padding-right: 5px;
 }
+
 .form-input-check-box {
 	width: 20px;
 	height: 20px;
 }
+
 .form-input {
-	width: 100%;
+	box-sizing: border-box;
 	flex: 1;
-	padding: 1em;
-	line-height: 1.4;
-	background-color: $background-color_1;
+	width: 100%;
 	border: 1px solid #e5e5e5;
 	border-radius: 3px;
+	padding: 1em;
+	background-color: $background-color_1;
+	line-height: 1.4;
 	-webkit-transition: 0.35s ease-in-out;
 	-moz-transition: 0.35s ease-in-out;
 	-o-transition: 0.35s ease-in-out;
 	transition: 0.35s ease-in-out;
 	transition: all 0.35s ease-in-out;
-	box-sizing: border-box;
+
 	&:focus {
-		outline: 0;
 		border-color: $border-color_1;
+		outline: 0;
+
 		+ {
 			.input-icon {
 				i {
 					color: $color_2;
 				}
+
 				&:after {
 					border-right-color: $border-right-color_1;
 				}
@@ -72,22 +82,26 @@ $border-right-color_1: #f0a500;
 		}
 	}
 }
+
 .form-submit-button {
-	padding: 5px 10px;
-	font-size: 1rem;
-	background-color: $background-color_2;
-	color: $color_3;
+	position: absolute;
+	right: 15px;
+	bottom: 15px;
 	border: none;
 	border-radius: 4px;
+	padding: 5px 10px;
+	background-color: $background-color_2;
+	color: $color_3;
+	font-size: 1rem;
 	cursor: pointer;
-	position: absolute;
-	bottom: 15px;
-	right: 15px;
+
 	&:hover {
 		background-color: $background-color_3;
 	}
+
 	&:disabled {
 		background-color: $background-color_4;
 		cursor: not-allowed;
 	}
+
 }

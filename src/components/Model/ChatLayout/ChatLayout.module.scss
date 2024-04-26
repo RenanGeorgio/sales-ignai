@@ -1,26 +1,29 @@
 .wrapp {
+	overflow: hidden;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-template-rows: 1fr 1fr 1fr;
-	gap: 1px 0px;
+	gap: 1;
 	grid-template-areas: "side content content content" "side content content content" "side content content content";
-	overflow: hidden;
 	height: 550px;
 	padding: 5px;
 }
+
 .side {
-	height: 100%;
-	width: 100%;
-	grid-area: side;
 	display: block;
-}
-.content {
-	background: #f4f6ff;
 	width: 100%;
+	height: 100%;
+	grid-area: side;
+}
+
+.content {
+	width: 100%;
+	background: #f4f6ff;
 	grid-area: content;
 }
+
 .wrapper-box {
 	width: 100%;
-	padding-left: 10px;
 	padding-right: 80px;
+	padding-left: 10px;
 }

@@ -4,11 +4,11 @@
  */
 body {
   &::after {
+    content: url('https://source.unsplash.com/collection/4509660/1920x1080');
+    overflow:hidden;
     position:absolute;
+    z-index: map-get($z-index, inner-core);
     width:0;
     height:0;
-    overflow:hidden;
-    z-index: map-get($z-index, inner-core);
-    content: url('https://source.unsplash.com/collection/4509660/1920x1080');
   }
 }

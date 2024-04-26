@@ -3,14 +3,14 @@ $color_1: #fff;
 .sidebar-badge {
 	content: attr(data-count);
 	display: flex;
-	align-items: center;
 	justify-content: center;
-	padding: 3px 8px;
+	align-items: center;
 	gap: 10px;
 	width: 24px;
 	height: 14px;
+	border-radius: 14px;
+	padding: 3px 8px;
 	background: #ea5455;
 	color: $color_1;
-	border-radius: 14px;
 	font-size: 0.9rem;
 }
