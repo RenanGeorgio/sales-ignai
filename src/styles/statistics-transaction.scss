@@ -49,12 +49,12 @@ td {
 	text-align: center;
 }
 
-td.status-verified {
+.status-verified {
 	position: relative;
 	padding: 0;
 	color: $color1;
 
-	&:before {
+	&::before {
 		content: '';
 		position: absolute;
 		top: 10px;
@@ -67,12 +67,12 @@ td.status-verified {
 	}
 }
 
-td.status-rejected {
+.status-rejected {
 	position: relative;
 	padding: 0;
 	color: $color1;
 
-	&:before {
+	&::before {
 		content: '';
 		position: absolute;
 		top: 10px;
@@ -85,12 +85,12 @@ td.status-rejected {
 	}
 }
 
-td.status-pending {
+.status-pending {
 	position: relative;
 	padding: 0;
 	color: $color1;
 
-	&:before {
+	&::before {
 		content: '';
 		position: absolute;
 		top: 10px;

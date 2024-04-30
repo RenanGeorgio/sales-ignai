@@ -59,12 +59,12 @@ $backgroundcolor2: rgb(225, 225, 225);
 			margin-right: 5px;
 		}
 
-		img.active {
+		.active {
 			background-color: $backgroundcolor1;
 		}
 	}
 
-	button.active {
+	.active {
 		border-bottom: 1px solid rgb(0, 0, 255);
 		color: $color1;
 	}

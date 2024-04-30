@@ -34,10 +34,10 @@ $global-spinner-color: #333;
     width: 0;
     min-height: 100vh;
     border: 0;
-    transition: width $drawerAnimationSpeed;
+    transition: width $drawer-animation-speed;
    
     &.mdc-drawer--open {
-      width: $drawerWidth;
+      width: $drawer-width;
      
       @include mdc-drawer-border-color($mdc-drawer-divider-color);
       border-right-width: 1px;
@@ -65,11 +65,11 @@ $global-spinner-color: #333;
     $parent: &;
     width: 100%;
     margin-left: 0;
-    transition: margin $drawerAnimationSpeed, width $drawerAnimationSpeed;
+    transition: margin $drawer-animation-speed, width $drawer-animation-speed;
     @include mdc-top-app-bar-fill-color($mdc-theme-secondary);
     @at-root #{$self}--with-side-bar#{$parent} {
-      width: calc(100% - #{$drawerWidth});
-      margin-left: $drawerWidth;
+      width: calc(100% - #{$drawer-width});
+      margin-left: $drawer-width;
       @media screen and (max-width: $material-responsive-breakpoint-tablet-min) {
         width: 100%;
         margin-left: 0;
@@ -91,11 +91,11 @@ $global-spinner-color: #333;
     flex-grow: 1;
     width: 100%;
     margin-left: 0;
-    transition: margin $drawerAnimationSpeed;
+    transition: margin $drawer-animation-speed;
 
     @at-root #{$self}--with-side-bar#{$parent} {
-      width: calc(100% - #{$drawerWidth});
-      margin-left: $drawerWidth;
+      width: calc(100% - #{$drawer-width});
+      margin-left: $drawer-width;
       @media screen and (max-width: $material-responsive-breakpoint-tablet-min) {
         width: 100%;
         margin-left: 0;

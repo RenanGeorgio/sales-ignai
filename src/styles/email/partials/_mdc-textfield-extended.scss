@@ -1,10 +1,8 @@
-@import '~@material/textfield/mdc-text-field';
-
 .mdc-text-field.mdc-text-field--fullwidth .mdc-floating-label {
   bottom: 10px;
   left: 0;
 }
 
-.mdc-text-field.mdc-text-field--fullwidth input.mdc-text-field__input  {
+.mdc-text-field.mdc-text-field--fullwidth .mdc-text-field__input {
   padding-top: 12px;
 }

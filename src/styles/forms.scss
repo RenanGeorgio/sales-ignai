@@ -111,29 +111,30 @@ $backgroundcolor7: rgb(205, 184, 46);
 		background-color: $backgroundcolor3;
 	}
 
-	input[type="text"] {
-		width: calc(100% - 16px);
-		margin-bottom: 5px;
-		border: 1px solid rgba(168, 170, 174, 1);
-		border-radius: 4px;
-		padding: 8px;
+	[type="text"] {
+    width: calc(100% - 16px);
+    margin-bottom: 5px;
+    border: 1px solid rgba(168, 170, 174, 1);
+    border-radius: 4px;
+    padding: 8px;
 	}
 
-	input[type="email"] {
-		width: calc(100% - 16px);
-		margin-bottom: 5px;
-		border: 1px solid rgba(168, 170, 174, 1);
-		border-radius: 4px;
-		padding: 8px;
+	[type="email"] {
+			width: calc(100% - 16px);
+			margin-bottom: 5px;
+			border: 1px solid rgba(168, 170, 174, 1);
+			border-radius: 4px;
+			padding: 8px;
 	}
 
-	input[type="tel"] {
-		width: calc(100% - 16px);
-		margin-bottom: 5px;
-		border: 1px solid rgba(168, 170, 174, 1);
-		border-radius: 4px;
-		padding: 8px;
+	[type="tel"] {
+			width: calc(100% - 16px);
+			margin-bottom: 5px;
+			border: 1px solid rgba(168, 170, 174, 1);
+			border-radius: 4px;
+			padding: 8px;
 	}
+
 }
 
 .code-button-container {

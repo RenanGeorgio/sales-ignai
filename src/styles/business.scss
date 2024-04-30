@@ -182,14 +182,14 @@ $backgroundcolor3: rgba(115, 103, 240, 1);
 			cursor: pointer;
 		}
 
-		button.blue {
+		.blue {
 			border: none;
 			border-radius: 4px;
 			background-color: $backgroundcolor2;
 			color: $color3;
 		}
 
-		button.dark-blue {
+		.dark-blue {
 			border: none;
 			border-radius: 4px;
 			background-color: $backgroundcolor3;
@@ -422,7 +422,7 @@ $backgroundcolor3: rgba(115, 103, 240, 1);
 		cursor: pointer;
 	}
 
-	button.selected {
+	.selected {
 		border: none;
 		border-radius: 4px;
 		background-color: $backgroundcolor3;

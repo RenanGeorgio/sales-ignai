@@ -59,25 +59,19 @@ $borderrightcolor1: #f0a500;
 	padding: 1em;
 	background-color: $backgroundcolor1;
 	line-height: 1.4;
-	-webkit-transition: 0.35s ease-in-out;
-	-moz-transition: 0.35s ease-in-out;
-	-o-transition: 0.35s ease-in-out;
-	transition: 0.35s ease-in-out;
-	transition: all 0.35s ease-in-out;
+	transition: all 0.35s ease-in-out; 
 
 	&:focus {
 		border-color: $bordercolor1;
 		outline: 0;
 
-		+ {
-			.input-icon {
-				i {
-					color: $color2;
-				}
+		& + .input-icon { 
+			i {
+				color: $color2;
+			}
 
-				&:after {
-					border-right-color: $borderrightcolor1;
-				}
+			&::after {
+				border-right-color: $borderrightcolor1;
 			}
 		}
 	}

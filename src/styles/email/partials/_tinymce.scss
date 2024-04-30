@@ -49,7 +49,7 @@ $editor-code-block-background: darken($editor-background-color, 8%) !default;
     font-style: italic;
   }
 
-  pre.code {
+  .code {
     margin: 0;
     padding: $editor-block-padding;
     background-color: $editor-code-block-background;
