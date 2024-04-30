@@ -1,16 +1,16 @@
-$color_1: rgb(128, 128, 128);
-$color_2: rgba(168, 170, 174, 1);
-$color_3: rgb(247, 242, 242);
-$color_4: rgba(115, 103, 240, 1);
-$color_5: rgb(10, 10, 10);
-$font-family_1: sans-serif;
-$background-color_1: rgb(245, 242, 242);
-$background-color_2: rgb(255, 255, 255);
-$background-color_3: #fff;
-$background-color_4: rgb(255, 0, 0);
-$background-color_5: rgba(115, 103, 240, 1);
-$background-color_6: rgba(114, 103, 240, 0.134);
-$background-color_7: rgb(205, 184, 46);
+$color1: rgb(128, 128, 128);
+$color2: rgba(168, 170, 174, 1);
+$color3: rgb(247, 242, 242);
+$color4: rgba(115, 103, 240, 1);
+$color5: rgb(10, 10, 10);
+$fontfamily1: sans-serif;
+$backgroundcolor1: rgb(245, 242, 242);
+$backgroundcolor2: rgb(255, 255, 255);
+$backgroundcolor3: #fff;
+$backgroundcolor4: rgb(255, 0, 0);
+$backgroundcolor5: rgba(115, 103, 240, 1);
+$backgroundcolor6: rgba(114, 103, 240, 0.134);
+$backgroundcolor7: rgb(205, 184, 46);
 
 .grid {
 	grid-row-start: span auto;
@@ -31,16 +31,16 @@ $background-color_7: rgb(205, 184, 46);
 }
 
 .title {
-	color: $color_1;
-	font-family: $font-family_1;
+	color: $color1;
+	font-family: $fontfamily1;
 	font-size: 20px;
 }
 
 .titleChat {
 	height: 15px;
 	margin-left: 8%;
-	color: $color_1;
-	font-family: $font-family_1;
+	color: $color1;
+	font-family: $fontfamily1;
 	font-size: 20px;
 }
 
@@ -48,7 +48,7 @@ $background-color_7: rgb(205, 184, 46);
 	width: 55%;
 	margin-left: 6%;
 	padding: 20px;
-	background-color: $background-color_1;
+	background-color: $backgroundcolor1;
 	box-shadow: 0 0 5 rgba(0, 0, 0, 0.3);
 }
 
@@ -68,8 +68,8 @@ $background-color_7: rgb(205, 184, 46);
 	border: none;
 	border-radius: 4px;
 	padding: 8px 12px;
-	background-color: $background-color_2;
-	color: $color_2;
+	background-color: $backgroundcolor2;
+	color: $color2;
 
 	cursor: pointer;
 	
@@ -108,7 +108,7 @@ $background-color_7: rgb(205, 184, 46);
 		border: 1px solid rgba(168, 170, 174, 1);
 		border-radius: 4px;
 		padding: 8px;
-		background-color: $background-color_3;
+		background-color: $backgroundcolor3;
 	}
 
 	input[type="text"] {
@@ -170,8 +170,8 @@ $background-color_7: rgb(205, 184, 46);
 	border: none;
 	border-radius: 4px;
 	padding: 10px 20px;
-	background-color: $background-color_4;
-	color: $color_3;
+	background-color: $backgroundcolor4;
+	color: $color3;
 	cursor: pointer;
 	box-shadow: 0 0 5 rgba(0, 0, 0, 0.3);
 }
@@ -191,8 +191,8 @@ $background-color_7: rgb(205, 184, 46);
 	border: none;
 	border-radius: 5px;
 	padding: 10px;
-	background-color: $background-color_5;
-	color: $color_3;
+	background-color: $backgroundcolor5;
+	color: $color3;
 	font-weight: inherit;
 	cursor: pointer;
 }
@@ -204,8 +204,8 @@ $background-color_7: rgb(205, 184, 46);
 	border: none;
 	border-radius: 5px;
 	padding: 10px;
-	background-color: $background-color_6;
-	color: $color_4;
+	background-color: $backgroundcolor6;
+	color: $color4;
 	font-weight: inherit;
 	cursor: pointer;
 }
@@ -218,8 +218,8 @@ $background-color_7: rgb(205, 184, 46);
 	border: none;
 	border-radius: 4px;
 	padding: 10px 20px;
-	background-color: $background-color_5;
-	color: $color_3;
+	background-color: $backgroundcolor5;
+	color: $color3;
 	cursor: pointer;
 }
 
@@ -234,7 +234,6 @@ $background-color_7: rgb(205, 184, 46);
 	position: relative;
 
 	&:hover {
-
 		.dropdown-options {
 			display: block;
 		}
@@ -260,7 +259,7 @@ $background-color_7: rgb(205, 184, 46);
 	display: none;
 	border: 1px solid rgba(168, 170, 174, 1);
 	border-top: none;
-	background-color: $background-color_1;
+	background-color: $backgroundcolor1;
 
 	button {
 		display: block;
@@ -268,7 +267,7 @@ $background-color_7: rgb(205, 184, 46);
 		border: none;
 		border-bottom: 1px solid rgba(168, 170, 174, 1);
 		padding: 8px;
-		background-color: $background-color_1;
+		background-color: $backgroundcolor1;
 		text-align: left;
 	}
 }
@@ -293,7 +292,7 @@ $background-color_7: rgb(205, 184, 46);
 	max-height: 100%;
 	border: 1px solid rgb(196, 194, 194);
 	padding: 20px;
-	background-color: $background-color_1;
+	background-color: $backgroundcolor1;
 }
 
 .new-form-selector-input {
@@ -316,7 +315,7 @@ $background-color_7: rgb(205, 184, 46);
 	border: none;
 	border-radius: 4px;
 	padding: 12px;
-	color: $color_1;
+	color: $color1;
 	cursor: pointer;
 }
 
@@ -343,8 +342,8 @@ $background-color_7: rgb(205, 184, 46);
 	border: none;
 	border-radius: 4px;
 	padding: 10px 25px;
-	background-color: $background-color_7;
-	color: $color_5;
+	background-color: $backgroundcolor7;
+	color: $color5;
 	cursor: pointer;
 }
 
@@ -362,7 +361,7 @@ $background-color_7: rgb(205, 184, 46);
 	border: none;
 	border-radius: 4px;
 	padding: 10px 25px;
-	background-color: $background-color_5;
-	color: $color_3;
+	background-color: $backgroundcolor5;
+	color: $color3;
 	cursor: pointer;
 }

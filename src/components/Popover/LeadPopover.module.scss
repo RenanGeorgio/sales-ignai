@@ -1,5 +1,5 @@
-$color_1: rgb(0, 0, 0);
-$background-color_1: #fff;
+$color1: rgb(0, 0, 0);
+$backgroundcolor1: #fff;
 
 .popover {
 	position: absolute;
@@ -11,8 +11,8 @@ $background-color_1: #fff;
 	border: 1px solid #ccc;
 	border-radius: 5px;
 	padding: 10px 10px 0;
-	background-color: $background-color_1;
-	color: $color_1;
+	background-color: $backgroundcolor1;
+	color: $color1;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 	
 	button {
@@ -34,7 +34,7 @@ $background-color_1: #fff;
 	border: 1px solid #ccc;
 	border-radius: 5px;
 	padding: 10px 10px 0;
-	background-color: $background-color_1;
-	color: $color_1;
+	background-color: $backgroundcolor1;
+	color: $color1;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }

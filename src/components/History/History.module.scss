@@ -1,8 +1,8 @@
-$color_1: #000;
-$font-family_1: sans-serif;
-$font-family_2: Public Sans;
-$background-color_1: #fff;
-$background-color_2: #4B465C29;
+$color1: #000;
+$fontfamily1: sans-serif;
+$fontfamily2: Public Sans;
+$backgroundcolor1: #fff;
+$backgroundcolor2: #4B465C29;
 
 .wrapperHistory {
 	position: absolute;
@@ -10,7 +10,7 @@ $background-color_2: #4B465C29;
 	width: 400px;
 	height: 100%;
 	padding: 15px;
-	background-color: $background-color_1;
+	background-color: $backgroundcolor1;
 }
 
 .formHistory {
@@ -31,7 +31,7 @@ $background-color_2: #4B465C29;
 	align-self: stretch;
 	gap: 2px;
 	height: 75px;
-	font-family: $font-family_1;
+	font-family: $fontfamily1;
 	text-transform: capitalize;
 }
 
@@ -55,9 +55,8 @@ input {
 .spanTitle {
 	flex: 1 1 0;
 	word-wrap: break-word;
-	color: $color_1;
-	font-family: $font-family_2;
-	font-family: $font-family_1;
+	color: $color1;
+	font-family: $fontfamily2;
 	font-size: 13;
 	font-weight: 400;
 }
@@ -75,7 +74,7 @@ input {
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 1rem;
-	font-family: $font-family_1;
+	font-family: $fontfamily1;
 }
 
 .textTitle {
@@ -93,6 +92,6 @@ input {
 		border: 1px solid rgba(0, 0, 0, 0.075);
 		border-width: 2px;
 		border-radius: 4px;
-		background-color: $background-color_2;
+		background-color: $backgroundcolor2;
 	}
 }

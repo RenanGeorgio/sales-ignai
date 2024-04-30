@@ -1,4 +1,4 @@
-$color_1: #fff;
+$color1: #fff;
 
 .sidebar-badge {
 	content: attr(data-count);
@@ -11,6 +11,6 @@ $color_1: #fff;
 	border-radius: 14px;
 	padding: 3px 8px;
 	background: #ea5455;
-	color: $color_1;
+	color: $color1;
 	font-size: 0.9rem;
 }

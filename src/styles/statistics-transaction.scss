@@ -1,12 +1,12 @@
-$color_1: #c20000;
-$color_2: #2b9700;
-$color_3: #808080;
-$color_4: rgb(141, 140, 140);
-$color_5: rgb(2, 138, 2);
-$color_6: rgba(75, 70, 92, 1);
-$background-color_1: #b1d8b2;
-$background-color_2: #db9292;
-$background-color_3: #b2b6b2;
+$color1: #c20000;
+$color2: #2b9700;
+$color3: #808080;
+$color4: rgb(141, 140, 140);
+$color5: rgb(2, 138, 2);
+$color6: rgba(75, 70, 92, 1);
+$backgroundcolor1: #b1d8b2;
+$backgroundcolor2: #db9292;
+$backgroundcolor3: #b2b6b2;
 
 .last-transaction-container {
 	display: flex;
@@ -45,15 +45,14 @@ th {
 
 td {
 	border: none;
-	text-align: center;
 	padding: 10px;
+	text-align: center;
 }
 
 td.status-verified {
 	position: relative;
 	padding: 0;
-	color: $color_1;
-	color: $color_2;
+	color: $color1;
 
 	&:before {
 		content: '';
@@ -64,14 +63,14 @@ td.status-verified {
 		left: 10px;
 		z-index: -999;
 		border-radius: 5px;
-		background-color: $background-color_1;
+		background-color: $backgroundcolor1;
 	}
 }
 
 td.status-rejected {
 	position: relative;
 	padding: 0;
-	color: $color_1;
+	color: $color1;
 
 	&:before {
 		content: '';
@@ -82,15 +81,14 @@ td.status-rejected {
 		left: 10px;
 		z-index: -999;
 		border-radius: 5px;
-		background-color: $background-color_1;
+		background-color: $backgroundcolor1;
 	}
 }
 
 td.status-pending {
 	position: relative;
 	padding: 0;
-	color: $color_1;
-	color: $color_3;
+	color: $color1;
 
 	&:before {
 		content: '';
@@ -101,7 +99,7 @@ td.status-pending {
 		left: 10px;
 		z-index: -999;
 		border-radius: 5px;
-		background-color: $background-color_3;
+		background-color: $backgroundcolor3;
 	}
 }
 
@@ -135,7 +133,7 @@ td.status-pending {
 			span {
 				margin-top: 5px;
 				margin-right: 25px;
-				color: $color_3;
+				color: $color3;
 			}
 		}
 	}
@@ -180,7 +178,7 @@ td.status-pending {
 	}
 
 	span {
-		margin-top: 0px;
+		margin-top: 0;
 		margin-bottom: 5px;
 		margin-left: 30px;
 	}
@@ -230,9 +228,9 @@ td.status-pending {
 }
 
 .graph-container-statistics {
+	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
-	box-sizing: border-box;
 	justify-content: space-between;
 	align-items: center;
 	width: 335px;
@@ -250,7 +248,7 @@ td.status-pending {
 		margin-bottom: 15px;
 		margin-left: 3%;
 		align-self: flex-start;
-		color: $color_4;
+		color: $color4;
 		font: Public Sans;
 	}
 
@@ -268,7 +266,7 @@ td.status-pending {
 		margin-bottom: 0;
 		margin-left: 3%;
 		align-self: flex-start;
-		color: $color_5;
+		color: $color5;
 		font: Public Sans;
 	}
 
@@ -298,5 +296,5 @@ td.status-pending {
 	margin-top: 2%;
 	margin-bottom: 0;
 	margin-left: 3%;
-	color: $color_6;
+	color: $color6;
 }

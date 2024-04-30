@@ -1,10 +1,10 @@
-$background-color_1: #ffffff4c;
-$background-color_2: var(--lightsolid-colordangerdanger-400);
-$background-color_3: var(--lightsolid-colorwarningwarning-400);
-$background-color_4: var(--lightsolid-colorinfoinfo-400);
-$background-color_5: var(--lightsolid-colorprimaryprimary-400);
-$background-color_6: var(--lightsolid-colorsuccesssuccess-400);
-$background-color_7: var(--lightsolid-colorsecondarysecondary-400);
+$backgroundcolor1: #ffffff4c;
+$backgroundcolor2: var(--lightsolid-colordangerdanger-400);
+$backgroundcolor3: var(--lightsolid-colorwarningwarning-400);
+$backgroundcolor4: var(--lightsolid-colorinfoinfo-400);
+$backgroundcolor5: var(--lightsolid-colorprimaryprimary-400);
+$backgroundcolor6: var(--lightsolid-colorsuccesssuccess-400);
+$backgroundcolor7: var(--lightsolid-colorsecondarysecondary-400);
 
 .avatar {
 	overflow: hidden;
@@ -23,7 +23,7 @@ $background-color_7: var(--lightsolid-colorsecondarysecondary-400);
 	.overlay {
 		position: relative;
 		border-radius: 100px;
-		background-color: $background-color_1;
+		background-color: $backgroundcolor1;
 	}
 	
 	.img {
@@ -46,7 +46,7 @@ $background-color_7: var(--lightsolid-colorsecondarysecondary-400);
 	.background {
 		width: 38px;
 		height: 38px;
-		background-color: $background-color_2;
+		background-color: $backgroundcolor2;
 	}
 	
 	.overlay {
@@ -74,7 +74,7 @@ $background-color_7: var(--lightsolid-colorsecondarysecondary-400);
 	.background {
 		width: 64px;
 		height: 64px;
-		background-color: $background-color_3;
+		background-color: $backgroundcolor3;
 	}
 	
 	
@@ -105,7 +105,7 @@ $background-color_7: var(--lightsolid-colorsecondarysecondary-400);
 	.background {
 		width: 32px;
 		height: 32px;
-		background-color: $background-color_4;
+		background-color: $backgroundcolor4;
 	}
 	
 	.overlay {
@@ -133,7 +133,7 @@ $background-color_7: var(--lightsolid-colorsecondarysecondary-400);
 	.background {
 		width: 72px;
 		height: 72px;
-		background-color: $background-color_5;
+		background-color: $backgroundcolor5;
 	}
 	
 	.overlay {
@@ -161,7 +161,7 @@ $background-color_7: var(--lightsolid-colorsecondarysecondary-400);
 	.background {
 		width: 48px;
 		height: 48px;
-		background-color: $background-color_6;
+		background-color: $backgroundcolor6;
 	}
 
 	.overlay {
@@ -189,7 +189,7 @@ $background-color_7: var(--lightsolid-colorsecondarysecondary-400);
 	.background {
 		width: 26px;
 		height: 26px;
-		background-color: $background-color_7;
+		background-color: $backgroundcolor7;
 	}
 	
 	.overlay {

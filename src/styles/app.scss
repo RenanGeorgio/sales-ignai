@@ -1,12 +1,13 @@
-$font-family_1: sans-serif;
+$fontfamily1: sans-serif;
 
 .app-container {
 	height: 100%;
-	font-family: $font-family_1;
+	font-family: $fontfamily1;
 }
 
 .sidebar.expanded {
 	width: 235px;
+	
 	+ {
 		.page-content {
 			margin-left: 160px;

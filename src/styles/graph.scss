@@ -1,7 +1,7 @@
-$color_1: rgba(75, 70, 92, 1);
-$color_2: rgba(75, 70, 92, 0.673);
-$background-color_1: #fff;
-$background-color_2: rgba(216, 216, 216, 0.579);
+$color1: rgba(75, 70, 92, 1);
+$color2: rgba(75, 70, 92, 0.673);
+$backgroundcolor1: #fff;
+$backgroundcolor2: rgba(216, 216, 216, 0.579);
 
 .graph-container {
 	width: calc(50% - 10px);
@@ -9,7 +9,7 @@ $background-color_2: rgba(216, 216, 216, 0.579);
 	border: 1px solid #ddd;
 	border-radius: 6px;
 	padding: 10px;
-	background-color: $background-color_1;
+	background-color: $backgroundcolor1;
 	box-shadow: 0 0 8 rgba(0, 0, 0, 0.1);
 }
 
@@ -27,14 +27,14 @@ $background-color_2: rgba(216, 216, 216, 0.579);
 	border: 1px solid #ddd;
 	border-radius: 6px;
 	padding: 10px;
-	background-color: $background-color_1;
+	background-color: $backgroundcolor1;
 	box-shadow: 0 0 8 rgba(0, 0, 0, 0.1);
 }
 
 .graph-title {
 	margin-top: 2%;
 	margin-left: 3%;
-	color: $color_1;
+	color: $color1;
 }
 
 .menu-icon {
@@ -115,7 +115,7 @@ $background-color_2: rgba(216, 216, 216, 0.579);
 	border: 1px solid #ddd;
 	border-radius: 6px;
 	padding: 10px;
-	background-color: $background-color_1;
+	background-color: $backgroundcolor1;
 	box-shadow: 0 8 rgba(0, 0, 0, 0.1);
 }
 
@@ -126,7 +126,7 @@ $background-color_2: rgba(216, 216, 216, 0.579);
 	margin-right: 5px;
 	border-radius: 5vh;
 	padding: 0;
-	background-color: $background-color_2;
+	background-color: $backgroundcolor2;
 }
 
 .menu-icon-themes {
@@ -174,7 +174,7 @@ $background-color_2: rgba(216, 216, 216, 0.579);
 	margin-top: -2%;
 	margin-bottom: 5%;
 	margin-left: 4%;
-	color: $color_2;
+	color: $color2;
 }
 
 .avatar-img {

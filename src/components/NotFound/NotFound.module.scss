@@ -1,5 +1,5 @@
-$color_1: #333;
-$font-family_1: Arial, sans-serif;
+$color1: #333;
+$fontfamily1: Arial, sans-serif;
 
 .not-found {
 	display: flex;
@@ -7,8 +7,8 @@ $font-family_1: Arial, sans-serif;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-	color: $color_1;
-	font-family: $font-family_1;
+	color: $color1;
+	font-family: $fontfamily1;
 	
 	h1 {
 		margin-bottom: 1rem;

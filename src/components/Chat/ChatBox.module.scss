@@ -1,30 +1,30 @@
-$color_1: #4b465cba;
-$color_2: #1200d4;
-$color_3: rgb(10, 10, 10);
-$color_4: #403e47d1;
-$color_5: var(--lighttypography-colormuted-text);
-$color_6: #f7f7f7;
-$color_7: var(--lightsolid-colorextrawhite);
-$color_8: var(--lighttypography-colorbody-text);
-$color_9: #4b465cc5;
-$color_10: rgb(0, 0, 0);
-$color_11: #fff;
-$font-family_1: "Public Sans", Helvetica;
-$font-family_2: var(--light-basic-typography-paragraph-font-family);
-$font-family_3: var(--light-basic-typography-paragraph-small-font-family);
-$font-family_4: Public Sans;
-$font-family_5: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-$background-color_1: #fff;
-$background-color_2: #ffffffc2;
-$background-color_3: #c4c2c2;
-$background-color_4: rgb(202, 201, 201);
-$background-color_5: #f5f5f5;
-$background-color_6: #fefefe;
-$background-color_7: #4285f4;
-$background-color_8: var(--lightsolid-colorprimaryprimary-500-base);
-$background-color_9: var(--lightsolid-colorwarningwarning-400);
-$background-color_10: var(--lightsolid-colorextracard-background);
-$background-color_11: #7367F0;
+$color1: #4b465cba;
+$color2: #1200d4;
+$color3: rgb(10, 10, 10);
+$color4: #403e47d1;
+$color5: var(--lighttypography-colormuted-text);
+$color6: #f7f7f7;
+$color7: var(--lightsolid-colorextrawhite);
+$color8: var(--lighttypography-colorbody-text);
+$color9: #4b465cc5;
+$color10: rgb(0, 0, 0);
+$color11: #fff;
+$fontfamily1: "Public Sans", Helvetica;
+$fontfamily2: var(--light-basic-typography-paragraph-font-family);
+$fontfamily3: var(--light-basic-typography-paragraph-small-font-family);
+$fontfamily4: Public Sans;
+$fontfamily5: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+$backgroundcolor1: #fff;
+$backgroundcolor2: #ffffffc2;
+$backgroundcolor3: #c4c2c2;
+$backgroundcolor4: rgb(202, 201, 201);
+$backgroundcolor5: #f5f5f5;
+$backgroundcolor6: #fefefe;
+$backgroundcolor7: #4285f4;
+$backgroundcolor8: var(--lightsolid-colorprimaryprimary-500-base);
+$backgroundcolor9: var(--lightsolid-colorwarningwarning-400);
+$backgroundcolor10: var(--lightsolid-colorextracard-background);
+$backgroundcolor11: #7367F0;
 
 .containerchat {
 	overflow: hidden;
@@ -70,8 +70,8 @@ $background-color_11: #7367F0;
 		word-wrap: break-word;
 		border-radius: 6px;
 		padding: 10px 16px;
-		background-color: $background-color_6;
-		color: $color_4;
+		background-color: $backgroundcolor6;
+		color: $color4;
 		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.27);
 	
 		p {
@@ -94,8 +94,8 @@ $background-color_11: #7367F0;
 		gap: 14px;
 		border-radius: 6px;
 		padding: 10px 16px;
-		background-color: $background-color_7;
-		color: $color_6;
+		background-color: $backgroundcolor7;
+		color: $color6;
 		font-size: 15px;
 		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.686);
 	}
@@ -108,13 +108,13 @@ $background-color_11: #7367F0;
 	.text-wrapper {
 		position: relative;
 		width: fit-content;
-		color: $color_5;
-		text-align: right;
-		font-family: $font-family_1;
+		color: $color5;
+		font-family: $fontfamily1;
 		font-size: 15vw;
 		font-weight: 400;
 		line-height: 20vw;
 		letter-spacing: 0;
+		text-align: right;
 		white-space: nowrap;
 	}
 
@@ -141,8 +141,8 @@ $background-color_11: #7367F0;
 		position: relative;
 		width: fit-content;
 		margin-top: -1px;
-		color: $color_7;
-		font-family: $font-family_2;
+		color: $color7;
+		font-family: $fontfamily2;
 		font-size: var(--light-basic-typography-paragraph-font-size);
 		font-style: var(--light-basic-typography-paragraph-font-style);
 		font-weight: var(--light-basic-typography-paragraph-font-weight);
@@ -202,8 +202,8 @@ $background-color_11: #7367F0;
 		position: relative;
 		width: fit-content;
 		margin-top: -1px;
-		color: $color_5;
-		font-family: $font-family_3;
+		color: $color5;
+		font-family: $fontfamily3;
 		font-size: var(--light-basic-typography-paragraph-small-font-size);
 		font-style: var(--light-basic-typography-paragraph-small-font-style);
 		font-weight: var(--light-basic-typography-paragraph-small-font-weight);
@@ -218,11 +218,11 @@ $background-color_11: #7367F0;
 	}
 
 	.design-component-instance-node {
-		background-color: $background-color_8 !important;
+		background-color: $backgroundcolor8 !important;
 	}
 
 	.avatar-2 {
-		background-color: $background-color_9 !important;
+		background-color: $backgroundcolor9 !important;
 	}
 	
 	.message-3 {
@@ -242,7 +242,7 @@ $background-color_11: #7367F0;
 		align-items: flex-start;
 		border-radius: 0 6px 6px;
 		padding: 10px 16px;
-		background-color: $background-color_10;
+		background-color: $backgroundcolor10;
 		box-shadow: var(--light-gray-gray-SM);
 	}
 
@@ -250,8 +250,8 @@ $background-color_11: #7367F0;
 		position: relative;
 		width: fit-content;
 		margin-top: -1px;
-		color: $color_8;
-		font-family: $font-family_2;
+		color: $color8;
+		font-family: $fontfamily2;
 		font-size: var(--light-basic-typography-paragraph-font-size);
 		font-style: var(--light-basic-typography-paragraph-font-style);
 		font-weight: var(--light-basic-typography-paragraph-font-weight);
@@ -263,8 +263,8 @@ $background-color_11: #7367F0;
 	.text-wrapper-4 {
 		position: relative;
 		width: fit-content;
-		color: $color_5;
-		font-family: $font-family_3;
+		color: $color5;
+		font-family: $fontfamily3;
 		font-size: var(--light-basic-typography-paragraph-small-font-size);
 		font-style: var(--light-basic-typography-paragraph-small-font-style);
 		font-weight: var(--light-basic-typography-paragraph-small-font-weight);
@@ -302,7 +302,7 @@ $background-color_11: #7367F0;
 		align-items: flex-start;
 		border-radius: 6px 0 6px 6px;
 		padding: 10px 16px;
-		background-color: $background-color_8;
+		background-color: $backgroundcolor8;
 		box-shadow: var(--light-gray-gray-SM);
 	}
 
@@ -341,7 +341,7 @@ $background-color_11: #7367F0;
 	border: 1px rgba(112, 112, 112, 0.072) solid;
 	gap: 1px;
 	padding: 5px 20px 5px 10px;
-	background-color: $background-color_1;
+	background-color: $backgroundcolor1;
 }
 
 .rightContainer {
@@ -353,7 +353,7 @@ $background-color_11: #7367F0;
 	margin: 1px 15px;
 	gap: 2px;
 	padding: 5px 5px 3px 3px;
-	background-color: $background-color_2;
+	background-color: $backgroundcolor2;
 }
 
 .rightContent {
@@ -368,7 +368,7 @@ $background-color_11: #7367F0;
 	width: 35px !important;
 	height: 35px !important;
 	border-radius: 50%;
-	background-color: $background-color_3;
+	background-color: $backgroundcolor3;
 }
 
 .initial-info {
@@ -390,7 +390,7 @@ $background-color_11: #7367F0;
 }
 
 .message-time {
-	color: $color_1;
+	color: $color1;
 	font-size: 13px;
 }
 
@@ -408,10 +408,10 @@ $background-color_11: #7367F0;
 	margin-left: 25px;
 	border-radius: 10px;
 	padding: 5px;
-	background-color: $background-color_4;
+	background-color: $backgroundcolor4;
 
 	div {
-		color: $color_2;
+		color: $color2;
 	}
 }
 
@@ -424,15 +424,15 @@ $background-color_11: #7367F0;
 
 .talks {
 	border: 1px solid rgb(0, 128, 0);
-	background-color: $background-color_5;
-	color: $color_3;
+	background-color: $backgroundcolor5;
+	color: $color3;
 }
 
 .text-wrapper-box-header {
 	position: relative;
 	width: fit-content;
-	color: $color_9;
-	font-family: $font-family_1;
+	color: $color9;
+	font-family: $fontfamily1;
 	font-size: 13px;
 	font-weight: 500;
 	line-height: 20px;
@@ -448,7 +448,7 @@ $background-color_11: #7367F0;
 	width: 35px !important;
 	height: 35px !important;
 	border-radius: 50%;
-	background-color: $background-color_3;
+	background-color: $backgroundcolor3;
 }
 
 .img-avatar-message {
@@ -459,7 +459,7 @@ $background-color_11: #7367F0;
 	width: 35px !important;
 	height: 35px !important;
 	border-radius: 50%;
-	background-color: $background-color_3;
+	background-color: $backgroundcolor3;
 }
 
 .wrapperTextEnter {
@@ -496,8 +496,8 @@ $background-color_11: #7367F0;
 	margin-left: 5px;
 	border: none;
 	padding: 0;
-	color: $color_10;
-	font-family: $font-family_4;
+	color: $color10;
+	font-family: $fontfamily4;
 	font-size: 15px;
 	font-weight: 400;
 	resize: none;
@@ -538,9 +538,9 @@ input {
 	height: 2.3rem;
 	border: none;
 	border-radius: 3px;
-	background-color: $background-color_11;
-	color: $color_11;
-	font-family: $font-family_5;
+	background-color: $backgroundcolor11;
+	color: $color11;
+	font-family: $fontfamily5;
 	font-size: 15px;
 	font-weight: 500;
 	cursor: pointer;

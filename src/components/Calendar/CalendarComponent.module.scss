@@ -1,13 +1,13 @@
-$color_1: #636363;
-$color_2: #f20000;
-$color_3: rgba(50, 50, 50, 0.5);
-$color_4: #fff;
-$font-family_1: sans-serif;
-$background-color_1: #fff;
-$background-color_2: #28C76F;
-$background-color_3: #7367F0;
-$background-color_4: #FF9F43;
-$background-color_5: #EA5455;
+$color1: #636363;
+$color2: #f20000;
+$color3: rgba(50, 50, 50, 0.5);
+$color4: #fff;
+$fontfamily1: sans-serif;
+$backgroundcolor1: #fff;
+$backgroundcolor2: #28C76F;
+$backgroundcolor3: #7367F0;
+$backgroundcolor4: #FF9F43;
+$backgroundcolor5: #EA5455;
 
 .calendarWrapper {
 	overflow-x: none;
@@ -16,8 +16,8 @@ $background-color_5: #EA5455;
 	width: 97% !important;
 	height: 770px !important;
 	border: 1px solid #e9e9e9;
-	background-color: $background-color_1;
-	font-family: $font-family_1;
+	background-color: $backgroundcolor1;
+	font-family: $fontfamily1;
 }
 
 .containerLeft {
@@ -40,7 +40,7 @@ $background-color_5: #EA5455;
 	justify-content: space-between;
 	height: 70px;
 	border-bottom: 1px solid #e9e9e9;
-	padding: 0vw 1vw;
+	padding: 1;
 }
 
 .calendarDayOfWeek {
@@ -53,9 +53,9 @@ $background-color_5: #EA5455;
 }
 
 .dayCell {
+	box-sizing: border-box;
 	overflow: hidden;
 	position: relative;
-	box-sizing: border-box;
 	display: inline-block;
 	width: 14.2857142857%;
 	height: 6rem;
@@ -79,10 +79,10 @@ $background-color_5: #EA5455;
 	display: inline-block;
 	width: 50px;
 	height: 100%;
-	color: $color_1;
-	line-height: 20px;
+	color: $color1;
 	font-size: .8em;
 	font-weight: 600;
+	line-height: 20px;
 }
 
 .calendarHeaderButtons {
@@ -91,11 +91,10 @@ $background-color_5: #EA5455;
 	justify-content: flex-end;
 	margin: 7px 0;
 	gap: 5px;
-	color: $color_2;
+	color: $color2;
 	font-size: 20px;
 	
 	button {
-		
 		&:nth-of-type(1) {
 			float: right;
 			border: #e9e9e998 1px solid;
@@ -115,7 +114,7 @@ $background-color_5: #EA5455;
 }
 
 .modeButton {
-	font-family: $font-family_1;
+	font-family: $fontfamily1;
 	font-size: 16px;
 	text-align: center;
 }
@@ -147,9 +146,9 @@ $background-color_5: #EA5455;
 }
 
 .label {
-	color: $color_3;
+	color: $color3;
+	font-family: $fontfamily1;
 	font-size: 18px;
-	font-family: $font-family_1;
 	font-weight: 400;
 	text-align: flex-start;
 }
@@ -165,7 +164,7 @@ ul {
 	min-width: 126px;
 	margin-left: -50px;
 	list-style: none;
-	font-family: $font-family_1;
+	font-family: $fontfamily1;
 	
 	li {
 		&:first-child {
@@ -201,7 +200,7 @@ li {
 	height: 10px;
 	margin-right: 10px;
 	border-radius: 50%;
-	background-color: $background-color_2;
+	background-color: $backgroundcolor2;
 }
 
 .span2 {
@@ -209,7 +208,7 @@ li {
 	height: 10px;
 	margin-right: 10px;
 	border-radius: 50%;
-	background-color: $background-color_3;
+	background-color: $backgroundcolor3;
 }
 
 .span3 {
@@ -217,7 +216,7 @@ li {
 	height: 10px;
 	margin-right: 10px;
 	border-radius: 50%;
-	background-color: $background-color_4;
+	background-color: $backgroundcolor4;
 }
 
 .span4 {
@@ -225,7 +224,7 @@ li {
 	height: 10px;
 	margin-right: 10px;
 	border-radius: 50%;
-	background-color: $background-color_5;
+	background-color: $backgroundcolor5;
 }
 
 .iconPlus {
@@ -234,5 +233,5 @@ li {
 	align-items: center;
 	margin-top: 5px;
 	margin-right: 10px;
-	color: $color_4;
+	color: $color4;
 }

@@ -1,25 +1,25 @@
-$color_1: #808080;
-$color_2: rgb(100, 100, 100);
-$color_3: #fff;
-$color_4: rgba(168, 170, 174, 1);
-$font-family_1: sans-serif;
-$background-color_1: rgba(115, 103, 240, 1);
-$background-color_2: rgba(168, 170, 174, 0.397);
-$background-color_3: rgb(231, 230, 230);
+$color1: #808080;
+$color2: rgb(100, 100, 100);
+$color3: #fff;
+$color4: rgba(168, 170, 174, 1);
+$fontfamily1: sans-serif;
+$backgroundcolor1: rgba(115, 103, 240, 1);
+$backgroundcolor2: rgba(168, 170, 174, 0.397);
+$backgroundcolor3: rgb(231, 230, 230);
 
 .text {
 	margin-top: 30px;
 	margin-left: 6%;
-	color: $color_1;
-	font-family: $font-family_1;
+	color: $color1;
+	font-family: $fontfamily1;
 	font-size: 22px;
 }
 
 .text-config {
-	margin-top: 0px;
+	margin-top: 0;
 	margin-left: 6%;
-	color: $color_2;
-	font-family: $font-family_1;
+	color: $color2;
+	font-family: $fontfamily1;
 	font-size: 18px;
 }
 
@@ -31,8 +31,8 @@ $background-color_3: rgb(231, 230, 230);
 	border: none;
 	border-radius: 5px;
 	padding: 5px 10px;
-	background-color: $background-color_1;
-	color: $color_3;
+	background-color: $backgroundcolor1;
+	color: $color3;
 	cursor: pointer;
 
 	img {
@@ -50,8 +50,8 @@ $background-color_3: rgb(231, 230, 230);
 	border: none;
 	border-radius: 5px;
 	padding: 5px 10px;
-	background-color: $background-color_2;
-	color: $color_4;
+	background-color: $backgroundcolor2;
+	color: $color4;
 	cursor: pointer;
 
 	img {
@@ -72,11 +72,11 @@ $background-color_3: rgb(231, 230, 230);
 	border: none;
 	border-radius: 5px;
 	padding: 10px;
-	background-color: $background-color_3;
+	background-color: $backgroundcolor3;
 	font-size: 16px;
 	line-height: 150px;
-	box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.4);
 	text-align: left;
+	box-shadow: 0 0 5px 2px rgba(138, 138, 138, 0.4);
 }
 
 .container {

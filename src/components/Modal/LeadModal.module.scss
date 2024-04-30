@@ -1,10 +1,10 @@
-$color_1: rgb(0, 0, 255);
-$color_2: rgb(0, 0, 0);
-$color_3: rgb(72, 71, 71);
-$color_4: rgb(255, 255, 255);
-$color_5: rgb(156, 156, 156);
-$background-color_1: rgb(7, 7, 252);
-$background-color_2: rgb(225, 225, 225);
+$color1: rgb(0, 0, 255);
+$color2: rgb(0, 0, 0);
+$color3: rgb(72, 71, 71);
+$color4: rgb(255, 255, 255);
+$color5: rgb(156, 156, 156);
+$backgroundcolor1: rgb(7, 7, 252);
+$backgroundcolor2: rgb(225, 225, 225);
 
 .lead-modal-overlay {
 	position: fixed;
@@ -60,13 +60,13 @@ $background-color_2: rgb(225, 225, 225);
 		}
 
 		img.active {
-			background-color: $background-color_1;
+			background-color: $backgroundcolor1;
 		}
 	}
 
 	button.active {
 		border-bottom: 1px solid rgb(0, 0, 255);
-		color: $color_1;
+		color: $color1;
 	}
 }
 
@@ -101,7 +101,7 @@ label {
 		height: 35px;
 		border: none;
 		border-radius: 6px;
-		color: $color_2;
+		color: $color2;
 		cursor: pointer;
 	}
 
@@ -112,7 +112,7 @@ label {
 		border: none;
 		border-radius: 6px;
 		padding: 0 10px;
-		color: $color_3;
+		color: $color3;
 	}
 }
 
@@ -120,7 +120,7 @@ label {
 	display: flex;
 	margin-bottom: 15px;
 	border-radius: 6px;
-	background-color: $background-color_2;
+	background-color: $backgroundcolor2;
 }
 
 .comentario-input {
@@ -189,7 +189,7 @@ label {
 	border: none;
 	padding: 10px;
 	background: rgb(0, 0, 255);
-	color: $color_4;
+	color: $color4;
 	cursor: pointer;
 }
 
@@ -218,7 +218,7 @@ label {
 	
 	span {
 		margin-top: -12px;
-		color: $color_5;
+		color: $color5;
 		font-size: 13px;
 	}
 	

@@ -1,12 +1,12 @@
-$color_1: #7367F0;
-$color_2: rgb(0, 0, 0);
-$color_3: #28c76f;
-$color_4: rgba(64, 64, 64, 0.716);
-$color_5: rgba(60, 59, 59, 0.808);
-$color_6: rgba(16, 15, 15, 0.824);
-$color_7: #fff;
-$font-family_1: Public Sans, var(--default-font-family);
-$background-color_1: #7367F029;
+$color1: #7367F0;
+$color2: rgb(0, 0, 0);
+$color3: #28c76f;
+$color4: rgba(64, 64, 64, 0.716);
+$color5: rgba(60, 59, 59, 0.808);
+$color6: rgba(16, 15, 15, 0.824);
+$color7: #fff;
+$fontfamily1: Public Sans, var(--default-font-family);
+$backgroundcolor1: #7367F029;
 
 :root {
 	--default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei", "Source Han Sans CN", sans-serif;
@@ -55,8 +55,8 @@ textarea {
 	width: 100%;
 	border: 1px solid rgb(138, 43, 226);
 	border-radius: 5px;
-	background-color: $background-color_1;
-	color: $color_1;
+	background-color: $backgroundcolor1;
+	color: $color1;
 	cursor: pointer;
 }
 
@@ -127,8 +127,8 @@ textarea {
 	flex-shrink: 0;
 	flex-basis: auto;
 	height: 18px;
-	color: $color_2;
-	font-family: $font-family_1;
+	color: $color2;
+	font-family: $fontfamily1;
 	font-size: 15px;
 	font-weight: 500;
 	line-height: 18px;
@@ -376,7 +376,7 @@ textarea {
 	flex-shrink: 0;
 	z-index: 31;
 	width: 428px;
-	font-family: $font-family_1;
+	font-family: $fontfamily1;
 	font-size: 15px;
 	font-weight: 600;
 	line-height: 22px;
@@ -404,8 +404,8 @@ textarea {
 	flex-basis: auto;
 	z-index: 33;
 	height: 14px;
-	color: $color_3;
-	font-family: $font-family_1;
+	color: $color3;
+	font-family: $fontfamily1;
 	font-size: 13px;
 	font-weight: 500;
 	line-height: 14px;
@@ -420,8 +420,8 @@ textarea {
 	align-self: stretch;
 	z-index: 34;
 	height: 20px;
-	color: $color_4;
-	font-family: $font-family_1;
+	color: $color4;
+	font-family: $fontfamily1;
 	font-size: 13px;
 	font-weight: 400;
 	line-height: 20px;
@@ -602,8 +602,8 @@ textarea {
 	flex-basis: auto;
 	align-self: stretch;
 	height: 22px;
-	color: $color_2;
-	font-family: $font-family_1;
+	color: $color2;
+	font-family: $fontfamily1;
 	font-size: 15px;
 	font-weight: 600;
 	line-height: 22px;
@@ -618,8 +618,8 @@ textarea {
 	flex-basis: auto;
 	align-self: stretch;
 	height: 20px;
-	color: $color_5;
-	font-family: $font-family_1;
+	color: $color5;
+	font-family: $fontfamily1;
 	font-size: 13px;
 	font-weight: 400;
 	line-height: 20px;
@@ -756,8 +756,8 @@ textarea {
 	flex-basis: auto;
 	align-self: stretch;
 	height: 21px;
-	color: $color_2;
-	font-family: $font-family_1;
+	color: $color2;
+	font-family: $fontfamily1;
 	font-size: 15px;
 	font-weight: 500;
 	line-height: 21px;
@@ -776,8 +776,8 @@ textarea {
 	align-self: stretch;
 	width: 670px;
 	height: 44px;
-	color: $color_6;
-	font-family: $font-family_1;
+	color: $color6;
+	font-family: $fontfamily1;
 	font-size: 15px;
 	font-weight: 400;
 	line-height: 22px;
@@ -963,8 +963,8 @@ textarea {
 	flex-shrink: 0;
 	flex-basis: auto;
 	height: 18px;
-	color: $color_7;
-	font-family: $font-family_1;
+	color: $color7;
+	font-family: $fontfamily1;
 	font-size: 15px;
 	font-weight: 500;
 	line-height: 18px;

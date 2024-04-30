@@ -110,8 +110,15 @@ $isotip-large-width: 250px !default;
   &[isotip-position="bottom"]:hover::before {
     animation: scaleCenter $isotip-transition-in-time;
     @keyframes scaleCenter {
-      0%   {left: 0; transform: scale(0) translateX(0);}
-      100% {left: 50%; transform: scale(1) translateX(-50%);}
+      0%   {
+        left: 0;
+        transform: scale(0) translateX(0);
+      }
+      
+      100% {
+        left: 50%;
+        transform: scale(1) translateX(-50%);
+      }
     }
   }
 

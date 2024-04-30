@@ -1,14 +1,14 @@
-$color_1: rgb(85, 85, 85);
-$color_2: #333;
-$color_3: rgb(48, 47, 47);
-$background-color_1: #fff;
-$background-color_2: #3498db59;
-$background-color_3: #028d3c56;
-$background-color_4: #f1c40f52;
-$background-color_5: #e74d3c5d;
-$background-color_6: #ededed57;
-$background-color_7: rgb(210, 210, 210);
-$background-color_8: rgb(98, 98, 98);
+$color1: rgb(85, 85, 85);
+$color2: #333;
+$color3: rgb(48, 47, 47);
+$backgroundcolor1: #fff;
+$backgroundcolor2: #3498db59;
+$backgroundcolor3: #028d3c56;
+$backgroundcolor4: #f1c40f52;
+$backgroundcolor5: #e74d3c5d;
+$backgroundcolor6: #ededed57;
+$backgroundcolor7: rgb(210, 210, 210);
+$backgroundcolor8: rgb(98, 98, 98);
 
 .leads-kanban {
 	display: flex;
@@ -36,8 +36,8 @@ $background-color_8: rgb(98, 98, 98);
 		margin-left: 30px;
 		border: none;
 		padding: 5px 10px;
-		background-color: $background-color_1;
-		color: $color_1;
+		background-color: $backgroundcolor1;
+		color: $color1;
 		cursor: pointer;
 	}
 }
@@ -93,43 +93,42 @@ $background-color_8: rgb(98, 98, 98);
 
 	&::-webkit-scrollbar-track {
 		border-radius: 5px;
-		background-color: $background-color_7;
+		background-color: $backgroundcolor7;
 	}
 
 	&::-webkit-scrollbar-thumb {
 		border-radius: 5px;
-		background-color: $background-color_8;
-		color: $color_2;
+		background-color: $backgroundcolor8;
+		color: $color2;
 	}
 }
 
 .card-title {
 	margin-top: 5px;
-	color: $color_2;
+	color: $color2;
 	font-size: 20px;
 }
 
 .contact-column {
-	background-color: $background-color_2;
+	background-color: $backgroundcolor2;
 }
 
 .discussion-column {
-	background-color: $background-color_3;
+	background-color: $backgroundcolor3;
 }
 
 .decision-column {
-	background-color: $background-color_4;
+	background-color: $backgroundcolor4;
 }
 
 .contract-column {
-	background-color: $background-color_5;
+	background-color: $backgroundcolor5;
 }
 
 .kanban-column {
-
 	h2 {
 		margin-bottom: 10px;
-		color: $color_3;
+		color: $color3;
 	}
 
 	box-sizing: border-box;
@@ -138,7 +137,7 @@ $background-color_8: rgb(98, 98, 98);
 	margin-top: 20px;
 	border-radius: 8px;
 	padding: 1px;
-	box-shadow: 0 0 0 1px #000, 0px 1px 1px #0304044a, 0 0 1px #03040480;
+	box-shadow: 0 0 0 1px #000, 0 1px 1px #0304044a, 0 0 1px #03040480;
 }
 
 .add-button {
@@ -146,8 +145,8 @@ $background-color_8: rgb(98, 98, 98);
 	margin-bottom: 10px;
 	border: none;
 	padding: 5px 10px;
-	background-color: $background-color_1;
-	color: $color_2;
+	background-color: $backgroundcolor1;
+	color: $color2;
 	cursor: pointer;
 }
 
@@ -217,7 +216,7 @@ $background-color_8: rgb(98, 98, 98);
 	min-height: 380px;
 	border-radius: 5px;
 	padding: 6px;
-	background-color: $background-color_6;
+	background-color: $backgroundcolor6;
 	
 	&::-webkit-scrollbar {
 		width: 5px;
@@ -226,12 +225,12 @@ $background-color_8: rgb(98, 98, 98);
 
 	&::-webkit-scrollbar-track {
 		border-radius: 5px;
-		background-color: $background-color_7;
+		background-color: $backgroundcolor7;
 	}
 
 	&::-webkit-scrollbar-thumb {
 		border-radius: 5px;
-		background-color: $background-color_8;
-		color: $color_2;
+		background-color: $backgroundcolor8;
+		color: $color2;
 	}
 }

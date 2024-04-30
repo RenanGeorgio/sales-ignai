@@ -1,7 +1,7 @@
-$color_1: #000;
-$font-family_1: sans-serif;
-$font-family_2: Public Sans;
-$background-color_1: #4B465C29;
+$color1: #000;
+$fontfamily1: sans-serif;
+$fontfamily2: Public Sans;
+$backgroundcolor1: #4B465C29;
 
 .formModal {
 	display: inline-flex;
@@ -22,7 +22,7 @@ $background-color_1: #4B465C29;
 	align-items: flex-start;
 	height: 65px;
 	gap: 2px;
-	font-family: $font-family_1;
+	font-family: $fontfamily1;
 }
 
 .inputForm {
@@ -39,8 +39,8 @@ $background-color_1: #4B465C29;
 
 .spanTitle {
 	flex: 1 1 0;
-	color: $color_1;
-	font-family: $font-family_2;
+	color: $color1;
+	font-family: $fontfamily2;
 	font-size: 13;
 	font-weight: 400;
 	word-wrap: break-word;
@@ -69,7 +69,7 @@ $background-color_1: #4B465C29;
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 1rem;
-	font-family: $font-family_1;
+	font-family: $fontfamily1;
 }
 
 .textTitle {
@@ -87,6 +87,6 @@ $background-color_1: #4B465C29;
 		border: 1px solid rgba(0, 0, 0, 0.075);
 		border-width: 2px;
 		border-radius: 4px;
-		background-color: $background-color_1;
+		background-color: $backgroundcolor1;
 	}
 }

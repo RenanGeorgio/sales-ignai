@@ -1,12 +1,12 @@
-$color_1: #000;
-$color_2: rgb(0, 0, 0);
-$color_3: #202020;
-$color_4: #c80000;
-$color_5: #008d00da;
-$color_6: #fff;
-$font-family_1: Arial, Helvetica, sans-serif;
-$background-color_1: #0300c824;
-$background-color_2: rgb(153, 255, 75);
+$color1: #000;
+$color2: rgb(0, 0, 0);
+$color3: #202020;
+$color4: #c80000;
+$color5: #008d00da;
+$color6: #fff;
+$fontfamily1: Arial, Helvetica, sans-serif;
+$backgroundcolor1: #0300c824;
+$backgroundcolor2: rgb(153, 255, 75);
 
 .react-calendar {
 	width: 100%;
@@ -14,8 +14,8 @@ $background-color_2: rgb(153, 255, 75);
 	height: 100%;
 	padding: 0 3px;
 	background: rgb(255, 255, 255);
-	color: $color_1;
-	font-family: $font-family_1;
+	color: $color1;
+	font-family: $fontfamily1;
 	line-height: 1.125em;
 }
 
@@ -43,7 +43,7 @@ $background-color_2: rgb(153, 255, 75);
 	min-width: 100px;
 	height: 200px !important;
 	margin-bottom: 1rem !important;
-	color: $color_2 !important;
+	color: $color2 !important;
 }
 
 .react-calendar__navigation {
@@ -52,7 +52,7 @@ $background-color_2: rgb(153, 255, 75);
 	margin: 8px 0;
 	gap: 8px;
 	background: none;
-	color: $color_3;
+	color: $color3;
 	font-size: 16px;
 }
 
@@ -78,13 +78,13 @@ $background-color_2: rgb(153, 255, 75);
 }
 
 .react-calendar__month-view__days__day--weekend {
-	color: $color_4;
+	color: $color4;
 }
 
 .react-calendar__tile--range {
 	border-radius: 20px;
 	background: #8cff0034;
-	color: $color_5;
+	color: $color5;
 	box-shadow: none;
 	box-shadow: 0 0 6px 2px rgb(0, 0, 0);
 }
@@ -93,18 +93,16 @@ $background-color_2: rgb(153, 255, 75);
 	max-width: initial !important;
 
 	&:enabled {
-
-		
 		&:hover {
 			border-radius: 6px;
 			background: #8cff0034;
-			color: $color_5;
+			color: $color5;
 		}
 
 		&:focus {
 			border-radius: 6px;
 			background: #8cff0034;
-			color: $color_5;
+			color: $color5;
 		}
 	}
 }
@@ -112,9 +110,9 @@ $background-color_2: rgb(153, 255, 75);
 .react-calendar__tile--now {
 	border-radius: 6px;
 	background: #0044ff80;
-	color: $color_6;
-	box-shadow: none;
+	color: $color6;
 	font-weight: bold;
+	box-shadow: none;
 }
 
 .react-calendar__year-view {
@@ -135,7 +133,7 @@ $background-color_2: rgb(153, 255, 75);
 
 .react-calendar__tile--hasActive {
 	border-radius: 3px;
-	background-color: $background-color_2;
+	background-color: $backgroundcolor2;
 	font-size: 13px;
 }
 

@@ -1,36 +1,36 @@
-$color_1: #c4c2c2;
-$color_2: #fff;
-$color_3: rgba(168, 170, 174, 1);
-$color_4: #FFF;
-$color_5: #7367F0;
-$color_6: var(--lightsolid-colorextrawhite);
-$color_7: #fff;
-$color_8: #686efe;
-$color_9: var(--lighttypography-colorheading-text);
-$color_10: var(--lighttypography-colormuted-text);
-$color_11: #FFF;
-$color_12: #686EFE;
-$font-family_1: Arial, Helvetica, sans-serif;
-$font-family_2: var(--light-basic-typography-h5-heading-font-family);
-$font-family_3: var(--light-basic-typography-h6-heading-font-family);
-$font-family_4: var(--light-basic-typography-paragraph-font-family);
-$font-family_5: var(--light-basic-typography-paragraph-small-font-family);
-$font-family_6: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-$background-color_1: var(--lightsolid-colorprimaryprimary-400);
-$background-color_2: #c4c2c2;
-$background-color_3: rgba(115, 103, 240, 1);
-$background-color_4: rgba(168, 170, 174, 0.397);
-$background-color_5: rgb(109, 109, 109);
-$background-color_6: #8f83fb;
-$background-color_7: var(--lightsolid-colorwarningwarning-400);
-$background-color_8: #dedcdc;
-$background-color_9: var(--lightsolid-colorsecondarysecondary-400);
-$background-color_10: var(--lightsolid-colorinfoinfo-400);
-$background-color_11: #DEDDDD;
-$background-color_12: rgb(0, 255, 0);
-$background-color_13: #808080;
-$border-color_1: var(--lightsolid-colorextracard-background);
-$border-color_2: var(--lightsolid-colorextradivider);
+$color1: #c4c2c2;
+$color2: #fff;
+$color3: rgba(168, 170, 174, 1);
+$color4: #FFF;
+$color5: #7367F0;
+$color6: var(--lightsolid-colorextrawhite);
+$color7: #fff;
+$color8: #686efe;
+$color9: var(--lighttypography-colorheading-text);
+$color10: var(--lighttypography-colormuted-text);
+$color11: #FFF;
+$color12: #686EFE;
+$fontfamily1: Arial, Helvetica, sans-serif;
+$fontfamily2: var(--light-basic-typography-h5-heading-font-family);
+$fontfamily3: var(--light-basic-typography-h6-heading-font-family);
+$fontfamily4: var(--light-basic-typography-paragraph-font-family);
+$fontfamily5: var(--light-basic-typography-paragraph-small-font-family);
+$fontfamily6: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+$backgroundcolor1: var(--lightsolid-colorprimaryprimary-400);
+$backgroundcolor2: #c4c2c2;
+$backgroundcolor3: rgba(115, 103, 240, 1);
+$backgroundcolor4: rgba(168, 170, 174, 0.397);
+$backgroundcolor5: rgb(109, 109, 109);
+$backgroundcolor6: #8f83fb;
+$backgroundcolor7: var(--lightsolid-colorwarningwarning-400);
+$backgroundcolor8: #dedcdc;
+$backgroundcolor9: var(--lightsolid-colorsecondarysecondary-400);
+$backgroundcolor10: var(--lightsolid-colorinfoinfo-400);
+$backgroundcolor11: #DEDDDD;
+$backgroundcolor12: rgb(0, 255, 0);
+$backgroundcolor13: #808080;
+$bordercolor1: var(--lightsolid-colorextracard-background);
+$bordercolor2: var(--lightsolid-colorextradivider);
 
 .left-menu {
 	display: flex;
@@ -60,7 +60,7 @@ $border-color_2: var(--lightsolid-colorextradivider);
 	}
 
 	.design-component-instance-node {
-		background-color: $background-color_1 !important;
+		background-color: $backgroundcolor1 !important;
 	}
 
 	.instance {
@@ -78,7 +78,7 @@ $border-color_2: var(--lightsolid-colorextradivider);
 		width: 30px !important;
 		height: 30px !important;
 		border-radius: 50%;
-		background-color: $background-color_2;
+		background-color: $backgroundcolor2;
 	}
 
 	.heading {
@@ -101,7 +101,7 @@ $border-color_2: var(--lightsolid-colorextradivider);
 		height: 100%;
 		gap: 5px;
 		margin-top: -1px;
-		color: $color_1;
+		color: $color1;
 		white-space: nowrap;
 		cursor: pointer;
 	}
@@ -128,8 +128,8 @@ $border-color_2: var(--lightsolid-colorextradivider);
 		position: relative;
 		width: fit-content;
 		margin-top: -1px;
-		color: $color_5;
-		font-family: $font-family_2;
+		color: $color5;
+		font-family: $fontfamily2;
 		font-style: var(--light-basic-typography-h5-heading-font-style);
 		font-weight: var(--light-basic-typography-h5-heading-font-weight);
 	}
@@ -143,8 +143,8 @@ $border-color_2: var(--lightsolid-colorextradivider);
 		border-radius: 6px;
 		padding: 8px 10px;
 		gap: 12px;
-		background-color: $background-color_6;
-		color: $color_4;
+		background-color: $backgroundcolor6;
+		color: $color4;
 		cursor: pointer;
 	}
 
@@ -173,7 +173,7 @@ $border-color_2: var(--lightsolid-colorextradivider);
 		margin: auto;
 		border: 1px solid #fff;
 		border-radius: 50%;
-		background-color: $background-color_2;
+		background-color: $backgroundcolor2;
 	}
 
 	.status-indicator-2 {
@@ -191,7 +191,7 @@ $border-color_2: var(--lightsolid-colorextradivider);
 		width: 42px !important;
 		height: 42px !important;
 		border: 2px solid !important;
-		border-color: $border-color_1 !important;
+		border-color: $bordercolor1 !important;
 	}
 
 	.status-indicator-4 {
@@ -204,7 +204,7 @@ $border-color_2: var(--lightsolid-colorextradivider);
 	}
 
 	.design-component-instance-node-2 {
-		background-color: $background-color_7 !important;
+		background-color: $backgroundcolor7 !important;
 	}
 
 	.text-2 {
@@ -238,8 +238,8 @@ $border-color_2: var(--lightsolid-colorextradivider);
 		position: relative;
 		flex: 1;
 		margin-top: -1px;
-		color: $color_6;
-		font-family: $font-family_3;
+		color: $color6;
+		font-family: $fontfamily3;
 		font-size: var(--light-basic-typography-h6-heading-font-size);
 		font-style: var(--light-basic-typography-h6-heading-font-style);
 		font-weight: var(--light-basic-typography-h6-heading-font-weight);
@@ -251,7 +251,7 @@ $border-color_2: var(--lightsolid-colorextradivider);
 		position: relative;
 		margin-top: -1px;
 		margin-left: 5px;
-		color: $color_7;
+		color: $color7;
 		text-align: start;
 		white-space: nowrap;
 	}
@@ -259,8 +259,8 @@ $border-color_2: var(--lightsolid-colorextradivider);
 	.text-wrapper-6 {
 		position: relative;
 		align-self: stretch;
-		color: $color_6;
-		font-family: $font-family_4;
+		color: $color6;
+		font-family: $fontfamily4;
 		font-size: var(--light-basic-typography-paragraph-font-size);
 		font-style: var(--light-basic-typography-paragraph-font-style);
 		font-weight: var(--light-basic-typography-paragraph-font-weight);
@@ -274,11 +274,11 @@ $border-color_2: var(--lightsolid-colorextradivider);
 		top: 0 !important;
 		left: 96px !important;
 		border-radius: 20px !important;
-		background-color: $background-color_8 !important;
+		background-color: $backgroundcolor8 !important;
 	}
 
 	.badge-2 {
-		color: $color_8 !important;
+		color: $color8 !important;
 	}
 
 	.list-2 {
@@ -289,7 +289,7 @@ $border-color_2: var(--lightsolid-colorextradivider);
 		align-self: stretch;
 		width: 100%;
 		border: 0 none;
-		border-color: $border-color_2;
+		border-color: $bordercolor2;
 		padding: 8px 12px;
 		gap: 12px;
 	}
@@ -301,15 +301,15 @@ $border-color_2: var(--lightsolid-colorextradivider);
 	}
 
 	.design-component-instance-node-4 {
-		background-color: $background-color_9 !important;
+		background-color: $backgroundcolor9 !important;
 	}
 
 	.text-wrapper-7 {
 		position: relative;
 		flex: 1;
 		margin-top: -1px;
-		color: $color_9;
-		font-family: $font-family_3;
+		color: $color9;
+		font-family: $fontfamily3;
 		font-size: var(--light-basic-typography-h6-heading-font-size);
 		font-style: var(--light-basic-typography-h6-heading-font-style);
 		font-weight: var(--light-basic-typography-h6-heading-font-weight);
@@ -321,8 +321,8 @@ $border-color_2: var(--lightsolid-colorextradivider);
 		position: relative;
 		width: fit-content;
 		margin-top: -1px;
-		color: $color_10;
-		font-family: $font-family_5;
+		color: $color10;
+		font-family: $fontfamily5;
 		font-size: var(--light-basic-typography-paragraph-small-font-size);
 		font-style: var(--light-basic-typography-paragraph-small-font-style);
 		font-weight: var(--light-basic-typography-paragraph-small-font-weight);
@@ -335,8 +335,8 @@ $border-color_2: var(--lightsolid-colorextradivider);
 	.text-wrapper-9 {
 		position: relative;
 		align-self: stretch;
-		color: $color_10;
-		font-family: $font-family_4;
+		color: $color10;
+		font-family: $fontfamily4;
 		font-size: var(--light-basic-typography-paragraph-font-size);
 		font-style: var(--light-basic-typography-paragraph-font-style);
 		font-weight: var(--light-basic-typography-paragraph-font-weight);
@@ -350,7 +350,7 @@ $border-color_2: var(--lightsolid-colorextradivider);
 		top: 0 !important;
 		left: 84px !important;
 		border-radius: 20px !important;
-		background-color: $background-color_8 !important;
+		background-color: $backgroundcolor8 !important;
 	}
 
 	.label-initials-instance {
@@ -372,7 +372,7 @@ $border-color_2: var(--lightsolid-colorextradivider);
 		border-bottom: #33333328 1px solid;
 		padding: 10px 16px;
 		gap: 213px;
-		font-family: $font-family_6;
+		font-family: $fontfamily6;
 		font-weight: bold;
 	}
 
@@ -386,8 +386,8 @@ $border-color_2: var(--lightsolid-colorextradivider);
 	.text-wrapper-10 {
 		position: relative;
 		align-self: stretch;
-		color: $color_9;
-		font-family: $font-family_3;
+		color: $color9;
+		font-family: $fontfamily3;
 		font-size: var(--light-basic-typography-h6-heading-font-size);
 		font-style: var(--light-basic-typography-h6-heading-font-style);
 		font-weight: var(--light-basic-typography-h6-heading-font-weight);
@@ -396,7 +396,7 @@ $border-color_2: var(--lightsolid-colorextradivider);
 	}
 
 	.avatar-instance {
-		background-color: $background-color_10 !important;
+		background-color: $backgroundcolor10 !important;
 	}
 
 	.pngwing-2 {
@@ -431,9 +431,9 @@ $border-color_2: var(--lightsolid-colorextradivider);
 	border: none;
 	border-radius: none;
 	padding: 10px;
-	background-color: $background-color_3;
-	color: $color_2;
-	font-family: $font-family_1;
+	background-color: $backgroundcolor3;
+	color: $color2;
+	font-family: $fontfamily1;
 	font-size: 18px;
 	font-weight: 500;
 	line-height: 24px;
@@ -449,9 +449,9 @@ $border-color_2: var(--lightsolid-colorextradivider);
 	border: none;
 	border-radius: 0;
 	padding: 10px;
-	background-color: $background-color_4;
-	color: $color_3;
-	font-family: $font-family_1;
+	background-color: $backgroundcolor4;
+	color: $color3;
+	font-family: $fontfamily1;
 	font-size: 18px;
 	font-weight: 500;
 	line-height: 24px;
@@ -462,7 +462,7 @@ $border-color_2: var(--lightsolid-colorextradivider);
 	position: relative !important;
 	width: 22px !important;
 	height: 22px !important;
-	color: $color_4 !important;
+	color: $color4 !important;
 }
 
 .div-content {
@@ -485,7 +485,7 @@ $border-color_2: var(--lightsolid-colorextradivider);
 
 	&::-webkit-scrollbar-thumb {
 		border-radius: 20px;
-		background-color: $background-color_5;
+		background-color: $backgroundcolor5;
 	}
 }
 
@@ -496,8 +496,8 @@ $border-color_2: var(--lightsolid-colorextradivider);
 	margin: 5px;
 	border-radius: 10px;
 	padding: 20px;
-	background-color: $background-color_6;
-	color: $color_2;
+	background-color: $backgroundcolor6;
+	color: $color2;
 }
 
 .avatarWithName {
@@ -516,7 +516,7 @@ $border-color_2: var(--lightsolid-colorextradivider);
 }
 
 .name {
-	color: $color_11;
+	color: $color11;
 	font-size: 15px;
 }
 
@@ -526,8 +526,8 @@ $border-color_2: var(--lightsolid-colorextradivider);
 	right: 10px;
 	border-radius: 10px;
 	padding: 3px 8px;
-	background-color: $background-color_11;
-	color: $color_12;
+	background-color: $backgroundcolor11;
+	color: $color12;
 	font-size: 0.7em;
 }
 
@@ -535,14 +535,14 @@ $border-color_2: var(--lightsolid-colorextradivider);
 	position: relative;
 	right: 40px;
 	bottom: -10px;
-	color: $color_11;
+	color: $color11;
 	font-size: 0.6em;
 }
 
 .messageContent {
 	position: absolute;
 	right: 5px;
-	color: $color_11;
+	color: $color11;
 }
 
 .messageLogo {
@@ -566,7 +566,7 @@ $border-color_2: var(--lightsolid-colorextradivider);
 	height: 10px;
 	border: 1px solid #fff;
 	border-radius: 50%;
-	background-color: $background-color_12;
+	background-color: $backgroundcolor12;
 }
 
 .offline {
@@ -577,5 +577,5 @@ $border-color_2: var(--lightsolid-colorextradivider);
 	height: 10px;
 	border: 1px solid #fff;
 	border-radius: 50%;
-	background-color: $background-color_13;
+	background-color: $backgroundcolor13;
 }

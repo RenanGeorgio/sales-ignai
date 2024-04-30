@@ -11,9 +11,7 @@
   }
 
   .entry {
-
     &::before {
-
       content: '; ';
     }
 
@@ -38,7 +36,6 @@
   }
 
   &.collapsed {
-
     .collapsedList {
       overflow: hidden;
       display: inline-block;
