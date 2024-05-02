@@ -3573,7 +3573,7 @@ acorn-walk@^7.1.1:
   resolved "https://registry.yarnpkg.com/acorn-walk/-/acorn-walk-7.2.0.tgz#0de889a601203909b0fbe07b8938dc21d2e967bc"
   integrity sha512-OPdCF6GsMIP+Az+aWfAAOEt2/+iVDKE7oy6lJ098aoe59oAmK76qV6Gw60SbZ8jHuG2wH058GF4pLFbYamYrVA==
 
-acorn-walk@^8.1.1:
+acorn-walk@^8.0.2, acorn-walk@^8.1.1:
   version "8.3.2"
   resolved "https://registry.yarnpkg.com/acorn-walk/-/acorn-walk-8.3.2.tgz#7703af9415f1b6db9315d6895503862e231d34aa"
   integrity sha512-cjkyv4OtNCIeqhHrfS81QWXoCBPExR/J62oyEqepVw8WaQeSqpW2uhuLPh1m9eWhDuOo/jUXVTlifvesOWp/4A==
@@ -3915,6 +3915,13 @@ attr-accept@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/attr-accept/-/attr-accept-2.2.2.tgz#646613809660110749e92f2c10833b70968d929b"
   integrity sha512-7prDjvt9HmqiZ0cl5CRjtS84sEyhsHP2coDkaZKRKVfCDo9s7iw7ChVmar78Gu9pC4SoR/28wFu/G5JJhTnqEg==
+
+auto-css-modules-webpack-plugin@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/auto-css-modules-webpack-plugin/-/auto-css-modules-webpack-plugin-1.1.1.tgz#e4e239ff922aef11f6cc92902fc689440450bac8"
+  integrity sha512-Jm4Z2xlaxAO/eHO+ysMqr1fPEdBdfVnP18Y5KjQT43sq244iiKwYflYMIdifugF6NTpFKD0nzUjARlJ1esMeVQ==
+  dependencies:
+    acorn-walk "^8.0.2"
 
 autoprefixer@^10.4.12, autoprefixer@^10.4.13:
   version "10.4.18"
@@ -4752,6 +4759,13 @@ cosmiconfig@^7, cosmiconfig@^7.0.0, cosmiconfig@^7.0.1:
     parse-json "^5.0.0"
     path-type "^4.0.0"
     yaml "^1.10.0"
+
+craco-css-modules@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/craco-css-modules/-/craco-css-modules-1.0.5.tgz#defbd3eb49db09f02ae82579dd3a95ae5fb11e75"
+  integrity sha512-Dt7w9GEXmY6lUSxh7g4ft+11NyOY3ZgwUZu0Aq9imTrFRKa65rsu00SA2rZ/UDPzCfagwvcY7VdHMOA2BKDoBw==
+  dependencies:
+    auto-css-modules-webpack-plugin "^1.1.1"
 
 create-ecdh@^4.0.0:
   version "4.0.4"

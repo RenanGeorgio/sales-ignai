@@ -1,9 +1,12 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 const devMode = process.env.NODE_ENV !== 'production';
-const SRC_DIR = __dirname + '\\src';
-console.log(SRC_DIR);
+const CracoCSSModules = require('craco-css-modules');
+
 module.exports = {
+  plugins: [
+      { plugin: CracoCSSModules }
+  ],
   target: 'node',
   webpack: {
     plugins: [new MiniCssExtractPlugin(
@@ -53,10 +56,21 @@ module.exports = {
         return cssLoaderOptions;
       },
     },
+    // sass: {
+    //   loaderOptions: (sassLoaderOptions, { env, paths }) => {
+    //     return sassLoaderOptions;
+    //   },
+    // },
     sass: {
-      loaderOptions: (sassLoaderOptions, { env, paths }) => {
-        return sassLoaderOptions;
+      loaderOptions: {
+        // Prefer 'sass' (dart-sass) over 'node-sass' if both packages are installed.
+        implementation: require('sass'),
+        // Workaround for this bug: https://github.com/webpack-contrib/sass-loader/issues/804
+        webpackImporter: false,
+        sassOptions: {
+          includePaths: [path.resolve(__dirname, 'node_modules')],
+        },
       },
     },
-  },
+  }
 };

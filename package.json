@@ -112,6 +112,7 @@
     "@types/socket.io-client": "^3.0.0",
     "@webpack-cli/serve": "^2.0.5",
     "babel-plugin-inline-react-svg": "^2.0.2",
+    "craco-css-modules": "^1.0.5",
     "crypto": "^1.0.1",
     "css-loader": "^6.10.0",
     "mini-css-extract-plugin": "^2.8.1",

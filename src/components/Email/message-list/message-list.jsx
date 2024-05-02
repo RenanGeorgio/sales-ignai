@@ -39,11 +39,9 @@ function _dragImage(t, messages, x, y) {
 }
 
 class MessageList extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
+
+    console.log("this.props", this.props)
     return (
       <div className={`${styles.messageList} ${this.props.className}`}>
         <Spinner visible={this.props.activeRequests > 0 && this.props.messages.length === 0} />
