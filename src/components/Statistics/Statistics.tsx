@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../styles/statistics.css';
 
-import { ClockIcon,UsersIcon,ChartIcon, Chart2Icon, ChartPieIcon,MessageDots,
+import { ClockIcon, UsersIcon, ShoppingCart, ChartIcon, Chart2Icon, ChartPieIcon,MessageDots,
    CurrencyDollar ,BriefCaseIcon} from '../Image/icons';
 import ChartSessions from '../Graph/GraphSessions';
 import ChartSales from '../Graph/GraphSales';
@@ -30,7 +30,7 @@ const StatisticsComponent: React.FC<StatisticsComponentProps> = () => {
 
           <div className="statistics-item">
             <div className="content-with-labels">
-              <img src={"users"} alt="Usuários" className="img-statistics" />
+              <UsersIcon />
               <div className="number-label-container">
                 <div className="number-statistics">8.549k</div>
                 <div className="label">Customers</div>
@@ -40,7 +40,7 @@ const StatisticsComponent: React.FC<StatisticsComponentProps> = () => {
 
           <div className="statistics-item">
             <div className="content-with-labels">
-              <img src={"chart"} alt="Carrinho" className="img-statistics" />
+              <ShoppingCart />
               <div className="number-label-container">
                 <div className="number-statistics">1.423k</div>
                 <div className="label">Products</div>
@@ -50,7 +50,7 @@ const StatisticsComponent: React.FC<StatisticsComponentProps> = () => {
 
           <div className="statistics-item">
             <div className="content-with-labels">
-              <img src={"money"} alt="Dinheiro" className="img-statistics" />
+              <CurrencyDollar/>
               <div className="number-label-container">
                 <div className="number-statistics">$9745</div>
                 <div className="label">Revenue</div>

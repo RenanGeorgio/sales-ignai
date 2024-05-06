@@ -120,7 +120,7 @@ const StatisticsStatus: React.FC<StatisticsStatusProps> = () => {
         </div>
       </div>
 
-      <div className="dashboard-section">
+      <div className="dashboard-section active">
         <h3>Active Projects</h3>
         <div className="menu-icon">&#8942;</div>
         <p className="subtitle-status">72 completed</p>

@@ -9,14 +9,14 @@ const Suporte = () => {
             <Navbar />
             <h1 className="text">Suporte ao cliente Ignai</h1>
             <div>
-            <div style={{marginLeft:'100px'}}>
+            <div style={{marginLeft:'100px', display:'flex'}}>
                 <button className="blueButton">
-            <UsersIcon/>
-                Pedido
+                    <UsersIcon/>
+                    Pedido
                 </button>
                 <button className="grayButton">
-                <FileTextIcon />
-                Tickets
+                    <FileTextIcon />
+                    Tickets
                 </button>
             </div>
             </div>
